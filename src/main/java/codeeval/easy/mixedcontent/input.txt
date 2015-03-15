@@ -1,0 +1,6 @@
+8,33,21,0,16,50,37,0,melon,7,apricot,peach,pineapple,17,21
+24,13,14,43,41
+8,33,21,0,16,50,37,0,melon,7,apricot,peach,pineapple,17,21
+24,13,14,43,41
+8,33,21,0,16,50,37,0
+melon,apricot,peach,pineapple
