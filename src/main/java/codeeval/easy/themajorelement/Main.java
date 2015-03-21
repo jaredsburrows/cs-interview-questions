@@ -4,9 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-/**
- * Find the major element in a sequence
- */
 public class Main {
     public static void main(final String[] args) throws Exception {
         final BufferedReader buffer = new BufferedReader(new FileReader(new File(args[0])));

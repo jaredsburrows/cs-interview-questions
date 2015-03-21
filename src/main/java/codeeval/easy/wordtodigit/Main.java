@@ -1,4 +1,4 @@
-package codeeval.easy.worddigit;
+package codeeval.easy.wordtodigit;
 
 import java.io.BufferedReader;
 import java.io.File;
