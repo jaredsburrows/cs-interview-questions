@@ -1,4 +1,4 @@
-package questions;
+package questions.Math;
 
 import java.util.ArrayList;
 import java.util.Arrays;

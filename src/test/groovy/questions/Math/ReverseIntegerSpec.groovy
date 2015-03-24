@@ -1,5 +1,6 @@
-package questions
+package questions.Math
 
+import questions.Math.ReverseNumber
 import spock.lang.Specification
 
 class ReverseIntegerSpec extends Specification {

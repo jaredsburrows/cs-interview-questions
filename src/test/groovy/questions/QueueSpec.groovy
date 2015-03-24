@@ -1,14 +1,18 @@
 package questions
 
-import questions.util.Node
+import questions.util.TreeNode
 import spock.lang.Specification
 
 class QueueSpec extends Specification {
 
     Queue queue = new Queue()
+    TreeNode valueNode = new TreeNode(1)
+    TreeNode valueNode2 = new TreeNode(2)
+    TreeNode valueNode3 = new TreeNode(3)
+    TreeNode blankNode = new TreeNode(0)
+    TreeNode blankNode2 = new TreeNode(0)
 
     def "Test - Queue - getFirst [Correct Values]"() {
-        Node blankNode = new Node()
 
         expect:
         queue.getFirst() == null
@@ -17,8 +21,6 @@ class QueueSpec extends Specification {
     }
 
     def "Test - Queue - getFirst - multiple [Correct Values]"() {
-        Node blankNode = new Node()
-        Node blankNode2 = new Node()
 
         expect:
         queue.getFirst() == null
@@ -29,7 +31,6 @@ class QueueSpec extends Specification {
     }
 
     def "Test - Queue - getLast [Correct Values]"() {
-        Node blankNode = new Node()
 
         expect:
         queue.getLast() == null
@@ -38,8 +39,6 @@ class QueueSpec extends Specification {
     }
 
     def "Test - Queue - getLast - multiple [Correct Values]"() {
-        Node blankNode = new Node()
-        Node blankNode2 = new Node()
 
         expect:
         queue.getLast() == null
@@ -50,7 +49,6 @@ class QueueSpec extends Specification {
     }
 
     def "Test - Queue - enqueue - single [Correct Values]"() {
-        Node blankNode = new Node()
 
         expect:
         queue.getFirst() == null
@@ -61,9 +59,6 @@ class QueueSpec extends Specification {
     }
 
     def "Test - Queue - enqueue - multiple [Correct Values]"() {
-        Node valueNode = new Node(new Object())
-        Node valueNode2 = new Node(new Object())
-        Node valueNode3 = new Node(new Object())
 
         expect:
         queue.getFirst() == null
@@ -82,7 +77,6 @@ class QueueSpec extends Specification {
     }
 
     def "Test - Queue - dequeue [Correct Values]"() {
-        Node blankNode = new Node()
 
         expect:
         queue.getFirst() == null
@@ -97,9 +91,6 @@ class QueueSpec extends Specification {
     }
 
     def "Test - Queue - dequeue - multiple [Correct Values]"() {
-        Node valueNode = new Node(new Object())
-        Node valueNode2 = new Node(new Object())
-        Node valueNode3 = new Node(new Object())
 
         expect:
         queue.getFirst() == null

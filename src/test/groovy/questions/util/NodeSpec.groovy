@@ -5,19 +5,18 @@ import spock.lang.Specification
 class NodeSpec extends Specification {
 
     def "Test - Node [Correct Values]"() {
-        Object value = new Object()
-        Node valueNode = new Node(value)
-        Node blankNode = new Node()
-        blankNode.next = valueNode
+        TreeNode valueNode = new TreeNode(5)
+        TreeNode blankNode = new TreeNode(0)
+        blankNode.right = valueNode
 
         expect:
-        valueNode != value
-        valueNode.val == value
-        valueNode.next == null
+        valueNode != blankNode
+        valueNode.value == 5
+        valueNode.right == null
         blankNode != null
-        blankNode.val == null
-        blankNode.next == valueNode
-        blankNode.next.val == value
-        blankNode.next.next == null
+        blankNode.value == 0
+        blankNode.right == valueNode
+        blankNode.right.value == 5
+        blankNode.right.right == null
     }
 }

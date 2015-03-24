@@ -1,4 +1,4 @@
-package questions;
+package questions.Math;
 
 public class ReverseNumber {
 

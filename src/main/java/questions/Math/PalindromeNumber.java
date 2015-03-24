@@ -1,4 +1,4 @@
-package questions;
+package questions.Math;
 
 public class PalindromeNumber {
     public static boolean isPalindrome(long number) {

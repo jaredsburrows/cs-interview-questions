@@ -1,33 +1,33 @@
 package questions;
 
-import questions.util.Node;
+import questions.util.TreeNode;
 
 // FIFO
 public class Queue {
-    public Node first;
-    public Node last;
+    public TreeNode first;
+    public TreeNode last;
 
-    public Node getFirst() {
+    public TreeNode getFirst() {
         return first;
     }
 
-    public Node getLast() {
+    public TreeNode getLast() {
         return last;
     }
 
-    public void enqueue(final Node n) {
+    public void enqueue(final TreeNode n) {
         if (first == null) {
             first = n;
             last = first;
         } else {
-            last.next = n;
+            last.right = n;
             last = n;
         }
     }
 
     public void dequeue() {
         if (first != null) {
-            first = first.next;
+            first = first.right;
         }
     }
 }

@@ -1,25 +1,25 @@
 package questions;
 
-import questions.util.Node;
+import questions.util.TreeNode;
 
 // LIFO
 public class Stack {
-    public Node top;
+    public TreeNode top;
 
-    public Node peek() {
+    public TreeNode peek() {
         return top;
     }
 
-    public void push(final Node n) {
+    public void push(final TreeNode n) {
         if (n != null) {
-            n.next = top;
+            n.right = top;
             top = n;
         }
     }
 
     public void pop() {
         if (top != null) {
-            top = top.next;
+            top = top.right;
         }
     }
 }
