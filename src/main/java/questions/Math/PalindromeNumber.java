@@ -1,4 +1,4 @@
-package questions.Math;
+package questions.math;
 
 public class PalindromeNumber {
     public static boolean isPalindrome(long number) {
@@ -6,7 +6,7 @@ public class PalindromeNumber {
             return false;
         }
 
-        long originalNumber = number;
+        final long originalNumber = number;
         long reverseNumber = 0;
 
         while (number != 0) {

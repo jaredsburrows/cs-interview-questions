@@ -1,6 +1,5 @@
-package questions.Math
+package questions.math
 
-import questions.Math.Pow
 import spock.lang.Specification
 
 class PowSpec extends Specification {

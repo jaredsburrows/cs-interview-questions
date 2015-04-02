@@ -26,6 +26,8 @@ public class Chapter4TreesAndGraphs {
             return -1;
         }
 
+        // balanced tree is defined to be a tree such that no two leaf nodes differ in distance from
+        // the root by more than one
         if (Math.abs(left - right) > 1) {
             return -1;
         }

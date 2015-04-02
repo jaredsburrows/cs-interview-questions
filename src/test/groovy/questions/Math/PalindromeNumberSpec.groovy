@@ -1,4 +1,4 @@
-package questions.Math
+package questions.math
 
 import spock.lang.Specification
 

@@ -1,4 +1,4 @@
-package questions.CombinationsPermutations
+package questions.combinationspermutations
 
 import spock.lang.Specification
 

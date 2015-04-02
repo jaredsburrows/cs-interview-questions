@@ -34,12 +34,12 @@ public class Main {
 
             System.out.printf("%02d:%02d:%02d\n", result.get(Calendar.HOUR_OF_DAY), result.get(Calendar.MINUTE), result.get(Calendar.SECOND));
 
-//            System.out.println(simpleDateFormat.format(Math.abs(simpleDateFormat.parse(words[1]).getTime() - simpleDateFormat.parse(words[0]).getTime())));
+//            System.out.println(simpleDateFormat.format(math.abs(simpleDateFormat.parse(words[1]).getTime() - simpleDateFormat.parse(words[0]).getTime())));
 
             /* Joda time - works but can't submit 3rd party libs */
 //            DateTimeFormatter formatter = DateTimeFormat.forPattern("HH:mm:ss");
 //
-//            Period period = new Period(Math.abs(formatter.parseDateTime(words[1]).getMillis() - formatter.parseDateTime(words[0]).getMillis()));
+//            Period period = new Period(math.abs(formatter.parseDateTime(words[1]).getMillis() - formatter.parseDateTime(words[0]).getMillis()));
 //
 //            System.out.printf("%02d:%02d:%02d\n", period.getHours(), period.getMinutes(), period.getSeconds());
         }
