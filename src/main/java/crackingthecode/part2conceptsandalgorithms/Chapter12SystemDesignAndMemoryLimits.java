@@ -1,9 +1,9 @@
-package crackingthecode.part3knowledgebased;
+package crackingthecode.part2conceptsandalgorithms;
 
 public class Chapter12SystemDesignAndMemoryLimits {
 
     /**
-     * 11.1 - If you were integrating a feed of end of day stock price information (open, high, low,
+     * 12.1 - If you were integrating a feed of end of day stock price information (open, high, low,
      * and closing price) for 5,000 companies, how would you do it? You are responsible for the
      * development, rollout and ongoing monitoring and maintenance of the feed. De- scribe the
      * different methods you considered and why you would recommend your approach. The feed is
@@ -53,13 +53,13 @@ public class Chapter12SystemDesignAndMemoryLimits {
     // The book mentions a "database" on Proposal 3 and "XML" data in Proposal 4.
 
     /**
-     * 11.2 - How would you design the data structures for a very large social network (Facebook,
+     * 12.2 - How would you design the data structures for a very large social network (Facebook,
      * LinkedIn, etc)? Describe how you would design an algorithm to show the connec- tion, or path,
      * between two people (e.g., Me -> Bob -> Susan -> Jason -> You).
      */
 
     /**
-     * 11.3 - Given an input file with four billion integers, provide an algorithm to generate an
+     * 12.3 - Given an input file with four billion integers, provide an algorithm to generate an
      * integer which is not contained in the file. Assume you have 1 GB of memory.
      * FOLLOW UP
      * What if you have only 10 MB of memory?

@@ -60,6 +60,51 @@ public class Chapter9SortingAndSearching {
     }
 
     /**
+     * 9.3 - Given a sorted array of n integers that has been rotated an unknown number of times,
+     * give an O(log n) algorithm that finds an element in the array. You may assume that the array
+     * was originally sorted in increasing order.
+     * EXAMPLE:
+     * Input: find 5 in array (15 16 19 20 25 1 3 4 5 7 10 14)
+     * Output: 8 (the index of 5 in the array)
+     */
+    // TODO - review
+    // 15 16 19 20 25 1  3  4  5  7 10 14
+    // 0  1  2  3  4  5  6  7  8  9 10 11
+    // Time - Best - O(LOG N), Space - O(1) - does not work with duplicates
+    public static int getRotatedIndexOf(final int[] array, final int target) {
+        if (array == null) {
+            return -1;
+        }
+
+        int min = 0;
+        int max = array.length - 1;
+
+        while (min <= max) {
+            int mid = (max + min) / 2;
+
+            if (array[mid] == target) {
+                return mid;
+            } else if (array[min] <= array[mid]) {
+                if (array[mid] < target) {
+                    min = mid + 1;
+                } else if (array[mid] > target) {
+                    max = mid - 1;
+                } else {
+                    min = mid + 1;
+                }
+            } else if (target < array[mid]) {
+                max = mid - 1;
+            } else if (target <= array[max]) {
+                min = mid + 1;
+            } else {
+                max = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    /**
      * 9.4 - If you have a 2 GB file with one string per line, which sorting algorithm would you use
      * to sort the file and why?
      */

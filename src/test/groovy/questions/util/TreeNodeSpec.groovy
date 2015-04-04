@@ -2,7 +2,7 @@ package questions.util
 
 import spock.lang.Specification
 
-class NodeSpec extends Specification {
+class TreeNodeSpec extends Specification {
 
     def "Test - Node [Correct Values]"() {
         TreeNode valueNode = new TreeNode(5)

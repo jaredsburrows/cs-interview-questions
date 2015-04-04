@@ -1,6 +1,5 @@
-package questions
+package questions.util
 
-import questions.util.TreeNode
 import spock.lang.Specification
 
 class QueueSpec extends Specification {

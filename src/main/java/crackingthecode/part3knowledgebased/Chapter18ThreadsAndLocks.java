@@ -1,5 +1,7 @@
 package crackingthecode.part3knowledgebased;
 
+import java.util.concurrent.Semaphore;
+
 public class Chapter18ThreadsAndLocks {
 
     /**
@@ -88,6 +90,7 @@ public class Chapter18ThreadsAndLocks {
     /**
      * 18.4 - Design a class which provides a lock only if there are no possible deadlocks.
      */
+    // TODO
     // question is too generic
     // lock for my class if there are no deadlocks?
     // can we use ThreadMXBean to check to dead locks?
@@ -117,13 +120,15 @@ public class Chapter18ThreadsAndLocks {
      * f.A(.....); f.B(.....); f.C(.....);
      * f.A(.....); f.B(.....); f.C(.....);
      *
-     * iii) Can you design a mechanism to make sure that all the methods will be executed in sequence?
+     * Can you design a mechanism to make sure that all the methods will be executed in sequence?
      */
 
     interface MethodsToCall {
-        void A();
-        void B();
-        void C();
+        void A() throws Exception;
+
+        void B() throws Exception;
+
+        void C() throws Exception;
     }
 
     // terrible example, call method after another
@@ -146,22 +151,74 @@ public class Chapter18ThreadsAndLocks {
         }
     }
 
+    // i)
     class MethCallSemaphore implements MethodsToCall {
 
-        @Override
-        public void A() {
+        Semaphore semaphoreA = new Semaphore(0);
+        Semaphore semaphoreB = new Semaphore(0);
 
+        @Override
+        public void A() throws Exception {
+            semaphoreA.release(1); // release, free up permit
         }
 
         @Override
-        public void B() {
-
+        public void B() throws Exception {
+            semaphoreA.acquire(1); // acquire permit
+            semaphoreB.release(1); // release again
         }
 
         @Override
+        public void C() throws Exception {
+            semaphoreB.acquire(1); // acquire again
+        }
+    }
+
+    // ii)
+    class MethCallThreadSafeSemaphore implements MethodsToCall {
+
+        Semaphore semaphoreA = new Semaphore(0);
+        Semaphore semaphoreB = new Semaphore(0);
+        Semaphore semaphoreC = new Semaphore(1);
+
+        @Override
+        public void A() throws Exception {
+            semaphoreC.acquire(1); // acquire permit
+            semaphoreA.release(1); // release, free up permit
+        }
+
+        @Override
+        public void B() throws Exception {
+            semaphoreA.acquire(1); // acquire permit
+            semaphoreB.release(1); // release again
+        }
+
+        @Override
+        public void C() throws Exception {
+            semaphoreB.acquire(1); // acquire again
+            semaphoreC.release(1); // release, make sure called in order
+        }
+    }
+
+    /**
+     * 18.6 - You are given a class with synchronized method A, and a normal method C. If you have
+     * two threads in one instance of a program, can they call A at the same time? Can they call A
+     * and C at the same time?
+     */
+    class SomeSyncMethods {
+        public synchronized void A() {
+
+        }
+
         public void C() {
 
         }
     }
 
+    // Two different threads that attempt to call method A at the sametime, the "synchonized" will
+    // prevent both threads from making the call, only allowing one thread at a time
+
+    // Both threads can call method A at the same time
+
+    // If one thread called method A and another called method C, normal behavior.
 }

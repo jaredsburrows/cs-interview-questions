@@ -1,4 +1,4 @@
-package questions.combinationspermutations;
+package questions.combinationspermutation;
 
 import java.util.ArrayList;
 

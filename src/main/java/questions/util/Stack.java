@@ -1,4 +1,4 @@
-package questions;
+package questions.util;
 
 import questions.util.TreeNode;
 

@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class Chapter9SortingAndSearchingSpec extends Specification {
 
-    def "Test - mergeAInB [Correct Values]"() {
+    def "mergeAInB"() {
         expect:
         Chapter9SortingAndSearching.mergeBInA(a as int[], b as int[], c as int) == d as int[]
 
@@ -16,7 +16,7 @@ class Chapter9SortingAndSearchingSpec extends Specification {
     }
 
     // http://www2.vo.lu/homepages/phahn/anagrams/oneword.htm
-    def "Test - sortAnagrams [Correct Values]"() {
+    def "sortAnagrams"() {
         expect:
         Chapter9SortingAndSearching.sortAnagrams(a) == b
 
@@ -28,8 +28,21 @@ class Chapter9SortingAndSearchingSpec extends Specification {
                 ["aceno", "aceno", "adeeglnnr", "adeeglnnr", "aestw", "ainpt", "ainpt"]
     }
 
+    def "getRotatedIndexOf"() {
+        expect:
+        Chapter9SortingAndSearching.getRotatedIndexOf(a as int[], b) == c
+
+        where:
+        a                                                         || b   || c
+        null                                                      || 5   || -1
+        [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14]               || 100 || -1
+        [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14]               || 5   || 8
+        [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14]               || 20  || 3
+        [2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] || 3   || -1 // cant handle duplicates
+    }
+
     // TODO
-    def "Test - findString [Correct Values]"() {
+    def "findString"() {
         expect:
 //        Chapter9SortingAndSearching.findString(a as String[], b as String) == c
         Chapter9SortingAndSearching.findString2(a as String[], b as String) == c
@@ -44,7 +57,7 @@ class Chapter9SortingAndSearchingSpec extends Specification {
 //        ["at", "", "", "", "", "ball", "car", "", "", "dad", "", ""]     || "ballcar" || -1
     }
 
-    def "Test - findValue [Correct Values]"() {
+    def "findValue"() {
         expect:
         Chapter9SortingAndSearching.findValue(a as int[][], b) == c
 
