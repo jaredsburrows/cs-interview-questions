@@ -1,6 +1,6 @@
-package projecteuler.number002;
+package projecteuler.number2;
 
-public class Main {
+public class Number2 {
 
     public static long getEvenFibonacciNumbers(long n) {
         long a = 1, b = 1, sum = 0;
@@ -9,14 +9,9 @@ public class Main {
             long next = a + b;
             b = a;
             a = next;
-            sum += next % 2 == 0 ? next : 0;
+            sum += (next % 2) == 0 ? next : 0;
         }
 
         return sum;
-    }
-
-    public static void main(final String[] args) {
-
-        System.out.println(getEvenFibonacciNumbers(4000000));
     }
 }

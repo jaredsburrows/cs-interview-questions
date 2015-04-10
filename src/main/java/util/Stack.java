@@ -1,6 +1,4 @@
-package questions.util;
-
-import questions.util.TreeNode;
+package util;
 
 // LIFO
 public class Stack {

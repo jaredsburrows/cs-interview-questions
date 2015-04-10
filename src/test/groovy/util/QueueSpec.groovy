@@ -1,4 +1,4 @@
-package questions.util
+package util
 
 import spock.lang.Specification
 

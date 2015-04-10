@@ -1,6 +1,6 @@
 package crackingthecode.part1datastructures;
 
-import questions.util.TreeNode;
+import util.TreeNode;
 
 public class Chapter4TreesAndGraphs {
 
@@ -13,7 +13,7 @@ public class Chapter4TreesAndGraphs {
         return treeNode == null || getHeight(treeNode) != -1;
     }
 
-    static int getHeight(final TreeNode treeNode) {
+    public static int getHeight(final TreeNode treeNode) {
         if (treeNode == null) {
             return 0;
         }
@@ -43,6 +43,25 @@ public class Chapter4TreesAndGraphs {
      * 4.3 - Given a sorted (increasing order) array, write an algorithm to create a binary tree
      * with minimal height.
      */
+    // 1 2 3 4 5 6 7
+    //      4
+    //     / \
+    //    2   6
+    //   /\   /\
+    //  1  3  5 7
+    // (length - 0) / 2
+    public static TreeNode getBinaryTree(int[] array, int start, int end) {
+        if ((array == null) || (array.length == 0) || ((start < 0) || (start > end))) {
+            return null;
+        }
+
+        int mid = (start + end) / 2;
+        TreeNode treeNode = new TreeNode(array[mid]);
+        treeNode.left = getBinaryTree(array, start, mid - 1);   // 1 2 3 4 5 6 // remove one from left
+        treeNode.right = getBinaryTree(array, mid + 1, end);    // 2 3 4 5 6 7 // remove one from front
+
+        return treeNode;
+    }
 
     /**
      * 4.4 - Given a binary search tree, design an algorithm which creates a linked list of all the
@@ -64,6 +83,35 @@ public class Chapter4TreesAndGraphs {
      * 4.7 - You have two very large binary trees: T1, with millions of nodes, and T2, with hundreds
      * of nodes. Create an algorithm to decide if T2 is a subtree of T1.
      */
+    public static boolean isSubtree(final TreeNode treeNode, final TreeNode treeNode2) {
+        if (treeNode2 == null) {
+            return true;
+        }
+
+        if (treeNode == null) {
+            return false;
+        }
+
+        if (isEqualTree(treeNode, treeNode2)) {
+            return true;
+        }
+
+        return isEqualTree(treeNode.left, treeNode2) || isEqualTree(treeNode.right, treeNode2); // important || vs &&
+    }
+
+    public static boolean isEqualTree(final TreeNode treeNode, final TreeNode treeNode2) {
+        if (treeNode == null && treeNode2 == null) {
+            return true;
+        }
+
+        if (treeNode == null || treeNode2 == null) {
+            return false;
+        }
+
+        return treeNode.value == treeNode2.value
+                && isEqualTree(treeNode.left, treeNode2.left)
+                && isEqualTree(treeNode.right, treeNode2.right);
+    }
 
     /**
      * 4.8 - You are given a binary tree in which each node contains a value. Design an algorithm to

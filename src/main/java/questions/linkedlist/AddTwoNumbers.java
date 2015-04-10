@@ -1,6 +1,6 @@
 package questions.linkedlist;
 
-import questions.util.ListNode;
+import util.ListNode;
 
 public class AddTwoNumbers {
     /**

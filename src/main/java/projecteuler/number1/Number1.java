@@ -1,6 +1,6 @@
-package projecteuler.number001;
+package projecteuler.number1;
 
-public class Main {
+public class Number1 {
 
     public static int getMultiplesOf3And5ON() {
         // O(N) solution
@@ -13,27 +13,19 @@ public class Main {
         return sum;
     }
 
+    // O(1) solution
+    // Sn   = (n/2) * (a1 + an)
+    //      = ((an/a1)/2.0) * (a1 + an)
+    //      = (an * (an + a1))/(a1 * 2.0)
+    // LCM of 3 and 5 = 15
+    // 3    - 999   ->  999 % 3     = 0
+    // 5    - 995   ->  995 % 5     = 0
+    // 15   - 990   ->  990 % 15    = 0
     public static double getSumTerms(final int difference, final int number) {
         return (number * (number + difference)) / (difference * 2.0);
     }
 
     public static int getMultiplesOf3And5() {
         return (int) (getSumTerms(3, 999) + getSumTerms(5, 995) - getSumTerms(15, 990));
-    }
-
-    public static void main(final String[] args) {
-
-        System.out.println(getMultiplesOf3And5ON());
-
-        // O(1) solution
-        // Sn   = (n/2) * (a1 + an)
-        //      = ((an/a1)/2.0) * (a1 + an)
-        //      = (an * (an + a1))/(a1 * 2.0)
-        // LCM of 3 and 5 = 15
-        // 3    - 999   ->  999 % 3     = 0
-        // 5    - 995   ->  995 % 5     = 0
-        // 15   - 990   ->  990 % 15    = 0
-
-        System.out.println(getMultiplesOf3And5());
     }
 }

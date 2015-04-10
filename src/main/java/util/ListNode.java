@@ -1,12 +1,12 @@
-package questions.util;
+package util;
 
 public class ListNode {
     public ListNode next;
     public ListNode previous;
     public int value = 0;
 
-    public ListNode(final int val) {
+    public ListNode(final int value) {
         this.next = null;
-        this.value = val;
+        this.value = value;
     }
 }

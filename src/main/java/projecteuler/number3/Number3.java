@@ -1,5 +1,6 @@
-@SuppressWarnings("WrongPackageStatement")
-class Main3 {
+package projecteuler.number3;
+
+public class Number3 {
 
     public static boolean isPrime(final long n) {
         if ((n > 2) && (n & 1) == 0) {
@@ -15,15 +16,13 @@ class Main3 {
         return true;
     }
 
-    public static void main(final String[] args) {
-
-        final long number = 600851475143L;
-
-        for (long i = (long)Math.sqrt(number) + 1; i > 0; i -= 2) {
+    public static long getLargestPrimeFactor(final long number) {
+        for (long i = (long) Math.sqrt(number) + 1; i > 0; i -= 2) {
             if (((number % i) == 0) && isPrime(i)) {
-                System.out.println(i);
-                break;
+                return i;
             }
         }
+
+        return -1;
     }
 }

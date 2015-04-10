@@ -1,12 +1,13 @@
-@SuppressWarnings("WrongPackageStatement") class Main4 {
+package projecteuler.number4;
+
+public class Number4 {
 
     public static boolean isPalidrome(final int n) {
         final String temp = Integer.toString(n);
         return temp.equals(new StringBuilder(temp).reverse().toString());
     }
 
-    public static void main(final String[] args) {
-
+    public static long getLargestPalindromeProduct() {
         int max = 0;
         for (int i = 999; i > 99; i--) {
             for (int j = 999; j > 99; j--) {
@@ -17,6 +18,7 @@
                 }
             }
         }
-        System.out.print(max);
+
+        return max;
     }
 }

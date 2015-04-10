@@ -1,6 +1,4 @@
-package questions.util;
-
-import questions.util.TreeNode;
+package util;
 
 // FIFO
 public class Queue {

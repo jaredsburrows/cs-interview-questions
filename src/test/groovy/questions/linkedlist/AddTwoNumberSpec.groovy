@@ -1,11 +1,11 @@
 package questions.linkedlist
 
-import questions.util.ListNode
+import util.ListNode
 import spock.lang.Specification
 
 class AddTwoNumberSpec extends Specification {
 
-    def "addTwo"() {
+    def "addTwoNumbers"() {
         given:
         // book
         // 315 + 592 = 808
