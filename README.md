@@ -24,7 +24,7 @@ Computer Science Interview Practice
 
  - http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
 
-## Languages Used:
+## Languages Used
 
 **Development(src/main):**
 

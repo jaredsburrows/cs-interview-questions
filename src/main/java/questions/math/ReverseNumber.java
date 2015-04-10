@@ -2,6 +2,7 @@ package questions.math;
 
 public class ReverseNumber {
 
+    // Time - O(LOG(N), Space - O(1)
     public static long solution(long number) {
         long reverseNumber = 0;
 

@@ -54,4 +54,41 @@ class Chapter19ModerateSpec extends Specification {
         10 || 2
         26 || 6
     }
+
+    def "getMax"() {
+        expect:
+        Chapter19Moderate.getMax(a as long, b as long) == c
+        Chapter19Moderate.getMax2(a as long, b as long) == c
+
+        where:
+        a   | b   || c
+        -1  | -1  || -1     // same value
+        10  | 0   || 10     // 0 value
+        100 | 50  || 100
+        213 | 321 || 321
+    }
+
+    def "getMin"() {
+        expect:
+        Chapter19Moderate.getMin(a as long, b as long) == c
+
+        where:
+        a   | b   || c
+        -1  | -1  || -1     // same value
+        10  | 0   || 0      // 0 value
+        100 | 50  || 50
+        213 | 321 || 213
+    }
+
+    def "getMaxSum"() {
+        expect:
+        Chapter19Moderate.getMaxSum(a as int[]) == b
+
+        where:
+        a                      || b
+        null                   || 0
+        [2, -8, 3, -2, 4, -10] || 5
+
+
+    }
 }

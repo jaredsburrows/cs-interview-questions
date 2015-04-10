@@ -97,4 +97,64 @@ public class Chapter19Moderate {
 
         return numZeros;
     }
+
+    /**
+     * 19.4 - Write a method which finds the maximum of two numbers. You should not use if-else or
+     * any other comparison operator.
+     * EXAMPLE
+     * Input: 5, 10
+     * Output: 10
+     */
+    // >> 31 - for only 32 bit numbers
+    // Time - O(1), Space - O(1)
+    public static long getMax(long a, long b) {
+        long diff = ((a - b) >> 31);    // >> 31 accounts for negatives
+        return (diff & b) + ((~diff) & a);
+    }
+
+    // Time - O(1), Space - O(1)
+    public static long getMax2(long a, long b) {
+        long[] temp = {a, b};
+        return temp[(int) ((a - b) >> 31) & 1];
+    }
+
+    // If you have the max, you can find min, vice-versa
+    // Time - O(1), Space - O(1)
+    public static long getMin(long a, long b) {
+        long diff = ((a - b) >> 31);    // >> 31 accounts for negatives
+        return (diff & a) + ((~diff) & b);
+    }
+
+    /**
+     * 19.7 - You are given an array of integers (both positive and negative). Find the continuous
+     * sequence with the largest sum. Return the sum.
+     * EXAMPLE
+     * Input: {2, -8, 3, -2, 4, -10}
+     * Output: 5 (i.e., {3, -2, 4} )
+     */
+    // Time - O(N), Space - O(1)
+    // max "sub array"
+    public static int getMaxSum(final int[] array) {
+        if (array == null) {
+            return 0;
+        }
+
+        int sum = 0;
+        int tempSum = 0;
+
+        for (final int anArray : array) {
+            tempSum = Math.max(tempSum + anArray, anArray);
+            sum = Math.max(tempSum, sum);
+        }
+
+        // i    array   tempSum     sum
+        // 0    2       2           2
+        // 1    -8      -6          2
+        // 2    3       3           3
+        // 3    -2      1           3
+        // 4    4       5           5
+        // 5    -10     5           5
+
+        return sum;
+    }
 }
