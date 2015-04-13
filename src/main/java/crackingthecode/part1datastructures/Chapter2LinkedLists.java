@@ -12,20 +12,52 @@ public class Chapter2LinkedLists {
      * FOLLOW UP
      * How would you solve this problem if a temporary buffer is not allowed?
      */
-    public static void removeDuplicates(ListNode listNode) {
+    public static void removeDuplicates(final ListNode listNode) {
+        if (listNode == null) {
+            return;
+        }
         Set<Integer> unique = new HashSet<>();
 
-        ListNode newNode;
+        ListNode current = listNode;
+        ListNode previous = null;
 
-        while (listNode != null) {
-            if (!unique.contains(listNode.value)) {
-                unique.add(listNode.value);
-                listNode = listNode.next;
-                newNode = listNode.next;
+        boolean del = false;
+
+        while (current != null) {
+            if (del) {
+                previous = current.next;
+
+                if (current.next != null) {
+                    current.next = current.next.next;
+                }
+
+                del = false;
             } else {
-                listNode = listNode.next.next;
-                newNode = listNode.next.next;
+                current = current.next;
+                del = true;
             }
+        }
+
+//        while (current != null) {
+//            if (unique.contains(current.value)) {
+////                current = current.next.next;
+//                previous = current.next;
+//                current.next = current.next.next;
+//            } else {
+//                unique.add(current.value);
+//            }
+//
+//            current = previous;
+//
+////            current = current.next;
+//        }
+
+    }
+
+    public static void deleteEveryOtherRecursive(ListNode listNode) {
+        if (listNode != null && listNode.next != null) {
+            listNode.next = listNode.next.next;
+            deleteEveryOtherRecursive(listNode.next);
         }
     }
 

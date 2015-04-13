@@ -1,5 +1,12 @@
 package crackingthecode.part4additionalreviewproblems;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+
+import util.Tuple;
+
 public class Chapter19Moderate {
 
     /**
@@ -107,23 +114,83 @@ public class Chapter19Moderate {
      */
     // >> 31 - for only 32 bit numbers
     // Time - O(1), Space - O(1)
-    public static long getMax(long a, long b) {
+    public static long getMax(final long a, final long b) {
         long diff = ((a - b) >> 31);    // >> 31 accounts for negatives
         return (diff & b) + ((~diff) & a);
     }
 
     // Time - O(1), Space - O(1)
-    public static long getMax2(long a, long b) {
+    public static long getMax2(final long a, final long b) {
         long[] temp = {a, b};
         return temp[(int) ((a - b) >> 31) & 1];
     }
 
     // If you have the max, you can find min, vice-versa
     // Time - O(1), Space - O(1)
-    public static long getMin(long a, long b) {
+    public static long getMin(final long a, final long b) {
         long diff = ((a - b) >> 31);    // >> 31 accounts for negatives
         return (diff & a) + ((~diff) & b);
     }
+
+    /**
+     * 19.5 - The Game of Master Mind is played as follows: The computer has four slots containing
+     * balls that are red (R), yellow (Y), green (G) or blue (B). For example, the computer might
+     * have RGGB (e.g., Slot #1 is red, Slots #2 and #3 are green, Slot #4 is blue). You, the user,
+     * are trying to guess the solution. You might, for example, guess YRGB. When you guess the
+     * correct color for the correct slot, you get a “hit”. If you guess a color that exists but is
+     * in the wrong slot, you get a “pseudo-hit”. For example, the guess YRGB has 2 hits and one
+     * pseudo hit.
+     * For each guess, you are told the number of hits and pseudo-hits.
+     * Write a method that, given a guess and a solution, returns the number of hits and pseudo
+     * hits.
+     */
+    // length should be 4
+    // will the slots allow for different lengths, more/less guesses?
+    // Time - O(N^2), however we know it is only 4 length, O(4^2) -> O(16) -> O(1), Space - O(1)
+    public static Tuple<Integer, Integer> getPseudoHits(final String solution, final String guess) {
+        if (solution == null || guess == null || solution.length() != guess.length()) {
+            return null;
+        }
+
+        int hits = 0;
+        int pseudoHits = 0;
+
+        for (int i = 0; i < solution.length(); i++) {
+            if (solution.charAt(i) == guess.charAt(i)) {
+                hits++;
+            } else if (solution.contains(String.valueOf(guess.charAt(i)))) {
+                pseudoHits++;
+            }
+        }
+
+        return new Tuple<>(hits, pseudoHits);
+    }
+
+    // Book solution used another class that held two ints
+    // Book solution fails on its own test case, 2 hits, 1 psuedo, RGGB, YRGB.
+    // Time - O(1), Space(O)
+    public static Tuple<Integer, Integer> estimate(String guess, String solution) {
+        int solution_mask = 0;
+        int hits = 0;
+        int pseudoHits = 0;
+        for (int i = 0; i < 4; ++i) {
+            solution_mask |= 1 << (1 + solution.charAt(i) - 'A');
+        }
+        for (int i = 0; i < 4; ++i) {
+            if (guess.charAt(i) == solution.charAt(i)) {
+                ++hits;
+            } else if ((solution_mask & (1 << (1 + guess.charAt(i) - 'A'))) >= 1) {
+                ++pseudoHits;
+            }
+        }
+
+        return new Tuple<>(hits, pseudoHits);
+    }
+
+    /**
+     * 19.6 - Given an integer between 0 and 999,999, print an English phrase that describes the
+     * integer (eg, “One Thousand, Two Hundred and Thirty Four”).
+     */
 
     /**
      * 19.7 - You are given an array of integers (both positive and negative). Find the continuous
@@ -140,11 +207,11 @@ public class Chapter19Moderate {
         }
 
         int sum = 0;
-        int tempSum = 0;
+        int max = 0;
 
-        for (final int anArray : array) {
-            tempSum = Math.max(tempSum + anArray, anArray);
-            sum = Math.max(tempSum, sum);
+        for (final int item : array) {
+            max = Math.max(max + item, item);
+            sum = Math.max(max, sum);
         }
 
         // i    array   tempSum     sum
@@ -157,4 +224,116 @@ public class Chapter19Moderate {
 
         return sum;
     }
+
+    /**
+     * 19.8 - Design a method to find the frequency of occurrences of any given word in a book.
+     */
+    // What about periods and other non characters? - "word.", maybe use regex? - book did not take
+    // this into account
+    // For single queries, just count the all the strings in the array
+    // For repetitive queries we would create the hashmap one time
+    // Time - O(N)
+    public static int getWordOccurence(final String[] array, String word) {
+        if (array == null || word == null) {
+            return -1;
+        }
+
+        final Map<String, Integer> occurrences = new HashMap<>();
+
+        for (String string : array) {
+            string = string.toLowerCase().trim();
+            if (!string.isEmpty()) {
+                occurrences.put(string, occurrences.containsKey(string) ? occurrences.get(string) + 1 : 1);
+            }
+        }
+
+        word = word.toLowerCase().trim();
+
+        return occurrences.containsKey(word) ? occurrences.get(word) : 0;
+    }
+
+    /**
+     * 19.9 - Since XML is very verbose, you are given a way of encoding it where each tag gets
+     * mapped to a pre-defined integer value. The language/grammar is as follows:
+     * Element --> Element Attr* END Element END [aka, encode the element
+     * tag, then its attributes, then tack on an END character, then encode its children, then
+     * another end tag]
+     * Attr --> Tag Value [assume all values are strings]
+     * END --> 01
+     * Tag --> some predefined mapping to int
+     * Value --> string value END
+     * Write code to print the encoded version of an xml element (passed in as string).
+     * FOLLOW UP
+     * Is there anything else you could do to (in many cases) compress this even further?
+     */
+
+    /**
+     * 19.10 - Write a method to generate a random number between 1 and 7, given a method
+     * that generates a random number between 1 and 5 (i.e., implement rand7() using rand5()).
+     */
+    // book solution
+    public static int rand7() {
+        while (true) {
+            int num = 5 * (rand5() - 1) + (rand5() - 1);
+            if (num < 21) {
+                return (num % 7 + 1);
+            }
+        }
+    }
+
+    // can we use Math.random?
+    public static int rand72() {
+        return new Random().nextInt(rand5()) + 2;
+    }
+
+    // Here is our "rand5" - 1..5
+    public static int rand5() {
+        return new Random().nextInt(4) + 1;
+    }
+
+    /**
+     * 19.11 - Design an algorithm to find all pairs of integers within an array which sum to a
+     * specified value.
+     */
+    // Time - O(N)
+    public static Map<Integer, Integer> getPairSum(final int[] array, final int target) {
+        final Map<Integer, Integer> pairs = new HashMap<>();
+        final Map<Integer, Integer> uniquePairs = new HashMap<>();
+
+        for (final int anArray : array) {
+            if (!pairs.containsKey(anArray)) {
+                pairs.put(target - anArray, anArray);
+            }
+        }
+
+        for (final int anArray : array) {
+            if (pairs.containsKey(anArray)) {
+                uniquePairs.put(anArray, pairs.get(anArray));
+            }
+        }
+
+        return uniquePairs;
+    }
+
+    // book solution, Time - O(N*LOG(N)), Space - O(N), only prints them out
+    public static void printPairSums(int[] array, int sum) {
+        Arrays.sort(array);
+        int first = 0;
+        int last = array.length - 1;
+        while (first < last) {
+            int s = array[first] + array[last];
+            if (s == sum) {
+                System.out.println(array[first] + " " + array[last]);
+                ++first;
+                --last;
+            } else {
+                if (s < sum) {
+                    ++first;
+                } else {
+                    --last;
+                }
+            }
+        }
+    }
+
 }
