@@ -1,5 +1,6 @@
 package crackingthecode.part1datastructures;
 
+import java.io.Serializable;
 import java.util.Stack;
 
 public class Chapter3StacksAndQueues {
@@ -22,7 +23,9 @@ public class Chapter3StacksAndQueues {
      * min which returns the minimum element? Push, pop and min should all operate in O(1) time.
      */
     // book suggest not to store min in each stack, too much memory from duplicates
-    static class MinStack extends Stack<Integer> {
+    static class MinStack extends Stack<Integer> implements Serializable {
+        private static final long serialVersionUID = 1L;
+
         Stack<Integer> minStack = new Stack<>();
 
         public void push(final int value) {

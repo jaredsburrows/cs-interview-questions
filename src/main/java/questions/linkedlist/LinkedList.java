@@ -14,7 +14,7 @@ public class LinkedList<T> {
         return this.head.getPrevious();
     }
 
-    public Node getHead() {
+    public Node<T> getHead() {
         return this.head;
     }
 
@@ -49,6 +49,6 @@ public class LinkedList<T> {
         while (temp.next.next != null) {
             temp = temp.next;
         }
-        temp = null;
+        temp.next = null;
     }
 }

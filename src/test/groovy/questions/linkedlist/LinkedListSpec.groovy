@@ -50,4 +50,19 @@ class LinkedListSpec extends Specification {
         linkedList.getHead().getValue() == 6
         linkedList2.getHead() == null
     }
+
+    def "removeLast"() {
+        given:
+        LinkedList<Integer> linkedList = new LinkedList(0)
+        linkedList.addToEnd(6)
+        linkedList.addToEnd(7)
+
+        when:
+        linkedList.removeLast()
+
+        then:
+        linkedList.getHead().getValue() == 0
+        linkedList.getNext().getValue() == 6
+        linkedList.getNext().getNext() == null
+    }
 }

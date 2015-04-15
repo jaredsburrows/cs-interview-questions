@@ -2,8 +2,8 @@ apply plugin: 'cpp'
 apply plugin: 'java'
 apply plugin: 'groovy'
 
-sourceCompatibility = JavaVersion.VERSION_1_7
-targetCompatibility = JavaVersion.VERSION_1_7
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     jcenter()
@@ -18,7 +18,7 @@ dependencies {
 
 tasks.withType(JavaCompile) {
     configure(options) {
-        compilerArgs << '-Xlint:deprecation' << '-Xlint:unchecked'
+        compilerArgs << '-Xlint:all' << '-Xlint:-options'
         deprecation = true
         encoding = 'UTF-8'
     }

@@ -3,7 +3,7 @@ package util;
 public class Node<T> {
     public Node<T> next;
     public Node<T> previous;
-    private final T value;
+    public T value;
 
     public Node(final T value) {
         this.value = value;

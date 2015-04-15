@@ -1,6 +1,6 @@
 package questions.linkedlist;
 
-import util.ListNode;
+import util.Node;
 
 public class AddTwoNumbers {
     /**
@@ -13,14 +13,14 @@ public class AddTwoNumbers {
      */
     // node1 and node2 numbers are stored forwards
     // the answer node is backwards
-    public static ListNode addTwoNumbers(ListNode node1, ListNode node2) {
+    public static Node<Integer> addTwoNumbers(Node<Integer> node1, Node<Integer> node2) {
         if (node1 == null || node2 == null) {
             return null;
         }
 
         int carry = 0;
-        final ListNode answer = new ListNode(0);
-        ListNode head = answer;
+        final Node<Integer> answer = new Node<>(0);
+        Node<Integer> head = answer;
 
         while (node1 != null || node2 != null) {
             if (node1 != null) {
@@ -33,13 +33,13 @@ public class AddTwoNumbers {
                 node2 = node2.next;
             }
 
-            head.next = new ListNode(carry % 10);
+            head.next = new Node<>(carry % 10);
             head = head.next;
             carry /= 10;
         }
 
         if (carry == 1) {
-            head.next = new ListNode(1);
+            head.next = new Node<>(1);
         }
 
         return answer.next;

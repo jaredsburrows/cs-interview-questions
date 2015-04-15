@@ -1,9 +1,10 @@
 package crackingthecode.part1datastructures;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import util.ListNode;
+import util.Node;
 
 public class Chapter2LinkedLists {
 
@@ -12,52 +13,52 @@ public class Chapter2LinkedLists {
      * FOLLOW UP
      * How would you solve this problem if a temporary buffer is not allowed?
      */
-    public static void removeDuplicates(final ListNode listNode) {
-        if (listNode == null) {
+    public static void removeDuplicates(final Node<Integer> node) {
+        if (node == null) {
             return;
         }
-        Set<Integer> unique = new HashSet<>();
 
-        ListNode current = listNode;
-        ListNode previous = null;
+        Set<Integer> integers = new HashSet<>(Arrays.asList(1, 4));
 
-        boolean del = false;
+        Node<Integer> current = node;
 
-        while (current != null) {
-            if (del) {
-                previous = current.next;
-
-                if (current.next != null) {
-                    current.next = current.next.next;
-                }
-
-                del = false;
+        while (current.next.next != null) {
+//            int value = current.value;
+//            if (integers.containsKey(value)) {
+//                current = current.next;
+//            } else {
+//                integers.put(value, true);
+//                current = current.next;
+//            }
+            if (integers.contains(current.value)) {
+                current = current.next.next;
             } else {
                 current = current.next;
-                del = true;
             }
         }
-
-//        while (current != null) {
-//            if (unique.contains(current.value)) {
-////                current = current.next.next;
-//                previous = current.next;
-//                current.next = current.next.next;
-//            } else {
-//                unique.add(current.value);
-//            }
-//
-//            current = previous;
-//
-////            current = current.next;
-//        }
-
     }
 
-    public static void deleteEveryOtherRecursive(ListNode listNode) {
-        if (listNode != null && listNode.next != null) {
-            listNode.next = listNode.next.next;
-            deleteEveryOtherRecursive(listNode.next);
+    // Time - O(N)
+    public static void removeDuplicatesSorted(final Node<Integer> node) {
+        if (node == null) {
+            return;
+        }
+
+        Node<Integer> current = node;
+
+        while (current.next != null) {
+            if (current.value.equals(current.next.value)) {
+                current.next = current.next.next;
+            } else {
+                current = current.next;
+            }
+        }
+    }
+
+    public static void deleteEveryOtherRecursive(Node<Integer> node) {
+        if (node != null && node.next != null) {
+            node.next = node.next.next;
+            deleteEveryOtherRecursive(node.next);
         }
     }
 
@@ -65,12 +66,12 @@ public class Chapter2LinkedLists {
      * 2.2 - Implement an algorithm to find the nth to last element of a singly linked list.
      */
     // Time - O(N), Space - O(1)
-    public static ListNode findNthLastElement(ListNode listNode, final int n) {
-        if (listNode == null || n < 1) {
+    public static Node<Integer> findNthLastElement(Node<Integer> node, final int n) {
+        if (node == null || n < 1) {
             return null;
         }
 
-        ListNode temp = listNode;
+        Node<Integer> temp = node;
         int count = 0;
         int newCount = 0;
 
@@ -81,12 +82,12 @@ public class Chapter2LinkedLists {
 
         int element = count - n;
 
-        while (listNode != null) {
+        while (node != null) {
             if (newCount == element) {
-                return listNode;
+                return node;
             }
             newCount++;
-            listNode = listNode.next;
+            node = node.next;
         }
 
         return null;
@@ -99,16 +100,60 @@ public class Chapter2LinkedLists {
      * Input: the node ‘c’ from the linked list a->b->c->d->e
      * Result: nothing is returned, but the new linked list looks like a->b->d->e
      */
+    // Time - O(1)
+    public static void deleteMiddleNode(Node<Character> n) {
+        if (n == null || n.next == null) {
+            return;
+        }
+
+        Node<Character> next = n.next;
+        n.value = next.value; // the trick
+        n.next = next.next;
+    }
 
     /**
      * 2.4 - You have two numbers represented by a linked list, where each node contains a single
      * digit. The digits are stored in reverse order, such that the 1’s digit is at the head of the
      * list. Write a function that adds the two numbers and returns the sum as a linked list.
-     *
+     * <p/>
      * EXAMPLE
      * Input: (3 -> 1 -> 5) + (5 -> 9 -> 2)
      * Output: 8 -> 0 -> 8
      */
+    // Linked list  - 3-1-5 (513)
+    // Linked list2 - 5-9-2 (295)
+    // sum          - 8-0-8
+    public static Node<Integer> addTwoLists(Node<Integer> n, Node<Integer> n2) {
+        if (n == null || n2 == null) {
+            return null;
+        }
+
+        int carry = 0;
+        final Node<Integer> sum = new Node<>(0);
+        Node<Integer> head = sum;
+
+        while (n != null || n2 != null) {
+            if (n != null) {
+                carry += n.value;
+                n = n.next;
+            }
+
+            if (n2 != null) {
+                carry += n2.value;
+                n2 = n2.next;
+            }
+
+            head.next = new Node<>(carry % 10);
+            head = head.next;
+            carry /= 10;
+        }
+
+        if (carry == 1) {
+            head.next = new Node<>(1);
+        }
+
+        return sum.next;
+    }
 
     /**
      * Given a circular linked list, implement an algorithm which returns node at the beginning of
