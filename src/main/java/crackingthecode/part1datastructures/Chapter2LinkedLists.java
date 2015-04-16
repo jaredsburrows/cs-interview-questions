@@ -23,13 +23,6 @@ public class Chapter2LinkedLists {
         Node<Integer> current = node;
 
         while (current.next.next != null) {
-//            int value = current.value;
-//            if (integers.containsKey(value)) {
-//                current = current.next;
-//            } else {
-//                integers.put(value, true);
-//                current = current.next;
-//            }
             if (integers.contains(current.value)) {
                 current = current.next.next;
             } else {
@@ -115,7 +108,7 @@ public class Chapter2LinkedLists {
      * 2.4 - You have two numbers represented by a linked list, where each node contains a single
      * digit. The digits are stored in reverse order, such that the 1’s digit is at the head of the
      * list. Write a function that adds the two numbers and returns the sum as a linked list.
-     * <p/>
+     * <p>
      * EXAMPLE
      * Input: (3 -> 1 -> 5) + (5 -> 9 -> 2)
      * Output: 8 -> 0 -> 8
@@ -165,5 +158,13 @@ public class Chapter2LinkedLists {
      * input: A -> B -> C -> D -> E -> C [the same C as earlier]
      * output: C
      */
+    public static Node<Integer> getCircular(Node<Integer> n) {
+        if (n == null) {
+            return null;
+        }
+
+
+        return null;
+    }
 
 }
