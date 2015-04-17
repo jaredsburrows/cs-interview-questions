@@ -1,87 +1,102 @@
 package crackingthecode.part1datastructures
 
-import spock.lang.Ignore
 import spock.lang.Specification
 import util.Node
 
 class Chapter2LinkedListsSpec extends Specification {
 
-    @Ignore
-    def "2.1 - removeDuplicates"() {
+    def "2.1 - removeDuplicates - buffer"() {
         given:
-        Node Node = new Node<>(1)
-        Node.next = new Node<>(0)
-        Node.next.next = new Node<>(1)
-        Node.next.next.next = new Node<>(4)
-        Node.next.next.next.next = new Node<>(5)
-        Node.next.next.next.next.next = new Node<>(4)
+        Node<Integer> node = new Node<>(1)
+        node.next = new Node<>(0)
+        node.next.next = new Node<>(1)
+        node.next.next.next = new Node<>(4)
+        node.next.next.next.next = new Node<>(5)
+        node.next.next.next.next.next = new Node<>(4)
 
         when:
-        Chapter2LinkedLists.removeDuplicates(Node)
+        Chapter2LinkedLists.removeDuplicates(node)
 
         then:
-        Node.value == 1
-        Node.next.next.value == 1
-        Node.next.next.next.next.value == 5
-
-//        Node.value == 1
-//        Node.next.value == 0
-//        Node.next.next.value == 4
-//        Node.next.next.next.value == 5
+        node.value == 1
+        node.next.value == 0
+        node.next.next.value == 4
+        node.next.next.next.value == 5
     }
 
-    def "removeDuplicates - sorted"() {
+    def "2.1 - removeDuplicates - no buffer"() {
         given:
-        Node Node = new Node<>(0)
-        Node.next = new Node<>(0)
-        Node.next.next = new Node<>(1)
-        Node.next.next.next = new Node<>(1)
-        Node.next.next.next.next = new Node<>(5)
+        Node<Integer> node = new Node<>(1)
+        node.next = new Node<>(0)
+        node.next.next = new Node<>(1)
+        node.next.next.next = new Node<>(4)
+        node.next.next.next.next = new Node<>(5)
+        node.next.next.next.next.next = new Node<>(4)
 
         when:
-        Chapter2LinkedLists.removeDuplicatesSorted(Node)
+        Chapter2LinkedLists.removeDuplicates2(node)
 
         then:
-        Node.value == 0
-        Node.next.value == 1
-        Node.next.next.value == 5
+        node.value == 1
+        node.next.value == 0
+        node.next.next.value == 4
+        node.next.next.next.value == 5
+    }
+
+    def "2.1 - removeDuplicates2 - no buffer - online"() {
+        given:
+        Node<Integer> node = new Node<>(1)
+        node.next = new Node<>(0)
+        node.next.next = new Node<>(1)
+        node.next.next.next = new Node<>(4)
+        node.next.next.next.next = new Node<>(5)
+        node.next.next.next.next.next = new Node<>(4)
+
+        when:
+        Chapter2LinkedLists.removeDuplicates3(node)
+
+        then:
+        node.value == 1
+        node.next.value == 0
+        node.next.next.value == 4
+        node.next.next.next.value == 5
     }
 
     def "deleteEveryOther"() {
         given:
-        Node Node = new Node<>(1)
-        Node.next = new Node<>(1)
-        Node.next.next = new Node<>(2)
-        Node.next.next.next = new Node<>(2)
-        Node.next.next.next.next = new Node<>(4)
-        Node.next.next.next.next.next = new Node<>(5)
+        Node<Integer> node = new Node<>(1)
+        node.next = new Node<>(1)
+        node.next.next = new Node<>(2)
+        node.next.next.next = new Node<>(2)
+        node.next.next.next.next = new Node<>(4)
+        node.next.next.next.next.next = new Node<>(5)
 
         when:
-        Chapter2LinkedLists.deleteEveryOtherRecursive(Node)
+        Chapter2LinkedLists.deleteEveryOtherRecursive(node)
 
         then:
-        Node.value == 1
-        Node.next.value == 2
-        Node.next.next.value == 4
+        node.value == 1
+        node.next.value == 2
+        node.next.next.value == 4
     }
 
     def "2.2 - findNthLastElement"() {
-        Node Node = new Node<>(0)
-        Node.next = new Node<>(1)
-        Node.next.next = new Node<>(2)
-        Node.next.next.next = new Node<>(3)
-        Node.next.next.next.next = new Node<>(4)
-        Node.next.next.next.next.next = new Node<>(5)
+        Node<Integer> node = new Node<>(0)
+        node.next = new Node<>(1)
+        node.next.next = new Node<>(2)
+        node.next.next.next = new Node<>(3)
+        node.next.next.next.next = new Node<>(4)
+        node.next.next.next.next.next = new Node<>(5)
 
         expect:
         Chapter2LinkedLists.findNthLastElement(null, 6) == null
-        Chapter2LinkedLists.findNthLastElement(Node, 0) == null
-        Chapter2LinkedLists.findNthLastElement(Node, 6).value == 0
-        Chapter2LinkedLists.findNthLastElement(Node, 5).value == 1
-        Chapter2LinkedLists.findNthLastElement(Node, 4).value == 2
-        Chapter2LinkedLists.findNthLastElement(Node, 3).value == 3
-        Chapter2LinkedLists.findNthLastElement(Node, 2).value == 4
-        Chapter2LinkedLists.findNthLastElement(Node, 1).value == 5
+        Chapter2LinkedLists.findNthLastElement(node, 0) == null
+        Chapter2LinkedLists.findNthLastElement(node, 6).value == 0
+        Chapter2LinkedLists.findNthLastElement(node, 5).value == 1
+        Chapter2LinkedLists.findNthLastElement(node, 4).value == 2
+        Chapter2LinkedLists.findNthLastElement(node, 3).value == 3
+        Chapter2LinkedLists.findNthLastElement(node, 2).value == 4
+        Chapter2LinkedLists.findNthLastElement(node, 1).value == 5
     }
 
     def "2.3 - deleteMiddleNode"() {
@@ -153,22 +168,28 @@ class Chapter2LinkedListsSpec extends Specification {
         result3.next.next.next.value == 1
     }
 
+    //           D -> E
+    //           |    |
+    // A -> B -> C  <-
     // input: A -> B -> C -> D -> E -> C [the same C as earlier]
-    @Ignore
     def "2.5 - getCircular"() {
         given:
-        Node<Integer> node
-        Node<Integer> n = new Node<>(1)               // A
-        n.next = new Node<>(2)                        // B
-        n.next.next = new Node<>(3)                   // C
-        n.next.next.next = new Node<>(4)              // D
-        n.next.next.next.next = new Node<>(5)         // E
-        n.next.next.next.next.next = new Node<>(3)    // C
+        Node<Integer> nodeA = new Node<>(0)
+        Node<Integer> nodeB = new Node<>(1)
+        Node<Integer> nodeC = new Node<>(2)
+        Node<Integer> nodeD = new Node<>(3)
+        Node<Integer> nodeE = new Node<>(4)
+
+        nodeA.next = nodeB
+        nodeB.next = nodeC
+        nodeC.next = nodeD
+        nodeD.next = nodeE
+        nodeE.next = nodeC
 
         when:
-        node = Chapter2LinkedLists.getCircular(n)
+        Node<Integer> result = Chapter2LinkedLists.getCircular(nodeA)
 
         then:
-        node.value == 3
+        result.value == 3
     }
 }

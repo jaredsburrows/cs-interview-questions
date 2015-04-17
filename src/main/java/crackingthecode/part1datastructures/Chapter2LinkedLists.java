@@ -1,6 +1,5 @@
 package crackingthecode.part1datastructures;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,36 +12,107 @@ public class Chapter2LinkedLists {
      * FOLLOW UP
      * How would you solve this problem if a temporary buffer is not allowed?
      */
+    // Time - O(N)
     public static void removeDuplicates(final Node<Integer> node) {
         if (node == null) {
             return;
         }
 
-        Set<Integer> integers = new HashSet<>(Arrays.asList(1, 4));
+        Set<Integer> integers = new HashSet<>();
 
         Node<Integer> current = node;
+        Node<Integer> previous = null;
 
-        while (current.next.next != null) {
+        while (current != null) {
             if (integers.contains(current.value)) {
-                current = current.next.next;
+                if (previous != null) {
+                    previous.next = current.next;
+                }
             } else {
-                current = current.next;
+                integers.add(current.value);
+                previous = current;
             }
+            current = current.next;
         }
     }
 
-    // Time - O(N)
-    public static void removeDuplicatesSorted(final Node<Integer> node) {
-        if (node == null) {
+    // Time - O(N^2)
+    public static void removeDuplicates2(final Node<Integer> n) {
+        if (n == null) {
             return;
         }
 
-        Node<Integer> current = node;
+        Node<Integer> node = n;
+        Node<Integer> node2 = n;
+        Node<Integer> node3 = null;
 
-        while (current.next != null) {
-            if (current.value.equals(current.next.value)) {
-                current.next = current.next.next;
-            } else {
+        while (node != null) {
+            while (node2.next != null) {
+                if (node.value.equals(node2.value)) {
+                    if (node3 != null) {
+                        node3.next = node2.next;
+                    }
+                } else {
+                    node3 = node2;
+                }
+                node2 = node2.next;
+            }
+            node = node.next;
+        }
+    }
+
+    // Time - O(N^2)
+    public static void removeDuplicates3(final Node<Integer> n) {
+        if (n == null) {
+            return;
+        }
+
+        Node<Integer> current = n;
+
+        while (current != null) {
+            Node<Integer> runner = current;
+            while (runner.next != null) {
+                if (runner.next.value.equals(current.value)) {
+                    runner.next = runner.next.next;
+                } else {
+                    runner = runner.next;
+                }
+            }
+            current = current.next;
+        }
+    }
+
+    // book
+    public static void deleteDupsC(Node<Integer> head) {
+        if (head == null) {
+            return;
+        }
+        Node<Integer> previous = head;
+        Node<Integer> current = previous.next;
+        while (current != null) {
+            // Look backwards for dups, and remove any that you see.
+            Node<Integer> runner = head;
+            while (runner != current) {
+                if (runner.value == current.value) {
+                    Node<Integer> tmp = current.next;
+                    previous.next = tmp;
+                    current = tmp;
+                    /* We know we can't have more than one dup preceding
+                     * our element since it would have been removed
+					 * earlier. */
+                    break;
+                }
+                runner = runner.next;
+            }
+
+			/* If runner == current, then we didn't find any duplicate
+             * elements in the previous for loop.  We then need to
+			 * increment current.
+			 * If runner != current, then we must have hit the ‘break’
+			 * condition, in which case we found a dup and current has
+			 * already been incremented.*/
+            if (runner == current) {
+                previous = current;
                 current = current.next;
             }
         }
@@ -158,11 +228,23 @@ public class Chapter2LinkedLists {
      * input: A -> B -> C -> D -> E -> C [the same C as earlier]
      * output: C
      */
-    public static Node<Integer> getCircular(Node<Integer> n) {
-        if (n == null) {
+    // Book has a longer solution but seems very uneccesary
+    public static Node<Integer> getCircular(Node<Integer> node) {
+        if (node == null) {
             return null;
         }
 
+        Node<Integer> first = node;
+        Node<Integer> second = node;
+
+        while (first.next != null && second.next != null) {
+            first = first.next;
+            second = second.next.next;
+
+            if (first.equals(second)) {
+                return first;
+            }
+        }
 
         return null;
     }
