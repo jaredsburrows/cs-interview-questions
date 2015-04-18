@@ -22,9 +22,11 @@ Computer Science Interview Practice
 
 ## [Common Interview Questions](src/main/java/questions)
 
-**Sites used:**
+**Sites and Resources used:**
 
- - http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
+ - http://www.programcreek.com/
+   - http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
+ - http://www.geeksforgeeks.org/
 
 ## Languages Used
 

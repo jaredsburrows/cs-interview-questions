@@ -15,7 +15,7 @@ public class Subsets {
         final List<ArrayList<T>> subsets = new ArrayList<>();
 
         /* Empty Set */
-        subsets.add(new ArrayList<T>());
+        subsets.add(new ArrayList<>());
 
         /* Order */
         Collections.sort(data);

@@ -2,7 +2,9 @@ package questions.stringarraymatrix;
 
 public class RotateArray {
 
-    // Time O(N) - Space O(1)
+    // before: 1,2,3,4,5,6, shift: 2
+    // after:  5,6,1,2,3,4
+    // Time - O(N), Space - O(1)
     public static int[] rotate(final int[] array, int shift) {
         if (array == null || shift < 0) {
             return null;
@@ -11,33 +13,18 @@ public class RotateArray {
         // adjust based on shift
         shift %= array.length;
 
-        int length = array.length - shift;
+        int shiftLength = array.length - shift;
+        int actualLength = array.length - 1;
 
         // reverse non-shift elements
-        reverse(array, 0, length - 1);
+        ReverseArray.reverse(array, 0, shiftLength - 1);         // 4,3,2,1,|5,6
 
         // reverse shift elements
-        reverse(array, length, array.length - 1);
+        ReverseArray.reverse(array, shiftLength, actualLength);  // 4,3,2,1,|6,5
 
         // reverse the entire array
-        reverse(array, 0, array.length - 1);
+        ReverseArray.reverse(array, 0, actualLength);            // 5,6|,1,2,3,4
 
         return array;
-    }
-
-    // Time O(N) - Space O(1)
-    private static void reverse(int[] array, int start, int end) {
-        if (array == null || array.length < 2) {
-            return;
-        }
-
-        while (start < end) {
-            int tmp = array[start];
-            array[start] = array[end];
-            array[end] = tmp;
-
-            start++;
-            end--;
-        }
     }
 }

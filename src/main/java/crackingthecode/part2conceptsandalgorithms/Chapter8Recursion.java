@@ -2,6 +2,8 @@ package crackingthecode.part2conceptsandalgorithms;
 
 import java.util.ArrayList;
 
+import util.Color;
+
 public class Chapter8Recursion {
 
     /**
@@ -61,22 +63,54 @@ public class Chapter8Recursion {
     /**
      * 8.3 - Write a method that returns all subsets of a set.
      */
+    public static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> initial, int size) {
+        if (initial == null || size < 0) {
+            return null;
+        }
+
+        ArrayList<ArrayList<Integer>> finalList;
+        if (initial.size() == size) {
+            // empty set
+            finalList = new ArrayList<>();
+            finalList.add(new ArrayList<>());
+        } else {
+            finalList = getSubsets(initial, size + 1);
+            ArrayList<ArrayList<Integer>> newSetList = new ArrayList<>();
+            for (ArrayList<Integer> set : finalList) {
+                // new set is being created
+                ArrayList<Integer> temp = new ArrayList<>();
+                temp.addAll(set);
+                temp.add(initial.get(size));
+                newSetList.add(temp);
+            }
+
+            // add to final list
+            finalList.addAll(newSetList);
+        }
+        return finalList;
+    }
 
     /**
      * 8.4 - Write a method to compute all permutations of a string.
      */
-    // TODO
-    public static ArrayList<String> getStringPermutations(final String prefix, final String string) {
-        final ArrayList<String> permutations = new ArrayList<>();
-        if (string == null || string.isEmpty()) {
-            permutations.add(prefix);
+    public static ArrayList<String> getStringPermutations(String prefix, String string) {
+        if (string == null) {
+            return null;
+        }
+
+        ArrayList<String> finalList = new ArrayList<>();
+        int length = string.length();
+        if (length == 0) {
+            // empty string
+            finalList.add(prefix);
         } else {
-            int length = string.length();
             for (int i = 0; i < length; i++) {
-                permutations.addAll(getStringPermutations(prefix + string.charAt(i), string.substring(i + 1, length) + string.substring(0, i)));
+                // add to final list
+                finalList.addAll(getStringPermutations(prefix + string.charAt(i), string.substring(i + 1, length) + string.substring(0, i)));
             }
         }
-        return permutations;
+
+        return finalList;
     }
 
     /**
@@ -86,21 +120,112 @@ public class Chapter8Recursion {
      * input: 3 (e.g., 3 pairs of parentheses)
      * output: ()()(), ()(()), (())(), ((()))
      */
+    // the book question is missing - (()())
+    public static void generatedValidParentheses(int pairs, int left, int right, String pairString) {
+        if (pairs < 1 || left < 0 || right < 0 || pairString == null) {
+            return;
+        }
+
+        if (right == pairs) {
+            System.out.println(pairString);
+        }
+
+        // make sure left is not greater than number of pairs
+        if (left < pairs) {
+            getValidParentheses(pairs, left + 1, right, pairString + "(");
+        }
+
+        // make sure right is not greater than number of pairs
+        // make sure right is left than left, (()
+        if ((right < pairs) && (right < left)) {
+            getValidParentheses(pairs, left, right + 1, pairString + ")");
+        }
+    }
+
+    public static ArrayList<String> getValidParentheses(int pairs, int left, int right, String pairString) {
+        if (pairs < 1 || left < 0 || right < 0 || pairString == null) {
+            return null;
+        }
+
+        ArrayList<String> generatedList = new ArrayList<>();
+
+        if (right == pairs) {
+            generatedList.add(pairString);
+        }
+
+        // make sure left is not greater than number of pairs
+        if (left < pairs) {
+            generatedList.addAll(getValidParentheses(pairs, left + 1, right, pairString + "("));
+        }
+
+        // make sure right is not greater than number of pairs
+        // make sure right is left than left, (()
+        if ((right < pairs) && (right < left)) {
+            generatedList.addAll(getValidParentheses(pairs, left, right + 1, pairString + ")"));
+        }
+
+        return generatedList;
+    }
 
     /**
      * 8.6 - Implement the “paint fill” function that one might see on many image editing programs.
      * That is, given a screen (represented by a 2-dimensional array of Colors), a point, and a new
      * color, fill in the surrounding area until you hit a border of that color.
      */
+    public static void paintFill(Color[][] pixels, int x, int y, Color oldcolor, Color newColor) {
+        if (x < 0 || x >= pixels[0].length || y < 0 || y >= pixels.length) {
+            return;
+        }
+
+        if (pixels[x][y] != oldcolor) {
+            return;
+        }
+        pixels[x][y] = newColor;
+        paintFill(pixels, x + 1, y, oldcolor, newColor); // right
+        paintFill(pixels, x - 1, y, oldcolor, newColor); // left
+        paintFill(pixels, x, y + 1, oldcolor, newColor); // down
+        paintFill(pixels, x, y - 1, oldcolor, newColor); // up
+    }
+
+    public static void paintFill(Color[][] pixels, int x, int y, Color newColor) {
+        Color oldcolor = pixels[x][y];
+        paintFill(pixels, x, y, oldcolor, newColor);
+    }
+
+    public static void floodFillUtil(int screen[][], int x, int y, int prevC, int newC) {
+        // Base cases
+        if (x < 0 || x >= 8 || y < 0 || y >= 8) {
+            return;
+        }
+        if (screen[x][y] != prevC) {
+            return;
+        }
+
+        // Replace the color at (x, y)
+        screen[x][y] = newC;
+
+        // Recur for north, east, south and west
+        floodFillUtil(screen, x + 1, y, prevC, newC);
+        floodFillUtil(screen, x - 1, y, prevC, newC);
+        floodFillUtil(screen, x, y + 1, prevC, newC);
+        floodFillUtil(screen, x, y - 1, prevC, newC);
+    }
+
+    public static void floodFill(int screen[][], int x, int y, int newC) {
+        int prevC = screen[x][y];
+        floodFillUtil(screen, x, y, prevC, newC);
+    }
 
     /**
      * 8.7 - Given an infinite number of quarters (25 cents), dimes (10 cents), nickels (5 cents)
      * and pennies (1 cent), write code to calculate the number of ways of representing n cents.
      */
+    // number of ways
 
     /**
      * 8.8 - Write an algorithm to print all ways of arranging eight queens on a chess board so that
      * none of them share the same row, column or diagonal.
      */
+    // TODO
 
 }
