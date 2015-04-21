@@ -1,6 +1,6 @@
 package questions.linkedlist
 
-import util.Node
+import api.Node
 import spock.lang.Specification
 
 class AddTwoNumberSpec extends Specification {

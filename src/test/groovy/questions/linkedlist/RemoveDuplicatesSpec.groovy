@@ -1,7 +1,7 @@
 package questions.linkedlist
 
 import spock.lang.Specification
-import util.Node
+import api.Node
 
 class RemoveDuplicatesSpec extends Specification {
 

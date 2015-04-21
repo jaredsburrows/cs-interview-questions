@@ -2,7 +2,7 @@ package crackingthecode.part2conceptsandalgorithms;
 
 import java.util.ArrayList;
 
-import util.Color;
+import api.Color;
 
 public class Chapter8Recursion {
 
@@ -221,6 +221,76 @@ public class Chapter8Recursion {
      * and pennies (1 cent), write code to calculate the number of ways of representing n cents.
      */
     // number of ways
+    // dollar   == 100  cents
+    // quarter  == 25   cents
+    // dimes    == 10   cents
+    // nickels  == 5    cents
+    // pennies  == 1    cent
+    public static int getRepresentCents(int cents, int denomination) {
+        if (cents < 2) {
+            return 1;
+        }
+
+//        if (denomination != 25 || denomination != 10 || denomination != 5 || denomination != 1) {
+//            return -1;
+//        }
+
+        int count = 0;
+        int nextDenomination = 0;
+
+        if (denomination == 25) {
+            nextDenomination = 10;
+        }
+
+        if (denomination == 10) {
+            nextDenomination = 5;
+        }
+
+        if (denomination == 5) {
+            nextDenomination = 1;
+        }
+
+        if (denomination == 1) {
+            // add 1
+            return 1;
+        }
+
+        // 4 * 25 < 100
+        // 0 quarters, 0 * 25 = 0, other smaller denominations
+        // 1 quarter, 1 * 25 = 25, other denominations
+        // 2 quarters, 2 * 25 = 50, other denominations
+        // 3 quarters, 3 * 25 = 75, other denominations
+        // 4 quarters, 4 * 25 = 100, 4 quarters
+        for (int i = 0; i * denomination <= cents; i++) {
+            count += getRepresentCents(cents - (i * denomination), nextDenomination);
+        }
+
+        return count;
+    }
+
+    // Book answer
+    public static int makeChange(int n, int denom) {
+        int next_denom = 0;
+        switch (denom) {
+            case 25:
+                next_denom = 10;
+                break;
+            case 10:
+                next_denom = 5;
+                break;
+            case 5:
+                next_denom = 1;
+                break;
+            case 1:
+                return 1;
+        }
+
+        int ways = 0;
+        for (int i = 0; i * denom <= n; i++) {
+            ways += makeChange(n - i * denom, next_denom);
+        }
+        return ways;
+    }
 
     /**
      * 8.8 - Write an algorithm to print all ways of arranging eight queens on a chess board so that

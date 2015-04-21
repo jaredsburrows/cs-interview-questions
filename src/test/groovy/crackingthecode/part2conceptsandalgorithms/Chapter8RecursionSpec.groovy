@@ -1,9 +1,9 @@
 package crackingthecode.part2conceptsandalgorithms
 
 import spock.lang.Specification
-import util.Color
+import api.Color
 
-import static util.Color.*
+import static api.Color.*
 
 class Chapter8RecursionSpec extends Specification {
 
@@ -106,4 +106,22 @@ class Chapter8RecursionSpec extends Specification {
               [1, 1, 1, 1, 1, 3, 3, 1]]
     }
 
+    def "8.7 - getRepresentCents"() {
+        expect:
+        // starting with quarters
+        Chapter8Recursion.getRepresentCents(a as int, 25) == b
+        Chapter8Recursion.makeChange(a as int, 25) == b
+
+        where:
+        a    || b
+        1000 || 142511
+        100  || 242
+        10   || 4
+        1    || 1
+
+    }
+
+    def "8.8 - "() {
+
+    }
 }

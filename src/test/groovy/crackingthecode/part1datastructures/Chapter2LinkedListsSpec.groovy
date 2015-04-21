@@ -1,7 +1,7 @@
 package crackingthecode.part1datastructures
 
 import spock.lang.Specification
-import util.Node
+import api.Node
 
 class Chapter2LinkedListsSpec extends Specification {
 

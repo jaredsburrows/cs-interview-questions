@@ -1,6 +1,5 @@
 package crackingthecode.part1datastructures;
 
-import java.io.Serializable;
 import java.util.Stack;
 
 public class Chapter3StacksAndQueues {
@@ -23,8 +22,8 @@ public class Chapter3StacksAndQueues {
      * min which returns the minimum element? Push, pop and min should all operate in O(1) time.
      */
     // book suggest not to store min in each stack, too much memory from duplicates
-    static class MinStack extends Stack<Integer> implements Serializable {
-        private static final long serialVersionUID = 1L;
+    @SuppressWarnings("serial")
+    public static class MinStack extends Stack<Integer> {
 
         Stack<Integer> minStack = new Stack<>();
 
@@ -80,11 +79,69 @@ public class Chapter3StacksAndQueues {
     /**
      * 3.5 - Implement a MyQueue class which implements a queue using two stacks.
      */
+    // [3]     [1]
+    // [2]  -> [2]
+    // [1]     [3]
+    public static class MyQueue<T> {
+        Stack<T> stack1 = new Stack<>();
+        Stack<T> stack2 = new Stack<>();
+
+        // Time - O(1)
+        public int size() {
+            return stack1.size() + stack2.size();
+        }
+
+        // Time - O(1)
+        public void push(T t) {
+            stack1.push(t);
+        }
+
+        // Time - O(N)
+        public T remove() {
+            // stack 2 needs to be empty to pop stack1
+            if (!stack2.isEmpty()) {
+                return stack2.pop();
+            }
+
+            while (!stack1.isEmpty()) {
+                stack2.push(stack1.pop());
+            }
+
+            return stack2.pop();
+        }
+
+        // Time - O(N)
+        public T peek() {
+            // stack 2 needs to be empty to peek stack1
+            if (!stack2.isEmpty()) {
+                return stack2.peek();
+            }
+
+            while (!stack1.isEmpty()) {
+                stack2.push(stack1.pop());
+            }
+
+            return stack2.peek();
+        }
+    }
 
     /**
      * 3.6 - Write a program to sort a stack in ascending order. You should not make any assumptions
      * about how the stack is implemented. The following are the only functions that should be used
      * to write this program: push | pop | peek | isEmpty.
      */
+    // Time - O(N^2), Space - O(N)
+    public static Stack<Integer> getSortedStack(final Stack<Integer> stack) {
+        final Stack<Integer> sortedStack = new Stack<>();
 
+        while (!stack.isEmpty()) {
+            int popped = stack.pop();
+            while (!sortedStack.isEmpty() && (sortedStack.peek() > popped)) {
+                stack.push(sortedStack.pop());
+            }
+            sortedStack.push(popped);
+        }
+
+        return sortedStack;
+    }
 }

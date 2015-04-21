@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import util.Tuple;
+import api.Tuple;
 
 public class Chapter19Moderate {
 

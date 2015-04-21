@@ -1,6 +1,8 @@
 package crackingthecode.part1datastructures;
 
-import util.TreeNode;
+import api.TreeNode;
+import questions.treeheap.EqualTree;
+import questions.treeheap.TreeHeight;
 
 public class Chapter4TreesAndGraphs {
 
@@ -10,28 +12,7 @@ public class Chapter4TreesAndGraphs {
      * the root by more than one.
      */
     public static boolean isBalanced(final TreeNode treeNode) {
-        return treeNode == null || getHeight(treeNode) != -1;
-    }
-
-    public static int getHeight(final TreeNode treeNode) {
-        if (treeNode == null) {
-            return 0;
-        }
-
-        int left = getHeight(treeNode.left);
-        int right = getHeight(treeNode.right);
-
-        if (left == -1 || right == -1) {
-            return -1;
-        }
-
-        // balanced tree is defined to be a tree such that no two leaf nodes differ in distance from
-        // the root by more than one
-        if (Math.abs(left - right) > 1) {
-            return -1;
-        }
-
-        return Math.max(left, right) + 1;
+        return treeNode == null || TreeHeight.getHeight(treeNode) != -1;
     }
 
     /**
@@ -50,15 +31,15 @@ public class Chapter4TreesAndGraphs {
     //   /\   /\
     //  1  3  5 7
     // (length - 0) / 2
-    public static TreeNode getBinaryTree(int[] array, int start, int end) {
+    public static TreeNode getMinimumTree(int[] array, int start, int end) {
         if ((array == null) || (array.length == 0) || ((start < 0) || (start > end))) {
             return null;
         }
 
         int mid = (start + end) / 2;
         TreeNode treeNode = new TreeNode(array[mid]);
-        treeNode.left = getBinaryTree(array, start, mid - 1);   // 1 2 3 4 5 6 // remove one from left
-        treeNode.right = getBinaryTree(array, mid + 1, end);    // 2 3 4 5 6 7 // remove one from front
+        treeNode.left = getMinimumTree(array, start, mid - 1);   // 1 2 3 4 5 6 // remove one from left
+        treeNode.right = getMinimumTree(array, mid + 1, end);    // 2 3 4 5 6 7 // remove one from front
 
         return treeNode;
     }
@@ -72,17 +53,21 @@ public class Chapter4TreesAndGraphs {
      * 4.5 - Write an algorithm to find the ‘next’ node (i.e., in-order successor) of a given node
      * in a binary search tree where each node has a link to its parent.
      */
+    // keep parent in node or search from root
 
     /**
      * 4.6 - Design an algorithm and write code to find the first common ancestor of two nodes in a
      * binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not
      * necessarily a binary search tree.
      */
+    // BST
 
     /**
      * 4.7 - You have two very large binary trees: T1, with millions of nodes, and T2, with hundreds
      * of nodes. Create an algorithm to decide if T2 is a subtree of T1.
      */
+    // T1 - millions of nodes
+    // T2 - supposed subtree of T1, should be the same or smaller
     public static boolean isSubtree(final TreeNode treeNode, final TreeNode treeNode2) {
         if (treeNode2 == null) {
             return true;
@@ -92,25 +77,12 @@ public class Chapter4TreesAndGraphs {
             return false;
         }
 
-        if (isEqualTree(treeNode, treeNode2)) {
+        if (EqualTree.isEqual(treeNode, treeNode2)) {
             return true;
         }
 
-        return isEqualTree(treeNode.left, treeNode2) || isEqualTree(treeNode.right, treeNode2); // important || vs &&
-    }
-
-    public static boolean isEqualTree(final TreeNode treeNode, final TreeNode treeNode2) {
-        if (treeNode == null && treeNode2 == null) {
-            return true;
-        }
-
-        if (treeNode == null || treeNode2 == null) {
-            return false;
-        }
-
-        return treeNode.value == treeNode2.value
-                && isEqualTree(treeNode.left, treeNode2.left)
-                && isEqualTree(treeNode.right, treeNode2.right);
+        return EqualTree.isEqual(treeNode.left, treeNode2)
+                || EqualTree.isEqual(treeNode.right, treeNode2); // important || vs &&
     }
 
     /**

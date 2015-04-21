@@ -1,8 +1,11 @@
 package crackingthecode.part2conceptsandalgorithms;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import api.Tuple;
 
 public class Chapter9SortingAndSearching {
 
@@ -10,6 +13,7 @@ public class Chapter9SortingAndSearching {
      * 9.1 - You are given two sorted arrays, A and B, and A has a large enough buffer at the end to
      * hold B. Write a method to merge B into A in sorted order.
      */
+    // TODO - review
     // Time - O(N), Space - O(1)
     public static int[] mergeBInA(final int[] a, final int[] b, final int sizeA) {
         if (a == null) {
@@ -120,21 +124,39 @@ public class Chapter9SortingAndSearching {
      * 9.5 - Given a sorted array of strings which is interspersed with empty strings, write a
      * method to find the location of a given string.
      */
-    // Time - LOG(N), Space - O(1) - Binary Search
-    // TODO
+    // Time - O(LOGN)?, Space - O(1) - Binary Search
     public static int findString(final String[] array, final String target) {
         int min = 0;
         int max = array.length - 1;
 
-        while (min <= max) {
-            int middle = (min + max) / 2;
-            if (array[middle].equals(target)) {
-                return middle;
-            } else if (array[middle].equals("")) {
-            } else if (array[middle].compareTo(target) < 0) {
-                min = middle + 1;
+        String first = "tmp";
+
+        // O(N) -- get first not empty string
+        for (final String anArray : array) {
+            if (!anArray.equals("")) {
+                first = anArray;
+                break;
+            }
+        }
+
+        // O(N) -- fill in blanks, previous + number
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].equals("")) {
+                array[i] = first + i; // O(M + N), we always know i, O(M + 1)
             } else {
-                max = middle - 1;
+                first = array[i];
+            }
+        }
+
+        // O(LOGN) - binary search
+        while (min <= max) {
+            int mid = (min + max) / 2;
+            if (array[mid].equals(target)) { // O(N)
+                return mid;
+            } else if (array[mid].compareTo(target) < 0) { // O(N)
+                min = mid + 1;
+            } else {
+                max = mid - 1;
             }
         }
 
@@ -155,6 +177,48 @@ public class Chapter9SortingAndSearching {
         return pos;
     }
 
+    // book answer
+    public static int findString3(String[] strings, String str, int first, int last) {
+        while (first <= last) {
+            // Ensure there is something at the end
+            while (first <= last && strings[last].equals("")) {
+                last--;
+            }
+            if (first > last) {
+                return -1;
+            }
+
+            int mid = first + (last - first) / 2;
+            while (strings[mid].equals("")) {
+                mid++;
+            }
+
+            int r = strings[mid].compareTo(str);
+            if (r == 0) {
+                return mid;
+            } else if (r < 0) {
+                first = mid + 1;
+            } else {
+                last = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+    public static int findString3(String[] strings, String str) {
+        if (strings == null || str == null) {
+            return -1;
+        }
+        if (str.equals("")) {
+            for (int i = 0; i < strings.length; i++) {
+                if (strings[i].equals("")) {
+                    return i;
+                }
+            }
+        }
+        return findString3(strings, str, 0, strings.length - 1);
+    }
+
     /**
      * 9.6 - Given a matrix in which each row and each column is sorted, write a method to find an
      * element in it.
@@ -171,12 +235,15 @@ public class Chapter9SortingAndSearching {
         int row = 0;
         int col = length;
 
+        // start at top row/col
         while ((row < length) && (col >= 0)) {
             if (matrix[row][col] == target) {
                 return true;
             } else if (matrix[row][col] > target) {
+                // go down y
                 col--;
             } else {
+                // go right x
                 row++;
             }
         }
@@ -197,4 +264,20 @@ public class Chapter9SortingAndSearching {
     // use map
     // sort by height, sort by weight
     // return new map
+    // Time - O(N*LOGN), Space -
+    public static ArrayList<Tuple<Integer, Integer>> getCircusOrder(ArrayList<Tuple<Integer, Integer>> original) {
+
+        // Java 6/7
+//        Collections.sort(original, new Comparator<Tuple<Integer, Integer>>() {
+//            @Override
+//            public int compare(final Tuple<Integer, Integer> o1, final Tuple<Integer, Integer> o2) {
+//                return ((o1.getY() < o2.getY()) && (o1.getX() < o2.getX())) ? -1 : 1;
+//            }
+//        });
+
+        // Java 8
+        Collections.sort(original, (o1, o2) -> ((o1.getY() < o2.getY()) && (o1.getX() < o2.getX())) ? -1 : 1);
+
+        return original;
+    }
 }

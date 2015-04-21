@@ -3,7 +3,7 @@ package crackingthecode.part1datastructures;
 import java.util.HashSet;
 import java.util.Set;
 
-import util.Node;
+import api.Node;
 
 public class Chapter2LinkedLists {
 

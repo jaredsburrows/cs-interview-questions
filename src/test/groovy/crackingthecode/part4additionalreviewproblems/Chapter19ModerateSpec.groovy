@@ -1,7 +1,7 @@
 package crackingthecode.part4additionalreviewproblems
 
 import spock.lang.Specification
-import util.Tuple
+import api.Tuple
 
 class Chapter19ModerateSpec extends Specification {
 
