@@ -30,13 +30,13 @@ Computer Science Interview Practice
 
 ## Languages Used
 
-**Development(src/main):**
+**Development Source(src/main):**
 
  - Java
  - Python (older solutions)
  - C (older solutions)
 
-**Tests(src/test):**
+**Test Source(src/test):**
 
  - Groovy (https://github.com/groovy/groovy-core)
 

@@ -42,7 +42,6 @@ public class Chapter8Recursion {
             third = first + second;
             first = second;
             second = third;
-
         }
 
         return third;
@@ -120,28 +119,6 @@ public class Chapter8Recursion {
      * input: 3 (e.g., 3 pairs of parentheses)
      * output: ()()(), ()(()), (())(), ((()))
      */
-    // the book question is missing - (()())
-    public static void generatedValidParentheses(int pairs, int left, int right, String pairString) {
-        if (pairs < 1 || left < 0 || right < 0 || pairString == null) {
-            return;
-        }
-
-        if (right == pairs) {
-            System.out.println(pairString);
-        }
-
-        // make sure left is not greater than number of pairs
-        if (left < pairs) {
-            getValidParentheses(pairs, left + 1, right, pairString + "(");
-        }
-
-        // make sure right is not greater than number of pairs
-        // make sure right is left than left, (()
-        if ((right < pairs) && (right < left)) {
-            getValidParentheses(pairs, left, right + 1, pairString + ")");
-        }
-    }
-
     public static ArrayList<String> getValidParentheses(int pairs, int left, int right, String pairString) {
         if (pairs < 1 || left < 0 || right < 0 || pairString == null) {
             return null;
@@ -165,6 +142,28 @@ public class Chapter8Recursion {
         }
 
         return generatedList;
+    }
+
+    // the book question is missing - (()())
+    public static void generatedValidParentheses(int pairs, int left, int right, String pairString) {
+        if (pairs < 1 || left < 0 || right < 0 || pairString == null) {
+            return;
+        }
+
+        if (right == pairs) {
+            System.out.println(pairString);
+        }
+
+        // make sure left is not greater than number of pairs
+        if (left < pairs) {
+            getValidParentheses(pairs, left + 1, right, pairString + "(");
+        }
+
+        // make sure right is not greater than number of pairs
+        // make sure right is left than left, (()
+        if ((right < pairs) && (right < left)) {
+            getValidParentheses(pairs, left, right + 1, pairString + ")");
+        }
     }
 
     /**
