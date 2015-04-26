@@ -11,8 +11,8 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.9'
         classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.3.1'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.9'
     }
 }
 
@@ -55,5 +55,16 @@ jacocoTestReport {
         html {
             enabled = true
         }
+    }
+
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(dir: it,
+                    exclude: ['codeeval/**',
+                              'crackingthecode/part3knowledgebased/**',
+                              '**/Chapter7ObjectOrientedDesign**',
+                              '**/Chapter11Testing**',
+                              '**/Chapter12SystemDesignAndMemoryLimits**'])
+        })
     }
 }
