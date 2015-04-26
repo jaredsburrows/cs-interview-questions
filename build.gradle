@@ -1,6 +1,20 @@
 apply plugin: 'cpp'
 apply plugin: 'java'
 apply plugin: 'groovy'
+apply plugin: 'jacoco'
+apply plugin: 'com.github.kt3k.coveralls'
+apply plugin: 'com.github.ben-manes.versions'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.9'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.3.1'
+    }
+}
 
 repositories {
     jcenter()
@@ -29,5 +43,17 @@ tasks.withType(JavaCompile) {
 tasks.withType(Test) {
     testLogging {
         exceptionFormat 'full'
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml {
+            enabled = true // coveralls plugin depends on xml format report
+        }
+
+        html {
+            enabled = true
+        }
     }
 }

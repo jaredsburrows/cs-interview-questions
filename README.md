@@ -1,6 +1,6 @@
 Computer Science Interview Practice
 =============
-[ ![Status](https://travis-ci.org/jaredsburrows/CS-Interview-Questions.svg) ](https://travis-ci.org/jaredsburrows/CS-Interview-Questions)
+[![Build Status](https://travis-ci.org/jaredsburrows/CS-Interview-Questions.svg?branch=master)](https://travis-ci.org/jaredsburrows/CS-Interview-Questions) [![Coverage Status](https://coveralls.io/repos/jaredsburrows/CS-Interview-Questions/badge.svg?branch=master)](https://coveralls.io/r/jaredsburrows/CS-Interview-Questions?branch=master)
 
 ## [CodeEval](src/main/java/codeeval)
 
@@ -48,6 +48,7 @@ Computer Science Interview Practice
 
  - Gradle (https://gradle.org/)
  - TravisCI (https://travis-ci.org/)
+ - Converalls (https://coveralls.io/)
 
 ## License
 

@@ -6,6 +6,9 @@ jdk:
 script:
   - ./gradlew clean assemble check --stacktrace
 
+after_success:
+ - ./gradlew jacocoTestReport coveralls --stacktrace
+
 branches:
   except:
     - gh-pages
