@@ -15,6 +15,7 @@ class RemoveDuplicatesSpec extends Specification {
         node.next.next.next.next = new Node<>(5)
 
         when:
+        removeDuplicates.removeDuplicatesSorted(null)
         removeDuplicates.removeDuplicatesSorted(node)
 
         then:

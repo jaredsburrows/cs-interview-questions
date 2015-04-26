@@ -13,6 +13,7 @@ class PermutationsSpec extends Specification {
 
         where:
         a     || b
+        null  || null
         ""    || [""]
         "abc" || ["abc", "acb", "bca", "bac", "cab", "cba"]
     }

@@ -74,6 +74,7 @@ public class Chapter19Moderate {
      * 19.3 - Write an algorithm which computes the number of trailing zeros in n factorial.
      */
     // 5 * 2 = 10
+    // misinterpreted the question, I thought we were given the factorial
     public int numZeros(int num) {
         int count = 0;
         if (num < 0) {
@@ -85,24 +86,6 @@ public class Chapter19Moderate {
         }
 
         return count;
-    }
-
-    // misinterpreted the question, I thought we were given the factorial
-    public long getTrailingZeros(long number) {
-
-        long numZeros = 0;
-
-        while (number != 0) {
-            long temp = number % 10;
-            number /= 10;
-            if (temp == 0) {
-                numZeros++;
-            } else {
-                break;
-            }
-        }
-
-        return numZeros;
     }
 
     /**

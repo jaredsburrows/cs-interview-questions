@@ -10,10 +10,6 @@ public class LinkedList<T> {
         this.head = new Node<>(value);
     }
 
-    public Node<T> getPrevious() {
-        return this.head.getPrevious();
-    }
-
     public Node<T> getHead() {
         return this.head;
     }

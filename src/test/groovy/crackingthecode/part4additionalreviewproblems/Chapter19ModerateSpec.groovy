@@ -1,4 +1,5 @@
 package crackingthecode.part4additionalreviewproblems
+
 import api.Tuple
 import spock.lang.Specification
 
@@ -34,6 +35,9 @@ class Chapter19ModerateSpec extends Specification {
         where:
         a           || b
         null        || -1
+        [[0, 0, 0],
+         [0, 1, 0],
+         [0, 1, 0]] || -1
         [[0, 1, 0],
          [0, 1, 0],
          [0, 1, 0]] || 1
@@ -48,15 +52,14 @@ class Chapter19ModerateSpec extends Specification {
          [0, 0, 2]] || 2
     }
 
-    def "19.3 - getTrailingZeros"() {
+    def "19.3 - numZeros"() {
         expect:
         chapter19Moderate.numZeros(a) == b
 
         // 26! = 403291461126605635584000000
         where:
         a || b
-//        9   || 0 // none
-//        5   || 0 // none
+        -1 || 0
         10 || 2
         26 || 6
     }

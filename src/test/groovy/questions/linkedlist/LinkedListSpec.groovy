@@ -8,7 +8,7 @@ class LinkedListSpec extends Specification {
         given:
         LinkedList<Integer> linkedList = new LinkedList(0)
         linkedList.addToEnd(6)
-        linkedList.addToEnd(5)
+        linkedList.add(5)
 
         when:
         linkedList.addtoFront(1)
@@ -26,7 +26,7 @@ class LinkedListSpec extends Specification {
 
         when:
         linkedList.addToEnd(1)
-        linkedList.addToEnd(2)
+        linkedList.add(2)
         linkedList.addToEnd(3)
 
         then:
@@ -55,7 +55,7 @@ class LinkedListSpec extends Specification {
         given:
         LinkedList<Integer> linkedList = new LinkedList(0)
         linkedList.addToEnd(6)
-        linkedList.addToEnd(7)
+        linkedList.add(7)
 
         when:
         linkedList.removeLast()

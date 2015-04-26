@@ -10,7 +10,7 @@ class SubsetsSpec extends Specification {
 
         expect:
         subsets.subsets(a) == b
-        subsets.subsets(a as int[]) == b
+        subsets.subsets(a) == b
 
         where:
         a         || b
@@ -21,5 +21,4 @@ class SubsetsSpec extends Specification {
         [1, 2, 3] || [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
         [3, 1, 2] || [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
     }
-
 }
