@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class TreeNodeSpec extends Specification {
 
-    def "Test - Node [Correct Values]"() {
+    def "test values"() {
         TreeNode valueNode = new TreeNode(5)
         TreeNode blankNode = new TreeNode(0)
         blankNode.right = valueNode

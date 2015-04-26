@@ -9,14 +9,14 @@ public class Chapter14Java {
     // "class can't be inherited"
 
     // Singleton
-    public static class PrivateConstructor {
-        private static PrivateConstructor instance = null;
+    public class PrivateConstructor {
+        private PrivateConstructor instance = null;
 
         private PrivateConstructor() {
             // Exists only to defeat instantiation.
         }
 
-        public static PrivateConstructor getInstance() {
+        public PrivateConstructor getInstance() {
             if (instance == null) {
                 instance = new PrivateConstructor();
             }
@@ -25,7 +25,7 @@ public class Chapter14Java {
     }
 
     // Factory Pattern
-    public static class BusinessClass {
+    public class BusinessClass {
         public String str;
 
         private BusinessClass() {
@@ -35,7 +35,7 @@ public class Chapter14Java {
             this.str = str;
         }
 
-        public static BusinessClass CreateObject(String myProperty) {
+        public BusinessClass CreateObject(String myProperty) {
 
             if (myProperty != null) {
                 return new BusinessClass(myProperty);
@@ -68,7 +68,7 @@ public class Chapter14Java {
      * 14.3 - What is the difference between final, finally, and finalize?
      */
     // final used for constants and can't be changed:
-    //  - public static final String CONSTANT = "CONSTANT";
+    //  - public final String CONSTANT = "CONSTANT";
     //  - primitive - value can't change
     //  - reference - variable can't point to another object on the heap
     //  - method - can't be overwritten

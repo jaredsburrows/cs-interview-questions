@@ -5,10 +5,13 @@ import spock.lang.Specification
 class NumberLengthSpec extends Specification {
 
     def "getIntegerLength"() {
+        given:
+        NumberLength numberLength = new NumberLength()
+
         expect:
-        NumberLength.getIntegerLength(a) == b
-        NumberLength.lenHelper(a) == b
-        NumberLength.getIntegerLogLength(a) == b
+        numberLength.getIntegerLength(a) == b
+        numberLength.lenHelper(a) == b
+        numberLength.getIntegerLogLength(a) == b
 
         where:
         a     || b

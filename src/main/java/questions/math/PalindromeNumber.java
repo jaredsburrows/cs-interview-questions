@@ -1,7 +1,8 @@
 package questions.math;
 
 public class PalindromeNumber {
-    public static boolean isPalindrome(long number) {
+
+    public boolean isPalindrome(long number) {
         if (number < 0) {
             return false;
         }

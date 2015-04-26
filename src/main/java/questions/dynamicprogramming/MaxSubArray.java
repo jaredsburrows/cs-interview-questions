@@ -1,7 +1,8 @@
 package questions.dynamicprogramming;
 
 public class MaxSubArray {
-    public static int getMax(int[] array) {
+
+    public int getMax(int[] array) {
         if (array == null) {
             return -1;
         }

@@ -2,12 +2,12 @@ package projecteuler.number4;
 
 public class Number4 {
 
-    public static boolean isPalidrome(final int n) {
+    public boolean isPalidrome(final int n) {
         final String temp = Integer.toString(n);
         return temp.equals(new StringBuilder(temp).reverse().toString());
     }
 
-    public static long getLargestPalindromeProduct() {
+    public long getLargestPalindromeProduct() {
         int max = 0;
         for (int i = 999; i > 99; i--) {
             for (int j = 999; j > 99; j--) {

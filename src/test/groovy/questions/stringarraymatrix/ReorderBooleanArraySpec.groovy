@@ -6,10 +6,11 @@ class ReorderBooleanArraySpec extends Specification {
 
     def "reorder bools - primitive"() {
         given:
+        ReorderBooleanArray reorderBooleanArray = new ReorderBooleanArray()
         boolean[] b = [false, true, true, true, false, true]
 
         when:
-        ReorderBooleanArray.getReorderBoolPrimitives(b)
+        reorderBooleanArray.getReorderBoolPrimitives(b)
 
         then:
         b == [false, false, true, true, true, true]
@@ -17,10 +18,11 @@ class ReorderBooleanArraySpec extends Specification {
 
     def "reorder bools - object"() {
         given:
+        ReorderBooleanArray reorderBooleanArray = new ReorderBooleanArray()
         Boolean[] b = [false, true, true, true, false, true]
 
         when:
-        ReorderBooleanArray.getReorderBoolObjects(b)
+        reorderBooleanArray.getReorderBoolObjects(b)
 
         then:
         b == [false, false, true, true, true, true]

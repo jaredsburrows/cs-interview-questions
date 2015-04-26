@@ -4,10 +4,12 @@ import spock.lang.Specification
 
 class ReverseArraySpec extends Specification {
 
-
     def "reverse - multiple arg"() {
+        given:
+        ReverseArray reverseArray = new ReverseArray()
+
         expect:
-        ReverseArray.reverse(a as int[], b, c) == d as int[]
+        reverseArray.reverse(a as int[], b, c) == d as int[]
 
         where:
         a                  || b || c || d

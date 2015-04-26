@@ -3,7 +3,8 @@ package questions.combinationspermutation;
 import java.util.ArrayList;
 
 public class Permutations {
-    public static ArrayList<String> getStringPermutations(final String prefix, final String string) {
+
+    public ArrayList<String> getStringPermutations(final String prefix, final String string) {
         if (string == null) {
             return null;
         }

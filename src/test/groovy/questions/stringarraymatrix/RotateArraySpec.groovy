@@ -5,8 +5,11 @@ import spock.lang.Specification
 class RotateArraySpec extends Specification {
 
     def "rotate"() {
+        given:
+        RotateArray rotateArray = new RotateArray()
+
         expect:
-        RotateArray.rotate(a as int[], b) == c as int[]
+        rotateArray.rotate(a as int[], b) == c as int[]
 
         where:
         a               || b  || c

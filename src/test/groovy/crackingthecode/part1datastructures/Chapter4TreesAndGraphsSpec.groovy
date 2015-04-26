@@ -5,6 +5,7 @@ import spock.lang.Specification
 
 class Chapter4TreesAndGraphsSpec extends Specification {
 
+    Chapter4TreesAndGraphs chapter4TreesAndGraphs
     TreeNode tree = new TreeNode(26);
     TreeNode subTree = new TreeNode(10);
     TreeNode balancedTree = new TreeNode(0);
@@ -12,6 +13,8 @@ class Chapter4TreesAndGraphsSpec extends Specification {
     TreeNode unbalancedTree = new TreeNode(5);
 
     def "setup"() {
+        chapter4TreesAndGraphs = new Chapter4TreesAndGraphs()
+
         balancedTree.right = new TreeNode(10);
         balancedTree.right.left = new TreeNode(10);
         balancedTree.right.right = new TreeNode(10);
@@ -43,10 +46,10 @@ class Chapter4TreesAndGraphsSpec extends Specification {
 
     def "4.1 - isBalanced"() {
         expect:
-        Chapter4TreesAndGraphs.isBalanced(null)
-        !Chapter4TreesAndGraphs.isBalanced(unbalancedTree)
-        Chapter4TreesAndGraphs.isBalanced(balancedTree)
-        Chapter4TreesAndGraphs.isBalanced(balancedTree2)
+        chapter4TreesAndGraphs.isBalanced(null)
+        !chapter4TreesAndGraphs.isBalanced(unbalancedTree)
+        chapter4TreesAndGraphs.isBalanced(balancedTree)
+        chapter4TreesAndGraphs.isBalanced(balancedTree2)
     }
 
     def "4.2 - "() {
@@ -73,12 +76,13 @@ class Chapter4TreesAndGraphsSpec extends Specification {
         //   /\   /\
         //  1  3  5 7
         expect:
-        Chapter4TreesAndGraphs.getMinimumTree(null, 0, sortedArray.size() - 1) == null
-        Chapter4TreesAndGraphs.getMinimumTree(empty, 0, sortedArray.size() - 1) == null
-        Chapter4TreesAndGraphs.getMinimumTree(sortedArray, sortedArray.size(), 0) == null
-        Chapter4TreesAndGraphs.getMinimumTree(sortedArray, -1, sortedArray.size()) == null
-        Chapter4TreesAndGraphs.getMinimumTree(sortedArray, 0, -1) == null
-        TreeNode tree = Chapter4TreesAndGraphs.getMinimumTree(sortedArray, 0, sortedArray.size() - 1)
+        chapter4TreesAndGraphs.getMinimumTree(null, 0, sortedArray.size() - 1) == null
+        chapter4TreesAndGraphs.getMinimumTree(empty, 0, sortedArray.size() - 1) == null
+        chapter4TreesAndGraphs.getMinimumTree(sortedArray, sortedArray.size(), 0) == null
+        chapter4TreesAndGraphs.getMinimumTree(sortedArray, -1, sortedArray.size()) == null
+        chapter4TreesAndGraphs.getMinimumTree(sortedArray, 0, -1) == null
+        TreeNode tree = chapter4TreesAndGraphs.
+                getMinimumTree(sortedArray, 0, sortedArray.size() - 1)
         tree.value == 4
         tree.left.value == 2
         tree.left.left.value == 1
@@ -102,11 +106,11 @@ class Chapter4TreesAndGraphsSpec extends Specification {
 
     def "4.7 - isSubtree"() {
         expect:
-        Chapter4TreesAndGraphs.isSubtree(null, null)
-        !Chapter4TreesAndGraphs.isSubtree(null, balancedTree)
-        Chapter4TreesAndGraphs.isSubtree(unbalancedTree, null)
-        !Chapter4TreesAndGraphs.isSubtree(unbalancedTree, balancedTree)
-        Chapter4TreesAndGraphs.isSubtree(tree, subTree)
+        chapter4TreesAndGraphs.isSubtree(null, null)
+        !chapter4TreesAndGraphs.isSubtree(null, balancedTree)
+        chapter4TreesAndGraphs.isSubtree(unbalancedTree, null)
+        !chapter4TreesAndGraphs.isSubtree(unbalancedTree, balancedTree)
+        chapter4TreesAndGraphs.isSubtree(tree, subTree)
     }
 
     def "4.8 - "() {

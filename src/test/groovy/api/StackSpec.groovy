@@ -11,7 +11,7 @@ class StackSpec extends Specification {
     TreeNode blankNode = new TreeNode(0)
     TreeNode blankNode2 = new TreeNode(0)
 
-    def "Test - Stack - peek [Correct Values]"() {
+    def "peek"() {
 
         expect:
         stack.peek() == null
@@ -19,7 +19,7 @@ class StackSpec extends Specification {
         stack.peek() == blankNode
     }
 
-    def "Test - Stack - peek - multiple [Correct Values]"() {
+    def "peek - multiple"() {
 
         expect:
         stack.peek() == null
@@ -29,7 +29,7 @@ class StackSpec extends Specification {
         stack.peek() == blankNode2
     }
 
-    def "Test - Stack - push - single [Correct Values]"() {
+    def "push - single"() {
         TreeNode blankNode = new TreeNode(0)
 
         expect:
@@ -40,7 +40,7 @@ class StackSpec extends Specification {
         stack.peek() == blankNode
     }
 
-    def "Test - Stack - push - multiple [Correct Values]"() {
+    def "push - multiple"() {
 
         expect:
         stack.peek() == null
@@ -54,7 +54,7 @@ class StackSpec extends Specification {
         stack.peek() == valueNode3
     }
 
-    def "Test - Stack - pop [Correct Values]"() {
+    def "pop"() {
 
         expect:
         stack.peek() == null
@@ -66,7 +66,7 @@ class StackSpec extends Specification {
         stack.peek() == null
     }
 
-    def "Test - Stack - pop - multiple [Correct Values]"() {
+    def "pop - multiple"() {
 
         expect:
         stack.peek() == null

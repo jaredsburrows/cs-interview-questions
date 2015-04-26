@@ -4,9 +4,12 @@ import spock.lang.Specification
 
 class LongestSequenceMatrixSpec extends Specification {
 
-    def "getLongestSequence - [expected values]"() {
+    def "getLongestSequence"() {
+        given:
+        LongestSequenceMatrix longestSequenceMatrix = new LongestSequenceMatrix()
+
         expect:
-        LongestSequenceMatrix.getLongestSequence(a as int[][]) == b
+        longestSequenceMatrix.getLongestSequence(a as int[][]) == b
 
         where:
         a           || b

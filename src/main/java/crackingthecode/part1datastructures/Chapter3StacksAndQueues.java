@@ -131,7 +131,7 @@ public class Chapter3StacksAndQueues {
      * to write this program: push | pop | peek | isEmpty.
      */
     // Time - O(N^2), Space - O(N)
-    public static Stack<Integer> getSortedStack(final Stack<Integer> stack) {
+    public Stack<Integer> getSortedStack(final Stack<Integer> stack) {
         final Stack<Integer> sortedStack = new Stack<>();
 
         while (!stack.isEmpty()) {

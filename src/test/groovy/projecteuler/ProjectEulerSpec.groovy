@@ -1,5 +1,4 @@
 package projecteuler
-
 import projecteuler.number1.Number1
 import projecteuler.number2.Number2
 import projecteuler.number3.Number3
@@ -9,23 +8,35 @@ import spock.lang.Specification
 class ProjectEulerSpec extends Specification {
 
     def "Test Problem 1 - [Multiples of 3 and 5]"() {
+        given:
+        Number1 number1 = new Number1()
+
         expect:
-        Number1.getMultiplesOf3And5ON() == 233168
-        Number1.getMultiplesOf3And5() == 233168
+        number1.getMultiplesOf3And5ON() == 233168
+        number1.getMultiplesOf3And5() == 233168
     }
 
     def "Test Problem 2 - [Even Fibonacci numbers]"() {
+        given:
+        Number2 number2 = new Number2()
+
         expect:
-        Number2.getEvenFibonacciNumbers(4000000) == 4613732
+        number2.getEvenFibonacciNumbers(4000000) == 4613732
     }
 
     def "Test Problem 3 - [Largest prime factor]"() {
+        given:
+        Number3 number3 = new Number3()
+
         expect:
-        Number3.getLargestPrimeFactor(600851475143L) == 6857
+        number3.getLargestPrimeFactor(600851475143L) == 6857
     }
 
     def "Test Problem 4 - [Largest palindrome product]"() {
+        given:
+        Number4 number4 = new Number4()
+
         expect:
-        Number4.getLargestPalindromeProduct() == 906609
+        number4.getLargestPalindromeProduct() == 906609
     }
 }

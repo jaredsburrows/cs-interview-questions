@@ -3,7 +3,7 @@ package questions.math;
 public class ReverseNumber {
 
     // Time - O(LOG(N), Space - O(1)
-    public static long solution(long number) {
+    public long reverse(long number) {
         long reverseNumber = 0;
 
         while (number != 0) {

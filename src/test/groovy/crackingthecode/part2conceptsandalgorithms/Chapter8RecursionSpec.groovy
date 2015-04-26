@@ -7,10 +7,16 @@ import static api.Color.*
 
 class Chapter8RecursionSpec extends Specification {
 
+    Chapter8Recursion chapter8Recursion
+
+    def "setup"() {
+        chapter8Recursion = new Chapter8Recursion()
+    }
+
     def "8.1 - getFibNumberRecursive"() {
         expect:
-        Chapter8Recursion.getFibNumberRecursive(a) == b
-        Chapter8Recursion.getFibNumberIterative(a) == b
+        chapter8Recursion.getFibNumberRecursive(a) == b
+        chapter8Recursion.getFibNumberIterative(a) == b
 
         // 0 1 2 3 4 5 6 7
         // 0 1 1 2 3 5 8 13
@@ -30,7 +36,7 @@ class Chapter8RecursionSpec extends Specification {
 
     def "8.2 - getSubsets"() {
         expect:
-        Chapter8Recursion.getSubsets(a, 0) == b
+        chapter8Recursion.getSubsets(a, 0) == b
 
         where:
         a      || b
@@ -41,7 +47,7 @@ class Chapter8RecursionSpec extends Specification {
 
     def "8.4 - getStringPermutations"() {
         expect:
-        Chapter8Recursion.getStringPermutations("", a) == b
+        chapter8Recursion.getStringPermutations("", a) == b
 
         where:
         a || b
@@ -52,7 +58,7 @@ class Chapter8RecursionSpec extends Specification {
 
     def "8.5 - getValidParentheses"() {
         expect:
-        Chapter8Recursion.getValidParentheses(a, 0, 0, "") == b
+        chapter8Recursion.getValidParentheses(a, 0, 0, "") == b
 
         where:
         a  || b
@@ -70,7 +76,7 @@ class Chapter8RecursionSpec extends Specification {
                        [GREEN, GREEN, GREEN, GREEN, RED]]
 
         when:
-        Chapter8Recursion.paintFill(a, 0, 0, BLUE)
+        chapter8Recursion.paintFill(a, 0, 0, BLUE)
 
         then:
         a == [[BLUE, BLUE, GREEN, GREEN, GREEN],
@@ -93,7 +99,7 @@ class Chapter8RecursionSpec extends Specification {
         int x = 4, y = 4, newC = 3;
 
         when:
-        Chapter8Recursion.floodFill(a, x, y, newC);
+        chapter8Recursion.floodFill(a, x, y, newC);
 
         then:
         a == [[1, 1, 1, 1, 1, 1, 1, 1],
@@ -109,8 +115,8 @@ class Chapter8RecursionSpec extends Specification {
     def "8.7 - getRepresentCents"() {
         expect:
         // starting with quarters
-        Chapter8Recursion.getRepresentCents(a as int, 25) == b
-        Chapter8Recursion.makeChange(a as int, 25) == b
+        chapter8Recursion.getRepresentCents(a as int, 25) == b
+        chapter8Recursion.makeChange(a as int, 25) == b
 
         where:
         a    || b

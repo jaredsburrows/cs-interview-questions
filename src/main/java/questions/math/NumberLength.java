@@ -3,7 +3,7 @@ package questions.math;
 public class NumberLength {
 
     // Time - O(N), Space - O(1)
-    public static int getIntegerLength(int n) {
+    public int getIntegerLength(int n) {
 
         int count = 0;
         while (n != 0) {
@@ -16,7 +16,7 @@ public class NumberLength {
 
     // Time - O(1), Space - O(1)
     // http://stackoverflow.com/a/3069580/950427
-    public static int lenHelper(int x) {
+    public int lenHelper(int x) {
         if (x >= 1000000000) {
             return 10;
         }
@@ -47,7 +47,7 @@ public class NumberLength {
         return 1;
     }
 
-    public static double getIntegerLogLength(int n) {
+    public double getIntegerLogLength(int n) {
         return Math.floor(Math.log10(Math.abs(n))) + 1;
     }
 }

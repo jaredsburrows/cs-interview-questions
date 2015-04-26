@@ -5,10 +5,13 @@ import spock.lang.Specification
 class AddTwoNumbersSpec extends Specification {
 
     def "getBinarySum"() {
+        given:
+        AddTwoNumbers addTwoNumbers = new AddTwoNumbers()
+
         expect:
-        AddTwoNumbers.getBinarySumLib(a, b) == c
-        AddTwoNumbers.getBinarySum(a, b) == c
-        AddTwoNumbers.getBinarySumBit(a, b) == c
+        addTwoNumbers.getBinarySumLib(a, b) == c
+        addTwoNumbers.getBinarySum(a, b) == c
+        addTwoNumbers.getBinarySumBit(a, b) == c
 
         where:
         a           || b           || c

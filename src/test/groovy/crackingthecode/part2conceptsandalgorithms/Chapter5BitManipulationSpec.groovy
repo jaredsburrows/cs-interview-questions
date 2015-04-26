@@ -5,10 +5,16 @@ import spock.lang.Specification
 
 class Chapter5BitManipulationSpec extends Specification {
 
+    Chapter5BitManipulation chapter5BitManipulation
+
+    def "setup"() {
+        chapter5BitManipulation = new Chapter5BitManipulation()
+    }
+
     @Ignore
     def "5.1 - setBitPosition"() {
         expect:
-        Chapter5BitManipulation.setBitPosition(a as int, b, c, d) == e
+        chapter5BitManipulation.setBitPosition(a as int, b, c, d) == e
 
         where:
         a           || b     || c || d || e
@@ -17,8 +23,8 @@ class Chapter5BitManipulationSpec extends Specification {
 
     def "5.5 - getDiffBits"() {
         expect:
-        Chapter5BitManipulation.getDiffBits(a, b) == c
-        Chapter5BitManipulation.bitSwapRequired(a, b) == c
+        chapter5BitManipulation.getDiffBits(a, b) == c
+        chapter5BitManipulation.bitSwapRequired(a, b) == c
 
         where:
         a  || b  || c
@@ -29,7 +35,7 @@ class Chapter5BitManipulationSpec extends Specification {
 
     def "5.6 - getSwapBits"() {
         expect:
-        Chapter5BitManipulation.getSwapBits(a) == b
+        chapter5BitManipulation.getSwapBits(a) == b
 
         where:
         a  || b

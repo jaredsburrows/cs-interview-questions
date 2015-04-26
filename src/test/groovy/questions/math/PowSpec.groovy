@@ -4,9 +4,12 @@ import spock.lang.Specification
 
 class PowSpec extends Specification {
 
-    def "Test [Correct Values]"() {
+    def "pow"() {
+        given:
+        Pow pow = new Pow()
+
         expect:
-        Pow.pow(a, b) == c
+        pow.pow(a, b) == c
 
         where:
         a  || b  || c
@@ -17,7 +20,5 @@ class PowSpec extends Specification {
         1  || 1  || 1
         2  || 1  || 2
         2  || 2  || 4
-
     }
-
 }

@@ -9,7 +9,7 @@ public class Chapter1ArraysAndStrings {
      * can not use additional data structures?
      */
     // Time - O(N), Space O(1)
-    public static boolean isUniqueCharacters(final String str) {
+    public boolean isUniqueCharacters(final String str) {
         if (str == null || str.trim().length() == 0) {
             return false;
         }
@@ -32,7 +32,7 @@ public class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(N)
-    public static boolean isUniqueCharacters2(final String str) {
+    public boolean isUniqueCharacters2(final String str) {
         if (str == null || str.trim().length() == 0) {
             return false;
         }
@@ -55,7 +55,7 @@ public class Chapter1ArraysAndStrings {
      * five characters, including the null character.)
      */
     // Time - O(N), Space - O(1)
-    public static char[] reverseString(final char[] cstr) {
+    public char[] reverseString(final char[] cstr) {
         if (cstr == null || cstr.length == 0) {
             return null;
         }
@@ -83,7 +83,7 @@ public class Chapter1ArraysAndStrings {
      * Write the test cases for this method.
      */
     // TODO
-    public static char[] removeDuplicates(char[] cstr) {
+    public char[] removeDuplicates(char[] cstr) {
         if (cstr == null || cstr.length == 0) {
             return null;
         }
@@ -104,7 +104,7 @@ public class Chapter1ArraysAndStrings {
      * 1.4 - Write a method to decide if two strings are anagrams or not.
      */
     // Time - N LOG(N), Space - O(N)
-    public static boolean isAnagram(final String str, final String str2) {
+    public boolean isAnagram(final String str, final String str2) {
         if (str == null || str2 == null) {
             return false;
         }
@@ -129,7 +129,7 @@ public class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(N)
-    public static boolean isAnagram2(final String str, final String str2) {
+    public boolean isAnagram2(final String str, final String str2) {
         if (str == null || str2 == null) {
             return false;
         }
@@ -161,7 +161,7 @@ public class Chapter1ArraysAndStrings {
      * 1.5 - Write a method to replace all spaces in a string with '%20'.
      */
     // Time - O(N), Space - O(N)
-    public static String replaceSpaces(final String str) {
+    public String replaceSpaces(final String str) {
         if (str == null) {
             return null;
         }
@@ -181,7 +181,7 @@ public class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(N)
-    public static String replaceSpaces2(final String str) {
+    public String replaceSpaces2(final String str) {
         if (str == null) {
             return null;
         }
@@ -194,7 +194,7 @@ public class Chapter1ArraysAndStrings {
      * write a method to rotate the image by 90 degrees. Can you do this in place?
      */
     // Time - O(N), Space - O(1)
-    public static int[][] rotateImage(final int[][] image) {
+    public int[][] rotateImage(final int[][] image) {
         if (image == null) {
             return null;
         }
@@ -217,7 +217,7 @@ public class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(N)
-    public static int[][] rotateImage2(final int[][] image) {
+    public int[][] rotateImage2(final int[][] image) {
         if (image == null) {
             return null;
         }
@@ -239,7 +239,7 @@ public class Chapter1ArraysAndStrings {
      * column is set to 0.
      */
     // Time - O(NM), Space - O(OM)
-    public static int[][] markRows(final int[][] matrix) {
+    public int[][] markRows(final int[][] matrix) {
         if (matrix == null) {
             return null;
         }
@@ -279,7 +279,7 @@ public class Chapter1ArraysAndStrings {
      * only one call to isSubstring (i.e., “waterbottle” is a rotation of “erbottlewat”).
      */
     // Time - O(n), Space O(N)
-    public static boolean isSubstring(final String s1, final String s2) {
+    public boolean isSubstring(final String s1, final String s2) {
         return !(s1 == null || s2 == null) && s1.length() == s2.length() && (s2 + s2).contains(s1);
     }
 }

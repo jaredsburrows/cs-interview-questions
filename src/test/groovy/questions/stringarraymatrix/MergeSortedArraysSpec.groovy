@@ -4,9 +4,12 @@ import spock.lang.Specification
 
 class MergeSortedArraysSpec extends Specification {
 
-    def "Test - merge [Correct Values]"() {
+    def "merge"() {
+        given:
+        MergeSortedArrays mergeSortedArrays = new MergeSortedArrays()
+
         expect:
-        MergeSortedArrays.merge(a as int[], b as int[]) == c as int[]
+        mergeSortedArrays.merge(a as int[], b as int[]) == c as int[]
 
         where:
         a         || b         || c

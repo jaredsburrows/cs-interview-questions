@@ -11,7 +11,7 @@ class QueueSpec extends Specification {
     TreeNode blankNode = new TreeNode(0)
     TreeNode blankNode2 = new TreeNode(0)
 
-    def "Test - Queue - getFirst [Correct Values]"() {
+    def "getFirst"() {
 
         expect:
         queue.getFirst() == null
@@ -19,7 +19,7 @@ class QueueSpec extends Specification {
         queue.getFirst() == blankNode
     }
 
-    def "Test - Queue - getFirst - multiple [Correct Values]"() {
+    def "getFirst - multiple"() {
 
         expect:
         queue.getFirst() == null
@@ -29,7 +29,7 @@ class QueueSpec extends Specification {
         queue.getFirst() == blankNode
     }
 
-    def "Test - Queue - getLast [Correct Values]"() {
+    def "getLast"() {
 
         expect:
         queue.getLast() == null
@@ -37,7 +37,7 @@ class QueueSpec extends Specification {
         queue.getLast() == blankNode
     }
 
-    def "Test - Queue - getLast - multiple [Correct Values]"() {
+    def "getLast - multiple"() {
 
         expect:
         queue.getLast() == null
@@ -47,7 +47,7 @@ class QueueSpec extends Specification {
         queue.getLast() == blankNode2
     }
 
-    def "Test - Queue - enqueue - single [Correct Values]"() {
+    def "enqueue - single"() {
 
         expect:
         queue.getFirst() == null
@@ -57,7 +57,7 @@ class QueueSpec extends Specification {
         queue.getFirst() == blankNode
     }
 
-    def "Test - Queue - enqueue - multiple [Correct Values]"() {
+    def "enqueue - multiple"() {
 
         expect:
         queue.getFirst() == null
@@ -75,7 +75,7 @@ class QueueSpec extends Specification {
         queue.getLast() == valueNode3
     }
 
-    def "Test - Queue - dequeue [Correct Values]"() {
+    def "dequeue"() {
 
         expect:
         queue.getFirst() == null
@@ -89,7 +89,7 @@ class QueueSpec extends Specification {
         queue.getFirst() == null
     }
 
-    def "Test - Queue - dequeue - multiple [Correct Values]"() {
+    def "dequeue - multiple"() {
 
         expect:
         queue.getFirst() == null

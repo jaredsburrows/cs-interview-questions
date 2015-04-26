@@ -4,9 +4,12 @@ import spock.lang.Specification
 
 class ReverseIntegerSpec extends Specification {
 
-    def "Test [Correct Values]"() {
+    def "solution"() {
+        given:
+        ReverseNumber reverseNumber = new ReverseNumber()
+
         expect:
-        ReverseNumber.solution(a) == b
+        reverseNumber.reverse(a) == b
 
         where:
         a     || b

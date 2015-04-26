@@ -6,6 +6,12 @@ import spock.lang.Specification
 
 class Chapter3StacksAndQueuesSpec extends Specification {
 
+    Chapter3StacksAndQueues chapter3StacksAndQueues
+
+    def "setup"() {
+        chapter3StacksAndQueues = new Chapter3StacksAndQueues()
+    }
+
     def "3.2 - MinStack"() {
         given:
         MinStack minStack = new MinStack();
@@ -90,7 +96,7 @@ class Chapter3StacksAndQueuesSpec extends Specification {
         sorted.push(7)
 
         when:
-        def result = Chapter3StacksAndQueues.getSortedStack(unsorted)
+        def result = chapter3StacksAndQueues.getSortedStack(unsorted)
 
         then:
         result == sorted

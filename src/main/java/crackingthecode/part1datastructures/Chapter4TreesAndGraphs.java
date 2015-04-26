@@ -11,8 +11,8 @@ public class Chapter4TreesAndGraphs {
      * a balanced tree is defined to be a tree such that no two leaf nodes differ in distance from
      * the root by more than one.
      */
-    public static boolean isBalanced(final TreeNode treeNode) {
-        return treeNode == null || TreeHeight.getHeight(treeNode) != -1;
+    public boolean isBalanced(final TreeNode treeNode) {
+        return treeNode == null || new TreeHeight().getHeight(treeNode) != -1;
     }
 
     /**
@@ -31,7 +31,7 @@ public class Chapter4TreesAndGraphs {
     //   /\   /\
     //  1  3  5 7
     // (length - 0) / 2
-    public static TreeNode getMinimumTree(int[] array, int start, int end) {
+    public TreeNode getMinimumTree(int[] array, int start, int end) {
         if ((array == null) || (array.length == 0) || ((start < 0) || (start > end))) {
             return null;
         }
@@ -68,7 +68,7 @@ public class Chapter4TreesAndGraphs {
      */
     // T1 - millions of nodes
     // T2 - supposed subtree of T1, should be the same or smaller
-    public static boolean isSubtree(final TreeNode treeNode, final TreeNode treeNode2) {
+    public boolean isSubtree(final TreeNode treeNode, final TreeNode treeNode2) {
         if (treeNode2 == null) {
             return true;
         }
@@ -77,12 +77,12 @@ public class Chapter4TreesAndGraphs {
             return false;
         }
 
-        if (EqualTree.isEqual(treeNode, treeNode2)) {
+        if (new EqualTree().isEqual(treeNode, treeNode2)) {
             return true;
         }
 
-        return EqualTree.isEqual(treeNode.left, treeNode2)
-                || EqualTree.isEqual(treeNode.right, treeNode2); // important || vs &&
+        return new EqualTree().isEqual(treeNode.left, treeNode2)
+                || new EqualTree().isEqual(treeNode.right, treeNode2); // important || vs &&
     }
 
     /**

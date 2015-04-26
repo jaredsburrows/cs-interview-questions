@@ -5,9 +5,15 @@ import spock.lang.Specification
 
 class Chapter20HardSpec extends Specification {
 
+    Chapter20Hard chapter20Hard
+
+    def "setup"() {
+        chapter20Hard = new Chapter20Hard()
+    }
+
     def "20.1 - addTwoNumbers"() {
         expect:
-        Chapter20Hard.addTwoNumbers(a, b) == c
+        chapter20Hard.addTwoNumbers(a, b) == c
 
         where:
         a     || b      || c
@@ -18,7 +24,7 @@ class Chapter20HardSpec extends Specification {
 
     def "subtractTwoNumbers"() {
         expect:
-        Chapter20Hard.substractTwoNumbers(a, b) == c
+        chapter20Hard.substractTwoNumbers(a, b) == c
 
         where:
         a      || b     || c
@@ -29,8 +35,8 @@ class Chapter20HardSpec extends Specification {
 
     def "20.4 - countNumber2s"() {
         expect:
-        Chapter20Hard.countNumber2s(a) == b
-        Chapter20Hard.count2sI(a) == b
+        chapter20Hard.countNumber2s(a) == b
+        chapter20Hard.count2sI(a) == b
 
         where:
         a  || b
@@ -40,7 +46,7 @@ class Chapter20HardSpec extends Specification {
 
     def "20.6 - getTopMillion"() {
         expect:
-        Chapter20Hard.getTopMillion(a) == b
+        chapter20Hard.getTopMillion(a) == b
 
         where:
         a                              || b
@@ -52,7 +58,7 @@ class Chapter20HardSpec extends Specification {
     @Ignore
     def "20.10 - getTransformedList"() {
         expect:
-        Chapter20Hard.getTransformedList(a as Map<Integer, String>, b, c) == d
+        chapter20Hard.getTransformedList(a as Map<Integer, String>, b, c) == d
 
         where:
         a                                                       || b      || c      || d

@@ -2,7 +2,7 @@ package questions.math;
 
 public class Pow {
 
-    public static long pow(int x, int n) {
+    public long pow(int x, int n) {
         if (n < 0) {
             return 0;
         }

@@ -4,9 +4,12 @@ import spock.lang.Specification
 
 class PalindromeNumberSpec extends Specification {
 
-    def "Test [Correct Values]"() {
+    def "isPalindrome"() {
+        given:
+        PalindromeNumber palindromeNumber = new PalindromeNumber()
+
         expect:
-        PalindromeNumber.isPalindrome(a) == b
+        palindromeNumber.isPalindrome(a) == b
 
         where:
         a      || b

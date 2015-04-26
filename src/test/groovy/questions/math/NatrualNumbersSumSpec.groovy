@@ -5,9 +5,12 @@ import spock.lang.Specification
 class NatrualNumbersSumSpec extends Specification {
 
     def "getSumNaturalNumbers"() {
+        given:
+        NaturalNumbersSum naturalNumbersSum = new NaturalNumbersSum()
+
         expect:
-        NaturalNumbersSum.getSumNaturalNumbers(a) == b
-        NaturalNumbersSum.getSumNaturalNumbers2(a) == b
+        naturalNumbersSum.getSumNaturalNumbers(a) == b
+        naturalNumbersSum.getSumNaturalNumbers2(a) == b
 
         where:
         a    || b

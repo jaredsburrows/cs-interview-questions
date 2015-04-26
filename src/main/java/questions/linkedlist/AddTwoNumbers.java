@@ -3,17 +3,18 @@ package questions.linkedlist;
 import api.Node;
 
 public class AddTwoNumbers {
+
     /**
      * You are given two linked lists representing two non-negative numbers. The digits are stored
      * in reverse order and each of their nodes contain a single digit. Add the two numbers and
      * return it as a linked list.
-     * <p/>
+     * <p>
      * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
      * Output: 7 -> 0 -> 8
      */
     // node1 and node2 numbers are stored forwards
     // the answer node is backwards
-    public static Node<Integer> addTwoNumbers(Node<Integer> node1, Node<Integer> node2) {
+    public Node<Integer> addTwoNumbers(Node<Integer> node1, Node<Integer> node2) {
         if (node1 == null || node2 == null) {
             return null;
         }

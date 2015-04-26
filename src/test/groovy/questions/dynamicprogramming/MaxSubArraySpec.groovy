@@ -4,9 +4,12 @@ import spock.lang.Specification
 
 class MaxSubArraySpec extends Specification {
 
-    def "Test [Correct Values]"() {
+    def "getMax"() {
+        given:
+        MaxSubArray maxSubArray = new MaxSubArray()
+
         expect:
-        MaxSubArray.getMax(a as int[]) == b
+        maxSubArray.getMax(a as int[]) == b
 
         where:
         a                               || b

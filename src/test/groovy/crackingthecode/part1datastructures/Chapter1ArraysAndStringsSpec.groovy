@@ -5,10 +5,16 @@ import spock.lang.Specification
 
 class Chapter1ArraysAndStringsSpec extends Specification {
 
-    def "Test - hasUniqueCharacters [Correct Values]"() {
+    Chapter1ArraysAndStrings chapter1ArraysAndStrings
+
+    def "setup"() {
+        chapter1ArraysAndStrings = new Chapter1ArraysAndStrings()
+    }
+
+    def "hasUniqueCharacters"() {
         expect:
-        Chapter1ArraysAndStrings.isUniqueCharacters(a) == b
-        Chapter1ArraysAndStrings.isUniqueCharacters2(a) == b
+        chapter1ArraysAndStrings.isUniqueCharacters(a) == b
+        chapter1ArraysAndStrings.isUniqueCharacters2(a) == b
 
         where:
         a                             || b
@@ -22,7 +28,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
 
     def "Test - reverseString [Correct Values]"() {
         expect:
-        Chapter1ArraysAndStrings.reverseString(a as char[]) == b as char[]
+        chapter1ArraysAndStrings.reverseString(a as char[]) == b as char[]
 
         where:
         a            || b
@@ -35,7 +41,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
     @Ignore
     def "Test - removeDuplicates [Correct Values]"() {
         expect:
-        Chapter1ArraysAndStrings.removeDuplicates(a as char[]) == b as char[]
+        chapter1ArraysAndStrings.removeDuplicates(a as char[]) == b as char[]
 
         where:
         a              || b
@@ -46,8 +52,8 @@ class Chapter1ArraysAndStringsSpec extends Specification {
 
     def "Test - isAnagram [Correct Values]"() {
         expect:
-        Chapter1ArraysAndStrings.isAnagram(a, b) == c
-        Chapter1ArraysAndStrings.isAnagram2(a, b) == c
+        chapter1ArraysAndStrings.isAnagram(a, b) == c
+        chapter1ArraysAndStrings.isAnagram2(a, b) == c
 
         where:
         a            || b            || c
@@ -61,8 +67,8 @@ class Chapter1ArraysAndStringsSpec extends Specification {
 
     def "Test - replaceSpace [Correct Values]"() {
         expect:
-        Chapter1ArraysAndStrings.replaceSpaces(a) == b
-        Chapter1ArraysAndStrings.replaceSpaces2(a) == b
+        chapter1ArraysAndStrings.replaceSpaces(a) == b
+        chapter1ArraysAndStrings.replaceSpaces2(a) == b
 
         where:
         a      || b
@@ -75,8 +81,8 @@ class Chapter1ArraysAndStringsSpec extends Specification {
 
     def "Test - rotateImage [Correct Values]"() {
         expect:
-        Chapter1ArraysAndStrings.rotateImage(a as int[][]) == b as int[][]
-        Chapter1ArraysAndStrings.rotateImage2(a as int[][]) == b as int[][]
+        chapter1ArraysAndStrings.rotateImage(a as int[][]) == b as int[][]
+        chapter1ArraysAndStrings.rotateImage2(a as int[][]) == b as int[][]
 
         where:
         a              || b
@@ -97,7 +103,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
 
     def "Test - markRows [Correct Values]"() {
         expect:
-        Chapter1ArraysAndStrings.markRows(a as int[][]) == b as int[][]
+        chapter1ArraysAndStrings.markRows(a as int[][]) == b as int[][]
 
         where:
         a           || b
@@ -117,7 +123,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
 
     def "Test - isSubstring [Correct Values]"() {
         expect:
-        Chapter1ArraysAndStrings.isSubstring(a, b) == c
+        chapter1ArraysAndStrings.isSubstring(a, b) == c
 
         where:
         a             || b             || c

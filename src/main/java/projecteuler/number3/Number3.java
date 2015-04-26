@@ -2,7 +2,7 @@ package projecteuler.number3;
 
 public class Number3 {
 
-    public static boolean isPrime(final long n) {
+    public boolean isPrime(final long n) {
         if ((n > 2) && (n & 1) == 0) {
             return false;
         }
@@ -16,7 +16,7 @@ public class Number3 {
         return true;
     }
 
-    public static long getLargestPrimeFactor(final long number) {
+    public long getLargestPrimeFactor(final long number) {
         for (long i = (long) Math.sqrt(number) + 1; i > 0; i -= 2) {
             if (((number % i) == 0) && isPrime(i)) {
                 return i;

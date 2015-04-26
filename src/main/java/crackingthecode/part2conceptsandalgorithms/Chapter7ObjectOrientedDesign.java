@@ -1,6 +1,5 @@
 package crackingthecode.part2conceptsandalgorithms;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 import java.util.UUID;
@@ -11,7 +10,7 @@ public class Chapter7ObjectOrientedDesign {
      * 7.1 - Design the data structures for a generic deck of cards. Explain how you would subclass
      * it to implement particular card games.
      */
-    abstract static class Card {
+    public static class Card {
         public enum Suite {
             HEARTS,
             DIAMONDS,

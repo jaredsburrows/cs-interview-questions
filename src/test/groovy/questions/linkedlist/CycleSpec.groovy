@@ -5,8 +5,9 @@ import api.Node
 
 class CycleSpec extends Specification {
 
-    def "Cycle"() {
+    def "cycle"() {
         given:
+        Cycle cycle = new Cycle()
         //       n4 <- n3
         //        |     |
         // n0 -> n1 -> n2
@@ -23,8 +24,8 @@ class CycleSpec extends Specification {
         node4.next = node1
 
         expect:
-        !Cycle.hasCycle(null)
-        !Cycle.hasCycle(new Node<Integer>(0))
-        Cycle.hasCycle(node0)
+        !cycle.hasCycle(null)
+        !cycle.hasCycle(new Node<Integer>(0))
+        cycle.hasCycle(node0)
     }
 }

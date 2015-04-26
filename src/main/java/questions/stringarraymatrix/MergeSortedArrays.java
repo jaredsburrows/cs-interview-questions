@@ -2,7 +2,7 @@ package questions.stringarraymatrix;
 
 public class MergeSortedArrays {
 
-    public static int[] merge(final int[] a, final int[] b) {
+    public int[] merge(final int[] a, final int[] b) {
         if (a == null && b == null) {
             return null;
         }

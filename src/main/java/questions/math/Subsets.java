@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Subsets {
 
-    public static <T extends Comparable<? super T>> List<ArrayList<T>> subsets(final List<T> data) {
+    public <T extends Comparable<? super T>> List<ArrayList<T>> subsets(final List<T> data) {
         if (data == null) {
             return null;
         }
@@ -36,7 +36,7 @@ public class Subsets {
         return subsets;
     }
 
-    public static <T> List<ArrayList<T>> subsets(final T[] data) {
+    public <T> List<ArrayList<T>> subsets(final T[] data) {
         if (data == null) {
             return null;
         }

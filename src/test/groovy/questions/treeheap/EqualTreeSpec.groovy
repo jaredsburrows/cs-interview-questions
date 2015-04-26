@@ -40,12 +40,15 @@ class EqualTreeSpec extends Specification {
         tree.left.right = new TreeNode(6);
     }
 
-    def "isEqualTree"() {
+    def "isEqual"() {
+        given:
+        EqualTree equalTree = new EqualTree()
+
         expect:
-        EqualTree.isEqual(null, null)
-        !EqualTree.isEqual(null, balancedTree)
-        !EqualTree.isEqual(unbalancedTree, null)
-        !EqualTree.isEqual(unbalancedTree, balancedTree)
-        EqualTree.isEqual(balancedTree, balancedTree)
+        equalTree.isEqual(null, null)
+        !equalTree.isEqual(null, balancedTree)
+        !equalTree.isEqual(unbalancedTree, null)
+        !equalTree.isEqual(unbalancedTree, balancedTree)
+        equalTree.isEqual(balancedTree, balancedTree)
     }
 }

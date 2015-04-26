@@ -5,35 +5,41 @@ import spock.lang.Specification
 
 class Chapter6BrainTeasersSpec extends Specification {
 
-    def "Test - arithmeticOperators [Correct Values]"() {
-        expect:
-        Chapter6BrainTeasers.arithmeticOperators() == 8
+    Chapter6BrainTeasers chapter6BrainTeasers
+
+    def "setup"() {
+        chapter6BrainTeasers = new Chapter6BrainTeasers()
     }
 
-    def "Test - chessPieces [Correct Values]"() {
+    def "arithmeticOperators"() {
         expect:
-        Chapter6BrainTeasers.chessPieces() == 64
+        chapter6BrainTeasers.arithmeticOperators() == 8
     }
 
-    def "Test - exactJugs [Correct Values]"() {
+    def "chessPieces"() {
         expect:
-        Chapter6BrainTeasers.exactJugs() == 4
+        chapter6BrainTeasers.chessPieces() == 64
+    }
+
+    def "exactJugs"() {
+        expect:
+        chapter6BrainTeasers.exactJugs() == 4
     }
 
     @Ignore
-    def "Test - howLong [Correct Values]"() {
+    def "howLong"() {
         expect:
-        Chapter6BrainTeasers.nFloor() == 4
+        chapter6BrainTeasers.nFloor() == 4
     }
 
     @Ignore
-    def "Test - nFloor [Correct Values]"() {
+    def "nFloor"() {
         expect:
-        Chapter6BrainTeasers.nFloor() == 4
+        chapter6BrainTeasers.nFloor() == 4
     }
 
-    def "Test - lockersOpen [Correct Values]"() {
+    def "lockersOpen"() {
         expect:
-        Chapter6BrainTeasers.lockersOpen() == 10
+        chapter6BrainTeasers.lockersOpen() == 10
     }
 }

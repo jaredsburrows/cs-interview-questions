@@ -2,7 +2,7 @@ package projecteuler.number2;
 
 public class Number2 {
 
-    public static long getEvenFibonacciNumbers(long n) {
+    public long getEvenFibonacciNumbers(long n) {
         long a = 1, b = 1, sum = 0;
 
         while (sum < n) {

@@ -4,10 +4,13 @@ import spock.lang.Specification
 
 class SubsetsSpec extends Specification {
 
-    def "Test [Correct Values]"() {
+    def "subsets"() {
+        given:
+        Subsets subsets = new Subsets()
+
         expect:
-        Subsets.subsets(a) == b
-        Subsets.subsets(a as int[]) == b
+        subsets.subsets(a) == b
+        subsets.subsets(a as int[]) == b
 
         where:
         a         || b

@@ -15,7 +15,7 @@ public class Chapter9SortingAndSearching {
      */
     // TODO - review
     // Time - O(N), Space - O(1)
-    public static int[] mergeBInA(final int[] a, final int[] b, final int sizeA) {
+    public int[] mergeBInA(final int[] a, final int[] b, final int sizeA) {
         if (a == null) {
             return null;
         }
@@ -51,7 +51,7 @@ public class Chapter9SortingAndSearching {
     // [anagram, anagram, notanagram, notanagram]?
     // [Aanagram, anagramA, Banagram, anagramB]?
     // Time - O(N^2 LOG N), Space - O(n)
-    public static List<String> sortAnagrams(List<String> anagrams) {
+    public List<String> sortAnagrams(List<String> anagrams) {
         for (int i = 0; i < anagrams.size(); i++) {
             char[] tempArray = anagrams.get(i).toCharArray();
             Arrays.sort(tempArray);
@@ -75,7 +75,7 @@ public class Chapter9SortingAndSearching {
     // 15 16 19 20 25 1  3  4  5  7 10 14
     // 0  1  2  3  4  5  6  7  8  9 10 11
     // Time - Best - O(LOG N), Space - O(1) - does not work with duplicates
-    public static int getRotatedIndexOf(final int[] array, final int target) {
+    public int getRotatedIndexOf(final int[] array, final int target) {
         if (array == null) {
             return -1;
         }
@@ -125,7 +125,7 @@ public class Chapter9SortingAndSearching {
      * method to find the location of a given string.
      */
     // Time - O(LOGN)?, Space - O(1) - Binary Search
-    public static int findString(final String[] array, final String target) {
+    public int findString(final String[] array, final String target) {
         int min = 0;
         int max = array.length - 1;
 
@@ -164,7 +164,7 @@ public class Chapter9SortingAndSearching {
     }
 
     // Time - O(N), Space - O(1) - Linear Search
-    public static int findString2(final String[] array, final String target) {
+    public int findString2(final String[] array, final String target) {
         int pos = -1;
 
         for (int i = 0; i < array.length; i++) {
@@ -178,7 +178,7 @@ public class Chapter9SortingAndSearching {
     }
 
     // book answer
-    public static int findString3(String[] strings, String str, int first, int last) {
+    public int findString3(String[] strings, String str, int first, int last) {
         while (first <= last) {
             // Ensure there is something at the end
             while (first <= last && strings[last].equals("")) {
@@ -205,7 +205,7 @@ public class Chapter9SortingAndSearching {
         return -1;
     }
 
-    public static int findString3(String[] strings, String str) {
+    public int findString3(String[] strings, String str) {
         if (strings == null || str == null) {
             return -1;
         }
@@ -226,7 +226,7 @@ public class Chapter9SortingAndSearching {
     // binary search for the 2d array
     // row, col search only?
     // Time - O(N), Space - O(1)
-    public static boolean findValue(final int[][] matrix, final int target) {
+    public boolean findValue(final int[][] matrix, final int target) {
         if (matrix == null) {
             return false;
         }
@@ -265,7 +265,7 @@ public class Chapter9SortingAndSearching {
     // sort by height, sort by weight
     // return new map
     // Time - O(N*LOGN), Space -
-    public static ArrayList<Tuple<Integer, Integer>> getCircusOrder(ArrayList<Tuple<Integer, Integer>> original) {
+    public ArrayList<Tuple<Integer, Integer>> getCircusOrder(ArrayList<Tuple<Integer, Integer>> original) {
 
         // Java 6/7
 //        Collections.sort(original, new Comparator<Tuple<Integer, Integer>>() {

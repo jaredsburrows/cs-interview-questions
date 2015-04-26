@@ -6,7 +6,7 @@ public class Chapter6BrainTeasers {
      * 6.1 - Add arithmetic operators (plus, minus, times, divide) to make the following expression
      * true: 3 1 3 6 = 8. You can use any parentheses you’d like.
      */
-    public static double arithmeticOperators() {
+    public double arithmeticOperators() {
         // int division = 0, use double
         return ((3.0 + 1.0) / (3.0 / 6.0)); // ((3 + 1) / 3) * 6 = 8
     }
@@ -18,7 +18,7 @@ public class Chapter6BrainTeasers {
      * showing why it’s impossible).
      */
     // TODO
-    public static int chessPieces() {
+    public int chessPieces() {
         // 1 domino     = 2 squares
         // 31 dominoes  = 62 squares
         // 8x8 grid     = 64 squares
@@ -40,7 +40,7 @@ public class Chapter6BrainTeasers {
      * NOTE: The jugs are oddly shaped, such that filling up exactly ‘half’ of the jug would be
      * impossible.
      */
-    public static int exactJugs() {
+    public int exactJugs() {
         // Sine you have a 5 quart jug and a 3 quart jug, you can fill up the 5 quart jug and
         // use the 5 quart jug to full up the 3 quart jug. When the 3 quart jug is full, you know
         // that you have exactly 2 quarts.
@@ -61,7 +61,7 @@ public class Chapter6BrainTeasers {
      * Prove that your solution is correct.
      */
     // TODO
-    public static int howLong() {
+    public int howLong() {
         // n - people
         // c - hats, atleast one person has a hat
 
@@ -74,7 +74,7 @@ public class Chapter6BrainTeasers {
      * while minimizing the number of drops for the worst case.
      */
     // TODO
-    public static int nFloor() {
+    public int nFloor() {
         // 100 floors
         // if N >= break else !break
         // Only given 2 eggs
@@ -92,7 +92,7 @@ public class Chapter6BrainTeasers {
      * hundred, how many lockers are open?
      */
     // Time - O(N), Space - O(N)
-    public static int lockersOpen() {
+    public int lockersOpen() {
         // 100 - open
         // 100/2 - 50 - closes every second locker
         //

@@ -4,13 +4,15 @@ import spock.lang.Specification
 
 class PermutationsSpec extends Specification {
 
-    def "Test [Correct Values]"() {
+    def "getStringPermutations"() {
+        given:
+        Permutations permutations = new Permutations()
+
         expect:
-        Permutations.getStringPermutations("", a) == b
+        permutations.getStringPermutations("", a) == b
 
         where:
         a     || b
-//        null  || [""]
         ""    || [""]
         "abc" || ["abc", "acb", "bca", "bac", "cab", "cba"]
     }

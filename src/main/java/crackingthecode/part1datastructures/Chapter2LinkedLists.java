@@ -13,7 +13,7 @@ public class Chapter2LinkedLists {
      * How would you solve this problem if a temporary buffer is not allowed?
      */
     // Time - O(N)
-    public static void removeDuplicates(final Node<Integer> node) {
+    public void removeDuplicates(final Node<Integer> node) {
         if (node == null) {
             return;
         }
@@ -37,7 +37,7 @@ public class Chapter2LinkedLists {
     }
 
     // Time - O(N^2)
-    public static void removeDuplicates2(final Node<Integer> n) {
+    public void removeDuplicates2(final Node<Integer> n) {
         if (n == null) {
             return;
         }
@@ -62,7 +62,7 @@ public class Chapter2LinkedLists {
     }
 
     // Time - O(N^2)
-    public static void removeDuplicates3(final Node<Integer> n) {
+    public void removeDuplicates3(final Node<Integer> n) {
         if (n == null) {
             return;
         }
@@ -83,7 +83,7 @@ public class Chapter2LinkedLists {
     }
 
     // book
-    public static void deleteDupsC(Node<Integer> head) {
+    public void deleteDupsC(Node<Integer> head) {
         if (head == null) {
             return;
         }
@@ -118,7 +118,7 @@ public class Chapter2LinkedLists {
         }
     }
 
-    public static void deleteEveryOtherRecursive(Node<Integer> node) {
+    public void deleteEveryOtherRecursive(Node<Integer> node) {
         if (node != null && node.next != null) {
             node.next = node.next.next;
             deleteEveryOtherRecursive(node.next);
@@ -129,7 +129,7 @@ public class Chapter2LinkedLists {
      * 2.2 - Implement an algorithm to find the nth to last element of a singly linked list.
      */
     // Time - O(N), Space - O(1)
-    public static Node<Integer> findNthLastElement(Node<Integer> node, final int n) {
+    public Node<Integer> findNthLastElement(Node<Integer> node, final int n) {
         if (node == null || n < 1) {
             return null;
         }
@@ -164,7 +164,7 @@ public class Chapter2LinkedLists {
      * Result: nothing is returned, but the new linked list looks like a->b->d->e
      */
     // Time - O(1)
-    public static void deleteMiddleNode(Node<Character> n) {
+    public void deleteMiddleNode(Node<Character> n) {
         if (n == null || n.next == null) {
             return;
         }
@@ -186,7 +186,7 @@ public class Chapter2LinkedLists {
     // Linked list  - 3-1-5 (513)
     // Linked list2 - 5-9-2 (295)
     // sum          - 8-0-8
-    public static Node<Integer> addTwoLists(Node<Integer> n, Node<Integer> n2) {
+    public Node<Integer> addTwoLists(Node<Integer> n, Node<Integer> n2) {
         if (n == null || n2 == null) {
             return null;
         }
@@ -229,7 +229,7 @@ public class Chapter2LinkedLists {
      * output: C
      */
     // Book has a longer solution but seems very uneccesary
-    public static Node<Integer> getCircular(Node<Integer> node) {
+    public Node<Integer> getCircular(Node<Integer> node) {
         if (node == null) {
             return null;
         }
