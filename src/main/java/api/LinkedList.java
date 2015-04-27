@@ -1,6 +1,4 @@
-package questions.linkedlist;
-
-import api.Node;
+package api;
 
 public class LinkedList<T> {
 

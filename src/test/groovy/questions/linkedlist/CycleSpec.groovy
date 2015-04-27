@@ -5,9 +5,14 @@ import api.Node
 
 class CycleSpec extends Specification {
 
+    Cycle cycle
+
+    def "setup"() {
+        cycle = new Cycle()
+    }
+
     def "cycle - true"() {
         given:
-        Cycle cycle = new Cycle()
         //       n4 <- n3
         //        |     |
         // n0 -> n1 -> n2
@@ -31,7 +36,6 @@ class CycleSpec extends Specification {
 
     def "cycle - false"() {
         given:
-        Cycle cycle = new Cycle()
         //       n4 <- n3
         //        |     |
         // n0 -> n1 -> n2

@@ -1,7 +1,7 @@
 package crackingthecode.part1datastructures
 
-import spock.lang.Specification
 import api.Node
+import spock.lang.Specification
 
 class Chapter2LinkedListsSpec extends Specification {
 
@@ -21,6 +21,7 @@ class Chapter2LinkedListsSpec extends Specification {
         node.next.next.next.next.next = new Node<>(4)
 
         when:
+        chapter2LinkedLists.removeDuplicates(null)
         chapter2LinkedLists.removeDuplicates(node)
 
         then:
@@ -40,6 +41,7 @@ class Chapter2LinkedListsSpec extends Specification {
         node.next.next.next.next.next = new Node<>(4)
 
         when:
+        chapter2LinkedLists.removeDuplicates2(null)
         chapter2LinkedLists.removeDuplicates2(node)
 
         then:
@@ -59,6 +61,7 @@ class Chapter2LinkedListsSpec extends Specification {
         node.next.next.next.next.next = new Node<>(4)
 
         when:
+        chapter2LinkedLists.removeDuplicates3(null)
         chapter2LinkedLists.removeDuplicates3(node)
 
         then:
@@ -68,22 +71,24 @@ class Chapter2LinkedListsSpec extends Specification {
         node.next.next.next.value == 5
     }
 
-    def "deleteEveryOther"() {
+    def "2.1 - deleteDupsC - book"() {
         given:
         Node<Integer> node = new Node<>(1)
-        node.next = new Node<>(1)
-        node.next.next = new Node<>(2)
-        node.next.next.next = new Node<>(2)
-        node.next.next.next.next = new Node<>(4)
-        node.next.next.next.next.next = new Node<>(5)
+        node.next = new Node<>(0)
+        node.next.next = new Node<>(1)
+        node.next.next.next = new Node<>(4)
+        node.next.next.next.next = new Node<>(5)
+        node.next.next.next.next.next = new Node<>(4)
 
         when:
-        chapter2LinkedLists.deleteEveryOtherRecursive(node)
+        chapter2LinkedLists.deleteDupsC(null)
+        chapter2LinkedLists.deleteDupsC(node)
 
         then:
         node.value == 1
-        node.next.value == 2
+        node.next.value == 0
         node.next.next.value == 4
+        node.next.next.next.value == 5
     }
 
     def "2.2 - findNthLastElement"() {
@@ -114,8 +119,8 @@ class Chapter2LinkedListsSpec extends Specification {
         node1.next.next.next.next = new Node<>('e' as Character)
 
         when:
+        chapter2LinkedLists.deleteMiddleNode(null)
         chapter2LinkedLists.deleteMiddleNode(node1.next.next)
-//        node1.next.next = node1.next.next.next
 
         then:
         node1.value == 'a'
@@ -178,7 +183,7 @@ class Chapter2LinkedListsSpec extends Specification {
     //           |    |
     // A -> B -> C  <-
     // input: A -> B -> C -> D -> E -> C [the same C as earlier]
-    def "2.5 - getCircular"() {
+    def "2.5 - getCircular - true"() {
         given:
         Node<Integer> nodeA = new Node<>(0)
         Node<Integer> nodeB = new Node<>(1)
@@ -193,9 +198,36 @@ class Chapter2LinkedListsSpec extends Specification {
         nodeE.next = nodeC
 
         when:
+        Node<Integer> nullResult = chapter2LinkedLists.getCircular(null)
         Node<Integer> result = chapter2LinkedLists.getCircular(nodeA)
 
         then:
+        nullResult == null
         result.value == 3
+    }
+
+    def "2.5 - getCircular - false"() {
+        given:
+        //       n4 <- n3
+        //        |     |
+        // n0 -> n1 -> n2
+        Node<Integer> node0 = new Node<>(0)
+        Node<Integer> node1 = new Node<>(1)
+        Node<Integer> node2 = new Node<>(2)
+        Node<Integer> node3 = new Node<>(3)
+        Node<Integer> node4 = new Node<>(4)
+
+        node0.next = node1
+        node1.next = node2
+        node2.next = node3
+        node3.next = node4
+
+        when:
+        Node<Integer> nullResult = chapter2LinkedLists.getCircular(null)
+        Node<Integer> result = chapter2LinkedLists.getCircular(node0)
+
+        then:
+        nullResult == null
+        result == null
     }
 }

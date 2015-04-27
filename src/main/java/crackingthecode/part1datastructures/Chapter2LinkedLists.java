@@ -36,7 +36,7 @@ public class Chapter2LinkedLists {
         }
     }
 
-    // Time - O(N^2)
+    // Time - O(N^2), Space - O(1)
     public void removeDuplicates2(final Node<Integer> n) {
         if (n == null) {
             return;
@@ -93,7 +93,7 @@ public class Chapter2LinkedLists {
             // Look backwards for dups, and remove any that you see.
             Node<Integer> runner = head;
             while (runner != current) {
-                if (runner.value == current.value) {
+                if (runner.value.equals(current.value)) {
                     Node<Integer> tmp = current.next;
                     previous.next = tmp;
                     current = tmp;
@@ -115,13 +115,6 @@ public class Chapter2LinkedLists {
                 previous = current;
                 current = current.next;
             }
-        }
-    }
-
-    public void deleteEveryOtherRecursive(Node<Integer> node) {
-        if (node != null && node.next != null) {
-            node.next = node.next.next;
-            deleteEveryOtherRecursive(node.next);
         }
     }
 
@@ -153,7 +146,7 @@ public class Chapter2LinkedLists {
             node = node.next;
         }
 
-        return null;
+        return node;
     }
 
     /**
@@ -219,8 +212,8 @@ public class Chapter2LinkedLists {
     }
 
     /**
-     * Given a circular linked list, implement an algorithm which returns node at the beginning of
-     * the loop.
+     * 2.5 - Given a circular linked list, implement an algorithm which returns node at the
+     * beginning of the loop.
      * DEFINITION
      * Circular linked list: A (corrupt) linked list in which a node’s next pointer points to an
      * earlier node, so as to make a loop in the linked list.
@@ -228,7 +221,7 @@ public class Chapter2LinkedLists {
      * input: A -> B -> C -> D -> E -> C [the same C as earlier]
      * output: C
      */
-    // Book has a longer solution but seems very uneccesary
+    // Book has a longer solution but seems very unnecessary
     public Node<Integer> getCircular(Node<Integer> node) {
         if (node == null) {
             return null;

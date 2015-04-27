@@ -1,6 +1,5 @@
 package crackingthecode.part1datastructures
 
-import spock.lang.Ignore
 import spock.lang.Specification
 
 class Chapter1ArraysAndStringsSpec extends Specification {
@@ -11,7 +10,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
         chapter1ArraysAndStrings = new Chapter1ArraysAndStrings()
     }
 
-    def "hasUniqueCharacters"() {
+    def "1.1 - isUniqueCharacters"() {
         expect:
         chapter1ArraysAndStrings.isUniqueCharacters(a) == b
         chapter1ArraysAndStrings.isUniqueCharacters2(a) == b
@@ -26,31 +25,33 @@ class Chapter1ArraysAndStringsSpec extends Specification {
         "qwertyuiopplkjhgfdsazxcvbnm" || false
     }
 
-    def "Test - reverseString [Correct Values]"() {
+    def "1.2 - reverseString"() {
         expect:
         chapter1ArraysAndStrings.reverseString(a as char[]) == b as char[]
 
         where:
         a            || b
         null         || null
+        ""           || ""
         "bad"        || "dab"
         "1234567890" || "0987654321"
         "test"       || "tset"
     }
 
-    @Ignore
-    def "Test - removeDuplicates [Correct Values]"() {
+    def "1.3 - removeDuplicates"() {
         expect:
-        chapter1ArraysAndStrings.removeDuplicates(a as char[]) == b as char[]
+        chapter1ArraysAndStrings.removeDuplicates(a) == b
 
         where:
         a              || b
+        null           || null
+        ""             || ""
         "baaaaaaaaaad" || "bad"
-//        "1123" || "123"
-//        "abcc" || "abc"
+        "1123"         || "123"
+        "abcc"         || "abc"
     }
 
-    def "Test - isAnagram [Correct Values]"() {
+    def "1.4 - isAnagram"() {
         expect:
         chapter1ArraysAndStrings.isAnagram(a, b) == c
         chapter1ArraysAndStrings.isAnagram2(a, b) == c
@@ -58,6 +59,9 @@ class Chapter1ArraysAndStringsSpec extends Specification {
         where:
         a            || b            || c
         null         || "abc"        || false
+        "abx"        || null         || false
+        "a"          || "a"          || false
+        "abc"        || "ababc"      || false
         "abc"        || "abc"        || true
         "has"        || "ash"        || true
         "gas"        || "sag"        || true
@@ -65,7 +69,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
         "fall"       || "foul"       || false
     }
 
-    def "Test - replaceSpace [Correct Values]"() {
+    def "1.5 - replaceSpace"() {
         expect:
         chapter1ArraysAndStrings.replaceSpaces(a) == b
         chapter1ArraysAndStrings.replaceSpaces2(a) == b
@@ -79,7 +83,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
         "  "   || "%20%20"
     }
 
-    def "Test - rotateImage [Correct Values]"() {
+    def "1.6 - rotateImage"() {
         expect:
         chapter1ArraysAndStrings.rotateImage(a as int[][]) == b as int[][]
         chapter1ArraysAndStrings.rotateImage2(a as int[][]) == b as int[][]
@@ -101,7 +105,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
                            [6, 2, 8, 4]]
     }
 
-    def "Test - markRows [Correct Values]"() {
+    def "1.7 - markRows"() {
         expect:
         chapter1ArraysAndStrings.markRows(a as int[][]) == b as int[][]
 
@@ -121,13 +125,16 @@ class Chapter1ArraysAndStringsSpec extends Specification {
 
     }
 
-    def "Test - isSubstring [Correct Values]"() {
+    def "1.8 - isSubstring"() {
         expect:
         chapter1ArraysAndStrings.isSubstring(a, b) == c
 
         where:
         a             || b             || c
         null          || null          || false
+        null          || "asdf"        || false
+        "asdfs"       || null          || false
+        "abc"         || "abdefd"      || false
         "waterbottle" || "erbottlewat" || true
         "apple"       || "pleap"       || true
         "apple"       || "ppale"       || false

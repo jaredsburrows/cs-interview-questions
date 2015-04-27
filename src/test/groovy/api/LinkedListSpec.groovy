@@ -1,5 +1,6 @@
-package questions.linkedlist
+package api
 
+import api.LinkedList
 import spock.lang.Specification
 
 class LinkedListSpec extends Specification {

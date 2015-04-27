@@ -1,5 +1,6 @@
 package crackingthecode.part1datastructures;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class Chapter3StacksAndQueues {
@@ -25,10 +26,10 @@ public class Chapter3StacksAndQueues {
     @SuppressWarnings("serial")
     public static class MinStack extends Stack<Integer> {
 
-        Stack<Integer> minStack = new Stack<>();
+        final Stack<Integer> minStack = new Stack<>();
 
         public void push(final int value) {
-            if (value <= getMinimum()) {
+            if (value <= this.getMinimum()) {
                 minStack.push(value);
             }
 
@@ -37,7 +38,7 @@ public class Chapter3StacksAndQueues {
 
         public Integer pop() {
             int value = super.pop();
-            if (value == getMinimum()) {
+            if (value == this.getMinimum()) {
                 minStack.pop();
             }
 
@@ -64,17 +65,58 @@ public class Chapter3StacksAndQueues {
      * FOLLOW UP Implement a function popAt(int index) which performs a pop operation on a specific
      * sub-stack.
      */
+    // stack is too high, it might topple
+    // create a new one when the previous exceeds capacity
+    public static class SetOfStacks<T> {
+        private ArrayList<Stack<T>> stacks = new ArrayList<>();
+        private int currentStack;
+        private int capacity;
+
+        public SetOfStacks(final int capacity) {
+            this.currentStack = 0;
+            this.capacity = capacity;
+            this.stacks.add(new Stack<>());
+        }
+
+        public void push(T t) {
+            if (this.stacks.get(this.currentStack).size() == this.capacity) {
+                final Stack<T> stack = new Stack<>();
+                stack.push(t);
+                this.stacks.add(stack);
+                this.currentStack++;
+            } else {
+                this.stacks.get(this.currentStack).push(t);
+            }
+        }
+
+        public T pop() {
+            if (this.stacks.get(this.currentStack).size() > 0) {
+                return this.stacks.get(this.currentStack).pop();
+            } else if (this.currentStack > 0 && this.stacks.get(this.currentStack).size() == 0) {
+                this.stacks.remove(this.currentStack);
+                this.currentStack--;
+                return this.stacks.get(this.currentStack).pop();
+            }
+
+            return null;
+        }
+
+        public T popAt(int index) {
+            return this.stacks.get(index).pop();
+        }
+    }
 
     /**
      * 3.4 - In the classic problem of the Towers of Hanoi, you have 3 rods and N disks of different
      * sizes which can slide onto any tower. The puzzle starts with disks sorted in ascending order
      * of size from top to bottom (e.g., each disk sits on top of an even larger one). You have the
      * following constraints:
-     *      (A) Only one disk can be moved at a time.
-     *      (B) A disk is slid off the top of one rod onto the next rod.
-     *      (C) A disk can only be placed on top of a larger disk.
+     * (A) Only one disk can be moved at a time.
+     * (B) A disk is slid off the top of one rod onto the next rod.
+     * (C) A disk can only be placed on top of a larger disk.
      * Write a program to move the disks from the first rod to the last using Stacks
      */
+    // TODO
 
     /**
      * 3.5 - Implement a MyQueue class which implements a queue using two stacks.

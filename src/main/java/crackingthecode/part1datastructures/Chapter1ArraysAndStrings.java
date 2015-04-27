@@ -1,6 +1,8 @@
 package crackingthecode.part1datastructures;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Chapter1ArraysAndStrings {
 
@@ -56,8 +58,12 @@ public class Chapter1ArraysAndStrings {
      */
     // Time - O(N), Space - O(1)
     public char[] reverseString(final char[] cstr) {
-        if (cstr == null || cstr.length == 0) {
+        if (cstr == null) {
             return null;
+        }
+
+        if (cstr.length == 0) {
+            return cstr;
         }
 
         int i = 0;
@@ -82,22 +88,29 @@ public class Chapter1ArraysAndStrings {
      * FOLLOW UP
      * Write the test cases for this method.
      */
-    // TODO
-    public char[] removeDuplicates(char[] cstr) {
-        if (cstr == null || cstr.length == 0) {
+    // TODO with char[], in java you can print the bytes and show that '\0' is not removing chars, the book answer does this
+    // the book answer fails for strings like "baaaaaaaaaad"
+    public String removeDuplicates(String original) {
+        if (original == null) {
             return null;
         }
-        StringBuilder stringBuilder;
-        StringBuffer stringBuffer;
 
-        for (int i = 0; i < cstr.length; i++) {
-            if (((i + 1) < cstr.length) && (cstr[i] == cstr[i + 1])) {
-                cstr[i] = cstr[i + 1];
-                System.out.print(cstr[i]);
+        if (original.isEmpty()) {
+            return original;
+        }
+
+        Set<Character> characterSet = new HashSet<>();
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i < original.length(); i++) {
+            char temp = original.charAt(i);
+            if (!characterSet.contains(temp)) {
+                characterSet.add(temp);
+                stringBuilder.append(temp);
             }
         }
 
-        return cstr;
+        return stringBuilder.toString();
     }
 
     /**
@@ -117,10 +130,6 @@ public class Chapter1ArraysAndStrings {
 
         char[] chars = str.toCharArray();
         char[] chars2 = str2.toCharArray();
-
-        if (chars.length != chars2.length) {
-            return false;
-        }
 
         Arrays.sort(chars);
         Arrays.sort(chars2);

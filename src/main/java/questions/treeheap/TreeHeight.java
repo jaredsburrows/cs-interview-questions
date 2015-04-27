@@ -4,7 +4,7 @@ import api.TreeNode;
 
 public class TreeHeight {
 
-    public int getHeight(final TreeNode treeNode) {
+    public <T> int getHeight(final TreeNode<T> treeNode) {
         if (treeNode == null) {
             return 0;
         }
@@ -25,7 +25,7 @@ public class TreeHeight {
         return Math.max(left, right) + 1;
     }
 
-    public int getMinHeight(final TreeNode treeNode) {
+    public <T> int getMinHeight(final TreeNode<T> treeNode) {
         if (treeNode == null) {
             return 0;
         }
@@ -33,7 +33,7 @@ public class TreeHeight {
         return Math.min(getMinHeight(treeNode.left), getMinHeight(treeNode.right)) + 1;
     }
 
-    public int getMaxHeight(final TreeNode treeNode) {
+    public <T> int getMaxHeight(final TreeNode<T> treeNode) {
         if (treeNode == null) {
             return 0;
         }

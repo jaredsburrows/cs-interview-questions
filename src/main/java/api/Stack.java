@@ -1,14 +1,14 @@
 package api;
 
 // LIFO
-public class Stack {
-    public TreeNode top;
+public class Stack<T> {
+    public TreeNode<T> top;
 
-    public TreeNode peek() {
-        return top;
+    public TreeNode<T> peek() {
+        return this.top;
     }
 
-    public void push(final TreeNode n) {
+    public void push(final TreeNode<T> n) {
         if (n != null) {
             n.right = top;
             top = n;

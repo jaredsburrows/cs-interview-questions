@@ -1,9 +1,9 @@
 package api;
 
 public class Node<T> {
+    public T value;
     public Node<T> next;
     public Node<T> previous;
-    public T value;
 
     public Node(final T value) {
         this.value = value;
@@ -18,6 +18,6 @@ public class Node<T> {
     }
 
     public Node<T> getPrevious() {
-        return this.next;
+        return this.previous;
     }
 }

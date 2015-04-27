@@ -4,7 +4,7 @@ import api.TreeNode;
 
 public class EqualTree {
 
-    public boolean isEqual(final TreeNode treeNode, final TreeNode treeNode2) {
+    public <T> boolean isEqual(final TreeNode<T> treeNode, final TreeNode<T> treeNode2) {
         if (treeNode == null && treeNode2 == null) {
             return true;
         }

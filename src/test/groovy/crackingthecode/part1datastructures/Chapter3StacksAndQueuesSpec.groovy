@@ -2,6 +2,7 @@ package crackingthecode.part1datastructures
 
 import crackingthecode.part1datastructures.Chapter3StacksAndQueues.MinStack
 import crackingthecode.part1datastructures.Chapter3StacksAndQueues.MyQueue
+import crackingthecode.part1datastructures.Chapter3StacksAndQueues.SetOfStacks
 import spock.lang.Specification
 
 class Chapter3StacksAndQueuesSpec extends Specification {
@@ -10,6 +11,10 @@ class Chapter3StacksAndQueuesSpec extends Specification {
 
     def "setup"() {
         chapter3StacksAndQueues = new Chapter3StacksAndQueues()
+    }
+
+    def "3.1"() {
+        // non-coding question
     }
 
     def "3.2 - MinStack"() {
@@ -39,8 +44,43 @@ class Chapter3StacksAndQueuesSpec extends Specification {
         minStack.getMinimum() == 4;
     }
 
-    def "3.3 - "() {
+    def "3.3 - SetOfStacks"() {
+        given:
+        SetOfStacks<Integer> setOfStacks = new SetOfStacks<>(3)
 
+        when:
+        setOfStacks.pop() == null
+        setOfStacks.push(1)
+        setOfStacks.push(2)
+        setOfStacks.push(3)
+
+        then:
+        setOfStacks.pop() == 3
+
+        when:
+        setOfStacks.push(1)
+        setOfStacks.push(2)
+        setOfStacks.push(3)
+
+        then:
+        setOfStacks.pop() == 3
+        setOfStacks.pop() == 2
+        setOfStacks.pop() == 1
+        setOfStacks.pop() == 2
+        setOfStacks.pop() == 1
+        setOfStacks.pop() == null
+
+        when:
+        setOfStacks.pop() == null
+        setOfStacks.push(1)
+        setOfStacks.push(2)
+        setOfStacks.push(3)
+        setOfStacks.push(4)
+        setOfStacks.push(5)
+        setOfStacks.push(6)
+
+        then:
+        setOfStacks.popAt(0) == 3
     }
 
     def "3.4 - "() {
@@ -75,6 +115,11 @@ class Chapter3StacksAndQueuesSpec extends Specification {
         then:
         myQueue.size() == 5
         myQueue.peek() == 0
+        myQueue.remove() == 0
+        myQueue.remove() == 5
+        myQueue.remove() == 6
+        myQueue.remove() == 2
+        myQueue.remove() == 9
     }
 
     def "3.6 - getSortedStack"() {

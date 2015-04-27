@@ -1,11 +1,11 @@
 package api;
 
-public class TreeNode {
-    public TreeNode left;
-    public TreeNode right;
-    public int value;
+public class TreeNode<T> {
+    public T value;
+    public TreeNode<T> left;
+    public TreeNode<T> right;
 
-    public TreeNode(final int value) {
+    public TreeNode(final T value) {
         this.value = value;
     }
 }
