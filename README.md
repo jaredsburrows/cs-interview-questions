@@ -1,6 +1,5 @@
-Computer Science Interview Practice
+CS Interview Practice [![Build Status](https://travis-ci.org/jaredsburrows/CS-Interview-Questions.svg?branch=master)](https://travis-ci.org/jaredsburrows/CS-Interview-Questions) [![Coverage Status](https://coveralls.io/repos/jaredsburrows/CS-Interview-Questions/badge.svg?branch=master)](https://coveralls.io/r/jaredsburrows/CS-Interview-Questions?branch=master)
 =============
-[![Build Status](https://travis-ci.org/jaredsburrows/CS-Interview-Questions.svg?branch=master)](https://travis-ci.org/jaredsburrows/CS-Interview-Questions) [![Coverage Status](https://coveralls.io/repos/jaredsburrows/CS-Interview-Questions/badge.svg?branch=master)](https://coveralls.io/r/jaredsburrows/CS-Interview-Questions?branch=master)
 
 ## [CodeEval](src/main/java/codeeval)
 
