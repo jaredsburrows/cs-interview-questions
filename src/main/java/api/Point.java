@@ -29,7 +29,7 @@ public class Point {
 
         final Point point = (Point) object;
 
-        return point.getX() == this.x && point.getY() == this.y;
+        return this.x == point.x && this.y == point.y;
     }
 
     @Override

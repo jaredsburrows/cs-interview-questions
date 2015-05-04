@@ -9,7 +9,7 @@ class NodeSpec extends Specification {
 
     def "default values"() {
         expect:
-        node.getValue() == 123
+        node.value == 123
         node.next == null
         node.previous == null
     }

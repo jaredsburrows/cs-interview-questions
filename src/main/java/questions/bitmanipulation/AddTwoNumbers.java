@@ -69,21 +69,18 @@ public class AddTwoNumbers {
 
             if (sum == 0) {
                 carry = 0;
-                stringBuilder.append('0');
+                stringBuilder.append("0");
             } else if (sum == 1) {
                 carry = 0;
-                stringBuilder.append('1');
+                stringBuilder.append("1");
             } else if (sum == 2) {
                 carry = 1;
-                stringBuilder.append('0');
-            } else if (sum == 3) {
-                carry = 1;
-                stringBuilder.append('1');
+                stringBuilder.append("0");
             }
         }
 
         if (carry > 0) {
-            stringBuilder.append('1');
+            stringBuilder.append("1");
         }
 
         return stringBuilder.reverse().toString();

@@ -13,7 +13,7 @@ public class LinkedList<T> {
     }
 
     public Node<T> getNext() {
-        return this.head.getNext();
+        return this.head.next;
     }
 
     public void addtoFront(final T value) {
@@ -35,7 +35,7 @@ public class LinkedList<T> {
     }
 
     public void removeFront() {
-        head = head.getNext();
+        head = head.next;
     }
 
     public void removeLast() {

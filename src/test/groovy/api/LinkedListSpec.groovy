@@ -1,6 +1,5 @@
 package api
 
-import api.LinkedList
 import spock.lang.Specification
 
 class LinkedListSpec extends Specification {
@@ -15,10 +14,10 @@ class LinkedListSpec extends Specification {
         linkedList.addtoFront(1)
 
         then:
-        linkedList.getHead().getValue() == 1
-        linkedList.getNext().getValue() == 0
-        linkedList.getNext().getNext().getValue() == 6
-        linkedList.getNext().getNext().getNext().getValue() == 5
+        linkedList.getHead().value == 1
+        linkedList.next.value == 0
+        linkedList.next.next.value == 6
+        linkedList.next.next.next.value == 5
     }
 
     def "addToEnd"() {
@@ -31,10 +30,10 @@ class LinkedListSpec extends Specification {
         linkedList.addToEnd(3)
 
         then:
-        linkedList.getHead().getValue() == 0
-        linkedList.getNext().getValue() == 1
-        linkedList.getNext().getNext().getValue() == 2
-        linkedList.getNext().getNext().getNext().getValue() == 3
+        linkedList.getHead().value == 0
+        linkedList.next.value == 1
+        linkedList.next.next.value == 2
+        linkedList.next.next.next.value == 3
     }
 
     def "removeFront"() {
@@ -48,7 +47,7 @@ class LinkedListSpec extends Specification {
         linkedList2.removeFront()
 
         then:
-        linkedList.getHead().getValue() == 6
+        linkedList.getHead().value == 6
         linkedList2.getHead() == null
     }
 
@@ -62,8 +61,8 @@ class LinkedListSpec extends Specification {
         linkedList.removeLast()
 
         then:
-        linkedList.getHead().getValue() == 0
-        linkedList.getNext().getValue() == 6
-        linkedList.getNext().getNext() == null
+        linkedList.getHead().value == 0
+        linkedList.next.value == 6
+        linkedList.next.next == null
     }
 }

@@ -38,7 +38,13 @@ class RemoveDuplicatesSpec extends Specification {
         node.next.next.next.next = new Node<>(4)
         node.next.next.next.next.next = new Node<>(5)
 
+        Node<Integer> nullNext = new Node<>(1)
+        nullNext.next = null
+
+
         when:
+        removeDuplicates.deleteEveryOtherRecursive(null)
+        removeDuplicates.deleteEveryOtherRecursive(nullNext)
         removeDuplicates.deleteEveryOtherRecursive(node)
 
         then:

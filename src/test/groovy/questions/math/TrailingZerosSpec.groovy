@@ -13,6 +13,7 @@ class TrailingZerosSpec extends Specification {
 
         where:
         a           || b
+        0           || 0
         9           || 0 // none
         5           || 0 // none
         10          || 1

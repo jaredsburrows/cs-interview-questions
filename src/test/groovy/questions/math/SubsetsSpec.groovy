@@ -10,7 +10,7 @@ class SubsetsSpec extends Specification {
 
         expect:
         subsets.subsets(a) == b
-        subsets.subsets(a) == b
+        subsets.subsets(a as int[]) == b
 
         where:
         a         || b

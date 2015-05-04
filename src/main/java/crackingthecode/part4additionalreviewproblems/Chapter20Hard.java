@@ -2,7 +2,6 @@ package crackingthecode.part4additionalreviewproblems;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class Chapter20Hard {
 
@@ -217,35 +216,35 @@ public class Chapter20Hard {
      * Output: DAMP -> LAMP -> LIMP -> LIME -> LIKE
      */
     // what is the data structure of the dictionary? Map<Integer, String>
-    public List<String> getTransformedList(Map<Integer, String> dictionary, String word, String word2) {
-        if (dictionary == null || word == null || word2 == null) {
-            return null;
-        }
-
-        if (!dictionary.containsValue(word) || !dictionary.containsValue(word2)) {
-            return null;
-        }
-
-        final List<String> stringList = new ArrayList<>();
-        stringList.add(word);
-
-        char[] temp = word.toCharArray();
-        int count = 0;
-
-        while (count <= temp.length) {
-
-            temp[count] = word2.charAt(count);
-
-            String tmp = String.valueOf(temp);
-
-            if (dictionary.containsValue(tmp)) {
-                stringList.add(tmp);
-                count++;
-            }
-        }
-
-        return stringList;
-    }
+//    public List<String> getTransformedList(Map<Integer, String> dictionary, String word, String word2) {
+//        if (dictionary == null || word == null || word2 == null) {
+//            return null;
+//        }
+//
+//        if (!dictionary.containsValue(word) || !dictionary.containsValue(word2)) {
+//            return null;
+//        }
+//
+//        final List<String> stringList = new ArrayList<>();
+//        stringList.add(word);
+//
+//        char[] temp = word.toCharArray();
+//        int count = 0;
+//
+//        while (count <= temp.length) {
+//
+//            temp[count] = word2.charAt(count);
+//
+//            String tmp = String.valueOf(temp);
+//
+//            if (dictionary.containsValue(tmp)) {
+//                stringList.add(tmp);
+//                count++;
+//            }
+//        }
+//
+//        return stringList;
+//    }
 
     /**
      * 20.11 - Imagine you have a square matrix, where each cell is filled with either black or

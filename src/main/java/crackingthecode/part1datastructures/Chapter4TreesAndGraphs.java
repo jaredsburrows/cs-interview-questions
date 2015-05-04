@@ -48,31 +48,6 @@ public class Chapter4TreesAndGraphs {
         return false;
     }
 
-//    public <T> boolean hasGraphNodeDFS(final GraphNode<T> start, final GraphNode<T> end) {
-//        final Stack<GraphNode<T>> stack = new Stack<>();
-//
-//        start.visited = true;
-//        stack.push(start);
-//
-//        while (!stack.isEmpty()) {
-//            final GraphNode<T> gNode = stack.peek();
-//            if (adj[v].hasNext()) {
-//                int w = adj[v].next();
-//                if (!marked[w]) {
-//                    // discovered vertex w for the first time
-//                    marked[w] = true;
-//                    // edgeTo[v] = w;
-//                    stack.push(w);
-//                }
-//            } else {
-//                // v's adjacency list is exhausted
-//                stack.pop();
-//            }
-//        }
-//
-//        return false;
-//    }
-
     /**
      * 4.3 - Given a sorted (increasing order) array, write an algorithm to create a binary tree
      * with minimal height.

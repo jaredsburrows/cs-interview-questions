@@ -24,11 +24,11 @@ class PointSpec extends Specification {
 
     def "equals"() {
         expect:
-        point1.equals(point1)
-        !point1.equals("test")
-        point2.equals(point1)
-        new Point(321, 123).equals(new Point(321, 123))
-        !new Point(32, 1243).equals(new Point(321, 123))
+        point1.equals(point1)                               // same reference
+        !point1.equals("test")                              // different object
+        point2.equals(point1)                               // same values
+        !new Point(1, 1).equals(new Point(1, 2))            // different y
+        !new Point(1, 1).equals(new Point(2, 1))            // different x
     }
 
     def "hashcode"() {

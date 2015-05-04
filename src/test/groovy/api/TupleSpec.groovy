@@ -24,17 +24,21 @@ class TupleSpec extends Specification {
 
     def "equals"() {
         expect:
-        tuple.equals(tuple)
-        !tuple.equals("test")
-        tuple.equals(tuple2)
-        new Tuple<String, Integer>("test", 123).equals(new Tuple<String, Integer>("test", 123))
-        !new Tuple<String, Integer>("d", 1243).equals(new Tuple<String, Integer>("321", 123))
+        tuple.equals(tuple)                                                                     // same reference
+        !tuple.equals("test")                                                                   // different object
+        tuple.equals(tuple2)                                                                    // same values
+        !new Tuple<String, Integer>("test", 1).equals(new Tuple<String, Integer>("test", 123))  // different y
+        !new Tuple<String, Integer>("test", 1).equals(new Tuple<String, Integer>("t", 1))       // different x
     }
 
     def "hashcode"() {
         expect:
         tuple.hashCode() == tuple2.hashCode()
-        new Tuple<String, Integer>("test", 123).hashCode() == new Tuple<String, Integer>("test", 123).hashCode()
-        new Tuple<String, Integer>("d", 1243).hashCode() != new Tuple<String, Integer>("test", 123).hashCode()
+        new Tuple<String, Integer>("test", 123).hashCode() ==
+                new Tuple<String, Integer>("test", 123).hashCode()
+        new Tuple<String, Integer>("test", null).hashCode() !=
+                new Tuple<String, Integer>("test", 123).hashCode()
+        new Tuple<String, Integer>(null, 123).hashCode() !=
+                new Tuple<String, Integer>("test", 123).hashCode()
     }
 }

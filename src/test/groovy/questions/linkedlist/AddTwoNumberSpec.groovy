@@ -34,6 +34,13 @@ class AddTwoNumberSpec extends Specification {
         nine.next = new Node<>(9)
         nine.next.next = new Node<>(9)
 
+        Node<Integer> shortNumber = new Node<>(1)
+        shortNumber.next = new Node<>(1)
+
+        Node<Integer> shorterNumber = new Node<>(1)
+        shorterNumber.next = new Node<>(1)
+        shorterNumber.next.next = new Node<>(1)
+
         expect:
         addTwoNumbers.addTwoNumbers(null, nine) == null
         addTwoNumbers.addTwoNumbers(nine, null) == null
@@ -54,5 +61,15 @@ class AddTwoNumberSpec extends Specification {
         result3.next.value == 9
         result3.next.next.value == 9
         result3.next.next.next.value == 1
+
+        Node<Integer> result4 = addTwoNumbers.addTwoNumbers(shortNumber, shorterNumber)
+        result4.value == 2
+        result4.next.value == 2
+        result4.next.next.value == 1
+
+        Node<Integer> result5 = addTwoNumbers.addTwoNumbers(shorterNumber, shortNumber)
+        result5.value == 2
+        result5.next.value == 2
+        result5.next.next.value == 1
     }
 }

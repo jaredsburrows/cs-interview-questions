@@ -14,16 +14,4 @@ public class GraphNode<T> {
         this.value = value;
         this.neighbors = neighbors;
     }
-
-    public T getValue() {
-        return this.value;
-    }
-
-    public GraphNode<T> getNext() {
-        return this.next;
-    }
-
-    public GraphNode<T>[] getNeighbors() {
-        return this.neighbors;
-    }
 }

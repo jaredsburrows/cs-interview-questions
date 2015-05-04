@@ -45,6 +45,9 @@ class CycleSpec extends Specification {
         Node<Integer> node3 = new Node<>(3)
         Node<Integer> node4 = new Node<>(4)
 
+        Node<Integer> nullNext = new Node<>(12)
+        nullNext.next = null
+
         node0.next = node1
         node1.next = node2
         node2.next = node3
@@ -52,6 +55,7 @@ class CycleSpec extends Specification {
 
         expect:
         !cycle.hasCycle(null)
+        !cycle.hasCycle(nullNext)
         !cycle.hasCycle(new Node<Integer>(0))
         !cycle.hasCycle(node0)
     }
