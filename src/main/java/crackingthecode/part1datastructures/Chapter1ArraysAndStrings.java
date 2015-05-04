@@ -10,7 +10,7 @@ public class Chapter1ArraysAndStrings {
      * 1.1 - Implement an algorithm to determine if a string has all unique characters. What if you
      * can not use additional data structures?
      */
-    // Time - O(N), Space O(1)
+    // Time - O(N), Space - O(1)
     public boolean isUniqueCharacters(final String str) {
         if (str == null || str.trim().length() == 0) {
             return false;
@@ -24,9 +24,13 @@ public class Chapter1ArraysAndStrings {
 
         for (int i = 0; i < str.length(); i++) {
             int val = 1 << (str.charAt(i) - 'a');
+
+            // check the it, bit = (number >> x) & 1;
             if ((check & val) > 0) {
                 return false;
             }
+
+            // set the bit, number |= 1 << x;
             check |= val;
         }
 
@@ -116,7 +120,7 @@ public class Chapter1ArraysAndStrings {
     /**
      * 1.4 - Write a method to decide if two strings are anagrams or not.
      */
-    // Time - N LOG(N), Space - O(N)
+    // Time - O(NLOG(N)), Space - O(N)
     public boolean isAnagram(final String str, final String str2) {
         if (str == null || str2 == null) {
             return false;
@@ -179,11 +183,7 @@ public class Chapter1ArraysAndStrings {
         final char[] chars = str.toCharArray();
 
         for (final char aChar : chars) {
-            if (aChar == ' ') {
-                stringBuilder.append("%20");
-            } else {
-                stringBuilder.append(aChar);
-            }
+            stringBuilder.append(aChar == ' ' ? "%20" : aChar);
         }
 
         return stringBuilder.toString();
@@ -214,10 +214,11 @@ public class Chapter1ArraysAndStrings {
             int last = length - 1 - i;
             for (int j = i; j < last; j++) {
                 int offset = j - i;
+                int tmp = last - offset;
                 int temp = image[i][j]; // save top
-                image[i][j] = image[last - offset][i]; // left -> top
-                image[last - offset][i] = image[last][last - offset]; // bottom -> left
-                image[last][last - offset] = image[j][last]; // right -> bottom
+                image[i][j] = image[tmp][i]; // left -> top
+                image[tmp][i] = image[last][tmp]; // bottom -> left
+                image[last][tmp] = image[j][last]; // right -> bottom
                 image[j][last] = temp; // top -> right
             }
         }

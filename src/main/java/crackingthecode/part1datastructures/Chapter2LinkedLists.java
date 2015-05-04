@@ -146,7 +146,7 @@ public class Chapter2LinkedLists {
             node = node.next;
         }
 
-        return node;
+        return null;
     }
 
     /**
