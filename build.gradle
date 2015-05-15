@@ -11,7 +11,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.3.1'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.4.0'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.9'
     }
 }
@@ -40,6 +40,10 @@ tasks.withType(Test) {
     testLogging {
         exceptionFormat 'full'
     }
+}
+
+jacoco {
+    version '0.7.4.201502262128'
 }
 
 jacocoTestReport {
