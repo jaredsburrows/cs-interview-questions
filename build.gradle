@@ -12,11 +12,12 @@ buildscript {
 
     dependencies {
         classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.4.0'
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.9'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.10.1'
     }
 }
 
 repositories {
+    mavenCentral()
     jcenter()
 }
 
