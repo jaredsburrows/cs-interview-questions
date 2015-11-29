@@ -1,61 +1,74 @@
+apply plugin: 'pmd'
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'jacoco'
+apply plugin: 'findbugs'
+apply plugin: 'checkstyle'
+apply plugin: 'net.ltgt.errorprone'
 apply plugin: 'com.github.kt3k.coveralls'
 apply plugin: 'com.github.ben-manes.versions'
 
 buildscript {
     repositories {
-        mavenCentral()
         jcenter()
+        maven { url 'https://plugins.gradle.org/m2/' } // official gradle plugins
     }
 
     dependencies {
+        classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.0.8'
         classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.4.0'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.11.3'
     }
 }
 
 repositories {
-    mavenCentral()
     jcenter()
+    maven { url 'https://plugins.gradle.org/m2/' } // official gradle plugins
 }
 
 dependencies {
-    testCompile 'org.codehaus.groovy:groovy-all:2.4.4'
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.5'
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+
+    checkstyle 'com.puppycrawl.tools:checkstyle:6.12.1'
+    errorprone 'com.google.errorprone:error_prone_core:2.0.6'
+    findbugs 'com.google.code.findbugs:findbugs:3.0.1'
+    jacocoAgent 'org.jacoco:org.jacoco.agent:0.7.2.201409121644' // https://github.com/jacoco/jacoco/issues/288
+    jacocoAnt 'org.jacoco:org.jacoco.ant:0.7.2.201409121644' // https://github.com/jacoco/jacoco/issues/288
+	pmd 'net.sourceforge.pmd:pmd-java:5.4.0'
 }
 
 tasks.withType(JavaCompile) {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
-
-    configure(options) {
-        compilerArgs << '-Xlint:all' << '-Xlint:-options'
+    
+	configure(options) {
+        compilerArgs << '-Xlint:all' << '-Xlint:-options' << '-Werror' << '-Xdiags:verbose'
         deprecation = true
         encoding = 'UTF-8'
+        // incremental = true // https://code.google.com/p/android/issues/detail?id=82411
     }
 }
 
 tasks.withType(Test) {
     testLogging {
         exceptionFormat 'full'
+        showCauses true
+        showExceptions true
+        showStackTraces true
+        showStandardStreams true
     }
 }
 
-jacoco {
-    version '0.7.4.201502262128'
+tasks.withType(JavaForkOptions) {
+    // Prevent forked processes from stealing focus (on MacOS at least)
+    jvmArgs '-Djava.awt.headless=true'
 }
 
 jacocoTestReport {
     reports {
-        xml {
-            enabled = true // coveralls plugin depends on xml format report
-        }
-
-        html {
-            enabled = true
-        }
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
     }
 
     afterEvaluate {

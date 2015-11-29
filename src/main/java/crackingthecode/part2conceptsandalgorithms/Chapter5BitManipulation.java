@@ -177,7 +177,6 @@ public class Chapter5BitManipulation {
 //            return false;
 //        }
 //        check |= val;
-        long test = 1 << 130;
 
         return num;
     }
