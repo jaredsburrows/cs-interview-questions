@@ -16,8 +16,8 @@ buildscript {
 
     dependencies {
         classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.0.8'
-        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.4.0'
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.11.3'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.6.3'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.12.0'
     }
 }
 
@@ -49,7 +49,7 @@ tasks.withType(Test) {
         showExceptions true
         showStackTraces true
         showStandardStreams true
-		events = ['failed', 'skipped']
+	events = ['failed', 'skipped']
     }
 }
 
@@ -78,14 +78,14 @@ jacocoTestReport {
 }
 
 dependencies {
-    testCompile 'org.codehaus.groovy:groovy-all:2.4.5'
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.6'
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
 
-    checkstyle 'com.puppycrawl.tools:checkstyle:6.14.1'
+    checkstyle 'com.puppycrawl.tools:checkstyle:6.16.1'
     errorprone 'com.google.errorprone:error_prone_core:2.0.7'
     findbugs 'com.google.code.findbugs:findbugs:3.0.1'
-    jacocoAgent 'org.jacoco:org.jacoco.agent:0.7.2.201409121644' // https://github.com/jacoco/jacoco/    issues/288
-    jacocoAnt 'org.jacoco:org.jacoco.ant:0.7.2.201409121644' // https://github.com/jacoco/jacoco/issues/ 288
+    jacocoAgent 'org.jacoco:org.jacoco.agent:0.7.6.201602180812'
+    jacocoAnt 'org.jacoco:org.jacoco.ant:0.7.6.201602180812'
     pmd 'net.sourceforge.pmd:pmd-java:5.4.1'
 }
 
