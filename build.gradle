@@ -10,8 +10,7 @@ apply plugin: 'com.github.ben-manes.versions'
 
 buildscript {
     repositories {
-        jcenter()
-        maven { url 'https://plugins.gradle.org/m2/' } // official gradle plugins
+        maven { url 'https://plugins.gradle.org/m2/' }
     }
 
     dependencies {
@@ -22,7 +21,7 @@ buildscript {
 }
 
 repositories {
-    jcenter()
+    maven { url 'https://plugins.gradle.org/m2/' } 
 }
 
 tasks.withType(JavaCompile) {
@@ -80,12 +79,5 @@ jacocoTestReport {
 dependencies {
     testCompile 'org.codehaus.groovy:groovy-all:2.4.6'
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
-
-    checkstyle 'com.puppycrawl.tools:checkstyle:6.16.1'
-    errorprone 'com.google.errorprone:error_prone_core:2.0.7'
-    findbugs 'com.google.code.findbugs:findbugs:3.0.1'
-    jacocoAgent 'org.jacoco:org.jacoco.agent:0.7.6.201602180812'
-    jacocoAnt 'org.jacoco:org.jacoco.ant:0.7.6.201602180812'
-    pmd 'net.sourceforge.pmd:pmd-java:5.4.1'
 }
 
