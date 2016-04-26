@@ -2,6 +2,7 @@ package api;
 
 // FIFO
 public class Queue<T> {
+
     public TreeNode<T> first;
     public TreeNode<T> last;
 

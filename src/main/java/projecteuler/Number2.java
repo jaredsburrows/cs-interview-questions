@@ -1,4 +1,4 @@
-package projecteuler.number2;
+package projecteuler;
 
 public class Number2 {
 

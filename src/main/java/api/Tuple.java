@@ -1,6 +1,7 @@
 package api;
 
 public class Tuple<X, Y> {
+
     private final X x;
     private final Y y;
 

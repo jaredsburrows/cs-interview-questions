@@ -1,6 +1,7 @@
 package api;
 
 public class GraphNode<T> {
+
     public T value;
     public GraphNode<T> next;
     public GraphNode<T>[] neighbors;

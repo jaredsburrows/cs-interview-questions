@@ -13,7 +13,7 @@ CS Interview Practice [![Build Status](https://travis-ci.org/jaredsburrows/cs-in
 
 **Github:** https://github.com/gaylemcd/ctci
 
-## [Project Euler](src/main/java/projecteuler)
+## [Project Euler](src/main/c/projecteuler)
 
 **Site:** http://projecteuler.net/
 
@@ -26,6 +26,7 @@ CS Interview Practice [![Build Status](https://travis-ci.org/jaredsburrows/cs-in
  - http://www.programcreek.com/
    - http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
  - http://www.geeksforgeeks.org/
+ - http://www.hackerrank.com/
 
 ## Languages Used
 
@@ -64,6 +65,3 @@ CS Interview Practice [![Build Status](https://travis-ci.org/jaredsburrows/cs-in
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-
-

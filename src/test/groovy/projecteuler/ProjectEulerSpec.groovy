@@ -1,8 +1,5 @@
 package projecteuler
-import projecteuler.number1.Number1
-import projecteuler.number2.Number2
-import projecteuler.number3.Number3
-import projecteuler.number4.Number4
+
 import spock.lang.Specification
 
 class ProjectEulerSpec extends Specification {

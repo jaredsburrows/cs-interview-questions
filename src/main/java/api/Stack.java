@@ -2,6 +2,7 @@ package api;
 
 // LIFO
 public class Stack<T> {
+
     public TreeNode<T> top;
 
     public TreeNode<T> peek() {
