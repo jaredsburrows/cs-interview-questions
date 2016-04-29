@@ -4,13 +4,8 @@ import spock.lang.Specification
 
 class PointSpec extends Specification {
 
-    Point point1
-    Point point2
-
-    def "setup"() {
-        point1 = new Point(321, 123)
-        point2 = new Point(321, 123)
-    }
+    Point point1 = new Point(321, 123)
+    Point point2 = new Point(321, 123)
 
     def "getX"() {
         expect:
