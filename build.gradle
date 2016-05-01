@@ -15,7 +15,8 @@ repositories {
 }
 
 apply plugin: 'c'
-apply plugin: 'cpp'
+//apply plugin: 'cpp'
+apply plugin: 'cunit-test-suite'
 apply plugin: 'pmd'
 apply plugin: 'java'
 apply plugin: 'groovy'
@@ -27,11 +28,9 @@ apply plugin: 'com.github.kt3k.coveralls'
 apply plugin: 'com.github.ben-manes.versions'
 
 tasks.withType(CCompile) {
-
 }
 
 tasks.withType(CppCompile) {
-
 }
 
 tasks.withType(JavaCompile) {
@@ -81,6 +80,64 @@ jacocoTestReport {
                               '**/Chapter12SystemDesignAndMemoryLimits**',
                               'projecteuler/**'])
         })
+    }
+}
+
+model {
+    repositories {
+        libs(PrebuiltLibraries) {
+            // brew install cunit
+            // TODO dynamically download
+            cunit {
+                headers.srcDir '/usr/local/Cellar/cunit/2.1-3/include'
+
+                binaries.withType(StaticLibraryBinary) {
+                    staticLibraryFile = file('/usr/local/Cellar/cunit/2.1-3/lib/libcunit.a')
+                }
+            }
+        }
+    }
+
+    components {
+        crackingthecode(NativeLibrarySpec) {
+            sources {
+                c {
+                    source {
+                        srcDir 'src/main/c/crackingthecode'
+                        include '**/*.c'
+                    }
+
+                    exportedHeaders {
+                        srcDir 'src/main/c/crackingthecode/include'
+                    }
+                }
+            }
+        }
+    }
+
+    testSuites {
+        crackingthecodeTest(CUnitTestSuiteSpec) {
+            sources {
+                c {
+                    source {
+                        srcDir 'src/test/c/crackingthecode'
+                        include '**/*.c'
+                    }
+
+                    exportedHeaders {
+                        srcDir 'src/test/c/crackingthecode/include'
+                    }
+                }
+            }
+
+            testing $.components.crackingthecode
+        }
+    }
+
+    binaries {
+        withType(CUnitTestSuiteBinarySpec) {
+            lib library: 'cunit', linkage: 'static'
+        }
     }
 }
 

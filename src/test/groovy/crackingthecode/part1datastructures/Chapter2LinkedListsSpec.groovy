@@ -5,12 +5,6 @@ import spock.lang.Specification
 
 class Chapter2LinkedListsSpec extends Specification {
 
-    Chapter2LinkedLists chapter2LinkedLists
-
-    def "setup"() {
-        chapter2LinkedLists = new Chapter2LinkedLists()
-    }
-
     def "2.1 - removeDuplicates - buffer"() {
         given:
         Node<Integer> node = new Node<>(1)
@@ -21,8 +15,8 @@ class Chapter2LinkedListsSpec extends Specification {
         node.next.next.next.next.next = new Node<>(4)
 
         when:
-        chapter2LinkedLists.removeDuplicates(null)
-        chapter2LinkedLists.removeDuplicates(node)
+        Chapter2LinkedLists.removeDuplicates(null)
+        Chapter2LinkedLists.removeDuplicates(node)
 
         then:
         node.value == 1
@@ -41,8 +35,8 @@ class Chapter2LinkedListsSpec extends Specification {
         node.next.next.next.next.next = new Node<>(4)
 
         when:
-        chapter2LinkedLists.removeDuplicates2(null)
-        chapter2LinkedLists.removeDuplicates2(node)
+        Chapter2LinkedLists.removeDuplicates2(null)
+        Chapter2LinkedLists.removeDuplicates2(node)
 
         then:
         node.value == 1
@@ -61,8 +55,8 @@ class Chapter2LinkedListsSpec extends Specification {
         node.next.next.next.next.next = new Node<>(4)
 
         when:
-        chapter2LinkedLists.removeDuplicates3(null)
-        chapter2LinkedLists.removeDuplicates3(node)
+        Chapter2LinkedLists.removeDuplicates3(null)
+        Chapter2LinkedLists.removeDuplicates3(node)
 
         then:
         node.value == 1
@@ -81,8 +75,8 @@ class Chapter2LinkedListsSpec extends Specification {
         node.next.next.next.next.next = new Node<>(4)
 
         when:
-        chapter2LinkedLists.deleteDupsC(null)
-        chapter2LinkedLists.deleteDupsC(node)
+        Chapter2LinkedLists.deleteDupsC(null)
+        Chapter2LinkedLists.deleteDupsC(node)
 
         then:
         node.value == 1
@@ -100,14 +94,14 @@ class Chapter2LinkedListsSpec extends Specification {
         node.next.next.next.next.next = new Node<>(5)
 
         expect:
-        chapter2LinkedLists.findNthLastElement(null, 6) == null
-        chapter2LinkedLists.findNthLastElement(node, 0) == null
-        chapter2LinkedLists.findNthLastElement(node, 6).value == 0
-        chapter2LinkedLists.findNthLastElement(node, 5).value == 1
-        chapter2LinkedLists.findNthLastElement(node, 4).value == 2
-        chapter2LinkedLists.findNthLastElement(node, 3).value == 3
-        chapter2LinkedLists.findNthLastElement(node, 2).value == 4
-        chapter2LinkedLists.findNthLastElement(node, 1).value == 5
+        Chapter2LinkedLists.findNthLastElement(null, 6) == null
+        Chapter2LinkedLists.findNthLastElement(node, 0) == null
+        Chapter2LinkedLists.findNthLastElement(node, 6).value == 0
+        Chapter2LinkedLists.findNthLastElement(node, 5).value == 1
+        Chapter2LinkedLists.findNthLastElement(node, 4).value == 2
+        Chapter2LinkedLists.findNthLastElement(node, 3).value == 3
+        Chapter2LinkedLists.findNthLastElement(node, 2).value == 4
+        Chapter2LinkedLists.findNthLastElement(node, 1).value == 5
     }
 
     def "2.3 - deleteMiddleNode"() {
@@ -119,8 +113,8 @@ class Chapter2LinkedListsSpec extends Specification {
         node1.next.next.next.next = new Node<>('e' as Character)
 
         when:
-        chapter2LinkedLists.deleteMiddleNode(null)
-        chapter2LinkedLists.deleteMiddleNode(node1.next.next)
+        Chapter2LinkedLists.deleteMiddleNode(null)
+        Chapter2LinkedLists.deleteMiddleNode(node1.next.next)
 
         then:
         node1.value == 'a'
@@ -158,21 +152,21 @@ class Chapter2LinkedListsSpec extends Specification {
         nine.next.next = new Node<>(9)
 
         expect:
-        chapter2LinkedLists.addTwoLists(null, nine) == null
-        chapter2LinkedLists.addTwoLists(nine, null) == null
-        chapter2LinkedLists.addTwoLists(null, null) == null
+        Chapter2LinkedLists.addTwoLists(null, nine) == null
+        Chapter2LinkedLists.addTwoLists(nine, null) == null
+        Chapter2LinkedLists.addTwoLists(null, null) == null
 
-        Node<Integer> result = chapter2LinkedLists.addTwoLists(book1, book2)
+        Node<Integer> result = Chapter2LinkedLists.addTwoLists(book1, book2)
         result.value == 8
         result.next.value == 0
         result.next.next.value == 8
 
-        Node<Integer> result2 = chapter2LinkedLists.addTwoLists(pg, pg2)
+        Node<Integer> result2 = Chapter2LinkedLists.addTwoLists(pg, pg2)
         result2.value == 7
         result2.next.value == 0
         result2.next.next.value == 8
 
-        Node<Integer> result3 = chapter2LinkedLists.addTwoLists(nine, nine)
+        Node<Integer> result3 = Chapter2LinkedLists.addTwoLists(nine, nine)
         result3.value == 8
         result3.next.value == 9
         result3.next.next.value == 9
@@ -198,11 +192,11 @@ class Chapter2LinkedListsSpec extends Specification {
         nodeE.next = nodeC
 
         when:
-        Node<Integer> nullResult = chapter2LinkedLists.getCircular(null)
-        Node<Integer> result = chapter2LinkedLists.getCircular(nodeA)
+        Node<Integer> nullResult = Chapter2LinkedLists.getCircular(null)
+        Node<Integer> result = Chapter2LinkedLists.getCircular(nodeA)
 
         then:
-        nullResult == null
+        !nullResult
         result.value == 3
     }
 
@@ -223,11 +217,11 @@ class Chapter2LinkedListsSpec extends Specification {
         node3.next = node4
 
         when:
-        Node<Integer> nullResult = chapter2LinkedLists.getCircular(null)
-        Node<Integer> result = chapter2LinkedLists.getCircular(node0)
+        Node<Integer> nullResult = Chapter2LinkedLists.getCircular(null)
+        Node<Integer> result = Chapter2LinkedLists.getCircular(node0)
 
         then:
-        nullResult == null
-        result == null
+        !nullResult
+        !result
     }
 }

@@ -95,21 +95,20 @@ public class Chapter6BrainTeasers {
     public int lockersOpen() {
         // 100 - open
         // 100/2 - 50 - closes every second locker
-        //
 
         // basic demonstration with 10:
         // |_| - open
         // |x| - closed
         // 10 - |_|_|_|_|_|_|_|_|_|_| - toggle 1
-        // 5 - |_|x|_|x|_|x|_|x|_|x|  - toggle 2
-        // 6 - |_|x|x|x|_|_|_|x|x|x|  - toggle 3
-        // 4 - |_|x|x|_|_|_|_|_|x|x|  - toggle 4
-        // 4 - |_|x|x|_|x|_|_|_|x|_|  - toggle 5
-        // 5 - |_|x|x|_|x|x|_|_|x|_|  - toggle 6
-        // 6 - |_|x|x|_|x|x|x|_|x|_|  - toggle 7
-        // 7 - |_|x|x|_|x|x|x|x|x|_|  - toggle 8
-        // 6 - |_|x|x|_|x|x|x|x|_|_|  - toggle 9
-        // 7 - |_|x|x|_|x|x|x|x|_|x|  - toggle 10
+        // 5  - |_|x|_|x|_|x|_|x|_|x|  - toggle 2
+        // 6  - |_|x|x|x|_|_|_|x|x|x|  - toggle 3
+        // 4  - |_|x|x|_|_|_|_|_|x|x|  - toggle 4
+        // 4  - |_|x|x|_|x|_|_|_|x|_|  - toggle 5
+        // 5  - |_|x|x|_|x|x|_|_|x|_|  - toggle 6
+        // 6  - |_|x|x|_|x|x|x|_|x|_|  - toggle 7
+        // 7  - |_|x|x|_|x|x|x|x|x|_|  - toggle 8
+        // 6  - |_|x|x|_|x|x|x|x|_|_|  - toggle 9
+        // 7  - |_|x|x|_|x|x|x|x|_|x|  - toggle 10
 
         // "After his one hundredth pass in the hallway", he repeated 100 times?
 

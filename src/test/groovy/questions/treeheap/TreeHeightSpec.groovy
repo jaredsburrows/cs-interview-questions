@@ -42,35 +42,26 @@ class TreeHeightSpec extends Specification {
     }
 
     def "getHeight"() {
-        given:
-        TreeHeight treeHeight = new TreeHeight()
-
         expect:
-        treeHeight.getHeight(null) == 0
-        treeHeight.getHeight(balancedTree) == 3
-        treeHeight.getHeight(balancedTree2) == 3
-        treeHeight.getHeight(unbalancedTree) == -1
+        TreeHeight.getHeight(null) == 0
+        TreeHeight.getHeight(balancedTree) == 3
+        TreeHeight.getHeight(balancedTree2) == 3
+        TreeHeight.getHeight(unbalancedTree) == -1
     }
 
     def "getMinHeight"() {
-        given:
-        TreeHeight treeHeight = new TreeHeight()
-
         expect:
-        treeHeight.getMinHeight(null) == 0
-        treeHeight.getMinHeight(balancedTree) == 3
-        treeHeight.getMinHeight(balancedTree2) == 2
-        treeHeight.getMinHeight(unbalancedTree) == 2
+        TreeHeight.getMinHeight(null) == 0
+        TreeHeight.getMinHeight(balancedTree) == 3
+        TreeHeight.getMinHeight(balancedTree2) == 2
+        TreeHeight.getMinHeight(unbalancedTree) == 2
     }
 
     def "getMaxHeight"() {
-        given:
-        TreeHeight treeHeight = new TreeHeight()
-
         expect:
-        treeHeight.getMaxHeight(null) == 0
-        treeHeight.getMaxHeight(balancedTree) == 3
-        treeHeight.getMaxHeight(balancedTree2) == 3
-        treeHeight.getMaxHeight(unbalancedTree) == 4
+        TreeHeight.getMaxHeight(null) == 0
+        TreeHeight.getMaxHeight(balancedTree) == 3
+        TreeHeight.getMaxHeight(balancedTree2) == 3
+        TreeHeight.getMaxHeight(unbalancedTree) == 4
     }
 }

@@ -1,11 +1,11 @@
 package crackingthecode.part4additionalreviewproblems;
 
+import api.Tuple;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-
-import api.Tuple;
 
 public class Chapter19Moderate {
 
@@ -13,14 +13,14 @@ public class Chapter19Moderate {
      * 19.1 - Write a function to swap a number in place without temporary variables.
      */
     // Time - O(1), Space - O(1)
-    public void swapVar(int a, int b) {
+    public static void swapVar(int a, int b) {
         a ^= b;
         b ^= a;
         a ^= b;
     }
 
     // Time - O(1), Space - O(1)
-    public void swapVar2(int a, int b) {
+    public static void swapVar2(int a, int b) {
         a = b - a; // 4 = 9 - 5
         b = b - a; // 5 = 9 - 4
         a = a + b; // 9 = 4 + 5
@@ -31,7 +31,7 @@ public class Chapter19Moderate {
      */
     // Outcomes - X - Player 1, O - Player 2, no one
     // Time - O(1), Space - O(1) (since we know it is 3x3 array)
-    public int checkTicTacToe(int[][] board) {
+    public static int checkTicTacToe(final int[][] board) {
         if (board == null) {
             return -1;
         }
@@ -75,7 +75,7 @@ public class Chapter19Moderate {
      */
     // 5 * 2 = 10
     // misinterpreted the question, I thought we were given the factorial
-    public int numZeros(int num) {
+    public static int numZeros(final int num) {
         int count = 0;
         if (num < 0) {
             return 0;
@@ -97,21 +97,21 @@ public class Chapter19Moderate {
      */
     // >> 31 - for only 32 bit numbers
     // Time - O(1), Space - O(1)
-    public long getMax(final long a, final long b) {
-        long diff = ((a - b) >> 31);    // >> 31 accounts for negatives
+    public static long getMax(final long a, final long b) {
+        final long diff = ((a - b) >> 31);    // >> 31 accounts for negatives
         return (diff & b) + ((~diff) & a);
     }
 
     // Time - O(1), Space - O(1)
-    public long getMax2(final long a, final long b) {
-        long[] temp = {a, b};
+    public static long getMax2(final long a, final long b) {
+        final long[] temp = {a, b};
         return temp[(int) ((a - b) >> 31) & 1];
     }
 
     // If you have the max, you can find min, vice-versa
     // Time - O(1), Space - O(1)
-    public long getMin(final long a, final long b) {
-        long diff = ((a - b) >> 31);    // >> 31 accounts for negatives
+    public static long getMin(final long a, final long b) {
+        final long diff = ((a - b) >> 31);    // >> 31 accounts for negatives
         return (diff & a) + ((~diff) & b);
     }
 
@@ -130,7 +130,7 @@ public class Chapter19Moderate {
     // length should be 4
     // will the slots allow for different lengths, more/less guesses?
     // Time - O(N^2), however we know it is only 4 length, O(4^2) -> O(16) -> O(1), Space - O(1)
-    public Tuple<Integer, Integer> getPseudoHits(final String solution, final String guess) {
+    public static Tuple<Integer, Integer> getPseudoHits(final String solution, final String guess) {
         if (solution == null || guess == null || solution.length() != guess.length()) {
             return null;
         }
@@ -152,7 +152,7 @@ public class Chapter19Moderate {
     // Book solution used another class that held two ints
     // Book solution fails on its own test case, 2 hits, 1 psuedo, RGGB, YRGB.
     // Time - O(1), Space(O)
-    public Tuple<Integer, Integer> estimate(String guess, String solution) {
+    public static Tuple<Integer, Integer> estimate(String guess, String solution) {
         int solution_mask = 0;
         int hits = 0;
         int pseudoHits = 0;
@@ -184,7 +184,7 @@ public class Chapter19Moderate {
      */
     // Time - O(N), Space - O(1)
     // max "sub array"
-    public int getMaxSum(final int[] array) {
+    public static int getMaxSum(final int[] array) {
         if (array == null) {
             return 0;
         }
@@ -216,7 +216,7 @@ public class Chapter19Moderate {
     // For single queries, just count the all the strings in the array
     // For repetitive queries we would create the hashmap one time
     // Time - O(N)
-    public int getWordOccurence(final String[] array, String word) {
+    public static int getWordOccurence(final String[] array, String word) {
         if (array == null || word == null) {
             return -1;
         }
@@ -255,22 +255,22 @@ public class Chapter19Moderate {
      * that generates a random number between 1 and 5 (i.e., implement rand7() using rand5()).
      */
     // book solution
-    public int rand7() {
+    public static int rand7() {
         while (true) {
             int num = 5 * (rand5() - 1) + (rand5() - 1);
             if (num < 21) {
-                return (num % 7 + 1);
+                return num % 7 + 1;
             }
         }
     }
 
     // can we use Math.random?
-    public int rand72() {
+    public static int rand72() {
         return new Random().nextInt(rand5()) + 2;
     }
 
     // Here is our "rand5" - 1..5
-    public int rand5() {
+    public static int rand5() {
         return new Random().nextInt(4) + 1;
     }
 
@@ -279,7 +279,7 @@ public class Chapter19Moderate {
      * specified value.
      */
     // Time - O(N)
-    public Map<Integer, Integer> getPairSum(final int[] array, final int target) {
+    public static Map<Integer, Integer> getPairSum(final int[] array, final int target) {
         final Map<Integer, Integer> pairs = new HashMap<>();
         final Map<Integer, Integer> uniquePairs = new HashMap<>();
 
@@ -299,7 +299,7 @@ public class Chapter19Moderate {
     }
 
     // book solution, Time - O(N*LOG(N)), Space - O(N), only prints them out
-    public void printPairSums(int[] array, int sum) {
+    public static void printPairSums(int[] array, int sum) {
         Arrays.sort(array);
         int first = 0;
         int last = array.length - 1;
@@ -318,5 +318,4 @@ public class Chapter19Moderate {
             }
         }
     }
-
 }

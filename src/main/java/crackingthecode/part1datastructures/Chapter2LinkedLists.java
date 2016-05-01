@@ -1,9 +1,9 @@
 package crackingthecode.part1datastructures;
 
+import api.Node;
+
 import java.util.HashSet;
 import java.util.Set;
-
-import api.Node;
 
 public class Chapter2LinkedLists {
 
@@ -13,12 +13,12 @@ public class Chapter2LinkedLists {
      * How would you solve this problem if a temporary buffer is not allowed?
      */
     // Time - O(N)
-    public void removeDuplicates(final Node<Integer> node) {
+    public static void removeDuplicates(final Node<Integer> node) {
         if (node == null) {
             return;
         }
 
-        Set<Integer> integers = new HashSet<>();
+        final Set<Integer> integers = new HashSet<>();
 
         Node<Integer> current = node;
         Node<Integer> previous = null;
@@ -37,7 +37,7 @@ public class Chapter2LinkedLists {
     }
 
     // Time - O(N^2), Space - O(1)
-    public void removeDuplicates2(final Node<Integer> n) {
+    public static void removeDuplicates2(final Node<Integer> n) {
         if (n == null) {
             return;
         }
@@ -62,7 +62,7 @@ public class Chapter2LinkedLists {
     }
 
     // Time - O(N^2)
-    public void removeDuplicates3(final Node<Integer> n) {
+    public static void removeDuplicates3(final Node<Integer> n) {
         if (n == null) {
             return;
         }
@@ -83,7 +83,7 @@ public class Chapter2LinkedLists {
     }
 
     // book
-    public void deleteDupsC(Node<Integer> head) {
+    public static void deleteDupsC(final Node<Integer> head) {
         if (head == null) {
             return;
         }
@@ -99,18 +99,18 @@ public class Chapter2LinkedLists {
                     current = tmp;
                     /* We know we can't have more than one dup preceding
                      * our element since it would have been removed
-					 * earlier. */
+                     * * earlier. */
                     break;
                 }
                 runner = runner.next;
             }
 
-			/* If runner == current, then we didn't find any duplicate
+            /* If runner == current, then we didn't find any duplicate
              * elements in the previous for loop.  We then need to
-			 * increment current.
-			 * If runner != current, then we must have hit the ‘break’
-			 * condition, in which case we found a dup and current has
-			 * already been incremented.*/
+             * increment current.
+             * If runner != current, then we must have hit the ‘break’
+             * condition, in which case we found a dup and current has
+             * already been incremented.*/
             if (runner == current) {
                 previous = current;
                 current = current.next;
@@ -122,7 +122,7 @@ public class Chapter2LinkedLists {
      * 2.2 - Implement an algorithm to find the nth to last element of a singly linked list.
      */
     // Time - O(N), Space - O(1)
-    public Node<Integer> findNthLastElement(Node<Integer> node, final int n) {
+    public static Node<Integer> findNthLastElement(Node<Integer> node, final int n) {
         if (node == null || n < 1) {
             return null;
         }
@@ -157,7 +157,7 @@ public class Chapter2LinkedLists {
      * Result: nothing is returned, but the new linked list looks like a->b->d->e
      */
     // Time - O(1)
-    public void deleteMiddleNode(Node<Character> n) {
+    public static void deleteMiddleNode(final Node<Character> n) {
         if (n == null || n.next == null) {
             return;
         }
@@ -179,7 +179,7 @@ public class Chapter2LinkedLists {
     // Linked list  - 3-1-5 (513)
     // Linked list2 - 5-9-2 (295)
     // sum          - 8-0-8
-    public Node<Integer> addTwoLists(Node<Integer> n, Node<Integer> n2) {
+    public static Node<Integer> addTwoLists(Node<Integer> n, Node<Integer> n2) {
         if (n == null || n2 == null) {
             return null;
         }
@@ -222,7 +222,7 @@ public class Chapter2LinkedLists {
      * output: C
      */
     // Book has a longer solution but seems very unnecessary
-    public Node<Integer> getCircular(Node<Integer> node) {
+    public static Node<Integer> getCircular(final Node<Integer> node) {
         if (node == null) {
             return null;
         }
@@ -241,5 +241,4 @@ public class Chapter2LinkedLists {
 
         return null;
     }
-
 }

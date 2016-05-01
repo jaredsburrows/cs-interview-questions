@@ -19,27 +19,29 @@ public class Tuple<X, Y> {
     }
 
     @Override
-    public boolean equals(final Object object) {
-        if (this == object) {
+    public boolean equals(final Object o) {
+        if (this == o) {
             return true;
         }
 
-        if (!(object instanceof Tuple)) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        final Tuple<?, ?> tuple = (Tuple<?, ?>) object;
+        final Tuple<?, ?> tuple = (Tuple<?, ?>) o;
 
-        return tuple.getX().equals(this.x) && tuple.getY().equals(this.y);
+        if (x != null ? !x.equals(tuple.x) : tuple.x != null) {
+            return false;
+        }
+
+        return y != null ? y.equals(tuple.y) : tuple.y == null;
+
     }
 
     @Override
     public int hashCode() {
-        int result = 0;
-
-        result = 31 * result + (this.x != null ? this.x.hashCode() : 0);
-        result = 31 * result + (this.y != null ? this.y.hashCode() : 0);
-
+        int result = x != null ? x.hashCode() : 0;
+        result = 31 * result + (y != null ? y.hashCode() : 0);
         return result;
     }
 }

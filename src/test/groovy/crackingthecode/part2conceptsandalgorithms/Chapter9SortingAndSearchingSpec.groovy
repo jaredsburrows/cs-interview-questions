@@ -5,15 +5,9 @@ import spock.lang.Specification
 
 class Chapter9SortingAndSearchingSpec extends Specification {
 
-    Chapter9SortingAndSearching chapter9SortingAndSearching
-
-    def "setup"() {
-        chapter9SortingAndSearching = new Chapter9SortingAndSearching()
-    }
-
     def "9.1 - mergeAInB"() {
         expect:
-        chapter9SortingAndSearching.mergeBInA(a as int[], b as int[], c as int) == d as int[]
+        Chapter9SortingAndSearching.mergeBInA(a as int[], b as int[], c as int) == d as int[]
 
         where:
         a                        || b         || c || d
@@ -25,7 +19,7 @@ class Chapter9SortingAndSearchingSpec extends Specification {
     // http://www2.vo.lu/homepages/phahn/anagrams/oneword.htm
     def "9.2 - sortAnagrams"() {
         expect:
-        chapter9SortingAndSearching.sortAnagrams(a) == b
+        Chapter9SortingAndSearching.sortAnagrams(a) == b
 
         where:
         a                                                                             || b
@@ -37,7 +31,7 @@ class Chapter9SortingAndSearchingSpec extends Specification {
 
     def "9.3 - getRotatedIndexOf"() {
         expect:
-        chapter9SortingAndSearching.getRotatedIndexOf(a as int[], b) == c
+        Chapter9SortingAndSearching.getRotatedIndexOf(a as int[], b) == c
 
         where:
         a                                                         || b   || c
@@ -51,9 +45,9 @@ class Chapter9SortingAndSearchingSpec extends Specification {
 
     def "9.5 - findString"() {
         expect:
-        chapter9SortingAndSearching.findString(a as String[], b as String) == c
-        chapter9SortingAndSearching.findString2(a as String[], b as String) == c
-        chapter9SortingAndSearching.findString3(a as String[], b as String) == c
+        Chapter9SortingAndSearching.findString(a as String[], b as String) == c
+        Chapter9SortingAndSearching.findString2(a as String[], b as String) == c
+        Chapter9SortingAndSearching.findString3(a as String[], b as String) == c
 
         where:
         a                                                                || b         || c
@@ -67,7 +61,7 @@ class Chapter9SortingAndSearchingSpec extends Specification {
 
     def "9.6 - findValue"() {
         expect:
-        chapter9SortingAndSearching.findValue(a as int[][], b) == c
+        Chapter9SortingAndSearching.findValue(a as int[][], b) == c
 
         where:
         a || b || c
@@ -125,7 +119,7 @@ class Chapter9SortingAndSearchingSpec extends Specification {
                                                        new Tuple<Integer, Integer>(68, 110)]
 
         when:
-        def result = chapter9SortingAndSearching.getCircusOrder(original)
+        def result = Chapter9SortingAndSearching.getCircusOrder(original)
 
         then:
         // (56, 90) (60,95) (65,100) (68,110) (70,150) (75,190)

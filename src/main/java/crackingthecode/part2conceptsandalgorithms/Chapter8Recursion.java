@@ -1,15 +1,16 @@
 package crackingthecode.part2conceptsandalgorithms;
 
-import java.util.ArrayList;
-
 import api.Color;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Chapter8Recursion {
 
     /**
      * 8.1 - Write a method to generate the nth Fibonacci number.
      */
-    public long getFibNumberRecursive(final long n) {
+    public static long getFibNumberRecursive(final long n) {
         if (n < 0) {
             return -1;
         } else if (n == 0) {
@@ -21,7 +22,7 @@ public class Chapter8Recursion {
         }
     }
 
-    public long getFibNumberIterative(final long n) {
+    public static long getFibNumberIterative(final long n) {
         if (n < 0) {
             return -1;
         }
@@ -62,7 +63,7 @@ public class Chapter8Recursion {
     /**
      * 8.3 - Write a method that returns all subsets of a set.
      */
-    public ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> initial, int size) {
+    public static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> initial, int size) {
         if (initial == null || size < 0) {
             return null;
         }
@@ -92,7 +93,7 @@ public class Chapter8Recursion {
     /**
      * 8.4 - Write a method to compute all permutations of a string.
      */
-    public ArrayList<String> getStringPermutations(String prefix, String string) {
+    public static ArrayList<String> getStringPermutations(String prefix, String string) {
         if (string == null) {
             return null;
         }
@@ -119,7 +120,7 @@ public class Chapter8Recursion {
      * input: 3 (e.g., 3 pairs of parentheses)
      * output: ()()(), ()(()), (())(), ((()))
      */
-    public ArrayList<String> getValidParentheses(int pairs, int left, int right, String pairString) {
+    public static List<String> getValidParentheses(int pairs, int left, int right, String pairString) {
         if (pairs < 1 || left < 0 || right < 0 || pairString == null) {
             return null;
         }
@@ -145,7 +146,7 @@ public class Chapter8Recursion {
     }
 
     // the book question is missing - (()())
-    public void generatedValidParentheses(int pairs, int left, int right, String pairString) {
+    public static void generatedValidParentheses(int pairs, int left, int right, String pairString) {
         if (pairs < 1 || left < 0 || right < 0 || pairString == null) {
             return;
         }
@@ -171,7 +172,7 @@ public class Chapter8Recursion {
      * That is, given a screen (represented by a 2-dimensional array of Colors), a point, and a new
      * color, fill in the surrounding area until you hit a border of that color.
      */
-    public void paintFill(Color[][] pixels, int x, int y, Color oldcolor, Color newColor) {
+    public static void paintFill(Color[][] pixels, int x, int y, Color oldcolor, Color newColor) {
         if (x < 0 || x >= pixels[0].length || y < 0 || y >= pixels.length) {
             return;
         }
@@ -186,12 +187,12 @@ public class Chapter8Recursion {
         paintFill(pixels, x, y - 1, oldcolor, newColor); // up
     }
 
-    public void paintFill(Color[][] pixels, int x, int y, Color newColor) {
+    public static void paintFill(Color[][] pixels, int x, int y, Color newColor) {
         Color oldcolor = pixels[x][y];
         paintFill(pixels, x, y, oldcolor, newColor);
     }
 
-    public void floodFillUtil(int screen[][], int x, int y, int prevC, int newC) {
+    public static void floodFillUtil(int screen[][], int x, int y, int prevC, int newC) {
         // Base cases
         if (x < 0 || x >= 8 || y < 0 || y >= 8) {
             return;
@@ -210,7 +211,7 @@ public class Chapter8Recursion {
         floodFillUtil(screen, x, y - 1, prevC, newC);
     }
 
-    public void floodFill(int screen[][], int x, int y, int newC) {
+    public static void floodFill(int screen[][], int x, int y, int newC) {
         int prevC = screen[x][y];
         floodFillUtil(screen, x, y, prevC, newC);
     }
@@ -225,7 +226,7 @@ public class Chapter8Recursion {
     // dimes    == 10   cents
     // nickels  == 5    cents
     // pennies  == 1    cent
-    public int getRepresentCents(int cents, int denomination) {
+    public static int getRepresentCents(int cents, int denomination) {
         if (cents < 2) {
             return 1;
         }
@@ -268,7 +269,7 @@ public class Chapter8Recursion {
     }
 
     // Book answer
-    public int makeChange(int n, int denom) {
+    public static int makeChange(int n, int denom) {
         int next_denom = 0;
         switch (denom) {
             case 25:

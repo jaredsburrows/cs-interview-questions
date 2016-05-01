@@ -2,6 +2,7 @@ package crackingthecode.part4additionalreviewproblems;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Chapter20Hard {
 
@@ -14,23 +15,23 @@ public class Chapter20Hard {
 
     // TOGGLING
     // x = x ^ mask;
-    // (or shorthand x ^= mask;)
+    // (or shorthand x ^= mask)
     // XOR truth table
     // 0 ^ 0 = 0
     // 1 ^ 0 = 1
     // 0 ^ 1 = 1
     // 1 ^ 1 = 0
 
-    // x = x & (~mask);
-    // (or x &= (~mask);)
+    // x = x & (~mask)
+    // (or x &= (~mask))
     // AND truth table
     // 0 & 0 = 0
     // 1 & 0 = 0
     // 0 & 1 = 0
     // 1 & 1 = 1
 
-    // x = x | mask;
-    // (or x |= mask;)
+    // x = x | mask
+    // (or x |= mask)
     // OR truth table
     // 0 | 0 = 0
     // 1 | 0 = 1
@@ -42,7 +43,7 @@ public class Chapter20Hard {
      * operators.
      */
     // Time - O(LOG(N)), Space - O(1)
-    public long addTwoNumbers(long a, long b) {
+    public static long addTwoNumbers(long a, long b) {
         // if a = 4, b = 5
 
         while (b != 0) {
@@ -64,7 +65,7 @@ public class Chapter20Hard {
     }
 
     // Time - O(LOG(N)), Space - O(1)
-    public long substractTwoNumbers(long a, long b) {
+    public static long substractTwoNumbers(long a, long b) {
         // if a = 5, b = 4
 
         while (b != 0) {
@@ -99,7 +100,7 @@ public class Chapter20Hard {
      */
     // 2, 12, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 32
     // Time - O(N*M), Space - O(1)
-    public long countNumber2s(int number) {
+    public static long countNumber2s(int number) {
         long count = 0;
 
         for (long i = 0; i <= number; i++) { // N
@@ -119,7 +120,7 @@ public class Chapter20Hard {
     // book answer
     // Time - O(N), Space - O(1)
     // TODO
-    public int count2sI(int num) {
+    public static int count2sI(int num) {
         int countof2s = 0, digit = 0;
         int j = num, seendigits = 0, position = 0, pow10_pos = 1;
         /* maintaining this value instead of calling pow() is an 6x perf
@@ -164,7 +165,7 @@ public class Chapter20Hard {
      */
     // only doing 10 for testing
     // Time - O(N *LOG(N)), Space - O(1) -> Time - O(1), Space - O(1), since we already know N and sublist each time
-    public List<Integer> getTopMillion(List<Integer> billion) {
+    public static List<Integer> getTopMillion(List<Integer> billion) {
         if (billion == null || billion.size() != 10) { // would be 1,000,000
             return null;
         }
@@ -216,35 +217,35 @@ public class Chapter20Hard {
      * Output: DAMP -> LAMP -> LIMP -> LIME -> LIKE
      */
     // what is the data structure of the dictionary? Map<Integer, String>
-//    public List<String> getTransformedList(Map<Integer, String> dictionary, String word, String word2) {
-//        if (dictionary == null || word == null || word2 == null) {
-//            return null;
-//        }
-//
-//        if (!dictionary.containsValue(word) || !dictionary.containsValue(word2)) {
-//            return null;
-//        }
-//
-//        final List<String> stringList = new ArrayList<>();
-//        stringList.add(word);
-//
-//        char[] temp = word.toCharArray();
-//        int count = 0;
-//
-//        while (count <= temp.length) {
-//
-//            temp[count] = word2.charAt(count);
-//
-//            String tmp = String.valueOf(temp);
-//
-//            if (dictionary.containsValue(tmp)) {
-//                stringList.add(tmp);
-//                count++;
-//            }
-//        }
-//
-//        return stringList;
-//    }
+    public List<String> getTransformedList(Map<Integer, String> dictionary, String word, String word2) {
+        if (dictionary == null || word == null || word2 == null) {
+            return null;
+        }
+
+        if (!dictionary.containsValue(word) || !dictionary.containsValue(word2)) {
+            return null;
+        }
+
+        final List<String> stringList = new ArrayList<>();
+        stringList.add(word);
+
+        char[] temp = word.toCharArray();
+        int count = 0;
+
+        while (count <= temp.length) {
+
+            temp[count] = word2.charAt(count);
+
+            String tmp = String.valueOf(temp);
+
+            if (dictionary.containsValue(tmp)) {
+                stringList.add(tmp);
+                count++;
+            }
+        }
+
+        return stringList;
+    }
 
     /**
      * 20.11 - Imagine you have a square matrix, where each cell is filled with either black or

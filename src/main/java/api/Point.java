@@ -19,27 +19,28 @@ public class Point {
     }
 
     @Override
-    public boolean equals(final Object object) {
-        if (this == object) {
+    public boolean equals(final Object o) {
+        if (this == o) {
             return true;
         }
 
-        if (!(object instanceof Point)) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        final Point point = (Point) object;
+        final Point point = (Point) o;
 
-        return this.x == point.x && this.y == point.y;
+        if (x != point.x) {
+            return false;
+        }
+
+        return y == point.y;
     }
 
     @Override
     public int hashCode() {
-        int result = 0;
-
-        result = 31 * result + this.x;
-        result = 31 * result + this.y;
-
+        int result = x;
+        result = 31 * result + y;
         return result;
     }
 }

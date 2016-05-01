@@ -9,29 +9,30 @@ public class ReorderBooleanArray {
      * that have the key false appear first. The relative ordering of objects with key true should
      * not change. Use O(1) additional space and O(n) time.
      */
-    public Boolean[] getReorderBoolObjects(Boolean[] array) {
-        final Swap swap = new Swap();
+    public Boolean[] getReorderBoolObjects(final Boolean[] array) {
         int lastFalse = 0;
 
         for (int i = 0; i < array.length; i++) {
             if (!array[i]) {
-                swap.swap(array, lastFalse++, i);
+                Swap.swap(array, lastFalse++, i);
             }
         }
 
         return array;
     }
 
-    public boolean[] getReorderBoolPrimitives(boolean[] array) {
+    public boolean[] getReorderBoolPrimitives(final boolean[] array) {
         int falseCount = 0;
         for (final boolean bool : array) {
             if (!bool) {
                 falseCount++;
             }
         }
+
         for (int i = 0; i < array.length; i++) {
             array[i] = i >= falseCount;
         }
+
         return array;
     }
 }

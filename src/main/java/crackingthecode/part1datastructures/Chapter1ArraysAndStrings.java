@@ -11,46 +11,51 @@ public class Chapter1ArraysAndStrings {
      * can not use additional data structures?
      */
     // Time - O(N), Space - O(1)
-    public boolean isUniqueCharacters(final String str) {
-        if (str == null || str.trim().length() == 0) {
+    public static boolean isUniqueCharacters(final String input) {
+        if (input == null || input.trim().isEmpty()) {
             return false;
         }
 
-        if (str.length() > 26) { // assuming lower case english alphabet
+        // Assumes lower case english alphabet
+        if (input.length() > 26) {
             return false;
         }
 
         int check = 0;
 
-        for (int i = 0; i < str.length(); i++) {
-            int val = 1 << (str.charAt(i) - 'a');
+        for (int i = 0; i < input.length(); i++) {
+            final int value = 1 << (input.charAt(i) - 'a');
 
-            // check the it, bit = (number >> x) & 1;
-            if ((check & val) > 0) {
+            // Check the bit, bit = (number >> x) & 1;
+            final boolean hasValue = (check & value) > 0;
+            if (hasValue) {
                 return false;
             }
 
-            // set the bit, number |= 1 << x;
-            check |= val;
+            // Set the bit, number |= 1 << x;
+            check |= value;
         }
 
         return true;
     }
 
     // Time - O(N), Space - O(N)
-    public boolean isUniqueCharacters2(final String str) {
-        if (str == null || str.trim().length() == 0) {
+    public static boolean isUniqueCharacters2(final String input) {
+        if (input == null || input.trim().isEmpty()) {
             return false;
         }
 
-        boolean[] charset = new boolean[256]; // need to increase if charset is greater than 256
+        // Need to increase if charset is greater than 256
+        final boolean[] charset = new boolean[256];
 
-        for (int i = 0; i < str.length(); i++) {
-            int val = str.charAt(i);
-            if (charset[val]) {
+        for (int i = 0; i < input.length(); i++) {
+            final int value = input.charAt(i);
+            final boolean isTrue = charset[value];
+            if (isTrue) {
                 return false;
             }
-            charset[val] = true;
+
+            charset[value] = true;
         }
 
         return true;
@@ -61,28 +66,28 @@ public class Chapter1ArraysAndStrings {
      * five characters, including the null character.)
      */
     // Time - O(N), Space - O(1)
-    public char[] reverseString(final char[] cstr) {
-        if (cstr == null) {
+    public static char[] reverseString(final char[] input) {
+        if (input == null) {
             return null;
         }
 
-        if (cstr.length == 0) {
-            return cstr;
+        if (input.length == 0) {
+            return input;
         }
 
         int i = 0;
-        int j = cstr.length - 1;
+        int j = input.length - 1;
 
         while (i < j) {
-            char temp = cstr[i];
-            cstr[i] = cstr[j];
-            cstr[j] = temp;
+            final char temp = input[i];
+            input[i] = input[j];
+            input[j] = temp;
 
             i++;
             j--;
         }
 
-        return cstr;
+        return input;
     }
 
     /**
@@ -94,23 +99,23 @@ public class Chapter1ArraysAndStrings {
      */
     // TODO with char[], in java you can print the bytes and show that '\0' is not removing chars, the book answer does this
     // the book answer fails for strings like "baaaaaaaaaad"
-    public String removeDuplicates(String original) {
-        if (original == null) {
+    public static String removeDuplicates(final String input) {
+        if (input == null) {
             return null;
         }
 
-        if (original.isEmpty()) {
-            return original;
+        if (input.isEmpty()) {
+            return input;
         }
 
-        Set<Character> characterSet = new HashSet<>();
-        StringBuilder stringBuilder = new StringBuilder();
+        final Set<Character> characterSet = new HashSet<>();
+        final StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i = 0; i < original.length(); i++) {
-            char temp = original.charAt(i);
-            if (!characterSet.contains(temp)) {
-                characterSet.add(temp);
-                stringBuilder.append(temp);
+        for (int i = 0; i < input.length(); i++) {
+            final char value = input.charAt(i);
+            if (!characterSet.contains(value)) {
+                characterSet.add(value);
+                stringBuilder.append(value);
             }
         }
 
@@ -121,19 +126,19 @@ public class Chapter1ArraysAndStrings {
      * 1.4 - Write a method to decide if two strings are anagrams or not.
      */
     // Time - O(NLOG(N)), Space - O(N)
-    public boolean isAnagram(final String str, final String str2) {
-        if (str == null || str2 == null) {
+    public static boolean isAnagram(final String input, final String input2) {
+        if (input == null || input2 == null) {
             return false;
         }
 
-        int length = str.length();
+        final int length = input.length();
 
-        if (length != str2.length() || length < 2) {
+        if (length != input2.length() || length < 2) {
             return false;
         }
 
-        char[] chars = str.toCharArray();
-        char[] chars2 = str2.toCharArray();
+        final char[] chars = input.toCharArray();
+        final char[] chars2 = input2.toCharArray();
 
         Arrays.sort(chars);
         Arrays.sort(chars2);
@@ -142,23 +147,25 @@ public class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(N)
-    public boolean isAnagram2(final String str, final String str2) {
-        if (str == null || str2 == null) {
+    public static boolean isAnagram2(final String input, final String input2) {
+        if (input == null || input2 == null) {
             return false;
         }
 
-        int total = 256; // need to increase if charset is greater than 256
-        int length = str.length();
+        // Need to increase if charset is greater than 256
+        final int total = 256;
+        final int length = input.length();
 
-        if (length != str2.length() || length < 2) {
+        if (length != input2.length() || length < 2) {
             return false;
         }
 
-        int[] counts = new int[total]; // all chars
+        // All chars
+        final int[] counts = new int[total];
 
         for (int i = 0; i < length; i++) {
-            counts[str.charAt(i)]++;
-            counts[str2.charAt(i)]--;
+            counts[input.charAt(i)]++;
+            counts[input2.charAt(i)]--;
         }
 
         for (int i = 0; i < total; i++) {
@@ -174,28 +181,28 @@ public class Chapter1ArraysAndStrings {
      * 1.5 - Write a method to replace all spaces in a string with '%20'.
      */
     // Time - O(N), Space - O(N)
-    public String replaceSpaces(final String str) {
-        if (str == null) {
+    public static String replaceSpaces(final String input) {
+        if (input == null) {
             return null;
         }
 
         final StringBuilder stringBuilder = new StringBuilder();
-        final char[] chars = str.toCharArray();
+        final char[] chars = input.toCharArray();
 
-        for (final char aChar : chars) {
-            stringBuilder.append(aChar == ' ' ? "%20" : aChar);
+        for (final char c : chars) {
+            stringBuilder.append(c == ' ' ? "%20" : c);
         }
 
         return stringBuilder.toString();
     }
 
     // Time - O(N), Space - O(N)
-    public String replaceSpaces2(final String str) {
-        if (str == null) {
+    public static String replaceSpaces2(final String input) {
+        if (input == null) {
             return null;
         }
 
-        return str.replaceAll(" ", "%20");
+        return input.replaceAll(" ", "%20");
     }
 
     /**
@@ -203,23 +210,23 @@ public class Chapter1ArraysAndStrings {
      * write a method to rotate the image by 90 degrees. Can you do this in place?
      */
     // Time - O(N), Space - O(1)
-    public int[][] rotateImage(final int[][] image) {
+    public static int[][] rotateImage(final int[][] image) {
         if (image == null) {
             return null;
         }
 
-        int length = image.length;
+        final int length = image.length;
 
         for (int i = 0; i < length / 2; i++) {
-            int last = length - 1 - i;
+            final int last = length - 1 - i;
             for (int j = i; j < last; j++) {
-                int offset = j - i;
-                int tmp = last - offset;
-                int temp = image[i][j]; // save top
-                image[i][j] = image[tmp][i]; // left -> top
-                image[tmp][i] = image[last][tmp]; // bottom -> left
-                image[last][tmp] = image[j][last]; // right -> bottom
-                image[j][last] = temp; // top -> right
+                final int offset = j - i;
+                final int tmp = last - offset;
+                final int temp = image[i][j];       // save top
+                image[i][j] = image[tmp][i];        // left -> top
+                image[tmp][i] = image[last][tmp];   // bottom -> left
+                image[last][tmp] = image[j][last];  // right -> bottom
+                image[j][last] = temp;              // top -> right
             }
         }
 
@@ -227,12 +234,12 @@ public class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(N)
-    public int[][] rotateImage2(final int[][] image) {
+    public static int[][] rotateImage2(final int[][] image) {
         if (image == null) {
             return null;
         }
 
-        int length = image.length;
+        final int length = image.length;
         final int[][] newImage = new int[length][length];
 
         for (int i = 0; i < length; i++) {
@@ -249,17 +256,17 @@ public class Chapter1ArraysAndStrings {
      * column is set to 0.
      */
     // Time - O(NM), Space - O(OM)
-    public int[][] markRows(final int[][] matrix) {
+    public static int[][] markRows(final int[][] matrix) {
         if (matrix == null) {
             return null;
         }
 
-        int rows = matrix.length;
-        int cols = matrix[0].length;
+        final int rows = matrix.length;
+        final int cols = matrix[0].length;
 
         // keep positions of "0"s
-        int[] row = new int[rows];
-        int[] col = new int[cols];
+        final int[] row = new int[rows];
+        final int[] col = new int[cols];
 
         // mark the positions of the "0"s
         for (int i = 0; i < rows; i++) {
@@ -289,7 +296,17 @@ public class Chapter1ArraysAndStrings {
      * only one call to isSubstring (i.e., “waterbottle” is a rotation of “erbottlewat”).
      */
     // Time - O(n), Space O(N)
-    public boolean isSubstring(final String s1, final String s2) {
-        return !(s1 == null || s2 == null) && s1.length() == s2.length() && (s2 + s2).contains(s1);
+    public static boolean isSubstring(final String input, final String input2) {
+        if (input == null || input2 == null) {
+            return false;
+        }
+
+        if (input.length() != input2.length()) {
+            return false;
+        }
+
+        // waterbottle -> wat|erbottlewat|erbottle
+        final String rotationString = input2 + input2;
+        return rotationString.contains(input);
     }
 }

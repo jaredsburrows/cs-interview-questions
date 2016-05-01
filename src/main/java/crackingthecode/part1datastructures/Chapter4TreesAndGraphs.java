@@ -1,14 +1,14 @@
 package crackingthecode.part1datastructures;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
 import api.GraphNode;
 import api.TreeNode;
 import questions.treeheap.EqualTree;
 import questions.treeheap.TreeHeight;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class Chapter4TreesAndGraphs {
 
@@ -17,8 +17,12 @@ public class Chapter4TreesAndGraphs {
      * a balanced tree is defined to be a tree such that no two leaf nodes differ in distance from
      * the root by more than one.
      */
-    public <T> boolean isBalanced(final TreeNode<T> treeNode) {
-        return treeNode == null || new TreeHeight().getHeight(treeNode) != -1;
+    public static <T> boolean isBalanced(final TreeNode<T> node) {
+        if (node == null) {
+            return true;
+        }
+
+        return TreeHeight.getHeight(node) != -1;
     }
 
     /**
@@ -26,15 +30,15 @@ public class Chapter4TreesAndGraphs {
      * between two nodes.
      */
     // BFS
-    public <T> boolean hasGraphNodeBFS(final GraphNode<T> start, final GraphNode<T> end) {
+    public static <T> boolean hasGraphNodeBFS(final GraphNode<T> start, final GraphNode<T> end) {
         final Queue<GraphNode<T>> queue = new LinkedList<>();
 
         start.visited = true;
         queue.add(start);
 
         while (!queue.isEmpty()) {
-            final GraphNode<T> gNode = queue.poll();
-            for (final GraphNode<T> tGraphNode : gNode.neighbors) {
+            final GraphNode<T> node = queue.poll();
+            for (final GraphNode<T> tGraphNode : node.neighbors) {
                 if (!tGraphNode.visited) {
                     tGraphNode.visited = true;
                     if (tGraphNode.value == end.value) {
@@ -59,7 +63,7 @@ public class Chapter4TreesAndGraphs {
     //   /\   /\
     //  1  3  5 7
     // (length - 0) / 2
-    public TreeNode<Integer> getMinimumTree(int[] array, int start, int end) {
+    public static TreeNode<Integer> getMinimumTree(int[] array, int start, int end) {
         if (array == null || array.length == 0 || (start < 0 || start > end)) {
             return null;
         }
@@ -77,7 +81,7 @@ public class Chapter4TreesAndGraphs {
      * nodes at each depth (i.e., if you have a tree with depth D, you’ll have D linked lists).
      */
     // simply traversing from top to bottom, do not over think this
-    public <T> List<LinkedList<TreeNode<T>>> getLinkedListLevels(TreeNode<T> node) {
+    public static <T> List<LinkedList<TreeNode<T>>> getLinkedListLevels(TreeNode<T> node) {
         if (node == null) {
             return null;
         }
@@ -133,7 +137,7 @@ public class Chapter4TreesAndGraphs {
      * binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not
      * necessarily a binary search tree.
      */
-    public <T> TreeNode<T> commonAncestor(final TreeNode<T> root, final TreeNode<T> node1, final TreeNode<T> node2) {
+    public static <T> TreeNode<T> commonAncestor(final TreeNode<T> root, final TreeNode<T> node1, final TreeNode<T> node2) {
         if (root == null || node1 == null || node2 == null) {
             return root;
         }
@@ -149,7 +153,7 @@ public class Chapter4TreesAndGraphs {
         return root;
     }
 
-    private <T> boolean covers(final TreeNode<T> root, final TreeNode<T> node) {
+    private static <T> boolean covers(final TreeNode<T> root, final TreeNode<T> node) {
         if (root == null || node == null) {
             return false;
         }
@@ -167,21 +171,20 @@ public class Chapter4TreesAndGraphs {
      */
     // T1 - millions of nodes
     // T2 - supposed subtree of T1, should be the same or smaller
-    public <T> boolean isSubtree(final TreeNode<T> treeNode, final TreeNode<T> subTreeNode) {
-        if (subTreeNode == null) {
+    public static <T> boolean isSubtree(final TreeNode<T> tree, final TreeNode<T> subTree) {
+        if (subTree == null) {
             return true;
         }
 
-        if (treeNode == null) {
+        if (tree == null) {
             return false;
         }
 
-        if (new EqualTree().isEqual(treeNode, subTreeNode)) {
+        if (EqualTree.isEqual(tree, subTree)) {
             return true;
         }
 
-        return new EqualTree().isEqual(treeNode.left, subTreeNode)
-                || new EqualTree().isEqual(treeNode.right, subTreeNode); // important || vs &&
+        return EqualTree.isEqual(tree.left, subTree) || EqualTree.isEqual(tree.right, subTree); // important || vs &&
     }
 
     /**
