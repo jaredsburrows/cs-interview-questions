@@ -2,14 +2,14 @@ package questions.stringarraymatrix
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class ReverseArraySpec extends Specification {
 
     def "reverse - multiple arg"() {
-        given:
-        ReverseArray reverseArray = new ReverseArray()
-
         expect:
-        reverseArray.reverse(a as int[], b, c) == d as int[]
+        ReverseArray.reverse(a as int[], b, c) == d as int[]
 
         where:
         a                  || b || c || d

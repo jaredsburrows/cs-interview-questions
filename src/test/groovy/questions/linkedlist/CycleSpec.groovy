@@ -3,13 +3,10 @@ package questions.linkedlist
 import spock.lang.Specification
 import api.Node
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class CycleSpec extends Specification {
-
-    Cycle cycle
-
-    def "setup"() {
-        cycle = new Cycle()
-    }
 
     def "cycle - true"() {
         given:
@@ -29,9 +26,9 @@ class CycleSpec extends Specification {
         node4.next = node1
 
         expect:
-        !cycle.hasCycle(null)
-        !cycle.hasCycle(new Node<Integer>(0))
-        cycle.hasCycle(node0)
+        !Cycle.hasCycle(null)
+        !Cycle.hasCycle(new Node<Integer>(0))
+        Cycle.hasCycle(node0)
     }
 
     def "cycle - false"() {
@@ -54,9 +51,9 @@ class CycleSpec extends Specification {
         node3.next = node4
 
         expect:
-        !cycle.hasCycle(null)
-        !cycle.hasCycle(nullNext)
-        !cycle.hasCycle(new Node<Integer>(0))
-        !cycle.hasCycle(node0)
+        !Cycle.hasCycle(null)
+        !Cycle.hasCycle(nullNext)
+        !Cycle.hasCycle(new Node<Integer>(0))
+        !Cycle.hasCycle(node0)
     }
 }

@@ -2,7 +2,7 @@ package questions.math;
 
 public class TrailingZeros {
 
-    public long getTrailingZeros(long number) {
+    public static long getTrailingZeros(long number) {
 
         long numZeros = 0;
 
@@ -18,5 +18,4 @@ public class TrailingZeros {
 
         return numZeros;
     }
-
 }

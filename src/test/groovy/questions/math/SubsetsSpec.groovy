@@ -2,15 +2,15 @@ package questions.math
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class SubsetsSpec extends Specification {
 
     def "subsets"() {
-        given:
-        Subsets subsets = new Subsets()
-
         expect:
-        subsets.subsets(a) == b
-        subsets.subsets(a as int[]) == b
+        Subsets.subsets(a) == b
+        Subsets.subsets(a as int[]) == b
 
         where:
         a         || b

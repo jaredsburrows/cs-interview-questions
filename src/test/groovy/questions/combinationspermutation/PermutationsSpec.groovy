@@ -2,14 +2,14 @@ package questions.combinationspermutation
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class PermutationsSpec extends Specification {
 
     def "getStringPermutations"() {
-        given:
-        Permutations permutations = new Permutations()
-
         expect:
-        permutations.getStringPermutations("", a) == b
+        Permutations.getStringPermutations("", a) == b
 
         where:
         a     || b

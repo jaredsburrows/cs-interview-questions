@@ -2,16 +2,16 @@ package questions.bitmanipulation
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class AddTwoNumbersSpec extends Specification {
 
     def "getBinarySum"() {
-        given:
-        AddTwoNumbers addTwoNumbers = new AddTwoNumbers()
-
         expect:
-        addTwoNumbers.getBinarySumLib(a, b) == c
-        addTwoNumbers.getBinarySum(a, b) == c
-        addTwoNumbers.getBinarySumBit(a, b) == c
+        AddTwoNumbers.getBinarySumLib(a, b) == c
+        AddTwoNumbers.getBinarySum(a, b) == c
+        AddTwoNumbers.getBinarySumBit(a, b) == c
 
         where:
         a           || b           || c
@@ -24,7 +24,5 @@ class AddTwoNumbersSpec extends Specification {
         "0"         || "100000000" || "100000000"
         "1"         || "1"         || "10"
         "100000000" || "0"         || "100000000"
-
     }
-
 }

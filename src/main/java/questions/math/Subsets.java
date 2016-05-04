@@ -7,17 +7,17 @@ import java.util.List;
 
 public class Subsets {
 
-    public <T extends Comparable<? super T>> List<ArrayList<T>> subsets(final List<T> data) {
+    public static <T extends Comparable<? super T>> List<ArrayList<T>> subsets(final List<T> data) {
         if (data == null) {
             return null;
         }
 
         final List<ArrayList<T>> subsets = new ArrayList<>();
 
-        /* Empty Set */
+        // Empty Set
         subsets.add(new ArrayList<>());
 
-        /* Order */
+        // Order
         Collections.sort(data);
 
         for (final T obj : data) {
@@ -36,17 +36,17 @@ public class Subsets {
         return subsets;
     }
 
-    public <T> List<ArrayList<T>> subsets(final T[] data) {
+    public static <T> List<ArrayList<T>> subsets(final T[] data) {
         if (data == null) {
             return null;
         }
 
         final List<ArrayList<T>> subsets = new ArrayList<>();
 
-        /* Empty Set */
+        // Empty Set
         subsets.add(new ArrayList<>());
 
-        /* Order */
+        // Order
         Arrays.sort(data);
 
         for (final T obj : data) {

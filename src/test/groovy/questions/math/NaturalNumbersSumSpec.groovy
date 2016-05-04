@@ -2,15 +2,12 @@ package questions.math
 
 import spock.lang.Specification
 
-class NatrualNumbersSumSpec extends Specification {
+class NaturalNumbersSumSpec extends Specification {
 
     def "getSumNaturalNumbers"() {
-        given:
-        NaturalNumbersSum naturalNumbersSum = new NaturalNumbersSum()
-
         expect:
-        naturalNumbersSum.getSumNaturalNumbers(a) == b
-        naturalNumbersSum.getSumNaturalNumbers2(a) == b
+        NaturalNumbersSum.getSumNaturalNumbers(a) == b
+        NaturalNumbersSum.getSumNaturalNumbers2(a) == b
 
         where:
         a    || b

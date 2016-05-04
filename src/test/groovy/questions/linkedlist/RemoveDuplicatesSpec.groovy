@@ -3,13 +3,10 @@ package questions.linkedlist
 import spock.lang.Specification
 import api.Node
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class RemoveDuplicatesSpec extends Specification {
-
-    RemoveDuplicates removeDuplicates
-
-    def "setup"() {
-        removeDuplicates = new RemoveDuplicates()
-    }
 
     def "removeDuplicates - sorted"() {
         given:
@@ -20,8 +17,8 @@ class RemoveDuplicatesSpec extends Specification {
         node.next.next.next.next = new Node<>(5)
 
         when:
-        removeDuplicates.removeDuplicatesSorted(null)
-        removeDuplicates.removeDuplicatesSorted(node)
+        RemoveDuplicates.removeDuplicatesSorted(null)
+        RemoveDuplicates.removeDuplicatesSorted(node)
 
         then:
         node.value == 0
@@ -43,9 +40,9 @@ class RemoveDuplicatesSpec extends Specification {
 
 
         when:
-        removeDuplicates.deleteEveryOtherRecursive(null)
-        removeDuplicates.deleteEveryOtherRecursive(nullNext)
-        removeDuplicates.deleteEveryOtherRecursive(node)
+        RemoveDuplicates.deleteEveryOtherRecursive(null)
+        RemoveDuplicates.deleteEveryOtherRecursive(nullNext)
+        RemoveDuplicates.deleteEveryOtherRecursive(node)
 
         then:
         node.value == 1

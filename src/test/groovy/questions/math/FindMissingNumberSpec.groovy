@@ -2,15 +2,15 @@ package questions.math
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class FindMissingNumberSpec extends Specification {
 
     def "findMissing"() {
-        given:
-        FindMissingNumber findMissingNumber = new FindMissingNumber()
-
         expect:
-        findMissingNumber.findMissing(a as int[]) == b
-        findMissingNumber.findMissing2(a as int[]) == b
+        FindMissingNumber.findMissing(a as int[]) == b
+        FindMissingNumber.findMissing2(a as int[]) == b
 
         where:
         a                               || b

@@ -6,7 +6,7 @@ public class Chapter6BrainTeasers {
      * 6.1 - Add arithmetic operators (plus, minus, times, divide) to make the following expression
      * true: 3 1 3 6 = 8. You can use any parentheses you’d like.
      */
-    public double arithmeticOperators() {
+    public static double arithmeticOperators() {
         // int division = 0, use double
         return ((3.0 + 1.0) / (3.0 / 6.0)); // ((3 + 1) / 3) * 6 = 8
     }
@@ -18,7 +18,7 @@ public class Chapter6BrainTeasers {
      * showing why it’s impossible).
      */
     // TODO
-    public int chessPieces() {
+    public static int chessPieces() {
         // 1 domino     = 2 squares
         // 31 dominoes  = 62 squares
         // 8x8 grid     = 64 squares
@@ -40,7 +40,7 @@ public class Chapter6BrainTeasers {
      * NOTE: The jugs are oddly shaped, such that filling up exactly ‘half’ of the jug would be
      * impossible.
      */
-    public int exactJugs() {
+    public static int exactJugs() {
         // Sine you have a 5 quart jug and a 3 quart jug, you can fill up the 5 quart jug and
         // use the 5 quart jug to full up the 3 quart jug. When the 3 quart jug is full, you know
         // that you have exactly 2 quarts.
@@ -61,7 +61,7 @@ public class Chapter6BrainTeasers {
      * Prove that your solution is correct.
      */
     // TODO
-    public int howLong() {
+    public static int howLong() {
         // n - people
         // c - hats, atleast one person has a hat
 
@@ -74,7 +74,7 @@ public class Chapter6BrainTeasers {
      * while minimizing the number of drops for the worst case.
      */
     // TODO
-    public int nFloor() {
+    public static int nFloor() {
         // 100 floors
         // if N >= break else !break
         // Only given 2 eggs
@@ -92,7 +92,7 @@ public class Chapter6BrainTeasers {
      * hundred, how many lockers are open?
      */
     // Time - O(N), Space - O(N)
-    public int lockersOpen() {
+    public static int lockersOpen() {
         // 100 - open
         // 100/2 - 50 - closes every second locker
 
@@ -112,8 +112,8 @@ public class Chapter6BrainTeasers {
 
         // "After his one hundredth pass in the hallway", he repeated 100 times?
 
-        int numLockers = 100;
-        boolean[] lockers = new boolean[numLockers];
+        final int numLockers = 100;
+        final boolean[] lockers = new boolean[numLockers];
         int toggleCount = 1; // you can't divide 0 /0 - (0 % 0), must be greater than 1
         int openLockers = 0;
 

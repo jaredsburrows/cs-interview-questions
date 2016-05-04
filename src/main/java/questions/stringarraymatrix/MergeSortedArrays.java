@@ -1,8 +1,11 @@
 package questions.stringarraymatrix;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class MergeSortedArrays {
 
-    public int[] merge(final int[] a, final int[] b) {
+    public static int[] merge(final int[] a, final int[] b) {
         if (a == null && b == null) {
             return null;
         }

@@ -2,14 +2,14 @@ package questions.math
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class ReverseIntegerSpec extends Specification {
 
     def "solution"() {
-        given:
-        ReverseNumber reverseNumber = new ReverseNumber()
-
         expect:
-        reverseNumber.reverse(a) == b
+        ReverseNumber.reverse(a) == b
 
         where:
         a     || b
@@ -18,5 +18,4 @@ class ReverseIntegerSpec extends Specification {
         123   || 321
         -1409 || -9041
     }
-
 }

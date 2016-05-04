@@ -1,12 +1,15 @@
 package questions.stringarraymatrix;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class LongestSequenceMatrix {
 
     /**
      * Given NxN matrix, 1..n - all numbers are unique
      * Find largest sequence of consecutive numbers.
      */
-    public int getLongestSequence(int[][] matrix) {
+    public static int getLongestSequence(final int[][] matrix) {
         if (matrix == null) {
             return -1;
         }

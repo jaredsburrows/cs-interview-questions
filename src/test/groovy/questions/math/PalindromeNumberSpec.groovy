@@ -2,14 +2,14 @@ package questions.math
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class PalindromeNumberSpec extends Specification {
 
     def "isPalindrome"() {
-        given:
-        PalindromeNumber palindromeNumber = new PalindromeNumber()
-
         expect:
-        palindromeNumber.isPalindrome(a) == b
+        PalindromeNumber.isPalindrome(a) == b
 
         where:
         a      || b
@@ -19,5 +19,4 @@ class PalindromeNumberSpec extends Specification {
         100001 || true
         123221 || false
     }
-
 }

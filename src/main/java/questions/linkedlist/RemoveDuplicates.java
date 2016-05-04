@@ -5,7 +5,7 @@ import api.Node;
 public class RemoveDuplicates {
 
     // Time - O(N)
-    public void removeDuplicatesSorted(final Node<Integer> node) {
+    public static void removeDuplicatesSorted(final Node<Integer> node) {
         if (node == null) {
             return;
         }
@@ -21,7 +21,7 @@ public class RemoveDuplicates {
         }
     }
 
-    public void deleteEveryOtherRecursive(Node<Integer> node) {
+    public static void deleteEveryOtherRecursive(Node<Integer> node) {
         if (node != null && node.next != null) {
             node.next = node.next.next;
             deleteEveryOtherRecursive(node.next);

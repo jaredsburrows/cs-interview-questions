@@ -10,7 +10,7 @@ public class AddTwoNumbers {
     // returns 1000000111
     // python - to int      - int('1000000111', 2)
     // python - to binary   - bin(519)
-    public String getBinarySumLib(final String binary1, final String binary2) {
+    public static String getBinarySumLib(final String binary1, final String binary2) {
         if (binary1 == null && binary2 == null) {
             return null;
         }
@@ -36,7 +36,7 @@ public class AddTwoNumbers {
     // 1 + 1 = 2, 1
     // 1 + 1 + 1 = 3, 1 + carry
     // limited by integers
-    public String getBinarySum(final String binary1, final String binary2) {
+    public static String getBinarySum(final String binary1, final String binary2) {
         if (binary1 == null && binary2 == null) {
             return null;
         }
@@ -88,7 +88,7 @@ public class AddTwoNumbers {
 
     // 0 >> 1 = 0,  1 >> 1 = 0,  2 >> 1 = 1,  3 >> 1 = 1
     // 0 &  0 = 0,  0 &  1 = 1,  1 &  1 = 1,  2 &  1 = 1
-    public String getBinarySumBit(final String binary1, final String binary2) {
+    public static String getBinarySumBit(final String binary1, final String binary2) {
         if (binary1 == null && binary2 == null) {
             return null;
         }

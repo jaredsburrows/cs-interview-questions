@@ -2,14 +2,14 @@ package questions.stringarraymatrix
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class RotateArraySpec extends Specification {
 
     def "rotate"() {
-        given:
-        RotateArray rotateArray = new RotateArray()
-
         expect:
-        rotateArray.rotate(a as int[], b) == c as int[]
+        RotateArray.rotate(a as int[], b) == c as int[]
 
         where:
         a               || b  || c

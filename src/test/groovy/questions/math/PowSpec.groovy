@@ -2,14 +2,14 @@ package questions.math
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class PowSpec extends Specification {
 
     def "pow"() {
-        given:
-        Pow pow = new Pow()
-
         expect:
-        pow.pow(a, b) == c
+        Pow.pow(a, b) == c
 
         where:
         a  || b  || c

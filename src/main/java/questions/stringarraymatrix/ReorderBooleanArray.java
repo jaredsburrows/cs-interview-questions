@@ -2,6 +2,9 @@ package questions.stringarraymatrix;
 
 import api.util.Swap;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class ReorderBooleanArray {
 
     /**
@@ -9,7 +12,7 @@ public class ReorderBooleanArray {
      * that have the key false appear first. The relative ordering of objects with key true should
      * not change. Use O(1) additional space and O(n) time.
      */
-    public Boolean[] getReorderBoolObjects(final Boolean[] array) {
+    public static Boolean[] getReorderBoolObjects(final Boolean[] array) {
         int lastFalse = 0;
 
         for (int i = 0; i < array.length; i++) {
@@ -21,7 +24,7 @@ public class ReorderBooleanArray {
         return array;
     }
 
-    public boolean[] getReorderBoolPrimitives(final boolean[] array) {
+    public static boolean[] getReorderBoolPrimitives(final boolean[] array) {
         int falseCount = 0;
         for (final boolean bool : array) {
             if (!bool) {

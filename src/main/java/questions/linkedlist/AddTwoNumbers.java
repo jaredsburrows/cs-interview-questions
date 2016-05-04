@@ -14,7 +14,7 @@ public class AddTwoNumbers {
      */
     // node1 and node2 numbers are stored forwards
     // the answer node is backwards
-    public Node<Integer> addTwoNumbers(Node<Integer> node1, Node<Integer> node2) {
+    public static Node<Integer> addTwoNumbers(Node<Integer> node1, Node<Integer> node2) {
         if (node1 == null || node2 == null) {
             return null;
         }

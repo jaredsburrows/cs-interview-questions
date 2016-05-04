@@ -217,7 +217,7 @@ public class Chapter20Hard {
      * Output: DAMP -> LAMP -> LIMP -> LIME -> LIKE
      */
     // what is the data structure of the dictionary? Map<Integer, String>
-    public List<String> getTransformedList(Map<Integer, String> dictionary, String word, String word2) {
+    public static List<String> getTransformedList(Map<Integer, String> dictionary, String word, String word2) {
         if (dictionary == null || word == null || word2 == null) {
             return null;
         }

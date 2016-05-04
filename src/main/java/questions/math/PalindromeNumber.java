@@ -2,7 +2,7 @@ package questions.math;
 
 public class PalindromeNumber {
 
-    public boolean isPalindrome(long number) {
+    public static boolean isPalindrome(long number) {
         if (number < 0) {
             return false;
         }

@@ -2,16 +2,16 @@ package questions.math
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class NumberLengthSpec extends Specification {
 
     def "getIntegerLength"() {
-        given:
-        NumberLength numberLength = new NumberLength()
-
         expect:
-        numberLength.getIntegerLength(a) == b
-        numberLength.lenHelper(a) == b
-        numberLength.getIntegerLogLength(a) == b
+        NumberLength.getIntegerLength(a) == b
+        NumberLength.lenHelper(a) == b
+        NumberLength.getIntegerLogLength(a) == b
 
         where:
         a          || b

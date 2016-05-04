@@ -3,11 +3,13 @@ package questions.linkedlist
 import api.Node
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class AddTwoNumberSpec extends Specification {
 
     def "addTwoNumbers"() {
         given:
-        AddTwoNumbers addTwoNumbers = new AddTwoNumbers()
         // book
         // 315 + 592 = 808
         Node<Integer> book1 = new Node<>(3)
@@ -42,32 +44,32 @@ class AddTwoNumberSpec extends Specification {
         shorterNumber.next.next = new Node<>(1)
 
         expect:
-        addTwoNumbers.addTwoNumbers(null, nine) == null
-        addTwoNumbers.addTwoNumbers(nine, null) == null
-        addTwoNumbers.addTwoNumbers(null, null) == null
+        AddTwoNumbers.addTwoNumbers(null, nine) == null
+        AddTwoNumbers.addTwoNumbers(nine, null) == null
+        AddTwoNumbers.addTwoNumbers(null, null) == null
 
-        Node<Integer> result = addTwoNumbers.addTwoNumbers(book1, book2)
+        Node<Integer> result = AddTwoNumbers.addTwoNumbers(book1, book2)
         result.value == 8
         result.next.value == 0
         result.next.next.value == 8
 
-        Node<Integer> result2 = addTwoNumbers.addTwoNumbers(pg, pg2)
+        Node<Integer> result2 = AddTwoNumbers.addTwoNumbers(pg, pg2)
         result2.value == 7
         result2.next.value == 0
         result2.next.next.value == 8
 
-        Node<Integer> result3 = addTwoNumbers.addTwoNumbers(nine, nine)
+        Node<Integer> result3 = AddTwoNumbers.addTwoNumbers(nine, nine)
         result3.value == 8
         result3.next.value == 9
         result3.next.next.value == 9
         result3.next.next.next.value == 1
 
-        Node<Integer> result4 = addTwoNumbers.addTwoNumbers(shortNumber, shorterNumber)
+        Node<Integer> result4 = AddTwoNumbers.addTwoNumbers(shortNumber, shorterNumber)
         result4.value == 2
         result4.next.value == 2
         result4.next.next.value == 1
 
-        Node<Integer> result5 = addTwoNumbers.addTwoNumbers(shorterNumber, shortNumber)
+        Node<Integer> result5 = AddTwoNumbers.addTwoNumbers(shorterNumber, shortNumber)
         result5.value == 2
         result5.next.value == 2
         result5.next.next.value == 1

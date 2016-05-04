@@ -2,14 +2,14 @@ package questions.stringarraymatrix
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class MergeSortedArraysSpec extends Specification {
 
     def "merge"() {
-        given:
-        MergeSortedArrays mergeSortedArrays = new MergeSortedArrays()
-
         expect:
-        mergeSortedArrays.merge(a as int[], b as int[]) == c as int[]
+        MergeSortedArrays.merge(a as int[], b as int[]) == c as int[]
 
         where:
         a         || b         || c

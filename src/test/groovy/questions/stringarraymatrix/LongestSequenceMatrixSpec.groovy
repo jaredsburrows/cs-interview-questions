@@ -2,14 +2,14 @@ package questions.stringarraymatrix
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class LongestSequenceMatrixSpec extends Specification {
 
     def "getLongestSequence"() {
-        given:
-        LongestSequenceMatrix longestSequenceMatrix = new LongestSequenceMatrix()
-
         expect:
-        longestSequenceMatrix.getLongestSequence(a as int[][]) == b
+        LongestSequenceMatrix.getLongestSequence(a as int[][]) == b
 
         where:
         a           || b

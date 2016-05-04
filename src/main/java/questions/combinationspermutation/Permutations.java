@@ -1,15 +1,16 @@
 package questions.combinationspermutation;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Permutations {
 
-    public ArrayList<String> getStringPermutations(final String prefix, final String string) {
+    public static List<String> getStringPermutations(final String prefix, final String string) {
         if (string == null) {
             return null;
         }
 
-        ArrayList<String> finalList = new ArrayList<>();
+        final List<String> finalList = new ArrayList<>();
         int length = string.length();
         if (length == 0) {
             // empty string

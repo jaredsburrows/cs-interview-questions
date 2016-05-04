@@ -2,15 +2,17 @@ package questions.stringarraymatrix
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class ReorderBooleanArraySpec extends Specification {
 
     def "reorder bools - primitive"() {
         given:
-        ReorderBooleanArray reorderBooleanArray = new ReorderBooleanArray()
         boolean[] b = [false, true, true, true, false, true]
 
         when:
-        reorderBooleanArray.getReorderBoolPrimitives(b)
+        ReorderBooleanArray.getReorderBoolPrimitives(b)
 
         then:
         b == [false, false, true, true, true, true]
@@ -18,11 +20,10 @@ class ReorderBooleanArraySpec extends Specification {
 
     def "reorder bools - object"() {
         given:
-        ReorderBooleanArray reorderBooleanArray = new ReorderBooleanArray()
         Boolean[] b = [false, true, true, true, false, true]
 
         when:
-        reorderBooleanArray.getReorderBoolObjects(b)
+        ReorderBooleanArray.getReorderBoolObjects(b)
 
         then:
         b == [false, false, true, true, true, true]

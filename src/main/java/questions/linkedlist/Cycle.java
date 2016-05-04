@@ -4,7 +4,7 @@ import api.Node;
 
 public class Cycle {
 
-    public boolean hasCycle(Node<Integer> node) {
+    public static boolean hasCycle(final Node<Integer> node) {
         if (node == null) {
             return false;
         }

@@ -2,14 +2,14 @@ package questions.math
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class TrailingZerosSpec extends Specification {
 
     def "getTrailingZeros"() {
-        given:
-        TrailingZeros trailingZeros = new TrailingZeros()
-
         expect:
-        trailingZeros.getTrailingZeros(a) == b
+        TrailingZeros.getTrailingZeros(a) == b
 
         where:
         a           || b
