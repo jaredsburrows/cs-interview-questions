@@ -2,6 +2,9 @@ package questions.treeheap;
 
 import api.TreeNode;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class TreeHeight {
 
     public static <T> int getHeight(final TreeNode<T> treeNode) {

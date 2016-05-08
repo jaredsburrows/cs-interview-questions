@@ -2,6 +2,8 @@ package questions.searching;
 
 /**
  * Search an element in an array where difference between adjacent elements is 1.
+ *
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public class SearchAdjacentElements {
 

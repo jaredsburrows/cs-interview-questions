@@ -5,6 +5,9 @@ import api.Color
 
 import static api.Color.*
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class Chapter8RecursionSpec extends Specification {
 
     def "8.1 - getFibNumberRecursive"() {

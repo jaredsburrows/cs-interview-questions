@@ -3,6 +3,9 @@ package questions.combinationspermutation;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class Permutations {
 
     public static List<String> getStringPermutations(final String prefix, final String string) {

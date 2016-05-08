@@ -3,6 +3,9 @@ package questions.treeheap
 import api.TreeNode
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class TreeHeightSpec extends Specification {
 
     TreeNode<Integer> tree = new TreeNode<>(26)

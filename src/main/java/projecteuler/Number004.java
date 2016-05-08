@@ -1,5 +1,8 @@
 package projecteuler;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class Number004 {
 
     public static boolean isPalindrome(final int n) {

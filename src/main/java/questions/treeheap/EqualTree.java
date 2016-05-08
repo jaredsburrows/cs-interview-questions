@@ -2,6 +2,9 @@ package questions.treeheap;
 
 import api.TreeNode;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class EqualTree {
 
     public static <T> boolean isEqual(final TreeNode<T> treeNode, final TreeNode<T> treeNode2) {

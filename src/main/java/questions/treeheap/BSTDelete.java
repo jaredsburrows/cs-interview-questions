@@ -2,6 +2,9 @@ package questions.treeheap;
 
 import api.TreeNode;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class BSTDelete {
 
     public TreeNode<Integer> findMaxNode(TreeNode<Integer> root) {

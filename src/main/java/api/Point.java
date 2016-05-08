@@ -1,5 +1,8 @@
 package api;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class Point {
 
     private final int x;

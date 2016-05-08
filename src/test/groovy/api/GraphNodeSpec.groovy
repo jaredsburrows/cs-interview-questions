@@ -2,6 +2,9 @@ package api
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class GraphNodeSpec extends Specification {
 
     GraphNode<Integer>[] graphNodes = [new GraphNode<>(123), new GraphNode<>(123)]

@@ -2,6 +2,9 @@ package questions.linkedlist;
 
 import api.Node;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class Cycle {
 
     public static boolean hasCycle(final Node<Integer> node) {

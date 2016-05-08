@@ -2,6 +2,9 @@ package api
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class ColorSpec extends Specification {
 
     def "default values"() {

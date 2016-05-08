@@ -2,6 +2,9 @@ package questions.linkedlist;
 
 import api.Node;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class RemoveEveryOther {
 
     // Time - O(N)

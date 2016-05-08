@@ -3,6 +3,9 @@ package crackingthecode.part4additionalreviewproblems
 import spock.lang.Ignore
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class Chapter20HardSpec extends Specification {
 
     def "20.1 - addTwoNumbers"() {

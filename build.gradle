@@ -15,7 +15,7 @@ repositories {
 }
 
 apply plugin: 'c'
-//apply plugin: 'cpp'
+apply plugin: 'cpp'
 apply plugin: 'cunit-test-suite'
 apply plugin: 'pmd'
 apply plugin: 'java'
@@ -142,6 +142,6 @@ model {
 }
 
 dependencies {
-    testCompile 'org.codehaus.groovy:groovy-all:2.4.6'
-    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+    testCompile localGroovy()
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4', { exclude module: 'groovy-all' }
 }

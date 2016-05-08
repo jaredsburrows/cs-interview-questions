@@ -2,6 +2,9 @@ package questions.treeheap;
 
 import api.TreeNode;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class BSTContains {
 
     public boolean contains(TreeNode<Integer> root, int value) {

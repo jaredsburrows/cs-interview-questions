@@ -2,6 +2,9 @@ package questions.linkedlist;
 
 import api.Node;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class MergeTwoSortedLinkedLists {
 
     public static Node<Integer> merge(final Node<Integer> left, final Node<Integer> right) {

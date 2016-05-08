@@ -1,5 +1,8 @@
 package api;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 // FIFO
 public class Queue<T> {
 

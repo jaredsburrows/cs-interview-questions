@@ -1,5 +1,8 @@
 package questions.math;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class FindMissingNumber {
 
     // Time - O(N), Space - O(1)

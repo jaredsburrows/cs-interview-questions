@@ -4,6 +4,9 @@ import crackingthecode.part2conceptsandalgorithms.Chapter7ObjectOrientedDesign.C
 import crackingthecode.part2conceptsandalgorithms.Chapter7ObjectOrientedDesign.Card.Suite
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class Chapter7ObjectOrientedDesignSpec extends Specification {
 
     def "card"() {

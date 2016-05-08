@@ -1,5 +1,8 @@
 package crackingthecode.part3knowledgebased;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class Chapter14Java {
 
     /**

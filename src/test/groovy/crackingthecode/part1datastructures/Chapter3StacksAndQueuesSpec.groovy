@@ -5,6 +5,9 @@ import crackingthecode.part1datastructures.Chapter3StacksAndQueues.MyQueue
 import crackingthecode.part1datastructures.Chapter3StacksAndQueues.SetOfStacks
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class Chapter3StacksAndQueuesSpec extends Specification {
 
     def "3.1"() {

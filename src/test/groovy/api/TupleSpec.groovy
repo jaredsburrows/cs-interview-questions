@@ -2,15 +2,13 @@ package api
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class TupleSpec extends Specification {
 
-    Tuple<String, Integer> tuple
-    Tuple<String, Integer> tuple2
-
-    def "setup"() {
-        tuple = new Tuple<>("test", 123);
-        tuple2 = new Tuple<>("test", 123);
-    }
+    Tuple<String, Integer> tuple = new Tuple<>("test", 123);
+    Tuple<String, Integer> tuple2 = new Tuple<>("test", 123);
 
     def "getX"() {
         expect:

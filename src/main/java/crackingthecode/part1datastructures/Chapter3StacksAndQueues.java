@@ -3,6 +3,9 @@ package crackingthecode.part1datastructures;
 import java.util.ArrayList;
 import java.util.Stack;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class Chapter3StacksAndQueues {
 
     /**

@@ -1,5 +1,8 @@
 package projecteuler;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class Number001 {
 
     public static int getMultiplesOf3And5ON() {

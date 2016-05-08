@@ -3,6 +3,9 @@ package crackingthecode.part4additionalreviewproblems
 import api.Tuple
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class Chapter19ModerateSpec extends Specification {
 
     def "19.1 - swapVar"() {

@@ -5,20 +5,23 @@ import api.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class Chapter8Recursion {
 
     /**
      * 8.1 - Write a method to generate the nth Fibonacci number.
      */
-    public static long getFibNumberRecursive(final long n) {
-        if (n < 0) {
+    public static long getFibNumberRecursive(final long number) {
+        if (number < 0) {
             return -1;
-        } else if (n == 0) {
+        } else if (number == 0) {
             return 0;
-        } else if (n <= 2) {
+        } else if (number <= 2) {
             return 1;
         } else {
-            return (getFibNumberRecursive(n - 1) + getFibNumberRecursive(n - 2));
+            return (getFibNumberRecursive(number - 1) + getFibNumberRecursive(number - 2));
         }
     }
 

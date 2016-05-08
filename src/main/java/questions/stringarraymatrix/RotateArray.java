@@ -1,5 +1,8 @@
 package questions.stringarraymatrix;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class RotateArray {
 
     // before: 1,2,3,4,5,6, shift: 2

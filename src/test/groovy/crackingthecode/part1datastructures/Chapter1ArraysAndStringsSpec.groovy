@@ -2,6 +2,9 @@ package crackingthecode.part1datastructures
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class Chapter1ArraysAndStringsSpec extends Specification {
 
     def "1.1 - isUniqueCharacters"() {

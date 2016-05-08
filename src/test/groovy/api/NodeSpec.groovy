@@ -2,6 +2,9 @@ package api
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class NodeSpec extends Specification {
 
     Node<Integer> node = new Node<>(123);

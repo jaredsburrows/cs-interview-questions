@@ -2,6 +2,9 @@ package projecteuler
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class Number002Spec extends Specification {
 
     def "Test Problem 2 - [Even Fibonacci numbers]"() {

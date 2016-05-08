@@ -3,6 +3,9 @@ package crackingthecode.part2conceptsandalgorithms
 import api.Tuple
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class Chapter9SortingAndSearchingSpec extends Specification {
 
     def "9.1 - mergeAInB"() {

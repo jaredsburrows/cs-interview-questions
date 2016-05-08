@@ -1,5 +1,8 @@
 package questions.math;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class Pow {
 
     public static long pow(final int x, final int n) {

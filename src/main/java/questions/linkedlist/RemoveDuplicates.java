@@ -2,6 +2,9 @@ package questions.linkedlist;
 
 import api.Node;
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 public class RemoveDuplicates {
 
     // Time - O(N)

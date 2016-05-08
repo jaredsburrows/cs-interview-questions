@@ -3,6 +3,9 @@ package crackingthecode.part1datastructures
 import api.Node
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class Chapter2LinkedListsSpec extends Specification {
 
     def "2.1 - removeDuplicates - buffer"() {

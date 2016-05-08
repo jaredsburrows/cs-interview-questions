@@ -2,6 +2,9 @@ package api
 
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class PointSpec extends Specification {
 
     Point point1 = new Point(321, 123)

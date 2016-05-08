@@ -3,6 +3,9 @@ package crackingthecode.part2conceptsandalgorithms
 import spock.lang.Ignore
 import spock.lang.Specification
 
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class Chapter5BitManipulationSpec extends Specification {
 
     @Ignore
