@@ -1,58 +1,67 @@
 CS Interview Practice [![Build Status](https://travis-ci.org/jaredsburrows/cs-interview-questions.svg?branch=master)](https://travis-ci.org/jaredsburrows/cs-interview-questions) [![Coverage Status](https://coveralls.io/repos/jaredsburrows/cs-interview-questions/badge.svg?branch=master)](https://coveralls.io/r/jaredsburrows/cs-interview-questions?branch=master)
 =============
 
-## [CodeEval](src/main/java/codeeval)
+
+## CodeEval
 
 **Site:** https://www.codeeval.com/
 
 **My Profile:** https://www.codeeval.com/profile/jaredsburrows/
 
-## [Cracking The Code Interview](src/main/java/crackingthecode)
+**My Solutions:** [src/main/java/codeeval]((src/main/java/codeeval))
+
+
+## Codingbat
+
+**Site:** http://codingbat.com
+
+**My Solutions:** [src/main/java/codingbat](src/main/java/codingbat)
+
+
+## Cracking The Code Interview
 
 **Site:** http://www.careercup.com/book
 
 **Github:** https://github.com/gaylemcd/ctci
 
-## [Project Euler](src/main/c/projecteuler)
+**My Solutions:** [src/main/java/crackingthecode](src/main/java/crackingthecode)
+
+
+## Project Euler
 
 **Site:** http://projecteuler.net/
 
+**My Solutions:** [src/main/java/projecteuler](src/main/java/projecteuler)
+
+**My Profile:**
 ![Score](http://projecteuler.net/profile/jaredsburrows.png)
 
-## [Common Interview Questions](src/main/java/questions)
 
-**Sites and Resources used:**
+## Common Questions
 
+**My Solutions:** [src/main/java/questions](src/main/java/questions)
+
+## Others resources used
  - http://www.programcreek.com/
    - http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
  - http://www.geeksforgeeks.org/
  - http://www.hackerrank.com/
 
-## Languages Used
 
-**Development Source(src/main):**
+## Languages used
+ - **C** - [src/main/c](src/main/c)
+ - **Java** - [src/main/java](src/main/java)
+ - **Python** - [src/main/python](src/main/python)
+ - **Groovy** - [src/test/groovy](src/test/groovy)
 
- - Java
- - Python (older solutions)
- - C (older solutions)
-
-**Test Source(src/test):**
-
- - Groovy (https://github.com/groovy/groovy-core)
-
-**Testing Frameworks:**
-
+## Testing frameworks used
+ - CUnit (http://cunit.sourceforge.net/)
  - Spock (https://github.com/spockframework/spock)
 
-**Continuous Integration:**
-
- - Gradle (https://gradle.org/)
- - TravisCI (https://travis-ci.org/)
- - Converalls (https://coveralls.io/)
 
 ## License
 
-    Copyright (C) 2015 Personal Solutions by Jared Burrows
+    Copyright (C) 2016 Personal Solutions by Jared Burrows
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
