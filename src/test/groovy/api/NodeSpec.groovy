@@ -7,8 +7,8 @@ import spock.lang.Specification
  */
 class NodeSpec extends Specification {
 
-    Node<Integer> node = new Node<>(123);
-    Node<Integer> nextNode = new Node<>(123);
+    Node<Integer> node = new Node<>(123)
+    Node<Integer> nextNode = new Node<>(123)
 
     def "default values"() {
         expect:

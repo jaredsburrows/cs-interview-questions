@@ -9,43 +9,48 @@ import spock.lang.Specification
  */
 class Chapter4TreesAndGraphsSpec extends Specification {
 
-    TreeNode<Integer> tree = new TreeNode(26);
-    TreeNode<Integer> subTree = new TreeNode(10);
-    TreeNode<Integer> balancedTree = new TreeNode(0);
-    TreeNode<Integer> balancedTree2 = new TreeNode(0);
-    TreeNode<Integer> unbalancedTree = new TreeNode(5);
+    TreeNode<Integer> tree = new TreeNode(26)
+    TreeNode<Integer> subTree = new TreeNode(10)
+    TreeNode<Integer> balancedTree = new TreeNode(0)
+    TreeNode<Integer> balancedTree2 = new TreeNode(0)
+    TreeNode<Integer> unbalancedTree = new TreeNode(5)
 
     def "setup"() {
-        balancedTree.right = new TreeNode(10);
-        balancedTree.right.left = new TreeNode(10);
-        balancedTree.right.right = new TreeNode(10);
-        balancedTree.left = new TreeNode(1);
-        balancedTree.left.left = new TreeNode(12);
-        balancedTree.left.right = new TreeNode(2);
+        balancedTree.right = new TreeNode(10)
+        balancedTree.right.left = new TreeNode(10)
+        balancedTree.right.right = new TreeNode(10)
+        balancedTree.left = new TreeNode(1)
+        balancedTree.left.left = new TreeNode(12)
+        balancedTree.left.right = new TreeNode(2)
 
-        balancedTree2.right = new TreeNode(10);
-        balancedTree2.right.left = new TreeNode(10);
-        balancedTree2.left = new TreeNode(1);
-        balancedTree2.left.right = new TreeNode(2);
+        balancedTree2.right = new TreeNode(10)
+        balancedTree2.right.left = new TreeNode(10)
+        balancedTree2.left = new TreeNode(1)
+        balancedTree2.left.right = new TreeNode(2)
 
-        unbalancedTree.right = new TreeNode(10);
-        unbalancedTree.left = new TreeNode(1);
-        unbalancedTree.left.left = new TreeNode(12);
-        unbalancedTree.left.left.left = new TreeNode(12);
+        unbalancedTree.right = new TreeNode(10)
+        unbalancedTree.left = new TreeNode(1)
+        unbalancedTree.left.left = new TreeNode(12)
+        unbalancedTree.left.left.left = new TreeNode(12)
 
-        subTree.right = new TreeNode(6);
-        subTree.left = new TreeNode(4);
-        subTree.left.right = new TreeNode(30);
+        subTree.right = new TreeNode(6)
+        subTree.left = new TreeNode(4)
+        subTree.left.right = new TreeNode(30)
 
-        tree.right = new TreeNode(3);
-        tree.right.right = new TreeNode(3);
-        tree.left = new TreeNode(10);
-        tree.left.left = new TreeNode(4);
-        tree.left.left.right = new TreeNode(30);
-        tree.left.right = new TreeNode(6);
+        tree.right = new TreeNode(3)
+        tree.right.right = new TreeNode(3)
+        tree.left = new TreeNode(10)
+        tree.left.left = new TreeNode(4)
+        tree.left.left.right = new TreeNode(30)
+        tree.left.right = new TreeNode(6)
     }
 
-    def "4.1 - isBalanced"() {
+    def "constructor"() {
+        expect:
+        new Chapter4TreesAndGraphs() != null
+    }
+
+    def "isBalanced"() {
         expect:
         Chapter4TreesAndGraphs.isBalanced(null)
         !Chapter4TreesAndGraphs.isBalanced(unbalancedTree)
@@ -53,13 +58,13 @@ class Chapter4TreesAndGraphsSpec extends Specification {
         Chapter4TreesAndGraphs.isBalanced(balancedTree2)
     }
 
-    def "4.2 - hasGraphNodeBFS"() {
+    def "hasGraphNodeBFS"() {
         given:
-        GraphNode<Integer> n1 = new GraphNode<>(1);
-        GraphNode<Integer> n2 = new GraphNode<>(2);
-        GraphNode<Integer> n3 = new GraphNode<>(3);
-        GraphNode<Integer> n4 = new GraphNode<>(4);
-        GraphNode<Integer> n5 = new GraphNode<>(5);
+        GraphNode<Integer> n1 = new GraphNode<>(1)
+        GraphNode<Integer> n2 = new GraphNode<>(2)
+        GraphNode<Integer> n3 = new GraphNode<>(3)
+        GraphNode<Integer> n4 = new GraphNode<>(4)
+        GraphNode<Integer> n5 = new GraphNode<>(5)
 
         n1.neighbors = [n2, n3, n5]
         n2.neighbors = [n1, n4]
@@ -72,7 +77,7 @@ class Chapter4TreesAndGraphsSpec extends Specification {
         !Chapter4TreesAndGraphs.hasGraphNodeBFS(n1, new GraphNode<Integer>(9))
     }
 
-    def "4.3 - getBinaryTree"() {
+    def "getBinaryTree"() {
         given:
         int[] sortedArray = [1, 2, 3, 4, 5, 6, 7]
         int[] empty = []
@@ -108,7 +113,7 @@ class Chapter4TreesAndGraphsSpec extends Specification {
         tree.right.right.value == 7
     }
 
-    def "4.4 - getLinkedListDepth"() {
+    def "getLinkedListDepth"() {
         given:
         TreeNode<Integer> treeNode4 = new TreeNode<>(4)
         TreeNode<Integer> treeNode2 = new TreeNode<>(2)
@@ -132,7 +137,7 @@ class Chapter4TreesAndGraphsSpec extends Specification {
 
     }
 
-    def "4.5 - commonAncestor"() {
+    def "commonAncestor"() {
         given:
         TreeNode<Integer> treeNode4 = new TreeNode<>(4)
         TreeNode<Integer> treeNode2 = new TreeNode<>(2)
@@ -156,11 +161,7 @@ class Chapter4TreesAndGraphsSpec extends Specification {
         Chapter4TreesAndGraphs.commonAncestor(treeNode4, treeNode2, treeNode5) == treeNode4
     }
 
-    def "4.6 - "() {
-
-    }
-
-    def "4.7 - isSubtree"() {
+    def "isSubtree"() {
         expect:
         Chapter4TreesAndGraphs.isSubtree(null, null)
         !Chapter4TreesAndGraphs.isSubtree(null, balancedTree)
@@ -168,9 +169,5 @@ class Chapter4TreesAndGraphsSpec extends Specification {
         !Chapter4TreesAndGraphs.isSubtree(unbalancedTree, balancedTree)
         Chapter4TreesAndGraphs.isSubtree(tree, tree)
         Chapter4TreesAndGraphs.isSubtree(tree, subTree)
-    }
-
-    def "4.8 - "() {
-
     }
 }

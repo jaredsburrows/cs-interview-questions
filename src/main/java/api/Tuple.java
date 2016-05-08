@@ -3,7 +3,7 @@ package api;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Tuple<X, Y> {
+public final class Tuple<X, Y> {
 
     private final X x;
     private final Y y;
@@ -38,7 +38,6 @@ public class Tuple<X, Y> {
         }
 
         return y != null ? y.equals(tuple.y) : tuple.y == null;
-
     }
 
     @Override

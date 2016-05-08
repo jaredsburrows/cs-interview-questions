@@ -7,6 +7,11 @@ import spock.lang.Specification
  */
 class FindMissingNumberSpec extends Specification {
 
+    def "constructor"() {
+        expect:
+        new FindMissingNumber() != null
+    }
+
     def "findMissing"() {
         expect:
         FindMissingNumber.findMissing(a as int[]) == b

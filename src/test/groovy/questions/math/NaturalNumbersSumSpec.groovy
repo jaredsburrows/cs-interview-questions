@@ -7,6 +7,11 @@ import spock.lang.Specification
  */
 class NaturalNumbersSumSpec extends Specification {
 
+    def "constructor"() {
+        expect:
+        new NaturalNumbersSum() != null
+    }
+
     def "getSumNaturalNumbers"() {
         expect:
         NaturalNumbersSum.getSumNaturalNumbers(a) == b

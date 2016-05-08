@@ -7,7 +7,12 @@ import spock.lang.Specification
  */
 class Array6Spec extends Specification {
 
-    def "Array6"() {
+    def "constructor"() {
+        expect:
+        new Array6() != null
+    }
+
+    def "array6"() {
         expect:
         Array6.array6(a as int[], b) == c
 

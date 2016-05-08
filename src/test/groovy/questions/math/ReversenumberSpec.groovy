@@ -5,7 +5,12 @@ import spock.lang.Specification
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ReverseIntegerSpec extends Specification {
+class ReverseNumberSpec extends Specification {
+
+    def "constructor"() {
+        expect:
+        new ReverseNumber() != null
+    }
 
     def "solution"() {
         expect:

@@ -8,9 +8,14 @@ import api.Node
  */
 class RemoveDuplicatesSpec extends Specification {
 
+    def "constructor"() {
+        expect:
+        new RemoveDuplicates() != null
+    }
+
     def "removeDuplicates - sorted"() {
         given:
-        Node<Integer> node = new Node<>(0)
+        def node = new Node<>(0)
         node.next = new Node<>(0)
         node.next.next = new Node<>(1)
         node.next.next.next = new Node<>(1)

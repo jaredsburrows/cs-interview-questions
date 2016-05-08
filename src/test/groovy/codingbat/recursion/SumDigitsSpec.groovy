@@ -7,7 +7,12 @@ import spock.lang.Specification
  */
 class SumDigitsSpec extends Specification {
 
-    def "SumDigits"() {
+    def "constructor"() {
+        expect:
+        new SumDigits() != null
+    }
+
+    def "sumDigits"() {
         expect:
         SumDigits.sumDigits(a) == b
 

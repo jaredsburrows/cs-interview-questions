@@ -7,6 +7,11 @@ import spock.lang.Specification
  */
 class LongestSequenceMatrixSpec extends Specification {
 
+    def "constructor"() {
+        expect:
+        new LongestSequenceMatrix() != null
+    }
+
     def "getLongestSequence"() {
         expect:
         LongestSequenceMatrix.getLongestSequence(a as int[][]) == b

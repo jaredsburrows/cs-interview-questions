@@ -39,7 +39,7 @@ public class Subsets {
         return subsets;
     }
 
-    public static <T> List<ArrayList<T>> subsets(final T[] data) {
+    public static <T> List<ArrayList<T>> subsets2(final T[] data) {
         if (data == null) {
             return null;
         }

@@ -7,14 +7,19 @@ import spock.lang.Specification
  */
 class AllStarSpec extends Specification {
 
-    def "AllStar"() {
+    def "constructor"() {
+        expect:
+        new AllStar() != null
+    }
+
+    def "allStar"() {
         expect:
         AllStar.allStar(a) == b
 
         where:
         a       || b
-        'hello' || 'h*e*l*l*o'
-        'abc'   || 'a*b*c'
-        'ab'    || 'a*b'
+        "hello" || "h*e*l*l*o"
+        "abc"   || "a*b*c"
+        "ab"    || "a*b"
     }
 }

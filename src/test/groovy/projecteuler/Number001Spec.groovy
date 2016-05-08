@@ -1,11 +1,15 @@
 package projecteuler
 
 import spock.lang.Specification
-
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class Number001Spec extends Specification {
+
+    def "constructor"() {
+        expect:
+        new Number001() != null
+    }
 
     def "Test Problem 1 - [Multiples of 3 and 5]"() {
         expect:

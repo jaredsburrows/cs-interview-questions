@@ -1,5 +1,6 @@
 package api
 
+import nl.jqno.equalsverifier.EqualsVerifier
 import spock.lang.Specification
 
 /**
@@ -7,8 +8,7 @@ import spock.lang.Specification
  */
 class PointSpec extends Specification {
 
-    Point point1 = new Point(321, 123)
-    Point point2 = new Point(321, 123)
+    def point1 = new Point(321, 123)
 
     def "getX"() {
         expect:
@@ -21,18 +21,10 @@ class PointSpec extends Specification {
     }
 
     def "equals"() {
-        expect:
-        point1.equals(point1)                               // same reference
-        !point1.equals("test")                              // different object
-        point2.equals(point1)                               // same values
-        !new Point(1, 1).equals(new Point(1, 2))            // different y
-        !new Point(1, 1).equals(new Point(2, 1))            // different x
-    }
+        when:
+        EqualsVerifier.forClass(Point.class).verify()
 
-    def "hashcode"() {
-        expect:
-        point2.hashCode() == point1.hashCode()
-        new Point(321, 123).hashCode() == new Point(321, 123).hashCode()
-        new Point(3221, 1323).hashCode() != new Point(321, 123).hashCode()
+        then:
+        noExceptionThrown()
     }
 }

@@ -8,7 +8,12 @@ import spock.lang.Specification
  */
 class Chapter2LinkedListsSpec extends Specification {
 
-    def "2.1 - removeDuplicates - buffer"() {
+    def "constructor"() {
+        expect:
+        new Chapter2LinkedLists() != null
+    }
+
+    def "removeDuplicates"() {
         given:
         Node<Integer> node = new Node<>(1)
         node.next = new Node<>(0)
@@ -28,7 +33,7 @@ class Chapter2LinkedListsSpec extends Specification {
         node.next.next.next.value == 5
     }
 
-    def "2.1 - removeDuplicates - no buffer"() {
+    def "removeDuplicates2"() {
         given:
         Node<Integer> node = new Node<>(1)
         node.next = new Node<>(0)
@@ -48,7 +53,7 @@ class Chapter2LinkedListsSpec extends Specification {
         node.next.next.next.value == 5
     }
 
-    def "2.1 - removeDuplicates2 - no buffer - online"() {
+    def "removeDuplicates2 - no buffer - online"() {
         given:
         Node<Integer> node = new Node<>(1)
         node.next = new Node<>(0)
@@ -68,7 +73,7 @@ class Chapter2LinkedListsSpec extends Specification {
         node.next.next.next.value == 5
     }
 
-    def "2.1 - deleteDupsC - book"() {
+    def "deleteDupsC - book"() {
         given:
         Node<Integer> node = new Node<>(1)
         node.next = new Node<>(0)
@@ -88,7 +93,7 @@ class Chapter2LinkedListsSpec extends Specification {
         node.next.next.next.value == 5
     }
 
-    def "2.2 - findNthLastElement"() {
+    def "findNthLastElement"() {
         Node<Integer> node = new Node<>(0)
         node.next = new Node<>(1)
         node.next.next = new Node<>(2)
@@ -107,26 +112,26 @@ class Chapter2LinkedListsSpec extends Specification {
         Chapter2LinkedLists.findNthLastElement(node, 1).value == 5
     }
 
-    def "2.3 - deleteMiddleNode"() {
+    def "deleteMiddleNode"() {
         given:
-        Node<Character> node1 = new Node<>('a' as Character)
-        node1.next = new Node<>('b' as Character)
-        node1.next.next = new Node<>('c' as Character)
-        node1.next.next.next = new Node<>('d' as Character)
-        node1.next.next.next.next = new Node<>('e' as Character)
+        Node<Character> node1 = new Node<>("a" as Character)
+        node1.next = new Node<>("b" as Character)
+        node1.next.next = new Node<>("c" as Character)
+        node1.next.next.next = new Node<>("d" as Character)
+        node1.next.next.next.next = new Node<>("e" as Character)
 
         when:
         Chapter2LinkedLists.deleteMiddleNode(null)
         Chapter2LinkedLists.deleteMiddleNode(node1.next.next)
 
         then:
-        node1.value == 'a'
-        node1.next.value == 'b'
-        node1.next.next.value == 'd'
-        node1.next.next.next.value == 'e'
+        node1.value == "a"
+        node1.next.value == "b"
+        node1.next.next.value == "d"
+        node1.next.next.next.value == "e"
     }
 
-    def "2.4 - addTwoLists"() {
+    def "addTwoLists"() {
         given:
         // book
         // 315 + 592 = 808
@@ -180,7 +185,7 @@ class Chapter2LinkedListsSpec extends Specification {
     //           |    |
     // A -> B -> C  <-
     // input: A -> B -> C -> D -> E -> C [the same C as earlier]
-    def "2.5 - getCircular - true"() {
+    def "getCircular - true"() {
         given:
         Node<Integer> nodeA = new Node<>(0)
         Node<Integer> nodeB = new Node<>(1)
@@ -203,7 +208,7 @@ class Chapter2LinkedListsSpec extends Specification {
         result.value == 3
     }
 
-    def "2.5 - getCircular - false"() {
+    def "getCircular - false"() {
         given:
         //       n4 <- n3
         //        |     |

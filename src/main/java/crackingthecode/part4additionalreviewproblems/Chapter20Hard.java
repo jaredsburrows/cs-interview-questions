@@ -1,6 +1,7 @@
 package crackingthecode.part4additionalreviewproblems;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -175,16 +176,13 @@ public class Chapter20Hard {
 
         final List<Integer> integerList = new ArrayList<>(billion);
 
-        // Java 6/7
-//        integerList.sort(new Comparator<Integer>() {
-//            @Override
-//            public int compare(final Integer o1, final Integer o2) {
-//                return (o1 > o2) ? 1 : -1;
-//            }
-//        });
+        integerList.sort(new Comparator<Integer>() {
+            @Override
+            public int compare(final Integer o1, final Integer o2) {
+                return (o1 > o2) ? 1 : -1;
+            }
+        });
 
-        // Java 8
-        integerList.sort((o1, o2) -> (o1 > o2) ? 1 : -1);
         return integerList.subList(5, 10);
     }
 

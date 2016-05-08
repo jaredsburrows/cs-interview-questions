@@ -1,5 +1,6 @@
 package api
 
+import nl.jqno.equalsverifier.EqualsVerifier
 import spock.lang.Specification
 
 /**
@@ -7,8 +8,7 @@ import spock.lang.Specification
  */
 class TupleSpec extends Specification {
 
-    Tuple<String, Integer> tuple = new Tuple<>("test", 123);
-    Tuple<String, Integer> tuple2 = new Tuple<>("test", 123);
+    def tuple = new Tuple<>("test", 123)
 
     def "getX"() {
         expect:
@@ -20,23 +20,11 @@ class TupleSpec extends Specification {
         tuple.getY() == 123
     }
 
-    def "equals"() {
-        expect:
-        tuple.equals(tuple)                                                                     // same reference
-        !tuple.equals("test")                                                                   // different object
-        tuple.equals(tuple2)                                                                    // same values
-        !new Tuple<String, Integer>("test", 1).equals(new Tuple<String, Integer>("test", 123))  // different y
-        !new Tuple<String, Integer>("test", 1).equals(new Tuple<String, Integer>("t", 1))       // different x
-    }
+    def "equals/hashcode"() {
+        when:
+        EqualsVerifier.forClass(Tuple.class).verify()
 
-    def "hashcode"() {
-        expect:
-        tuple.hashCode() == tuple2.hashCode()
-        new Tuple<String, Integer>("test", 123).hashCode() ==
-                new Tuple<String, Integer>("test", 123).hashCode()
-        new Tuple<String, Integer>("test", null).hashCode() !=
-                new Tuple<String, Integer>("test", 123).hashCode()
-        new Tuple<String, Integer>(null, 123).hashCode() !=
-                new Tuple<String, Integer>("test", 123).hashCode()
+        then:
+        noExceptionThrown()
     }
 }

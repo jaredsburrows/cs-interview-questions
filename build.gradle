@@ -144,4 +144,6 @@ model {
 dependencies {
     testCompile localGroovy()
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4', { exclude module: 'groovy-all' }
+    testCompile 'nl.jqno.equalsverifier:equalsverifier:2.0.2'
+    testCompile 'cglib:cglib-nodep:3.2.2'
 }

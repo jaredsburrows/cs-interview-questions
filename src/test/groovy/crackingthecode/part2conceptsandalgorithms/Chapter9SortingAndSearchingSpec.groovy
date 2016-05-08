@@ -8,7 +8,12 @@ import spock.lang.Specification
  */
 class Chapter9SortingAndSearchingSpec extends Specification {
 
-    def "9.1 - mergeAInB"() {
+    def "constructor"() {
+        expect:
+        new Chapter9SortingAndSearching() != null
+    }
+
+    def "mergeAInB"() {
         expect:
         Chapter9SortingAndSearching.mergeBInA(a as int[], b as int[], c as int) == d as int[]
 
@@ -20,7 +25,7 @@ class Chapter9SortingAndSearchingSpec extends Specification {
     }
 
     // http://www2.vo.lu/homepages/phahn/anagrams/oneword.htm
-    def "9.2 - sortAnagrams"() {
+    def "sortAnagrams"() {
         expect:
         Chapter9SortingAndSearching.sortAnagrams(a) == b
 
@@ -32,7 +37,7 @@ class Chapter9SortingAndSearchingSpec extends Specification {
                 ["aceno", "aceno", "adeeglnnr", "adeeglnnr", "aestw", "ainpt", "ainpt"]
     }
 
-    def "9.3 - getRotatedIndexOf"() {
+    def "getRotatedIndexOf"() {
         expect:
         Chapter9SortingAndSearching.getRotatedIndexOf(a as int[], b) == c
 
@@ -46,7 +51,7 @@ class Chapter9SortingAndSearchingSpec extends Specification {
                 -1 // cant handle duplicates
     }
 
-    def "9.5 - findString"() {
+    def "findString"() {
         expect:
         Chapter9SortingAndSearching.findString(a as String[], b as String) == c
         Chapter9SortingAndSearching.findString2(a as String[], b as String) == c
@@ -62,7 +67,7 @@ class Chapter9SortingAndSearchingSpec extends Specification {
         ["at", "", "", "", "", "ball", "car", "", "", "dad", "", ""]     || "ballcar" || -1
     }
 
-    def "9.6 - findValue"() {
+    def "findValue"() {
         expect:
         Chapter9SortingAndSearching.findValue(a as int[][], b) == c
 
@@ -111,7 +116,7 @@ class Chapter9SortingAndSearchingSpec extends Specification {
          [32, 33, 39, 50]] || 29 || true
     }
 
-    def "9.7 - getCircusOrder"() {
+    def "getCircusOrder"() {
         given:
         // (65, 100) (70, 150) (56, 90) (75, 190) (60, 95) (68, 110)
         ArrayList<Tuple<Integer, Integer>> original = [new Tuple<Integer, Integer>(65, 100),

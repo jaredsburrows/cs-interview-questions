@@ -44,6 +44,11 @@ class EqualTreeSpec extends Specification {
         tree.left.right = new TreeNode<Integer>(6)
     }
 
+    def "constructor"() {
+        expect:
+        new EqualTree() != null
+    }
+
     def "isEqual"() {
         expect:
         EqualTree.isEqual(null, null)

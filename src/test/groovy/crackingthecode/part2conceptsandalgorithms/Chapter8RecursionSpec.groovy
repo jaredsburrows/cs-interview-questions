@@ -1,7 +1,7 @@
 package crackingthecode.part2conceptsandalgorithms
 
-import spock.lang.Specification
 import api.Color
+import spock.lang.Specification
 
 import static api.Color.*
 
@@ -10,7 +10,12 @@ import static api.Color.*
  */
 class Chapter8RecursionSpec extends Specification {
 
-    def "8.1 - getFibNumberRecursive"() {
+    def "constructor"() {
+        expect:
+        new Chapter8Recursion() != null
+    }
+
+    def "getFibNumberRecursive"() {
         expect:
         Chapter8Recursion.getFibNumberRecursive(a) == b
         Chapter8Recursion.getFibNumberIterative(a) == b
@@ -31,7 +36,7 @@ class Chapter8RecursionSpec extends Specification {
         7  || 13
     }
 
-    def "8.2 - getSubsets"() {
+    def "getSubsets"() {
         expect:
         Chapter8Recursion.getSubsets(a, 0) == b
 
@@ -42,18 +47,18 @@ class Chapter8RecursionSpec extends Specification {
         [1, 2] || [[], [2], [1], [2, 1]]
     }
 
-    def "8.4 - getStringPermutations"() {
+    def "getStringPermutations"() {
         expect:
         Chapter8Recursion.getStringPermutations("", a) == b
 
         where:
-        a || b
+        a     || b
 //        null  || null
 //        ""    || [""]
         "abc" || ["abc", "acb", "bca", "bac", "cab", "cba"]
     }
 
-    def "8.5 - getValidParentheses"() {
+    def "getValidParentheses"() {
         expect:
         Chapter8Recursion.getValidParentheses(a, 0, 0, "") == b
 
@@ -64,7 +69,7 @@ class Chapter8RecursionSpec extends Specification {
         3  || ["((()))", "(()())", "(())()", "()(())", "()()()"]
     }
 
-    def "8.6 - paintFill - color enum"() {
+    def "paintFill"() {
         given:
         Color[][] a = [[RED, RED, GREEN, GREEN, GREEN],
                        [GREEN, RED, RED, GREEN, GREEN],
@@ -83,7 +88,7 @@ class Chapter8RecursionSpec extends Specification {
               [GREEN, GREEN, GREEN, GREEN, BLUE]]
     }
 
-    def "paintFill - integers"() {
+    def "floodFill"() {
         given:
         int[][] a = [[1, 1, 1, 1, 1, 1, 1, 1],
                      [1, 1, 1, 1, 1, 1, 0, 0],
@@ -93,10 +98,12 @@ class Chapter8RecursionSpec extends Specification {
                      [1, 1, 1, 2, 2, 2, 2, 0],
                      [1, 1, 1, 1, 1, 2, 1, 1],
                      [1, 1, 1, 1, 1, 2, 2, 1]]
-        int x = 4, y = 4, newC = 3;
+        int x = 4
+        int y = 4
+        int newC = 3
 
         when:
-        Chapter8Recursion.floodFill(a, x, y, newC);
+        Chapter8Recursion.floodFill(a, x, y, newC)
 
         then:
         a == [[1, 1, 1, 1, 1, 1, 1, 1],
@@ -109,7 +116,7 @@ class Chapter8RecursionSpec extends Specification {
               [1, 1, 1, 1, 1, 3, 3, 1]]
     }
 
-    def "8.7 - getRepresentCents"() {
+    def "getRepresentCents"() {
         expect:
         // starting with quarters
         Chapter8Recursion.getRepresentCents(a as int, 25) == b
@@ -121,10 +128,5 @@ class Chapter8RecursionSpec extends Specification {
         100  || 242
         10   || 4
         1    || 1
-
-    }
-
-    def "8.8 - "() {
-
     }
 }

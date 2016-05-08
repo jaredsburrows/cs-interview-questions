@@ -6,40 +6,45 @@ import spock.lang.Specification
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class AddTwoNumberSpec extends Specification {
+class AddTwoNumbersSpec extends Specification {
+
+    def "constructor"() {
+        expect:
+        new AddTwoNumbers() != null
+    }
 
     def "addTwoNumbers"() {
         given:
         // book
         // 315 + 592 = 808
-        Node<Integer> book1 = new Node<>(3)
+        def book1 = new Node<>(3)
         book1.next = new Node<>(1)
         book1.next.next = new Node<>(5)
 
-        Node<Integer> book2 = new Node<>(5)
+        def book2 = new Node<>(5)
         book2.next = new Node<>(9)
         book2.next.next = new Node<>(2)
 
         // programming geeks
         // 342 + 465 = 807
-        Node<Integer> pg = new Node<>(2)
+        def pg = new Node<>(2)
         pg.next = new Node<>(4)
         pg.next.next = new Node<>(3)
 
-        Node<Integer> pg2 = new Node<>(5)
+        def pg2 = new Node<>(5)
         pg2.next = new Node<>(6)
         pg2.next.next = new Node<>(4)
 
         // from 3 to 4 digits
         // 999 + 999 = 1998
-        Node<Integer> nine = new Node<>(9)
+        def nine = new Node<>(9)
         nine.next = new Node<>(9)
         nine.next.next = new Node<>(9)
 
-        Node<Integer> shortNumber = new Node<>(1)
+        def shortNumber = new Node<>(1)
         shortNumber.next = new Node<>(1)
 
-        Node<Integer> shorterNumber = new Node<>(1)
+        def shorterNumber = new Node<>(1)
         shorterNumber.next = new Node<>(1)
         shorterNumber.next.next = new Node<>(1)
 

@@ -8,7 +8,12 @@ import spock.lang.Specification
  */
 class Chapter19ModerateSpec extends Specification {
 
-    def "19.1 - swapVar"() {
+    def "constructor"() {
+        expect:
+        new Chapter19Moderate() != null
+    }
+
+    def "swapVar"() {
         given:
         def a = 1
         def b = 2
@@ -16,9 +21,9 @@ class Chapter19ModerateSpec extends Specification {
         when:
 //        Chapter19Moderate.swapVar(a, b)
 //        Chapter19Moderate.swapVar2(a, b)
-        a ^= b;
-        b ^= a;
-        a ^= b;
+        a ^= b
+        b ^= a
+        a ^= b
 
         then:
         a == 2

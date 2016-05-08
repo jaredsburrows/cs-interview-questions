@@ -1,0 +1,58 @@
+package questions.sorting
+
+import spock.lang.Specification
+
+/**
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
+class BubbleSortSpec extends Specification {
+
+    def "constructor"() {
+        expect:
+        new BubbleSort() != null
+    }
+
+    def "sortDescending"() {
+        given:
+        def numbers = [2, 4, 6, 3, 1] as int[]
+
+        when:
+        BubbleSort.sortDescending(numbers)
+
+        then:
+        [6, 4, 3, 2, 1] as int[] == numbers as int[]
+    }
+
+    def "sortDescending2"() {
+        given:
+        def numbers = [2, 4, 6, 3, 1] as int[]
+
+        when:
+        numbers = BubbleSort.sortDescending2(numbers as int[])
+
+        then:
+        [6, 4, 3, 2, 1] as int[] == numbers as int[]
+    }
+
+    def "sortAscending"() {
+        given:
+        def numbers = [2, 4, 6, 3, 1] as int[]
+
+        when:
+        BubbleSort.sortAscending(numbers)
+
+        then:
+        [1, 2, 3, 4, 6] as int[] == numbers as int[]
+    }
+
+    def "sortAscending2"() {
+        given:
+        def numbers = [2, 4, 6, 3, 1] as int[]
+
+        when:
+        numbers = BubbleSort.sortAscending2(numbers as int[])
+
+        then:
+        [1, 2, 3, 4, 6] as int[] == numbers as int[]
+    }
+}

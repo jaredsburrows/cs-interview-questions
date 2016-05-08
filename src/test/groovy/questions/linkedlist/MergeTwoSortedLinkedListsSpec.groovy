@@ -8,6 +8,11 @@ import spock.lang.Specification
  */
 class MergeTwoSortedLinkedListsSpec extends Specification {
 
+    def "constructor"() {
+        expect:
+        new MergeTwoSortedLinkedLists() != null
+    }
+
     def "AddTwoNumbers"() {
         given:
         def left = new Node<>(0)

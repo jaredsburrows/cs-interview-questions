@@ -1,11 +1,15 @@
 package questions.bitmanipulation
 
 import spock.lang.Specification
-
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class AddTwoNumbersSpec extends Specification {
+
+    def "constructor"() {
+        expect:
+        new AddTwoNumbers() != null
+    }
 
     def "getBinarySum"() {
         expect:

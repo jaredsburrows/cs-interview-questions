@@ -44,6 +44,11 @@ class TreeHeightSpec extends Specification {
         tree.left.right = new TreeNode<Integer>(6)
     }
 
+    def "constructor"() {
+        expect:
+        new TreeHeight() != null
+    }
+
     def "getHeight"() {
         expect:
         TreeHeight.getHeight(null) == 0

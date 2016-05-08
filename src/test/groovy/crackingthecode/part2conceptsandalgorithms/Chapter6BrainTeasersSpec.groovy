@@ -8,6 +8,11 @@ import spock.lang.Specification
  */
 class Chapter6BrainTeasersSpec extends Specification {
 
+    def "constructor"() {
+        expect:
+        new Chapter6BrainTeasers() != null
+    }
+
     def "arithmeticOperators"() {
         expect:
         Chapter6BrainTeasers.arithmeticOperators() == 8

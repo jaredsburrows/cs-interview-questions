@@ -7,6 +7,11 @@ import spock.lang.Specification
  */
 class SearchAdjacentElementsSpec extends Specification {
 
+    def "constructor"() {
+        expect:
+        new SearchAdjacentElements() != null
+    }
+
     def "search"() {
         expect:
         SearchAdjacentElements.search(a as int[], b) == c

@@ -7,6 +7,11 @@ import spock.lang.Specification
  */
 class PermutationsSpec extends Specification {
 
+    def "constructor"() {
+        expect:
+        new Permutations() != null
+    }
+
     def "getStringPermutations"() {
         expect:
         Permutations.getStringPermutations("", a) == b
@@ -17,5 +22,4 @@ class PermutationsSpec extends Specification {
         ""    || [""]
         "abc" || ["abc", "acb", "bca", "bac", "cab", "cba"]
     }
-
 }

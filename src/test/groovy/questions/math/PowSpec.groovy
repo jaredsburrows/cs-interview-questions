@@ -7,6 +7,11 @@ import spock.lang.Specification
  */
 class PowSpec extends Specification {
 
+    def "constructor"() {
+        expect:
+        new Pow() != null
+    }
+
     def "pow"() {
         expect:
         Pow.pow(a, b) == c

@@ -8,6 +8,11 @@ import api.Node
  */
 class CycleSpec extends Specification {
 
+    def "constructor"() {
+        expect:
+        new Cycle() != null
+    }
+
     def "cycle - true"() {
         given:
         //       n4 <- n3

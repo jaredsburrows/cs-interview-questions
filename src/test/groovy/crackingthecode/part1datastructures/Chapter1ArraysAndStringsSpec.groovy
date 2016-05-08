@@ -7,7 +7,12 @@ import spock.lang.Specification
  */
 class Chapter1ArraysAndStringsSpec extends Specification {
 
-    def "1.1 - isUniqueCharacters"() {
+    def "constructor"() {
+        expect:
+        new Chapter1ArraysAndStrings() != null
+    }
+
+    def "isUniqueCharacters"() {
         expect:
         Chapter1ArraysAndStrings.isUniqueCharacters(a) == b
         Chapter1ArraysAndStrings.isUniqueCharacters2(a) == b
@@ -22,7 +27,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
         "qwertyuiopplkjhgfdsazxcvbnm" || false
     }
 
-    def "1.2 - reverseString"() {
+    def "reverseString"() {
         expect:
         Chapter1ArraysAndStrings.reverseString(a as char[]) == b as char[]
 
@@ -35,7 +40,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
         "test"       || "tset"
     }
 
-    def "1.3 - removeDuplicates"() {
+    def "removeDuplicates"() {
         expect:
         Chapter1ArraysAndStrings.removeDuplicates(a) == b
 
@@ -48,7 +53,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
         "abcc"         || "abc"
     }
 
-    def "1.4 - isAnagram"() {
+    def "isAnagram"() {
         expect:
         Chapter1ArraysAndStrings.isAnagram(a, b) == c
         Chapter1ArraysAndStrings.isAnagram2(a, b) == c
@@ -66,7 +71,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
         "fall"       || "foul"       || false
     }
 
-    def "1.5 - replaceSpace"() {
+    def "replaceSpace"() {
         expect:
         Chapter1ArraysAndStrings.replaceSpaces(a) == b
         Chapter1ArraysAndStrings.replaceSpaces2(a) == b
@@ -80,7 +85,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
         "  "   || "%20%20"
     }
 
-    def "1.6 - rotateImage"() {
+    def "rotateImage"() {
         expect:
         Chapter1ArraysAndStrings.rotateImage(a as int[][]) == b as int[][]
         Chapter1ArraysAndStrings.rotateImage2(a as int[][]) == b as int[][]
@@ -102,7 +107,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
                            [6, 2, 8, 4]]
     }
 
-    def "1.7 - markRows"() {
+    def "markRows"() {
         expect:
         Chapter1ArraysAndStrings.markRows(a as int[][]) == b as int[][]
 
@@ -122,7 +127,7 @@ class Chapter1ArraysAndStringsSpec extends Specification {
 
     }
 
-    def "1.8 - isSubstring"() {
+    def "isSubstring"() {
         expect:
         Chapter1ArraysAndStrings.isSubstring(a, b) == c
 

@@ -2,14 +2,18 @@ package crackingthecode.part2conceptsandalgorithms
 
 import spock.lang.Ignore
 import spock.lang.Specification
-
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class Chapter5BitManipulationSpec extends Specification {
 
+    def "constructor"() {
+        expect:
+        new Chapter5BitManipulation() != null
+    }
+
     @Ignore
-    def "5.1 - setBitPosition"() {
+    def "setBitPosition"() {
         expect:
         Chapter5BitManipulation.setBitPosition(a as int, b, c, d) == e
 
@@ -18,7 +22,7 @@ class Chapter5BitManipulationSpec extends Specification {
         10000000000 || 10101 || 2 || 6 || 10001010100
     }
 
-    def "5.5 - getDiffBits"() {
+    def "getDiffBits"() {
         expect:
         Chapter5BitManipulation.getDiffBits(a, b) == c
         Chapter5BitManipulation.bitSwapRequired(a, b) == c
@@ -30,7 +34,7 @@ class Chapter5BitManipulationSpec extends Specification {
         4 || 4 || 0
     }
 
-    def "5.6 - getSwapBits"() {
+    def "getSwapBits"() {
         expect:
         Chapter5BitManipulation.getSwapBits(a) == b
 

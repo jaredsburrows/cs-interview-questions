@@ -7,12 +7,18 @@ import spock.lang.Specification
  */
 class PowerNSpec extends Specification {
 
-    def "PowerN"() {
+    def "constructor"() {
+        expect:
+        new PowerN() != null
+    }
+
+    def "powerN"() {
         expect:
         PowerN.powerN(a, b) == c
 
         where:
         a | b || c
+        1 | 1 || 1
         3 | 1 || 3
         3 | 2 || 9
         3 | 3 || 27

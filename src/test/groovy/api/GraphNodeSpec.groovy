@@ -8,7 +8,7 @@ import spock.lang.Specification
 class GraphNodeSpec extends Specification {
 
     GraphNode<Integer>[] graphNodes = [new GraphNode<>(123), new GraphNode<>(123)]
-    GraphNode<Integer> node2 = new  GraphNode<Integer>(123, graphNodes)
+    GraphNode<Integer> node2 = new GraphNode<Integer>(123, graphNodes)
     GraphNode<Integer> node = new GraphNode<>(123)
     GraphNode<Integer> nextNode = new GraphNode<>(123)
 

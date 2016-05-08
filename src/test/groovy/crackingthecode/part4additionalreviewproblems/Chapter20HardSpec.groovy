@@ -8,6 +8,11 @@ import spock.lang.Specification
  */
 class Chapter20HardSpec extends Specification {
 
+    def "constructor"() {
+        expect:
+        new Chapter20Hard() != null
+    }
+
     def "20.1 - addTwoNumbers"() {
         expect:
         Chapter20Hard.addTwoNumbers(a, b) == c
