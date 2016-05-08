@@ -37,14 +37,14 @@ public class Chapter4TreesAndGraphs {
         queue.add(start);
 
         while (!queue.isEmpty()) {
-            final GraphNode<T> node = queue.poll();
-            for (final GraphNode<T> tGraphNode : node.neighbors) {
-                if (!tGraphNode.visited) {
-                    tGraphNode.visited = true;
-                    if (tGraphNode.value == end.value) {
+            final GraphNode<T> currentNode = queue.poll();
+            for (final GraphNode<T> node : currentNode.neighbors) {
+                if (!node.visited) {
+                    node.visited = true;
+                    if (node.value == end.value) {
                         return true;
                     }
-                    queue.add(tGraphNode);
+                    queue.add(node);
                 }
             }
         }

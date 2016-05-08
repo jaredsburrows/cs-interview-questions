@@ -20,11 +20,4 @@ public class RemoveDuplicates {
             }
         }
     }
-
-    public static void deleteEveryOtherRecursive(Node<Integer> node) {
-        if (node != null && node.next != null) {
-            node.next = node.next.next;
-            deleteEveryOtherRecursive(node.next);
-        }
-    }
 }
