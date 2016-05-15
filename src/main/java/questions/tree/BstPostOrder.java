@@ -7,13 +7,13 @@ import api.TreeNode;
  */
 public class BstPostOrder {
 
-    public static void printPostOrder(TreeNode<Integer> node) {
+    public static void printPostOrder(final TreeNode<Integer> node) {
         if (node == null) {
             return;
         }
 
         printPostOrder(node.left);
         printPostOrder(node.right);
-        System.out.println(node.value);
+        System.out.print(node.value + " ");
     }
 }

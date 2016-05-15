@@ -14,10 +14,14 @@ public class BstContains {
 
         if (value == root.value) {
             return true;
-        } else if (value < root.value) {
-            return contains(root.left, value);
-        } else if (value > root.value) {
+        }
+
+        if (value > root.value) {
             return contains(root.right, value);
+        }
+
+        if (value < root.value) {
+            return contains(root.left, value);
         }
 
         return false;

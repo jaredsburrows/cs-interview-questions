@@ -15,7 +15,7 @@ public class BstFindMin {
         return root;
     }
 
-    public static int findMinValue(TreeNode<Integer> root) {
+    public static int findMinValue(final TreeNode<Integer> root) {
         return findMinNode(root).value;
     }
 }

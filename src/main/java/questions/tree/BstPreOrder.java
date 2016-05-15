@@ -7,12 +7,12 @@ import api.TreeNode;
  */
 public class BstPreOrder {
 
-    public static void printPreOrder(TreeNode<Integer> node) {
+    public static void printPreOrder(final TreeNode<Integer> node) {
         if (node == null) {
             return;
         }
 
-        System.out.println(node.value);
+        System.out.print(node.value + " ");
         printPreOrder(node.left);
         printPreOrder(node.right);
     }

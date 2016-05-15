@@ -27,6 +27,11 @@ class BstInsertSpec extends Specification {
         tree.left.right.left = new TreeNode<>(3)
     }
 
+    def "constructor"() {
+        expect:
+        new BstInsert() != null
+    }
+
     def "insertBST"() {
         given:
         // Root

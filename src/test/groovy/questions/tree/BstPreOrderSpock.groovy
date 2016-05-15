@@ -6,8 +6,10 @@ import spock.lang.Specification
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class BstContainsSpec extends Specification {
+class BstPreOrderSpock extends Specification {
 
+    def outContent = new ByteArrayOutputStream()
+    def errContent = new ByteArrayOutputStream()
     def tree = new TreeNode<>(8)
 
 //                (8)
@@ -18,6 +20,9 @@ class BstContainsSpec extends Specification {
 //               /
 //             (3)
     def "setup"() {
+        System.setOut(new PrintStream(outContent))
+        System.setErr(new PrintStream(errContent))
+
         tree.right = new TreeNode<>(21)
         tree.right.left = new TreeNode<>(13)
 
@@ -27,24 +32,21 @@ class BstContainsSpec extends Specification {
         tree.left.right.left = new TreeNode<>(3)
     }
 
-    def "constructor"() {
-        expect:
-        new BstContains() != null
+    def "cleanup"() {
+        System.setOut(null)
+        System.setErr(null)
     }
 
-    def "contains"() {
+    def "constructor"() {
         expect:
-        !BstContains.contains(null, 5)
-        !BstContains.contains(tree, 20)
+        new BstPreOrder() != null
+    }
 
-        BstContains.contains(tree, 1)
-        BstContains.contains(tree, 2)
-        BstContains.contains(tree, 3)
-        BstContains.contains(tree, 5)
+    def "printPreOrder"() {
+        when:
+        BstPreOrder.printPreOrder(tree)
 
-        BstContains.contains(tree, 8)
-
-        BstContains.contains(tree, 13)
-        BstContains.contains(tree, 21)
+        then:
+        outContent.toString().trim() == "8 2 1 5 3 21 13"
     }
 }

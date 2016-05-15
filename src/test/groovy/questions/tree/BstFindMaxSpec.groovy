@@ -6,7 +6,7 @@ import spock.lang.Specification
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class BstContainsSpec extends Specification {
+class BstFindMaxSpec extends Specification {
 
     def tree = new TreeNode<>(8)
 
@@ -29,22 +29,11 @@ class BstContainsSpec extends Specification {
 
     def "constructor"() {
         expect:
-        new BstContains() != null
+        new BstFindMax() != null
     }
 
-    def "contains"() {
+    def "findMaxValue"() {
         expect:
-        !BstContains.contains(null, 5)
-        !BstContains.contains(tree, 20)
-
-        BstContains.contains(tree, 1)
-        BstContains.contains(tree, 2)
-        BstContains.contains(tree, 3)
-        BstContains.contains(tree, 5)
-
-        BstContains.contains(tree, 8)
-
-        BstContains.contains(tree, 13)
-        BstContains.contains(tree, 21)
+        BstFindMax.findMaxValue(tree) == 21
     }
 }
