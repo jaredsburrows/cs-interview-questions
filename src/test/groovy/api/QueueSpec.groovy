@@ -7,12 +7,12 @@ import spock.lang.Specification
  */
 class QueueSpec extends Specification {
 
-    Queue queue = new Queue()
-    TreeNode valueNode = new TreeNode(1)
-    TreeNode valueNode2 = new TreeNode(2)
-    TreeNode valueNode3 = new TreeNode(3)
-    TreeNode blankNode = new TreeNode(0)
-    TreeNode blankNode2 = new TreeNode(0)
+    def queue = new Queue()
+    def valueNode = new TreeNode(1)
+    def valueNode2 = new TreeNode(2)
+    def valueNode3 = new TreeNode(3)
+    def blankNode = new TreeNode(0)
+    def blankNode2 = new TreeNode(0)
 
     def "getFirst"() {
 

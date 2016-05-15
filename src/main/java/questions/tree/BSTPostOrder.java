@@ -1,13 +1,13 @@
-package questions.treeheap;
+package questions.tree;
 
 import api.TreeNode;
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class BSTPostOrder {
+public class BstPostOrder {
 
-    public void printPostOrder(TreeNode<Integer> node) {
+    public static void printPostOrder(TreeNode<Integer> node) {
         if (node == null) {
             return;
         }

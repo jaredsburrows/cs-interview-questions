@@ -1,5 +1,7 @@
 package api
 
+import nl.jqno.equalsverifier.EqualsVerifier
+import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 /**
@@ -7,8 +9,8 @@ import spock.lang.Specification
  */
 class NodeSpec extends Specification {
 
-    Node<Integer> node = new Node<>(123)
-    Node<Integer> nextNode = new Node<>(123)
+    def node = new Node<>(123)
+    def nextNode = new Node<>(123)
 
     def "default values"() {
         expect:
@@ -26,5 +28,17 @@ class NodeSpec extends Specification {
         node.value == 123
         node.next.value == 123
         node.previous.value == 123
+    }
+
+    def "equals"() {
+        when:
+        EqualsVerifier.forClass(Node.class)
+                .usingGetClass()
+                .withPrefabValues(Node.class, new Node<>(1), new Node<>(2))
+                .suppress(Warning.NONFINAL_FIELDS)
+                .verify()
+
+        then:
+        noExceptionThrown()
     }
 }

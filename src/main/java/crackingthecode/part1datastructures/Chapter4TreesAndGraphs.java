@@ -2,8 +2,8 @@ package crackingthecode.part1datastructures;
 
 import api.GraphNode;
 import api.TreeNode;
-import questions.treeheap.EqualTree;
-import questions.treeheap.TreeHeight;
+import questions.tree.EqualTree;
+import questions.tree.TreeHeight;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

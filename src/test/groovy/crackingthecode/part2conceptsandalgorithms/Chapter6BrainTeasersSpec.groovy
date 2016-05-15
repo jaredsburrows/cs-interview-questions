@@ -1,8 +1,6 @@
 package crackingthecode.part2conceptsandalgorithms
 
-import spock.lang.Ignore
 import spock.lang.Specification
-
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
@@ -26,18 +24,6 @@ class Chapter6BrainTeasersSpec extends Specification {
     def "exactJugs"() {
         expect:
         Chapter6BrainTeasers.exactJugs() == 4
-    }
-
-    @Ignore
-    def "howLong"() {
-        expect:
-        Chapter6BrainTeasers.nFloor() == 4
-    }
-
-    @Ignore
-    def "nFloor"() {
-        expect:
-        Chapter6BrainTeasers.nFloor() == 4
     }
 
     def "lockersOpen"() {

@@ -33,17 +33,17 @@ public final class Tuple<X, Y> {
 
         final Tuple<?, ?> tuple = (Tuple<?, ?>) o;
 
-        if (x != null ? !x.equals(tuple.x) : tuple.x != null) {
+        if (this.x != null ? !this.x.equals(tuple.x) : tuple.x != null) {
             return false;
         }
 
-        return y != null ? y.equals(tuple.y) : tuple.y == null;
+        return this.y != null ? this.y.equals(tuple.y) : tuple.y == null;
     }
 
     @Override
     public int hashCode() {
-        int result = x != null ? x.hashCode() : 0;
-        result = 31 * result + (y != null ? y.hashCode() : 0);
+        int result = x != null ? this.x.hashCode() : 0;
+        result = 31 * result + (this.y != null ? y.hashCode() : 0);
         return result;
     }
 }

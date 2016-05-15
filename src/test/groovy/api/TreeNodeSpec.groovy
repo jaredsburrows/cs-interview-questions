@@ -1,5 +1,7 @@
 package api
 
+import nl.jqno.equalsverifier.EqualsVerifier
+import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 /**
@@ -8,8 +10,8 @@ import spock.lang.Specification
 class TreeNodeSpec extends Specification {
 
     def "test values"() {
-        TreeNode valueNode = new TreeNode(5)
-        TreeNode blankNode = new TreeNode(0)
+        def valueNode = new TreeNode<>(5)
+        def blankNode = new TreeNode<>(0)
         blankNode.right = valueNode
 
         expect:
@@ -21,5 +23,17 @@ class TreeNodeSpec extends Specification {
         blankNode.right == valueNode
         blankNode.right.value == 5
         blankNode.right.right == null
+    }
+
+    def "equals"() {
+        when:
+        EqualsVerifier.forClass(TreeNode.class)
+                .usingGetClass()
+                .withPrefabValues(TreeNode.class, new TreeNode<>(1), new TreeNode<>(2))
+                .suppress(Warning.NONFINAL_FIELDS)
+                .verify()
+
+        then:
+        noExceptionThrown()
     }
 }

@@ -1,5 +1,7 @@
 package api
 
+import nl.jqno.equalsverifier.EqualsVerifier
+import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 /**
@@ -7,10 +9,10 @@ import spock.lang.Specification
  */
 class GraphNodeSpec extends Specification {
 
-    GraphNode<Integer>[] graphNodes = [new GraphNode<>(123), new GraphNode<>(123)]
-    GraphNode<Integer> node2 = new GraphNode<Integer>(123, graphNodes)
-    GraphNode<Integer> node = new GraphNode<>(123)
-    GraphNode<Integer> nextNode = new GraphNode<>(123)
+    def graphNodes = [new GraphNode<>(123), new GraphNode<>(123)]
+    def node2 = new GraphNode<Integer>(123, graphNodes as GraphNode<Integer>[])
+    def node = new GraphNode<>(123)
+    def nextNode = new GraphNode<>(123)
 
     def "default values"() {
         expect:
@@ -31,5 +33,17 @@ class GraphNodeSpec extends Specification {
         then:
         node.value == 123
         node.next.value == 123
+    }
+
+    def "equals"() {
+        when:
+        EqualsVerifier.forClass(GraphNode.class)
+                .usingGetClass()
+                .withPrefabValues(GraphNode.class, new GraphNode<>(1), new GraphNode<>(2))
+                .suppress(Warning.NONFINAL_FIELDS)
+                .verify()
+
+        then:
+        noExceptionThrown()
     }
 }

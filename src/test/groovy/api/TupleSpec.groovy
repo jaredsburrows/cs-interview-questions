@@ -1,6 +1,7 @@
 package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
+import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 /**
@@ -22,7 +23,11 @@ class TupleSpec extends Specification {
 
     def "equals/hashcode"() {
         when:
-        EqualsVerifier.forClass(Tuple.class).verify()
+        EqualsVerifier.forClass(Tuple.class)
+                .usingGetClass()
+                .withPrefabValues(Tuple.class, new Tuple<>(1, 2), new Tuple<>(3, 4))
+                .suppress(Warning.NONFINAL_FIELDS)
+                .verify()
 
         then:
         noExceptionThrown()

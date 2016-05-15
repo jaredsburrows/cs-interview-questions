@@ -1,13 +1,13 @@
-package questions.treeheap;
+package questions.tree;
 
 import api.TreeNode;
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class BSTContains {
+public class BstContains {
 
-    public boolean contains(TreeNode<Integer> root, int value) {
+    public static boolean contains(final TreeNode<Integer> root, final int value) {
         if (root == null) {
             return false;
         }

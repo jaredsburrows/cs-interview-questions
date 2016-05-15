@@ -4,7 +4,7 @@ package api;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 // LIFO
-public class Stack<T> {
+public final class Stack<T> {
 
     public TreeNode<T> top;
 
@@ -14,14 +14,14 @@ public class Stack<T> {
 
     public void push(final TreeNode<T> n) {
         if (n != null) {
-            n.right = top;
-            top = n;
+            n.right = this.top;
+            this.top = n;
         }
     }
 
     public void pop() {
-        if (top != null) {
-            top = top.right;
+        if (this.top != null) {
+            this.top = this.top.right;
         }
     }
 }

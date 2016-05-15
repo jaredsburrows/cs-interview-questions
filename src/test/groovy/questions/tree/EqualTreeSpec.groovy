@@ -1,4 +1,4 @@
-package questions.treeheap
+package questions.tree
 
 import api.TreeNode
 import spock.lang.Specification

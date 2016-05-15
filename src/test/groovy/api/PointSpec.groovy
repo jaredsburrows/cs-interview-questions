@@ -8,16 +8,16 @@ import spock.lang.Specification
  */
 class PointSpec extends Specification {
 
-    def point1 = new Point(321, 123)
+    def point = new Point(321, 123)
 
     def "getX"() {
         expect:
-        point1.getX() == 321
+        point.getX() == 321
     }
 
     def "getY"() {
         expect:
-        point1.getY() == 123
+        point.getY() == 123
     }
 
     def "equals"() {

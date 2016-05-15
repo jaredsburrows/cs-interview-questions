@@ -1,17 +1,17 @@
-package questions.treeheap;
+package questions.tree;
 
 import api.TreeNode;
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class BSTInsert {
+public class BstInsert {
 
-    public TreeNode<Integer> insertBST(TreeNode<Integer> root, final Integer value) {
+    public static TreeNode<Integer> insertBST(TreeNode<Integer> root, final int value) {
         return insertBST(root, new TreeNode<>(value));
     }
 
-    public TreeNode<Integer> insertBST(TreeNode<Integer> root, TreeNode<Integer> node) {
+    public static TreeNode<Integer> insertBST(TreeNode<Integer> root, TreeNode<Integer> node) {
         if (root == null) {
             return node;
         }

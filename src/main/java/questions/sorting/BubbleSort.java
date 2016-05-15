@@ -22,7 +22,7 @@ public class BubbleSort {
         return numbers;
     }
 
-    public static void sortAscending(final int[] numbers) {
+    public static void sort(final int[] numbers) {
         for (int i = 0; i < numbers.length - 1; i++) {
             for (int j = 0; j < numbers.length - 1; j++) {
                 if (numbers[j] > numbers[j + 1]) {
@@ -34,8 +34,8 @@ public class BubbleSort {
         }
     }
 
-    public static int[] sortAscending2(final int[] numbers) {
-        sortAscending(numbers);
+    public static int[] sort2(final int[] numbers) {
+        sort(numbers);
         return numbers;
     }
 }

@@ -1,13 +1,13 @@
-package questions.treeheap;
+package questions.tree;
 
 import api.TreeNode;
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class BSTFindMin {
+public class BstFindMin {
 
-    public TreeNode<Integer> findMinNode(TreeNode<Integer> root) {
+    public static TreeNode<Integer> findMinNode(TreeNode<Integer> root) {
         while (root.left != null) {
             root = root.left;
         }
@@ -15,7 +15,7 @@ public class BSTFindMin {
         return root;
     }
 
-    public int findMinValue(TreeNode<Integer> root) {
+    public static int findMinValue(TreeNode<Integer> root) {
         return findMinNode(root).value;
     }
 }

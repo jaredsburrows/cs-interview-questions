@@ -1,4 +1,4 @@
-package questions.treeheap
+package questions.tree
 
 import api.TreeNode
 import spock.lang.Specification
@@ -8,11 +8,11 @@ import spock.lang.Specification
  */
 class TreeHeightSpec extends Specification {
 
-    TreeNode<Integer> tree = new TreeNode<>(26)
-    TreeNode<Integer> subTree = new TreeNode<>(10)
-    TreeNode<Integer> balancedTree = new TreeNode<>(0)
-    TreeNode<Integer> balancedTree2 = new TreeNode<>(0)
-    TreeNode<Integer> unbalancedTree = new TreeNode<>(5)
+    def tree = new TreeNode<>(26)
+    def subTree = new TreeNode<>(10)
+    def balancedTree = new TreeNode<>(0)
+    def balancedTree2 = new TreeNode<>(0)
+    def unbalancedTree = new TreeNode<>(5)
 
     def "setup"() {
         balancedTree.right = new TreeNode<Integer>(10)

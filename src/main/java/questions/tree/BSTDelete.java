@@ -1,13 +1,13 @@
-package questions.treeheap;
+package questions.tree;
 
 import api.TreeNode;
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class BSTDelete {
+public class BstDelete {
 
-    public TreeNode<Integer> findMaxNode(TreeNode<Integer> root) {
+    public static TreeNode<Integer> findMaxNode(TreeNode<Integer> root) {
         while (root.right != null) {
             root = root.right;
         }
@@ -15,11 +15,11 @@ public class BSTDelete {
         return root;
     }
 
-    public int findMaxValue(TreeNode<Integer> root) {
+    public static int findMaxValue(TreeNode<Integer> root) {
         return findMaxNode(root).value;
     }
 
-    public TreeNode<Integer> deleteNode(TreeNode<Integer> root, int value) {
+    public static TreeNode<Integer> deleteNode(TreeNode<Integer> root, int value) {
         if (root == null) {
             return null;
         }
@@ -43,5 +43,4 @@ public class BSTDelete {
 
         return root;
     }
-
 }

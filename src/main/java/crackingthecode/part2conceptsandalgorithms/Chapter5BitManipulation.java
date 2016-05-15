@@ -172,15 +172,4 @@ public class Chapter5BitManipulation {
     // numbers in A are in binary
     // “fetch the jth bit of A[i]”, which takes constant time - O(1)
     // add up all the numbers, subtract sum from the array, if sorted - O(N)
-    public static int findMissingInt(int[] A) {
-        int num = 0;
-
-//        int val = 1 << (str.charAt(i) - 'a');
-//        if ((check & val) > 0) {
-//            return false;
-//        }
-//        check |= val;
-
-        return num;
-    }
 }

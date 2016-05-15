@@ -1,13 +1,11 @@
 language: java
 
 jdk:
- - oraclejdk7
  - oraclejdk8
  - oraclejdk9
 
 matrix:
   allow_failures:
-    - jdk: oraclejdk7
     - jdk: oraclejdk9
 
 script:

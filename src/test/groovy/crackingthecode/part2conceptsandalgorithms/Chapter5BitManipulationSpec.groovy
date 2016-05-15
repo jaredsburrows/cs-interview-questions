@@ -1,6 +1,5 @@
 package crackingthecode.part2conceptsandalgorithms
 
-import spock.lang.Ignore
 import spock.lang.Specification
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
@@ -10,16 +9,6 @@ class Chapter5BitManipulationSpec extends Specification {
     def "constructor"() {
         expect:
         new Chapter5BitManipulation() != null
-    }
-
-    @Ignore
-    def "setBitPosition"() {
-        expect:
-        Chapter5BitManipulation.setBitPosition(a as int, b, c, d) == e
-
-        where:
-        a           || b     || c || d || e
-        10000000000 || 10101 || 2 || 6 || 10001010100
     }
 
     def "getDiffBits"() {

@@ -1,19 +1,19 @@
-package questions.treeheap;
+package questions.tree;
 
 import api.TreeNode;
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class BSTPreOrder {
+public class BstInOrder {
 
-    public void printPreOrder(TreeNode<Integer> node) {
+    public void printInOrder(TreeNode<Integer> node) {
         if (node == null) {
             return;
         }
 
+        printInOrder(node.left);
         System.out.println(node.value);
-        printPreOrder(node.left);
-        printPreOrder(node.right);
+        printInOrder(node.right);
     }
 }

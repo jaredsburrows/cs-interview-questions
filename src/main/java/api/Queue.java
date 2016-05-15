@@ -4,7 +4,7 @@ package api;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 // FIFO
-public class Queue<T> {
+public final class Queue<T> {
 
     public TreeNode<T> first;
     public TreeNode<T> last;
@@ -18,18 +18,18 @@ public class Queue<T> {
     }
 
     public void enqueue(final TreeNode<T> n) {
-        if (first == null) {
-            first = n;
-            last = first;
+        if (this.first == null) {
+            this.first = n;
+            this.last = this.first;
         } else {
-            last.right = n;
-            last = n;
+            this.last.right = n;
+            this.last = n;
         }
     }
 
     public void dequeue() {
-        if (first != null) {
-            first = first.right;
+        if (this.first != null) {
+            this.first = this.first.right;
         }
     }
 }

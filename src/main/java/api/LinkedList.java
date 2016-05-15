@@ -3,7 +3,7 @@ package api;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class LinkedList<T> {
+public final class LinkedList<T> {
 
     public Node<T> head;
 

@@ -1,4 +1,4 @@
-package questions.treeheap;
+package questions.tree;
 
 import api.TreeNode;
 
@@ -32,6 +32,14 @@ public class TreeHeight {
         if (treeNode == null) {
             return 0;
         }
+
+//        if (treeNode.left == null) {
+//            return getMinHeight(treeNode.right) + 1;
+//        }
+//
+//        if (treeNode.right == null) {
+//            return getMinHeight(treeNode.left) + 1;
+//        }
 
         return Math.min(getMinHeight(treeNode.left), getMinHeight(treeNode.right)) + 1;
     }

@@ -1,13 +1,13 @@
-package questions.treeheap;
+package questions.tree;
 
 import api.TreeNode;
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class BSTFindMax {
+public class BstFindMax {
 
-    public TreeNode<Integer> findMaxNode(TreeNode<Integer> node) {
+    public static TreeNode<Integer> findMaxNode(TreeNode<Integer> node) {
         while (node.right != null) {
             node = node.right;
         }
@@ -15,7 +15,7 @@ public class BSTFindMax {
         return node;
     }
 
-    public int findMaxValue(TreeNode<Integer> node) {
+    public static int findMaxValue(TreeNode<Integer> node) {
         return findMaxNode(node).value;
     }
 }
