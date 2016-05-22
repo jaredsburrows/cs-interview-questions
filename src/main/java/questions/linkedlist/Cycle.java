@@ -15,11 +15,11 @@ public class Cycle {
         Node<Integer> first = node;
         Node<Integer> second = node;
 
-        while (first.next != null && second.next != null) {
+        while (first.next != null && second != null && second.next != null) {
             first = first.next;
             second = second.next.next;
 
-            if (first.equals(second)) {
+            if (first == second) {
                 return true;
             }
         }

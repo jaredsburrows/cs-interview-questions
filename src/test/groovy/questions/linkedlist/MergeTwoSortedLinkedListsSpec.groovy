@@ -13,7 +13,7 @@ class MergeTwoSortedLinkedListsSpec extends Specification {
         new MergeTwoSortedLinkedLists() != null
     }
 
-    def "AddTwoNumbers"() {
+    def "merge"() {
         given:
         def left = new Node<>(0)
         left.next = new Node<>(2)

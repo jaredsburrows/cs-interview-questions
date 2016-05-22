@@ -7,17 +7,17 @@ import api.TreeNode;
  */
 public class EqualTree {
 
-    public static <T> boolean isEqual(final TreeNode<T> treeNode, final TreeNode<T> treeNode2) {
-        if (treeNode == null && treeNode2 == null) {
+    public static <T> boolean isEqual(final TreeNode<T> node, final TreeNode<T> node2) {
+        if (node == null && node2 == null) {
             return true;
         }
 
-        if (treeNode == null || treeNode2 == null) {
+        if (node == null || node2 == null) {
             return false;
         }
 
-        return treeNode.value == treeNode2.value
-                && isEqual(treeNode.left, treeNode2.left)
-                && isEqual(treeNode.right, treeNode2.right);
+        return node.value == node2.value
+                && isEqual(node.left, node2.left)
+                && isEqual(node.right, node2.right);
     }
 }

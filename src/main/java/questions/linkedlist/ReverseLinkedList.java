@@ -12,10 +12,18 @@ public class ReverseLinkedList {
 
         Node<Integer> current = node;
         Node<Integer> previous = null;
+
         while (current != null) {
-            Node<Integer> temp = current.next;
+            // Save off next node
+            final Node<Integer> temp = current.next;
+
+            // Point the first node to the new "null" node
             current.next = previous;
+
+            // Update the previous
             previous = current;
+
+            // Update the current node with the next node in the original linked list
             current = temp;
         }
 

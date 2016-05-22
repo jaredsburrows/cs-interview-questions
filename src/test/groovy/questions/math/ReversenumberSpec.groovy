@@ -12,15 +12,29 @@ class ReverseNumberSpec extends Specification {
         new ReverseNumber() != null
     }
 
-    def "solution"() {
+    def "reverseLong"() {
         expect:
-        ReverseNumber.reverse(a) == b
+        ReverseNumber.reverseLong(a) == b
 
         where:
-        a     || b
-        0     || 0
-        1     || 1
-        123   || 321
-        -1409 || -9041
+        a          || b
+        0          || 0
+        1          || 1
+        123        || 321
+        -1409      || -9041
+        1534236469 || 9646324351
+    }
+
+    def "reverseInt"() {
+        expect:
+        ReverseNumber.reverseInt(a) == b
+
+        where:
+        a          || b
+        0          || 0
+        1          || 1
+        123        || 321
+        -1409      || -9041
+        1534236469 || 0
     }
 }

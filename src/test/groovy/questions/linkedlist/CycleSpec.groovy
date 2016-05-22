@@ -61,4 +61,15 @@ class CycleSpec extends Specification {
         !Cycle.hasCycle(new Node<>(0))
         !Cycle.hasCycle(node0)
     }
+
+    def "cycle2"() {
+        given:
+        // n0 -> n1
+        def node = new Node<>(1)
+        node.next = new Node<>(2)
+
+        expect:
+        !Cycle.hasCycle(null)
+        !Cycle.hasCycle(node)
+    }
 }
