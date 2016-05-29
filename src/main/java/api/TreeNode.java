@@ -13,6 +13,7 @@ public final class TreeNode<T> {
         this.value = value;
     }
 
+    @SuppressWarnings("SimplifiableIfStatement")
     @Override
     public boolean equals(Object o) {
         if (this == o) {

@@ -15,14 +15,15 @@ repositories {
 }
 
 apply plugin: "c"
-apply plugin: "cpp"
 apply plugin: "cunit-test-suite"
+apply plugin: "cpp"
+apply plugin: "google-test-test-suite"
 apply plugin: "pmd"
 apply plugin: "java"
 apply plugin: "groovy"
 apply plugin: "jacoco"
 apply plugin: "findbugs"
-//apply plugin: "checkstyle"
+apply plugin: "checkstyle"
 apply plugin: "net.ltgt.errorprone"
 apply plugin: "com.github.kt3k.coveralls"
 apply plugin: "com.github.ben-manes.versions"
@@ -117,8 +118,7 @@ tasks.withType(FindBugs) {
 model {
     repositories {
         libs(PrebuiltLibraries) {
-            // brew install cunit
-            // TODO dynamically download
+            // TODO dynamically download, brew install cunit, then use gradlew check
             cunit {
                 headers.srcDir "/usr/local/Cellar/cunit/2.1-3/include"
 
@@ -126,11 +126,19 @@ model {
                     staticLibraryFile = file("/usr/local/Cellar/cunit/2.1-3/lib/libcunit.a")
                 }
             }
+
+            googleTest {
+                headers.srcDir "/usr/local/Cellar/gtest/include/"
+
+                binaries.withType(StaticLibraryBinary) {
+                    staticLibraryFile = file("/usr/local/Cellar/gtest/libgtest.a")
+                }
+            }
         }
     }
 
     components {
-        crackingthecode(NativeLibrarySpec) {
+        crackingthecode_c(NativeLibrarySpec) {
             sources {
                 c {
                     source {
@@ -144,10 +152,25 @@ model {
                 }
             }
         }
+
+        crackingthecode_cpp(NativeLibrarySpec) {
+            sources {
+                cpp {
+                    source {
+                        srcDir "src/main/cpp/crackingthecode"
+                        include "**/*.cpp"
+                    }
+
+                    exportedHeaders {
+                        srcDir "src/main/cpp/crackingthecode/include"
+                    }
+                }
+            }
+        }
     }
 
     testSuites {
-        crackingthecodeTest(CUnitTestSuiteSpec) {
+        crackingthecode_cTest(CUnitTestSuiteSpec) {
             sources {
                 c {
                     source {
@@ -161,7 +184,24 @@ model {
                 }
             }
 
-            testing $.components.crackingthecode
+            testing $.components.crackingthecode_c
+        }
+
+        crackingthecode_cppTest(GoogleTestTestSuiteSpec) {
+            sources {
+                cpp {
+                    source {
+                        srcDir "src/test/cpp/crackingthecode"
+                        include "**/*.cpp"
+                    }
+
+                    exportedHeaders {
+                        srcDir "src/test/cpp/crackingthecode/include"
+                    }
+                }
+            }
+
+            testing $.components.crackingthecode_cpp
         }
     }
 
@@ -169,14 +209,20 @@ model {
         withType(CUnitTestSuiteBinarySpec) {
             lib library: "cunit", linkage: "static"
         }
+
+        withType(GoogleTestTestSuiteBinarySpec) {
+            lib library: "googleTest", linkage: "static"
+        }
     }
 }
 
 dependencies {
-    compile "com.google.code.findbugs:annotations:2.0.1"
+    compile "com.google.code.findbugs:annotations:3.0.1"
 
     testCompile localGroovy()
     testCompile "org.spockframework:spock-core:1.0-groovy-2.4", { exclude module: "groovy-all" }
-    testCompile "nl.jqno.equalsverifier:equalsverifier:2.0.2"
+    testCompile "nl.jqno.equalsverifier:equalsverifier:2.1"
     testCompile "cglib:cglib-nodep:3.2.2"
+
+    checkstyle 'com.puppycrawl.tools:checkstyle:6.19'
 }

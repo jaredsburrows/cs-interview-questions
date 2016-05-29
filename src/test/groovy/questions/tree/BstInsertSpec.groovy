@@ -38,16 +38,16 @@ class BstInsertSpec extends Specification {
         def temp = new TreeNode<>(8)
 
         // Level 1
-        BstInsert.insertBST(temp, 2)
-        BstInsert.insertBST(temp, 21)
+        BstInsert.insertBst(temp, 2)
+        BstInsert.insertBst(temp, 21)
 
         // Level 2
-        BstInsert.insertBST(temp, 1)
-        BstInsert.insertBST(temp, 5)
-        BstInsert.insertBST(temp, 13)
+        BstInsert.insertBst(temp, 1)
+        BstInsert.insertBst(temp, 5)
+        BstInsert.insertBst(temp, 13)
 
         // Level 3
-        BstInsert.insertBST(temp, 3)
+        BstInsert.insertBst(temp, 3)
 
         expect:
         temp == tree

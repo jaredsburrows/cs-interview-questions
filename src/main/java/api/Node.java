@@ -16,6 +16,7 @@ public final class Node<T> {
         this.value = value;
     }
 
+    @SuppressWarnings("SimplifiableIfStatement")
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -28,23 +29,22 @@ public final class Node<T> {
 
         final Node<?> node = (Node<?>) o;
 
-        if (value != null ? !value.equals(node.value) : node.value != null) {
+        if (this.value != null ? !this.value.equals(node.value) : node.value != null) {
             return false;
         }
 
-        if (next != null ? !next.equals(node.next) : node.next != null) {
+        if (this.next != null ? !this.next.equals(node.next) : node.next != null) {
             return false;
         }
 
-        return previous != null ? previous.equals(node.previous) : node.previous == null;
-
+        return this.previous != null ? this.previous.equals(node.previous) : node.previous == null;
     }
 
     @Override
     public int hashCode() {
-        int result = value != null ? value.hashCode() : 0;
-        result = 31 * result + (next != null ? next.hashCode() : 0);
-        result = 31 * result + (previous != null ? previous.hashCode() : 0);
+        int result = this.value != null ? this.value.hashCode() : 0;
+        result = 31 * result + (this.next != null ? this.next.hashCode() : 0);
+        result = 31 * result + (this.previous != null ? this.previous.hashCode() : 0);
         return result;
     }
 }

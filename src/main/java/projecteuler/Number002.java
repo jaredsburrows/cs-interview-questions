@@ -6,7 +6,9 @@ package projecteuler;
 public class Number002 {
 
     public static long getEvenFibonacciNumbers(long n) {
-        long a = 1, b = 1, sum = 0;
+        long a = 1;
+        long b = 1;
+        long sum = 0;
 
         while (sum < n) {
             long next = a + b;

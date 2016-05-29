@@ -21,11 +21,11 @@ public class ValidPalindrome {
         int j = array.length - 1;
 
         while (i < j) {
-            while (i < j && !isChar(array[i]) && !inNum(array[i])) {
+            while (i < j && !isChar(array[i]) && !isNum(array[i])) {
                 i++;
             }
 
-            while (i < j && !isChar(array[j]) && !inNum(array[j])) {
+            while (i < j && !isChar(array[j]) && !isNum(array[j])) {
                 j--;
             }
 
@@ -48,7 +48,7 @@ public class ValidPalindrome {
         return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';
     }
 
-    public static boolean inNum(final char c) {
+    public static boolean isNum(final char c) {
         return c >= '0' && c <= '9';
     }
 }

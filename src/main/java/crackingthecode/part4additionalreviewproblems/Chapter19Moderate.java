@@ -17,6 +17,7 @@ public class Chapter19Moderate {
      * 19.1 - Write a function to swap a number in place without temporary variables.
      */
     // Time - O(1), Space - O(1)
+    @SuppressWarnings("UnusedAssignment")
     @SuppressFBWarnings("DLS_DEAD_LOCAL_STORE")
     public static void swapVar(int a, int b) {
         a ^= b;
@@ -25,6 +26,7 @@ public class Chapter19Moderate {
     }
 
     // Time - O(1), Space - O(1)
+    @SuppressWarnings("UnusedAssignment")
     @SuppressFBWarnings("DLS_DEAD_LOCAL_STORE")
     public static void swapVar2(int a, int b) {
         a = b - a; // 4 = 9 - 5
@@ -37,6 +39,7 @@ public class Chapter19Moderate {
      */
     // Outcomes - X - Player 1, O - Player 2, no one
     // Time - O(1), Space - O(1) (since we know it is 3x3 array)
+    @SuppressWarnings("ForLoopReplaceableByForEach")
     public static int checkTicTacToe(final int[][] board) {
         if (board == null) {
             return -1;

@@ -8,7 +8,7 @@ package questions.searching;
 public class SearchAdjacentElements {
 
     // Time - O(N), Space - O(1)
-    public static int search(final int array[], final int number) {
+    public static int search(final int[] array, final int number) {
         final int length = array.length - 1;
 
         for (int i = 0; i < length; i++) {
@@ -22,7 +22,7 @@ public class SearchAdjacentElements {
 
     // Time - O(N), Space - O(1)
     // By moving the "index", there will be less iterations
-    public static int search2(final int array[], final int number) {
+    public static int search2(final int[] array, final int number) {
         final int length = array.length - 1;
 
         int i = 0;

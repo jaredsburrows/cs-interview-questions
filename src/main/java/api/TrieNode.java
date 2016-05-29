@@ -14,6 +14,7 @@ public final class TrieNode<T> {
     public TrieNode() {
         this(26);
     }
+
     @SuppressWarnings("unchecked")
     public TrieNode(final int length) {
         this.children = (TrieNode<T>[]) Array.newInstance(TrieNode.class, length);
@@ -37,7 +38,6 @@ public final class TrieNode<T> {
 
         // Probably incorrect - comparing Object[] arrays with Arrays.equals
         return Arrays.equals(this.children, trieNode.children);
-
     }
 
     @Override

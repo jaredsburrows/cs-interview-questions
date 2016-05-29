@@ -57,13 +57,15 @@ CS Interview Practice [![Build Status](https://travis-ci.org/jaredsburrows/cs-in
 
 ## Languages used
  - **C** - [src/main/c](src/main/c)
+ - **C++** - [src/main/cpp](src/main/cpp)
  - **Java** - [src/main/java](src/main/java)
  - **Python** - [src/main/python](src/main/python)
  - **Groovy** - [src/test/groovy](src/test/groovy)
 
 ## Testing frameworks used
- - CUnit (http://cunit.sourceforge.net/)
- - Spock (https://github.com/spockframework/spock)
+ - CUnit (http://cunit.sourceforge.net/) for C
+ - GTest (https://github.com/google/googletest) for C++
+ - Spock (https://github.com/spockframework/spock) for Java
 
 
 ## License

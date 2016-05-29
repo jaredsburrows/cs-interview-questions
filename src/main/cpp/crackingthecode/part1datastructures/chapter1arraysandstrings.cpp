@@ -1,5 +1,5 @@
-#include <stdbool.h>
-#include <string.h>
+#include <cstdbool>
+#include <cstring>
 
 #include "chapter1arraysandstrings.h"
 

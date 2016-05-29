@@ -31,8 +31,8 @@ public class Main {
             }
             System.out.println("");
 
-            for (int i = 0; i < numbers.length; i++) {
-                System.out.print(numbers[i] + " ");
+            for (final String number : numbers) {
+                System.out.print(number + " ");
             }
 
 //            int min = numbers.length;

@@ -7,21 +7,21 @@ import api.TreeNode;
  */
 public class BstInsert {
 
-    public static TreeNode<Integer> insertBST(final TreeNode<Integer> root, final int value) {
-        return insertBST(root, new TreeNode<>(value));
+    public static TreeNode<Integer> insertBst(final TreeNode<Integer> root, final int value) {
+        return insertBst(root, new TreeNode<>(value));
     }
 
-    public static TreeNode<Integer> insertBST(final TreeNode<Integer> root, final TreeNode<Integer> node) {
+    public static TreeNode<Integer> insertBst(final TreeNode<Integer> root, final TreeNode<Integer> node) {
         if (root == null) {
             return node;
         }
 
         if (node.value > root.value) {
-            root.right = insertBST(root.right, node);
+            root.right = insertBst(root.right, node);
         }
 
         if (node.value < root.value) {
-            root.left = insertBST(root.left, node);
+            root.left = insertBst(root.left, node);
         }
 
         return root;

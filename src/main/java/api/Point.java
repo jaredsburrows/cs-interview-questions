@@ -21,8 +21,9 @@ public final class Point {
         return this.y;
     }
 
+    @SuppressWarnings("SimplifiableIfStatement")
     @Override
-    public boolean equals(final Object o) {
+    public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
@@ -33,17 +34,17 @@ public final class Point {
 
         final Point point = (Point) o;
 
-        if (x != point.x) {
+        if (this.x != point.x) {
             return false;
         }
 
-        return y == point.y;
+        return this.y == point.y;
     }
 
     @Override
     public int hashCode() {
-        int result = x;
-        result = 31 * result + y;
+        int result = this.x;
+        result = 31 * result + this.y;
         return result;
     }
 }

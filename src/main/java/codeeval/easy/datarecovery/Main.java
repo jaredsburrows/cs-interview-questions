@@ -49,8 +49,8 @@ public class Main {
             // 3 - 1
             // 4 - 4
 
-            for (int i = 0; i < numbers.length; i++) {
-                int position = Integer.parseInt(numbers[i]) - 1;
+            for (final String number : numbers) {
+                int position = Integer.parseInt(number) - 1;
                 fixedWords[position] = sentence[position];
             }
 

@@ -214,7 +214,7 @@ public class Chapter8Recursion {
         floodFillUtil(screen, x, y - 1, prevC, newC);
     }
 
-    public static void floodFill(int screen[][], int x, int y, int newC) {
+    public static void floodFill(int[][] screen, int x, int y, int newC) {
         int prevC = screen[x][y];
         floodFillUtil(screen, x, y, prevC, newC);
     }
