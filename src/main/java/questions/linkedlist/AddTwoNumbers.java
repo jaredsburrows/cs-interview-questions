@@ -17,19 +17,19 @@ public class AddTwoNumbers {
      */
     // node1 and node2 numbers are stored forwards
     // the answer node is backwards
-    public static Node<Integer> addTwoNumbers(Node<Integer> node1, Node<Integer> node2) {
-        if (node1 == null || node2 == null) {
+    public static Node<Integer> addTwoNumbers(Node<Integer> node, Node<Integer> node2) {
+        if (node == null || node2 == null) {
             return null;
         }
 
-        int carry = 0;
         final Node<Integer> answer = new Node<>(0);
         Node<Integer> head = answer;
+        int carry = 0;
 
-        while (node1 != null || node2 != null) {
-            if (node1 != null) {
-                carry += node1.value;
-                node1 = node1.next;
+        while (node != null || node2 != null) {
+            if (node != null) {
+                carry += node.value;
+                node = node.next;
             }
 
             if (node2 != null) {

@@ -1,6 +1,7 @@
 package crackingthecode.part4additionalreviewproblems;
 
 import api.Tuple;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -16,6 +17,7 @@ public class Chapter19Moderate {
      * 19.1 - Write a function to swap a number in place without temporary variables.
      */
     // Time - O(1), Space - O(1)
+    @SuppressFBWarnings("DLS_DEAD_LOCAL_STORE")
     public static void swapVar(int a, int b) {
         a ^= b;
         b ^= a;
@@ -23,6 +25,7 @@ public class Chapter19Moderate {
     }
 
     // Time - O(1), Space - O(1)
+    @SuppressFBWarnings("DLS_DEAD_LOCAL_STORE")
     public static void swapVar2(int a, int b) {
         a = b - a; // 4 = 9 - 5
         b = b - a; // 5 = 9 - 4
@@ -101,21 +104,27 @@ public class Chapter19Moderate {
     // >> 31 - for only 32 bit numbers
     // Time - O(1), Space - O(1)
     public static long getMax(final long a, final long b) {
-        final long diff = ((a - b) >> 31);    // >> 31 accounts for negatives
-        return (diff & b) + ((~diff) & a);
+        final long diff = a - b >> 31;    // >> 31 accounts for negatives
+        final long diffFirst = diff & b;
+        final long diffSecond = ~diff & a;
+
+        return diffFirst + diffSecond;
     }
 
     // Time - O(1), Space - O(1)
     public static long getMax2(final long a, final long b) {
         final long[] temp = {a, b};
-        return temp[(int) ((a - b) >> 31) & 1];
+        return temp[(int) (a - b >> 31) & 1];
     }
 
     // If you have the max, you can find min, vice-versa
     // Time - O(1), Space - O(1)
     public static long getMin(final long a, final long b) {
-        final long diff = ((a - b) >> 31);    // >> 31 accounts for negatives
-        return (diff & a) + ((~diff) & b);
+        final long diff = a - b >> 31;    // >> 31 accounts for negatives
+        final long diffFirst = diff & a;
+        final long diffSecond = ~diff & b;
+
+        return diffFirst + diffSecond;
     }
 
     /**
@@ -260,7 +269,7 @@ public class Chapter19Moderate {
     // book solution
     public static int rand7() {
         while (true) {
-            int num = 5 * (rand5() - 1) + (rand5() - 1);
+            int num = 5 * rand5() - 1 + rand5() - 1;
             if (num < 21) {
                 return num % 7 + 1;
             }

@@ -10,14 +10,11 @@ class SymmetricTreeSpec extends Specification {
 
     def balancedTree = new TreeNode<>(1)
 
-    /**
-         1
-        / \
-       2   2
-      / \ / \
-     3  4 4  3
-     * @return
-     */
+    //     1
+    //    / \
+    //   2   2
+    //  / \ / \
+    // 3  4 4  3
     def "setup"() {
         balancedTree.right = new TreeNode<Integer>(2)
         balancedTree.right.left = new TreeNode<Integer>(4)

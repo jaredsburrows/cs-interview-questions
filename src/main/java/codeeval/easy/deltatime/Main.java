@@ -2,12 +2,15 @@ package codeeval.easy.deltatime;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.Calendar;
 
 public class Main {
     public static void main(final String[] args) throws Exception {
-        final BufferedReader buffer = new BufferedReader(new FileReader(new File(args[0])));
+
+        final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(new File(args[0])), Charset.defaultCharset()));
 
         /* Java has a problem with SimpleDateFormat formatting */
 //        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
@@ -20,14 +23,14 @@ public class Main {
 
             /* Java has a problem with Calendar subtracting of hours */
             Calendar calendar1 = Calendar.getInstance();
-            calendar1.set(Calendar.HOUR_OF_DAY, Integer.valueOf(time1[0]));
-            calendar1.set(Calendar.MINUTE, Integer.valueOf(time1[1]));
-            calendar1.set(Calendar.SECOND, Integer.valueOf(time1[2]));
+            calendar1.set(Calendar.HOUR_OF_DAY, Integer.parseInt(time1[0]));
+            calendar1.set(Calendar.MINUTE, Integer.parseInt(time1[1]));
+            calendar1.set(Calendar.SECOND, Integer.parseInt(time1[2]));
 
             Calendar calendar2 = Calendar.getInstance();
-            calendar2.set(Calendar.HOUR_OF_DAY, Integer.valueOf(time2[0]));
-            calendar2.set(Calendar.MINUTE, Integer.valueOf(time2[1]));
-            calendar2.set(Calendar.SECOND, Integer.valueOf(time2[2]));
+            calendar2.set(Calendar.HOUR_OF_DAY, Integer.parseInt(time2[0]));
+            calendar2.set(Calendar.MINUTE, Integer.parseInt(time2[1]));
+            calendar2.set(Calendar.SECOND, Integer.parseInt(time2[2]));
 
             Calendar result = Calendar.getInstance();
             result.setTimeInMillis(Math.abs(calendar2.getTime().getTime() - calendar1.getTime().getTime()));

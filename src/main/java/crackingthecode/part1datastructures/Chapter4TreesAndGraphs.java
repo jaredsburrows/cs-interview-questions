@@ -67,7 +67,7 @@ public class Chapter4TreesAndGraphs {
     //  1  3  5 7
     // (length - 0) / 2
     public static TreeNode<Integer> getMinimumTree(int[] array, int start, int end) {
-        if (array == null || array.length == 0 || (start < 0 || start > end)) {
+        if (array == null || array.length == 0 || start < 0 || start > end) {
             return null;
         }
 

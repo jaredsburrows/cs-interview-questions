@@ -9,7 +9,7 @@ matrix:
     - jdk: oraclejdk9
 
 script:
-  - ./gradlew clean assemble test jacocoTestReport coveralls --stacktrace
+  - ./gradlew clean check coveralls --stacktrace
 
 notifications:
   email: false

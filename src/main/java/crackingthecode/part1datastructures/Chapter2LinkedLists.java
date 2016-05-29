@@ -40,37 +40,37 @@ public class Chapter2LinkedLists {
     }
 
     // Time - O(N^2), Space - O(1)
-    public static void removeDuplicates2(final Node<Integer> n) {
-        if (n == null) {
+    public static void removeDuplicates2(final Node<Integer> node) {
+        if (node == null) {
             return;
         }
 
-        Node<Integer> node = n;
-        Node<Integer> node2 = n;
-        Node<Integer> node3 = null;
+        Node<Integer> runner = node;
+        Node<Integer> runner2 = node;
+        Node<Integer> previous = null;
 
-        while (node != null) {
-            while (node2.next != null) {
-                if (node.value.equals(node2.value)) {
-                    if (node3 != null) {
-                        node3.next = node2.next;
+        while (runner != null) {
+            while (runner2.next != null) {
+                if (runner.value.equals(runner2.value)) {
+                    if (previous != null) {
+                        previous.next = runner2.next;
                     }
                 } else {
-                    node3 = node2;
+                    previous = runner2;
                 }
-                node2 = node2.next;
+                runner2 = runner2.next;
             }
-            node = node.next;
+            runner = runner.next;
         }
     }
 
     // Time - O(N^2)
-    public static void removeDuplicates3(final Node<Integer> n) {
-        if (n == null) {
+    public static void removeDuplicates3(final Node<Integer> node) {
+        if (node == null) {
             return;
         }
 
-        Node<Integer> current = n;
+        Node<Integer> current = node;
 
         while (current != null) {
             Node<Integer> runner = current;
@@ -90,6 +90,7 @@ public class Chapter2LinkedLists {
         if (head == null) {
             return;
         }
+
         Node<Integer> previous = head;
         Node<Integer> current = previous.next;
         while (current != null) {
@@ -125,8 +126,8 @@ public class Chapter2LinkedLists {
      * 2.2 - Implement an algorithm to find the nth to last element of a singly linked list.
      */
     // Time - O(N), Space - O(1)
-    public static Node<Integer> findNthLastElement(Node<Integer> node, final int n) {
-        if (node == null || n < 1) {
+    public static Node<Integer> findNthLastElement(Node<Integer> node, final int position) {
+        if (node == null || position < 1) {
             return null;
         }
 
@@ -139,7 +140,7 @@ public class Chapter2LinkedLists {
             temp = temp.next;
         }
 
-        int element = count - n;
+        int element = count - position;
 
         while (node != null) {
             if (newCount == element) {
@@ -160,14 +161,14 @@ public class Chapter2LinkedLists {
      * Result: nothing is returned, but the new linked list looks like a->b->d->e
      */
     // Time - O(1)
-    public static void deleteMiddleNode(final Node<Character> n) {
-        if (n == null || n.next == null) {
+    public static void deleteMiddleNode(final Node<Character> node) {
+        if (node == null || node.next == null) {
             return;
         }
 
-        Node<Character> next = n.next;
-        n.value = next.value; // the trick
-        n.next = next.next;
+        final Node<Character> temp = node.next;
+        node.value = temp.value; // the trick
+        node.next = temp.next;
     }
 
     /**
@@ -182,8 +183,8 @@ public class Chapter2LinkedLists {
     // Linked list  - 3-1-5 (513)
     // Linked list2 - 5-9-2 (295)
     // sum          - 8-0-8
-    public static Node<Integer> addTwoLists(Node<Integer> n, Node<Integer> n2) {
-        if (n == null || n2 == null) {
+    public static Node<Integer> addTwoLists(Node<Integer> node, Node<Integer> node2) {
+        if (node == null || node2 == null) {
             return null;
         }
 
@@ -191,15 +192,15 @@ public class Chapter2LinkedLists {
         final Node<Integer> sum = new Node<>(0);
         Node<Integer> head = sum;
 
-        while (n != null || n2 != null) {
-            if (n != null) {
-                carry += n.value;
-                n = n.next;
+        while (node != null || node2 != null) {
+            if (node != null) {
+                carry += node.value;
+                node = node.next;
             }
 
-            if (n2 != null) {
-                carry += n2.value;
-                n2 = n2.next;
+            if (node2 != null) {
+                carry += node2.value;
+                node2 = node2.next;
             }
 
             head.next = new Node<>(carry % 10);

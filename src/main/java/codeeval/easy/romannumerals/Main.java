@@ -1,12 +1,14 @@
 package codeeval.easy.romannumerals;
 
 import java.io.File;
+import java.nio.charset.Charset;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(final String[] args) throws Exception {
-        final Scanner scanner = new Scanner(new File(args[0]));
+
+        final Scanner scanner = new Scanner(new File(args[0]), Charset.defaultCharset().name());
 
         while (scanner.hasNext()) {
             final String token = scanner.next();

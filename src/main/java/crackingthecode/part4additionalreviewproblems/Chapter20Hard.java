@@ -179,7 +179,7 @@ public class Chapter20Hard {
         integerList.sort(new Comparator<Integer>() {
             @Override
             public int compare(final Integer o1, final Integer o2) {
-                return (o1 > o2) ? 1 : -1;
+                return o1 > o2 ? 1 : -1;
             }
         });
 

@@ -37,22 +37,22 @@ public class LongestSequenceMatrix {
             // start at row col of "n"
             while (true) {
                 int current = matrix[row][col];
-                if ((row + 1) <= length && ((current - 1) == matrix[row + 1][col])) {
+                if ((row + 1) <= length && (current - 1) == matrix[row + 1][col]) {
                     // go right x
                     row++;
                     count++;
                     n--;
-                } else if ((row - 1) >= 0 && ((current - 1) == matrix[row - 1][col])) {
+                } else if ((row - 1) >= 0 && (current - 1) == matrix[row - 1][col]) {
                     // go right x
                     row--;
                     count++;
                     n--;
-                } else if ((col + 1) <= length && ((current - 1) == matrix[row][col + 1])) {
+                } else if ((col + 1) <= length && (current - 1) == matrix[row][col + 1]) {
                     // go up y
                     col++;
                     count++;
                     n--;
-                } else if ((col - 1) >= 0 && ((current - 1) == matrix[row][col - 1])) {
+                } else if ((col - 1) >= 0 && (current - 1) == matrix[row][col - 1]) {
                     // go down y
                     col--;
                     count++;

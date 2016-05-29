@@ -10,7 +10,7 @@ const bool isUniqueCharacters(const char* input) {
     }
 
     int check = 0;
-    for (; *input != NULL; input++) {
+    for (; *input != '\0'; input++) {
 
         const int value = 1 << (*input - 'a');
         const bool hasValue = (check & value) > 0;

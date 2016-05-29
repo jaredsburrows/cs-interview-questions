@@ -14,7 +14,11 @@ public class PalindromeNumber {
         long reverseNumber = 0;
 
         while (number != 0) {
-            reverseNumber = (reverseNumber * 10) + (number % 10);
+            final long multiply10 = reverseNumber * 10;
+            final long lastDigit = number % 10;
+
+            reverseNumber = multiply10 + lastDigit;
+
             number /= 10;
         }
 

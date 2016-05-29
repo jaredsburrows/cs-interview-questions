@@ -2,12 +2,15 @@ package codeeval.easy.datarecovery;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 
 public class Main {
     public static void main(final String[] args) throws Exception {
-//        final BufferedReader buffer = new BufferedReader(new FileReader(new File(args[0])));
-        final BufferedReader buffer = new BufferedReader(new FileReader(new File("/Users/noname/repo/CS-Interview-Questions/src/main/java/codeeval/easy/datarecovery/input.txt")));
+
+        // For testing: "/Users/noname/repo/CS-Interview-Questions/src/main/java/codeeval/easy/datarecovery/input.txt"
+        final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(new File(args[0])), Charset.defaultCharset()));
 
         String line;
         while ((line = buffer.readLine()) != null) {
@@ -47,7 +50,7 @@ public class Main {
             // 4 - 4
 
             for (int i = 0; i < numbers.length; i++) {
-                int position = Integer.valueOf(numbers[i]) - 1;
+                int position = Integer.parseInt(numbers[i]) - 1;
                 fixedWords[position] = sentence[position];
             }
 

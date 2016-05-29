@@ -2,13 +2,17 @@ package codeeval.easy.wordtodigit;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 
 public class Main {
     public static void main(final String[] args) throws Exception {
-        final BufferedReader in = new BufferedReader(new FileReader(new File(args[0])));
+
+        final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(new File(args[0])), Charset.defaultCharset()));
+
         String line;
-        while ((line = in.readLine()) != null) {
+        while ((line = buffer.readLine()) != null) {
             final String[] lineArray = line.split(";");
             if (lineArray.length > 0) {
                 for (final String element : lineArray) {

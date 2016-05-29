@@ -21,11 +21,11 @@ public class ValidPalindrome {
         int j = array.length - 1;
 
         while (i < j) {
-            while ((i < j) && !isChar(array[i]) && !inNum(array[i])) {
+            while (i < j && !isChar(array[i]) && !inNum(array[i])) {
                 i++;
             }
 
-            while ((i < j) && !isChar(array[j]) && !inNum(array[j])) {
+            while (i < j && !isChar(array[j]) && !inNum(array[j])) {
                 j--;
             }
 

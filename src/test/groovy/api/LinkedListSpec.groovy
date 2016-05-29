@@ -14,7 +14,7 @@ class LinkedListSpec extends Specification {
         linkedList.add(5)
 
         when:
-        linkedList.addtoFront(1)
+        linkedList.addToFront(1)
 
         then:
         linkedList.getHead().value == 1

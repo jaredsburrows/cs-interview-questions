@@ -171,7 +171,7 @@ public class Chapter3StacksAndQueues {
     }
 
     /**
-     * 3.6 - Write a program to sortHelper a stack in ascending order. You should not make any assumptions
+     * 3.6 - Write a program to sort a stack in ascending order. You should not make any assumptions
      * about how the stack is implemented. The following are the only functions that should be used
      * to write this program: push | pop | peek | isEmpty.
      */
@@ -181,7 +181,7 @@ public class Chapter3StacksAndQueues {
 
         while (!stack.isEmpty()) {
             int popped = stack.pop();
-            while (!sortedStack.isEmpty() && (sortedStack.peek() > popped)) {
+            while (!sortedStack.isEmpty() && sortedStack.peek() > popped) {
                 stack.push(sortedStack.pop());
             }
             sortedStack.push(popped);

@@ -3,7 +3,7 @@ package api;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-// FIFO
+// FIFO - First in first out
 public final class Queue<T> {
 
     public TreeNode<T> first;

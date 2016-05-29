@@ -5,6 +5,7 @@ import api.Tuple;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -48,7 +49,7 @@ public class Chapter9SortingAndSearching {
     }
 
     /**
-     * 9.2 - Write a method to sortHelper an array of strings so that all the anagrams are next to each
+     * 9.2 - Write a method to sort an array of strings so that all the anagrams are next to each
      * other.
      */
     // [anagram, anagram, notanagram, notanagram]?
@@ -113,15 +114,15 @@ public class Chapter9SortingAndSearching {
 
     /**
      * 9.4 - If you have a 2 GB file with one string per line, which sorting algorithm would you use
-     * to sortHelper the file and why?
+     * to sort the file and why?
      */
-    // Since there are 2 GBs of strings we need to sortHelper, I would use Merge Sort because it's average
+    // Since there are 2 GBs of strings we need to sort, I would use Merge Sort because it's average
     // and worst Time complexity is O(N LG N) and it's Space complexity is O(N).
 
     // If the interview says that we are limited on memory, then we need to split the 2GB file into
     // smaller chucks such that memory used * number of chunk = 2GBs.
 
-    // External short should be used - sortHelper each chuck separately, then merge them one by one together.
+    // External short should be used - sort each chuck separately, then merge them one by one together.
 
     /**
      * 9.5 - Given a sorted array of strings which is interspersed with empty strings, write a
@@ -239,7 +240,7 @@ public class Chapter9SortingAndSearching {
         int col = length;
 
         // start at top row/col
-        while ((row < length) && (col >= 0)) {
+        while (row < length && col >= 0) {
             if (matrix[row][col] == target) {
                 return true;
             } else if (matrix[row][col] > target) {
@@ -265,21 +266,21 @@ public class Chapter9SortingAndSearching {
      * (65,100) (68,110) (70,150) (75,190)
      */
     // use map
-    // sortHelper by height, sortHelper by weight
+    // sort by height, sort by weight
     // return new map
     // Time - O(N*LOGN), Space -
     public static List<Tuple<Integer, Integer>> getCircusOrder(final ArrayList<Tuple<Integer, Integer>> original) {
 
         // Java 6/7
-//        Collections.sortHelper(original, new Comparator<Tuple<Integer, Integer>>() {
-//            @Override
-//            public int compare(final Tuple<Integer, Integer> o1, final Tuple<Integer, Integer> o2) {
-//                return ((o1.getY() < o2.getY()) && (o1.getX() < o2.getX())) ? -1 : 1;
-//            }
-//        });
+        Collections.sort(original, new Comparator<Tuple<Integer, Integer>>() {
+            @Override
+            public int compare(final Tuple<Integer, Integer> o1, final Tuple<Integer, Integer> o2) {
+                return o1.getY() < o2.getY() && o1.getX() < o2.getX() ? -1 : 1;
+            }
+        });
 
         // Java 8
-        Collections.sort(original, (o1, o2) -> ((o1.getY() < o2.getY()) && (o1.getX() < o2.getX())) ? -1 : 1);
+//        Collections.sort(original, (o1, o2) -> ((o1.getY() < o2.getY()) && (o1.getX() < o2.getX())) ? -1 : 1);
 
         return original;
     }

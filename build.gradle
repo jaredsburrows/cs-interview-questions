@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://plugins.gradle.org/m2/" } // Mirrors jcenter() and mavenCentral()
     }
 
     dependencies {
@@ -11,7 +11,7 @@ buildscript {
 }
 
 repositories {
-    maven { url "https://plugins.gradle.org/m2/" }
+    maven { url "https://plugins.gradle.org/m2/" } // Mirrors jcenter() and mavenCentral()
 }
 
 apply plugin: "c"
@@ -22,7 +22,7 @@ apply plugin: "java"
 apply plugin: "groovy"
 apply plugin: "jacoco"
 apply plugin: "findbugs"
-apply plugin: "checkstyle"
+//apply plugin: "checkstyle"
 apply plugin: "net.ltgt.errorprone"
 apply plugin: "com.github.kt3k.coveralls"
 apply plugin: "com.github.ben-manes.versions"
@@ -49,6 +49,10 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(GroovyCompile) {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    // Show all warnings except boot classpath
     configure(options) {
         compilerArgs << "-Xlint:all"            // Turn on all warnings
         compilerArgs << "-Xlint:-options"       // Turn off "missing" bootclasspath warning
@@ -95,6 +99,18 @@ jacocoTestReport {
                               "**/Chapter12SystemDesignAndMemoryLimits**",
                               "projecteuler/**"])
         })
+    }
+}
+
+findbugs {
+    effort = "max"
+    reportLevel = "high"
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled false
+        html.enabled true
     }
 }
 
@@ -157,6 +173,8 @@ model {
 }
 
 dependencies {
+    compile "com.google.code.findbugs:annotations:2.0.1"
+
     testCompile localGroovy()
     testCompile "org.spockframework:spock-core:1.0-groovy-2.4", { exclude module: "groovy-all" }
     testCompile "nl.jqno.equalsverifier:equalsverifier:2.0.2"

@@ -1,13 +1,15 @@
 package codeeval.easy.morsecode;
 
 import java.io.File;
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
     public static void main(final String[] args) throws Exception {
-        final Scanner scanner = new Scanner(new File(args[0]));
+
+        final Scanner scanner = new Scanner(new File(args[0]), Charset.defaultCharset().name());
         final Map<String, Character> morseCode = new HashMap<>();
         morseCode.put(".-", 'A');
         morseCode.put("-...", 'B');

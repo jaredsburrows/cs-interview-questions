@@ -11,7 +11,7 @@ public class Chapter6BrainTeasers {
      */
     public static double arithmeticOperators() {
         // int division = 0, use double
-        return ((3.0 + 1.0) / (3.0 / 6.0)); // ((3 + 1) / 3) * 6 = 8
+        return (3.0 + 1.0) / (3.0 / 6.0); // ((3 + 1) / 3) * 6 = 8
     }
 
     /**
@@ -124,7 +124,7 @@ public class Chapter6BrainTeasers {
         while (toggleCount < numLockers) {
 
             for (int i = 0; i < numLockers; i++) {
-                if ((i % toggleCount) == 0) {
+                if (i % toggleCount == 0) {
                     lockers[i] = !lockers[i];
                 }
             }

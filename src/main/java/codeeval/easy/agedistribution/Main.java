@@ -2,16 +2,19 @@ package codeeval.easy.agedistribution;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 
 public class Main {
     public static void main(final String[] args) throws Exception {
-        final BufferedReader buffer = new BufferedReader(new FileReader(new File(args[0])));
+
+        final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(new File(args[0])), Charset.defaultCharset()));
 
         String line;
         while ((line = buffer.readLine()) != null) {
             String string = line.trim();
-            int age = Integer.valueOf(string);
+            int age = Integer.parseInt(string);
             if (age < 0 || age > 100) {
                 string = "This program is for humans";
             } else if (age >= 0 && age <= 2) {

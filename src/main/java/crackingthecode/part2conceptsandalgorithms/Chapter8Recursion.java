@@ -66,22 +66,22 @@ public class Chapter8Recursion {
     /**
      * 8.3 - Write a method that returns all subsets of a set.
      */
-    public static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> initial, int size) {
+    public static List<List<Integer>> getSubsets(final List<Integer> initial, final int size) {
         if (initial == null || size < 0) {
             return null;
         }
 
-        ArrayList<ArrayList<Integer>> finalList;
+        final List<List<Integer>> finalList;
         if (initial.size() == size) {
             // empty set
             finalList = new ArrayList<>();
             finalList.add(new ArrayList<>());
         } else {
             finalList = getSubsets(initial, size + 1);
-            ArrayList<ArrayList<Integer>> newSetList = new ArrayList<>();
-            for (ArrayList<Integer> set : finalList) {
+            final List<List<Integer>> newSetList = new ArrayList<>();
+            for (final List<Integer> set : finalList) {
                 // new set is being created
-                ArrayList<Integer> temp = new ArrayList<>();
+                final ArrayList<Integer> temp = new ArrayList<>();
                 temp.addAll(set);
                 temp.add(initial.get(size));
                 newSetList.add(temp);
@@ -141,7 +141,7 @@ public class Chapter8Recursion {
 
         // make sure right is not greater than number of pairs
         // make sure right is left than left, (()
-        if ((right < pairs) && (right < left)) {
+        if (right < pairs && right < left) {
             generatedList.addAll(getValidParentheses(pairs, left, right + 1, pairString + ")"));
         }
 
@@ -165,7 +165,7 @@ public class Chapter8Recursion {
 
         // make sure right is not greater than number of pairs
         // make sure right is left than left, (()
-        if ((right < pairs) && (right < left)) {
+        if (right < pairs && right < left) {
             getValidParentheses(pairs, left, right + 1, pairString + ")");
         }
     }
@@ -175,19 +175,19 @@ public class Chapter8Recursion {
      * That is, given a screen (represented by a 2-dimensional array of Colors), a point, and a new
      * color, fill in the surrounding area until you hit a border of that color.
      */
-    public static void paintFill(Color[][] pixels, int x, int y, Color oldcolor, Color newColor) {
+    public static void paintFill(Color[][] pixels, int x, int y, Color oldColor, Color newColor) {
         if (x < 0 || x >= pixels[0].length || y < 0 || y >= pixels.length) {
             return;
         }
 
-        if (pixels[x][y] != oldcolor) {
+        if (pixels[x][y] != oldColor) {
             return;
         }
         pixels[x][y] = newColor;
-        paintFill(pixels, x + 1, y, oldcolor, newColor); // right
-        paintFill(pixels, x - 1, y, oldcolor, newColor); // left
-        paintFill(pixels, x, y + 1, oldcolor, newColor); // down
-        paintFill(pixels, x, y - 1, oldcolor, newColor); // up
+        paintFill(pixels, x + 1, y, oldColor, newColor); // right
+        paintFill(pixels, x - 1, y, oldColor, newColor); // left
+        paintFill(pixels, x, y + 1, oldColor, newColor); // down
+        paintFill(pixels, x, y - 1, oldColor, newColor); // up
     }
 
     public static void paintFill(Color[][] pixels, int x, int y, Color newColor) {

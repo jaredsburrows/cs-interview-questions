@@ -5,7 +5,7 @@ package api;
  */
 public final class LinkedList<T> {
 
-    public Node<T> head;
+    private Node<T> head;
 
     public LinkedList(final T value) {
         this.head = new Node<>(value);
@@ -19,10 +19,10 @@ public final class LinkedList<T> {
         return this.head.next;
     }
 
-    public void addtoFront(final T value) {
+    public void addToFront(final T value) {
         Node<T> newNode = new Node<>(value);
         newNode.next = head;
-        head = newNode;
+        this.head = newNode;
     }
 
     public void add(final T value) {
@@ -38,7 +38,7 @@ public final class LinkedList<T> {
     }
 
     public void removeFront() {
-        head = head.next;
+        this.head = head.next;
     }
 
     public void removeLast() {

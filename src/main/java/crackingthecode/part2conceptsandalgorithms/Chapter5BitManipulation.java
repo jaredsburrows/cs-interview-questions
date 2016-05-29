@@ -47,8 +47,8 @@ public class Chapter5BitManipulation {
      */
     public static int setBitPosition(final int n, final int m, final int i, final int j) {
         int max = ~0;
-        int left = max - ((1 << j) - 1);
-        int right = ((1 << i) - 1);
+        int left = max - 1 << j - 1;
+        int right = 1 << i - 1;
         int mask = left | right;
         return (n & mask) | (m << i);
     }
@@ -108,7 +108,7 @@ public class Chapter5BitManipulation {
         int oneDiff;
 
         for (int i = 0; i < 32; i++) {
-            int temp = a >> ((32 - i) - 1) & 1;
+            int temp = a >> (32 - i - 1) & 1;
             if (temp == 0) {
                 aZero++;
             } else {
@@ -117,7 +117,7 @@ public class Chapter5BitManipulation {
         }
 
         for (int i = 0; i < 32; i++) {
-            int temp = b >> ((32 - i) - 1) & 1;
+            int temp = b >> (32 - i - 1) & 1;
             if (temp == 0) {
                 bZero++;
             } else {

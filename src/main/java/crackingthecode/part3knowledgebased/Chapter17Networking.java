@@ -38,7 +38,7 @@ public class Chapter17Networking {
     // IGP routing protocol that is faster than RIP, but also more complex.
     // OSPF keeps track of a complete topological database of all connections in the local network.
 
-    // Startup - Send hello to neighbors and gets routing tables for synchronized routing connections.
+    // Startup - Send hello to children and gets routing tables for synchronized routing connections.
     // Update - At regular intervals the router sends out messages to other routers about it's table.
     // Shortest Path Tree - Each router generates the shortest path to each destination address and
     // identifies the closest router for communication.
