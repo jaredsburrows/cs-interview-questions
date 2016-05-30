@@ -8,11 +8,6 @@ import spock.lang.Specification
  */
 class AddTwoNumbersSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new AddTwoNumbers() != null
-    }
-
     def "addTwoNumbers"() {
         given:
         // book

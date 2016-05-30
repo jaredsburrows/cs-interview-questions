@@ -24,11 +24,6 @@ class BstIsBstSpec extends Specification {
         balancedTree.left.left = new TreeNode<Integer>(1)
     }
 
-    def "constructor"() {
-        expect:
-        new BstIsBst() != null
-    }
-
     def "isBst"() {
         expect:
         BstIsBst.isBst(null)

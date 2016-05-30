@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class MaxSubArraySpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new MaxSubArray() != null
-    }
-
     def "getMax"() {
         expect:
         MaxSubArray.getMax(a as int[]) == b

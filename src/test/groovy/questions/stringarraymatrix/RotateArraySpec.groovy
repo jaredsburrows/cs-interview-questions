@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class RotateArraySpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new RotateArray() != null
-    }
-
     def "rotate"() {
         expect:
         RotateArray.rotate(a as int[], b) == c as int[]

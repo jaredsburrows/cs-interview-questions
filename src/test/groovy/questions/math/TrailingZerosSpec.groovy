@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class TrailingZerosSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new TrailingZeros() != null
-    }
-
     def "getTrailingZeros"() {
         expect:
         TrailingZeros.getTrailingZeros(a) == b

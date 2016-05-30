@@ -6,11 +6,6 @@ import spock.lang.Specification
  */
 class Chapter5BitManipulationSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new Chapter5BitManipulation() != null
-    }
-
     def "getDiffBits"() {
         expect:
         Chapter5BitManipulation.getDiffBits(a, b) == c

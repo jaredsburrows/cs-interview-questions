@@ -37,11 +37,6 @@ class BstPreOrderSpock extends Specification {
         System.setErr(null)
     }
 
-    def "constructor"() {
-        expect:
-        new BstPreOrder() != null
-    }
-
     def "printPreOrder"() {
         when:
         BstPreOrder.printPreOrder(tree)

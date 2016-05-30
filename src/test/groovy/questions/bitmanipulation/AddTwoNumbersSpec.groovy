@@ -6,11 +6,6 @@ import spock.lang.Specification
  */
 class AddTwoNumbersSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new AddTwoNumbers() != null
-    }
-
     def "getBinarySum"() {
         expect:
         AddTwoNumbers.getBinarySumLib(a, b) == c

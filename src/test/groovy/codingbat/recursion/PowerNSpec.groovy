@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class PowerNSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new PowerN() != null
-    }
-
     def "powerN"() {
         expect:
         PowerN.powerN(a, b) == c

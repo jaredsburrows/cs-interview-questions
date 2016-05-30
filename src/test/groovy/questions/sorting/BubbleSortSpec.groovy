@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class BubbleSortSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new BubbleSort() != null
-    }
-
     def "sortDescending"() {
         given:
         def numbers = [2, 4, 6, 3, 1] as int[]

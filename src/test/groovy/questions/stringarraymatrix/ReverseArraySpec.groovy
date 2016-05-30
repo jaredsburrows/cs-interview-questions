@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class ReverseArraySpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new ReverseArray() != null
-    }
-
     def "reverse - multiple arg"() {
         expect:
         ReverseArray.reverse(a as int[], b, c) == d as int[]

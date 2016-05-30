@@ -37,11 +37,6 @@ class BstPostOrderSpock extends Specification {
         System.setErr(null)
     }
 
-    def "constructor"() {
-        expect:
-        new BstPostOrder() != null
-    }
-
     def "printPostOrder"() {
         when:
         BstPostOrder.printPostOrder(tree)

@@ -24,11 +24,6 @@ class SymmetricTreeSpec extends Specification {
         balancedTree.left.right = new TreeNode<Integer>(4)
     }
 
-    def "constructor"() {
-        expect:
-        new SymmetricTree() != null
-    }
-
     def "isSymmetric"() {
         expect:
         SymmetricTree.isSymmetric(null)

@@ -10,11 +10,6 @@ import spock.lang.Specification
  */
 class Chapter3StacksAndQueuesSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new Chapter3StacksAndQueues() != null
-    }
-
     def "MinStack"() {
         given:
         MinStack minStack = new MinStack()

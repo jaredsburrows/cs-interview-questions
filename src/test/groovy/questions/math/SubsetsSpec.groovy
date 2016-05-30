@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class SubsetsSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new Subsets() != null
-    }
-
     def "subsets"() {
         expect:
         Subsets.subsets(a) == b

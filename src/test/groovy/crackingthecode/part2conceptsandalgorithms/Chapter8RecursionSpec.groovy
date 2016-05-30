@@ -10,11 +10,6 @@ import static api.Color.*
  */
 class Chapter8RecursionSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new Chapter8Recursion() != null
-    }
-
     def "getFibNumberRecursive"() {
         expect:
         Chapter8Recursion.getFibNumberRecursive(a) == b

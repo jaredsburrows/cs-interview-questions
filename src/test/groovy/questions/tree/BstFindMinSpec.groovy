@@ -27,11 +27,6 @@ class BstFindMinSpec extends Specification {
         tree.left.right.left = new TreeNode<>(3)
     }
 
-    def "constructor"() {
-        expect:
-        new BstFindMin() != null
-    }
-
     def "findMinValue"() {
         expect:
         BstFindMin.findMinValue(tree) == 1

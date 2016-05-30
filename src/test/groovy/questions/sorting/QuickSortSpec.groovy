@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class QuickSortSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new QuickSort() != null
-    }
-
     def "sortHelper"() {
         given:
         def numbers = [2, 4, 6, 3, 1] as int[]

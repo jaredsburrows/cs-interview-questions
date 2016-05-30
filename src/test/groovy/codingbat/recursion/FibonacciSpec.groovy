@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class FibonacciSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new Fibonacci() != null
-    }
-
     def "fibonacci"() {
         expect:
         Fibonacci.fibonacci(a) == b

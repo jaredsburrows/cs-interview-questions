@@ -27,11 +27,6 @@ class BstContainsSpec extends Specification {
         tree.left.right.left = new TreeNode<>(3)
     }
 
-    def "constructor"() {
-        expect:
-        new BstContains() != null
-    }
-
     def "contains"() {
         expect:
         !BstContains.contains(null, 5)

@@ -8,11 +8,6 @@ import spock.lang.Specification
  */
 class ReverseLinkedListSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new ReverseLinkedList() != null
-    }
-
     def "reverse"() {
         given:
         def node = new Node<>(1)

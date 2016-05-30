@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class SwapSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new Swap() != null
-    }
-
     def "swap"() {
         given:
         def numbers = [1, 2] as Integer[]

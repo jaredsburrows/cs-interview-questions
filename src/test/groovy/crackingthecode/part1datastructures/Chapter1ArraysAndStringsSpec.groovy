@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class Chapter1ArraysAndStringsSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new Chapter1ArraysAndStrings() != null
-    }
-
     def "isUniqueCharacters"() {
         expect:
         Chapter1ArraysAndStrings.isUniqueCharacters(a) == b

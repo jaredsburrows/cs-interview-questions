@@ -39,11 +39,6 @@ class InvertTreeSpec extends Specification {
         reversedUnbalancedTree.right.right.right = new TreeNode<Integer>(12)
     }
 
-    def "constructor"() {
-        expect:
-        new InvertTree() != null
-    }
-
     def "reverseTree"() {
         expect:
         InvertTree.reverseTree(null) == null

@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class MergeSortedArraysSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new MergeSortedArrays() != null
-    }
-
     def "merge"() {
         expect:
         MergeSortedArrays.merge(a as int[], b as int[]) == c as int[]

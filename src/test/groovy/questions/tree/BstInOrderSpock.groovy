@@ -37,11 +37,6 @@ class BstInOrderSpock extends Specification {
         System.setErr(null)
     }
 
-    def "constructor"() {
-        expect:
-        new BstInOrder() != null
-    }
-
     def "printInOrder"() {
         when:
         BstInOrder.printInOrder(tree)

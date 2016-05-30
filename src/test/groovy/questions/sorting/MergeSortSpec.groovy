@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class MergeSortSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new MergeSort() != null
-    }
-
     def "sort"() {
         given:
         def numbers = [2, 4, 6, 3, 1] as int[]

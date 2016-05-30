@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class AllStarSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new AllStar() != null
-    }
-
     def "allStar"() {
         expect:
         AllStar.allStar(a) == b

@@ -8,14 +8,9 @@ import spock.lang.Specification
  */
 class Chapter2LinkedListsSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new Chapter2LinkedLists() != null
-    }
-
     def "removeDuplicates"() {
         given:
-        Node<Integer> node = new Node<>(1)
+        def node = new Node<>(1)
         node.next = new Node<>(0)
         node.next.next = new Node<>(1)
         node.next.next.next = new Node<>(4)
@@ -35,7 +30,7 @@ class Chapter2LinkedListsSpec extends Specification {
 
     def "removeDuplicates2"() {
         given:
-        Node<Integer> node = new Node<>(1)
+        def node = new Node<>(1)
         node.next = new Node<>(0)
         node.next.next = new Node<>(1)
         node.next.next.next = new Node<>(4)
@@ -55,7 +50,7 @@ class Chapter2LinkedListsSpec extends Specification {
 
     def "removeDuplicates2 - no buffer - online"() {
         given:
-        Node<Integer> node = new Node<>(1)
+        def node = new Node<>(1)
         node.next = new Node<>(0)
         node.next.next = new Node<>(1)
         node.next.next.next = new Node<>(4)
@@ -75,7 +70,7 @@ class Chapter2LinkedListsSpec extends Specification {
 
     def "deleteDupsC - book"() {
         given:
-        Node<Integer> node = new Node<>(1)
+        def node = new Node<>(1)
         node.next = new Node<>(0)
         node.next.next = new Node<>(1)
         node.next.next.next = new Node<>(4)
@@ -94,7 +89,7 @@ class Chapter2LinkedListsSpec extends Specification {
     }
 
     def "findNthLastElement"() {
-        Node<Integer> node = new Node<>(0)
+        def node = new Node<>(0)
         node.next = new Node<>(1)
         node.next.next = new Node<>(2)
         node.next.next.next = new Node<>(3)
@@ -114,7 +109,7 @@ class Chapter2LinkedListsSpec extends Specification {
 
     def "deleteMiddleNode"() {
         given:
-        Node<Character> node1 = new Node<>("a" as Character)
+        def node1 = new Node<>("a" as Character)
         node1.next = new Node<>("b" as Character)
         node1.next.next = new Node<>("c" as Character)
         node1.next.next.next = new Node<>("d" as Character)
@@ -135,27 +130,27 @@ class Chapter2LinkedListsSpec extends Specification {
         given:
         // book
         // 315 + 592 = 808
-        Node<Integer> book1 = new Node<>(3)
+        def book1 = new Node<>(3)
         book1.next = new Node<>(1)
         book1.next.next = new Node<>(5)
 
-        Node<Integer> book2 = new Node<>(5)
+        def book2 = new Node<>(5)
         book2.next = new Node<>(9)
         book2.next.next = new Node<>(2)
 
         // programming geeks
         // 342 + 465 = 807
-        Node<Integer> pg = new Node<>(2)
+        def pg = new Node<>(2)
         pg.next = new Node<>(4)
         pg.next.next = new Node<>(3)
 
-        Node<Integer> pg2 = new Node<>(5)
+        def pg2 = new Node<>(5)
         pg2.next = new Node<>(6)
         pg2.next.next = new Node<>(4)
 
         // from 3 to 4 digits
         // 999 + 999 = 1998
-        Node<Integer> nine = new Node<>(9)
+        def nine = new Node<>(9)
         nine.next = new Node<>(9)
         nine.next.next = new Node<>(9)
 
@@ -164,17 +159,17 @@ class Chapter2LinkedListsSpec extends Specification {
         Chapter2LinkedLists.addTwoLists(nine, null) == null
         Chapter2LinkedLists.addTwoLists(null, null) == null
 
-        Node<Integer> result = Chapter2LinkedLists.addTwoLists(book1, book2)
+        def result = Chapter2LinkedLists.addTwoLists(book1, book2)
         result.value == 8
         result.next.value == 0
         result.next.next.value == 8
 
-        Node<Integer> result2 = Chapter2LinkedLists.addTwoLists(pg, pg2)
+        def result2 = Chapter2LinkedLists.addTwoLists(pg, pg2)
         result2.value == 7
         result2.next.value == 0
         result2.next.next.value == 8
 
-        Node<Integer> result3 = Chapter2LinkedLists.addTwoLists(nine, nine)
+        def result3 = Chapter2LinkedLists.addTwoLists(nine, nine)
         result3.value == 8
         result3.next.value == 9
         result3.next.next.value == 9
@@ -187,11 +182,11 @@ class Chapter2LinkedListsSpec extends Specification {
     // input: A -> B -> C -> D -> E -> C [the same C as earlier]
     def "getCircular - true"() {
         given:
-        Node<Integer> nodeA = new Node<>(0)
-        Node<Integer> nodeB = new Node<>(1)
-        Node<Integer> nodeC = new Node<>(2)
-        Node<Integer> nodeD = new Node<>(3)
-        Node<Integer> nodeE = new Node<>(4)
+        def nodeA = new Node<>(0)
+        def nodeB = new Node<>(1)
+        def nodeC = new Node<>(2)
+        def nodeD = new Node<>(3)
+        def nodeE = new Node<>(4)
 
         nodeA.next = nodeB
         nodeB.next = nodeC
@@ -200,8 +195,8 @@ class Chapter2LinkedListsSpec extends Specification {
         nodeE.next = nodeC
 
         when:
-        Node<Integer> nullResult = Chapter2LinkedLists.getCircular(null)
-        Node<Integer> result = Chapter2LinkedLists.getCircular(nodeA)
+        def nullResult = Chapter2LinkedLists.getCircular(null)
+        def result = Chapter2LinkedLists.getCircular(nodeA)
 
         then:
         !nullResult
@@ -213,11 +208,11 @@ class Chapter2LinkedListsSpec extends Specification {
         //       n4 <- n3
         //        |     |
         // n0 -> n1 -> n2
-        Node<Integer> node0 = new Node<>(0)
-        Node<Integer> node1 = new Node<>(1)
-        Node<Integer> node2 = new Node<>(2)
-        Node<Integer> node3 = new Node<>(3)
-        Node<Integer> node4 = new Node<>(4)
+        def node0 = new Node<>(0)
+        def node1 = new Node<>(1)
+        def node2 = new Node<>(2)
+        def node3 = new Node<>(3)
+        def node4 = new Node<>(4)
 
         node0.next = node1
         node1.next = node2
@@ -225,8 +220,8 @@ class Chapter2LinkedListsSpec extends Specification {
         node3.next = node4
 
         when:
-        Node<Integer> nullResult = Chapter2LinkedLists.getCircular(null)
-        Node<Integer> result = Chapter2LinkedLists.getCircular(node0)
+        def nullResult = Chapter2LinkedLists.getCircular(null)
+        def result = Chapter2LinkedLists.getCircular(node0)
 
         then:
         !nullResult

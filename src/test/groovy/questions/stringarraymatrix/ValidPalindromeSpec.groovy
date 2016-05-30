@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class ValidPalindromeSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new ValidPalindrome() != null
-    }
-
     def "isPalindrome"() {
         expect:
         ValidPalindrome.isPalindrome(a) == b

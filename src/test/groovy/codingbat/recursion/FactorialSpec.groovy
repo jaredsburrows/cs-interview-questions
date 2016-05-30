@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class FactorialSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new Factorial() != null
-    }
-
     def "factorial"() {
         expect:
         Factorial.factorial(a) == b

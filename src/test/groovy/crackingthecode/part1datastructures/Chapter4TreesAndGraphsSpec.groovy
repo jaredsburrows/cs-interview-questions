@@ -9,11 +9,11 @@ import spock.lang.Specification
  */
 class Chapter4TreesAndGraphsSpec extends Specification {
 
-    TreeNode<Integer> tree = new TreeNode(26)
-    TreeNode<Integer> subTree = new TreeNode(10)
-    TreeNode<Integer> balancedTree = new TreeNode(0)
-    TreeNode<Integer> balancedTree2 = new TreeNode(0)
-    TreeNode<Integer> unbalancedTree = new TreeNode(5)
+    def tree = new TreeNode(26)
+    def subTree = new TreeNode(10)
+    def balancedTree = new TreeNode(0)
+    def balancedTree2 = new TreeNode(0)
+    def unbalancedTree = new TreeNode(5)
 
     def "setup"() {
         balancedTree.right = new TreeNode(10)
@@ -45,11 +45,6 @@ class Chapter4TreesAndGraphsSpec extends Specification {
         tree.left.right = new TreeNode(6)
     }
 
-    def "constructor"() {
-        expect:
-        new Chapter4TreesAndGraphs() != null
-    }
-
     def "isBalanced"() {
         expect:
         Chapter4TreesAndGraphs.isBalanced(null)
@@ -60,11 +55,11 @@ class Chapter4TreesAndGraphsSpec extends Specification {
 
     def "hasGraphNodeBFS"() {
         given:
-        GraphNode<Integer> n1 = new GraphNode<>(1)
-        GraphNode<Integer> n2 = new GraphNode<>(2)
-        GraphNode<Integer> n3 = new GraphNode<>(3)
-        GraphNode<Integer> n4 = new GraphNode<>(4)
-        GraphNode<Integer> n5 = new GraphNode<>(5)
+        def n1 = new GraphNode<>(1)
+        def n2 = new GraphNode<>(2)
+        def n3 = new GraphNode<>(3)
+        def n4 = new GraphNode<>(4)
+        def n5 = new GraphNode<>(5)
 
         n1.neighbors = [n2, n3, n5]
         n2.neighbors = [n1, n4]
@@ -82,13 +77,13 @@ class Chapter4TreesAndGraphsSpec extends Specification {
         int[] sortedArray = [1, 2, 3, 4, 5, 6, 7]
         int[] empty = []
 
-        TreeNode<Integer> treeNode = new TreeNode<>(4)
-        treeNode.left = new TreeNode<Integer>(2)
-        treeNode.left.left = new TreeNode<Integer>(1)
-        treeNode.left.right = new TreeNode<Integer>(3)
-        treeNode.right = new TreeNode<Integer>(5)
-        treeNode.right.left = new TreeNode<Integer>(6)
-        treeNode.right.right = new TreeNode<Integer>(7)
+        def treeNode = new TreeNode<>(4)
+        treeNode.left = new TreeNode<>(2)
+        treeNode.left.left = new TreeNode<>(1)
+        treeNode.left.right = new TreeNode<>(3)
+        treeNode.right = new TreeNode<>(5)
+        treeNode.right.left = new TreeNode<>(6)
+        treeNode.right.right = new TreeNode<>(7)
 
         // 1 2 3 4 5 6 7
         //      4
@@ -102,7 +97,7 @@ class Chapter4TreesAndGraphsSpec extends Specification {
         Chapter4TreesAndGraphs.getMinimumTree(sortedArray, sortedArray.size(), 0) == null
         Chapter4TreesAndGraphs.getMinimumTree(sortedArray, -1, sortedArray.size()) == null
         Chapter4TreesAndGraphs.getMinimumTree(sortedArray, 0, -1) == null
-        TreeNode<Integer> tree = Chapter4TreesAndGraphs.
+        def tree = Chapter4TreesAndGraphs.
                 getMinimumTree(sortedArray, 0, sortedArray.size() - 1)
         tree.value == 4
         tree.left.value == 2
@@ -115,13 +110,13 @@ class Chapter4TreesAndGraphsSpec extends Specification {
 
     def "getLinkedListDepth"() {
         given:
-        TreeNode<Integer> treeNode4 = new TreeNode<>(4)
-        TreeNode<Integer> treeNode2 = new TreeNode<>(2)
-        TreeNode<Integer> treeNode1 = new TreeNode<>(1)
-        TreeNode<Integer> treeNode3 = new TreeNode<>(3)
-        TreeNode<Integer> treeNode5 = new TreeNode<>(5)
-        TreeNode<Integer> treeNode6 = new TreeNode<>(6)
-        TreeNode<Integer> treeNode7 = new TreeNode<>(7)
+        def treeNode4 = new TreeNode<>(4)
+        def treeNode2 = new TreeNode<>(2)
+        def treeNode1 = new TreeNode<>(1)
+        def treeNode3 = new TreeNode<>(3)
+        def treeNode5 = new TreeNode<>(5)
+        def treeNode6 = new TreeNode<>(6)
+        def treeNode7 = new TreeNode<>(7)
 
         treeNode4.left = treeNode2
         treeNode4.left.left = treeNode1
@@ -139,13 +134,13 @@ class Chapter4TreesAndGraphsSpec extends Specification {
 
     def "commonAncestor"() {
         given:
-        TreeNode<Integer> treeNode4 = new TreeNode<>(4)
-        TreeNode<Integer> treeNode2 = new TreeNode<>(2)
-        TreeNode<Integer> treeNode1 = new TreeNode<>(1)
-        TreeNode<Integer> treeNode3 = new TreeNode<>(3)
-        TreeNode<Integer> treeNode5 = new TreeNode<>(5)
-        TreeNode<Integer> treeNode6 = new TreeNode<>(6)
-        TreeNode<Integer> treeNode7 = new TreeNode<>(7)
+        def treeNode4 = new TreeNode<>(4)
+        def treeNode2 = new TreeNode<>(2)
+        def treeNode1 = new TreeNode<>(1)
+        def treeNode3 = new TreeNode<>(3)
+        def treeNode5 = new TreeNode<>(5)
+        def treeNode6 = new TreeNode<>(6)
+        def treeNode7 = new TreeNode<>(7)
 
         treeNode4.left = treeNode2
         treeNode4.left.left = treeNode1

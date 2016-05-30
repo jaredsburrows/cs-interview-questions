@@ -8,11 +8,6 @@ import spock.lang.Specification
  */
 class Chapter9SortingAndSearchingSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new Chapter9SortingAndSearching() != null
-    }
-
     def "mergeAInB"() {
         expect:
         Chapter9SortingAndSearching.mergeBInA(a as int[], b as int[], c as int) == d as int[]

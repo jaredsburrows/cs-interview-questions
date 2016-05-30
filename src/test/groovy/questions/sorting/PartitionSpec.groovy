@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class PartitionSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new Partition() != null
-    }
-
     def "part"() {
         given:
         def numbers = [4, 5, 3, 7, 2] as int[]

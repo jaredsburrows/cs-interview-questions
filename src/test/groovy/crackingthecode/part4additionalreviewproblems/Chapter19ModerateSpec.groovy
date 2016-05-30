@@ -8,11 +8,6 @@ import spock.lang.Specification
  */
 class Chapter19ModerateSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new Chapter19Moderate() != null
-    }
-
     def "swapVar"() {
         given:
         def a = 1

@@ -9,11 +9,6 @@ import spock.lang.Specification
  */
 class Chapter7ObjectOrientedDesignSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new Chapter7ObjectOrientedDesign() != null
-    }
-
     def "card"() {
         Card card = new CardGameCard(Card.Suite.HEARTS, 5)
 

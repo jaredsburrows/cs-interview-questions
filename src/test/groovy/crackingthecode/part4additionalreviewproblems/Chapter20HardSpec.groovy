@@ -1,15 +1,11 @@
 package crackingthecode.part4additionalreviewproblems
 
 import spock.lang.Specification
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class Chapter20HardSpec extends Specification {
-
-    def "constructor"() {
-        expect:
-        new Chapter20Hard() != null
-    }
 
     def "20.1 - addTwoNumbers"() {
         expect:

@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class BinarySearchSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new BinarySearch() != null
-    }
-
     def "search"() {
         expect:
         BinarySearch.search(a as int[], b) == c

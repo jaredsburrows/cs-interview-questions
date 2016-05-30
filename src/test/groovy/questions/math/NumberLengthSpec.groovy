@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class NumberLengthSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new NumberLength() != null
-    }
-
     def "getIntegerLength"() {
         expect:
         NumberLength.getIntegerLength(a) == b

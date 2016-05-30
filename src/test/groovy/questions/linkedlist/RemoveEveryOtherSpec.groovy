@@ -8,11 +8,6 @@ import spock.lang.Specification
  */
 class RemoveEveryOtherSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new RemoveEveryOther() != null
-    }
-
     def "RemoveEveryOther"() {
         given:
         def node = new Node<>(1)

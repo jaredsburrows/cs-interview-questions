@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class ReorderBooleanArraySpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new ReorderBooleanArray() != null
-    }
-
     def "reorder bools - primitive"() {
         given:
         boolean[] b = [false, true, true, true, false, true]

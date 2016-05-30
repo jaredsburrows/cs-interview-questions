@@ -12,7 +12,7 @@ matrix:
 install: true
 
 script:
-  - ./gradlew clean test jacocoTestReport coveralls --stacktrace
+  - ./gradlew clean test pmdMain findbugsMain checkstyleMain jacocoTestReport coveralls --stacktrace
 
 notifications:
   email: false

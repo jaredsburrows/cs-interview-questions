@@ -7,11 +7,6 @@ import spock.lang.Specification
  */
 class ReverseNumberSpec extends Specification {
 
-    def "constructor"() {
-        expect:
-        new ReverseNumber() != null
-    }
-
     def "reverseLong"() {
         expect:
         ReverseNumber.reverseLong(a) == b
