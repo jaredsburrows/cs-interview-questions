@@ -1,6 +1,7 @@
 #include <CUnit/Basic.h>
 
-#include "chapter1arraysandstrings.h"
+#include "crackingthecode/part1datastructures/chapter1arraysandstrings.h"
+#include "crackingthecode/part1datastructures/test_chapter1arraysandstrings.h"
 
 void test_isUniqueCharacters() {
     CU_ASSERT(!isUniqueCharacters('\0'));

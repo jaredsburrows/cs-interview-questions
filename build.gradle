@@ -36,8 +36,8 @@ model {
                 }
             }
 
-            googleTest {
-                headers.srcDir "/usr/local/Cellar/gtest/include/"
+            gtest {
+                headers.srcDir "/usr/local/Cellar/gtest/include"
 
                 binaries.withType(StaticLibraryBinary) {
                     staticLibraryFile = file("/usr/local/Cellar/gtest/libgtest.a")
@@ -51,12 +51,12 @@ model {
             sources {
                 c {
                     source {
-                        srcDir "src/main/c/crackingthecode"
+                        srcDir "src/main/c"
                         include "**/*.c"
                     }
 
                     exportedHeaders {
-                        srcDir "src/main/c/crackingthecode/include"
+                        srcDir "src/main/c/include"
                     }
                 }
             }
@@ -66,12 +66,12 @@ model {
             sources {
                 cpp {
                     source {
-                        srcDir "src/main/cpp/crackingthecode"
+                        srcDir "src/main/cpp"
                         include "**/*.cpp"
                     }
 
                     exportedHeaders {
-                        srcDir "src/main/cpp/crackingthecode/include"
+                        srcDir "src/main/cpp/include"
                     }
                 }
             }
@@ -83,12 +83,12 @@ model {
             sources {
                 c {
                     source {
-                        srcDir "src/test/c/crackingthecode"
+                        srcDir "src/test/c"
                         include "**/*.c"
                     }
 
                     exportedHeaders {
-                        srcDir "src/test/c/crackingthecode/include"
+                        srcDir "src/test/c/include"
                     }
                 }
             }
@@ -100,12 +100,12 @@ model {
             sources {
                 cpp {
                     source {
-                        srcDir "src/test/cpp/crackingthecode"
+                        srcDir "src/test/cpp"
                         include "**/*.cpp"
                     }
 
                     exportedHeaders {
-                        srcDir "src/test/cpp/crackingthecode/include"
+                        srcDir "src/test/cpp/include"
                     }
                 }
             }
@@ -120,7 +120,7 @@ model {
         }
 
         withType(GoogleTestTestSuiteBinarySpec) {
-            lib library: "googleTest", linkage: "static"
+            lib library: "gtest", linkage: "static"
         }
     }
 }

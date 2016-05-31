@@ -8,7 +8,7 @@ CS Interview Practice [![Build Status](https://travis-ci.org/jaredsburrows/cs-in
 
 **My Profile:** https://www.codeeval.com/profile/jaredsburrows/
 
-**My Solutions:** [src/main/java/codeeval]((src/main/java/codeeval))
+**My Solutions:** [src/main/java/codeeval](src/main/java/codeeval)
 
 
 ## Codingbat

@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
-#include "chapter1arraysandstrings.h"
+
+#include "crackingthecode/part1datastructures/chapter1arraysandstrings.h"
 
 TEST(chapter1arraysandstrings, test_isUniqueCharacters) {
     ASSERT_TRUE(!isUniqueCharacters('\0'));

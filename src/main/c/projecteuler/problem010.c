@@ -6,7 +6,7 @@
 #include <math.h>
 
 int isPrime(int n)
-{   
+{
     int i = 0;
 
     if (n < 4)
@@ -22,7 +22,7 @@ int isPrime(int n)
     return 1;
 }
 
- int main()
+ int problem010()
  {
     long i = 2000000, sum = 0;
 

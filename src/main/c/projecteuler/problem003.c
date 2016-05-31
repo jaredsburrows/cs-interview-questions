@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <math.h>
 
-const int isPrime(const int n)
+const int isPrime003(const int n)
 {
     int i = 0;
 
@@ -22,12 +22,12 @@ const int isPrime(const int n)
     return 1;
 }
 
- int main()
+ int problem003()
  {
     long num = 600851475143, i = pow(num, 0.5) + 1;
 
     while (i-=2) {
-        if (! (num % i) && isPrime(i)) {
+        if (! (num % i) && isPrime003(i)) {
                 break;
         }
     }

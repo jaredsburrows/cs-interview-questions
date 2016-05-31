@@ -1,6 +1,7 @@
 #include <CUnit/Basic.h>
 #include "gradle_cunit_register.h"
-#include "test_chapter1arraysandstrings.h"
+
+#include "crackingthecode/part1datastructures/test_chapter1arraysandstrings.h"
 
 int suite_init() {
     return 0;

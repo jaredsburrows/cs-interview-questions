@@ -1,6 +1,5 @@
 package api.util;
 
-
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */

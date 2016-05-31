@@ -1,7 +1,7 @@
 #include <cstdbool>
 #include <cstring>
 
-#include "chapter1arraysandstrings.h"
+#include "crackingthecode/part1datastructures/chapter1arraysandstrings.h"
 
 const bool isUniqueCharacters(const char* input) {
     if (!input || *input == '\0') {
