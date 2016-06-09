@@ -8,9 +8,9 @@ public final class Point {
     private final int mX;
     private final int mY;
 
-    public Point(final int x, final int y) {
-        this.mX = x;
-        this.mY = y;
+    public Point(final int positionX, final int positionY) {
+        this.mX = positionX;
+        this.mY = positionY;
     }
 
     public int getX() {

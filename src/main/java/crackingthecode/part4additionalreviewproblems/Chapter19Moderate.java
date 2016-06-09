@@ -322,18 +322,18 @@ public class Chapter19Moderate {
     }
 
     // book solution, Time - O(N*LOG(N)), Space - O(N), only prints them out
-    public static void printPairSums(final int[] array, final int sum) {
+    public static void printPairSums(final int[] array, final int targetSum) {
         Arrays.sort(array);
         int first = 0;
         int last = array.length - 1;
         while (first < last) {
-            int s = array[first] + array[last];
-            if (s == sum) {
+            final int sum = array[first] + array[last];
+            if (sum == targetSum) {
                 System.out.println(array[first] + " " + array[last]);
                 ++first;
                 --last;
             } else {
-                if (s < sum) {
+                if (sum < targetSum) {
                     ++first;
                 } else {
                     --last;

@@ -33,7 +33,7 @@ public class Chapter4TreesAndGraphs {
      * between two nodes.
      */
     // BFS
-    public static <T> boolean hasGraphNodeBFS(final GraphNode<T> start, final GraphNode<T> end) {
+    public static <T> boolean hasGraphNodeBfs(final GraphNode<T> start, final GraphNode<T> end) {
         final Queue<GraphNode<T>> queue = new LinkedList<>();
 
         start.visited = true;

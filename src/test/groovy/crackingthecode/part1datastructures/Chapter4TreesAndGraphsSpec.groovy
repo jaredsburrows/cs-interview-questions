@@ -68,8 +68,8 @@ class Chapter4TreesAndGraphsSpec extends Specification {
         n5.neighbors = [n1, n3, n4]
 
         expect:
-        Chapter4TreesAndGraphs.hasGraphNodeBFS(n1, n5)
-        !Chapter4TreesAndGraphs.hasGraphNodeBFS(n1, new GraphNode<Integer>(9))
+        Chapter4TreesAndGraphs.hasGraphNodeBfs(n1, n5)
+        !Chapter4TreesAndGraphs.hasGraphNodeBfs(n1, new GraphNode<Integer>(9))
     }
 
     def "getBinaryTree"() {

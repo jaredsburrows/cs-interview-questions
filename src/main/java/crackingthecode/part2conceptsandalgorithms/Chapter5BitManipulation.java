@@ -99,34 +99,34 @@ public class Chapter5BitManipulation {
     // output: 2
     // assuming 32 bit integers
     // Time - O(32) == O(1), Space - O(1)
-    public static int getDiffBits(final int a, final int b) {
-        int aZero = 0;
-        int bZero = 0;
-        int aOne = 0;
-        int bOne = 0;
+    public static int getDiffBits(final int left, final int right) {
+        int zeroA = 0;
+        int zeroB = 0;
+        int oneA = 0;
+        int oneB = 0;
         int zeroDiff;
         int oneDiff;
 
         for (int i = 0; i < 32; i++) {
-            int temp = a >> (32 - i - 1) & 1;
+            int temp = left >> (32 - i - 1) & 1;
             if (temp == 0) {
-                aZero++;
+                zeroA++;
             } else {
-                aOne++;
+                oneA++;
             }
         }
 
         for (int i = 0; i < 32; i++) {
-            int temp = b >> (32 - i - 1) & 1;
+            int temp = right >> (32 - i - 1) & 1;
             if (temp == 0) {
-                bZero++;
+                zeroB++;
             } else {
-                bOne++;
+                oneB++;
             }
         }
 
-        zeroDiff = Math.abs(bZero - aZero);
-        oneDiff = Math.abs(bOne - aOne);
+        zeroDiff = Math.abs(zeroB - zeroA);
+        oneDiff = Math.abs(oneB - oneA);
 
         if (zeroDiff == oneDiff) {
             return zeroDiff;
@@ -136,9 +136,9 @@ public class Chapter5BitManipulation {
     }
 
     // book answer
-    public static int bitSwapRequired(final int a, final int b) {
+    public static int bitSwapRequired(final int left, final int right) {
         int count = 0;
-        for (int c = a ^ b; c != 0; c = c >> 1) {
+        for (int c = left ^ right; c != 0; c = c >> 1) {
             count += c & 1;
         }
         return count;
@@ -155,8 +155,8 @@ public class Chapter5BitManipulation {
     // 0xaaaaaaaa = 2863311530 = 10101010101010101010101010101010
     // TODO - review
     // book answer
-    public static int getSwapBits(final int a) {
-        return ((a & 0xaaaaaaaa) >> 1) | ((a & 0x55555555) << 1);
+    public static int getSwapBits(final int number) {
+        return ((number & 0xaaaaaaaa) >> 1) | ((number & 0x55555555) << 1);
     }
 
     /**

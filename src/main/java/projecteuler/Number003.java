@@ -5,13 +5,13 @@ package projecteuler;
  */
 public class Number003 {
 
-    public static boolean isPrime(final long n) {
-        if (n > 2 && (n & 1) == 0) {
+    public static boolean isPrime(final long number) {
+        if (number > 2 && (number & 1) == 0) {
             return false;
         }
 
-        for (int i = 3; (i * i) <= n; i += 2) {
-            if (n % i == 0) {
+        for (int i = 3; (i * i) <= number; i += 2) {
+            if (number % i == 0) {
                 return false;
             }
         }

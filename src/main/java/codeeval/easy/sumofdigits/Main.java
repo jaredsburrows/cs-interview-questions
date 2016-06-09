@@ -10,10 +10,11 @@ public class Main {
         final Scanner scanner = new Scanner(new File(args[0]), Charset.defaultCharset().name());
 
         while (scanner.hasNext()) {
-            int sum = 0, n = scanner.nextInt();
-            while (n != 0) {
-                sum = sum + (n % 10);
-                n = n / 10;
+            int sum = 0;
+            int number = scanner.nextInt();
+            while (number != 0) {
+                sum = sum + (number % 10);
+                number = number / 10;
             }
             System.out.println(sum);
         }

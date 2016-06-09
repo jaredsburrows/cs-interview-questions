@@ -36,59 +36,59 @@ public class Chapter18ThreadsAndLocks {
      * could you make your implementation thread safe and exception safe?
      */
     // C++11
-//    #include <iostream>
-//
-//    using namespace std;
-//
-//    class Lock {
-//        public:
-//        Lock() { }
-//        ~Lock() { }
-//        void acquire() { }
-//        void release() { }
-//    };
-//
-//    template <class T>
-//    class Singleton {
-//        private:
-//            static Lock lock;
-//            static T* instance;
-//        protected:
-//            Singleton() { };
-//        public:
-//            static T* getInstance();
-//    };
-//
-//    template <class T>
-//    T* Singleton<T>::instance = nullptr;
-//
-//    template <class T>
-//    T* Singleton<T>::getInstance() {
-//        if (instance == nullptr) {
-//            lock.acquire();
-//            // If two threads simultaneously made this call, we need to make sure
-//            // the thread that acquired creates the instance.
-//            if (instance == nullptr) {
-//                instance = new T;
-//            }
-//
-//            lock.release();
-//        }
-//
-//        return instance;
-//    }
-//
-//    class Foo {
-//
-//    };
-//
-//    int main() {
-//
-//        Lock *f = Singleton<Lock>::getInstance();
-//
-//
-//        return 0;
-//    }
+    //    #include <iostream>
+    //
+    //    using namespace std;
+    //
+    //    class Lock {
+    //        public:
+    //        Lock() { }
+    //        ~Lock() { }
+    //        void acquire() { }
+    //        void release() { }
+    //    };
+    //
+    //    template <class T>
+    //    class Singleton {
+    //        private:
+    //            static Lock lock;
+    //            static T* instance;
+    //        protected:
+    //            Singleton() { };
+    //        public:
+    //            static T* getInstance();
+    //    };
+    //
+    //    template <class T>
+    //    T* Singleton<T>::instance = nullptr;
+    //
+    //    template <class T>
+    //    T* Singleton<T>::getInstance() {
+    //        if (instance == nullptr) {
+    //            lock.acquire();
+    //            // If two threads simultaneously made this call, we need to make sure
+    //            // the thread that acquired creates the instance.
+    //            if (instance == nullptr) {
+    //                instance = new T;
+    //            }
+    //
+    //            lock.release();
+    //        }
+    //
+    //        return instance;
+    //    }
+    //
+    //    class Foo {
+    //
+    //    };
+    //
+    //    int main() {
+    //
+    //        Lock *f = Singleton<Lock>::getInstance();
+    //
+    //
+    //        return 0;
+    //    }
 
     /**
      * 18.4 - Design a class which provides a lock only if there are no possible deadlocks.
@@ -209,11 +209,11 @@ public class Chapter18ThreadsAndLocks {
      * and C at the same time?
      */
     class SomeSyncMethods {
-        public synchronized void A() {
+        public synchronized void methodA() {
 
         }
 
-        public void C() {
+        public void methodC() {
 
         }
     }

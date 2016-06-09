@@ -22,39 +22,39 @@ public class Main {
             final String[] lineArray = line.split(";");
             if (lineArray.length > 0) {
                 for (final String element : lineArray) {
-                    int n = -1;
+                    int number = -1;
                     if ("zero".equals(element)) {
-                        n = 0;
+                        number = 0;
                     }
                     if ("one".equals(element)) {
-                        n = 1;
+                        number = 1;
                     }
                     if ("two".equals(element)) {
-                        n = 2;
+                        number = 2;
                     }
                     if ("three".equals(element)) {
-                        n = 3;
+                        number = 3;
                     }
                     if ("four".equals(element)) {
-                        n = 4;
+                        number = 4;
                     }
                     if ("five".equals(element)) {
-                        n = 5;
+                        number = 5;
                     }
                     if ("six".equals(element)) {
-                        n = 6;
+                        number = 6;
                     }
                     if ("seven".equals(element)) {
-                        n = 7;
+                        number = 7;
                     }
                     if ("eight".equals(element)) {
-                        n = 8;
+                        number = 8;
                     }
                     if ("nine".equals(element)) {
-                        n = 9;
+                        number = 9;
                     }
 
-                    System.out.print(n);
+                    System.out.print(number);
                 }
             }
 

@@ -124,17 +124,20 @@ public class Chapter20Hard {
     // book answer
     // Time - O(N), Space - O(1)
     // TODO
-    public static int count2sI(final int number) {
-        int countof2s = 0, digit;
-        int j = number, seendigits = 0, position = 0, pow10_pos = 1;
+    public static int count2sI(int number) {
+        int countof2s = 0;
+        int digit;
+        int seendigits = 0;
+        int position = 0;
+        int pow10Pos = 1;
         /* maintaining this value instead of calling pow() is an 6x perf
          * gain (48s -> 8s) pow10_posMinus1. maintaining this value
          * instead of calling Numof2s is an 2x perf gain (8s -> 4s).
          * overall > 10x speedup */
-        while (j > 0) {
-            digit = j % 10;
-            int pow10_posMinus1 = pow10_pos / 10;
-            countof2s += digit * position * pow10_posMinus1;
+        while (number > 0) {
+            digit = number % 10;
+            int pow10PosMinus1 = pow10Pos / 10;
+            countof2s += digit * position * pow10PosMinus1;
             /* we do this if digit <, >, or = 2
              * Digit < 2 implies there are no 2s contributed by this
              * digit.
@@ -146,12 +149,12 @@ public class Chapter20Hard {
             /* Digit > 2 implies there are digit * num of 2s by the prev.
              * position + 10^position */
             } else if (digit > 2) {
-                countof2s += pow10_pos;
+                countof2s += pow10Pos;
             }
-            seendigits = seendigits + pow10_pos * digit;
-            pow10_pos *= 10;
+            seendigits = seendigits + pow10Pos * digit;
+            pow10Pos *= 10;
             position++;
-            j = j / 10;
+            number = number / 10;
         }
         return countof2s;
     }

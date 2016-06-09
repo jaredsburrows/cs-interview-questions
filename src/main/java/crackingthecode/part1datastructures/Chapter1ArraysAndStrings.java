@@ -78,16 +78,10 @@ public class Chapter1ArraysAndStrings {
             return input;
         }
 
-        int i = 0;
-        int j = input.length - 1;
-
-        while (i < j) {
+        for (int i = 0, j = input.length - 1; i < j; i++, j--) {
             final char temp = input[i];
             input[i] = input[j];
             input[j] = temp;
-
-            i++;
-            j--;
         }
 
         return input;

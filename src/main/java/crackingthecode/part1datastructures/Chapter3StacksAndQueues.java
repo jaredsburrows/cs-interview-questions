@@ -9,14 +9,14 @@ import java.util.Stack;
 public class Chapter3StacksAndQueues {
 
     /**
-     * 3.1 - Describe how you could use a single array to implement three stacks.
+     * 3.1 - Describe how you could use a single array to implement three mStacks.
      */
     // n - size of array
-    // k - number of stacks
-    // n/k - divide up the array into equal parts for stacks
+    // k - number of mStacks
+    // n/k - divide up the array into equal parts for mStacks
     // push(int stackNumber, int value) - use "stackNumber" to identify stack, value to add to stack
     // pop(int stackNumber) - use "stackNumber" to identify stack, pop LIFO
-    // int[] to keep all stacks together
+    // int[] to keep all mStacks together
     // use int[] or 3 ints to keep track of the top of each stack - length of stack
     //  0  1  2     3  4  5     6  7  8  9
     // [1][2][3] | [1][2][0] | [0][0][0][0] - stack 1 - 3, stack 2 - 2, stack 3 - 0
@@ -29,30 +29,30 @@ public class Chapter3StacksAndQueues {
     @SuppressWarnings("serial")
     public static class MinStack extends Stack<Integer> {
 
-        final Stack<Integer> minStack = new Stack<>();
+        private final Stack<Integer> mMinStack = new Stack<>();
 
         public void push(final int value) {
             if (value <= this.getMinimum()) {
-                minStack.push(value);
+                this.mMinStack.push(value);
             }
 
             super.push(value);
         }
 
         public Integer pop() {
-            int value = super.pop();
+            final int value = super.pop();
             if (value == this.getMinimum()) {
-                minStack.pop();
+                this.mMinStack.pop();
             }
 
             return value;
         }
 
         public Integer getMinimum() {
-            if (minStack.isEmpty()) {
+            if (this.mMinStack.isEmpty()) {
                 return Integer.MAX_VALUE;
             } else {
-                return minStack.peek();
+                return this.mMinStack.peek();
             }
         }
     }
@@ -61,7 +61,7 @@ public class Chapter3StacksAndQueues {
      * 3.3 - Imagine a (literal) stack of plates. If the stack gets too high, it might topple.
      * Therefore, in real life, we would likely start a new stack when the previous stack exceeds
      * some threshold. Implement a data structure SetOfStacks that mimics this. SetOfStacks should
-     * be composed of several stacks, and should create a new stack once the previous one exceeds
+     * be composed of several mStacks, and should create a new stack once the previous one exceeds
      * capacity. SetOfStacks.push() and SetOfStacks.pop() should behave identically to a single
      * stack (that is, pop() should return the same values as it would if there were just a single
      * stack).
@@ -71,41 +71,42 @@ public class Chapter3StacksAndQueues {
     // stack is too high, it might topple
     // create a new one when the previous exceeds capacity
     public static class SetOfStacks<T> {
-        private ArrayList<Stack<T>> stacks = new ArrayList<>();
-        private int currentStack;
-        private int capacity;
+
+        private ArrayList<Stack<T>> mStacks = new ArrayList<>();
+        private int mCurrentStack;
+        private int mCapacity;
 
         public SetOfStacks(final int capacity) {
-            this.currentStack = 0;
-            this.capacity = capacity;
-            this.stacks.add(new Stack<>());
+            this.mCurrentStack = 0;
+            this.mCapacity = capacity;
+            this.mStacks.add(new Stack<>());
         }
 
         public void push(T t) {
-            if (this.stacks.get(this.currentStack).size() == this.capacity) {
+            if (this.mStacks.get(this.mCurrentStack).size() == this.mCapacity) {
                 final Stack<T> stack = new Stack<>();
                 stack.push(t);
-                this.stacks.add(stack);
-                this.currentStack++;
+                this.mStacks.add(stack);
+                this.mCurrentStack++;
             } else {
-                this.stacks.get(this.currentStack).push(t);
+                this.mStacks.get(this.mCurrentStack).push(t);
             }
         }
 
         public T pop() {
-            if (this.stacks.get(this.currentStack).size() > 0) {
-                return this.stacks.get(this.currentStack).pop();
-            } else if (this.currentStack > 0 && this.stacks.get(this.currentStack).size() == 0) {
-                this.stacks.remove(this.currentStack);
-                this.currentStack--;
-                return this.stacks.get(this.currentStack).pop();
+            if (this.mStacks.get(this.mCurrentStack).size() > 0) {
+                return this.mStacks.get(this.mCurrentStack).pop();
+            } else if (this.mCurrentStack > 0 && this.mStacks.get(this.mCurrentStack).size() == 0) {
+                this.mStacks.remove(this.mCurrentStack);
+                this.mCurrentStack--;
+                return this.mStacks.get(this.mCurrentStack).pop();
             }
 
             return null;
         }
 
         public T popAt(int index) {
-            return this.stacks.get(index).pop();
+            return this.mStacks.get(index).pop();
         }
     }
 
@@ -122,51 +123,52 @@ public class Chapter3StacksAndQueues {
     // TODO
 
     /**
-     * 3.5 - Implement a MyQueue class which implements a queue using two stacks.
+     * 3.5 - Implement a MyQueue class which implements a queue using two mStacks.
      */
     // [3]     [1]
     // [2]  -> [2]
     // [1]     [3]
     public static class MyQueue<T> {
-        Stack<T> stack1 = new Stack<>();
-        Stack<T> stack2 = new Stack<>();
+
+        private Stack<T> mStack1 = new Stack<>();
+        private Stack<T> mStack2 = new Stack<>();
 
         // Time - O(1)
         public int size() {
-            return stack1.size() + stack2.size();
+            return this.mStack1.size() + this.mStack2.size();
         }
 
         // Time - O(1)
         public void push(T t) {
-            stack1.push(t);
+            this.mStack1.push(t);
         }
 
         // Time - O(N)
         public T remove() {
-            // stack 2 needs to be empty to pop stack1
-            if (!stack2.isEmpty()) {
-                return stack2.pop();
+            // stack 2 needs to be empty to pop mStack1
+            if (!this.mStack2.isEmpty()) {
+                return this.mStack2.pop();
             }
 
-            while (!stack1.isEmpty()) {
-                stack2.push(stack1.pop());
+            while (!this.mStack1.isEmpty()) {
+                this.mStack2.push(this.mStack1.pop());
             }
 
-            return stack2.pop();
+            return this.mStack2.pop();
         }
 
         // Time - O(N)
         public T peek() {
-            // stack 2 needs to be empty to peek stack1
-            if (!stack2.isEmpty()) {
-                return stack2.peek();
+            // stack 2 needs to be empty to peek mStack1
+            if (!this.mStack2.isEmpty()) {
+                return this.mStack2.peek();
             }
 
-            while (!stack1.isEmpty()) {
-                stack2.push(stack1.pop());
+            while (!this.mStack1.isEmpty()) {
+                this.mStack2.push(this.mStack1.pop());
             }
 
-            return stack2.peek();
+            return this.mStack2.peek();
         }
     }
 
@@ -180,7 +182,7 @@ public class Chapter3StacksAndQueues {
         final Stack<Integer> sortedStack = new Stack<>();
 
         while (!stack.isEmpty()) {
-            int popped = stack.pop();
+            final int popped = stack.pop();
             while (!sortedStack.isEmpty() && sortedStack.peek() > popped) {
                 stack.push(sortedStack.pop());
             }

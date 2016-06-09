@@ -5,18 +5,18 @@ package questions.stringarraymatrix;
  */
 public class ValidPalindrome {
 
-    public static boolean isPalindrome(String s) {
-        if (s == null) {
+    public static boolean isPalindrome(String input) {
+        if (input == null) {
             return false;
         }
 
-        if (s.isEmpty() || s.length() < 2) {
+        if (input.isEmpty() || input.length() < 2) {
             return true;
         }
 
-        s = s.toLowerCase();
+        input = input.toLowerCase();
 
-        final char[] array = s.toCharArray();
+        final char[] array = input.toCharArray();
 
         for (int i = 0, j = array.length - 1; i < j; i++, j--) {
             while (i < j && !isChar(array[i]) && !isNum(array[i])) {

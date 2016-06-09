@@ -19,12 +19,17 @@ public class Main {
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            char[] chars = line.trim().toCharArray();
+            final char[] chars = line.trim().toCharArray();
             for (int i = 0; i < chars.length; i++) {
                 if (Character.isLetter(chars[i])) {
-                    chars[i] = Character.isUpperCase(chars[i]) ? Character.toLowerCase(chars[i]) : Character.toUpperCase(chars[i]);
+                    if (Character.isUpperCase(chars[i])) {
+                        chars[i] = Character.toLowerCase(chars[i]);
+                    } else {
+                        chars[i] = Character.toUpperCase(chars[i]);
+                    }
                 }
                 System.out.print(chars[i]);
+
             }
             System.out.println("");
         }

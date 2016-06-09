@@ -1,8 +1,10 @@
 package crackingthecode.part2conceptsandalgorithms
 
+import api.Color
 import spock.lang.Specification
 
 import static api.Color.*
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
@@ -65,38 +67,38 @@ class Chapter8RecursionSpec extends Specification {
     def "paintFill"() {
         given:
         def a = [[RED, RED, GREEN, GREEN, GREEN],
-                       [GREEN, RED, RED, GREEN, GREEN],
-                       [GREEN, GREEN, RED, RED, GREEN],
-                       [GREEN, GREEN, GREEN, RED, RED],
-                       [GREEN, GREEN, GREEN, GREEN, RED]]
+                 [GREEN, RED, RED, GREEN, GREEN],
+                 [GREEN, GREEN, RED, RED, GREEN],
+                 [GREEN, GREEN, GREEN, RED, RED],
+                 [GREEN, GREEN, GREEN, GREEN, RED]] as Color[][]
 
         when:
-        Chapter8Recursion.paintFill(a, 0, 0, BLUE)
+        Chapter8Recursion.paintFill(a as Color[][], 0, 0, BLUE)
 
         then:
         a == [[BLUE, BLUE, GREEN, GREEN, GREEN],
               [GREEN, BLUE, BLUE, GREEN, GREEN],
               [GREEN, GREEN, BLUE, BLUE, GREEN],
               [GREEN, GREEN, GREEN, BLUE, BLUE],
-              [GREEN, GREEN, GREEN, GREEN, BLUE]]
+              [GREEN, GREEN, GREEN, GREEN, BLUE]] as Color[][]
     }
 
     def "floodFill"() {
         given:
         def a = [[1, 1, 1, 1, 1, 1, 1, 1],
-                     [1, 1, 1, 1, 1, 1, 0, 0],
-                     [1, 0, 0, 1, 1, 0, 1, 1],
-                     [1, 2, 2, 2, 2, 0, 1, 0],
-                     [1, 1, 1, 2, 2, 0, 1, 0],
-                     [1, 1, 1, 2, 2, 2, 2, 0],
-                     [1, 1, 1, 1, 1, 2, 1, 1],
-                     [1, 1, 1, 1, 1, 2, 2, 1]]
+                 [1, 1, 1, 1, 1, 1, 0, 0],
+                 [1, 0, 0, 1, 1, 0, 1, 1],
+                 [1, 2, 2, 2, 2, 0, 1, 0],
+                 [1, 1, 1, 2, 2, 0, 1, 0],
+                 [1, 1, 1, 2, 2, 2, 2, 0],
+                 [1, 1, 1, 1, 1, 2, 1, 1],
+                 [1, 1, 1, 1, 1, 2, 2, 1]] as int[][]
         int x = 4
         int y = 4
         int newC = 3
 
         when:
-        Chapter8Recursion.floodFill(a, x, y, newC)
+        Chapter8Recursion.floodFill(a as int[][], x, y, newC)
 
         then:
         a == [[1, 1, 1, 1, 1, 1, 1, 1],
@@ -106,7 +108,7 @@ class Chapter8RecursionSpec extends Specification {
               [1, 1, 1, 3, 3, 0, 1, 0],
               [1, 1, 1, 3, 3, 3, 3, 0],
               [1, 1, 1, 1, 1, 3, 1, 1],
-              [1, 1, 1, 1, 1, 3, 3, 1]]
+              [1, 1, 1, 1, 1, 3, 3, 1]] as int[][]
     }
 
     def "getRepresentCents"() {

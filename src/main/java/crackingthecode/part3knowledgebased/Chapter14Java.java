@@ -14,17 +14,17 @@ public class Chapter14Java {
     // Singleton
     public class PrivateConstructor {
 
-        private PrivateConstructor sInstance = null;
+        private PrivateConstructor mInstance = null;
 
         private PrivateConstructor() {
             // Exists only to defeat instantiation.
         }
 
         public PrivateConstructor getInstance() {
-            if (sInstance == null) {
-                sInstance = new PrivateConstructor();
+            if (this.mInstance == null) {
+                this.mInstance = new PrivateConstructor();
             }
-            return sInstance;
+            return this.mInstance;
         }
     }
 
@@ -40,7 +40,7 @@ public class Chapter14Java {
             this.mStr = str;
         }
 
-        public BusinessClass CreateObject(final String myProperty) {
+        public BusinessClass createObject(final String myProperty) {
 
             if (myProperty != null) {
                 return new BusinessClass(myProperty);
@@ -60,7 +60,7 @@ public class Chapter14Java {
         try {
             System.out.print("Test - SomeMethod");
             return true;
-        } catch (Exception e) {
+        } catch (final Exception e) {
             System.out.print("Test - SomeMethod - catch");
         } finally {
             System.out.print("Test - SomeMethod - Finally");

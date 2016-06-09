@@ -5,15 +5,15 @@ package questions.math;
  */
 public class Pow {
 
-    public static long pow(final int x, final int n) {
-        if (n < 0) {
+    public static long pow(final int number, final int exponent) {
+        if (exponent < 0) {
             return 0;
         }
 
-        long product = x;
+        long product = number;
 
-        for (int i = 1; i < n; i++) {
-            product *= x;
+        for (int i = 1; i < exponent; i++) {
+            product *= number;
         }
 
         return product;

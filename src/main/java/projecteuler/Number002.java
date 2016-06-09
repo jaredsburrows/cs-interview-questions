@@ -5,16 +5,19 @@ package projecteuler;
  */
 public class Number002 {
 
-    public static long getEvenFibonacciNumbers(long n) {
-        long a = 1;
-        long b = 1;
+    public static long getEvenFibonacciNumbers(final long number) {
+        long first = 1;
+        long second = 1;
         long sum = 0;
 
-        while (sum < n) {
-            long next = a + b;
-            b = a;
-            a = next;
-            sum += (next % 2) == 0 ? next : 0;
+        while (sum < number) {
+            long next = first + second;
+            second = first;
+            first = next;
+
+            if (next % 2 == 0) {
+                sum += next;
+            }
         }
 
         return sum;

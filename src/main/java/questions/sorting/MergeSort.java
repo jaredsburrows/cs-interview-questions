@@ -21,11 +21,11 @@ public class MergeSort {
         final int[] right = new int[length - mid];
 
         System.arraycopy(numbers, 0, left, 0, mid);
-
         System.arraycopy(numbers, mid, right, 0, length - mid);
 
         sort(left);
         sort(right);
+
         merge(numbers, left, right);
     }
 
@@ -34,37 +34,37 @@ public class MergeSort {
         return numbers;
     }
 
-    static void merge(final int[] numbers, final int[] left, final int[] right) {
+    private static void merge(final int[] numbers, final int[] left, final int[] right) {
         final int leftLength = left.length;
         final int rightLength = right.length;
-        int i = 0;
-        int j = 0;
-        int k = 0;
+        int indexLeft = 0;
+        int indexRight = 0;
+        int index = 0;
 
         // Merge arrays
-        while (i < leftLength && j < rightLength) {
-            if (left[i] <= right[j]) {
-                numbers[k] = left[i];
-                i++;
+        while (indexLeft < leftLength && indexRight < rightLength) {
+            if (left[indexLeft] <= right[indexRight]) {
+                numbers[index] = left[indexLeft];
+                indexLeft++;
             } else {
-                numbers[k] = right[j];
-                j++;
+                numbers[index] = right[indexRight];
+                indexRight++;
             }
-            k++;
+            index++;
         }
 
-        while (i < leftLength) {
-            numbers[k] = left[i];
+        while (indexLeft < leftLength) {
+            numbers[index] = left[indexLeft];
 
-            i++;
-            k++;
+            indexLeft++;
+            index++;
         }
 
-        while (j < rightLength) {
-            numbers[k] = right[j];
+        while (indexRight < rightLength) {
+            numbers[index] = right[indexRight];
 
-            j++;
-            k++;
+            indexRight++;
+            index++;
         }
     }
 }

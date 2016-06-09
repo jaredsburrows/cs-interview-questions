@@ -12,66 +12,66 @@ public class Main {
 
         while (scanner.hasNext()) {
             final String token = scanner.next();
-            int n = Integer.parseInt(token);
-            while (n >= 1000) {
-                n -= 1000;
+            int number = Integer.parseInt(token);
+            while (number >= 1000) {
+                number -= 1000;
                 System.out.print("M");
             }
 
-            if (n >= 900) {
-                n -= 900;
+            if (number >= 900) {
+                number -= 900;
                 System.out.print("C");
                 System.out.print("M");
             }
-            if (n >= 500) {
-                n -= 500;
+            if (number >= 500) {
+                number -= 500;
                 System.out.print("D");
             }
-            if (n >= 400) {
-                n -= 400;
+            if (number >= 400) {
+                number -= 400;
                 System.out.print("C");
                 System.out.print("D");
             }
-            while (n >= 100) {
-                n -= 100;
+            while (number >= 100) {
+                number -= 100;
                 System.out.print("C");
             }
 
-            if (n >= 90) {
-                n -= 90;
+            if (number >= 90) {
+                number -= 90;
                 System.out.print("X");
                 System.out.print("C");
             }
-            if (n >= 50) {
-                n -= 50;
+            if (number >= 50) {
+                number -= 50;
                 System.out.print("L");
             }
-            if (n >= 40) {
-                n -= 40;
+            if (number >= 40) {
+                number -= 40;
                 System.out.print("X");
                 System.out.print("L");
             }
-            while (n >= 10) {
-                n -= 10;
+            while (number >= 10) {
+                number -= 10;
                 System.out.print("X");
             }
 
-            if (n >= 9) {
-                n -= 9;
+            if (number >= 9) {
+                number -= 9;
                 System.out.print("I");
                 System.out.print("X");
             }
-            if (n >= 5) {
-                n -= 5;
+            if (number >= 5) {
+                number -= 5;
                 System.out.print("V");
             }
-            if (n >= 4) {
-                n -= 4;
+            if (number >= 4) {
+                number -= 4;
                 System.out.print("I");
                 System.out.print("V");
             }
-            while (n > 0) {
-                n--;
+            while (number > 0) {
+                number--;
                 System.out.print("I");
             }
 

@@ -5,7 +5,7 @@ package projecteuler;
  */
 public class Number001 {
 
-    public static int getMultiplesOf3And5ON() {
+    public static int getMultiplesOf3And5() {
         // O(N) solution
         int sum = 0;
         for (int i = 3; i < 1000; i++) {
@@ -28,7 +28,7 @@ public class Number001 {
         return (number * (number + difference)) / (difference * 2.0);
     }
 
-    public static int getMultiplesOf3And5() {
+    public static int getMultiplesOf3And52() {
         return (int) (getSumTerms(3, 999) + getSumTerms(5, 995) - getSumTerms(15, 990));
     }
 }

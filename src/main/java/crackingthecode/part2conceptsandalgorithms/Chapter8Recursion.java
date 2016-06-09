@@ -96,13 +96,13 @@ public class Chapter8Recursion {
     /**
      * 8.4 - Write a method to compute all permutations of a string.
      */
-    public static ArrayList<String> getStringPermutations(String prefix, String string) {
+    public static List<String> getStringPermutations(final String prefix, final String string) {
         if (string == null) {
             return null;
         }
 
-        ArrayList<String> finalList = new ArrayList<>();
-        int length = string.length();
+        final List<String> finalList = new ArrayList<>();
+        final int length = string.length();
         if (length == 0) {
             // empty string
             finalList.add(prefix);
@@ -175,48 +175,52 @@ public class Chapter8Recursion {
      * That is, given a screen (represented by a 2-dimensional array of Colors), a point, and a new
      * color, fill in the surrounding area until you hit a border of that color.
      */
-    public static void paintFill(final Color[][] pixels, final int x, final int y, final Color oldColor, final Color newColor) {
-        if (x < 0 || x >= pixels[0].length || y < 0 || y >= pixels.length) {
+    public static void paintFill(final Color[][] pixels, final int positionX, final int positionY, final Color prevColor, final Color newColor) {
+        if (positionX < 0 || positionX >= pixels[0].length || positionY < 0 || positionY >= pixels.length) {
             return;
         }
 
-        if (pixels[x][y] != oldColor) {
+        if (pixels[positionX][positionY] != prevColor) {
             return;
         }
-        pixels[x][y] = newColor;
-        paintFill(pixels, x + 1, y, oldColor, newColor); // right
-        paintFill(pixels, x - 1, y, oldColor, newColor); // left
-        paintFill(pixels, x, y + 1, oldColor, newColor); // down
-        paintFill(pixels, x, y - 1, oldColor, newColor); // up
+
+        pixels[positionX][positionY] = newColor;
+
+        paintFill(pixels, positionX + 1, positionY, prevColor, newColor); // right
+        paintFill(pixels, positionX - 1, positionY, prevColor, newColor); // left
+        paintFill(pixels, positionX, positionY + 1, prevColor, newColor); // down
+        paintFill(pixels, positionX, positionY - 1, prevColor, newColor); // up
     }
 
-    public static void paintFill(final Color[][] pixels, final int x, final int y, final Color newColor) {
-        final Color oldcolor = pixels[x][y];
-        paintFill(pixels, x, y, oldcolor, newColor);
+    public static void paintFill(final Color[][] pixels, final int positionX, final int positionY, final Color newColor) {
+        final Color oldColor = pixels[positionX][positionY];
+
+        paintFill(pixels, positionX, positionY, oldColor, newColor);
     }
 
-    public static void floodFillUtil(final int[][] screen, final int x, final int y, final int prevC, final int newC) {
+    public static void floodFillUtil(final int[][] screen, final int positionX, final int positionY, final int prevColor, final int newColor) {
         // Base cases
-        if (x < 0 || x >= 8 || y < 0 || y >= 8) {
+        if (positionX < 0 || positionX >= 8 || positionY < 0 || positionY >= 8) {
             return;
         }
-        if (screen[x][y] != prevC) {
+        if (screen[positionX][positionY] != prevColor) {
             return;
         }
 
         // Replace the color at (x, y)
-        screen[x][y] = newC;
+        screen[positionX][positionY] = newColor;
 
         // Recur for north, east, south and west
-        floodFillUtil(screen, x + 1, y, prevC, newC);
-        floodFillUtil(screen, x - 1, y, prevC, newC);
-        floodFillUtil(screen, x, y + 1, prevC, newC);
-        floodFillUtil(screen, x, y - 1, prevC, newC);
+        floodFillUtil(screen, positionX + 1, positionY, prevColor, newColor);
+        floodFillUtil(screen, positionX - 1, positionY, prevColor, newColor);
+        floodFillUtil(screen, positionX, positionY + 1, prevColor, newColor);
+        floodFillUtil(screen, positionX, positionY - 1, prevColor, newColor);
     }
 
-    public static void floodFill(final int[][] screen, final int x, final int y, final int newC) {
-        final int prevC = screen[x][y];
-        floodFillUtil(screen, x, y, prevC, newC);
+    public static void floodFill(final int[][] screen, final int positionX, final int positionY, final int newColor) {
+        final int oldColor = screen[positionX][positionY];
+
+        floodFillUtil(screen, positionX, positionY, oldColor, newColor);
     }
 
     /**
@@ -269,7 +273,8 @@ public class Chapter8Recursion {
 
     // Book answer
     public static int makeChange(final int n, final int denom) {
-        int nextDenom = 0;
+        int nextDenom;
+
         switch (denom) {
             case 25:
                 nextDenom = 10;

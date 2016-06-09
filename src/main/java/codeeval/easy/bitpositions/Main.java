@@ -47,7 +47,11 @@ public class Main {
                 }
             }
 
-            System.out.println((result1 == result2) ? "true" : "false");
+            if (result1 == result2) {
+                System.out.println("true");
+            } else {
+                System.out.println("false");
+            }
         }
     }
 }

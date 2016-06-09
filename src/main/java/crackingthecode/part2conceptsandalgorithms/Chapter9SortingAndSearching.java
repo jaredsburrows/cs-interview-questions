@@ -129,35 +129,35 @@ public class Chapter9SortingAndSearching {
      * method to find the location of a given string.
      */
     // Time - O(LOGN)?, Space - O(1) - Binary Search
-    public static int findString(final String[] array, final String target) {
+    public static int findString(final String[] strings, final String target) {
         int min = 0;
-        int max = array.length - 1;
+        int max = strings.length - 1;
 
         String first = "tmp";
 
         // O(N) -- get first not empty string
-        for (final String anArray : array) {
-            if (!anArray.equals("")) {
+        for (final String anArray : strings) {
+            if (!anArray.isEmpty()) {
                 first = anArray;
                 break;
             }
         }
 
         // O(N) -- fill in blanks, previous + number
-        for (int i = 0; i < array.length; i++) {
-            if (array[i].equals("")) {
-                array[i] = first + i; // O(M + N), we always know i, O(M + 1)
+        for (int i = 0; i < strings.length; i++) {
+            if (strings[i].isEmpty()) {
+                strings[i] = first + i; // O(M + N), we always know i, O(M + 1)
             } else {
-                first = array[i];
+                first = strings[i];
             }
         }
 
         // O(LOGN) - binary search
         while (min <= max) {
             int mid = (min + max) / 2;
-            if (array[mid].equals(target)) { // O(N)
+            if (strings[mid].equals(target)) { // O(N)
                 return mid;
-            } else if (array[mid].compareTo(target) < 0) { // O(N)
+            } else if (strings[mid].compareTo(target) < 0) { // O(N)
                 min = mid + 1;
             } else {
                 max = mid - 1;
@@ -168,11 +168,11 @@ public class Chapter9SortingAndSearching {
     }
 
     // Time - O(N), Space - O(1) - Linear Search
-    public static int findString2(final String[] array, final String target) {
+    public static int findString2(final String[] strings, final String target) {
         int pos = -1;
 
-        for (int i = 0; i < array.length; i++) {
-            if (array[i].equals(target)) {
+        for (int i = 0; i < strings.length; i++) {
+            if (strings[i].equals(target)) {
                 pos = i;
                 break;
             }
@@ -182,45 +182,49 @@ public class Chapter9SortingAndSearching {
     }
 
     // book answer
-    public static int findString3(String[] strings, String str, int first, int last) {
-        while (first <= last) {
+    public static int findString3(final String[] strings, final String target, int left, int right) {
+        while (left <= right) {
             // Ensure there is something at the end
-            while (first <= last && strings[last].equals("")) {
-                last--;
+            while (left <= right && strings[right].isEmpty()) {
+                right--;
             }
-            if (first > last) {
+
+            if (left > right) {
                 return -1;
             }
 
-            int mid = first + (last - first) / 2;
-            while (strings[mid].equals("")) {
-                mid++;
+            int midIndex = left + (right - left) / 2;
+            while (strings[midIndex].isEmpty()) {
+                midIndex++;
             }
 
-            int r = strings[mid].compareTo(str);
-            if (r == 0) {
-                return mid;
-            } else if (r < 0) {
-                first = mid + 1;
+            final int emptyIndex = strings[midIndex].compareTo(target);
+            if (emptyIndex == 0) {
+                return midIndex;
+            } else if (emptyIndex < 0) {
+                left = midIndex + 1;
             } else {
-                last = mid - 1;
+                right = midIndex - 1;
             }
         }
+
         return -1;
     }
 
-    public static int findString3(String[] strings, String str) {
-        if (strings == null || str == null) {
+    public static int findString3(final String[] strings, final String target) {
+        if (strings == null || target == null) {
             return -1;
         }
-        if (str.equals("")) {
+
+        if (target.isEmpty()) {
             for (int i = 0; i < strings.length; i++) {
-                if (strings[i].equals("")) {
+                if (strings[i].isEmpty()) {
                     return i;
                 }
             }
         }
-        return findString3(strings, str, 0, strings.length - 1);
+
+        return findString3(strings, target, 0, strings.length - 1);
     }
 
     /**

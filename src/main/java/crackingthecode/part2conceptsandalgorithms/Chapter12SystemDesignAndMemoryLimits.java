@@ -15,43 +15,43 @@ public class Chapter12SystemDesignAndMemoryLimits {
      */
     // Data - Company quote, open, high, low, closing x 5000
     // Not much data, easily can store into database and retrieved through JSON HTTP requests
-//    CREATE TABLE Stock
-//    (
-//        ID
-//        company VARCHAR(255),
-//        open FLOAT(8,4),
-//        high FLOAT(8,4),
-//        low FLOAT(8,4),
-//        closing FLOAT(8,4)
-//    );
+    //    CREATE TABLE Stock
+    //    (
+    //        ID
+    //        company VARCHAR(255),
+    //        open FLOAT(8,4),
+    //        high FLOAT(8,4),
+    //        low FLOAT(8,4),
+    //        closing FLOAT(8,4)
+    //    );
 
-//    Example JSON
-//    {
-//       "stocks":[
-//          {
-//             "MSFT":[
-//                {
-//                   "company":"Microsoft",
-//                   "open":"42.56",
-//                   "high":"42.98",
-//                   "low":"42.49",
-//                   "closing":"42.49"
-//                }
-//             ]
-//          },
-//          {
-//             "GOOG":[
-//                {
-//                   "company":"Google",
-//                   "open":"561.65",
-//                   "high":"561.72",
-//                   "low":"559.05",
-//                   "closing":"557.99"
-//                }
-//             ]
-//          }
-//       ]
-//    }
+    //    Example JSON
+    //    {
+    //       "stocks":[
+    //          {
+    //             "MSFT":[
+    //                {
+    //                   "company":"Microsoft",
+    //                   "open":"42.56",
+    //                   "high":"42.98",
+    //                   "low":"42.49",
+    //                   "closing":"42.49"
+    //                }
+    //             ]
+    //          },
+    //          {
+    //             "GOOG":[
+    //                {
+    //                   "company":"Google",
+    //                   "open":"561.65",
+    //                   "high":"561.72",
+    //                   "low":"559.05",
+    //                   "closing":"557.99"
+    //                }
+    //             ]
+    //          }
+    //       ]
+    //    }
 
     // The book mentions a "database" on Proposal 3 and "XML" data in Proposal 4.
 
