@@ -19,18 +19,18 @@ public class Chapter11Testing {
     /**
      * 11.2 - You are given the source to an application which crashes when it is run. After running
      * it ten times in a debugger, you find it never crashes in the same place. The application is
-     * single threaded, and uses only the methodC standard library. What programming errors could be
+     * single threaded, and uses only the C standard library. What programming errors could be
      * causing this crash? How would you test each one?
      */
     // http://stackoverflow.com/questions/4531742/debugging-a-program-that-crashes-10-times-in-different-places
     // debugger, MSVS debugger, gdb, lldb?
     // single threaded (if multi-threaded, issues between improper thread use)
     // never crashes in same place
-    // only 1 methodC standard library - time.h?
+    // only 1 C standard library - time.h?
     // random integers
     // - used to loop through array(not checking bounds) -> int temp[10]; (reading past)
     // - passing to new functions
-    // in methodC, un-initialized variables(ints) are given a random number -> int n
+    // in C, un-initialized variables(ints) are given a random number -> int n
     // dereference null pointer - undefined behavior -> int* test = NULL; int& ref = *ptr;
     // Defining a preprocessor macro that starts with an underscore and either a capital letter or another underscore.
 

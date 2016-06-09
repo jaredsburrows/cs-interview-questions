@@ -222,8 +222,8 @@ public class Chapter2LinkedLists {
      * Circular linked list: A (corrupt) linked list in which a node’s next pointer points to an
      * earlier node, so as to make a loop in the linked list.
      * EXAMPLE
-     * input: A -> methodB -> methodC -> D -> E -> methodC [the same methodC as earlier]
-     * output: methodC
+     * input: A -> B -> C -> D -> E -> C [the same C as earlier]
+     * output: C
      */
     // Book has a longer solution but seems very unnecessary
     public static Node<Integer> getCircular(final Node<Integer> node) {

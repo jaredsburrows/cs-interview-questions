@@ -319,7 +319,7 @@ public class Chapter7ObjectOrientedDesign {
 
     /**
      * 7.10 - Describe the data structures and algorithms that you would use to implement a garbage
-     * collector in methodC++.
+     * collector in C++.
      */
     // most of the time this is implemeted with smart pointers
     // memory vs performance

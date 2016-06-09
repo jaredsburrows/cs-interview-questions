@@ -114,7 +114,7 @@ class Chapter9SortingAndSearchingSpec extends Specification {
     def "getCircusOrder"() {
         given:
         // (65, 100) (70, 150) (56, 90) (75, 190) (60, 95) (68, 110)
-        ArrayList<Tuple<Integer, Integer>> original = [new Tuple<Integer, Integer>(65, 100),
+        def original = [new Tuple<Integer, Integer>(65, 100),
                                                        new Tuple<Integer, Integer>(70, 150),
                                                        new Tuple<Integer, Integer>(56, 90),
                                                        new Tuple<Integer, Integer>(75, 190),

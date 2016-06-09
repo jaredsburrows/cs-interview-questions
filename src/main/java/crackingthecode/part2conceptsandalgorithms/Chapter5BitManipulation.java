@@ -84,7 +84,7 @@ public class Chapter5BitManipulation {
 
     /**
      * 5.5 - Write a function to determine the number of bits required to convert integer A to
-     * integer methodB.
+     * integer B.
      * Input: 31, 14
      * Output: 2
      */

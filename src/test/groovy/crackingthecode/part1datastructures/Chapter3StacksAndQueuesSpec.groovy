@@ -12,7 +12,7 @@ class Chapter3StacksAndQueuesSpec extends Specification {
 
     def "MinStack"() {
         given:
-        MinStack minStack = new MinStack()
+        def minStack = new MinStack()
 
         // 4 2 min 1
         // 4 2 3   - min 2
@@ -39,7 +39,7 @@ class Chapter3StacksAndQueuesSpec extends Specification {
 
     def "SetOfStacks"() {
         given:
-        SetOfStacks<Integer> setOfStacks = new SetOfStacks<>(3)
+        def setOfStacks = new SetOfStacks<>(3)
 
         when:
         setOfStacks.pop() == null
@@ -82,7 +82,7 @@ class Chapter3StacksAndQueuesSpec extends Specification {
 
     def "MyQueue<T>"() {
         given:
-        MyQueue<Integer> myQueue = new MyQueue<>()
+        def myQueue = new MyQueue<>()
 
         when:
         myQueue.push(1)
@@ -117,7 +117,7 @@ class Chapter3StacksAndQueuesSpec extends Specification {
 
     def "getSortedStack"() {
         given:
-        Stack<Integer> unsorted = new Stack<>()
+        def unsorted = new Stack<>()
         unsorted.push(1)
         unsorted.push(5)
         unsorted.push(7)
@@ -125,7 +125,7 @@ class Chapter3StacksAndQueuesSpec extends Specification {
         unsorted.push(5)
         unsorted.push(6)
 
-        Stack<Integer> sorted = new Stack<>()
+        def sorted = new Stack<>()
         sorted.push(0)
         sorted.push(1)
         sorted.push(5)

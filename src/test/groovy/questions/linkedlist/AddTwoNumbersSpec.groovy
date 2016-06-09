@@ -48,28 +48,28 @@ class AddTwoNumbersSpec extends Specification {
         AddTwoNumbers.addTwoNumbers(nine, null) == null
         AddTwoNumbers.addTwoNumbers(null, null) == null
 
-        Node<Integer> result = AddTwoNumbers.addTwoNumbers(book1, book2)
+        def result = AddTwoNumbers.addTwoNumbers(book1, book2)
         result.value == 8
         result.next.value == 0
         result.next.next.value == 8
 
-        Node<Integer> result2 = AddTwoNumbers.addTwoNumbers(pg, pg2)
+        def result2 = AddTwoNumbers.addTwoNumbers(pg, pg2)
         result2.value == 7
         result2.next.value == 0
         result2.next.next.value == 8
 
-        Node<Integer> result3 = AddTwoNumbers.addTwoNumbers(nine, nine)
+        def result3 = AddTwoNumbers.addTwoNumbers(nine, nine)
         result3.value == 8
         result3.next.value == 9
         result3.next.next.value == 9
         result3.next.next.next.value == 1
 
-        Node<Integer> result4 = AddTwoNumbers.addTwoNumbers(shortNumber, shorterNumber)
+        def result4 = AddTwoNumbers.addTwoNumbers(shortNumber, shorterNumber)
         result4.value == 2
         result4.next.value == 2
         result4.next.next.value == 1
 
-        Node<Integer> result5 = AddTwoNumbers.addTwoNumbers(shorterNumber, shortNumber)
+        def result5 = AddTwoNumbers.addTwoNumbers(shorterNumber, shortNumber)
         result5.value == 2
         result5.next.value == 2
         result5.next.next.value == 1

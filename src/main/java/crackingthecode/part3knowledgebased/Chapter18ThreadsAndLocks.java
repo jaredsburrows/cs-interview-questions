@@ -35,7 +35,7 @@ public class Chapter18ThreadsAndLocks {
      * Foo. Assume the existence of a class Lock which has acquire() and release() methods. How
      * could you make your implementation thread safe and exception safe?
      */
-    // methodC++11
+    // C++11
 //    #include <iostream>
 //
 //    using namespace std;
@@ -204,9 +204,9 @@ public class Chapter18ThreadsAndLocks {
     }
 
     /**
-     * 18.6 - You are given a class with synchronized method A, and a normal method methodC. If you have
+     * 18.6 - You are given a class with synchronized method A, and a normal method C. If you have
      * two threads in one instance of a program, can they call A at the same time? Can they call A
-     * and methodC at the same time?
+     * and C at the same time?
      */
     class SomeSyncMethods {
         public synchronized void A() {
@@ -223,5 +223,5 @@ public class Chapter18ThreadsAndLocks {
 
     // Both threads can call method A at the same time
 
-    // If one thread called method A and another called method methodC, normal behavior.
+    // If one thread called method A and another called method C, normal behavior.
 }

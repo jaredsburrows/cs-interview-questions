@@ -84,14 +84,14 @@ public class Chapter19Moderate {
      */
     // 5 * 2 = 10
     // misinterpreted the question, I thought we were given the factorial
-    public static int numZeros(final int nubmer) {
+    public static int numZeros(final int number) {
         int count = 0;
-        if (nubmer < 0) {
+        if (number < 0) {
             return 0;
         }
 
-        for (int i = 5; nubmer / i > 0; i *= 5) {
-            count += nubmer / i;
+        for (int i = 5; number / i > 0; i *= 5) {
+            count += number / i;
         }
 
         return count;
@@ -132,7 +132,7 @@ public class Chapter19Moderate {
 
     /**
      * 19.5 - The Game of Master Mind is played as follows: The computer has four slots containing
-     * balls that are red (R), yellow (Y), green (G) or blue (methodB). For example, the computer might
+     * balls that are red (R), yellow (Y), green (G) or blue (B). For example, the computer might
      * have RGGB (e.g., Slot #1 is red, Slots #2 and #3 are green, Slot #4 is blue). You, the user,
      * are trying to guess the solution. You might, for example, guess YRGB. When you guess the
      * correct color for the correct slot, you get a “hit”. If you guess a color that exists but is

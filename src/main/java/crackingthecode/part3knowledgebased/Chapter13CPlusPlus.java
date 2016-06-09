@@ -6,7 +6,7 @@ package crackingthecode.part3knowledgebased;
 public class Chapter13CPlusPlus {
 
     /**
-     * 13.1 - Write a method to print the last K lines of an input file using methodC++.
+     * 13.1 - Write a method to print the last K lines of an input file using C++.
      */
 
     /**
@@ -16,7 +16,7 @@ public class Chapter13CPlusPlus {
      */
 
     /**
-     * 13.3 - How do virtual functions work in methodC++?
+     * 13.3 - How do virtual functions work in C++?
      */
 
     /**
@@ -25,13 +25,13 @@ public class Chapter13CPlusPlus {
      */
 
     /**
-     * 13.5 - What is the significance of the keyword “volatile” in methodC?
+     * 13.5 - What is the significance of the keyword “volatile” in C?
      */
 
     /**
-     * 13.6 - What is name hiding in methodC++?
+     * 13.6 - What is name hiding in C++?
      */
-    // Name hiding in methodC++ is when a function is redfined in the child/subclass that is already
+    // Name hiding in C++ is when a function is redfined in the child/subclass that is already
     // defined with a different in the base/parent class with a different return value, instead of
     // different parameters which would be overloading
     // Override the name hiding behavior with "using CLASS::FUNCTION"
@@ -39,27 +39,27 @@ public class Chapter13CPlusPlus {
 
     // class FirstClass {
     // public:
-    //  virtual void MethodA (int);
-    //  virtual void MethodA (int, int);
+    //  virtual void A (int);
+    //  virtual void A (int, int);
     // };
-    // void FirstClass::MethodA (int i) {
+    // void FirstClass::A (int i) {
     //  std::cout << “ONE!!\n”;
     // }
-    // void FirstClass::MethodA (int i, int j) {
+    // void FirstClass::A (int i, int j) {
     //  std::cout << “TWO!!\n”;
     // }
 
     // class SecondClass : public FirstClass {
     // public:
-    //  void MethodA (int);
+    //  void A (int);
     // };
-    // void SecondClass::MethodA (int i) {
+    // void SecondClass::A (int i) {
     //  std::cout << “THREE!!\n”;
     // }
     // void main () {
     //  SecondClass a;
-    //  a.MethodA (1);
-    //  a.MethodA (1, 1);
+    //  a.A (1);
+    //  a.A (1, 1);
     // }
 
     /**

@@ -51,9 +51,9 @@ public class Chapter20Hard {
         // if a = 4, b = 5
 
         while (right != 0) {
-            long carry = left & right;        // 4 = 4 & 5
-            left = left ^ right;              // 1 = 4 ^ 5
-            right = carry << 1;               // 8 = 4 << 1
+            long carry = left & right;          // 4 = 4 & 5
+            left = left ^ right;                // 1 = 4 ^ 5
+            right = carry << 1;                 // 8 = 4 << 1
         }
 
         // First pass:

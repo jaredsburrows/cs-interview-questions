@@ -14,8 +14,8 @@ import java.util.List;
 public class Chapter9SortingAndSearching {
 
     /**
-     * 9.1 - You are given two sorted arrays, A and methodB, and A has a large enough buffer at the end to
-     * hold methodB. Write a method to merge methodB into A in sorted order.
+     * 9.1 - You are given two sorted arrays, A and B, and A has a large enough buffer at the end to
+     * hold B. Write a method to merge B into A in sorted order.
      */
     // TODO - review
     // Time - O(N), Space - O(1)

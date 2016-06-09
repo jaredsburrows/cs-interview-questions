@@ -1,10 +1,8 @@
 package crackingthecode.part2conceptsandalgorithms
 
-import api.Color
 import spock.lang.Specification
 
 import static api.Color.*
-
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
@@ -66,7 +64,7 @@ class Chapter8RecursionSpec extends Specification {
 
     def "paintFill"() {
         given:
-        Color[][] a = [[RED, RED, GREEN, GREEN, GREEN],
+        def a = [[RED, RED, GREEN, GREEN, GREEN],
                        [GREEN, RED, RED, GREEN, GREEN],
                        [GREEN, GREEN, RED, RED, GREEN],
                        [GREEN, GREEN, GREEN, RED, RED],
@@ -85,7 +83,7 @@ class Chapter8RecursionSpec extends Specification {
 
     def "floodFill"() {
         given:
-        int[][] a = [[1, 1, 1, 1, 1, 1, 1, 1],
+        def a = [[1, 1, 1, 1, 1, 1, 1, 1],
                      [1, 1, 1, 1, 1, 1, 0, 0],
                      [1, 0, 0, 1, 1, 0, 1, 1],
                      [1, 2, 2, 2, 2, 0, 1, 0],

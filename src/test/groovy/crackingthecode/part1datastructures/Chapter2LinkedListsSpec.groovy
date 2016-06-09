@@ -178,8 +178,8 @@ class Chapter2LinkedListsSpec extends Specification {
 
     //           D -> E
     //           |    |
-    // A -> methodB -> methodC  <-
-    // input: A -> methodB -> methodC -> D -> E -> methodC [the same methodC as earlier]
+    // A -> B -> C  <-
+    // input: A -> B -> C -> D -> E -> C [the same C as earlier]
     def "getCircular - true"() {
         given:
         def nodeA = new Node<>(0)

@@ -65,7 +65,7 @@ public class Chapter1ArraysAndStrings {
     }
 
     /**
-     * 1.2 - Write code to reverse a methodC-Style String. (methodC-String means that “abcd” is represented as
+     * 1.2 - Write code to reverse a C-Style String. (C-String means that “abcd” is represented as
      * five characters, including the null character.)
      */
     // Time - O(N), Space - O(1)

@@ -20,7 +20,7 @@ public class Main {
 
             if (n >= 900) {
                 n -= 900;
-                System.out.print("methodC");
+                System.out.print("C");
                 System.out.print("M");
             }
             if (n >= 500) {
@@ -29,18 +29,18 @@ public class Main {
             }
             if (n >= 400) {
                 n -= 400;
-                System.out.print("methodC");
+                System.out.print("C");
                 System.out.print("D");
             }
             while (n >= 100) {
                 n -= 100;
-                System.out.print("methodC");
+                System.out.print("C");
             }
 
             if (n >= 90) {
                 n -= 90;
                 System.out.print("X");
-                System.out.print("methodC");
+                System.out.print("C");
             }
             if (n >= 50) {
                 n -= 50;

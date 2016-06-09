@@ -66,12 +66,12 @@ public class Chapter17Networking {
 
     /**
      * 17.4 - What is a network / subnet mask? Explain how host A sends a message / packet to host
-     * methodB when: (a) both are on same network and (b) both are on different networks. Explain which
+     * B when: (a) both are on same network and (b) both are on different networks. Explain which
      * layer makes the routing decision and how.
      */
     // http://www.aelius.com/njh/subnet_sheet.html
     // Network/Subnet mask - A mask is a bit pattern used to identify the network/subnet address.
-    // Example: Consider IP address 152.210.011.002. This address belongs to Class methodB, so:
+    // Example: Consider IP address 152.210.011.002. This address belongs to Class B, so:
     //      Network Mask: 11111111.11111111.00000000.00000000
     //      Given Address: 10011000.11010101.00001011.00000010
     // By ANDing Network Mask and IP Address, we get the following network address:
@@ -79,7 +79,7 @@ public class Chapter17Networking {
     //      Host address: 00001011.00000010
     // Range of IP addresses - eg. 192.1.168.0/24 -> 254 hosts, netmask 255.255.255.0
     // A) The host address bits are used to identify the host within the network.
-    // methodB) The router uses the network mask to identify the network and route the packet. The host
+    // B) The router uses the network mask to identify the network and route the packet. The host
     // can be identified using the network host address.
     // The Network Layer is the layer out of (1. Physical, 2. Data Link, 3. Network, 4. Transport,
     // 5. Session, 6. Presentation, 7. Application) handles the routing and forwarding of packets.

@@ -9,7 +9,7 @@ class LinkedListSpec extends Specification {
 
     def "addtoFront"() {
         given:
-        LinkedList<Integer> linkedList = new LinkedList(0)
+        def linkedList = new LinkedList<>(0)
         linkedList.addToEnd(6)
         linkedList.add(5)
 
@@ -25,7 +25,7 @@ class LinkedListSpec extends Specification {
 
     def "addToEnd"() {
         given:
-        LinkedList<Integer> linkedList = new LinkedList(0)
+        def linkedList = new LinkedList<>(0)
 
         when:
         linkedList.addToEnd(1)
@@ -41,9 +41,9 @@ class LinkedListSpec extends Specification {
 
     def "removeFront"() {
         given:
-        LinkedList<Integer> linkedList = new LinkedList(0)
+        def linkedList = new LinkedList<>(0)
         linkedList.addToEnd(6) // 2 elements
-        LinkedList<Integer> linkedList2 = new LinkedList(0) // 1 element
+        def linkedList2 = new LinkedList<>(0) // 1 element
 
         when:
         linkedList.removeFront()
@@ -56,7 +56,7 @@ class LinkedListSpec extends Specification {
 
     def "removeLast"() {
         given:
-        LinkedList<Integer> linkedList = new LinkedList(0)
+        def linkedList = new LinkedList<>(0)
         linkedList.addToEnd(6)
         linkedList.add(7)
 
