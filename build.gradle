@@ -4,6 +4,7 @@ buildscript {
     }
 
     dependencies {
+        classpath "com.gradle:build-receipt-plugin:1.2"
         classpath "net.ltgt.gradle:gradle-errorprone-plugin:0.0.8"
         classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.6.3"
         classpath "com.github.ben-manes:gradle-versions-plugin:0.12.0"
@@ -14,15 +15,17 @@ repositories {
     maven { url "https://plugins.gradle.org/m2/" } // Mirrors jcenter() and mavenCentral()
 }
 
+apply from: rootProject.file("gradle/receipt.gradle")
 apply plugin: "c"
 apply plugin: "cunit-test-suite"
 apply plugin: "cpp"
 apply plugin: "google-test-test-suite"
+apply plugin: "build-dashboard"
 apply plugin: "java"
 apply plugin: "groovy"
 apply plugin: "com.github.ben-manes.versions"
-apply from: rootProject.file('gradle/compile.gradle')
-apply from: rootProject.file('gradle/codeQuality.gradle')
+apply from: rootProject.file("gradle/compile.gradle")
+apply from: rootProject.file("gradle/codeQuality.gradle")
 
 model {
     repositories {
