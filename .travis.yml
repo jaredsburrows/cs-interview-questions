@@ -2,17 +2,11 @@ language: java
 
 jdk:
   - oraclejdk8
-  - oraclejdk9
 
-matrix:
-  allow_failures:
-    - jdk: oraclejdk9
-
-# prevent 'gradlew assemble'
 install: true
 
 script:
-  - ./gradlew clean test pmdMain findbugsMain checkstyleMain jacocoTestReport coveralls --stacktrace
+  - ./gradlew clean test pmdMain findbugsMain checkstyleMain jacocoTestReport coveralls -Dreceipt --stacktrace
 
 notifications:
   email: false

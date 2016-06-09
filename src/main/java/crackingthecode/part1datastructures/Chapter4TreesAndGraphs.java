@@ -66,13 +66,13 @@ public class Chapter4TreesAndGraphs {
     //   /\   /\
     //  1  3  5 7
     // (length - 0) / 2
-    public static TreeNode<Integer> getMinimumTree(int[] array, int start, int end) {
+    public static TreeNode<Integer> getMinimumTree(final int[] array, final int start, final int end) {
         if (array == null || array.length == 0 || start < 0 || start > end) {
             return null;
         }
 
-        int mid = (start + end) / 2;
-        TreeNode<Integer> treeNode = new TreeNode<>(array[mid]);
+        final int mid = (start + end) / 2;
+        final TreeNode<Integer> treeNode = new TreeNode<>(array[mid]);
         treeNode.left = getMinimumTree(array, start, mid - 1);   // 1 2 3 4 5 6 // remove one from left
         treeNode.right = getMinimumTree(array, mid + 1, end);    // 2 3 4 5 6 7 // remove one from front
 
@@ -104,7 +104,7 @@ public class Chapter4TreesAndGraphs {
             // loop through nodes at current level
             for (int i = 0; i < listLinkedList.get(level).size(); i++) {
                 // get the current node
-                TreeNode<T> treeNode = listLinkedList.get(level).get(i);
+                final TreeNode<T> treeNode = listLinkedList.get(level).get(i);
                 // add it's children
                 if (treeNode != null) {
                     if (treeNode.left != null) {
