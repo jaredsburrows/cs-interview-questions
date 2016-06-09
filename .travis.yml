@@ -1,7 +1,12 @@
 language: java
 
 jdk:
-  - oraclejdk8
+ - oraclejdk7
+ - oraclejdk8
+
+matrix:
+  allow_failures:
+    - jdk: oraclejdk7
 
 install: true
 

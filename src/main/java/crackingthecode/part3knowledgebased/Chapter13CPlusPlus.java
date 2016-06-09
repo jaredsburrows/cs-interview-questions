@@ -6,7 +6,7 @@ package crackingthecode.part3knowledgebased;
 public class Chapter13CPlusPlus {
 
     /**
-     * 13.1 - Write a method to print the last K lines of an input file using C++.
+     * 13.1 - Write a method to print the last K lines of an input file using methodC++.
      */
 
     /**
@@ -16,7 +16,7 @@ public class Chapter13CPlusPlus {
      */
 
     /**
-     * 13.3 - How do virtual functions work in C++?
+     * 13.3 - How do virtual functions work in methodC++?
      */
 
     /**
@@ -25,13 +25,13 @@ public class Chapter13CPlusPlus {
      */
 
     /**
-     * 13.5 - What is the significance of the keyword “volatile” in C?
+     * 13.5 - What is the significance of the keyword “volatile” in methodC?
      */
 
     /**
-     * 13.6 - What is name hiding in C++?
+     * 13.6 - What is name hiding in methodC++?
      */
-    // Name hiding in C++ is when a function is redfined in the child/subclass that is already
+    // Name hiding in methodC++ is when a function is redfined in the child/subclass that is already
     // defined with a different in the base/parent class with a different return value, instead of
     // different parameters which would be overloading
     // Override the name hiding behavior with "using CLASS::FUNCTION"

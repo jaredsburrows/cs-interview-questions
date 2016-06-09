@@ -84,7 +84,7 @@ public class Chapter5BitManipulation {
 
     /**
      * 5.5 - Write a function to determine the number of bits required to convert integer A to
-     * integer B.
+     * integer methodB.
      * Input: 31, 14
      * Output: 2
      */
@@ -99,7 +99,7 @@ public class Chapter5BitManipulation {
     // output: 2
     // assuming 32 bit integers
     // Time - O(32) == O(1), Space - O(1)
-    public static int getDiffBits(int a, int b) {
+    public static int getDiffBits(final int a, final int b) {
         int aZero = 0;
         int bZero = 0;
         int aOne = 0;
@@ -136,7 +136,7 @@ public class Chapter5BitManipulation {
     }
 
     // book answer
-    public static int bitSwapRequired(int a, int b) {
+    public static int bitSwapRequired(final int a, final int b) {
         int count = 0;
         for (int c = a ^ b; c != 0; c = c >> 1) {
             count += c & 1;
@@ -155,7 +155,7 @@ public class Chapter5BitManipulation {
     // 0xaaaaaaaa = 2863311530 = 10101010101010101010101010101010
     // TODO - review
     // book answer
-    public static int getSwapBits(int a) {
+    public static int getSwapBits(final int a) {
         return ((a & 0xaaaaaaaa) >> 1) | ((a & 0x55555555) << 1);
     }
 

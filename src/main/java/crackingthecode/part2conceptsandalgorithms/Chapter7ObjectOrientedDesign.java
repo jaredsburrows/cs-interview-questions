@@ -14,6 +14,7 @@ public class Chapter7ObjectOrientedDesign {
      * it to implement particular card games.
      */
     public static class Card {
+
         public enum Suite {
             HEARTS,
             DIAMONDS,
@@ -21,20 +22,20 @@ public class Chapter7ObjectOrientedDesign {
             SPADES
         }
 
-        private Suite suite;
-        private int cardNumber;
+        private Suite mSuite;
+        private int mCardNumber;
 
         public Card(final Suite suite, final int cardNumber) {
-            this.suite = suite;
-            this.cardNumber = cardNumber;
+            this.mSuite = suite;
+            this.mCardNumber = cardNumber;
         }
 
         public int getNumber() {
-            return this.cardNumber;
+            return this.mCardNumber;
         }
 
         public Suite getSuite() {
-            return this.suite;
+            return this.mSuite;
         }
     }
 
@@ -56,27 +57,29 @@ public class Chapter7ObjectOrientedDesign {
     // MP3 Player?(more modern)
     // Song, Controls on Jukebox(previous, right), Playlist(contains songs)
     class Song {
-        private UUID uuid;
-        private String song;
-        private String artist;
-        private String album;
+        private UUID mUuid;
+        private String mSong;
+        private String mArtist;
+        private String mAlbum;
     }
 
     abstract class Playlist {
-        private Song song;
-        private Queue<Song> list;
 
-        abstract void enqueueSong(Song s);
+        private Song mSong;
+        private Queue<Song> mList;
 
-        abstract void dequeueSong(Song s);
+        abstract void enqueueSong(final Song song);
+
+        abstract void dequeueSong(final Song song);
 
         abstract Song getCurrentSong();
     }
 
     abstract class Selector {
-        private Song currentSong;
 
-        abstract void setTrack(Song s);
+        private Song mCurrentSong;
+
+        abstract void setTrack(final Song song);
 
         abstract Song getCurrentSong();
 
@@ -84,11 +87,11 @@ public class Chapter7ObjectOrientedDesign {
 
     public class JukeBox {
 
-        private List<Song> songList;
-        private Selector selector;
+        private List<Song> mSongList;
+        private Selector mSelector;
 
         public JukeBox(final List<Song> songList) {
-            this.songList = songList;
+            this.mSongList = songList;
         }
     }
 
@@ -179,21 +182,21 @@ public class Chapter7ObjectOrientedDesign {
 
         void unmount();
 
-        void createFile(String name);
+        void createFile(final String name);
 
-        void createDirectory(String name);
+        void createDirectory(final String name);
 
-        void openFile(File file, String mode);
+        void openFile(final File file, String mode);
 
-        void closeFile(File file);
+        void closeFile(final File file);
 
-        void readFile(File file);
+        void readFile(final File file);
 
-        void writeFile(File file);
+        void writeFile(final File file);
 
-        void copy(File file1, File file2);
+        void copy(final File source, final File destination);
 
-        void delete(File file);
+        void delete(final File file);
     }
 
     public class Drive {
@@ -201,6 +204,7 @@ public class Chapter7ObjectOrientedDesign {
     }
 
     public class File implements BaseFileSystem {
+
         // contains metadata
         @Override
         public void mount() {
@@ -243,7 +247,7 @@ public class Chapter7ObjectOrientedDesign {
         }
 
         @Override
-        public void copy(final File file1, final File file2) {
+        public void copy(final File source, final File destination) {
 
         }
 
@@ -298,7 +302,7 @@ public class Chapter7ObjectOrientedDesign {
         }
 
         @Override
-        public void copy(final File file1, final File file2) {
+        public void copy(final File source, final File destination) {
 
         }
 
@@ -309,13 +313,13 @@ public class Chapter7ObjectOrientedDesign {
     }
 
     public class FileSystem {
-        List<BaseFileSystem> baseFileSystemList;
-        List<Drive> driveList;
+        public List<BaseFileSystem> baseFileSystemList;
+        public List<Drive> driveList;
     }
 
     /**
      * 7.10 - Describe the data structures and algorithms that you would use to implement a garbage
-     * collector in C++.
+     * collector in methodC++.
      */
     // most of the time this is implemeted with smart pointers
     // memory vs performance

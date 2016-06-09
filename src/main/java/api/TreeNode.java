@@ -15,16 +15,16 @@ public final class TreeNode<T> {
 
     @SuppressWarnings("SimplifiableIfStatement")
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(final Object object) {
+        if (this == object) {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
-        final TreeNode<?> treeNode = (TreeNode<?>) o;
+        final TreeNode<?> treeNode = (TreeNode<?>) object;
 
         if (this.value != null ? !this.value.equals(treeNode.value) : treeNode.value != null) {
             return false;

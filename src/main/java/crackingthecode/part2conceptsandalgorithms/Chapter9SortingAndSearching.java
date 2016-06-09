@@ -14,38 +14,38 @@ import java.util.List;
 public class Chapter9SortingAndSearching {
 
     /**
-     * 9.1 - You are given two sorted arrays, A and B, and A has a large enough buffer at the end to
-     * hold B. Write a method to merge B into A in sorted order.
+     * 9.1 - You are given two sorted arrays, A and methodB, and A has a large enough buffer at the end to
+     * hold methodB. Write a method to merge methodB into A in sorted order.
      */
     // TODO - review
     // Time - O(N), Space - O(1)
-    public static int[] mergeBInA(final int[] a, final int[] b, final int sizeA) {
-        if (a == null) {
+    public static int[] mergeBInA(final int[] arrayA, final int[] arrayB, final int sizeA) {
+        if (arrayA == null) {
             return null;
         }
 
-        if (b == null) {
-            return a;
+        if (arrayB == null) {
+            return arrayA;
         }
 
-        int aIndex = sizeA - 1;
-        int bIndex = b.length - 1;
-        final int totalLength = sizeA + bIndex; // total elements
+        int indexA = sizeA - 1;
+        int indexB = arrayB.length - 1;
+        final int totalLength = sizeA + indexB; // total elements
 
         // read in elements backwards
         for (int i = totalLength; i > 0; i--) {
-            if (aIndex >= 0 && bIndex >= 0) {
-                if (a[aIndex] > b[bIndex]) {
-                    a[i] = a[aIndex--];
+            if (indexA >= 0 && indexB >= 0) {
+                if (arrayA[indexA] > arrayB[indexB]) {
+                    arrayA[i] = arrayA[indexA--];
                 } else {
-                    a[i] = b[bIndex--];
+                    arrayA[i] = arrayB[indexB--];
                 }
-            } else if (bIndex >= 0) {
-                a[i] = a[bIndex--];
+            } else if (indexB >= 0) {
+                arrayA[i] = arrayA[indexB--];
             }
         }
 
-        return a;
+        return arrayA;
     }
 
     /**
@@ -55,7 +55,7 @@ public class Chapter9SortingAndSearching {
     // [anagram, anagram, notanagram, notanagram]?
     // [Aanagram, anagramA, Banagram, anagramB]?
     // Time - O(N^2 LOG N), Space - O(n)
-    public static List<String> sortAnagrams(List<String> anagrams) {
+    public static List<String> sortAnagrams(final List<String> anagrams) {
         for (int i = 0; i < anagrams.size(); i++) {
             char[] tempArray = anagrams.get(i).toCharArray();
             Arrays.sort(tempArray);
@@ -278,9 +278,6 @@ public class Chapter9SortingAndSearching {
                 return o1.getY() < o2.getY() && o1.getX() < o2.getX() ? -1 : 1;
             }
         });
-
-        // Java 8
-//        Collections.sort(original, (o1, o2) -> ((o1.getY() < o2.getY()) && (o1.getX() < o2.getX())) ? -1 : 1);
 
         return original;
     }

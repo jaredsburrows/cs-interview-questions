@@ -18,16 +18,16 @@ public final class Node<T> {
 
     @SuppressWarnings("SimplifiableIfStatement")
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(final Object object) {
+        if (this == object) {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
-        final Node<?> node = (Node<?>) o;
+        final Node<?> node = (Node<?>) object;
 
         if (this.value != null ? !this.value.equals(node.value) : node.value != null) {
             return false;

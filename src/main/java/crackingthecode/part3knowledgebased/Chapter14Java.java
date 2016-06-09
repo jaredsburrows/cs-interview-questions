@@ -13,32 +13,34 @@ public class Chapter14Java {
 
     // Singleton
     public class PrivateConstructor {
-        private PrivateConstructor instance = null;
+
+        private PrivateConstructor sInstance = null;
 
         private PrivateConstructor() {
             // Exists only to defeat instantiation.
         }
 
         public PrivateConstructor getInstance() {
-            if (instance == null) {
-                instance = new PrivateConstructor();
+            if (sInstance == null) {
+                sInstance = new PrivateConstructor();
             }
-            return instance;
+            return sInstance;
         }
     }
 
     // Factory Pattern
     public class BusinessClass {
-        public String str;
+
+        private String mStr;
 
         private BusinessClass() {
         }
 
-        private BusinessClass(String str) {
-            this.str = str;
+        private BusinessClass(final String str) {
+            this.mStr = str;
         }
 
-        public BusinessClass CreateObject(String myProperty) {
+        public BusinessClass CreateObject(final String myProperty) {
 
             if (myProperty != null) {
                 return new BusinessClass(myProperty);
@@ -82,12 +84,12 @@ public class Chapter14Java {
     //  - protected void finalize() throws Throwable { }
 
     /**
-     * 14.4 - Explain the difference between templates in C++ and generics in Java.
+     * 14.4 - Explain the difference between templates in methodC++ and generics in Java.
      */
     // http://en.wikipedia.org/wiki/Comparison_of_Java_and_C%2B%2B#Templates_vs._Generics
     // TODO
     class Test<T> {
-        void testMethod(T t) {
+        void testMethod(final T t) {
 
         }
     }

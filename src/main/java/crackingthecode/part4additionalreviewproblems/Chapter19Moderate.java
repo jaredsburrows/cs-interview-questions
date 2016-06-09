@@ -19,19 +19,19 @@ public class Chapter19Moderate {
     // Time - O(1), Space - O(1)
     @SuppressWarnings("UnusedAssignment")
     @SuppressFBWarnings("DLS_DEAD_LOCAL_STORE")
-    public static void swapVar(int a, int b) {
-        a ^= b;
-        b ^= a;
-        a ^= b;
+    public static void swapVar(int left, int right) {
+        left ^= right;
+        right ^= left;
+        left ^= right;
     }
 
     // Time - O(1), Space - O(1)
     @SuppressWarnings("UnusedAssignment")
     @SuppressFBWarnings("DLS_DEAD_LOCAL_STORE")
-    public static void swapVar2(int a, int b) {
-        a = b - a; // 4 = 9 - 5
-        b = b - a; // 5 = 9 - 4
-        a = a + b; // 9 = 4 + 5
+    public static void swapVar2(int left, int right) {
+        left = right - left;    // 4 = 9 - 5
+        right = right - left;   // 5 = 9 - 4
+        left = left + right;    // 9 = 4 + 5
     }
 
     /**
@@ -84,14 +84,14 @@ public class Chapter19Moderate {
      */
     // 5 * 2 = 10
     // misinterpreted the question, I thought we were given the factorial
-    public static int numZeros(final int num) {
+    public static int numZeros(final int nubmer) {
         int count = 0;
-        if (num < 0) {
+        if (nubmer < 0) {
             return 0;
         }
 
-        for (int i = 5; num / i > 0; i *= 5) {
-            count += num / i;
+        for (int i = 5; nubmer / i > 0; i *= 5) {
+            count += nubmer / i;
         }
 
         return count;
@@ -106,33 +106,33 @@ public class Chapter19Moderate {
      */
     // >> 31 - for only 32 bit numbers
     // Time - O(1), Space - O(1)
-    public static long getMax(final long a, final long b) {
-        final long diff = a - b >> 31;    // >> 31 accounts for negatives
-        final long diffFirst = diff & b;
-        final long diffSecond = ~diff & a;
+    public static long getMax(final long left, final long right) {
+        final long diff = left - right >> 31;    // >> 31 accounts for negatives
+        final long diffFirst = diff & right;
+        final long diffSecond = ~diff & left;
 
         return diffFirst + diffSecond;
     }
 
     // Time - O(1), Space - O(1)
-    public static long getMax2(final long a, final long b) {
-        final long[] temp = {a, b};
-        return temp[(int) (a - b >> 31) & 1];
+    public static long getMax2(final long left, final long right) {
+        final long[] temp = {left, right};
+        return temp[(int) (left - right >> 31) & 1];
     }
 
     // If you have the max, you can find min, vice-versa
     // Time - O(1), Space - O(1)
-    public static long getMin(final long a, final long b) {
-        final long diff = a - b >> 31;    // >> 31 accounts for negatives
-        final long diffFirst = diff & a;
-        final long diffSecond = ~diff & b;
+    public static long getMin(final long left, final long right) {
+        final long diff = left - right >> 31;    // >> 31 accounts for negatives
+        final long diffFirst = diff & left;
+        final long diffSecond = ~diff & right;
 
         return diffFirst + diffSecond;
     }
 
     /**
      * 19.5 - The Game of Master Mind is played as follows: The computer has four slots containing
-     * balls that are red (R), yellow (Y), green (G) or blue (B). For example, the computer might
+     * balls that are red (R), yellow (Y), green (G) or blue (methodB). For example, the computer might
      * have RGGB (e.g., Slot #1 is red, Slots #2 and #3 are green, Slot #4 is blue). You, the user,
      * are trying to guess the solution. You might, for example, guess YRGB. When you guess the
      * correct color for the correct slot, you get a “hit”. If you guess a color that exists but is
@@ -167,17 +167,17 @@ public class Chapter19Moderate {
     // Book solution used another class that held two ints
     // Book solution fails on its own test case, 2 hits, 1 psuedo, RGGB, YRGB.
     // Time - O(1), Space(O)
-    public static Tuple<Integer, Integer> estimate(String guess, String solution) {
-        int solution_mask = 0;
+    public static Tuple<Integer, Integer> estimate(final String guess, final String solution) {
+        int solutionMask = 0;
         int hits = 0;
         int pseudoHits = 0;
         for (int i = 0; i < 4; ++i) {
-            solution_mask |= 1 << (1 + solution.charAt(i) - 'A');
+            solutionMask |= 1 << (1 + solution.charAt(i) - 'A');
         }
         for (int i = 0; i < 4; ++i) {
             if (guess.charAt(i) == solution.charAt(i)) {
                 ++hits;
-            } else if ((solution_mask & (1 << (1 + guess.charAt(i) - 'A'))) >= 1) {
+            } else if ((solutionMask & (1 << (1 + guess.charAt(i) - 'A'))) >= 1) {
                 ++pseudoHits;
             }
         }
@@ -231,7 +231,7 @@ public class Chapter19Moderate {
     // For single queries, just count the all the strings in the array
     // For repetitive queries we would create the hashmap one time
     // Time - O(N)
-    public static int getWordOccurence(final String[] array, String word) {
+    public static int getWordOccurrence(final String[] array, String word) {
         if (array == null || word == null) {
             return -1;
         }
@@ -241,13 +241,21 @@ public class Chapter19Moderate {
         for (String string : array) {
             string = string.toLowerCase().trim();
             if (!string.isEmpty()) {
-                occurrences.put(string, occurrences.containsKey(string) ? occurrences.get(string) + 1 : 1);
+                if (occurrences.containsKey(string)) {
+                    occurrences.put(string, occurrences.get(string) + 1);
+                } else {
+                    occurrences.put(string, 1);
+                }
             }
         }
 
         word = word.toLowerCase().trim();
 
-        return occurrences.containsKey(word) ? occurrences.get(word) : 0;
+        if (occurrences.containsKey(word)) {
+            return occurrences.get(word);
+        } else {
+            return 0;
+        }
     }
 
     /**
@@ -272,9 +280,9 @@ public class Chapter19Moderate {
     // book solution
     public static int rand7() {
         while (true) {
-            int num = 5 * rand5() - 1 + rand5() - 1;
-            if (num < 21) {
-                return num % 7 + 1;
+            final int number = 5 * rand5() - 1 + rand5() - 1;
+            if (number < 21) {
+                return number % 7 + 1;
             }
         }
     }
@@ -314,7 +322,7 @@ public class Chapter19Moderate {
     }
 
     // book solution, Time - O(N*LOG(N)), Space - O(N), only prints them out
-    public static void printPairSums(int[] array, int sum) {
+    public static void printPairSums(final int[] array, final int sum) {
         Arrays.sort(array);
         int first = 0;
         int last = array.length - 1;

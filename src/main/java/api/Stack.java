@@ -12,10 +12,10 @@ public final class Stack<T> {
         return this.top;
     }
 
-    public void push(final Node<T> n) {
-        if (n != null) {
-            n.next = this.top;
-            this.top = n;
+    public void push(final Node<T> node) {
+        if (node != null) {
+            node.next = this.top;
+            this.top = node;
         }
     }
 

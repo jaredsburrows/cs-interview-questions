@@ -25,16 +25,16 @@ public final class GraphNode<T> {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(final Object object) {
+        if (this == object) {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
-        final GraphNode<?> graphNode = (GraphNode<?>) o;
+        final GraphNode<?> graphNode = (GraphNode<?>) object;
 
         if (this.visited != graphNode.visited) {
             return false;

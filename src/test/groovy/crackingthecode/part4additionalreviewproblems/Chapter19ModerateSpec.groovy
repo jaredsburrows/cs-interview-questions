@@ -115,7 +115,7 @@ class Chapter19ModerateSpec extends Specification {
 
     def "19.8 - getWordOccurence"() {
         expect:
-        Chapter19Moderate.getWordOccurence(a as String[], b) == c
+        Chapter19Moderate.getWordOccurrence(a as String[], b) == c
 
         where:
         a                                                               || b      || c

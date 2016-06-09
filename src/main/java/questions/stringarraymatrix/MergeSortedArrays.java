@@ -5,35 +5,35 @@ package questions.stringarraymatrix;
  */
 public class MergeSortedArrays {
 
-    public static int[] merge(final int[] a, final int[] b) {
-        if (a == null && b == null) {
+    public static int[] merge(final int[] arrayA, final int[] arrayB) {
+        if (arrayA == null && arrayB == null) {
             return null;
         }
 
-        if (a == null) {
-            return b;
+        if (arrayA == null) {
+            return arrayB;
         }
 
-        if (b == null) {
-            return a;
+        if (arrayB == null) {
+            return arrayA;
         }
 
-        int[] merge = new int[a.length + b.length];
+        int[] merge = new int[arrayA.length + arrayB.length];
 
-        int aIndex = 0;
-        int bIndex = 0;
+        int indexA = 0;
+        int indexB = 0;
 
         for (int i = 0; i < merge.length; i++) {
-            if (aIndex < a.length && bIndex < b.length) {
-                if (a[aIndex] < b[bIndex]) {
-                    merge[i] = a[aIndex++];
+            if (indexA < arrayA.length && indexB < arrayB.length) {
+                if (arrayA[indexA] < arrayB[indexB]) {
+                    merge[i] = arrayA[indexA++];
                 } else {
-                    merge[i] = b[bIndex++];
+                    merge[i] = arrayB[indexB++];
                 }
-            } else if (aIndex < a.length) {
-                merge[i] = a[aIndex++];
+            } else if (indexA < arrayA.length) {
+                merge[i] = arrayA[indexA++];
             } else {
-                merge[i] = b[bIndex++];
+                merge[i] = arrayB[indexB++];
             }
         }
 

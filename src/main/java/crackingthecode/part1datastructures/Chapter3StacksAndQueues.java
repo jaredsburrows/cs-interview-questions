@@ -115,8 +115,8 @@ public class Chapter3StacksAndQueues {
      * of size from top to bottom (e.g., each disk sits on top of an even larger one). You have the
      * following constraints:
      * (A) Only one disk can be moved at a time.
-     * (B) A disk is slid off the top of one rod onto the next rod.
-     * (C) A disk can only be placed on top of a larger disk.
+     * (methodB) A disk is slid off the top of one rod onto the next rod.
+     * (methodC) A disk can only be placed on top of a larger disk.
      * Write a program to move the disks from the first rod to the last using Stacks
      */
     // TODO

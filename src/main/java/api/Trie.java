@@ -6,14 +6,14 @@ package api;
 // TODO Current implementation is for strings, modify to make it generic
 public final class Trie<T> {
 
-    private TrieNode<T> root = new TrieNode<>();
+    private TrieNode<T> mRoot = new TrieNode<>();
 
     public void insert(final String word) {
         if (word == null) {
             return;
         }
 
-        TrieNode<T> current = this.root;
+        TrieNode<T> current = this.mRoot;
 
         final int length = word.length();
 
@@ -49,7 +49,7 @@ public final class Trie<T> {
             return null;
         }
 
-        TrieNode<T> current = this.root;
+        TrieNode<T> current = this.mRoot;
 
         final int length = word.length();
 
@@ -65,7 +65,7 @@ public final class Trie<T> {
             }
         }
 
-        if (current == this.root) {
+        if (current == this.mRoot) {
             return null;
         }
 

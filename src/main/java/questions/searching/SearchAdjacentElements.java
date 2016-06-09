@@ -23,15 +23,11 @@ public class SearchAdjacentElements {
     // Time - O(N), Space - O(1)
     // By moving the "index", there will be less iterations
     public static int search2(final int[] array, final int number) {
-        final int length = array.length - 1;
 
-        int i = 0;
-        while (i < length) {
+        for (int i = 0; i < array.length - 1; i = i + Math.abs(array[i] - number)) {
             if (array[i] == number) {
                 return i;
             }
-
-            i = i + Math.abs(array[i] - number);
         }
 
         return -1;

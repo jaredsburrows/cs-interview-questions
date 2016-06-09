@@ -5,46 +5,46 @@ package api;
  */
 public final class Point {
 
-    private final int x;
-    private final int y;
+    private final int mX;
+    private final int mY;
 
     public Point(final int x, final int y) {
-        this.x = x;
-        this.y = y;
+        this.mX = x;
+        this.mY = y;
     }
 
     public int getX() {
-        return this.x;
+        return this.mX;
     }
 
     public int getY() {
-        return this.y;
+        return this.mY;
     }
 
     @SuppressWarnings("SimplifiableIfStatement")
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(final Object object) {
+        if (this == object) {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
-        final Point point = (Point) o;
+        final Point point = (Point) object;
 
-        if (this.x != point.x) {
+        if (this.mX != point.mX) {
             return false;
         }
 
-        return this.y == point.y;
+        return this.mY == point.mY;
     }
 
     @Override
     public int hashCode() {
-        int result = this.x;
-        result = 31 * result + this.y;
+        int result = this.mX;
+        result = 31 * result + this.mY;
         return result;
     }
 }

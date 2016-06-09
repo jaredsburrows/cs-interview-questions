@@ -135,6 +135,13 @@ model {
     }
 }
 
+// https://github.com/tbroyer/gradle-errorprone-plugin/issues/18
+configurations.all {
+    resolutionStrategy {
+        force "com.google.errorprone:error_prone_core:2.0.5"
+    }
+}
+
 dependencies {
     compile "com.google.code.findbugs:annotations:3.0.1"
 

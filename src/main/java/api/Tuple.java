@@ -5,46 +5,46 @@ package api;
  */
 public final class Tuple<X, Y> {
 
-    private final X x;
-    private final Y y;
+    private final X mX;
+    private final Y mY;
 
-    public Tuple(final X x, final Y y) {
-        this.x = x;
-        this.y = y;
+    public Tuple(final X left, final Y right) {
+        this.mX = left;
+        this.mY = right;
     }
 
     public X getX() {
-        return this.x;
+        return this.mX;
     }
 
     public Y getY() {
-        return this.y;
+        return this.mY;
     }
 
     @SuppressWarnings("SimplifiableIfStatement")
     @Override
-    public boolean equals(final Object o) {
-        if (this == o) {
+    public boolean equals(final Object object) {
+        if (this == object) {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
-        final Tuple<?, ?> tuple = (Tuple<?, ?>) o;
+        final Tuple<?, ?> tuple = (Tuple<?, ?>) object;
 
-        if (this.x != null ? !this.x.equals(tuple.x) : tuple.x != null) {
+        if (this.mX != null ? !this.mX.equals(tuple.mX) : tuple.mX != null) {
             return false;
         }
 
-        return this.y != null ? this.y.equals(tuple.y) : tuple.y == null;
+        return this.mY != null ? this.mY.equals(tuple.mY) : tuple.mY == null;
     }
 
     @Override
     public int hashCode() {
-        int result = x != null ? this.x.hashCode() : 0;
-        result = 31 * result + (this.y != null ? y.hashCode() : 0);
+        int result = mX != null ? this.mX.hashCode() : 0;
+        result = 31 * result + (this.mY != null ? mY.hashCode() : 0);
         return result;
     }
 }

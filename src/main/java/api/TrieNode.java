@@ -21,16 +21,16 @@ public final class TrieNode<T> {
     }
 
     @Override
-    public boolean equals(final Object o) {
-        if (this == o) {
+    public boolean equals(final Object object) {
+        if (this == object) {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
-        final TrieNode<?> trieNode = (TrieNode<?>) o;
+        final TrieNode<?> trieNode = (TrieNode<?>) object;
 
         if (this.isEnd != trieNode.isEnd) {
             return false;

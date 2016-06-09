@@ -47,13 +47,13 @@ public class Chapter20Hard {
      * operators.
      */
     // Time - O(LOG(N)), Space - O(1)
-    public static long addTwoNumbers(long a, long b) {
+    public static long addTwoNumbers(long left, long right) {
         // if a = 4, b = 5
 
-        while (b != 0) {
-            long carry = a & b;     // 4 = 4 & 5
-            a = a ^ b;              // 1 = 4 ^ 5
-            b = carry << 1;         // 8 = 4 << 1
+        while (right != 0) {
+            long carry = left & right;        // 4 = 4 & 5
+            left = left ^ right;              // 1 = 4 ^ 5
+            right = carry << 1;               // 8 = 4 << 1
         }
 
         // First pass:
@@ -65,17 +65,17 @@ public class Chapter20Hard {
         // 9 = 1 ^  8,  a = 9
         // 0 = 0 << 1,  b = 0
 
-        return a;
+        return left;
     }
 
     // Time - O(LOG(N)), Space - O(1)
-    public static long substractTwoNumbers(long a, long b) {
+    public static long substractTwoNumbers(long left, long right) {
         // if a = 5, b = 4
 
-        while (b != 0) {
-            long carry = ~(a) & b;  // 0 = -6 & 4
-            a = a ^ b;              // 1 = 5 ^ 4
-            b = carry << 1;         // 0 = 0 << 1
+        while (right != 0) {
+            long carry = ~(left) & right;       // 0 = -6 & 4
+            left = left ^ right;                // 1 = 5 ^ 4
+            right = carry << 1;                 // 0 = 0 << 1
         }
 
         // First pass:
@@ -83,7 +83,7 @@ public class Chapter20Hard {
         // 1 = 5 ^ 4,  a = 1
         // 0 = 0 << 1,  b = 0
 
-        return a;
+        return left;
     }
 
     /**
@@ -104,7 +104,7 @@ public class Chapter20Hard {
      */
     // 2, 12, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 32
     // Time - O(N*M), Space - O(1)
-    public static long countNumber2s(int number) {
+    public static long countNumber2s(final int number) {
         long count = 0;
 
         for (long i = 0; i <= number; i++) { // N
@@ -124,9 +124,9 @@ public class Chapter20Hard {
     // book answer
     // Time - O(N), Space - O(1)
     // TODO
-    public static int count2sI(int num) {
-        int countof2s = 0, digit = 0;
-        int j = num, seendigits = 0, position = 0, pow10_pos = 1;
+    public static int count2sI(final int number) {
+        int countof2s = 0, digit;
+        int j = number, seendigits = 0, position = 0, pow10_pos = 1;
         /* maintaining this value instead of calling pow() is an 6x perf
          * gain (48s -> 8s) pow10_posMinus1. maintaining this value
          * instead of calling Numof2s is an 2x perf gain (8s -> 4s).
@@ -169,7 +169,7 @@ public class Chapter20Hard {
      */
     // only doing 10 for testing
     // Time - O(N *LOG(N)), Space - O(1) -> Time - O(1), Space - O(1), since we already know N and sublist each time
-    public static List<Integer> getTopMillion(List<Integer> billion) {
+    public static List<Integer> getTopMillion(final List<Integer> billion) {
         if (billion == null || billion.size() != 10) { // would be 1,000,000
             return null;
         }
@@ -218,7 +218,7 @@ public class Chapter20Hard {
      * Output: DAMP -> LAMP -> LIMP -> LIME -> LIKE
      */
     // what is the data structure of the dictionary? Map<Integer, String>
-    public static List<String> getTransformedList(Map<Integer, String> dictionary, String word, String word2) {
+    public static List<String> getTransformedList(final Map<Integer, String> dictionary, final String word, final String word2) {
         if (dictionary == null || word == null || word2 == null) {
             return null;
         }

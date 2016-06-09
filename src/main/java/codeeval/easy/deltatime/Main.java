@@ -3,18 +3,21 @@ package codeeval.easy.deltatime;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.nio.charset.Charset;
 import java.util.Calendar;
 
 public class Main {
+
     public static void main(final String[] args) throws Exception {
 
-        final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(new File(args[0])), Charset.defaultCharset()));
-
-        /* Java has a problem with SimpleDateFormat formatting */
-//        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
-
+        final File inputFile = new File(args[0]);
+        final InputStream fileStream = new FileInputStream(inputFile);
+        final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
+        final BufferedReader buffer = new BufferedReader(inputReader);
+        
         String line;
         while ((line = buffer.readLine()) != null) {
             final String[] words = line.trim().split(" ");
@@ -36,15 +39,6 @@ public class Main {
             result.setTimeInMillis(Math.abs(calendar2.getTime().getTime() - calendar1.getTime().getTime()));
 
             System.out.printf("%02d:%02d:%02d\n", result.get(Calendar.HOUR_OF_DAY), result.get(Calendar.MINUTE), result.get(Calendar.SECOND));
-
-//            System.out.println(simpleDateFormat.format(math.abs(simpleDateFormat.parse(words[1]).getTime() - simpleDateFormat.parse(words[0]).getTime())));
-
-            /* Joda time - works but can't submit 3rd party libs */
-//            DateTimeFormatter formatter = DateTimeFormat.forPattern("HH:mm:ss");
-//
-//            Period period = new Period(math.abs(formatter.parseDateTime(words[1]).getMillis() - formatter.parseDateTime(words[0]).getMillis()));
-//
-//            System.out.printf("%02d:%02d:%02d\n", period.getHours(), period.getMinutes(), period.getSeconds());
         }
     }
 }

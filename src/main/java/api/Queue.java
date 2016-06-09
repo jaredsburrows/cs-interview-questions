@@ -17,13 +17,13 @@ public final class Queue<T> {
         return this.last;
     }
 
-    public void enqueue(final TreeNode<T> n) {
+    public void enqueue(final TreeNode<T> node) {
         if (this.first == null) {
-            this.first = n;
+            this.first = node;
             this.last = this.first;
         } else {
-            this.last.right = n;
-            this.last = n;
+            this.last.right = node;
+            this.last = node;
         }
     }
 

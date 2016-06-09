@@ -14,35 +14,35 @@ public class QuickSort {
             return;
         }
 
-        int i = low;
-        int j = high;
+        int left = low;
+        int right = high;
         int pivot = array[(low + (high - low)) / 2];
 
-        while (i <= j) {
-            while (array[i] < pivot) {
-                i++;
+        while (left <= right) {
+            while (array[left] < pivot) {
+                left++;
             }
 
-            while (array[j] > pivot) {
-                j--;
+            while (array[right] > pivot) {
+                right--;
             }
 
-            if (i <= j) {
-                final int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+            if (left <= right) {
+                final int temp = array[left];
+                array[left] = array[right];
+                array[right] = temp;
 
-                i++;
-                j--;
+                left++;
+                right--;
             }
         }
 
-        if (low < j) {
-            sortHelper(array, low, j);
+        if (low < right) {
+            sortHelper(array, low, right);
         }
 
-        if (high > i) {
-            sortHelper(array, i, high);
+        if (high > left) {
+            sortHelper(array, left, high);
         }
     }
 

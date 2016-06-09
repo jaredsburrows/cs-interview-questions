@@ -5,24 +5,24 @@ package api;
  */
 public final class LinkedList<T> {
 
-    private Node<T> head;
+    private Node<T> mHead;
 
     public LinkedList(final T value) {
-        this.head = new Node<>(value);
+        this.mHead = new Node<>(value);
     }
 
     public Node<T> getHead() {
-        return this.head;
+        return this.mHead;
     }
 
     public Node<T> getNext() {
-        return this.head.next;
+        return this.mHead.next;
     }
 
     public void addToFront(final T value) {
-        Node<T> newNode = new Node<>(value);
-        newNode.next = head;
-        this.head = newNode;
+        final Node<T> newNode = new Node<>(value);
+        newNode.next = this.mHead;
+        this.mHead = newNode;
     }
 
     public void add(final T value) {
@@ -30,7 +30,7 @@ public final class LinkedList<T> {
     }
 
     public void addToEnd(final T value) {
-        Node<T> temp = head;
+        Node<T> temp = this.mHead;
         while (temp.next != null) {
             temp = temp.next;
         }
@@ -38,11 +38,11 @@ public final class LinkedList<T> {
     }
 
     public void removeFront() {
-        this.head = head.next;
+        this.mHead = this.mHead.next;
     }
 
     public void removeLast() {
-        Node<T> temp = head;
+        Node<T> temp = this.mHead;
         while (temp.next.next != null) {
             temp = temp.next;
         }
