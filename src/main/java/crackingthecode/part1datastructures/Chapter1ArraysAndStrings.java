@@ -94,7 +94,7 @@ public class Chapter1ArraysAndStrings {
      * FOLLOW UP
      * Write the test cases for this method.
      */
-    // TODO with char[], in java you can print the bytes and show that '\0' is not removing chars, the book answer does this
+    // TODO in java you can print the bytes and show that '\0' is not removing chars, the book answer does this
     // the book answer fails for strings like "baaaaaaaaaad"
     public static String removeDuplicates(final String input) {
         if (input == null) {

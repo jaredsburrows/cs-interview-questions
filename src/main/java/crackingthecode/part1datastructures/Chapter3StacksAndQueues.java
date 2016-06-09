@@ -82,21 +82,21 @@ public class Chapter3StacksAndQueues {
             this.mStacks.add(new Stack<>());
         }
 
-        public void push(T t) {
+        public void push(final T item) {
             if (this.mStacks.get(this.mCurrentStack).size() == this.mCapacity) {
                 final Stack<T> stack = new Stack<>();
-                stack.push(t);
+                stack.push(item);
                 this.mStacks.add(stack);
                 this.mCurrentStack++;
             } else {
-                this.mStacks.get(this.mCurrentStack).push(t);
+                this.mStacks.get(this.mCurrentStack).push(item);
             }
         }
 
         public T pop() {
-            if (this.mStacks.get(this.mCurrentStack).size() > 0) {
+            if (!this.mStacks.get(this.mCurrentStack).isEmpty()) {
                 return this.mStacks.get(this.mCurrentStack).pop();
-            } else if (this.mCurrentStack > 0 && this.mStacks.get(this.mCurrentStack).size() == 0) {
+            } else if (this.mCurrentStack > 0 && this.mStacks.get(this.mCurrentStack).isEmpty()) {
                 this.mStacks.remove(this.mCurrentStack);
                 this.mCurrentStack--;
                 return this.mStacks.get(this.mCurrentStack).pop();
@@ -139,8 +139,8 @@ public class Chapter3StacksAndQueues {
         }
 
         // Time - O(1)
-        public void push(T t) {
-            this.mStack1.push(t);
+        public void push(final T item) {
+            this.mStack1.push(item);
         }
 
         // Time - O(N)

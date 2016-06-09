@@ -17,7 +17,7 @@ public class Main {
         final InputStream fileStream = new FileInputStream(inputFile);
         final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
         final BufferedReader buffer = new BufferedReader(inputReader);
-        
+
         String line;
         while ((line = buffer.readLine()) != null) {
             final String[] words = line.trim().split(" ");
@@ -38,7 +38,8 @@ public class Main {
             Calendar result = Calendar.getInstance();
             result.setTimeInMillis(Math.abs(calendar2.getTime().getTime() - calendar1.getTime().getTime()));
 
-            System.out.printf("%02d:%02d:%02d\n", result.get(Calendar.HOUR_OF_DAY), result.get(Calendar.MINUTE), result.get(Calendar.SECOND));
+            System.out.printf("%02d:%02d:%02d\n", result.get(Calendar.HOUR_OF_DAY), result.get(Calendar.MINUTE),
+                    result.get(Calendar.SECOND));
         }
     }
 }

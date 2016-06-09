@@ -77,7 +77,7 @@ public class Chapter6BrainTeasers {
      * while minimizing the number of drops for the worst case.
      */
     // TODO
-    public static int nFloor() {
+    public static int floor() {
         // 100 floors
         // if N >= break else !break
         // Only given 2 eggs

@@ -23,14 +23,14 @@ public class Main {
             final int number = Integer.parseInt(strings[0]);
             final int p1 = Integer.parseInt(strings[1]);
             final int p2 = Integer.parseInt(strings[2]);
-            int k;
+            int check;
             boolean result1 = false;
             boolean result2 = true;
 
             for (int i = 32; i >= 0; i--) {
-                k = number >> i;
+                check = number >> i;
 
-                if ((k & 1) == 0) {
+                if ((check & 1) == 0) {
                     if (i == p1 - 1) {
                         result1 = false;
                     }

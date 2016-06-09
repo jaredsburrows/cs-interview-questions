@@ -89,7 +89,7 @@ public class Chapter14Java {
     // http://en.wikipedia.org/wiki/Comparison_of_Java_and_C%2B%2B#Templates_vs._Generics
     // TODO
     class Test<T> {
-        void testMethod(final T t) {
+        void testMethod(final T item) {
 
         }
     }

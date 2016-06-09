@@ -32,7 +32,8 @@ public class Main {
                 }
             }
 
-            System.out.printf("lowercase: %.2f uppercase: %.2f\n", (lowerCaseCount / length) * 100, (upperCaseCount / length) * 100);
+            System.out.printf("lowercase: %.2f uppercase: %.2f\n", (lowerCaseCount / length) * 100,
+                    (upperCaseCount / length) * 100);
         }
     }
 }

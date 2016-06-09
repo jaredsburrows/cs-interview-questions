@@ -17,8 +17,6 @@ public class Main {
         final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
         final BufferedReader buffer = new BufferedReader(inputReader);
 
-        // For testing: "/Users/noname/repo/CS-Interview-Questions/src/main/java/codeeval/easy/matrixrotation/input.txt"
-
         String line;
         while ((line = buffer.readLine()) != null) {
             final String[] strings = line.trim().split(" ");

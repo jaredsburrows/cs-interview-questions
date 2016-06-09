@@ -109,7 +109,8 @@ public class Chapter8Recursion {
         } else {
             for (int i = 0; i < length; i++) {
                 // add to final list
-                finalList.addAll(getStringPermutations(prefix + string.charAt(i), string.substring(i + 1, length) + string.substring(0, i)));
+                finalList.addAll(getStringPermutations(prefix + string.charAt(i), string.substring(i + 1, length)
+                        + string.substring(0, i)));
             }
         }
 
@@ -128,7 +129,7 @@ public class Chapter8Recursion {
             return null;
         }
 
-        ArrayList<String> generatedList = new ArrayList<>();
+        final List<String> generatedList = new ArrayList<>();
 
         if (right == pairs) {
             generatedList.add(pairString);
@@ -175,7 +176,8 @@ public class Chapter8Recursion {
      * That is, given a screen (represented by a 2-dimensional array of Colors), a point, and a new
      * color, fill in the surrounding area until you hit a border of that color.
      */
-    public static void paintFill(final Color[][] pixels, final int positionX, final int positionY, final Color prevColor, final Color newColor) {
+    public static void paintFill(final Color[][] pixels, final int positionX, final int positionY,
+                                 final Color prevColor, final Color newColor) {
         if (positionX < 0 || positionX >= pixels[0].length || positionY < 0 || positionY >= pixels.length) {
             return;
         }
@@ -184,21 +186,25 @@ public class Chapter8Recursion {
             return;
         }
 
+        // Replace the color at (x, y)
         pixels[positionX][positionY] = newColor;
 
+        // Recurse for north, east, south and west
         paintFill(pixels, positionX + 1, positionY, prevColor, newColor); // right
         paintFill(pixels, positionX - 1, positionY, prevColor, newColor); // left
         paintFill(pixels, positionX, positionY + 1, prevColor, newColor); // down
         paintFill(pixels, positionX, positionY - 1, prevColor, newColor); // up
     }
 
-    public static void paintFill(final Color[][] pixels, final int positionX, final int positionY, final Color newColor) {
+    public static void paintFill(final Color[][] pixels, final int positionX, final int positionY,
+                                 final Color newColor) {
         final Color oldColor = pixels[positionX][positionY];
 
         paintFill(pixels, positionX, positionY, oldColor, newColor);
     }
 
-    public static void floodFillUtil(final int[][] screen, final int positionX, final int positionY, final int prevColor, final int newColor) {
+    public static void floodFillUtil(final int[][] screen, final int positionX, final int positionY,
+                                     final int prevColor, final int newColor) {
         // Base cases
         if (positionX < 0 || positionX >= 8 || positionY < 0 || positionY >= 8) {
             return;
@@ -210,7 +216,7 @@ public class Chapter8Recursion {
         // Replace the color at (x, y)
         screen[positionX][positionY] = newColor;
 
-        // Recur for north, east, south and west
+        // Recurse for north, east, south and west
         floodFillUtil(screen, positionX + 1, positionY, prevColor, newColor);
         floodFillUtil(screen, positionX - 1, positionY, prevColor, newColor);
         floodFillUtil(screen, positionX, positionY + 1, prevColor, newColor);
@@ -272,7 +278,7 @@ public class Chapter8Recursion {
     }
 
     // Book answer
-    public static int makeChange(final int n, final int denom) {
+    public static int makeChange(final int number, final int denom) {
         int nextDenom;
 
         switch (denom) {
@@ -291,8 +297,8 @@ public class Chapter8Recursion {
         }
 
         int ways = 0;
-        for (int i = 0; i * denom <= n; i++) {
-            ways += makeChange(n - i * denom, nextDenom);
+        for (int i = 0; i * denom <= number; i++) {
+            ways += makeChange(number - i * denom, nextDenom);
         }
         return ways;
     }
@@ -301,5 +307,4 @@ public class Chapter8Recursion {
      * 8.8 - Write an algorithm to print all ways of arranging eight queens on a chess board so that
      * none of them share the same row, column or diagonal.
      */
-    // TODO
 }

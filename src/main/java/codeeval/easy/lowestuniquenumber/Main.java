@@ -17,8 +17,6 @@ public class Main {
         final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
         final BufferedReader buffer = new BufferedReader(inputReader);
 
-        // For testing: "/Users/noname/repo/CS-Interview-Questions/src/main/java/codeeval/easy/lowestuniquenumber/input.txt"
-
         String line;
         while ((line = buffer.readLine()) != null) {
             final String[] numbers = line.trim().split(" ");
@@ -42,20 +40,9 @@ public class Main {
                 System.out.print(number + " ");
             }
 
-//            int min = numbers.length;
-//            int number = -1;
-//
-//            for (int i = 0; i < numbers.length; i++) {
-//                if (counts[i] != 0 && counts[i] < min) {
-//                    min = counts[i];
-//                    number = i;
-//                }
-//            }
 
-//            System.out.println(numbers[number]);
             System.out.println("");
             System.out.println("");
-
         }
     }
 }

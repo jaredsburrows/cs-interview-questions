@@ -140,7 +140,8 @@ public class Chapter4TreesAndGraphs {
      * binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not
      * necessarily a binary search tree.
      */
-    public static <T> TreeNode<T> commonAncestor(final TreeNode<T> root, final TreeNode<T> node1, final TreeNode<T> node2) {
+    public static <T> TreeNode<T> commonAncestor(final TreeNode<T> root, final TreeNode<T> node1,
+                                                 final TreeNode<T> node2) {
         if (root == null || node1 == null || node2 == null) {
             return root;
         }

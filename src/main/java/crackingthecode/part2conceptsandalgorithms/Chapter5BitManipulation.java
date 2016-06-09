@@ -45,12 +45,13 @@ public class Chapter5BitManipulation {
      * Input: N = 10000000000, M = 10101, i = 2, j = 6
      * Output: N = 10001010100
      */
-    public static int setBitPosition(final int n, final int m, final int i, final int j) {
+    public static int setBitPosition(final int left, final int right, final int positionA, final int positionB) {
         int max = ~0;
-        int left = max - 1 << j - 1;
-        int right = 1 << i - 1;
-        int mask = left | right;
-        return (n & mask) | (m << i);
+        int shiftMax = max - 1 << positionB - 1;
+        int shift = 1 << positionA - 1;
+        int mask = shiftMax | shift;
+
+        return (left & mask) | (right << positionA);
     }
 
     /**
@@ -100,15 +101,16 @@ public class Chapter5BitManipulation {
     // assuming 32 bit integers
     // Time - O(32) == O(1), Space - O(1)
     public static int getDiffBits(final int left, final int right) {
+
+        final int zeroDiff;
+        final int oneDiff;
         int zeroA = 0;
         int zeroB = 0;
         int oneA = 0;
         int oneB = 0;
-        int zeroDiff;
-        int oneDiff;
 
         for (int i = 0; i < 32; i++) {
-            int temp = left >> (32 - i - 1) & 1;
+            final int temp = left >> (32 - i - 1) & 1;
             if (temp == 0) {
                 zeroA++;
             } else {
@@ -117,7 +119,7 @@ public class Chapter5BitManipulation {
         }
 
         for (int i = 0; i < 32; i++) {
-            int temp = right >> (32 - i - 1) & 1;
+            final int temp = right >> (32 - i - 1) & 1;
             if (temp == 0) {
                 zeroB++;
             } else {
