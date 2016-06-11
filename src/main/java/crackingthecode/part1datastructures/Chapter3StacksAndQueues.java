@@ -1,6 +1,7 @@
 package crackingthecode.part1datastructures;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -72,14 +73,15 @@ public class Chapter3StacksAndQueues {
     // create a new one when the previous exceeds capacity
     public static class SetOfStacks<T> {
 
-        private ArrayList<Stack<T>> mStacks = new ArrayList<>();
+        private List<Stack<T>> mStacks = new ArrayList<>();
         private int mCurrentStack;
         private int mCapacity;
 
         public SetOfStacks(final int capacity) {
             this.mCurrentStack = 0;
             this.mCapacity = capacity;
-            this.mStacks.add(new Stack<>());
+            final Stack<T> stack = new Stack<>();
+            this.mStacks.add(stack);
         }
 
         public void push(final T item) {

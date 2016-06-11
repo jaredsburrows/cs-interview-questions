@@ -5,8 +5,8 @@ tasks.withType(CppCompile) {
 }
 
 tasks.withType(JavaCompile) {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
 
     // Show all warnings except boot classpath
     configure(options) {
@@ -20,8 +20,8 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(GroovyCompile) {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
 
     // Show all warnings except boot classpath
     configure(options) {

@@ -1,5 +1,6 @@
 package questions.bitmanipulation;
 
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
@@ -13,20 +14,20 @@ public class AddTwoNumbers {
     // returns 1000000111
     // python - to int      - int('1000000111', 2)
     // python - to binary   - bin(519)
-    public static String getBinarySumLib(final String binary1, final String binary2) {
-        if (binary1 == null && binary2 == null) {
+    public static String getBinarySumLib(final String left, final String right) {
+        if (left == null && right == null) {
             return null;
         }
 
-        if (binary1 == null) {
-            return binary2;
+        if (left == null) {
+            return right;
         }
 
-        if (binary2 == null) {
-            return binary1;
+        if (right == null) {
+            return left;
         }
 
-        return Long.toBinaryString(Long.parseUnsignedLong(binary1, 2) + Long.parseUnsignedLong(binary2, 2));
+        return Long.toBinaryString(Long.parseLong(left, 2) + Long.parseLong(right, 2));
     }
 
     //   11

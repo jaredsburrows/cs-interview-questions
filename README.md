@@ -1,6 +1,8 @@
-CS Interview Practice [![Build Status](https://travis-ci.org/jaredsburrows/cs-interview-questions.svg?branch=master)](https://travis-ci.org/jaredsburrows/cs-interview-questions) [![Coverage Status](https://coveralls.io/repos/github/jaredsburrows/cs-interview-questions/badge.svg?branch=master)](https://coveralls.io/github/jaredsburrows/cs-interview-questions?branch=master)
-=============
+# CS Interview Practice
 
+|TravisCI(OSX)|CircleCI(Linux)|AppVeyor(Windows)|Coveralls|
+|:---:|:---:|:---:|:---:|
+|[![TravisCI](https://travis-ci.org/jaredsburrows/cs-interview-questions.svg?branch=master)](https://travis-ci.org/jaredsburrows/cs-interview-questions)|[![CircleCI](https://circleci.com/gh/jaredsburrows/cs-interview-questions.svg?style=shield)](https://circleci.com/gh/jaredsburrows/cs-interview-questions)|[![AppVeyor](https://ci.appveyor.com/api/projects/status/m3yfl4lsh08cxwle/branch/master?svg=true)](https://ci.appveyor.com/project/jaredsburrows/cs-interview-questions/branch/master)|[![Coveralls](https://coveralls.io/repos/github/jaredsburrows/cs-interview-questions/badge.svg?branch=master)](https://coveralls.io/github/jaredsburrows/cs-interview-questions?branch=master)|
 
 ## CodeEval
 

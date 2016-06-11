@@ -66,19 +66,20 @@ public class Chapter8Recursion {
     /**
      * 8.3 - Write a method that returns all subsets of a set.
      */
-    public static List<List<Integer>> getSubsets(final List<Integer> initial, final int size) {
+    public static List<ArrayList<Integer>> getSubsets(final List<Integer> initial, final int size) {
         if (initial == null || size < 0) {
             return null;
         }
 
-        final List<List<Integer>> finalList;
+        final List<ArrayList<Integer>> finalList;
         if (initial.size() == size) {
             // empty set
             finalList = new ArrayList<>();
-            finalList.add(new ArrayList<>());
+            final ArrayList<Integer> list = new ArrayList<>();
+            finalList.add(list);
         } else {
             finalList = getSubsets(initial, size + 1);
-            final List<List<Integer>> newSetList = new ArrayList<>();
+            final List<ArrayList<Integer>> newSetList = new ArrayList<>();
             for (final List<Integer> set : finalList) {
                 // new set is being created
                 final ArrayList<Integer> temp = new ArrayList<>();

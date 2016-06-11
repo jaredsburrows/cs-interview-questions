@@ -1,0 +1,18 @@
+machine:
+  java:
+    version: oraclejdk8
+
+test:
+  override:
+    - ./gradlew clean test pmdMain findbugsMain checkstyleMain jacocoTestReport coveralls -Dreceipt --stacktrace
+  post:
+    - cp -r build/test-results/*.xml $CIRCLE_TEST_REPORTS
+    - cp -r build/reports/ $CIRCLE_ARTIFACTS
+
+dependencies:
+  pre:
+    - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+  cache_directories:
+    - $HOME/.gradle
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
