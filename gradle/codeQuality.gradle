@@ -5,10 +5,15 @@ apply plugin: "checkstyle"
 apply plugin: "net.ltgt.errorprone"
 apply plugin: "com.github.kt3k.coveralls"
 
-jacocoTestReport {
+tasks.withType(JacocoReport) {
     reports {
-        xml.enabled = true // coveralls plugin depends on xml format report
-        html.enabled = true
+        xml {
+            enabled = true // coveralls plugin depends on xml format report
+        }
+
+        html {
+            enabled = true
+        }
     }
 
     afterEvaluate {
@@ -18,20 +23,22 @@ jacocoTestReport {
                               "crackingthecode/part3knowledgebased/**",
                               "**/Chapter7ObjectOrientedDesign**",
                               "**/Chapter11Testing**",
-                              "**/Chapter12SystemDesignAndMemoryLimits**",
-                              "projecteuler/**"])
+                              "**/Chapter12SystemDesignAndMemoryLimits**"])
         })
     }
 }
 
-findbugs {
-    effort = "max"
-    reportLevel = "high"
-}
-
 tasks.withType(FindBugs) {
     reports {
-        xml.enabled false
-        html.enabled true
+        xml {
+            enabled = false
+        }
+
+        html {
+            enabled = true
+        }
     }
+
+    effort = "max"
+    reportLevel = "high"
 }

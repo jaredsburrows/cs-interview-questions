@@ -126,12 +126,12 @@ public class Chapter2LinkedLists {
      * 2.2 - Implement an algorithm to find the nth to last element of a singly linked list.
      */
     // Time - O(N), Space - O(1)
-    public static Node<Integer> findNthLastElement(Node<Integer> node, final int position) {
-        if (node == null || position < 1) {
+    public static Node<Integer> findNthLastElement(Node<Integer> head, final int position) {
+        if (head == null || position < 1) {
             return null;
         }
 
-        Node<Integer> temp = node;
+        Node<Integer> temp = head;
         int count = 0;
         int newCount = 0;
 
@@ -142,12 +142,12 @@ public class Chapter2LinkedLists {
 
         int element = count - position;
 
-        while (node != null) {
+        while (head != null) {
             if (newCount == element) {
-                return node;
+                return head;
             }
             newCount++;
-            node = node.next;
+            head = head.next;
         }
 
         return null;

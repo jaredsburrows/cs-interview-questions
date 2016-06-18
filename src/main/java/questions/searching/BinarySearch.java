@@ -5,7 +5,7 @@ package questions.searching;
  */
 public class BinarySearch {
 
-    // Time - O(LGN)
+    // Time - O(LGN), Space - O(1)
     public static int search(final int[] array, final int number) {
 
         int low = array[0];

@@ -11,7 +11,7 @@ matrix:
 install: true
 
 script:
-  - ./gradlew clean test pmdMain findbugsMain checkstyleMain jacocoTestReport coveralls -Dreceipt --stacktrace
+  - ./gradlew clean test pmdMain findbugsMain checkstyleMain jacocoTestReport coveralls -Dreceipt -s
 
 notifications:
   email: false

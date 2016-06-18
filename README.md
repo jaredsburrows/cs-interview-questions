@@ -4,6 +4,8 @@
 |:---:|:---:|:---:|:---:|
 |[![TravisCI](https://travis-ci.org/jaredsburrows/cs-interview-questions.svg?branch=master)](https://travis-ci.org/jaredsburrows/cs-interview-questions)|[![CircleCI](https://circleci.com/gh/jaredsburrows/cs-interview-questions.svg?style=shield)](https://circleci.com/gh/jaredsburrows/cs-interview-questions)|[![AppVeyor](https://ci.appveyor.com/api/projects/status/m3yfl4lsh08cxwle/branch/master?svg=true)](https://ci.appveyor.com/project/jaredsburrows/cs-interview-questions/branch/master)|[![Coveralls](https://coveralls.io/repos/github/jaredsburrows/cs-interview-questions/badge.svg?branch=master)](https://coveralls.io/github/jaredsburrows/cs-interview-questions?branch=master)|
 
+
+
 ## CodeEval
 
 **Site:** https://www.codeeval.com/
@@ -13,11 +15,13 @@
 **My Solutions:** [src/main/java/codeeval](src/main/java/codeeval)
 
 
+
 ## Codingbat
 
 **Site:** http://codingbat.com
 
 **My Solutions:** [src/main/java/codingbat](src/main/java/codingbat)
+
 
 
 ## Cracking The Code Interview
@@ -29,11 +33,13 @@
 **My Solutions:** [src/main/java/crackingthecode](src/main/java/crackingthecode)
 
 
+
 ## LeetCode
 
 **Site:** https://leetcode.com/
 
 **My Solutions:** [src/main/java/leetcode](src/main/java/leetcode)
+
 
 
 ## Project Euler
@@ -43,19 +49,31 @@
 **My Solutions:** [src/main/java/projecteuler](src/main/java/projecteuler)
 
 **My Profile:**
-![Score](http://projecteuler.net/profile/jaredsburrows.png)
+<img src="https://projecteuler.net/profile/jaredsburrows.png">
+
 
 
 ## Common Questions
-
 **My Solutions:** [src/main/java/questions](src/main/java/questions)
 
+
+## StackOverflow
+
+**Site:** http://www.stackoverflow.com/
+
+**My Profile:**
+<a href="http://stackexchange.com/users/918082"><img src="http://stackexchange.com/users/flair/918082.png"></a>
+
+
+
 ## Others resources used
+ - http://www.bigocheatsheet.com/
+ - http://www.geeksforgeeks.org/
+ - http://www.glassdoor.com/
+ - http://www.hackerrank.com/
  - http://www.programcreek.com/
    - http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
- - http://www.geeksforgeeks.org/
- - http://www.hackerrank.com/
-
+ - http://www.topcoder.com/
 
 ## Languages used
  - **C** - [src/main/c](src/main/c)
@@ -65,9 +83,9 @@
  - **Groovy** - [src/test/groovy](src/test/groovy)
 
 ## Testing frameworks used
- - CUnit (http://cunit.sourceforge.net/) for C
- - GTest (https://github.com/google/googletest) for C++
- - Spock (https://github.com/spockframework/spock) for Java
+ - **CUnit** - (http://cunit.sourceforge.net/) for C
+ - **GTest** - (https://github.com/google/googletest) for C++
+ - **Spock** - (https://github.com/spockframework/spock) for Java
 
 
 ## License
