@@ -5,20 +5,17 @@ package questions.sorting;
  */
 public class MergeSort {
 
-    public static void mergeSort(final int[] numbers, final int low, final int high) {
+    public static void mergeSort(final int[] numbers, final int left, final int right) {
         if (numbers == null) {
             return;
         }
 
-        if (high < low) {
-            return;
+        if (right > left) {
+            final int middle = (left + right) / 2;
+            mergeSort(numbers, left, middle);
+            mergeSort(numbers, middle + 1, right);
+            merge(numbers, left, middle + 1, right);
         }
-
-        final int middle = (low + high) / 2;
-
-        mergeSort(numbers, low, middle);
-        mergeSort(numbers, middle + 1, high);
-        merge(numbers, low, middle, high);
     }
 
     public static int[] mergeSort2(final int[] numbers, final int low, final int high) {
@@ -26,36 +23,31 @@ public class MergeSort {
         return numbers;
     }
 
-    private static void merge(final int[] numbers, final int low, final int middle, final int high) {
-        int[] helper = new int[high - low + 1];
+    static void merge(final int[] numbers, int left, int mid, int right) {
+        final int[] array = new int[right + left + 1];
+        int leftEnd = mid - 1;
+        int index = left;
+        int numElements = right - left + 1;
 
-        for (int i = low; i <= high; ++i) {
-            helper[i - low] = numbers[i];
-        }
-
-        int i = low, j = middle + 1, k = low;
-
-        while (i <= middle && j <= high) {
-            if (helper[i - low] < helper[j - low]) {
-                numbers[k] = helper[i - low];
-                i++;
+        while (left <= leftEnd && mid <= right) {
+            if (numbers[left] <= numbers[mid]) {
+                array[index++] = numbers[left++];
             } else {
-                numbers[k] = helper[j - low];
-                j++;
+                array[index++] = numbers[mid++];
             }
-            k++;
         }
 
-        if (i > middle) {
-            for (; j <= high; ++j) {
-                numbers[k] = helper[j - low];
-                k++;
-            }
-        } else {
-            for (; i <= middle; ++i) {
-                numbers[k] = helper[i - low];
-                k++;
-            }
+        while (left <= leftEnd) {
+            array[index++] = numbers[left++];
+        }
+
+        while (mid <= right) {
+            array[index++] = numbers[mid++];
+        }
+
+        for (int i = 0; i < numElements; i++) {
+            numbers[right] = array[right];
+            right--;
         }
     }
 
@@ -88,7 +80,7 @@ public class MergeSort {
         return numbers;
     }
 
-    private static void merge(final int[] numbers, final int[] low, final int[] high) {
+    static void merge(final int[] numbers, final int[] low, final int[] high) {
         final int leftLength = low.length;
         final int rightLength = high.length;
         int indexLeft = 0;
