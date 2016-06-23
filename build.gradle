@@ -27,6 +27,8 @@ apply plugin: "google-test-test-suite"
 apply plugin: "build-dashboard"
 apply plugin: "java"
 apply plugin: "groovy"
+apply plugin: "net.ltgt.errorprone"
+apply plugin: "com.github.kt3k.coveralls"
 apply plugin: "com.github.ben-manes.versions"
 apply from: rootProject.file("gradle/compile.gradle")
 apply from: rootProject.file("gradle/codeQuality.gradle")
@@ -140,18 +142,18 @@ model {
 }
 
 // https://github.com/tbroyer/gradle-errorprone-plugin/issues/18
-configurations.all {
-    resolutionStrategy {
-        force "com.google.errorprone:error_prone_core:2.0.5"
-    }
-}
+//configurations.all {
+//    resolutionStrategy {
+//        force "com.google.errorprone:error_prone_core:2.0.5"
+//    }
+//}
 
 dependencies {
     compile "com.google.code.findbugs:annotations:3.0.1"
 
     testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
-    testCompile "cglib:cglib-nodep:3.2.2"
-    testCompile "nl.jqno.equalsverifier:equalsverifier:2.1"
+    testCompile "cglib:cglib-nodep:3.2.3"
+    testCompile "nl.jqno.equalsverifier:equalsverifier:2.1.2"
 
     checkstyle "com.puppycrawl.tools:checkstyle:6.19"
 }

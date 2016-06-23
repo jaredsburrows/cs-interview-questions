@@ -2,8 +2,6 @@ apply plugin: "pmd"
 apply plugin: "jacoco"
 apply plugin: "findbugs"
 apply plugin: "checkstyle"
-apply plugin: "net.ltgt.errorprone"
-apply plugin: "com.github.kt3k.coveralls"
 
 tasks.withType(JacocoReport) {
     reports {

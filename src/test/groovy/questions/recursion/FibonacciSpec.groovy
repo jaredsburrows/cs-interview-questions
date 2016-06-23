@@ -1,4 +1,4 @@
-package codingbat.recursion
+package questions.recursion
 
 import spock.lang.Specification
 

@@ -14,20 +14,16 @@ public class Chapter8Recursion {
      * 8.1 - Write a method to generate the nth Fibonacci number.
      */
     public static long getFibNumberRecursive(final long number) {
-        if (number < 0) {
-            return -1;
-        } else if (number == 0) {
-            return 0;
-        } else if (number <= 2) {
-            return 1;
-        } else {
-            return (getFibNumberRecursive(number - 1) + getFibNumberRecursive(number - 2));
+        if (number < 2) {
+            return number;
         }
+
+        return getFibNumberRecursive(number - 1) + getFibNumberRecursive(number - 2);
     }
 
     public static long getFibNumberIterative(final long number) {
         if (number < 0) {
-            return -1;
+            return number;
         }
 
         if (number == 0) {
@@ -207,9 +203,14 @@ public class Chapter8Recursion {
     public static void floodFillUtil(final int[][] screen, final int positionX, final int positionY,
                                      final int prevColor, final int newColor) {
         // Base cases
-        if (positionX < 0 || positionX >= 8 || positionY < 0 || positionY >= 8) {
+        if (positionX < 0 || positionX >= 8) {
             return;
         }
+
+        if (positionY < 0 || positionY >= 8) {
+            return;
+        }
+
         if (screen[positionX][positionY] != prevColor) {
             return;
         }

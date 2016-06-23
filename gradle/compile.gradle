@@ -16,6 +16,7 @@ tasks.withType(JavaCompile) {
         compilerArgs << "-Werror"               // Turn warnings into errors
         compilerArgs << "-Xdiags:verbose"       // Turn on verbose errors
         encoding = "utf-8"
+        incremental = true
     }
 }
 
@@ -31,6 +32,7 @@ tasks.withType(GroovyCompile) {
         compilerArgs << "-Werror"               // Turn warnings into errors
         compilerArgs << "-Xdiags:verbose"       // Turn on verbose errors
         encoding = "utf-8"
+        incremental = true
     }
 
     configure(groovyOptions) {
