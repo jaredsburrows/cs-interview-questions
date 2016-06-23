@@ -9,23 +9,25 @@ class ReorderBooleanArraySpec extends Specification {
 
     def "reorder bools - primitive"() {
         given:
-        boolean[] b = [false, true, true, true, false, true]
+        def actual = [false, true, true, true, false, true] as boolean[]
+        def expected = [false, false, true, true, true, true] as boolean[]
 
         when:
-        ReorderBooleanArray.getReorderBoolPrimitives(b)
+        actual = ReorderBooleanArray.getReorderBoolPrimitives(actual)
 
         then:
-        b == [false, false, true, true, true, true]
+        actual == expected
     }
 
     def "reorder bools - object"() {
         given:
-        Boolean[] b = [false, true, true, true, false, true]
+        def actual = [false, true, true, true, false, true] as Boolean[]
+        def expected = [false, false, true, true, true, true] as Boolean[]
 
         when:
-        ReorderBooleanArray.getReorderBoolObjects(b)
+        actual = ReorderBooleanArray.getReorderBoolObjects(actual)
 
         then:
-        b == [false, false, true, true, true, true]
+        actual == expected
     }
 }

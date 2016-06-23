@@ -10,7 +10,7 @@ import spock.lang.Specification
 class Chapter7ObjectOrientedDesignSpec extends Specification {
 
     def "card"() {
-        def card = new CardGameCard(Card.Suite.HEARTS, 5)
+        def card = new CardGameCard(Suite.HEARTS, 5)
 
         expect:
         card instanceof Card

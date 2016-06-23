@@ -9,10 +9,9 @@ import spock.lang.Specification
  */
 class GraphNodeSpec extends Specification {
 
-    def graphNodes = [new GraphNode<>(123), new GraphNode<>(123)]
-    def node2 = new GraphNode<Integer>(123, graphNodes as GraphNode<Integer>[])
     def node = new GraphNode<>(123)
-    def nextNode = new GraphNode<>(123)
+    def graphNodes = [node, node] as GraphNode<Integer>[]
+    def node2 = new GraphNode<Integer>(123, graphNodes)
 
     def "default values"() {
         expect:
@@ -21,14 +20,14 @@ class GraphNodeSpec extends Specification {
         !node.visited
 
         node2.value == 123
-        node2.neighbors.equals(graphNodes)
+        node2.neighbors == graphNodes
         node2.next == null
         !node2.visited
     }
 
     def "getters/setters"() {
         when:
-        node.next = nextNode
+        node.next = node
 
         then:
         node.value == 123

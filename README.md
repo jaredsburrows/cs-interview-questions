@@ -90,7 +90,7 @@
 
 ## License
 
-    Copyright (C) 2016 Personal Solutions by Jared Burrows
+    Copyright (C) 2016 CS Interview Practice by Jared Burrows
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
