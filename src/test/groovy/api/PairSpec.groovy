@@ -7,9 +7,9 @@ import spock.lang.Specification
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TupleSpec extends Specification {
+class PairSpec extends Specification {
 
-    def sut = new Tuple<>("test", 123)
+    def sut = new Pair<>("test", 123)
 
     def "getLeft"() {
         expect:
@@ -23,8 +23,8 @@ class TupleSpec extends Specification {
 
     def "equals/hashcode"() {
         when:
-        EqualsVerifier.forClass(Tuple.class)
-                .withPrefabValues(Tuple.class, new Tuple<>(1, 2), new Tuple<>(3, 4))
+        EqualsVerifier.forClass(Pair.class)
+                .withPrefabValues(Pair.class, new Pair<>("a", 1), new Pair<>("b", 2))
                 .suppress(Warning.NONFINAL_FIELDS)
                 .verify()
 
@@ -35,7 +35,7 @@ class TupleSpec extends Specification {
     def "string"() {
         given:
         def actual = sut.toString()
-        def expected = "Tuple{mLeft=test, mRight=123}"
+        def expected = "Pair{mLeft=test, mRight=123}"
 
         expect:
         actual == expected

@@ -279,7 +279,7 @@ public class Chapter9SortingAndSearching {
         Collections.sort(original, new Comparator<Tuple<Integer, Integer>>() {
             @Override
             public int compare(final Tuple<Integer, Integer> o1, final Tuple<Integer, Integer> o2) {
-                return o1.getY() < o2.getY() && o1.getX() < o2.getX() ? -1 : 1;
+                return o1.getRight() < o2.getRight() && o1.getLeft() < o2.getLeft() ? -1 : 1;
             }
         });
 

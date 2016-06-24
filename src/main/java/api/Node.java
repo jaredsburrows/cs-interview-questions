@@ -47,4 +47,13 @@ public final class Node<T> {
         result = 31 * result + (this.previous != null ? this.previous.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "value=" + this.value +
+                ", next=" + this.next +
+                ", previous=" + this.previous +
+                '}';
+    }
 }

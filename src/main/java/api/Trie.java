@@ -8,6 +8,13 @@ public final class Trie<T> {
 
     private TrieNode<T> mRoot = new TrieNode<>();
 
+    public Trie() {
+    }
+
+    public Trie(final T t) {
+        this.insert((String) t);
+    }
+
     public void insert(final String word) {
         if (word == null) {
             return;
@@ -21,7 +28,7 @@ public final class Trie<T> {
             final char character = word.charAt(i);
             final int index = character - 'a';
 
-            TrieNode<T> child = current.children[index];
+            final TrieNode<T> child = current.children[index];
             if (child == null) {
                 final TrieNode<T> node = new TrieNode<>();
                 current.children[index] = node;
@@ -70,5 +77,32 @@ public final class Trie<T> {
         }
 
         return current;
+    }
+
+    @Override
+    public boolean equals(final Object object) {
+        if (this == object) {
+            return true;
+        }
+
+        if (object == null || this.getClass() != object.getClass()) {
+            return false;
+        }
+
+        final Trie<?> trie = (Trie<?>) object;
+
+        return this.mRoot != null ? this.mRoot.equals(trie.mRoot) : trie.mRoot == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.mRoot != null ? this.mRoot.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Trie{" +
+                "mRoot=" + this.mRoot +
+                '}';
     }
 }

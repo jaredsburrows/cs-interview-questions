@@ -1,5 +1,7 @@
 package api
 
+import nl.jqno.equalsverifier.EqualsVerifier
+import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 /**
@@ -7,7 +9,7 @@ import spock.lang.Specification
  */
 class StackSpec extends Specification {
 
-    def stack = new Stack<>()
+    def sut = new Stack<>()
     def valueNode = new Node<>(1)
     def valueNode2 = new Node<>(2)
     def valueNode3 = new Node<>(3)
@@ -16,73 +18,94 @@ class StackSpec extends Specification {
 
     def "peek"() {
         expect:
-        stack.peek() == null
-        stack.push(blankNode)
-        stack.peek() == blankNode
+        !sut.peek()
+        sut.push(blankNode)
+        sut.peek() == blankNode
     }
 
     def "peek - multiple"() {
         expect:
-        stack.peek() == null
-        stack.push(blankNode)
-        stack.peek() == blankNode
-        stack.push(blankNode2)
-        stack.peek() == blankNode2
+        !sut.peek()
+        sut.push(blankNode)
+        sut.peek() == blankNode
+        sut.push(blankNode2)
+        sut.peek() == blankNode2
     }
 
     def "push - single"() {
         def blankNode = new Node<>(0)
 
         expect:
-        stack.peek() == null
-        stack.push(null)
-        stack.peek() == null
-        stack.push(blankNode)
-        stack.peek() == blankNode
+        !sut.peek()
+        sut.push(null)
+        !sut.peek()
+        sut.push(blankNode)
+        sut.peek() == blankNode
     }
 
     def "push - multiple"() {
         expect:
-        stack.peek() == null
-        stack.push(null)
-        stack.peek() == null
-        stack.push(valueNode)
-        stack.peek() == valueNode
-        stack.push(valueNode2)
-        stack.peek() == valueNode2
-        stack.push(valueNode3)
-        stack.peek() == valueNode3
+        !sut.peek()
+        sut.push(null)
+        !sut.peek()
+        sut.push(valueNode)
+        sut.peek() == valueNode
+        sut.push(valueNode2)
+        sut.peek() == valueNode2
+        sut.push(valueNode3)
+        sut.peek() == valueNode3
     }
 
     def "pop"() {
         expect:
-        stack.peek() == null
-        stack.push(null)
-        stack.peek() == null
-        stack.push(blankNode)
-        stack.peek() == blankNode
-        stack.pop()
-        stack.peek() == null
+        !sut.peek()
+        sut.push(null)
+        !sut.peek()
+        sut.push(blankNode)
+        sut.peek() == blankNode
+        sut.pop()
+        !sut.peek()
     }
 
     def "pop - multiple"() {
         expect:
-        stack.peek() == null
-        stack.push(null)
-        stack.peek() == null
-        stack.push(valueNode)
-        stack.peek() == valueNode
-        stack.push(valueNode2)
-        stack.peek() == valueNode2
-        stack.push(valueNode3)
-        stack.peek() == valueNode3
-        stack.pop()
-        stack.peek() == valueNode2
-        stack.pop()
-        stack.peek() == valueNode
-        stack.pop()
-        stack.peek() == null
-        stack.pop()
-        stack.peek() == null
+        !sut.peek()
+        sut.push(null)
+        !sut.peek()
+        sut.push(valueNode)
+        sut.peek() == valueNode
+        sut.push(valueNode2)
+        sut.peek() == valueNode2
+        sut.push(valueNode3)
+        sut.peek() == valueNode3
+        sut.pop()
+        sut.peek() == valueNode2
+        sut.pop()
+        sut.peek() == valueNode
+        sut.pop()
+        !sut.peek()
+        sut.pop()
+        !sut.peek()
+    }
+
+    def "equals/hashcode"() {
+        when:
+        EqualsVerifier.forClass(Stack.class)
+                .withPrefabValues(Stack.class, new Stack<>(), new Stack<>(1))
+                .withPrefabValues(Node.class, new Node<>(), new Node<>(1))
+                .suppress(Warning.NONFINAL_FIELDS)
+                .verify()
+
+        then:
+        noExceptionThrown()
+    }
+
+    def "string"() {
+        given:
+        def actual = sut.toString()
+        def expected = "Stack{top=null}"
+
+        expect:
+        actual == expected
     }
 }

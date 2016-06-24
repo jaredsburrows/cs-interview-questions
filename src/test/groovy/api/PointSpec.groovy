@@ -8,23 +8,32 @@ import spock.lang.Specification
  */
 class PointSpec extends Specification {
 
-    def point = new Point(321, 123)
+    def sut = new Point(321, 123)
 
     def "getX"() {
         expect:
-        point.getX() == 321
+        sut.getX() == 321
     }
 
     def "getY"() {
         expect:
-        point.getY() == 123
+        sut.getY() == 123
     }
 
-    def "equals"() {
+    def "equals/hashcode"() {
         when:
         EqualsVerifier.forClass(Point.class).verify()
 
         then:
         noExceptionThrown()
+    }
+
+    def "string"() {
+        given:
+        def actual = sut.toString()
+        def expected = "Point{mX=321, mY=123}"
+
+        expect:
+        actual == expected
     }
 }

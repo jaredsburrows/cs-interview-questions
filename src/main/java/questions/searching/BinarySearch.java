@@ -6,17 +6,18 @@ package questions.searching;
 public class BinarySearch {
 
     // Time - O(LGN), Space - O(1)
-    public static int search(final int[] array, final int number) {
+    public static int search(final int[] array, final int target) {
 
         int low = array[0];
         int high = array[array.length - 1];
 
         while (low <= high) {
-            final int mid = (low + high) / 2;
+            final int mid = low + (high - low) / 2;
+            final int current = array[mid];
 
-            if (array[mid] == number) {
+            if (current == target) {
                 return mid;
-            } else if (array[mid] < number) {
+            } else if (current < target) {
                 low = mid + 1;
             } else {
                 high = mid - 1;

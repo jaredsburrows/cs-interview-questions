@@ -28,7 +28,7 @@ public final class Point {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (object == null || this.getClass() != object.getClass()) {
             return false;
         }
 
@@ -46,5 +46,13 @@ public final class Point {
         int result = this.mX;
         result = 31 * result + this.mY;
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "mX=" + this.mX +
+                ", mY=" + this.mY +
+                '}';
     }
 }

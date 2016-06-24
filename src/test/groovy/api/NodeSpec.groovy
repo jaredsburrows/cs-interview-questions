@@ -9,36 +9,48 @@ import spock.lang.Specification
  */
 class NodeSpec extends Specification {
 
-    def node = new Node<>(123)
+    def sut = new Node<>()
     def nextNode = new Node<>(123)
 
     def "default values"() {
-        expect:
-        node.value == 123
-        node.next == null
-        node.previous == null
+        when:
+        sut.value = 123
+
+        then:
+        sut.value == 123
+        sut.next == null
+        sut.previous == null
     }
 
     def "getters/setters"() {
         when:
-        node.next = nextNode
-        node.previous = nextNode
+        sut.value = 123
+        sut.next = nextNode
+        sut.previous = nextNode
 
         then:
-        node.value == 123
-        node.next.value == 123
-        node.previous.value == 123
+        sut.value == 123
+        sut.next.value == 123
+        sut.previous.value == 123
     }
 
-    def "equals"() {
+    def "equals/hashcode"() {
         when:
         EqualsVerifier.forClass(Node.class)
-                .usingGetClass()
-                .withPrefabValues(Node.class, new Node<>(1), new Node<>(2))
+                .withPrefabValues(Node.class, new Node<>(), new Node<>(1))
                 .suppress(Warning.NONFINAL_FIELDS)
                 .verify()
 
         then:
         noExceptionThrown()
+    }
+
+    def "string"() {
+        given:
+        def actual = sut.toString()
+        def expected = "Node{value=null, next=null, previous=null}"
+
+        expect:
+        actual == expected
     }
 }

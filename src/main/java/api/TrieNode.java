@@ -8,11 +8,12 @@ import java.util.Arrays;
  */
 public final class TrieNode<T> {
 
+    private static final int ALPHABET_COUNT = 26;
     public TrieNode<T>[] children;
     public boolean isEnd;
 
     public TrieNode() {
-        this(26);
+        this(ALPHABET_COUNT);
     }
 
     @SuppressWarnings("unchecked")
@@ -26,7 +27,7 @@ public final class TrieNode<T> {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (object == null || this.getClass() != object.getClass()) {
             return false;
         }
 
@@ -45,5 +46,13 @@ public final class TrieNode<T> {
         int result = Arrays.hashCode(this.children);
         result = 31 * result + (this.isEnd ? 1 : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "TrieNode{" +
+                "children=" + Arrays.toString(this.children) +
+                ", isEnd=" + this.isEnd +
+                '}';
     }
 }

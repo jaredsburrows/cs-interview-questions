@@ -89,17 +89,17 @@ class Chapter19ModerateSpec extends Specification {
     def "19.5 - getPseudoHits"() {
         expect:
         Tuple<Integer, Integer> tuple = Chapter19Moderate.getPseudoHits("RGGB", "RGGB")
-        tuple.getX() == 4
-        tuple.getY() == 0
+        tuple.getLeft() == 4
+        tuple.getRight() == 0
         Tuple<Integer, Integer> tuple2 = Chapter19Moderate.getPseudoHits("RGGB", "YRGB")
-        tuple2.getX() == 2
-        tuple2.getY() == 1
+        tuple2.getLeft() == 2
+        tuple2.getRight() == 1
         Tuple<Integer, Integer> tuple3 = Chapter19Moderate.estimate("RGGB", "RGGB")
-        tuple3.getX() == 4
-        tuple3.getY() == 0
+        tuple3.getLeft() == 4
+        tuple3.getRight() == 0
 //        Tuple<Integer, Integer> tuple4 = Chapter19Moderate.estimate("RGGB", "YRGB")
-//        tuple4.getX() == 2
-//        tuple4.getY() == 1
+//        tuple4.getLeft() == 2
+//        tuple4.getRight() == 1
     }
 
     def "19.7 - getMaxSum"() {

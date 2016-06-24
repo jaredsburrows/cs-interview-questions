@@ -9,15 +9,18 @@ import spock.lang.Specification
  */
 class GraphNodeSpec extends Specification {
 
-    def node = new GraphNode<>(123)
-    def graphNodes = [node, node] as GraphNode<Integer>[]
-    def node2 = new GraphNode<Integer>(123, graphNodes)
+    def sut = new GraphNode<>()
+    def graphNodes = [sut, sut] as GraphNode<Integer>[]
+    def node2 = new GraphNode<>(123, graphNodes)
 
     def "default values"() {
-        expect:
-        node.value == 123
-        node.next == null
-        !node.visited
+        when:
+        sut.value = 123
+
+        then:
+        sut.value == 123
+        sut.next == null
+        !sut.visited
 
         node2.value == 123
         node2.neighbors == graphNodes
@@ -27,22 +30,31 @@ class GraphNodeSpec extends Specification {
 
     def "getters/setters"() {
         when:
-        node.next = node
+        sut.value = 123
+        sut.next = sut
 
         then:
-        node.value == 123
-        node.next.value == 123
+        sut.value == 123
+        sut.next.value == 123
     }
 
-    def "equals"() {
+    def "equals/hashcode"() {
         when:
         EqualsVerifier.forClass(GraphNode.class)
-                .usingGetClass()
-                .withPrefabValues(GraphNode.class, new GraphNode<>(1), new GraphNode<>(2))
+                .withPrefabValues(GraphNode.class, new GraphNode<>(), new GraphNode<>(1))
                 .suppress(Warning.NONFINAL_FIELDS)
                 .verify()
 
         then:
         noExceptionThrown()
+    }
+
+    def "string"() {
+        given:
+        def actual = sut.toString()
+        def expected = "GraphNode{value=null, next=null, neighbors=null, visited=false}"
+
+        expect:
+        actual == expected
     }
 }

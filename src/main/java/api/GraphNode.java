@@ -30,7 +30,7 @@ public final class GraphNode<T> {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (object == null || this.getClass() != object.getClass()) {
             return false;
         }
 
@@ -59,5 +59,15 @@ public final class GraphNode<T> {
         result = 31 * result + Arrays.hashCode(this.neighbors);
         result = 31 * result + (this.visited ? 1 : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "GraphNode{" +
+                "value=" + this.value +
+                ", next=" + this.next +
+                ", neighbors=" + Arrays.toString(this.neighbors) +
+                ", visited=" + this.visited +
+                '}';
     }
 }

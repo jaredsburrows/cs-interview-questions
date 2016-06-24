@@ -1,5 +1,7 @@
 package api
 
+import nl.jqno.equalsverifier.EqualsVerifier
+import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 /**
@@ -7,114 +9,139 @@ import spock.lang.Specification
  */
 class QueueSpec extends Specification {
 
-    def queue = new Queue()
-    def valueNode = new TreeNode(1)
-    def valueNode2 = new TreeNode(2)
-    def valueNode3 = new TreeNode(3)
-    def blankNode = new TreeNode(0)
-    def blankNode2 = new TreeNode(0)
+    def sut = new Queue<>()
+    def valueNode = new Node<>(1)
+    def valueNode2 = new Node<>(2)
+    def valueNode3 = new Node<>(3)
+    def blankNode = new Node<>(0)
+    def blankNode2 = new Node<>(0)
 
-    def "getFirst"() {
+    def "enqueue with constructor"() {
+        given:
+        def queue = new Queue<>(1)
 
         expect:
-        queue.getFirst() == null
-        queue.enqueue(blankNode)
-        queue.getFirst() == blankNode
+        queue.getFirst() == valueNode
+        queue.enqueue(valueNode2)
+//        queue.getFirst() == valueNode
+//        queue.enqueue(valueNode3)
+//        queue.getLast() == valueNode3
+    }
+
+    def "getFirst"() {
+        expect:
+        !sut.getFirst()
+        sut.enqueue(blankNode)
+        sut.getFirst() == blankNode
     }
 
     def "getFirst - multiple"() {
-
         expect:
-        queue.getFirst() == null
-        queue.enqueue(blankNode)
-        queue.getFirst() == blankNode
-        queue.enqueue(blankNode2)
-        queue.getFirst() == blankNode
+        !sut.getFirst()
+        sut.enqueue(blankNode)
+        sut.getFirst() == blankNode
+        sut.enqueue(blankNode2)
+        sut.getFirst() == blankNode
     }
 
     def "getLast"() {
-
         expect:
-        queue.getLast() == null
-        queue.enqueue(blankNode)
-        queue.getLast() == blankNode
+        !sut.getLast()
+        sut.enqueue(blankNode)
+        sut.getLast() == blankNode
     }
 
     def "getLast - multiple"() {
-
         expect:
-        queue.getLast() == null
-        queue.enqueue(blankNode)
-        queue.getLast() == blankNode
-        queue.enqueue(blankNode2)
-        queue.getLast() == blankNode2
+        !sut.getLast()
+        sut.enqueue(blankNode)
+        sut.getLast() == blankNode
+        sut.enqueue(blankNode2)
+        sut.getLast() == blankNode2
     }
 
     def "enqueue - single"() {
-
         expect:
-        queue.getFirst() == null
-        queue.enqueue(null)
-        queue.getFirst() == null
-        queue.enqueue(blankNode)
-        queue.getFirst() == blankNode
+        !sut.getFirst()
+        sut.enqueue(null)
+        !sut.getFirst()
+        sut.enqueue(blankNode)
+        sut.getFirst() == blankNode
     }
 
     def "enqueue - multiple"() {
-
         expect:
-        queue.getFirst() == null
-        queue.enqueue(null)
-        queue.getFirst() == null
-        queue.getLast() == null
-        queue.enqueue(valueNode)
-        queue.getFirst() == valueNode
-        queue.getLast() == valueNode
-        queue.enqueue(valueNode2)
-        queue.getFirst() == valueNode
-        queue.getLast() == valueNode2
-        queue.enqueue(valueNode3)
-        queue.getFirst() == valueNode
-        queue.getLast() == valueNode3
+        !sut.getFirst()
+        sut.enqueue(null)
+        !sut.getFirst()
+        !sut.getLast()
+        sut.enqueue(valueNode)
+        sut.getFirst() == valueNode
+        sut.getLast() == valueNode
+        sut.enqueue(valueNode2)
+        sut.getFirst() == valueNode
+        sut.getLast() == valueNode2
+        sut.enqueue(valueNode3)
+        sut.getFirst() == valueNode
+        sut.getLast() == valueNode3
     }
 
     def "dequeue"() {
-
         expect:
-        queue.getFirst() == null
-        queue.enqueue(null)
-        queue.getFirst() == null
-        queue.getLast() == null
-        queue.enqueue(blankNode)
-        queue.getFirst() == blankNode
-        queue.getLast() == blankNode
-        queue.dequeue()
-        queue.getFirst() == null
+        !sut.getFirst()
+        sut.enqueue(null)
+        !sut.getFirst()
+        !sut.getLast()
+        sut.enqueue(blankNode)
+        sut.getFirst() == blankNode
+        sut.getLast() == blankNode
+        sut.dequeue()
+        !sut.getFirst()
     }
 
     def "dequeue - multiple"() {
+        expect:
+        !sut.getFirst()
+        sut.enqueue(null)
+        !sut.getFirst()
+        !sut.getLast()
+        sut.enqueue(valueNode)
+        sut.getFirst() == valueNode
+        sut.getLast() == valueNode
+        sut.enqueue(valueNode2)
+        sut.getFirst() == valueNode
+        sut.getLast() == valueNode2
+        sut.enqueue(valueNode3)
+        sut.getFirst() == valueNode
+        sut.getLast() == valueNode3
+        sut.dequeue()
+        sut.getFirst() == valueNode2
+        sut.dequeue()
+        sut.getFirst() == valueNode3
+        sut.dequeue()
+        !sut.getFirst()
+        sut.dequeue()
+        !sut.getFirst()
+    }
+
+    def "equals/hashcode"() {
+        when:
+        EqualsVerifier.forClass(Queue.class)
+                .withPrefabValues(Queue.class, new Queue<>(), new Queue<>(1))
+                .withPrefabValues(Node.class, new Node<>(), new Node<>(1))
+                .suppress(Warning.NONFINAL_FIELDS)
+                .verify()
+
+        then:
+        noExceptionThrown()
+    }
+
+    def "string"() {
+        given:
+        def actual = sut.toString()
+        def expected = "Queue{first=null, last=null}"
 
         expect:
-        queue.getFirst() == null
-        queue.enqueue(null)
-        queue.getFirst() == null
-        queue.getLast() == null
-        queue.enqueue(valueNode)
-        queue.getFirst() == valueNode
-        queue.getLast() == valueNode
-        queue.enqueue(valueNode2)
-        queue.getFirst() == valueNode
-        queue.getLast() == valueNode2
-        queue.enqueue(valueNode3)
-        queue.getFirst() == valueNode
-        queue.getLast() == valueNode3
-        queue.dequeue()
-        queue.getFirst() == valueNode2
-        queue.dequeue()
-        queue.getFirst() == valueNode3
-        queue.dequeue()
-        queue.getFirst() == null
-        queue.dequeue()
-        queue.getFirst() == null
+        actual == expected
     }
 }

@@ -9,6 +9,9 @@ public final class TreeNode<T> {
     public TreeNode<T> left;
     public TreeNode<T> right;
 
+    public TreeNode() {
+    }
+
     public TreeNode(final T value) {
         this.value = value;
     }
@@ -20,7 +23,7 @@ public final class TreeNode<T> {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (object == null || this.getClass() != object.getClass()) {
             return false;
         }
 
@@ -43,5 +46,14 @@ public final class TreeNode<T> {
         result = 31 * result + (this.left != null ? this.left.hashCode() : 0);
         result = 31 * result + (this.right != null ? this.right.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "TreeNode{" +
+                "value=" + this.value +
+                ", left=" + this.left +
+                ", right=" + this.right +
+                '}';
     }
 }

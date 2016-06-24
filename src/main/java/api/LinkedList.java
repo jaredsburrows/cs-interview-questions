@@ -26,7 +26,7 @@ public final class LinkedList<T> {
     }
 
     public void add(final T value) {
-        addToEnd(value);
+        this.addToEnd(value);
     }
 
     public void addToEnd(final T value) {
@@ -47,5 +47,32 @@ public final class LinkedList<T> {
             temp = temp.next;
         }
         temp.next = null;
+    }
+
+    @Override
+    public boolean equals(final Object object) {
+        if (this == object) {
+            return true;
+        }
+
+        if (object == null || this.getClass() != object.getClass()) {
+            return false;
+        }
+
+        final LinkedList<?> linkedList = (LinkedList<?>) object;
+
+        return this.mHead != null ? this.mHead.equals(linkedList.mHead) : linkedList.mHead == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.mHead != null ? this.mHead.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "LinkedList{" +
+                "mHead=" + this.mHead +
+                '}';
     }
 }

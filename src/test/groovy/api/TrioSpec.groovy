@@ -7,24 +7,29 @@ import spock.lang.Specification
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TupleSpec extends Specification {
+class TrioSpec extends Specification {
 
-    def sut = new Tuple<>("test", 123)
+    def sut = new Trio<>("a", 1, 'a')
 
-    def "getLeft"() {
+    def "getFirst"() {
         expect:
-        sut.getLeft() == "test"
+        sut.getFirst() == "a"
     }
 
-    def "getRight"() {
+    def "getSecond"() {
         expect:
-        sut.getRight() == 123
+        sut.getSecond() == 1
+    }
+
+    def "getThird"() {
+        expect:
+        sut.getThird() == 'a'
     }
 
     def "equals/hashcode"() {
         when:
-        EqualsVerifier.forClass(Tuple.class)
-                .withPrefabValues(Tuple.class, new Tuple<>(1, 2), new Tuple<>(3, 4))
+        EqualsVerifier.forClass(Trio.class)
+                .withPrefabValues(Trio.class, new Trio<>("a", 1, 'a'), new Trio<>("b", 2, 'b'))
                 .suppress(Warning.NONFINAL_FIELDS)
                 .verify()
 
@@ -35,7 +40,7 @@ class TupleSpec extends Specification {
     def "string"() {
         given:
         def actual = sut.toString()
-        def expected = "Tuple{mLeft=test, mRight=123}"
+        def expected = "Trio{mFirst=a, mSecond=1, mThird=a}"
 
         expect:
         actual == expected

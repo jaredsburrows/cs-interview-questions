@@ -9,31 +9,40 @@ import spock.lang.Specification
  */
 class TreeNodeSpec extends Specification {
 
+    def sut = new TreeNode<>()
+
     def "test values"() {
         def valueNode = new TreeNode<>(5)
-        def blankNode = new TreeNode<>(0)
-        blankNode.right = valueNode
+        sut.right = valueNode
 
         expect:
-        valueNode != blankNode
+        valueNode != sut
         valueNode.value == 5
-        valueNode.right == null
-        blankNode != null
-        blankNode.value == 0
-        blankNode.right == valueNode
-        blankNode.right.value == 5
-        blankNode.right.right == null
+        !valueNode.right
+        sut
+        !sut.value
+        sut.right == valueNode
+        sut.right.value == 5
+        !sut.right.right
     }
 
-    def "equals"() {
+    def "equals/hashcode"() {
         when:
         EqualsVerifier.forClass(TreeNode.class)
-                .usingGetClass()
-                .withPrefabValues(TreeNode.class, new TreeNode<>(1), new TreeNode<>(2))
+                .withPrefabValues(TreeNode.class, new TreeNode<>(), new TreeNode<>(1))
                 .suppress(Warning.NONFINAL_FIELDS)
                 .verify()
 
         then:
         noExceptionThrown()
+    }
+
+    def "string"() {
+        given:
+        def actual = sut.toString()
+        def expected = "TreeNode{value=null, left=null, right=null}"
+
+        expect:
+        actual == expected
     }
 }

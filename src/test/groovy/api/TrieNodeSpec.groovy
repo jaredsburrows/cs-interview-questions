@@ -9,14 +9,14 @@ import spock.lang.Specification
  */
 class TrieNodeSpec extends Specification {
 
-    def node = new TrieNode<>()
+    def sut = new TrieNode<>()
     def nextNode = new TrieNode<>(123)
 
     def "default values"() {
         expect:
-        node.children.length == 26
+        sut.children.length == 26
         nextNode.children.length == 123
-        !node.isEnd
+        !sut.isEnd
         !nextNode.isEnd
     }
 
@@ -25,23 +25,31 @@ class TrieNodeSpec extends Specification {
         def list = [new TrieNode<>(1)]
 
         when:
-        node.children = list
-        node.isEnd = true
+        sut.children = list
+        sut.isEnd = true
 
         then:
-        node.children as List == list
-        node.isEnd
+        sut.children as List == list
+        sut.isEnd
     }
 
-    def "equals"() {
+    def "equals/hashcode"() {
         when:
         EqualsVerifier.forClass(TrieNode.class)
-                .usingGetClass()
-                .withPrefabValues(TrieNode.class, new TrieNode<>(1), new TrieNode<>(2))
+                .withPrefabValues(TrieNode.class, new TrieNode<>(), new TrieNode<>(1))
                 .suppress(Warning.NONFINAL_FIELDS)
                 .verify()
 
         then:
         noExceptionThrown()
+    }
+
+    def "string"() {
+        given:
+        def actual = sut.toString()
+        def expected = "TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=false}"
+
+        expect:
+        actual == expected
     }
 }

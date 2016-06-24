@@ -3,12 +3,12 @@ package api;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public final class Tuple<Left, Right> {
+public final class Pair<Left, Right> {
 
     private final Left mLeft;
     private final Right mRight;
 
-    public Tuple(final Left left, final Right right) {
+    public Pair(final Left left, final Right right) {
         this.mLeft = left;
         this.mRight = right;
     }
@@ -32,13 +32,13 @@ public final class Tuple<Left, Right> {
             return false;
         }
 
-        final Tuple<?, ?> tuple = (Tuple<?, ?>) object;
+        final Pair<?, ?> pair = (Pair<?, ?>) object;
 
-        if (this.mLeft != null ? !this.mLeft.equals(tuple.mLeft) : tuple.mLeft != null) {
+        if (this.mLeft != null ? !this.mLeft.equals(pair.mLeft) : pair.mLeft != null) {
             return false;
         }
 
-        return this.mRight != null ? this.mRight.equals(tuple.mRight) : tuple.mRight == null;
+        return this.mRight != null ? this.mRight.equals(pair.mRight) : pair.mRight == null;
     }
 
     @Override
@@ -50,7 +50,7 @@ public final class Tuple<Left, Right> {
 
     @Override
     public String toString() {
-        return "Tuple{" +
+        return "Pair{" +
                 "mLeft=" + this.mLeft +
                 ", mRight=" + this.mRight +
                 '}';
