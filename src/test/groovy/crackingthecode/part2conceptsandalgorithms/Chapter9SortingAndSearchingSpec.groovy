@@ -67,10 +67,10 @@ class Chapter9SortingAndSearchingSpec extends Specification {
         Chapter9SortingAndSearching.findValue(a as int[][], b) == c
 
         where:
-        a || b || c
+        a                   || b  || c
         // normal
-        null || -1 || false
-        null || 8 || false
+        null                || -1 || false
+        null                || 8  || false
 //        [[1, 1, 1, 1, 1],
 //         [1, 2, 2, 2, 2],
 //         [1, 2, 3, 3, 3],
@@ -84,23 +84,23 @@ class Chapter9SortingAndSearchingSpec extends Specification {
         [[1, 2, 4, 5, 6],
          [2, 3, 5, 7, 8],
          [4, 6, 8, 9, 10],
-         [5, 8, 9, 10, 11]] || 3 || true
+         [5, 8, 9, 10, 11]] || 3  || true
         [[1, 2, 4, 5, 6],
          [2, 3, 5, 7, 8],
          [4, 6, 8, 9, 10],
-         [5, 8, 9, 10, 11]] || 8 || true
+         [5, 8, 9, 10, 11]] || 8  || true
         [[1, 2, 4, 5, 6],
          [2, 3, 5, 7, 8],
          [4, 6, 8, 9, 10],
-         [5, 8, 9, 10, 11]] || 4 || true
+         [5, 8, 9, 10, 11]] || 4  || true
         [[1, 2, 4, 5, 6],
          [2, 3, 5, 7, 8],
          [4, 6, 8, 9, 10],
-         [5, 8, 9, 10, 11]] || 9 || true
+         [5, 8, 9, 10, 11]] || 9  || true
         [[1, 2, 4, 5, 6],
          [2, 3, 5, 7, 8],
          [4, 6, 8, 9, 10],
-         [5, 8, 9, 10, 11]] || 8 || true
+         [5, 8, 9, 10, 11]] || 8  || true
         [[1, 2, 4, 5, 6],
          [2, 3, 5, 7, 8],
          [4, 6, 8, 9, 10],
@@ -108,30 +108,30 @@ class Chapter9SortingAndSearchingSpec extends Specification {
         [[10, 20, 30, 40],
          [15, 25, 35, 45],
          [27, 29, 37, 48],
-         [32, 33, 39, 50]] || 29 || true
+         [32, 33, 39, 50]]  || 29 || true
     }
 
     def "getCircusOrder"() {
         given:
         // (65, 100) (70, 150) (56, 90) (75, 190) (60, 95) (68, 110)
-        def original = [new Tuple<Integer, Integer>(65, 100),
-                                                       new Tuple<Integer, Integer>(70, 150),
-                                                       new Tuple<Integer, Integer>(56, 90),
-                                                       new Tuple<Integer, Integer>(75, 190),
-                                                       new Tuple<Integer, Integer>(60, 95),
-                                                       new Tuple<Integer, Integer>(68, 110)]
-
+        def actual = [new Tuple<Integer, Integer>(65, 100),
+                        new Tuple<Integer, Integer>(70, 150),
+                        new Tuple<Integer, Integer>(56, 90),
+                        new Tuple<Integer, Integer>(75, 190),
+                        new Tuple<Integer, Integer>(60, 95),
+                        new Tuple<Integer, Integer>(68, 110)]
+        // (56, 90) (60,95) (65,100) (68,110) (70,150) (75,190)
+        def expected = [new Tuple<Integer, Integer>(56, 90),
+                      new Tuple<Integer, Integer>(60, 95),
+                      new Tuple<Integer, Integer>(65, 100),
+                      new Tuple<Integer, Integer>(68, 110),
+                      new Tuple<Integer, Integer>(70, 150),
+                      new Tuple<Integer, Integer>(75, 190)]
         when:
-        def result = Chapter9SortingAndSearching.getCircusOrder(original)
+        actual = Chapter9SortingAndSearching.getCircusOrder(actual)
 
         then:
         // (56, 90) (60,95) (65,100) (68,110) (70,150) (75,190)
-        result == [new Tuple<Integer, Integer>(56, 90),
-                   new Tuple<Integer, Integer>(60, 95),
-                   new Tuple<Integer, Integer>(65, 100),
-                   new Tuple<Integer, Integer>(68, 110),
-                   new Tuple<Integer, Integer>(70, 150),
-                   new Tuple<Integer, Integer>(75, 190)]
-
+        actual == expected
     }
 }

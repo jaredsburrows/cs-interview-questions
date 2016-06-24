@@ -1,12 +1,8 @@
 plugins {
-    // Gradle build receipt
-    id "com.gradle.build-scan" version "1.0"
-    // Google error-prone
-    id "net.ltgt.errorprone" version "0.0.8"
-    // Code coverage
-    id "com.github.kt3k.coveralls" version "2.6.3"
-    // Check for plugin updates
-    id "com.github.ben-manes.versions" version "0.12.0"
+    id "com.gradle.build-scan" version "1.0"            // Gradle build receipt
+    id "net.ltgt.errorprone" version "0.0.8"            // Google error-prone
+    id "com.github.kt3k.coveralls" version "2.6.3"      // Code coverage
+    id "com.github.ben-manes.versions" version "0.12.0" // Check for plugin updates
     id "c"
     id "cunit-test-suite"
     id "cpp"
@@ -21,7 +17,9 @@ plugins {
 }
 
 repositories {
-    maven { url "https://plugins.gradle.org/m2/" } // Mirrors jcenter() and mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"            // Mirrors jcenter() and mavenCentral()
+    }
 }
 
 apply from: rootProject.file("gradle/buildScan.gradle")

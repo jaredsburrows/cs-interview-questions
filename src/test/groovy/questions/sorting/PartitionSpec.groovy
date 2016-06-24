@@ -9,23 +9,25 @@ class PartitionSpec extends Specification {
 
     def "part"() {
         given:
-        def numbers = [4, 5, 3, 7, 2] as int[]
+        def actual = [4, 5, 3, 7, 2] as int[]
+        def expected = [2, 3, 4, 7, 5] as int[]
 
         when:
-        Partition.part(numbers as int[], 0)
+        Partition.part(actual as int[], 0)
 
         then:
-        [2, 3, 4, 7, 5] as int[] == numbers as int[]
+        actual == expected
     }
 
     def "part3"() {
         given:
-        def numbers = [4, 5, 3, 7, 2] as int[]
+        def actual = [4, 5, 3, 7, 2] as int[]
+        def expected = [2, 3, 4, 7, 5] as int[]
 
         when:
-        Partition.part(numbers as int[], 0)
+        Partition.part(actual as int[], 0)
 
         then:
-        [2, 3, 4, 7, 5] as int[] == numbers as int[]
+        actual == expected
     }
 }

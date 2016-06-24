@@ -9,12 +9,13 @@ class SwapSpec extends Specification {
 
     def "swap"() {
         given:
-        def numbers = [1, 2] as Integer[]
+        def actual = [1, 2] as Integer[]
+        def expected = [2, 1] as int[]
 
         when:
-        Swap.swap(numbers, 0, 1)
+        Swap.swap(actual, 0, 1)
 
         then:
-        [2, 1] as int[] == numbers as int[]
+        actual as int[] == expected
     }
 }

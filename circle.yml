@@ -4,15 +4,14 @@ machine:
 
 test:
   override:
-    - ./gradlew clean test pmdMain findbugsMain checkstyleMain jacocoTestReport coveralls -Dscan --configure-on-demand --daemon --parallel --stacktrace
+    - ./gradlew clean test jacocoTestReport coveralls -Dscan --configure-on-demand --daemon --parallel --stacktrace
   post:
     - cp -r build/test-results/*.xml $CIRCLE_TEST_REPORTS
     - cp -r build/reports/ $CIRCLE_ARTIFACTS
 
 dependencies:
   pre:
-    - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+    - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+    - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
   cache_directories:
     - $HOME/.gradle
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/

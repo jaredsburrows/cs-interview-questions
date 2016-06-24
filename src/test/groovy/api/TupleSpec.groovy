@@ -13,7 +13,7 @@ class TupleSpec extends Specification {
 
     def "getX"() {
         expect:
-        tuple.getX().equals("test")
+        tuple.getX() == "test"
     }
 
     def "getY"() {

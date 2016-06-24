@@ -9,45 +9,49 @@ class BubbleSortSpec extends Specification {
 
     def "sortDescending"() {
         given:
-        def numbers = [2, 4, 6, 3, 1] as int[]
+        def actual = [2, 4, 6, 3, 1] as int[]
+        def expected = [6, 4, 3, 2, 1] as int[]
 
         when:
-        BubbleSort.sortDescending(numbers)
+        BubbleSort.sortDescending(actual)
 
         then:
-        [6, 4, 3, 2, 1] as int[] == numbers as int[]
+        actual == expected
     }
 
     def "sortDescending2"() {
         given:
-        def numbers = [2, 4, 6, 3, 1] as int[]
+        def actual = [2, 4, 6, 3, 1] as int[]
+        def expected = [6, 4, 3, 2, 1] as int[]
 
         when:
-        numbers = BubbleSort.sortDescending2(numbers as int[])
+        actual = BubbleSort.sortDescending2(actual)
 
         then:
-        [6, 4, 3, 2, 1] as int[] == numbers as int[]
+        actual == expected
     }
 
     def "sort"() {
         given:
-        def numbers = [2, 4, 6, 3, 1] as int[]
+        def actual = [2, 4, 6, 3, 1] as int[]
+        def expected = [1, 2, 3, 4, 6] as int[]
 
         when:
-        BubbleSort.sort(numbers)
+        BubbleSort.sort(actual)
 
         then:
-        [1, 2, 3, 4, 6] as int[] == numbers as int[]
+        actual == expected
     }
 
     def "sort2"() {
         given:
-        def numbers = [2, 4, 6, 3, 1] as int[]
+        def actual = [2, 4, 6, 3, 1] as int[]
+        def expected = [1, 2, 3, 4, 6] as int[]
 
         when:
-        numbers = BubbleSort.sort2(numbers as int[])
+        actual = BubbleSort.sort2(actual)
 
         then:
-        [1, 2, 3, 4, 6] as int[] == numbers as int[]
+        actual == expected
     }
 }

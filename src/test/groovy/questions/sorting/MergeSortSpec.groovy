@@ -9,45 +9,49 @@ class MergeSortSpec extends Specification {
 
     def "mergeSort"() {
         given:
-        def numbers = [2, 4, 6, 3, 1] as int[]
+        def actual = [2, 4, 6, 3, 1] as int[]
+        def expected = [1, 2, 3, 4, 6] as int[]
 
         when:
-        MergeSort.mergeSort(numbers as int[], 0, numbers.length - 1)
+        MergeSort.mergeSort(actual as int[], 0, actual.length - 1)
 
         then:
-        [1, 2, 3, 4, 6] as int[] == numbers as int[]
+        actual == expected
     }
 
     def "mergeSort2"() {
         given:
-        def numbers = [2, 4, 6, 3, 1] as int[]
+        def actual = [2, 4, 6, 3, 1] as int[]
+        def expected = [1, 2, 3, 4, 6] as int[]
 
         when:
-        numbers = MergeSort.mergeSort2(numbers as int[], 0, numbers.length - 1)
+        actual = MergeSort.mergeSort2(actual as int[], 0, actual.length - 1)
 
         then:
-        [1, 2, 3, 4, 6] as int[] == numbers as int[]
+        actual == expected
     }
 
     def "sort"() {
         given:
-        def numbers = [2, 4, 6, 3, 1] as int[]
+        def actual = [2, 4, 6, 3, 1] as int[]
+        def expected = [1, 2, 3, 4, 6] as int[]
 
         when:
-        MergeSort.sort(numbers as int[])
+        MergeSort.mergeSort(actual as int[])
 
         then:
-        [1, 2, 3, 4, 6] as int[] == numbers as int[]
+        actual == expected
     }
 
     def "sort2"() {
         given:
-        def numbers = [2, 4, 6, 3, 1] as int[]
+        def actual = [2, 4, 6, 3, 1] as int[]
+        def expected = [1, 2, 3, 4, 6] as int[]
 
         when:
-        numbers = MergeSort.sort2(numbers as int[])
+        actual = MergeSort.mergeSort2(actual as int[])
 
         then:
-        [1, 2, 3, 4, 6] as int[] == numbers as int[]
+        actual == expected
     }
 }
