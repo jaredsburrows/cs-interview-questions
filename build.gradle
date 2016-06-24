@@ -25,6 +25,10 @@ repositories {
 apply from: rootProject.file("gradle/buildScan.gradle")
 apply from: rootProject.file("gradle/compile.gradle")
 apply from: rootProject.file("gradle/codeQuality.gradle")
+apply from: rootProject.file("gradle/provided.gradle")
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
 
 model {
     repositories {
@@ -49,7 +53,7 @@ model {
     }
 
     components {
-        crackingthecode_c(NativeLibrarySpec) {
+        crackingTheCodeC(NativeLibrarySpec) {
             sources {
                 c {
                     source {
@@ -64,7 +68,7 @@ model {
             }
         }
 
-        crackingthecode_cpp(NativeLibrarySpec) {
+        crackingTheCodeCpp(NativeLibrarySpec) {
             sources {
                 cpp {
                     source {
@@ -81,7 +85,7 @@ model {
     }
 
     testSuites {
-        crackingthecode_cTest(CUnitTestSuiteSpec) {
+        crackingTheCodeCTest(CUnitTestSuiteSpec) {
             sources {
                 c {
                     source {
@@ -95,10 +99,10 @@ model {
                 }
             }
 
-            testing $.components.crackingthecode_c
+            testing $.components.crackingTheCodeC
         }
 
-        crackingthecode_cppTest(GoogleTestTestSuiteSpec) {
+        crackingTheCodeCppTest(GoogleTestTestSuiteSpec) {
             sources {
                 cpp {
                     source {
@@ -112,7 +116,7 @@ model {
                 }
             }
 
-            testing $.components.crackingthecode_cpp
+            testing $.components.crackingTheCodeCpp
         }
     }
 
@@ -135,11 +139,11 @@ model {
 }
 
 dependencies {
-    compile "com.google.code.findbugs:annotations:3.0.1"
+    provided "com.google.code.findbugs:annotations:3.0.1"
 
     testCompile localGroovy()
     testCompile "org.spockframework:spock-core:1.0-groovy-2.4", { exclude module: "groovy-all" }
-    testCompile "cglib:cglib-nodep:3.2.3"
+    testCompile "cglib:cglib-nodep:3.2.4"
     testCompile "nl.jqno.equalsverifier:equalsverifier:2.1.2"
 
     checkstyle "com.puppycrawl.tools:checkstyle:6.19"
