@@ -4,7 +4,7 @@ machine:
 
 test:
   override:
-    - ./gradlew clean test jacocoTestReport coveralls -Dscan --configure-on-demand --daemon --parallel --stacktrace
+    - ./gradlew clean test coberturaReport coveralls -Dscan --configure-on-demand --daemon --parallel --stacktrace
   post:
     - cp -r build/test-results/*.xml $CIRCLE_TEST_REPORTS
     - cp -r build/reports/ $CIRCLE_ARTIFACTS
