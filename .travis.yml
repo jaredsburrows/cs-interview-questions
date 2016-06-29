@@ -10,7 +10,7 @@ matrix:
 install: true
 
 script:
-  - ./gradlew clean test jacocoTestReport coveralls -Dscan --configure-on-demand --daemon --parallel --stacktrace
+  - ./gradlew clean test coberturaReport coveralls -Dscan --configure-on-demand --daemon --parallel --stacktrace
 
 notifications:
   email: false
