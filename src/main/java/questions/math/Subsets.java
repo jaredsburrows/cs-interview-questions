@@ -40,15 +40,15 @@ public class Subsets {
         return subsets;
     }
 
-    public static <T> List<ArrayList<T>> subsets2(final T[] data) {
+    public static <T> List<List<T>> subsets2(final T[] data) {
         if (data == null) {
             return null;
         }
 
-        final List<ArrayList<T>> subsets = new ArrayList<>();
+        final List<List<T>> subsets = new ArrayList<>();
 
         // Empty Set
-        final ArrayList<T> list = new ArrayList<>();
+        final List<T> list = new ArrayList<>();
         subsets.add(list);
 
         // Order
@@ -59,7 +59,7 @@ public class Subsets {
 
             for (int j = 0; j < subsetSize; j++) {
 
-                final ArrayList<T> temp = new ArrayList<>(subsets.get(j));
+                final List<T> temp = new ArrayList<>(subsets.get(j));
 
                 temp.add(obj);
 

@@ -50,4 +50,18 @@ class Chapter20HardSpec extends Specification {
         [0]                            || null
         [1, 5, 2, 6, 4, 7, 3, 9, 3, 5] || [5, 5, 6, 7, 9]
     }
+
+    def "20.10 - getTransformedList"() {
+        expect:
+        Chapter20Hard.getTransformedList(a, b, c) == d
+
+        where:
+        a                        | b       | c            || d
+        null                     | null    | null         || null
+        ["DAMP": "", "LIKE": ""] | null    | null         || null
+        ["DAMP": "", "LIKE": ""] | "DAMP"  | null         || null
+//        ["DAMP": "", "LIKE": ""] | "DAMP"  | "LIKE"       || null
+//        ["DAMP": "", "LIKE": ""] | "notin" | "dictionary" || null
+//        ["DAMP": "", "LIKE": ""] | "DAMP" | "LIKE" || ["DAMP", "LAMP", "LIMP", "LIME", "LIKE"]
+    }
 }

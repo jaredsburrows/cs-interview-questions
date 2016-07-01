@@ -4,6 +4,8 @@ plugins {
     id "com.github.kt3k.coveralls" version "2.6.3"
     id "com.github.ben-manes.versions" version "0.12.0"
     id "net.saliman.cobertura" version "2.3.2"
+      id 'net.researchgate.release' version '2.4.0'
+
     id "c"
     id "cunit-test-suite"
     id "cpp"

@@ -239,12 +239,15 @@ public class Chapter19Moderate {
         final Map<String, Integer> occurrences = new HashMap<>();
 
         for (String string : array) {
-            string = string.toLowerCase().trim();
-            if (!string.isEmpty()) {
-                if (occurrences.containsKey(string)) {
-                    occurrences.put(string, occurrences.get(string) + 1);
-                } else {
-                    occurrences.put(string, 1);
+            if (string != null) {
+                string = string.toLowerCase().trim();
+
+                if (!string.isEmpty()) {
+                    if (occurrences.containsKey(string)) {
+                        occurrences.put(string, occurrences.get(string) + 1);
+                    } else {
+                        occurrences.put(string, 1);
+                    }
                 }
             }
         }

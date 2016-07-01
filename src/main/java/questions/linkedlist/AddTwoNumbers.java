@@ -37,9 +37,10 @@ public class AddTwoNumbers {
                 node2 = node2.next;
             }
 
-            head.next = new Node<>(carry % 10);
+            final int lastInt = carry % 10;
+            head.next = new Node<>(lastInt);
             head = head.next;
-            carry /= 10;
+            carry = carry / 10;
         }
 
         if (carry == 1) {

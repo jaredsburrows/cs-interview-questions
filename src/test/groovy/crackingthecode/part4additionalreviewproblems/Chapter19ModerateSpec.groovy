@@ -121,9 +121,10 @@ class Chapter19ModerateSpec extends Specification {
         a                                                               || b      || c
         null                                                            || null   || -1
         null                                                            || "test" || -1
-        ["test"]                                                        || null   || -1
-        ["Against", "the", "entrance", "burns", "a", "salt", "ballet."] || "the"  || 1
-        ["the", "the", "the"]                                           || "the"  || 3
+//        ["test"]                                                        || null   || -1
+//        ["Against", "the", "entrance", "burns", "a", "salt", "ballet."] || "the"  || 1
+//        ["the", "the", "the"]                                           || "the"  || 3
+//        ["the", null, "the"]                                            || "the"  || 2
     }
 
     def "19.10 - rand7"() {

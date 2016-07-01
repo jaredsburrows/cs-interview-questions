@@ -1,6 +1,7 @@
 package questions.tree
 
 import api.TreeNode
+import spock.lang.Shared
 import spock.lang.Specification
 
 /**
@@ -8,11 +9,11 @@ import spock.lang.Specification
  */
 class TreeHeightSpec extends Specification {
 
-    def tree = new TreeNode<>(26)
-    def subTree = new TreeNode<>(10)
-    def balancedTree = new TreeNode<>(0)
-    def balancedTree2 = new TreeNode<>(0)
-    def unbalancedTree = new TreeNode<>(5)
+    @Shared def tree = new TreeNode<>(26)
+    @Shared def subTree = new TreeNode<>(10)
+    @Shared def balancedTree = new TreeNode<>(0)
+    @Shared def balancedTree2 = new TreeNode<>(0)
+    @Shared def unbalancedTree = new TreeNode<>(5)
 
     def "setup"() {
         balancedTree.right = new TreeNode<Integer>(10)
@@ -46,25 +47,37 @@ class TreeHeightSpec extends Specification {
 
     def "getHeight"() {
         expect:
-        TreeHeight.getHeight(null) == 0
-        TreeHeight.getHeight(balancedTree) == 3
-        TreeHeight.getHeight(balancedTree2) == 3
-        TreeHeight.getHeight(unbalancedTree) == -1
+        TreeHeight.getHeight(a) == b
+
+        where:
+        a              || b
+        null           || 0
+        balancedTree   || 3
+        balancedTree2  || 3
+        unbalancedTree || -1
     }
 
     def "getMinHeight"() {
         expect:
-        TreeHeight.getMinHeight(null) == 0
-        TreeHeight.getMinHeight(balancedTree) == 3
-        TreeHeight.getMinHeight(balancedTree2) == 2
-        TreeHeight.getMinHeight(unbalancedTree) == 2
+        TreeHeight.getMinHeight(a) == b
+
+        where:
+        a              || b
+        null           || 0
+        balancedTree   || 3
+        balancedTree2  || 2
+        unbalancedTree || 2
     }
 
     def "getMaxHeight"() {
         expect:
-        TreeHeight.getMaxHeight(null) == 0
-        TreeHeight.getMaxHeight(balancedTree) == 3
-        TreeHeight.getMaxHeight(balancedTree2) == 3
-        TreeHeight.getMaxHeight(unbalancedTree) == 4
+        TreeHeight.getMaxHeight(a) == b
+
+        where:
+        a              || b
+        null           || 0
+        balancedTree   || 3
+        balancedTree2  || 3
+        unbalancedTree || 4
     }
 }

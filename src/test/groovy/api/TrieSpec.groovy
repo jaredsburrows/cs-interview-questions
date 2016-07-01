@@ -18,9 +18,15 @@ class TrieSpec extends Specification {
     }
 
     def "insert/get"() {
-        expect:
+        when:
+        sut.insert(null)
+        sut.insert("")
+        sut.insert("z")
+
+        then:
         !sut.get(null)
         !sut.get("")
+        sut.get("z")
         sut.get("jar")
         sut.get("red")
         sut.get("are")

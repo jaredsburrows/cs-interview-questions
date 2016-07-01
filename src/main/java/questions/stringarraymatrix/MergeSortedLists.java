@@ -21,8 +21,8 @@ public class MergeSortedLists {
 
         final List<Integer> sortedList = new ArrayList<>();
 
-        for (int i = 0; i < numbers.size(); i++) {
-            final List<Integer> mergedList = merge(numbers.get(i), sortedList);
+        for (final List<Integer> number : numbers) {
+            final List<Integer> mergedList = merge(number, sortedList);
 
             sortedList.clear();
 

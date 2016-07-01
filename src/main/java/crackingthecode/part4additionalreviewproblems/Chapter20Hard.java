@@ -222,13 +222,13 @@ public class Chapter20Hard {
      * Output: DAMP -> LAMP -> LIMP -> LIME -> LIKE
      */
     // what is the data structure of the dictionary? Map<Integer, String>
-    public static List<String> getTransformedList(final Map<Integer, String> dictionary, final String word,
+    public static List<String> getTransformedList(final Map<String, String> dictionary, final String word,
                                                   final String word2) {
         if (dictionary == null || word == null || word2 == null) {
             return null;
         }
 
-        if (!dictionary.containsValue(word) || !dictionary.containsValue(word2)) {
+        if (!dictionary.containsKey(word) || !dictionary.containsKey(word2)) {
             return null;
         }
 
@@ -244,7 +244,7 @@ public class Chapter20Hard {
 
             String tmp = String.valueOf(temp);
 
-            if (dictionary.containsValue(tmp)) {
+            if (dictionary.containsKey(tmp)) {
                 stringList.add(tmp);
                 count++;
             }
