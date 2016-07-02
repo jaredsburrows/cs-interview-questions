@@ -1,0 +1,7 @@
+= CodeEval
+
+*Site:* https://www.codeeval.com/
+
+*My Profile:* https://www.codeeval.com/profile/jaredsburrows/
+
+*My Solutions:* link:src/main/java/codeeval[src/main/java/codeeval]

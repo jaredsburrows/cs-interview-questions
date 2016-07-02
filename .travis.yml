@@ -11,6 +11,11 @@ install: true
 
 script:
   - ./gradlew clean cobertura coveralls -Dscan --configure-on-demand --daemon --parallel --stacktrace
+  - .buildscript/publishDocs.sh
+
+branches:
+  except:
+    - gh-pages
 
 notifications:
   email: false
@@ -24,3 +29,7 @@ before_cache:
 cache:
   directories:
     - $HOME/.gradle
+
+env:
+  global:
+    - secure: "HhxxyHf+3SynXySDmzi6rQzJUUwRIsANrrdt0tj+2p5UnnrpsaCOmqS1PM5B5mHpj8Cq1rLV3mi9gYVuODlQMQKIKsWyw3ve6vjp9Xn547Cf5djvyf0pr6qRWfUwOP9dXgXYYeUkzZwDYatZ2iTw5BHkTlrfpntNdsb5h3Pp/1w="

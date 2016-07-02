@@ -1,0 +1,5 @@
+# LeetCode
+
+*Site:* https://leetcode.com/
+
+*My Solutions:* link:src/main/java/leetcode[src/main/java/leetcode]

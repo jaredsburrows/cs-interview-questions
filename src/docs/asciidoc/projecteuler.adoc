@@ -1,0 +1,9 @@
+= ProjectEuler
+
+*Site:* http://projecteuler.net/
+
+*My Solutions:* link:src/main/java/projecteuler[src/main/java/projecteuler]
+
+*My Profile:*
+
+image::https://projecteuler.net/profile/jaredsburrows.png[Profile]

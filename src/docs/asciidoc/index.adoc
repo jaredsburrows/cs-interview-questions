@@ -1,0 +1,13 @@
+= {title}
+Jared Burrows
+
+. <<api.adoc#,              Api>>
+. <<codeeveal.adoc#,        CodeEval>>
+. <<codingbat.adoc#,        CodingBat>>
+. <<crackingthecode.adoc#,  Cracking the Code Interview>>
+. <<leetcode.adoc#,         LeetCode>>
+. <<projecteuler.adoc#,     ProjectEuler>>
+. <<questions.adoc#,        Other Questions>>
+. <<stackoverflow.adoc#,    StackOverflow>>
+
+<<all.adoc#,                Single Page>>
