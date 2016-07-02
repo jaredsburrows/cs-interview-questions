@@ -12,9 +12,9 @@ class AllStarSpec extends Specification {
         AllStar.allStar(a) == b
 
         where:
-        a       || b
-        "hello" || "h*e*l*l*o"
-        "abc"   || "a*b*c"
-        "ab"    || "a*b"
+        a       | b
+        "hello" | "h*e*l*l*o"
+        "abc"   | "a*b*c"
+        "ab"    | "a*b"
     }
 }

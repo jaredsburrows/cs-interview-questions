@@ -12,10 +12,10 @@ class Chapter5BitManipulationSpec extends Specification {
         Chapter5BitManipulation.bitSwapRequired(a, b) == c
 
         where:
-        a  || b  || c
-        31 || 14 || 2
-//        4  || 3  || 1 // book answer is wrong, 3?
-        4 || 4 || 0
+        a  | b  | c
+        31 | 14 | 2
+//        4  | 3  | 1 // book answer is wrong, 3?
+        4 | 4 | 0
     }
 
     def "getSwapBits"() {
@@ -23,7 +23,7 @@ class Chapter5BitManipulationSpec extends Specification {
         Chapter5BitManipulation.getSwapBits(a) == b
 
         where:
-        a  || b
-        10 || 5
+        a  | b
+        10 | 5
     }
 }

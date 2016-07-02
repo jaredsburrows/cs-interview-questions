@@ -12,12 +12,12 @@ class ValidPalindromeSpec extends Specification {
         ValidPalindrome.isPalindrome(a) == b
 
         where:
-        a                                || b
-        "ama"                            || true
-        "amaf"                           || false
-        "A man, a plan, a canal: Panama" || true
-        "race a car"                     || false
-        "0P"                             || false
-        "aA"                             || true
+        a                                | b
+        "ama"                            | true
+        "amaf"                           | false
+        "A man, a plan, a canal: Panama" | true
+        "race a car"                     | false
+        "0P"                             | false
+        "aA"                             | true
     }
 }

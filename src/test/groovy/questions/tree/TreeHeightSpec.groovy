@@ -50,11 +50,11 @@ class TreeHeightSpec extends Specification {
         TreeHeight.getHeight(a) == b
 
         where:
-        a              || b
-        null           || 0
-        balancedTree   || 3
-        balancedTree2  || 3
-        unbalancedTree || -1
+        a              | b
+        null           | 0
+        balancedTree   | 3
+        balancedTree2  | 3
+        unbalancedTree | -1
     }
 
     def "getMinHeight"() {
@@ -62,11 +62,11 @@ class TreeHeightSpec extends Specification {
         TreeHeight.getMinHeight(a) == b
 
         where:
-        a              || b
-        null           || 0
-        balancedTree   || 3
-        balancedTree2  || 2
-        unbalancedTree || 2
+        a              | b
+        null           | 0
+        balancedTree   | 3
+        balancedTree2  | 2
+        unbalancedTree | 2
     }
 
     def "getMaxHeight"() {
@@ -74,10 +74,10 @@ class TreeHeightSpec extends Specification {
         TreeHeight.getMaxHeight(a) == b
 
         where:
-        a              || b
-        null           || 0
-        balancedTree   || 3
-        balancedTree2  || 3
-        unbalancedTree || 4
+        a              | b
+        null           | 0
+        balancedTree   | 3
+        balancedTree2  | 3
+        unbalancedTree | 4
     }
 }

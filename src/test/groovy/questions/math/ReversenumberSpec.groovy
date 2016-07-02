@@ -12,12 +12,12 @@ class ReverseNumberSpec extends Specification {
         ReverseNumber.reverseLong(a) == b
 
         where:
-        a          || b
-        0          || 0
-        1          || 1
-        123        || 321
-        -1409      || -9041
-        1534236469 || 9646324351
+        a          | b
+        0          | 0
+        1          | 1
+        123        | 321
+        -1409      | -9041
+        1534236469 | 9646324351
     }
 
     def "reverseInt"() {
@@ -25,11 +25,11 @@ class ReverseNumberSpec extends Specification {
         ReverseNumber.reverseInt(a) == b
 
         where:
-        a          || b
-        0          || 0
-        1          || 1
-        123        || 321
-        -1409      || -9041
-        1534236469 || 0
+        a          | b
+        0          | 0
+        1          | 1
+        123        | 321
+        -1409      | -9041
+        1534236469 | 0
     }
 }

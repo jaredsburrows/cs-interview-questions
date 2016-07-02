@@ -12,11 +12,11 @@ class AddTwoNumbersSpec extends Specification {
         AddTwoNumbers.addTwoNumbers(a, b) == c
 
         where:
-        a     | b     || c
-        null  | null  || null
-        null  | "123" || "123"
-        "123" | null  || "123"
-        "243" | "564" || "807"
-        "123" | "234" || "357"
+        a     | b     | c
+        null  | null  | null
+        null  | "123" | "123"
+        "123" | null  | "123"
+        "243" | "564" | "807"
+        "123" | "234" | "357"
     }
 }

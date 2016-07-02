@@ -12,9 +12,9 @@ class SleepInSpec extends Specification {
         SleepIn.sleepIn(a, b) == c
 
         where:
-        a     | b     || c
-        false | false || true
-        true  | false || false
-        false | true  || true
+        a     | b     | c
+        false | false | true
+        true  | false | false
+        false | true  | true
     }
 }

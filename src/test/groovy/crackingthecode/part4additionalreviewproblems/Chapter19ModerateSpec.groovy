@@ -30,23 +30,23 @@ class Chapter19ModerateSpec extends Specification {
         Chapter19Moderate.checkTicTacToe(a as int[][]) == b
 
         where:
-        a           || b
-        null        || -1
+        a           | b
+        null        | -1
         [[0, 0, 0],
          [0, 1, 0],
-         [0, 1, 0]] || -1
+         [0, 1, 0]] | -1
         [[0, 1, 0],
          [0, 1, 0],
-         [0, 1, 0]] || 1
+         [0, 1, 0]] | 1
         [[0, 0, 0],
          [2, 2, 2],
-         [0, 0, 0]] || 2
+         [0, 0, 0]] | 2
         [[0, 0, 1],
          [0, 1, 0],
-         [1, 0, 0]] || 1
+         [1, 0, 0]] | 1
         [[2, 0, 0],
          [0, 2, 0],
-         [0, 0, 2]] || 2
+         [0, 0, 2]] | 2
     }
 
     def "19.3 - numZeros"() {
@@ -55,10 +55,10 @@ class Chapter19ModerateSpec extends Specification {
 
         // 26! = 403291461126605635584000000
         where:
-        a  || b
-        -1 || 0
-        10 || 2
-        26 || 6
+        a  | b
+        -1 | 0
+        10 | 2
+        26 | 6
     }
 
     def "19.4 - getMax"() {
@@ -67,11 +67,11 @@ class Chapter19ModerateSpec extends Specification {
         Chapter19Moderate.getMax2(a as long, b as long) == c
 
         where:
-        a   | b   || c
-        -1  | -1  || -1     // same value
-        10  | 0   || 10     // 0 value
-        100 | 50  || 100
-        213 | 321 || 321
+        a   | b   | c
+        -1  | -1  | -1     // same value
+        10  | 0   | 10     // 0 value
+        100 | 50  | 100
+        213 | 321 | 321
     }
 
     def "getMin"() {
@@ -79,11 +79,11 @@ class Chapter19ModerateSpec extends Specification {
         Chapter19Moderate.getMin(a as long, b as long) == c
 
         where:
-        a   | b   || c
-        -1  | -1  || -1     // same value
-        10  | 0   || 0      // 0 value
-        100 | 50  || 50
-        213 | 321 || 213
+        a   | b   | c
+        -1  | -1  | -1     // same value
+        10  | 0   | 0      // 0 value
+        100 | 50  | 50
+        213 | 321 | 213
     }
 
     def "19.5 - getPseudoHits"() {
@@ -107,10 +107,10 @@ class Chapter19ModerateSpec extends Specification {
         Chapter19Moderate.getMaxSum(a as int[]) == b
 
         where:
-        a                               || b
-        null                            || 0
-        [2, -8, 3, -2, 4, -10]          || 5
-        [-2, 1, -3, 4, -1, 2, 1, -5, 4] || 6
+        a                               | b
+        null                            | 0
+        [2, -8, 3, -2, 4, -10]          | 5
+        [-2, 1, -3, 4, -1, 2, 1, -5, 4] | 6
     }
 
     def "19.8 - getWordOccurence"() {
@@ -118,13 +118,13 @@ class Chapter19ModerateSpec extends Specification {
         Chapter19Moderate.getWordOccurrence(a as String[], b) == c
 
         where:
-        a                                                               || b      || c
-        null                                                            || null   || -1
-        null                                                            || "test" || -1
-//        ["test"]                                                        || null   || -1
-//        ["Against", "the", "entrance", "burns", "a", "salt", "ballet."] || "the"  || 1
-//        ["the", "the", "the"]                                           || "the"  || 3
-//        ["the", null, "the"]                                            || "the"  || 2
+        a                                                               | b      | c
+        null                                                            | null   | -1
+        null                                                            | "test" | -1
+//        ["test"]                                                        | null   | -1
+//        ["Against", "the", "entrance", "burns", "a", "salt", "ballet."] | "the"  | 1
+//        ["the", "the", "the"]                                           | "the"  | 3
+//        ["the", null, "the"]                                            | "the"  | 2
     }
 
     def "19.10 - rand7"() {
@@ -139,8 +139,8 @@ class Chapter19ModerateSpec extends Specification {
         Chapter19Moderate.getPairSum(a as int[], b) == c as Map<Integer, Integer>
 
         where:
-        a                  || b || c
-        [1, 1]             || 2 || [1: 1]
-        [1, 5, 3, 6, 3, 8] || 9 || [6: 3, 8: 1]
+        a                  | b | c
+        [1, 1]             | 2 | [1: 1]
+        [1, 5, 3, 6, 3, 8] | 9 | [6: 3, 8: 1]
     }
 }

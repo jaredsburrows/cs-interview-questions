@@ -12,10 +12,10 @@ class PowerNSpec extends Specification {
         PowerN.powerN(a, b) == c
 
         where:
-        a | b || c
-        1 | 1 || 1
-        3 | 1 || 3
-        3 | 2 || 9
-        3 | 3 || 27
+        a | b | c
+        1 | 1 | 1
+        3 | 1 | 3
+        3 | 2 | 9
+        3 | 3 | 27
     }
 }

@@ -12,9 +12,9 @@ class SumDigitsSpec extends Specification {
         SumDigits.sumDigits(a) == b
 
         where:
-        a   || b
-        126 || 9
-        49  || 13
-        12  || 3
+        a   | b
+        126 | 9
+        49  | 13
+        12  | 3
     }
 }

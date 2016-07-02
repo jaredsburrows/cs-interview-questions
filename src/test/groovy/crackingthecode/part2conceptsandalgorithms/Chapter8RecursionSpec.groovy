@@ -16,18 +16,18 @@ class Chapter8RecursionSpec extends Specification {
         Chapter8Recursion.getFibNumberIterative(a) == b
 
         where:
-        a  || b
-        -5 || -5
-        -1 || -1
-        0  || 0
-        1  || 1
-        2  || 1
-        3  || 2
-        4  || 3
-        5  || 5
-        6  || 8
-        7  || 13
-        8  || 21
+        a  | b
+        -5 | -5
+        -1 | -1
+        0  | 0
+        1  | 1
+        2  | 1
+        3  | 2
+        4  | 3
+        5  | 5
+        6  | 8
+        7  | 13
+        8  | 21
     }
 
     def "getSubsets"() {
@@ -35,10 +35,10 @@ class Chapter8RecursionSpec extends Specification {
         Chapter8Recursion.getSubsets(a, 0) == b
 
         where:
-        a      || b
-        null   || null
-        [0]    || [[], [0]]
-        [1, 2] || [[], [2], [1], [2, 1]]
+        a      | b
+        null   | null
+        [0]    | [[], [0]]
+        [1, 2] | [[], [2], [1], [2, 1]]
     }
 
     def "getStringPermutations"() {
@@ -46,8 +46,8 @@ class Chapter8RecursionSpec extends Specification {
         Chapter8Recursion.getStringPermutations("", a) == b
 
         where:
-        a     || b
-        "abc" || ["abc", "acb", "bca", "bac", "cab", "cba"]
+        a     | b
+        "abc" | ["abc", "acb", "bca", "bac", "cab", "cba"]
     }
 
     def "getValidParentheses"() {
@@ -55,10 +55,10 @@ class Chapter8RecursionSpec extends Specification {
         Chapter8Recursion.getValidParentheses(a, 0, 0, "") == b
 
         where:
-        a  || b
-        -1 || null
-        0  || null
-        3  || ["((()))", "(()())", "(())()", "()(())", "()()()"]
+        a  | b
+        -1 | null
+        0  | null
+        3  | ["((()))", "(()())", "(())()", "()(())", "()()()"]
     }
 
     def "paintFill"() {
@@ -115,10 +115,10 @@ class Chapter8RecursionSpec extends Specification {
         Chapter8Recursion.makeChange(a as int, 25) == b
 
         where:
-        a    || b
-        1000 || 142511
-        100  || 242
-        10   || 4
-        1    || 1
+        a    | b
+        1000 | 142511
+        100  | 242
+        10   | 4
+        1    | 1
     }
 }
