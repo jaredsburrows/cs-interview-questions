@@ -23,7 +23,7 @@ class GraphNodeSpec extends Specification {
         !sut.visited
 
         node2.value == 123
-        node2.neighbors == graphNodes
+        node2.neighbors.equals(graphNodes)
         node2.next == null
         !node2.visited
     }

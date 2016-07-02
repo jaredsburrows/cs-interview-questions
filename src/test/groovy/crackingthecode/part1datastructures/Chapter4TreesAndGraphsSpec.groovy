@@ -128,7 +128,7 @@ class Chapter4TreesAndGraphsSpec extends Specification {
         expect:
         Chapter4TreesAndGraphs.getLinkedListLevels(null) == null
         Chapter4TreesAndGraphs.getLinkedListLevels(treeNode4) ==
-                [[treeNode4], [treeNode2, treeNode5], [treeNode1, treeNode3, treeNode6, treeNode7]]
+                [[treeNode4], [treeNode2, treeNode5], [treeNode1, treeNode3, treeNode6, treeNode7]] as List<LinkedList<TreeNode<Integer>>>
 
     }
 

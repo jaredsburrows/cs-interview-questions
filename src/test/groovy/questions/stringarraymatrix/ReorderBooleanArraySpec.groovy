@@ -7,7 +7,7 @@ import spock.lang.Specification
  */
 class ReorderBooleanArraySpec extends Specification {
 
-    def "reorder bools - primitive"() {
+    def "reorder boolean - primitive"() {
         given:
         def actual = [false, true, true, true, false, true] as boolean[]
         def expected = [false, false, true, true, true, true] as boolean[]
@@ -19,7 +19,7 @@ class ReorderBooleanArraySpec extends Specification {
         actual == expected
     }
 
-    def "reorder bools - object"() {
+    def "reorder boolean - object"() {
         given:
         def actual = [false, true, true, true, false, true] as Boolean[]
         def expected = [false, false, true, true, true, true] as Boolean[]
@@ -28,6 +28,6 @@ class ReorderBooleanArraySpec extends Specification {
         actual = ReorderBooleanArray.getReorderBoolObjects(actual)
 
         then:
-        actual == expected
+        actual as boolean[] == expected as boolean[]
     }
 }

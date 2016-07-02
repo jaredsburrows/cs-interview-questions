@@ -12,11 +12,11 @@ class PalindromeNumberSpec extends Specification {
         PalindromeNumber.isPalindrome(a) == b
 
         where:
-        a      || b
-        -134   || false
-        151    || true
-        1      || true
-        100001 || true
-        123221 || false
+        a      | b
+        -134   | false
+        151    | true
+        1      | true
+        100001 | true
+        123221 | false
     }
 }

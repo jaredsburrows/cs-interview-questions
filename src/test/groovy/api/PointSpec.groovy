@@ -22,7 +22,8 @@ class PointSpec extends Specification {
 
     def "equals/hashcode"() {
         when:
-        EqualsVerifier.forClass(Point.class).verify()
+        EqualsVerifier.forClass(Point.class)
+                .verify()
 
         then:
         noExceptionThrown()
