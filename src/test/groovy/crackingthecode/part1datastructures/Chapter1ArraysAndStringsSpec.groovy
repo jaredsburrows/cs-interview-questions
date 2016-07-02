@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class Chapter1ArraysAndStringsSpec extends BaseSpec {
 
-    def "isUniqueCharacters"() {
+    def "test isUniqueCharacters"() {
         expect:
         Chapter1ArraysAndStrings.isUniqueCharacters(a) == b
         Chapter1ArraysAndStrings.isUniqueCharacters2(a) == b
@@ -22,7 +22,7 @@ class Chapter1ArraysAndStringsSpec extends BaseSpec {
         "qwertyuiopplkjhgfdsazxcvbnm" | false
     }
 
-    def "reverseString"() {
+    def "test reverseString"() {
         expect:
         Chapter1ArraysAndStrings.reverseString(a as char[]) == b as char[]
 
@@ -35,7 +35,7 @@ class Chapter1ArraysAndStringsSpec extends BaseSpec {
         "test"       | "tset"
     }
 
-    def "removeDuplicates"() {
+    def "test removeDuplicates"() {
         expect:
         Chapter1ArraysAndStrings.removeDuplicates(a) == b
 
@@ -48,7 +48,7 @@ class Chapter1ArraysAndStringsSpec extends BaseSpec {
         "abcc"         | "abc"
     }
 
-    def "isAnagram"() {
+    def "test isAnagram"() {
         expect:
         Chapter1ArraysAndStrings.isAnagram(a, b) == c
         Chapter1ArraysAndStrings.isAnagram2(a, b) == c
@@ -66,7 +66,7 @@ class Chapter1ArraysAndStringsSpec extends BaseSpec {
         "fall"       | "foul"       | false
     }
 
-    def "replaceSpace"() {
+    def "test replaceSpace"() {
         expect:
         Chapter1ArraysAndStrings.replaceSpaces(a) == b
         Chapter1ArraysAndStrings.replaceSpaces2(a) == b
@@ -80,7 +80,7 @@ class Chapter1ArraysAndStringsSpec extends BaseSpec {
         "  "   | "%20%20"
     }
 
-    def "rotateImage"() {
+    def "test rotateImage"() {
         expect:
         Chapter1ArraysAndStrings.rotateImage(a as int[][]) == b as int[][]
         Chapter1ArraysAndStrings.rotateImage2(a as int[][]) == b as int[][]
@@ -91,18 +91,18 @@ class Chapter1ArraysAndStringsSpec extends BaseSpec {
         [[1, 2, 3],
          [1, 2, 3],
          [1, 2, 3]]    | [[1, 1, 1],
-                           [2, 2, 2],
-                           [3, 3, 3]]
+                          [2, 2, 2],
+                          [3, 3, 3]]
         [[1, 2, 3, 4],
          [5, 6, 7, 8],
          [9, 0, 1, 2],
          [3, 4, 5, 6]] | [[3, 9, 5, 1],
-                           [4, 0, 6, 2],
-                           [5, 1, 7, 3],
-                           [6, 2, 8, 4]]
+                          [4, 0, 6, 2],
+                          [5, 1, 7, 3],
+                          [6, 2, 8, 4]]
     }
 
-    def "markRows"() {
+    def "test markRows"() {
         expect:
         Chapter1ArraysAndStrings.markRows(a as int[][]) == b as int[][]
 
@@ -112,17 +112,17 @@ class Chapter1ArraysAndStringsSpec extends BaseSpec {
         [[5, 0, 5],
          [5, 5, 5],
          [5, 5, 5]] | [[0, 0, 0],
-                        [5, 0, 5],
-                        [5, 0, 5]]
+                       [5, 0, 5],
+                       [5, 0, 5]]
         [[5, 5, 5],
          [5, 0, 5],
          [5, 5, 5]] | [[5, 0, 5],
-                        [0, 0, 0],
-                        [5, 0, 5]]
+                       [0, 0, 0],
+                       [5, 0, 5]]
 
     }
 
-    def "isSubstring"() {
+    def "test isSubstring"() {
         expect:
         Chapter1ArraysAndStrings.isSubstring(a, b) == c
 

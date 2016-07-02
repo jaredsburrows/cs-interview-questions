@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class Chapter5BitManipulationSpec extends BaseSpec {
 
-    def "getDiffBits"() {
+    def "test getDiffBits"() {
         expect:
         Chapter5BitManipulation.getDiffBits(a, b) == c
         Chapter5BitManipulation.bitSwapRequired(a, b) == c
@@ -16,10 +16,10 @@ class Chapter5BitManipulationSpec extends BaseSpec {
         a  | b  | c
         31 | 14 | 2
 //        4  | 3  | 1 // book answer is wrong, 3?
-        4 | 4 | 0
+        4  | 4  | 0
     }
 
-    def "getSwapBits"() {
+    def "test getSwapBits"() {
         expect:
         Chapter5BitManipulation.getSwapBits(a) == b
 

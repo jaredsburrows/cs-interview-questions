@@ -3,6 +3,7 @@ package questions.tree
 import api.TreeNode
 import spock.lang.Shared
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
@@ -44,7 +45,7 @@ class TreeHeightSpec extends BaseSpec {
         tree.left.right = new TreeNode<Integer>(6)
     }
 
-    def "getHeight"() {
+    def "test getHeight"() {
         expect:
         TreeHeight.getHeight(a) == b
 
@@ -56,7 +57,7 @@ class TreeHeightSpec extends BaseSpec {
         unbalancedTree | -1
     }
 
-    def "getMinHeight"() {
+    def "test getMinHeight"() {
         expect:
         TreeHeight.getMinHeight(a) == b
 
@@ -68,7 +69,7 @@ class TreeHeightSpec extends BaseSpec {
         unbalancedTree | 2
     }
 
-    def "getMaxHeight"() {
+    def "test getMaxHeight"() {
         expect:
         TreeHeight.getMaxHeight(a) == b
 

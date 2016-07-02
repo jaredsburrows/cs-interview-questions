@@ -12,7 +12,7 @@ class NodeSpec extends BaseSpec {
     def sut = new Node<>()
     def nextNode = new Node<>(123)
 
-    def "default values"() {
+    def "test default values"() {
         when:
         sut.value = 123
 
@@ -22,7 +22,7 @@ class NodeSpec extends BaseSpec {
         sut.previous == null
     }
 
-    def "getters/setters"() {
+    def "test getters/setters"() {
         when:
         sut.value = 123
         sut.next = nextNode

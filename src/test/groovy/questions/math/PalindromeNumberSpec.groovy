@@ -1,12 +1,13 @@
 package questions.math
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class PalindromeNumberSpec extends BaseSpec {
 
-    def "isPalindrome"() {
+    def "test isPalindrome"() {
         expect:
         PalindromeNumber.isPalindrome(a) == b
 

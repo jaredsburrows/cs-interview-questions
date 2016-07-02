@@ -8,7 +8,7 @@ import test.BaseSpec
  */
 class MergeTwoSortedLinkedListsSpec extends BaseSpec {
 
-    def "merge"() {
+    def "test merge"() {
         given:
         def left = new Node<>(0)
         left.next = new Node<>(2)

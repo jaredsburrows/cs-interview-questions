@@ -2,6 +2,7 @@ package questions.tree
 
 import api.TreeNode
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
@@ -36,7 +37,7 @@ class BstPreOrderSpock extends BaseSpec {
         System.setErr(null)
     }
 
-    def "printPreOrder"() {
+    def "test printPreOrder"() {
         when:
         BstPreOrder.printPreOrder(tree)
 

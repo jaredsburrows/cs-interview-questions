@@ -1,12 +1,13 @@
 package questions.math
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class PowSpec extends BaseSpec {
 
-    def "pow"() {
+    def "test pow"() {
         expect:
         Pow.pow(a, b) == c
 

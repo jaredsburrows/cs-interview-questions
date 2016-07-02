@@ -53,7 +53,7 @@ class Chapter4TreesAndGraphsSpec extends BaseSpec {
         tree.left.right = new TreeNode(6)
     }
 
-    def "isBalanced"() {
+    def "test isBalanced"() {
         expect:
         Chapter4TreesAndGraphs.isBalanced(null)
         !Chapter4TreesAndGraphs.isBalanced(unbalancedTree)
@@ -61,7 +61,7 @@ class Chapter4TreesAndGraphsSpec extends BaseSpec {
         Chapter4TreesAndGraphs.isBalanced(balancedTree2)
     }
 
-    def "hasGraphNodeBFS"() {
+    def "test hasGraphNodeBFS"() {
         given:
         def n1 = new GraphNode<>(1)
         def n2 = new GraphNode<>(2)
@@ -80,10 +80,10 @@ class Chapter4TreesAndGraphsSpec extends BaseSpec {
         !Chapter4TreesAndGraphs.hasGraphNodeBfs(n1, new GraphNode<Integer>(9))
     }
 
-    def "getBinaryTree"() {
+    def "test getBinaryTree"() {
         given:
-        int[] sortedArray = [1, 2, 3, 4, 5, 6, 7]
-        int[] empty = []
+        def sortedArray = [1, 2, 3, 4, 5, 6, 7] as int[]
+        def empty = [] as int[]
 
         def treeNode = new TreeNode<>(4)
         treeNode.left = new TreeNode<>(2)
@@ -116,7 +116,7 @@ class Chapter4TreesAndGraphsSpec extends BaseSpec {
         tree.right.right.value == 7
     }
 
-    def "getLinkedListDepth"() {
+    def "test getLinkedListDepth"() {
         given:
         treeNode4.left = treeNode2
         treeNode4.left.left = treeNode1
@@ -134,7 +134,7 @@ class Chapter4TreesAndGraphsSpec extends BaseSpec {
 
     }
 
-    def "commonAncestor"() {
+    def "test commonAncestor"() {
         given:
         treeNode4.left = treeNode2
         treeNode4.left.left = treeNode1
@@ -154,7 +154,7 @@ class Chapter4TreesAndGraphsSpec extends BaseSpec {
         treeNode4 | treeNode2 | treeNode5 | treeNode4
     }
 
-    def "isSubtree"() {
+    def "test isSubtree"() {
         expect:
         Chapter4TreesAndGraphs.isSubtree(a, b) == c
 

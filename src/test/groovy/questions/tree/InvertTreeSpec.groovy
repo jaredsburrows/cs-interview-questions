@@ -2,6 +2,7 @@ package questions.tree
 
 import api.TreeNode
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
@@ -38,7 +39,7 @@ class InvertTreeSpec extends BaseSpec {
         reversedUnbalancedTree.right.right.right = new TreeNode<Integer>(12)
     }
 
-    def "reverseTree"() {
+    def "test reverseTree"() {
         expect:
         InvertTree.reverseTree(null) == null
         InvertTree.reverseTree(balancedTree) == reversedBalancedTree

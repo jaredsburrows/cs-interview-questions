@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class AllStarSpec extends BaseSpec {
 
-    def "allStar"() {
+    def "test allStar"() {
         expect:
         AllStar.allStar(a) == b
 

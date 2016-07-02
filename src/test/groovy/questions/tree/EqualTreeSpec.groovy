@@ -2,6 +2,7 @@ package questions.tree
 
 import api.TreeNode
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
@@ -43,7 +44,7 @@ class EqualTreeSpec extends BaseSpec {
         tree.left.right = new TreeNode<Integer>(6)
     }
 
-    def "isEqual"() {
+    def "test isEqual"() {
         expect:
         EqualTree.isEqual(null, null)
         !EqualTree.isEqual(null, balancedTree)

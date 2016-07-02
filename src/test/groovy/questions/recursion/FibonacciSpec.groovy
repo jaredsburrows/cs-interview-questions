@@ -1,12 +1,13 @@
 package questions.recursion
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class FibonacciSpec extends BaseSpec {
 
-    def "fibonacci"() {
+    def "test fibonacci"() {
         expect:
         Fibonacci.fibonacci(a) == b
 

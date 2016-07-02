@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class Chapter20HardSpec extends BaseSpec {
 
-    def "20.1 - addTwoNumbers"() {
+    def "test 20.1 - addTwoNumbers"() {
         expect:
         Chapter20Hard.addTwoNumbers(a, b) == c
 
@@ -18,7 +18,7 @@ class Chapter20HardSpec extends BaseSpec {
         14123 | 453115 | 467238
     }
 
-    def "subtractTwoNumbers"() {
+    def "test subtractTwoNumbers"() {
         expect:
         Chapter20Hard.substractTwoNumbers(a, b) == c
 
@@ -29,7 +29,7 @@ class Chapter20HardSpec extends BaseSpec {
         467238 | 14123 | 453115
     }
 
-    def "20.4 - countNumber2s"() {
+    def "test 20.4 - countNumber2s"() {
         expect:
         Chapter20Hard.countNumber2s(a) == b
         Chapter20Hard.count2sI(a) == b
@@ -40,7 +40,7 @@ class Chapter20HardSpec extends BaseSpec {
         35 | 14
     }
 
-    def "20.6 - getTopMillion"() {
+    def "test 20.6 - getTopMillion"() {
         expect:
         Chapter20Hard.getTopMillion(a) == b
 
@@ -51,15 +51,15 @@ class Chapter20HardSpec extends BaseSpec {
         [1, 5, 2, 6, 4, 7, 3, 9, 3, 5] | [5, 5, 6, 7, 9]
     }
 
-    def "20.10 - getTransformedList"() {
+    def "test 20.10 - getTransformedList"() {
         expect:
         Chapter20Hard.getTransformedList(a, b, c) == d
 
         where:
-        a                        | b       | c            | d
-        null                     | null    | null         | null
-        ["DAMP": "", "LIKE": ""] | null    | null         | null
-        ["DAMP": "", "LIKE": ""] | "DAMP"  | null         | null
+        a                        | b      | c    | d
+        null                     | null   | null | null
+        ["DAMP": "", "LIKE": ""] | null   | null | null
+        ["DAMP": "", "LIKE": ""] | "DAMP" | null | null
 //        ["DAMP": "", "LIKE": ""] | "DAMP"  | "LIKE"       | null
 //        ["DAMP": "", "LIKE": ""] | "notin" | "dictionary" | null
 //        ["DAMP": "", "LIKE": ""] | "DAMP" | "LIKE" | ["DAMP", "LAMP", "LIMP", "LIME", "LIKE"]

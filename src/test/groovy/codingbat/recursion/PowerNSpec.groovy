@@ -1,12 +1,13 @@
 package codingbat.recursion
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class PowerNSpec extends BaseSpec {
 
-    def "powerN"() {
+    def "test powerN"() {
         expect:
         PowerN.powerN(a, b) == c
 

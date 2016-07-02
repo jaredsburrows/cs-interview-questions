@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class Number004Spec extends BaseSpec {
 
-    def "testGetLargestPalindromeProduct"() {
+    def "test GetLargestPalindromeProduct"() {
         expect:
         Number004.getLargestPalindromeProduct() == 906609
     }

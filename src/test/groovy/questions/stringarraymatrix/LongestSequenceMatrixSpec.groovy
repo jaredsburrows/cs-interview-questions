@@ -1,12 +1,13 @@
 package questions.stringarraymatrix
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class LongestSequenceMatrixSpec extends BaseSpec {
 
-    def "getLongestSequence"() {
+    def "test getLongestSequence"() {
         expect:
         LongestSequenceMatrix.getLongestSequence(a as int[][]) == b
 

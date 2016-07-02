@@ -2,6 +2,7 @@ package questions.tree
 
 import api.TreeNode
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
@@ -23,7 +24,7 @@ class BstIsBstSpec extends BaseSpec {
         balancedTree.left.left = new TreeNode<Integer>(1)
     }
 
-    def "isBst"() {
+    def "test isBst"() {
         expect:
         BstIsBst.isBst(null)
         BstIsBst.isBst(balancedTree)

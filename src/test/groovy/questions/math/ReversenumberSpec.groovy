@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class ReverseNumberSpec extends BaseSpec {
 
-    def "reverseLong"() {
+    def "test reverseLong"() {
         expect:
         ReverseNumber.reverseLong(a) == b
 
@@ -20,7 +20,7 @@ class ReverseNumberSpec extends BaseSpec {
         1534236469 | 9646324351
     }
 
-    def "reverseInt"() {
+    def "test reverseInt"() {
         expect:
         ReverseNumber.reverseInt(a) == b
 

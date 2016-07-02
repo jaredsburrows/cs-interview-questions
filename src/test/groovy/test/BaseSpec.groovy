@@ -1,5 +1,6 @@
 package test
 
+import api.Node
 import spock.lang.Shared
 import spock.lang.Specification
 
@@ -31,6 +32,12 @@ abstract class BaseSpec extends Specification {
     @Shared def INTEGER_RANDOM_POSITIVE = new Random().nextInt(Integer.SIZE - 1)
     @Shared def LONG_RANDOM = new Random().nextLong()
     @Shared def DOUBLE_RANDOM = new Random().nextDouble()
+    // Api
+    @Shared def node0 = new Node<>(0)
+    @Shared def node1 = new Node<>(1)
+    @Shared def node2 = new Node<>(2)
+    @Shared def node3 = new Node<>(3)
+    @Shared def node4 = new Node<>(4)
 
     def "setup"() {
 

@@ -8,7 +8,7 @@ import test.BaseSpec
  */
 class Chapter9SortingAndSearchingSpec extends BaseSpec {
 
-    def "mergeAInB"() {
+    def "test mergeAInB"() {
         expect:
         Chapter9SortingAndSearching.mergeBInA(a as int[], b as int[], c as int) == d as int[]
 
@@ -20,7 +20,7 @@ class Chapter9SortingAndSearchingSpec extends BaseSpec {
     }
 
     // http://www2.vo.lu/homepages/phahn/anagrams/oneword.htm
-    def "sortAnagrams"() {
+    def "test sortAnagrams"() {
         expect:
         Chapter9SortingAndSearching.sortAnagrams(a) == b
 
@@ -32,7 +32,7 @@ class Chapter9SortingAndSearchingSpec extends BaseSpec {
                 ["aceno", "aceno", "adeeglnnr", "adeeglnnr", "aestw", "ainpt", "ainpt"]
     }
 
-    def "getRotatedIndexOf"() {
+    def "test getRotatedIndexOf"() {
         expect:
         Chapter9SortingAndSearching.getRotatedIndexOf(a as int[], b) == c
 
@@ -46,7 +46,7 @@ class Chapter9SortingAndSearchingSpec extends BaseSpec {
                 -1 // cant handle duplicates
     }
 
-    def "findString"() {
+    def "test findString"() {
         expect:
         Chapter9SortingAndSearching.findString(a as String[], b as String) == c
         Chapter9SortingAndSearching.findString2(a as String[], b as String) == c
@@ -62,7 +62,7 @@ class Chapter9SortingAndSearchingSpec extends BaseSpec {
         ["at", "", "", "", "", "ball", "car", "", "", "dad", "", ""]     | "ballcar" | -1
     }
 
-    def "findValue"() {
+    def "test findValue"() {
         expect:
         Chapter9SortingAndSearching.findValue(a as int[][], b) == c
 
@@ -111,22 +111,22 @@ class Chapter9SortingAndSearchingSpec extends BaseSpec {
          [32, 33, 39, 50]]  | 29 | true
     }
 
-    def "getCircusOrder"() {
+    def "test getCircusOrder"() {
         given:
         // (65, 100) (70, 150) (56, 90) (75, 190) (60, 95) (68, 110)
         def actual = [new Tuple<Integer, Integer>(65, 100),
-                        new Tuple<Integer, Integer>(70, 150),
-                        new Tuple<Integer, Integer>(56, 90),
-                        new Tuple<Integer, Integer>(75, 190),
-                        new Tuple<Integer, Integer>(60, 95),
-                        new Tuple<Integer, Integer>(68, 110)]
+                      new Tuple<Integer, Integer>(70, 150),
+                      new Tuple<Integer, Integer>(56, 90),
+                      new Tuple<Integer, Integer>(75, 190),
+                      new Tuple<Integer, Integer>(60, 95),
+                      new Tuple<Integer, Integer>(68, 110)]
         // (56, 90) (60,95) (65,100) (68,110) (70,150) (75,190)
         def expected = [new Tuple<Integer, Integer>(56, 90),
-                      new Tuple<Integer, Integer>(60, 95),
-                      new Tuple<Integer, Integer>(65, 100),
-                      new Tuple<Integer, Integer>(68, 110),
-                      new Tuple<Integer, Integer>(70, 150),
-                      new Tuple<Integer, Integer>(75, 190)]
+                        new Tuple<Integer, Integer>(60, 95),
+                        new Tuple<Integer, Integer>(65, 100),
+                        new Tuple<Integer, Integer>(68, 110),
+                        new Tuple<Integer, Integer>(70, 150),
+                        new Tuple<Integer, Integer>(75, 190)]
         when:
         actual = Chapter9SortingAndSearching.getCircusOrder(actual)
 

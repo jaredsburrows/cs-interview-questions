@@ -37,7 +37,7 @@ class BstInOrderSpock extends BaseSpec {
         System.setErr(null)
     }
 
-    def "printInOrder"() {
+    def "test printInOrder"() {
         when:
         BstInOrder.printInOrder(tree)
 

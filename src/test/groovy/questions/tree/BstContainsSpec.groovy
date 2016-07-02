@@ -27,7 +27,7 @@ class BstContainsSpec extends BaseSpec {
         tree.left.right.left = new TreeNode<>(3)
     }
 
-    def "contains"() {
+    def "test contains"() {
         expect:
         !BstContains.contains(null, 5)
         !BstContains.contains(tree, 20)

@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class NumberLengthSpec extends BaseSpec {
 
-    def "getIntegerLength"() {
+    def "test getIntegerLength"() {
         expect:
         NumberLength.getIntegerLength(a) == b
         NumberLength.lenHelper(a) == b

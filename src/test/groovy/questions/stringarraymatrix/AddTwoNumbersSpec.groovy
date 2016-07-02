@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class AddTwoNumbersSpec extends BaseSpec {
 
-    def "addTwoNumbers"() {
+    def "test  addTwoNumbers"() {
         expect:
         AddTwoNumbers.addTwoNumbers(a, b) == c
 

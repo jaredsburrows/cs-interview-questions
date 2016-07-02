@@ -10,7 +10,7 @@ import test.BaseSpec
  */
 class Chapter3StacksAndQueuesSpec extends BaseSpec {
 
-    def "MinStack"() {
+    def "test MinStack"() {
         given:
         def minStack = new MinStack()
 
@@ -37,7 +37,7 @@ class Chapter3StacksAndQueuesSpec extends BaseSpec {
         minStack.getMinimum() == 4
     }
 
-    def "SetOfStacks"() {
+    def "test SetOfStacks"() {
         given:
         def setOfStacks = new SetOfStacks<>(3)
 
@@ -76,11 +76,7 @@ class Chapter3StacksAndQueuesSpec extends BaseSpec {
         setOfStacks.popAt(0) == 3
     }
 
-    def ""() {
-
-    }
-
-    def "MyQueue<T>"() {
+    def "test MyQueue<T>"() {
         given:
         def myQueue = new MyQueue<>()
 
@@ -115,7 +111,7 @@ class Chapter3StacksAndQueuesSpec extends BaseSpec {
         myQueue.remove() == 9
     }
 
-    def "getSortedStack"() {
+    def "test getSortedStack"() {
         given:
         def unsorted = new Stack<>()
         unsorted.push(1)

@@ -8,7 +8,7 @@ import test.BaseSpec
  */
 class RemoveEveryOtherSpec extends BaseSpec {
 
-    def "RemoveEveryOther"() {
+    def "test RemoveEveryOther"() {
         given:
         def node = new Node<>(1)
         node.next = new Node<>(1)

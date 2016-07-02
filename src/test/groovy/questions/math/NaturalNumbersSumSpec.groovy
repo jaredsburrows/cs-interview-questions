@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class NaturalNumbersSumSpec extends BaseSpec {
 
-    def "getSumNaturalNumbers"() {
+    def "test getSumNaturalNumbers"() {
         expect:
         NaturalNumbersSum.getSumNaturalNumbers(a) == b
         NaturalNumbersSum.getSumNaturalNumbers2(a) == b

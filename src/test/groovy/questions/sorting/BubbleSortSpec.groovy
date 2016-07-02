@@ -1,12 +1,13 @@
 package questions.sorting
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class BubbleSortSpec extends BaseSpec {
 
-    def "sortDescending"() {
+    def "test sortDescending"() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [6, 4, 3, 2, 1] as int[]
@@ -18,7 +19,7 @@ class BubbleSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "sortDescending2"() {
+    def "test sortDescending2"() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [6, 4, 3, 2, 1] as int[]
@@ -30,7 +31,7 @@ class BubbleSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "sort"() {
+    def "test sort"() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -42,7 +43,7 @@ class BubbleSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "sort2"() {
+    def "test sort2"() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]

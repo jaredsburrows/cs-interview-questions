@@ -2,6 +2,7 @@ package questions.tree
 
 import api.TreeNode
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
@@ -26,7 +27,7 @@ class BstHeightSpec extends BaseSpec {
         tree.left.left = new TreeNode<>(1)
     }
 
-    def "getHeight"() {
+    def "test getHeight"() {
         expect:
         BstHeight.getHeight(tree) == 3
     }

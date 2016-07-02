@@ -11,12 +11,12 @@ class TupleSpec extends BaseSpec {
 
     def sut = new Tuple<>("test", 123)
 
-    def "getLeft"() {
+    def "test getLeft"() {
         expect:
         sut.getLeft() == "test"
     }
 
-    def "getRight"() {
+    def "test getRight"() {
         expect:
         sut.getRight() == 123
     }

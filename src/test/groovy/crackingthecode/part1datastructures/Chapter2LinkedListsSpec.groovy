@@ -8,7 +8,7 @@ import test.BaseSpec
  */
 class Chapter2LinkedListsSpec extends BaseSpec {
 
-    def "removeDuplicates"() {
+    def "test removeDuplicates"() {
         given:
         def node = new Node<>(1)
         node.next = new Node<>(0)
@@ -28,7 +28,7 @@ class Chapter2LinkedListsSpec extends BaseSpec {
         node.next.next.next.value == 5
     }
 
-    def "removeDuplicates2"() {
+    def "test removeDuplicates2"() {
         given:
         def node = new Node<>(1)
         node.next = new Node<>(0)
@@ -48,7 +48,7 @@ class Chapter2LinkedListsSpec extends BaseSpec {
         node.next.next.next.value == 5
     }
 
-    def "removeDuplicates2 - no buffer - online"() {
+    def "test removeDuplicates2 - no buffer - online"() {
         given:
         def node = new Node<>(1)
         node.next = new Node<>(0)
@@ -68,7 +68,7 @@ class Chapter2LinkedListsSpec extends BaseSpec {
         node.next.next.next.value == 5
     }
 
-    def "deleteDupsC - book"() {
+    def "test deleteDupsC - book"() {
         given:
         def node = new Node<>(1)
         node.next = new Node<>(0)
@@ -88,7 +88,7 @@ class Chapter2LinkedListsSpec extends BaseSpec {
         node.next.next.next.value == 5
     }
 
-    def "findNthLastElement"() {
+    def "test findNthLastElement"() {
         def node = new Node<>(0)
         node.next = new Node<>(1)
         node.next.next = new Node<>(2)
@@ -107,7 +107,7 @@ class Chapter2LinkedListsSpec extends BaseSpec {
         Chapter2LinkedLists.findNthLastElement(node, 1).value == 5
     }
 
-    def "deleteMiddleNode"() {
+    def "test deleteMiddleNode"() {
         given:
         def node1 = new Node<>("a" as Character)
         node1.next = new Node<>("b" as Character)
@@ -126,7 +126,7 @@ class Chapter2LinkedListsSpec extends BaseSpec {
         node1.next.next.next.value == "e"
     }
 
-    def "addTwoLists"() {
+    def "test addTwoLists"() {
         given:
         // book
         // 315 + 592 = 808
@@ -180,7 +180,7 @@ class Chapter2LinkedListsSpec extends BaseSpec {
     //           |    |
     // A -> B -> C  <-
     // input: A -> B -> C -> D -> E -> C [the same C as earlier]
-    def "getCircular - true"() {
+    def "test getCircular - true"() {
         given:
         def nodeA = new Node<>(0)
         def nodeB = new Node<>(1)
@@ -203,7 +203,7 @@ class Chapter2LinkedListsSpec extends BaseSpec {
         result.value == 3
     }
 
-    def "getCircular - false"() {
+    def "test getCircular - false"() {
         given:
         //       n4 <- n3
         //        |     |

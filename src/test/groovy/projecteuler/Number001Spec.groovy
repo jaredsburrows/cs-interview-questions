@@ -7,13 +7,9 @@ import test.BaseSpec
  */
 class Number001Spec extends BaseSpec {
 
-    def "testGetMultiplesOf3And5"() {
+    def "test GetMultiplesOf3And5"() {
         expect:
         Number001.getMultiplesOf3And5() == 233168
-    }
-
-    def "testGetMultiplesOf3And52"() {
-        expect:
         Number001.getMultiplesOf3And52() == 233168
     }
 }

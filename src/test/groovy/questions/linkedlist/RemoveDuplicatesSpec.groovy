@@ -8,7 +8,7 @@ import test.BaseSpec
  */
 class RemoveDuplicatesSpec extends BaseSpec {
 
-    def "removeDuplicates - sorted"() {
+    def "test removeDuplicates - sorted"() {
         given:
         def node = new Node<>(0)
         node.next = new Node<>(0)

@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class ReorderBooleanArraySpec extends BaseSpec {
 
-    def "reorder boolean - primitive"() {
+    def "test reorder boolean - primitive"() {
         given:
         def actual = [false, true, true, true, false, true] as boolean[]
         def expected = [false, false, true, true, true, true] as boolean[]
@@ -19,7 +19,7 @@ class ReorderBooleanArraySpec extends BaseSpec {
         actual == expected
     }
 
-    def "reorder boolean - object"() {
+    def "test reorder boolean - object"() {
         given:
         def actual = [false, true, true, true, false, true] as Boolean[]
         def expected = [false, false, true, true, true, true] as Boolean[]

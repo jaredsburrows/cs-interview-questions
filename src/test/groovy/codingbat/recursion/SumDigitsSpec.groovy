@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class SumDigitsSpec extends BaseSpec {
 
-    def "sumDigits"() {
+    def "test sumDigits"() {
         expect:
         SumDigits.sumDigits(a) == b
 

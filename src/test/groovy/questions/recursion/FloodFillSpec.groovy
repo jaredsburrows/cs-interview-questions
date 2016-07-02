@@ -1,12 +1,13 @@
 package questions.recursion
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class FloodFillSpec extends BaseSpec {
 
-    def "floodFill"() {
+    def "test floodFill"() {
         given:
         // Start on 4, 4
         def positionX = 4

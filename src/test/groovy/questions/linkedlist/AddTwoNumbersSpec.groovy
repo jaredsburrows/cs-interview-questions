@@ -8,7 +8,7 @@ import test.BaseSpec
  */
 class AddTwoNumbersSpec extends BaseSpec {
 
-    def "addTwoNumbers"() {
+    def "test addTwoNumbers"() {
         given:
         // book
         // 315 + 592 = 808

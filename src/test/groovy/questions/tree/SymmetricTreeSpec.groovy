@@ -2,6 +2,7 @@ package questions.tree
 
 import api.TreeNode
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
@@ -23,7 +24,7 @@ class SymmetricTreeSpec extends BaseSpec {
         balancedTree.left.right = new TreeNode<Integer>(4)
     }
 
-    def "isSymmetric"() {
+    def "test isSymmetric"() {
         expect:
         SymmetricTree.isSymmetric(null)
         SymmetricTree.isSymmetric(balancedTree)

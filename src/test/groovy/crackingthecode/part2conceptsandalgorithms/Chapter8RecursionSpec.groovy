@@ -10,7 +10,7 @@ import static api.Color.*
  */
 class Chapter8RecursionSpec extends BaseSpec {
 
-    def "getFibNumberRecursive"() {
+    def "test getFibNumberRecursive"() {
         expect:
         Chapter8Recursion.getFibNumberRecursive(a) == b
         Chapter8Recursion.getFibNumberIterative(a) == b
@@ -30,7 +30,7 @@ class Chapter8RecursionSpec extends BaseSpec {
         8  | 21
     }
 
-    def "getSubsets"() {
+    def "test getSubsets"() {
         expect:
         Chapter8Recursion.getSubsets(a, 0) == b
 
@@ -41,7 +41,7 @@ class Chapter8RecursionSpec extends BaseSpec {
         [1, 2] | [[], [2], [1], [2, 1]]
     }
 
-    def "getStringPermutations"() {
+    def "test getStringPermutations"() {
         expect:
         Chapter8Recursion.getStringPermutations("", a) == b
 
@@ -50,7 +50,7 @@ class Chapter8RecursionSpec extends BaseSpec {
         "abc" | ["abc", "acb", "bca", "bac", "cab", "cba"]
     }
 
-    def "getValidParentheses"() {
+    def "test getValidParentheses"() {
         expect:
         Chapter8Recursion.getValidParentheses(a, 0, 0, "") == b
 
@@ -61,7 +61,7 @@ class Chapter8RecursionSpec extends BaseSpec {
         3  | ["((()))", "(()())", "(())()", "()(())", "()()()"]
     }
 
-    def "paintFill"() {
+    def "test paintFill"() {
         given:
         def a = [[RED, RED, GREEN, GREEN, GREEN],
                  [GREEN, RED, RED, GREEN, GREEN],
@@ -80,7 +80,7 @@ class Chapter8RecursionSpec extends BaseSpec {
               [GREEN, GREEN, GREEN, GREEN, BLUE]] as Color[][]
     }
 
-    def "floodFill"() {
+    def "test floodFill"() {
         given:
         def a = [[1, 1, 1, 1, 1, 1, 1, 1],
                  [1, 1, 1, 1, 1, 1, 0, 0],
@@ -90,9 +90,9 @@ class Chapter8RecursionSpec extends BaseSpec {
                  [1, 1, 1, 2, 2, 2, 2, 0],
                  [1, 1, 1, 1, 1, 2, 1, 1],
                  [1, 1, 1, 1, 1, 2, 2, 1]] as int[][]
-        int x = 4
-        int y = 4
-        int newC = 3
+        def x = 4
+        def y = 4
+        def newC = 3
 
         when:
         Chapter8Recursion.floodFill(a as int[][], x, y, newC)
@@ -108,7 +108,7 @@ class Chapter8RecursionSpec extends BaseSpec {
               [1, 1, 1, 1, 1, 3, 3, 1]] as int[][]
     }
 
-    def "getRepresentCents"() {
+    def "test getRepresentCents"() {
         expect:
         // starting with quarters
         Chapter8Recursion.getRepresentCents(a as int, 25) == b

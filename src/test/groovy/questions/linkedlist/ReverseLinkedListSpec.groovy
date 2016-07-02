@@ -8,7 +8,7 @@ import test.BaseSpec
  */
 class ReverseLinkedListSpec extends BaseSpec {
 
-    def "reverse"() {
+    def "test reverse"() {
         given:
         def node = new Node<>(1)
         node.next = new Node<>(2)

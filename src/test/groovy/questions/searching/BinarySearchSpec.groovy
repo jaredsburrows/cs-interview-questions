@@ -1,12 +1,13 @@
 package questions.searching
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class BinarySearchSpec extends BaseSpec {
 
-    def "search"() {
+    def "test search"() {
         expect:
         BinarySearch.search(a as int[], b) == c
 

@@ -12,7 +12,7 @@ class TrieNodeSpec extends BaseSpec {
     def sut = new TrieNode<>()
     def nextNode = new TrieNode<>(123)
 
-    def "default values"() {
+    def "test default values"() {
         expect:
         sut.children.length == 26
         nextNode.children.length == 123
@@ -20,7 +20,7 @@ class TrieNodeSpec extends BaseSpec {
         !nextNode.isEnd
     }
 
-    def "getters/setters"() {
+    def "test getters/setters"() {
         given:
         def list = [new TrieNode<>(1)]
 
@@ -33,7 +33,7 @@ class TrieNodeSpec extends BaseSpec {
         sut.isEnd
     }
 
-    def "equals/hashcode"() {
+    def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(TrieNode.class)
                 .withPrefabValues(TrieNode.class, new TrieNode<>(), new TrieNode<>(1))

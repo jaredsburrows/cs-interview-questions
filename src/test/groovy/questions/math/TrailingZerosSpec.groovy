@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class TrailingZerosSpec extends BaseSpec {
 
-    def "getTrailingZeros"() {
+    def "test getTrailingZeros"() {
         expect:
         TrailingZeros.getTrailingZeros(a) == b
 

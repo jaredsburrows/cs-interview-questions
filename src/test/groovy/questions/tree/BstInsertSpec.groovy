@@ -2,6 +2,7 @@ package questions.tree
 
 import api.TreeNode
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
@@ -26,7 +27,7 @@ class BstInsertSpec extends BaseSpec {
         tree.left.right.left = new TreeNode<>(3)
     }
 
-    def "insertBST"() {
+    def "test insertBST"() {
         given:
         // Root
         def temp = new TreeNode<>(8)

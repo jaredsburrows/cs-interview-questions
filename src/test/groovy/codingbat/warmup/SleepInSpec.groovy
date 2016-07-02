@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class SleepInSpec extends BaseSpec {
 
-    def "sleepIn"() {
+    def "test sleepIn"() {
         expect:
         SleepIn.sleepIn(a, b) == c
 

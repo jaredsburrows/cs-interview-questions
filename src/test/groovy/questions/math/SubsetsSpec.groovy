@@ -1,12 +1,13 @@
 package questions.math
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class SubsetsSpec extends BaseSpec {
 
-    def "subsets"() {
+    def "test subsets"() {
         expect:
         Subsets.subsets(a) == b
         Subsets.subsets2(a as int[]) == b

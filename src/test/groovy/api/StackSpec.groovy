@@ -16,14 +16,14 @@ class StackSpec extends BaseSpec {
     def blankNode = new Node<>(0)
     def blankNode2 = new Node<>(0)
 
-    def "peek"() {
+    def "test peek"() {
         expect:
         !sut.peek()
         sut.push(blankNode)
         sut.peek() == blankNode
     }
 
-    def "peek - multiple"() {
+    def "test peek - multiple"() {
         expect:
         !sut.peek()
         sut.push(blankNode)
@@ -32,7 +32,7 @@ class StackSpec extends BaseSpec {
         sut.peek() == blankNode2
     }
 
-    def "push - single"() {
+    def "test push - single"() {
         def blankNode = new Node<>(0)
 
         expect:
@@ -43,7 +43,7 @@ class StackSpec extends BaseSpec {
         sut.peek() == blankNode
     }
 
-    def "push - multiple"() {
+    def "test push - multiple"() {
         expect:
         !sut.peek()
         sut.push(null)
@@ -56,7 +56,7 @@ class StackSpec extends BaseSpec {
         sut.peek() == valueNode3
     }
 
-    def "pop"() {
+    def "test pop"() {
         expect:
         !sut.peek()
         sut.push(null)
@@ -67,7 +67,7 @@ class StackSpec extends BaseSpec {
         !sut.peek()
     }
 
-    def "pop - multiple"() {
+    def "test pop - multiple"() {
         expect:
         !sut.peek()
         sut.push(null)

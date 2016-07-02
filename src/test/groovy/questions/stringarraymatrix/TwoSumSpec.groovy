@@ -2,12 +2,13 @@ package questions.stringarraymatrix
 
 import api.Pair
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class TwoSumSpec extends BaseSpec {
 
-    def "list all pairs(x ,y), equal given number, allow duplicates"() {
+    def "test list all pairs(x ,y), equal given number, allow duplicates"() {
         expect:
         TwoSum.getSums2(a as int[], b) == c
 
@@ -17,7 +18,7 @@ class TwoSumSpec extends BaseSpec {
         [1, 1] | 2 | [new Pair<>(1, 1), new Pair<>(1, 1), new Pair<>(1, 1), new Pair<>(1, 1)]
     }
 
-    def "list all pairs(x ,y), equal given number"() {
+    def "test list all pairs(x ,y), equal given number"() {
         expect:
         TwoSum.getSums3(a as int[], b) == c
 
@@ -26,7 +27,7 @@ class TwoSumSpec extends BaseSpec {
         [1, 1] | 2 | new HashSet<>([new Pair<>(1, 1)])
     }
 
-    def "list pairs(x ,y), equal given number, no duplicates"() {
+    def "test list pairs(x ,y), equal given number, no duplicates"() {
         expect:
         TwoSum.getSums(a as int[], b) == c
 

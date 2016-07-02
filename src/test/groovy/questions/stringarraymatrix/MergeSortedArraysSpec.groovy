@@ -1,12 +1,13 @@
 package questions.stringarraymatrix
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class MergeSortedArraysSpec extends BaseSpec {
 
-    def "merge"() {
+    def "test merge"() {
         expect:
         MergeSortedArrays.merge(a as int[], b as int[]) == c as int[]
 

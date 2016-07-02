@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class FindKSmallestNumbersSpec extends BaseSpec {
 
-    def "getSmallestNumbers"() {
+    def "test getSmallestNumbers"() {
         expect:
         FindKSmallestNumbers.getSmallestNumbers(a, b) == c
 

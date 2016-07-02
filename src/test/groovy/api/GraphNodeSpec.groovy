@@ -13,7 +13,7 @@ class GraphNodeSpec extends BaseSpec {
     def graphNodes = [sut, sut] as GraphNode<Integer>[]
     def node2 = new GraphNode<>(123, graphNodes)
 
-    def "default values"() {
+    def "test default values"() {
         when:
         sut.value = 123
 
@@ -28,7 +28,7 @@ class GraphNodeSpec extends BaseSpec {
         !node2.visited
     }
 
-    def "getters/setters"() {
+    def "test getters/setters"() {
         when:
         sut.value = 123
         sut.next = sut

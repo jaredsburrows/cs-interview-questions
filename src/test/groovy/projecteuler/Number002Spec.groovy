@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class Number002Spec extends BaseSpec {
 
-    def "testGetEvenFibonacciNumbers"() {
+    def "test GetEvenFibonacciNumbers"() {
         expect:
         Number002.getEvenFibonacciNumbers(4000000) == 4613732
     }

@@ -11,7 +11,7 @@ class LinkedListSpec extends BaseSpec {
 
     def sut = new LinkedList<>(0)
 
-    def "addtoFront"() {
+    def "test addtoFront"() {
         when:
         sut.addToEnd(6)
         sut.add(5)
@@ -24,7 +24,7 @@ class LinkedListSpec extends BaseSpec {
         sut.next.next.next.value == 5
     }
 
-    def "addToEnd"() {
+    def "test addToEnd"() {
         when:
         sut.addToEnd(1)
         sut.add(2)
@@ -37,7 +37,7 @@ class LinkedListSpec extends BaseSpec {
         sut.next.next.next.value == 3
     }
 
-    def "removeFront"() {
+    def "test removeFront"() {
         given:
         def linkedList2 = new LinkedList<>(0) // 1 element
 
@@ -51,7 +51,7 @@ class LinkedListSpec extends BaseSpec {
         linkedList2.getHead() == null
     }
 
-    def "removeLast"() {
+    def "test removeLast"() {
         when:
         sut.addToEnd(6)
         sut.add(7)

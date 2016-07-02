@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class ValidPalindromeSpec extends BaseSpec {
 
-    def "isPalindrome"() {
+    def "test isPalindrome"() {
         expect:
         ValidPalindrome.isPalindrome(a) == b
 

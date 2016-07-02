@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class FactorialSpec extends BaseSpec {
 
-    def "factorial"() {
+    def "test factorial"() {
         expect:
         Factorial.factorial(a) == b
 

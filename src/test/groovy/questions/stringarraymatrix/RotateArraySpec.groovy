@@ -1,12 +1,13 @@
 package questions.stringarraymatrix
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class RotateArraySpec extends BaseSpec {
 
-    def "rotate"() {
+    def "test rotate"() {
         expect:
         RotateArray.rotate(a as int[], b) == c as int[]
 

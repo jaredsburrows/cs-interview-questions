@@ -8,14 +8,14 @@ import test.BaseSpec
  */
 class Chapter19ModerateSpec extends BaseSpec {
 
-    def "swapVar"() {
+    def "test swapVar"() {
         given:
         def a = 1
         def b = 2
 
         when:
 //        Chapter19Moderate.swapVar(a, b)
-//        Chapter19Moderate.swapVar2(a, b)
+        Chapter19Moderate.swapVar2(a, b)
         a ^= b
         b ^= a
         a ^= b
@@ -25,7 +25,7 @@ class Chapter19ModerateSpec extends BaseSpec {
         b == 1
     }
 
-    def "19.2 - checkTicTacToe"() {
+    def "test 19.2 - checkTicTacToe"() {
         expect:
         Chapter19Moderate.checkTicTacToe(a as int[][]) == b
 
@@ -49,7 +49,7 @@ class Chapter19ModerateSpec extends BaseSpec {
          [0, 0, 2]] | 2
     }
 
-    def "19.3 - numZeros"() {
+    def "test 19.3 - numZeros"() {
         expect:
         Chapter19Moderate.numZeros(a) == b
 
@@ -61,7 +61,7 @@ class Chapter19ModerateSpec extends BaseSpec {
         26 | 6
     }
 
-    def "19.4 - getMax"() {
+    def "test 19.4 - getMax"() {
         expect:
         Chapter19Moderate.getMax(a as long, b as long) == c
         Chapter19Moderate.getMax2(a as long, b as long) == c
@@ -74,7 +74,7 @@ class Chapter19ModerateSpec extends BaseSpec {
         213 | 321 | 321
     }
 
-    def "getMin"() {
+    def "test getMin"() {
         expect:
         Chapter19Moderate.getMin(a as long, b as long) == c
 
@@ -86,7 +86,7 @@ class Chapter19ModerateSpec extends BaseSpec {
         213 | 321 | 213
     }
 
-    def "19.5 - getPseudoHits"() {
+    def "test 19.5 - getPseudoHits"() {
         expect:
         Tuple<Integer, Integer> tuple = Chapter19Moderate.getPseudoHits("RGGB", "RGGB")
         tuple.getLeft() == 4
@@ -102,7 +102,7 @@ class Chapter19ModerateSpec extends BaseSpec {
 //        tuple4.getRight() == 1
     }
 
-    def "19.7 - getMaxSum"() {
+    def "test 19.7 - getMaxSum"() {
         expect:
         Chapter19Moderate.getMaxSum(a as int[]) == b
 
@@ -113,28 +113,28 @@ class Chapter19ModerateSpec extends BaseSpec {
         [-2, 1, -3, 4, -1, 2, 1, -5, 4] | 6
     }
 
-    def "19.8 - getWordOccurence"() {
+    def "test 19.8 - getWordOccurence"() {
         expect:
         Chapter19Moderate.getWordOccurrence(a as String[], b) == c
 
         where:
-        a                                                               | b      | c
-        null                                                            | null   | -1
-        null                                                            | "test" | -1
+        a    | b      | c
+        null | null   | -1
+        null | "test" | -1
 //        ["test"]                                                        | null   | -1
 //        ["Against", "the", "entrance", "burns", "a", "salt", "ballet."] | "the"  | 1
 //        ["the", "the", "the"]                                           | "the"  | 3
 //        ["the", null, "the"]                                            | "the"  | 2
     }
 
-    def "19.10 - rand7"() {
+    def "test 19.10 - rand7"() {
         expect:
         Chapter19Moderate.rand5() in 1..5
         Chapter19Moderate.rand7() in 1..7
         Chapter19Moderate.rand72() in 1..7
     }
 
-    def "19.11 - getPairSum"() {
+    def "test 19.11 - getPairSum"() {
         expect:
         Chapter19Moderate.getPairSum(a as int[], b) == c as Map<Integer, Integer>
 

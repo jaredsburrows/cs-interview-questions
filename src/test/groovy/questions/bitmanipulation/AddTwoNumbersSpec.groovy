@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class AddTwoNumbersSpec extends BaseSpec {
 
-    def "getBinarySum"() {
+    def "test getBinarySum"() {
         expect:
         AddTwoNumbers.getBinarySumLib(a, b) == c
         AddTwoNumbers.getBinarySum(a, b) == c

@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class PermutationsSpec extends BaseSpec {
 
-    def "getStringPermutations"() {
+    def "test getStringPermutations"() {
         expect:
         Permutations.getStringPermutations("", a) == b
 

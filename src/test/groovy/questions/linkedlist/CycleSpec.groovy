@@ -8,21 +8,20 @@ import test.BaseSpec
  */
 class CycleSpec extends BaseSpec {
 
-    def "cycle - true"() {
-        given:
+    def "setup"() {
+        node4 = new Node<>(4)
+
         //       n4 <- n3
         //        |     |
         // n0 -> n1 -> n2
-        def node0 = new Node<>(0)
-        def node1 = new Node<>(1)
-        def node2 = new Node<>(2)
-        def node3 = new Node<>(3)
-        def node4 = new Node<>(4)
-
         node0.next = node1
         node1.next = node2
         node2.next = node3
         node3.next = node4
+    }
+
+    def "test cycle - true"() {
+        given:
         node4.next = node1
 
         expect:
@@ -31,24 +30,10 @@ class CycleSpec extends BaseSpec {
         Cycle.hasCycle(node0)
     }
 
-    def "cycle - false"() {
+    def "test cycle - false"() {
         given:
-        //       n4 <- n3
-        //        |     |
-        // n0 -> n1 -> n2
-        def node0 = new Node<>(0)
-        def node1 = new Node<>(1)
-        def node2 = new Node<>(2)
-        def node3 = new Node<>(3)
-        def node4 = new Node<>(4)
-
         def nullNext = new Node<>(12)
         nullNext.next = null
-
-        node0.next = node1
-        node1.next = node2
-        node2.next = node3
-        node3.next = node4
 
         expect:
         !Cycle.hasCycle(null)
@@ -57,7 +42,7 @@ class CycleSpec extends BaseSpec {
         !Cycle.hasCycle(node0)
     }
 
-    def "cycle2"() {
+    def "test cycle2"() {
         given:
         // n0 -> n1
         def node = new Node<>(1)

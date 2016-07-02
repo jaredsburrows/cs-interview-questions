@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class MaxSubArraySpec extends BaseSpec {
 
-    def "getMax"() {
+    def "test getMax"() {
         expect:
         MaxSubArray.getMax(a as int[]) == b
 
@@ -17,7 +17,7 @@ class MaxSubArraySpec extends BaseSpec {
         [-2, 1, -3, 4, -1, 2, 1, -5, 4] | 6 // [4,−1,2,1]
     }
 
-    def "maxContSubArray"() {
+    def "test maxContSubArray"() {
         expect:
         MaxSubArray.maxContSubArray(a as int[]) == b
 
@@ -28,7 +28,7 @@ class MaxSubArraySpec extends BaseSpec {
         [2, -1, 2, 3, 4, -5] | 10
     }
 
-    def "maxNonContSubArray"() {
+    def "test maxNonContSubArray"() {
         expect:
         MaxSubArray.maxNonContSubArray(a as int[]) == b
 

@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class Number003Spec extends BaseSpec {
 
-    def "testGetLargestPrimeFactor"() {
+    def "test GetLargestPrimeFactor"() {
         expect:
         Number003.getLargestPrimeFactor(600851475143L) == 6857
     }

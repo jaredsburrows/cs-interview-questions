@@ -1,12 +1,13 @@
 package questions.stringarraymatrix
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class ReturnSmallestCharacterSpec extends BaseSpec {
 
-    def "findInsPoint2"() {
+    def "test findInsPoint2"() {
         expect:
         ReturnSmallestCharacter.findInsPoint2(a, b as char) == c as char
 
@@ -24,7 +25,7 @@ class ReturnSmallestCharacterSpec extends BaseSpec {
         "cfk"   | 'd' | 'f'
     }
 
-    def "findInsPoint"() {
+    def "test findInsPoint"() {
         expect:
         ReturnSmallestCharacter.findInsPoint(a, b as char) == c as char
 

@@ -16,7 +16,7 @@ class QueueSpec extends BaseSpec {
     def blankNode = new Node<>(0)
     def blankNode2 = new Node<>(0)
 
-    def "enqueue with constructor"() {
+    def "test enqueue with constructor"() {
         given:
         def queue = new Queue<>(1)
 
@@ -28,14 +28,14 @@ class QueueSpec extends BaseSpec {
 //        queue.getLast() == valueNode3
     }
 
-    def "getFirst"() {
+    def "test getFirst"() {
         expect:
         !sut.getFirst()
         sut.enqueue(blankNode)
         sut.getFirst() == blankNode
     }
 
-    def "getFirst - multiple"() {
+    def "test getFirst - multiple"() {
         expect:
         !sut.getFirst()
         sut.enqueue(blankNode)
@@ -44,14 +44,14 @@ class QueueSpec extends BaseSpec {
         sut.getFirst() == blankNode
     }
 
-    def "getLast"() {
+    def "test getLast"() {
         expect:
         !sut.getLast()
         sut.enqueue(blankNode)
         sut.getLast() == blankNode
     }
 
-    def "getLast - multiple"() {
+    def "test getLast - multiple"() {
         expect:
         !sut.getLast()
         sut.enqueue(blankNode)
@@ -60,7 +60,7 @@ class QueueSpec extends BaseSpec {
         sut.getLast() == blankNode2
     }
 
-    def "enqueue - single"() {
+    def "test enqueue - single"() {
         expect:
         !sut.getFirst()
         sut.enqueue(null)
@@ -99,7 +99,7 @@ class QueueSpec extends BaseSpec {
         !sut.getFirst()
     }
 
-    def "dequeue - multiple"() {
+    def "test dequeue - multiple"() {
         expect:
         !sut.getFirst()
         sut.enqueue(null)

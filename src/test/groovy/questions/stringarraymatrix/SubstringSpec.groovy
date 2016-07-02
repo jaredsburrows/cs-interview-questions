@@ -1,12 +1,13 @@
 package questions.stringarraymatrix
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class SubstringSpec extends BaseSpec {
 
-    def "substring"() {
+    def "test substring"() {
         expect:
         Substring.substring(a, b, c) == d
 
@@ -22,7 +23,7 @@ class SubstringSpec extends BaseSpec {
         "hello" | 0  | 3  | "hel"
     }
 
-    def "substring2"() {
+    def "test substring2"() {
         expect:
         Substring.substring(a, c) == d
 

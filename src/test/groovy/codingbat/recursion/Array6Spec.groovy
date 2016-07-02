@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class Array6Spec extends BaseSpec {
 
-    def "array6"() {
+    def "test array6"() {
         expect:
         Array6.array6(a as int[], b) == c
 

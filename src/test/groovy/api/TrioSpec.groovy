@@ -11,17 +11,17 @@ class TrioSpec extends BaseSpec {
 
     def sut = new Trio<>("a", 1, 'a')
 
-    def "getFirst"() {
+    def "test getFirst"() {
         expect:
         sut.getFirst() == "a"
     }
 
-    def "getSecond"() {
+    def "test getSecond"() {
         expect:
         sut.getSecond() == 1
     }
 
-    def "getThird"() {
+    def "test getThird"() {
         expect:
         sut.getThird() == 'a'
     }

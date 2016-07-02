@@ -13,7 +13,6 @@ class Chapter7ObjectOrientedDesignSpec extends BaseSpec {
         def card = new Card(Card.Suite.HEARTS, 5)
 
         expect:
-        card instanceof Card
         card.getSuite() == Card.Suite.HEARTS
         card.getNumber() == 5
     }

@@ -1,12 +1,13 @@
 package questions.searching
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class SearchAdjacentElementsSpec extends BaseSpec {
 
-    def "search"() {
+    def "test search"() {
         expect:
         SearchAdjacentElements.search(a as int[], b) == c
         SearchAdjacentElements.search2(a as int[], b) == c

@@ -7,22 +7,22 @@ import test.BaseSpec
  */
 class Chapter6BrainTeasersSpec extends BaseSpec {
 
-    def "arithmeticOperators"() {
+    def "test arithmeticOperators"() {
         expect:
         Chapter6BrainTeasers.arithmeticOperators() == 8
     }
 
-    def "chessPieces"() {
+    def "test chessPieces"() {
         expect:
         Chapter6BrainTeasers.chessPieces() == 64
     }
 
-    def "exactJugs"() {
+    def "test exactJugs"() {
         expect:
         Chapter6BrainTeasers.exactJugs() == 4
     }
 
-    def "lockersOpen"() {
+    def "test lockersOpen"() {
         expect:
         Chapter6BrainTeasers.lockersOpen() == 10
     }

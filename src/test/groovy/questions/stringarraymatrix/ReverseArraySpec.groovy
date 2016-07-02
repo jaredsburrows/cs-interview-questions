@@ -1,12 +1,13 @@
 package questions.stringarraymatrix
 
 import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class ReverseArraySpec extends BaseSpec {
 
-    def "reverse - multiple arg"() {
+    def "test reverse - multiple arg"() {
         expect:
         ReverseArray.reverse(a as int[], b, c) == d as int[]
 

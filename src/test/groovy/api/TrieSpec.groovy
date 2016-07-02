@@ -17,7 +17,7 @@ class TrieSpec extends BaseSpec {
         sut.insert("are")
     }
 
-    def "insert/get"() {
+    def "test insert/get"() {
         when:
         sut.insert(null)
         sut.insert("")
@@ -32,7 +32,7 @@ class TrieSpec extends BaseSpec {
         sut.get("are")
     }
 
-    def "search"() {
+    def "test search"() {
         expect:
         !sut.search(null)
         !sut.search("")
@@ -41,7 +41,7 @@ class TrieSpec extends BaseSpec {
         sut.search("are")
     }
 
-    def "startsWith"() {
+    def "test startsWith"() {
         expect:
         !sut.startsWith(null)
         !sut.startsWith("")

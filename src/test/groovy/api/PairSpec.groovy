@@ -11,12 +11,12 @@ class PairSpec extends BaseSpec {
 
     def sut = new Pair<>("test", 123)
 
-    def "getLeft"() {
+    def "test getLeft"() {
         expect:
         sut.getLeft() == "test"
     }
 
-    def "getRight"() {
+    def "test getRight"() {
         expect:
         sut.getRight() == 123
     }

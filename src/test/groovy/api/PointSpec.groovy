@@ -10,12 +10,12 @@ class PointSpec extends BaseSpec {
 
     def sut = new Point(321, 123)
 
-    def "getX"() {
+    def "test getX"() {
         expect:
         sut.getX() == 321
     }
 
-    def "getY"() {
+    def "test getY"() {
         expect:
         sut.getY() == 123
     }

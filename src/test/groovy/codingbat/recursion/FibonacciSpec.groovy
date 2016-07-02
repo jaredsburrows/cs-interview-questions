@@ -7,7 +7,7 @@ import test.BaseSpec
  */
 class FibonacciSpec extends BaseSpec {
 
-    def "fibonacci"() {
+    def "test fibonacci"() {
         expect:
         Fibonacci.fibonacci(a) == b
 
