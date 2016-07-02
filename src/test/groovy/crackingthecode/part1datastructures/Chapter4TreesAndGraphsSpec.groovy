@@ -2,18 +2,26 @@ package crackingthecode.part1datastructures
 
 import api.GraphNode
 import api.TreeNode
-import spock.lang.Specification
+import spock.lang.Shared
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter4TreesAndGraphsSpec extends Specification {
+class Chapter4TreesAndGraphsSpec extends BaseSpec {
 
-    def tree = new TreeNode(26)
-    def subTree = new TreeNode(10)
-    def balancedTree = new TreeNode(0)
-    def balancedTree2 = new TreeNode(0)
-    def unbalancedTree = new TreeNode(5)
+    @Shared def tree = new TreeNode(26)
+    @Shared def subTree = new TreeNode(10)
+    @Shared def balancedTree = new TreeNode(0)
+    @Shared def balancedTree2 = new TreeNode(0)
+    @Shared def unbalancedTree = new TreeNode(5)
+    @Shared def treeNode4 = new TreeNode<>(4)
+    @Shared def treeNode2 = new TreeNode<>(2)
+    @Shared def treeNode1 = new TreeNode<>(1)
+    @Shared def treeNode3 = new TreeNode<>(3)
+    @Shared def treeNode5 = new TreeNode<>(5)
+    @Shared def treeNode6 = new TreeNode<>(6)
+    @Shared def treeNode7 = new TreeNode<>(7)
 
     def "setup"() {
         balancedTree.right = new TreeNode(10)
@@ -110,14 +118,6 @@ class Chapter4TreesAndGraphsSpec extends Specification {
 
     def "getLinkedListDepth"() {
         given:
-        def treeNode4 = new TreeNode<>(4)
-        def treeNode2 = new TreeNode<>(2)
-        def treeNode1 = new TreeNode<>(1)
-        def treeNode3 = new TreeNode<>(3)
-        def treeNode5 = new TreeNode<>(5)
-        def treeNode6 = new TreeNode<>(6)
-        def treeNode7 = new TreeNode<>(7)
-
         treeNode4.left = treeNode2
         treeNode4.left.left = treeNode1
         treeNode4.left.right = treeNode3
@@ -136,14 +136,6 @@ class Chapter4TreesAndGraphsSpec extends Specification {
 
     def "commonAncestor"() {
         given:
-        def treeNode4 = new TreeNode<>(4)
-        def treeNode2 = new TreeNode<>(2)
-        def treeNode1 = new TreeNode<>(1)
-        def treeNode3 = new TreeNode<>(3)
-        def treeNode5 = new TreeNode<>(5)
-        def treeNode6 = new TreeNode<>(6)
-        def treeNode7 = new TreeNode<>(7)
-
         treeNode4.left = treeNode2
         treeNode4.left.left = treeNode1
         treeNode4.left.right = treeNode3
@@ -152,19 +144,27 @@ class Chapter4TreesAndGraphsSpec extends Specification {
         treeNode4.right.right = treeNode7
 
         expect:
-        Chapter4TreesAndGraphs.commonAncestor(null, treeNode2, treeNode5) == null
-        Chapter4TreesAndGraphs.commonAncestor(null, null, treeNode5) == null
-        Chapter4TreesAndGraphs.commonAncestor(null, null, null) == null
-        Chapter4TreesAndGraphs.commonAncestor(treeNode4, treeNode2, treeNode5) == treeNode4
+        Chapter4TreesAndGraphs.commonAncestor(a, b, c) == d
+
+        where:
+        a         | b         | c         | d
+        null      | treeNode2 | treeNode5 | null
+        null      | null      | treeNode5 | null
+        null      | null      | null      | null
+        treeNode4 | treeNode2 | treeNode5 | treeNode4
     }
 
     def "isSubtree"() {
         expect:
-        Chapter4TreesAndGraphs.isSubtree(null, null)
-        !Chapter4TreesAndGraphs.isSubtree(null, balancedTree)
-        Chapter4TreesAndGraphs.isSubtree(unbalancedTree, null)
-        !Chapter4TreesAndGraphs.isSubtree(unbalancedTree, balancedTree)
-        Chapter4TreesAndGraphs.isSubtree(tree, tree)
-        Chapter4TreesAndGraphs.isSubtree(tree, subTree)
+        Chapter4TreesAndGraphs.isSubtree(a, b) == c
+
+        where:
+        a              | b            | c
+        null           | null         | true
+        null           | balancedTree | false
+        unbalancedTree | null         | true
+        unbalancedTree | balancedTree | false
+        tree           | tree         | true
+        tree           | subTree      | true
     }
 }

@@ -1,11 +1,10 @@
 package questions.recursion
 
-import spock.lang.Specification
-
+import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class FloodFillSpec extends Specification {
+class FloodFillSpec extends BaseSpec {
 
     def "floodFill"() {
         given:

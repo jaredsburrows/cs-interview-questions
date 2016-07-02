@@ -1,11 +1,10 @@
 package questions.sorting
 
-import spock.lang.Specification
-
+import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class BubbleSortSpec extends Specification {
+class BubbleSortSpec extends BaseSpec {
 
     def "sortDescending"() {
         given:

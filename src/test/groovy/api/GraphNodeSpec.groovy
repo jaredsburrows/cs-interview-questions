@@ -2,12 +2,12 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class GraphNodeSpec extends Specification {
+class GraphNodeSpec extends BaseSpec {
 
     def sut = new GraphNode<>()
     def graphNodes = [sut, sut] as GraphNode<Integer>[]
@@ -38,7 +38,7 @@ class GraphNodeSpec extends Specification {
         sut.next.value == 123
     }
 
-    def "equals/hashcode"() {
+    def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(GraphNode.class)
                 .withPrefabValues(GraphNode.class, new GraphNode<>(), new GraphNode<>(1))
@@ -49,7 +49,7 @@ class GraphNodeSpec extends Specification {
         noExceptionThrown()
     }
 
-    def "string"() {
+    def "test toString"() {
         given:
         def actual = sut.toString()
         def expected = "GraphNode{value=null, next=null, neighbors=null, visited=false}"

@@ -1,11 +1,10 @@
 package questions.stringarraymatrix
 
-import spock.lang.Specification
-
+import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ReverseArraySpec extends Specification {
+class ReverseArraySpec extends BaseSpec {
 
     def "reverse - multiple arg"() {
         expect:

@@ -68,9 +68,9 @@ public final class Queue<T> {
 
     @Override
     public String toString() {
-        return "Queue{" +
-                "first=" + this.first +
-                ", last=" + this.last +
-                '}';
+        return "Queue{"
+                + "first=" + this.first
+                + ", last=" + this.last
+                + '}';
     }
 }

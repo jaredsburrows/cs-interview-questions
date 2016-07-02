@@ -1,12 +1,11 @@
 package questions.tree
 
 import api.TreeNode
-import spock.lang.Specification
-
+import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class InvertTreeSpec extends Specification {
+class InvertTreeSpec extends BaseSpec {
 
     def balancedTree = new TreeNode<>(0)
     def reversedBalancedTree = new TreeNode<>(0)

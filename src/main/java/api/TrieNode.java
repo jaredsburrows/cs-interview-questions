@@ -51,8 +51,8 @@ public final class TrieNode<T> {
     @Override
     public String toString() {
         return "TrieNode{" +
-                "children=" + Arrays.toString(this.children) +
-                ", isEnd=" + this.isEnd +
-                '}';
+                "children=" + Arrays.toString(this.children)
+                + ", isEnd=" + this.isEnd
+                + '}';
     }
 }

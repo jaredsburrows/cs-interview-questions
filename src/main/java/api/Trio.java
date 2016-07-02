@@ -62,9 +62,9 @@ public final class Trio<First, Second, Third> {
     @Override
     public String toString() {
         return "Trio{" +
-                "mFirst=" + this.mFirst +
-                ", mSecond=" + this.mSecond +
-                ", mThird=" + this.mThird +
-                '}';
+                "mFirst=" + this.mFirst
+                + ", mSecond=" + this.mSecond
+                + ", mThird=" + this.mThird
+                + '}';
     }
 }

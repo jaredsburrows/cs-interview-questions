@@ -2,12 +2,12 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class PairSpec extends Specification {
+class PairSpec extends BaseSpec {
 
     def sut = new Pair<>("test", 123)
 
@@ -21,7 +21,7 @@ class PairSpec extends Specification {
         sut.getRight() == 123
     }
 
-    def "equals/hashcode"() {
+    def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Pair.class)
                 .withPrefabValues(Pair.class, new Pair<>("a", 1), new Pair<>("b", 2))
@@ -32,7 +32,7 @@ class PairSpec extends Specification {
         noExceptionThrown()
     }
 
-    def "string"() {
+    def "test toString"() {
         given:
         def actual = sut.toString()
         def expected = "Pair{mLeft=test, mRight=123}"

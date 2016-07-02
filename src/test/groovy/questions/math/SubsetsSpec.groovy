@@ -1,11 +1,10 @@
 package questions.math
 
-import spock.lang.Specification
-
+import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class SubsetsSpec extends Specification {
+class SubsetsSpec extends BaseSpec {
 
     def "subsets"() {
         expect:

@@ -1,11 +1,11 @@
 package questions.dynamicprogramming
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class MaxSubArraySpec extends Specification {
+class MaxSubArraySpec extends BaseSpec {
 
     def "getMax"() {
         expect:

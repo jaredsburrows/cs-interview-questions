@@ -1,11 +1,11 @@
 package codingbat.recursion
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Array6Spec extends Specification {
+class Array6Spec extends BaseSpec {
 
     def "array6"() {
         expect:

@@ -1,11 +1,11 @@
 package projecteuler
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Number001Spec extends Specification {
+class Number001Spec extends BaseSpec {
 
     def "testGetMultiplesOf3And5"() {
         expect:

@@ -50,9 +50,9 @@ public final class Point {
 
     @Override
     public String toString() {
-        return "Point{" +
-                "mX=" + this.mX +
-                ", mY=" + this.mY +
-                '}';
+        return "Point{"
+                + "mX=" + this.mX
+                + ", mY=" + this.mY
+                + '}';
     }
 }

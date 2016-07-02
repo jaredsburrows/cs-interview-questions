@@ -1,12 +1,12 @@
 package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class PointSpec extends Specification {
+class PointSpec extends BaseSpec {
 
     def sut = new Point(321, 123)
 
@@ -20,7 +20,7 @@ class PointSpec extends Specification {
         sut.getY() == 123
     }
 
-    def "equals/hashcode"() {
+    def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Point.class)
                 .verify()
@@ -29,7 +29,7 @@ class PointSpec extends Specification {
         noExceptionThrown()
     }
 
-    def "string"() {
+    def "test toString"() {
         given:
         def actual = sut.toString()
         def expected = "Point{mX=321, mY=123}"

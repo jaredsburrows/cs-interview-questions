@@ -1,11 +1,11 @@
 package projecteuler
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Number004Spec extends Specification {
+class Number004Spec extends BaseSpec {
 
     def "testGetLargestPalindromeProduct"() {
         expect:

@@ -1,11 +1,11 @@
 package questions.math
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class NumberLengthSpec extends Specification {
+class NumberLengthSpec extends BaseSpec {
 
     def "getIntegerLength"() {
         expect:

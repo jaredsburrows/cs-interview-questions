@@ -71,8 +71,8 @@ public final class LinkedList<T> {
 
     @Override
     public String toString() {
-        return "LinkedList{" +
-                "mHead=" + this.mHead +
-                '}';
+        return "LinkedList{"
+                + "mHead=" + this.mHead
+                + '}';
     }
 }

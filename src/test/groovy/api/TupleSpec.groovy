@@ -2,12 +2,12 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TupleSpec extends Specification {
+class TupleSpec extends BaseSpec {
 
     def sut = new Tuple<>("test", 123)
 
@@ -21,7 +21,7 @@ class TupleSpec extends Specification {
         sut.getRight() == 123
     }
 
-    def "equals/hashcode"() {
+    def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Tuple.class)
                 .withPrefabValues(Tuple.class, new Tuple<>(1, 2), new Tuple<>(3, 4))
@@ -32,7 +32,7 @@ class TupleSpec extends Specification {
         noExceptionThrown()
     }
 
-    def "string"() {
+    def "test toString"() {
         given:
         def actual = sut.toString()
         def expected = "Tuple{mLeft=test, mRight=123}"

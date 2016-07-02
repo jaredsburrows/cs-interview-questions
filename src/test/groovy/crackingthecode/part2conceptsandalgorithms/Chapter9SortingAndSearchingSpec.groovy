@@ -1,12 +1,12 @@
 package crackingthecode.part2conceptsandalgorithms
 
 import api.Tuple
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter9SortingAndSearchingSpec extends Specification {
+class Chapter9SortingAndSearchingSpec extends BaseSpec {
 
     def "mergeAInB"() {
         expect:

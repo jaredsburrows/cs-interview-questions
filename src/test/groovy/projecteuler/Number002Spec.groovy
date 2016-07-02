@@ -1,11 +1,11 @@
 package projecteuler
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Number002Spec extends Specification {
+class Number002Spec extends BaseSpec {
 
     def "testGetEvenFibonacciNumbers"() {
         expect:

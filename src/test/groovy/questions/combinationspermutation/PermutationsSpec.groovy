@@ -1,11 +1,11 @@
 package questions.combinationspermutation
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class PermutationsSpec extends Specification {
+class PermutationsSpec extends BaseSpec {
 
     def "getStringPermutations"() {
         expect:

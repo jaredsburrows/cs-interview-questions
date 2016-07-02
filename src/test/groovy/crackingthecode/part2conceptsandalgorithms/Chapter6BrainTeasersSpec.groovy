@@ -1,10 +1,11 @@
 package crackingthecode.part2conceptsandalgorithms
 
-import spock.lang.Specification
+import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter6BrainTeasersSpec extends Specification {
+class Chapter6BrainTeasersSpec extends BaseSpec {
 
     def "arithmeticOperators"() {
         expect:

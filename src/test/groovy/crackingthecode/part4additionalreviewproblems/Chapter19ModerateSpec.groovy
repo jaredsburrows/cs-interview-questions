@@ -1,12 +1,12 @@
 package crackingthecode.part4additionalreviewproblems
 
 import api.Tuple
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter19ModerateSpec extends Specification {
+class Chapter19ModerateSpec extends BaseSpec {
 
     def "swapVar"() {
         given:

@@ -1,13 +1,13 @@
 package api.util
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class SwapSpec extends Specification {
+class SwapSpec extends BaseSpec {
 
-    def "swap"() {
+    def "test swap"() {
         given:
         def actual = [1, 2] as Integer[]
         def expected = [2, 1] as Integer[]

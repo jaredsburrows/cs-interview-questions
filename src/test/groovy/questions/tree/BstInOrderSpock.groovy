@@ -1,12 +1,12 @@
 package questions.tree
 
 import api.TreeNode
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class BstInOrderSpock extends Specification {
+class BstInOrderSpock extends BaseSpec {
 
     def outContent = new ByteArrayOutputStream()
     def errContent = new ByteArrayOutputStream()

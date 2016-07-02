@@ -1,11 +1,10 @@
 package questions.stringarraymatrix
 
-import spock.lang.Specification
-
+import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ReturnSmallestCharacterSpec extends Specification {
+class ReturnSmallestCharacterSpec extends BaseSpec {
 
     def "findInsPoint2"() {
         expect:
@@ -30,11 +29,11 @@ class ReturnSmallestCharacterSpec extends Specification {
         ReturnSmallestCharacter.findInsPoint(a, b as char) == c as char
 
         where:
-        a     | b   | c
-        "abc" | 'a' | 'b'
-        "abc" | 'b' | 'c'
-        "abc" | 'c' | 'a'
-         "cfjpv" | 'a' | 'c'
+        a       | b   | c
+        "abc"   | 'a' | 'b'
+        "abc"   | 'b' | 'c'
+        "abc"   | 'c' | 'a'
+        "cfjpv" | 'a' | 'c'
         "cfjpv" | 'c' | 'f'
         "cfjpv" | 'k' | 'p'
         "cfjpv" | 'z' | 'c'

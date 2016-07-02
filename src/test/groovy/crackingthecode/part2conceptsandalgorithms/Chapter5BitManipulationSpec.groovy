@@ -1,10 +1,11 @@
 package crackingthecode.part2conceptsandalgorithms
 
-import spock.lang.Specification
+import test.BaseSpec
+
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter5BitManipulationSpec extends Specification {
+class Chapter5BitManipulationSpec extends BaseSpec {
 
     def "getDiffBits"() {
         expect:

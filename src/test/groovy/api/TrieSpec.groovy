@@ -2,12 +2,12 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TrieSpec extends Specification {
+class TrieSpec extends BaseSpec {
 
     def sut = new Trie<>()
 
@@ -50,7 +50,7 @@ class TrieSpec extends Specification {
         sut.startsWith("ar")
     }
 
-    def "equals/hashcode"() {
+    def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Trie.class)
                 .withPrefabValues(Trie.class, new Trie<>(), new Trie<>("test"))
@@ -62,10 +62,29 @@ class TrieSpec extends Specification {
         noExceptionThrown()
     }
 
-    def "string"() {
+    def "test toString"() {
         given:
         def actual = sut.toString()
-        def expected = "Trie{mRoot=TrieNode{children=[TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, TrieNode{children=[null, null, null, null, TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=true}, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=false}, null, null, null, null, null, null, null, null], isEnd=false}, null, null, null, null, null, null, null, null, TrieNode{children=[TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=true}, null, null, null, null, null, null, null, null], isEnd=false}, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=false}, null, null, null, null, null, null, null, TrieNode{children=[null, null, null, null, TrieNode{children=[null, null, null, TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=true}, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=false}, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=false}, null, null, null, null, null, null, null, null], isEnd=false}}"
+        def expected = "Trie{mRoot=TrieNode{children=[TrieNode{children=[null, null, null, null, null, null, null, " +
+                "null, null, null, null, null, null, null, null, null, null, TrieNode{children=[null, null, null, " +
+                "null, TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null, " +
+                "null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=true}, " +
+                "null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, " +
+                "null, null, null, null, null], isEnd=false}, null, null, null, null, null, null, null, null], " +
+                "isEnd=false}, null, null, null, null, null, null, null, null, " +
+                "TrieNode{children=[TrieNode{children=[null, null, null, null, null, null, null, null, null, null," +
+                " null, null, null, null, null, null, null, TrieNode{children=[null, null, null, null, null, null," +
+                " null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null," +
+                " null, null, null, null], isEnd=true}, null, null, null, null, null, null, null, null]," +
+                " isEnd=false}, null, null, null, null, null, null, null, null, null, null, null, null, null, null," +
+                " null, null, null, null, null, null, null, null, null, null, null], isEnd=false}, null, null, null," +
+                " null, null, null, null, TrieNode{children=[null, null, null, null, TrieNode{children=[null, null," +
+                " null, TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null," +
+                " null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=true}," +
+                " null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null," +
+                " null, null, null, null, null, null], isEnd=false}, null, null, null, null, null, null, null, null," +
+                " null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=false}, null," +
+                " null, null, null, null, null, null, null], isEnd=false}}"
 
         expect:
         actual == expected

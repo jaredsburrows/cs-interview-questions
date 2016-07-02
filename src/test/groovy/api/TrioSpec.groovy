@@ -2,12 +2,12 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TrioSpec extends Specification {
+class TrioSpec extends BaseSpec {
 
     def sut = new Trio<>("a", 1, 'a')
 
@@ -26,7 +26,7 @@ class TrioSpec extends Specification {
         sut.getThird() == 'a'
     }
 
-    def "equals/hashcode"() {
+    def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Trio.class)
                 .withPrefabValues(Trio.class, new Trio<>("a", 1, 'a'), new Trio<>("b", 2, 'b'))
@@ -37,7 +37,7 @@ class TrioSpec extends Specification {
         noExceptionThrown()
     }
 
-    def "string"() {
+    def "test toString"() {
         given:
         def actual = sut.toString()
         def expected = "Trio{mFirst=a, mSecond=1, mThird=a}"

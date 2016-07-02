@@ -1,11 +1,11 @@
 package questions.stringarraymatrix
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ReorderBooleanArraySpec extends Specification {
+class ReorderBooleanArraySpec extends BaseSpec {
 
     def "reorder boolean - primitive"() {
         given:

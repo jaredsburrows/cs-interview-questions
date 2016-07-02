@@ -51,8 +51,8 @@ public final class Tuple<Left, Right> {
     @Override
     public String toString() {
         return "Tuple{" +
-                "mLeft=" + this.mLeft +
-                ", mRight=" + this.mRight +
-                '}';
+                "mLeft=" + this.mLeft
+                + ", mRight=" + this.mRight
+                + '}';
     }
 }

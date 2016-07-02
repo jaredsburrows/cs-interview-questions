@@ -2,12 +2,12 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TrieNodeSpec extends Specification {
+class TrieNodeSpec extends BaseSpec {
 
     def sut = new TrieNode<>()
     def nextNode = new TrieNode<>(123)
@@ -44,10 +44,11 @@ class TrieNodeSpec extends Specification {
         noExceptionThrown()
     }
 
-    def "string"() {
+    def "test toString"() {
         given:
         def actual = sut.toString()
-        def expected = "TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=false}"
+        def expected = "TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null, " +
+                "null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=false}"
 
         expect:
         actual == expected

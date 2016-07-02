@@ -1,12 +1,12 @@
 package questions.linkedlist
 
-import spock.lang.Specification
 import api.Node
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class CycleSpec extends Specification {
+class CycleSpec extends BaseSpec {
 
     def "cycle - true"() {
         given:

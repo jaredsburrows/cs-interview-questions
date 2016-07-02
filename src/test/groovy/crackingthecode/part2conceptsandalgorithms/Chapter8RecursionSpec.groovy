@@ -1,14 +1,14 @@
 package crackingthecode.part2conceptsandalgorithms
 
 import api.Color
-import spock.lang.Specification
+import test.BaseSpec
 
 import static api.Color.*
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter8RecursionSpec extends Specification {
+class Chapter8RecursionSpec extends BaseSpec {
 
     def "getFibNumberRecursive"() {
         expect:

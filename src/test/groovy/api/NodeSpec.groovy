@@ -2,12 +2,12 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class NodeSpec extends Specification {
+class NodeSpec extends BaseSpec {
 
     def sut = new Node<>()
     def nextNode = new Node<>(123)
@@ -34,7 +34,7 @@ class NodeSpec extends Specification {
         sut.previous.value == 123
     }
 
-    def "equals/hashcode"() {
+    def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Node.class)
                 .withPrefabValues(Node.class, new Node<>(), new Node<>(1))
@@ -45,7 +45,7 @@ class NodeSpec extends Specification {
         noExceptionThrown()
     }
 
-    def "string"() {
+    def "test toString"() {
         given:
         def actual = sut.toString()
         def expected = "Node{value=null, next=null, previous=null}"

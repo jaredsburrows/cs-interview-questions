@@ -1,12 +1,12 @@
 package questions.linkedlist
 
-import spock.lang.Specification
 import api.Node
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class RemoveDuplicatesSpec extends Specification {
+class RemoveDuplicatesSpec extends BaseSpec {
 
     def "removeDuplicates - sorted"() {
         given:

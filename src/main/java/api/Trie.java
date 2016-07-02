@@ -102,7 +102,7 @@ public final class Trie<T> {
     @Override
     public String toString() {
         return "Trie{" +
-                "mRoot=" + this.mRoot +
-                '}';
+                "mRoot=" + this.mRoot
+                + '}';
     }
 }

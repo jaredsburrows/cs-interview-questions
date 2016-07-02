@@ -1,11 +1,10 @@
 package questions.searching
 
-import spock.lang.Specification
-
+import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class BinarySearchSpec extends Specification {
+class BinarySearchSpec extends BaseSpec {
 
     def "search"() {
         expect:

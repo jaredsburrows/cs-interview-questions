@@ -63,11 +63,11 @@ public final class GraphNode<T> {
 
     @Override
     public String toString() {
-        return "GraphNode{" +
-                "value=" + this.value +
-                ", next=" + this.next +
-                ", neighbors=" + Arrays.toString(this.neighbors) +
-                ", visited=" + this.visited +
-                '}';
+        return "GraphNode{"
+                + "value=" + this.value
+                + ", next=" + this.next
+                + ", neighbors=" + Arrays.toString(this.neighbors)
+                + ", visited=" + this.visited
+                + '}';
     }
 }

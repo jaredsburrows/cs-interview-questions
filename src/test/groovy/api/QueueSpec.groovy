@@ -2,12 +2,12 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class QueueSpec extends Specification {
+class QueueSpec extends BaseSpec {
 
     def sut = new Queue<>()
     def valueNode = new Node<>(1)
@@ -124,7 +124,7 @@ class QueueSpec extends Specification {
         !sut.getFirst()
     }
 
-    def "equals/hashcode"() {
+    def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Queue.class)
                 .withPrefabValues(Queue.class, new Queue<>(), new Queue<>(1))
@@ -136,7 +136,7 @@ class QueueSpec extends Specification {
         noExceptionThrown()
     }
 
-    def "string"() {
+    def "test toString"() {
         given:
         def actual = sut.toString()
         def expected = "Queue{first=null, last=null}"

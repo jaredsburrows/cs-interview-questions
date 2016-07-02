@@ -2,12 +2,12 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class LinkedListSpec extends Specification {
+class LinkedListSpec extends BaseSpec {
 
     def sut = new LinkedList<>(0)
 
@@ -63,7 +63,7 @@ class LinkedListSpec extends Specification {
         sut.next.next == null
     }
 
-    def "equals/hashcode"() {
+    def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(LinkedList.class)
                 .withPrefabValues(LinkedList.class, new LinkedList<>(1), new LinkedList<>(2))
@@ -75,7 +75,7 @@ class LinkedListSpec extends Specification {
         noExceptionThrown()
     }
 
-    def "string"() {
+    def "test toString"() {
         given:
         def actual = sut.toString()
         def expected = "LinkedList{mHead=Node{value=0, next=null, previous=null}}"

@@ -1,12 +1,12 @@
 package questions.linkedlist
 
 import api.Node
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class MergeTwoSortedLinkedListsSpec extends Specification {
+class MergeTwoSortedLinkedListsSpec extends BaseSpec {
 
     def "merge"() {
         given:

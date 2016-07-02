@@ -55,8 +55,9 @@ public final class Stack<T> {
 
     @Override
     public String toString() {
-        return "Stack{" +
-                "top=" + this.top +
-                '}';
+        return "Stack{"
+                + "top="
+                + this.top
+                + '}';
     }
 }

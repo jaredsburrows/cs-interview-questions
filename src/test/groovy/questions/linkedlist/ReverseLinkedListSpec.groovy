@@ -1,12 +1,12 @@
 package questions.linkedlist
 
 import api.Node
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ReverseLinkedListSpec extends Specification {
+class ReverseLinkedListSpec extends BaseSpec {
 
     def "reverse"() {
         given:

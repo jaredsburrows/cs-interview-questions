@@ -50,9 +50,9 @@ public final class Pair<Left, Right> {
 
     @Override
     public String toString() {
-        return "Pair{" +
-                "mLeft=" + this.mLeft +
-                ", mRight=" + this.mRight +
-                '}';
+        return "Pair{"
+                + "mLeft=" + this.mLeft
+                + ", mRight=" + this.mRight
+                + '}';
     }
 }

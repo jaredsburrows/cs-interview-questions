@@ -1,11 +1,11 @@
 package questions.math
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class FindMissingNumberSpec extends Specification {
+class FindMissingNumberSpec extends BaseSpec {
 
     def "findMissing"() {
         expect:

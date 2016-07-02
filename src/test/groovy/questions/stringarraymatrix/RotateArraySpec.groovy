@@ -1,11 +1,10 @@
 package questions.stringarraymatrix
 
-import spock.lang.Specification
-
+import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class RotateArraySpec extends Specification {
+class RotateArraySpec extends BaseSpec {
 
     def "rotate"() {
         expect:

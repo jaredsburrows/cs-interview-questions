@@ -1,11 +1,10 @@
 package questions.stringarraymatrix
 
-import spock.lang.Specification
-
+import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class LongestSequenceMatrixSpec extends Specification {
+class LongestSequenceMatrixSpec extends BaseSpec {
 
     def "getLongestSequence"() {
         expect:

@@ -1,11 +1,11 @@
 package crackingthecode.part1datastructures
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter1ArraysAndStringsSpec extends Specification {
+class Chapter1ArraysAndStringsSpec extends BaseSpec {
 
     def "isUniqueCharacters"() {
         expect:

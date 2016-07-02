@@ -1,11 +1,11 @@
 package questions.stringarraymatrix
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ValidPalindromeSpec extends Specification {
+class ValidPalindromeSpec extends BaseSpec {
 
     def "isPalindrome"() {
         expect:

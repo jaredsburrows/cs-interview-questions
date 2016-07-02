@@ -1,12 +1,12 @@
 package questions.tree
 
 import api.TreeNode
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class BstFindMaxSpec extends Specification {
+class BstFindMaxSpec extends BaseSpec {
 
     def tree = new TreeNode<>(8)
 

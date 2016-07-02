@@ -2,12 +2,12 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class StackSpec extends Specification {
+class StackSpec extends BaseSpec {
 
     def sut = new Stack<>()
     def valueNode = new Node<>(1)
@@ -88,7 +88,7 @@ class StackSpec extends Specification {
         !sut.peek()
     }
 
-    def "equals/hashcode"() {
+    def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Stack.class)
                 .withPrefabValues(Stack.class, new Stack<>(), new Stack<>(1))
@@ -100,7 +100,7 @@ class StackSpec extends Specification {
         noExceptionThrown()
     }
 
-    def "string"() {
+    def "test toString"() {
         given:
         def actual = sut.toString()
         def expected = "Stack{top=null}"

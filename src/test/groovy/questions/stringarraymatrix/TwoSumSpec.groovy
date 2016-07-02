@@ -1,12 +1,11 @@
 package questions.stringarraymatrix
 
 import api.Pair
-import spock.lang.Specification
-
+import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TwoSumSpec extends Specification {
+class TwoSumSpec extends BaseSpec {
 
     def "list all pairs(x ,y), equal given number, allow duplicates"() {
         expect:

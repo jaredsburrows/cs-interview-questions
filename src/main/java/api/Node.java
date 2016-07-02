@@ -50,10 +50,10 @@ public final class Node<T> {
 
     @Override
     public String toString() {
-        return "Node{" +
-                "value=" + this.value +
-                ", next=" + this.next +
-                ", previous=" + this.previous +
-                '}';
+        return "Node{"
+                + "value=" + this.value
+                + ", next=" + this.next
+                + ", previous=" + this.previous
+                + '}';
     }
 }

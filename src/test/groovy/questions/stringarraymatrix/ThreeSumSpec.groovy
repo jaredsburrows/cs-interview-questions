@@ -2,12 +2,11 @@ package questions.stringarraymatrix
 
 import api.Trio
 import spock.lang.Ignore
-import spock.lang.Specification
-
+import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ThreeSumSpec extends Specification {
+class ThreeSumSpec extends BaseSpec {
 
     def "list all trios(x ,y), equal given number, allow duplicates"() {
         expect:
@@ -17,14 +16,14 @@ class ThreeSumSpec extends Specification {
         a         | b | c
         [1, 1, 1] | 0 | []
         [1, 1, 1] | 3 | [new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                          new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                          new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                          new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                          new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                          new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                          new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                          new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                          new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1)]
+                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
+                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
+                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
+                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
+                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
+                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
+                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
+                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1)]
     }
 
     @Ignore

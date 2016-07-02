@@ -1,11 +1,11 @@
 package crackingthecode.part4additionalreviewproblems
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter20HardSpec extends Specification {
+class Chapter20HardSpec extends BaseSpec {
 
     def "20.1 - addTwoNumbers"() {
         expect:

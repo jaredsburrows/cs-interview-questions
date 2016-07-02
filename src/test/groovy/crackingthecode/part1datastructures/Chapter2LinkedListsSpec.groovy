@@ -1,12 +1,12 @@
 package crackingthecode.part1datastructures
 
 import api.Node
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter2LinkedListsSpec extends Specification {
+class Chapter2LinkedListsSpec extends BaseSpec {
 
     def "removeDuplicates"() {
         given:

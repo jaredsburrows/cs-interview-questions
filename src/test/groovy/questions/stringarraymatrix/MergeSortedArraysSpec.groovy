@@ -1,11 +1,10 @@
 package questions.stringarraymatrix
 
-import spock.lang.Specification
-
+import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class MergeSortedArraysSpec extends Specification {
+class MergeSortedArraysSpec extends BaseSpec {
 
     def "merge"() {
         expect:

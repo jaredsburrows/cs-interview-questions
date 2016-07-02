@@ -1,30 +1,20 @@
 package crackingthecode.part2conceptsandalgorithms
 
 import crackingthecode.part2conceptsandalgorithms.Chapter7ObjectOrientedDesign.Card
-import crackingthecode.part2conceptsandalgorithms.Chapter7ObjectOrientedDesign.Card.Suite
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter7ObjectOrientedDesignSpec extends Specification {
+class Chapter7ObjectOrientedDesignSpec extends BaseSpec {
 
-    def "card"() {
-        def card = new CardGameCard(Suite.HEARTS, 5)
+    def "test card"() {
+        given:
+        def card = new Card(Card.Suite.HEARTS, 5)
 
         expect:
         card instanceof Card
-        card.getSuite() == Suite.HEARTS
+        card.getSuite() == Card.Suite.HEARTS
         card.getNumber() == 5
-    }
-
-    class CardGameCard extends Card {
-        // implement CardGameSpecifics
-
-        CardGameCard(
-                final Suite suite,
-                final int cardNumber) {
-            super(suite, cardNumber)
-        }
     }
 }

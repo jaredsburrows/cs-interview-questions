@@ -1,11 +1,10 @@
 package questions.stringarraymatrix
 
-import spock.lang.Specification
-
+import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class SubstringSpec extends Specification {
+class SubstringSpec extends BaseSpec {
 
     def "substring"() {
         expect:

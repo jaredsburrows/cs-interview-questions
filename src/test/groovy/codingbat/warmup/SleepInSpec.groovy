@@ -1,11 +1,11 @@
 package codingbat.warmup
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class SleepInSpec extends Specification {
+class SleepInSpec extends BaseSpec {
 
     def "sleepIn"() {
         expect:

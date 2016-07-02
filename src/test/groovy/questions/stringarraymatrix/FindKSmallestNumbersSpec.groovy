@@ -1,18 +1,18 @@
 package questions.stringarraymatrix
 
-import spock.lang.Specification
+import test.BaseSpec
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class FindKSmallestNumbersSpec extends Specification {
+class FindKSmallestNumbersSpec extends BaseSpec {
 
     def "getSmallestNumbers"() {
         expect:
         FindKSmallestNumbers.getSmallestNumbers(a, b) == c
 
         where:
-        a             | b | c
+        a               | b | c
         [[3], [1], [2]] | 1 | [1]
 //        [[3], [1], [2]] | 3 | [1, 2, 3]
 //        [[1, 2, 3, 5],
