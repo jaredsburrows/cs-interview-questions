@@ -21,11 +21,11 @@ package questions.stringarraymatrix;
 public class ReturnSmallestCharacter {
 
     // Time - O(N), Space - O(1)
-    public static char findInsPoint2(final String input, final char x) {
+    public static char findInsPoint2(final String input, final char target) {
         for (int i = 0; i < input.length(); i++) {
 
             final char current = input.charAt(i);
-            if (x < current) {
+            if (target < current) {
                 return current;
             }
         }

@@ -22,7 +22,7 @@ public class AddTwoNumbers {
             return null;
         }
 
-        final Node<Integer> answer = new Node<>(0);
+        final Node<Integer> answer = new Node<>();
         Node<Integer> head = answer;
         int carry = 0;
 

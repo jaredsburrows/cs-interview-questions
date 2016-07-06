@@ -140,33 +140,46 @@ public class Chapter4TreesAndGraphs {
      * binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not
      * necessarily a binary search tree.
      */
+    // Time - O(LOG(N)) in Balanced binary tree, O(N) in skewed tree.
     public static <T> TreeNode<T> commonAncestor(final TreeNode<T> root, final TreeNode<T> node1,
                                                  final TreeNode<T> node2) {
-        if (root == null || node1 == null || node2 == null) {
+        if (root == null) {
+            return null;
+        }
+
+        if (root == node1 || root == node2) {
             return root;
         }
 
-        if (covers(root.left, node1) && covers(root.left, node2)) {
-            return commonAncestor(root.left, node1, node2);
+        final TreeNode<T> left = commonAncestor(root.left, node1, node2);
+        final TreeNode<T> right = commonAncestor(root.right, node1, node2);
+
+        if (left != null && right != null) {
+            return root;
         }
 
-        if (covers(root.right, node1) && covers(root.right, node2)) {
-            return commonAncestor(root.right, node1, node2);
-        }
-
-        return root;
+        return left != null ? left : right;
     }
 
-    private static <T> boolean covers(final TreeNode<T> root, final TreeNode<T> node) {
-        if (root == null || node == null) {
-            return false;
+    public static <T> TreeNode<T> commonAncestor2(final TreeNode<T> root, final TreeNode<T> node1,
+                                                 final TreeNode<T> node2) {
+        if (root == null) {
+            return null;
         }
 
-        if (root == node) {
-            return true;
+        if (root == node1 || root == node2) {
+            return root;
         }
 
-        return covers(root.left, node) || covers(root.right, node);
+        final TreeNode<T> left = commonAncestor2(root.left, node1, node2);
+        final TreeNode<T> right = commonAncestor2(root.right, node1, node2);
+
+        if ((left == node1 && right == node2) ||
+                (left == node2 && right == node2)) {
+            return root;
+        }
+
+        return left != null ? left : right;
     }
 
     /**

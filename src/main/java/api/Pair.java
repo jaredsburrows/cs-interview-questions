@@ -3,21 +3,21 @@ package api;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public final class Pair<Left, Right> {
+public final class Pair<T1, T2> {
 
-    private final Left mLeft;
-    private final Right mRight;
+    private final T1 mLeft;
+    private final T2 mRight;
 
-    public Pair(final Left left, final Right right) {
+    public Pair(final T1 left, final T2 right) {
         this.mLeft = left;
         this.mRight = right;
     }
 
-    public Left getLeft() {
+    public T1 getLeft() {
         return this.mLeft;
     }
 
-    public Right getRight() {
+    public T2 getRight() {
         return this.mRight;
     }
 

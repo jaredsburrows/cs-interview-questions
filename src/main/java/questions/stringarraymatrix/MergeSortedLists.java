@@ -47,27 +47,27 @@ public class MergeSortedLists {
 
         int lengthLeft = left.size();
         int lengthRight = right.size();
-        int i = 0;
-        int j = 0;
+        int indexLeft = 0;
+        int indexRight = 0;
 
-        while (i < lengthLeft && j < lengthRight) {
-            if (left.get(i) < right.get(j)) {
-                sortedList.add(left.get(i));
-                i++;
+        while (indexLeft < lengthLeft && indexRight < lengthRight) {
+            if (left.get(indexLeft) < right.get(indexRight)) {
+                sortedList.add(left.get(indexLeft));
+                indexLeft++;
             } else {
-                sortedList.add(right.get(j));
-                j++;
+                sortedList.add(right.get(indexRight));
+                indexRight++;
             }
         }
 
-        while (i < lengthLeft) {
-            sortedList.add(left.get(i));
-            i++;
+        while (indexLeft < lengthLeft) {
+            sortedList.add(left.get(indexLeft));
+            indexLeft++;
         }
 
-        while (j < lengthRight) {
-            sortedList.add(right.get(j));
-            j++;
+        while (indexRight < lengthRight) {
+            sortedList.add(right.get(indexRight));
+            indexRight++;
         }
 
         return sortedList;

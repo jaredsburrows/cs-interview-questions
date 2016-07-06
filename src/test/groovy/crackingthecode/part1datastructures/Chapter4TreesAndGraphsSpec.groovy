@@ -145,6 +145,7 @@ class Chapter4TreesAndGraphsSpec extends BaseSpec {
 
         expect:
         Chapter4TreesAndGraphs.commonAncestor(a, b, c) == d
+        Chapter4TreesAndGraphs.commonAncestor2(a, b, c) == d
 
         where:
         a         | b         | c         | d

@@ -63,9 +63,6 @@ public class ThreeSum {
 
                     answer.add(trio);
 
-//                    final int count = map.get(key) - 1;
-//                    map.put(key, count);
-
                     final int count2 = map.get(key2) != null ? - 1 : 0;
                     map.put(key2, count2);
                 }

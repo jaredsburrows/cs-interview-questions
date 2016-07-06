@@ -11,8 +11,8 @@ public final class Trie<T> {
     public Trie() {
     }
 
-    public Trie(final T t) {
-        this.insert((String) t);
+    public Trie(final T value) {
+        this.insert((String) value);
     }
 
     public void insert(final String word) {
@@ -101,8 +101,8 @@ public final class Trie<T> {
 
     @Override
     public String toString() {
-        return "Trie{" +
-                "mRoot=" + this.mRoot
+        return "Trie{"
+                + "mRoot=" + this.mRoot
                 + '}';
     }
 }

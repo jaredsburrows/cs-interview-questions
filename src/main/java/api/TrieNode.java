@@ -50,8 +50,8 @@ public final class TrieNode<T> {
 
     @Override
     public String toString() {
-        return "TrieNode{" +
-                "children=" + Arrays.toString(this.children)
+        return "TrieNode{"
+                + "children=" + Arrays.toString(this.children)
                 + ", isEnd=" + this.isEnd
                 + '}';
     }

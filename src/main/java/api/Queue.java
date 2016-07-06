@@ -12,8 +12,8 @@ public final class Queue<T> {
     public Queue() {
     }
 
-    public Queue(final T t) {
-        this.enqueue(new Node<>(t));
+    public Queue(final T value) {
+        this.enqueue(new Node<>(value));
     }
 
     public Node<T> getFirst() {

@@ -11,8 +11,8 @@ public final class Stack<T> {
     public Stack() {
     }
 
-    public Stack(final T t) {
-        this.push(new Node<>(t));
+    public Stack(final T value) {
+        this.push(new Node<>(value));
     }
 
     public Node<T> peek() {
@@ -33,16 +33,16 @@ public final class Stack<T> {
     }
 
     @Override
-    public boolean equals(final Object o) {
-        if (this == o) {
+    public boolean equals(final Object object) {
+        if (this == object) {
             return true;
         }
 
-        if (o == null || this.getClass() != o.getClass()) {
+        if (object == null || this.getClass() != object.getClass()) {
             return false;
         }
 
-        final Stack<?> stack = (Stack<?>) o;
+        final Stack<?> stack = (Stack<?>) object;
 
         return this.top != null ? this.top.equals(stack.top) : stack.top == null;
 

@@ -1,0 +1,63 @@
+model {
+    repositories {
+        libs(PrebuiltLibraries) {
+            // TODO dynamically download, brew install cunit, then use gradlew check
+            gtest {
+                headers.srcDir "/usr/local/Cellar/gtest/include"
+
+                binaries.withType(StaticLibraryBinary) {
+                    staticLibraryFile = file("/usr/local/Cellar/gtest/libgtest.a")
+                }
+            }
+        }
+    }
+
+    components {
+        crackingTheCodeCpp(NativeLibrarySpec) {
+            sources {
+                cpp {
+                    source {
+                        srcDir "src/main/cpp"
+                        include "**/*.cpp"
+                    }
+
+                    exportedHeaders {
+                        srcDir "src/main/cpp/include"
+                    }
+                }
+            }
+        }
+    }
+
+    testSuites {
+        crackingTheCodeCppTest(GoogleTestTestSuiteSpec) {
+            sources {
+                cpp {
+                    source {
+                        srcDir "src/test/cpp"
+                        include "**/*.cpp"
+                    }
+
+                    exportedHeaders {
+                        srcDir "src/test/cpp/include"
+                    }
+                }
+            }
+
+            testing $.components.crackingTheCodeCpp
+        }
+    }
+
+    binaries {
+        all {
+            if (toolChain in Gcc || toolChain in Clang) {
+                cCompiler.args "-Wall", "-Wextra", "-O3"
+                cppCompiler.args "-std=c++14", "-Wall", "-Wextra", "-O3"
+            }
+        }
+
+        withType(GoogleTestTestSuiteBinarySpec) {
+            lib library: "gtest", linkage: "static"
+        }
+    }
+}

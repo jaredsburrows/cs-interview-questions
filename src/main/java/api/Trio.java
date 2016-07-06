@@ -3,27 +3,27 @@ package api;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public final class Trio<First, Second, Third> {
+public final class Trio<T1, T2, T3> {
 
-    private final First mFirst;
-    private final Second mSecond;
-    private final Third mThird;
+    private final T1 mFirst;
+    private final T2 mSecond;
+    private final T3 mThird;
 
-    public Trio(final First first, final Second second, final Third third) {
+    public Trio(final T1 first, final T2 second, final T3 third) {
         this.mFirst = first;
         this.mSecond = second;
         this.mThird = third;
     }
 
-    public First getFirst() {
+    public T1 getFirst() {
         return this.mFirst;
     }
 
-    public Second getSecond() {
+    public T2 getSecond() {
         return this.mSecond;
     }
 
-    public Third getThird() {
+    public T3 getThird() {
         return this.mThird;
     }
 
@@ -61,8 +61,8 @@ public final class Trio<First, Second, Third> {
 
     @Override
     public String toString() {
-        return "Trio{" +
-                "mFirst=" + this.mFirst
+        return "Trio{"
+                + "mFirst=" + this.mFirst
                 + ", mSecond=" + this.mSecond
                 + ", mThird=" + this.mThird
                 + '}';

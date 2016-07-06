@@ -9,7 +9,7 @@ elif [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
     echo "Skipping: was pull request."
 elif [ "$TRAVIS_BRANCH" != "$BRANCH" ]; then
     echo "Skipping: wrong branch. Expected '$BRANCH' but was '$TRAVIS_BRANCH'."
-elif [ "$TRAVIS_OS_NAME" !=  "osx" ]; then
+elif [ "$TRAVIS_OS_NAME" !=  "linux" ]; then
     echo "Skipping: wrong os. Expected 'osx' but was '$TRAVIS_OS_NAME'."
 else
     echo -e "Publishing docs...\n"
