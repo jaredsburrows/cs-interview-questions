@@ -11,7 +11,9 @@ int main(int argc, char **argv) {
     auto default_printer = listeners.Release(listeners.default_result_printer());
 
     // Configure new listener
-    ConfigurableEventListener *listener = ConfigurableEventListener::Builder(default_printer).build();
+    ConfigurableEventListener *listener = ConfigurableEventListener::Builder(default_printer)
+                                                    .showFailures()
+                                                    .build();
     listeners.Append(listener);
 
     // Run

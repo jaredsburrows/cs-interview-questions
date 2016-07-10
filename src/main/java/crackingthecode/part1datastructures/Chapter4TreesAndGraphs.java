@@ -174,8 +174,8 @@ public class Chapter4TreesAndGraphs {
         final TreeNode<T> left = commonAncestor2(root.left, node1, node2);
         final TreeNode<T> right = commonAncestor2(root.right, node1, node2);
 
-        if ((left == node1 && right == node2) ||
-                (left == node2 && right == node2)) {
+        if (left == node1 && right == node2
+                || left == node2 && right == node2) {
             return root;
         }
 

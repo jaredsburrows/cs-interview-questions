@@ -1,12 +1,16 @@
+def hasCUnit = file("/usr/local/Cellar/cunit/2.1-3/include").exists()
+
 model {
     repositories {
         libs(PrebuiltLibraries) {
             // TODO dynamically download, brew install cunit, then use gradlew check
-            cunit {
-                headers.srcDir "/usr/local/Cellar/cunit/2.1-3/include"
+            if (hasCUnit) {
+                cunit {
+                    headers.srcDir "/usr/local/Cellar/cunit/2.1-3/include"
 
-                binaries.withType(StaticLibraryBinary) {
-                    staticLibraryFile = file("/usr/local/Cellar/cunit/2.1-3/lib/libcunit.a")
+                    binaries.withType(StaticLibraryBinary) {
+                        staticLibraryFile = file("/usr/local/Cellar/cunit/2.1-3/lib/libcunit.a")
+                    }
                 }
             }
         }
@@ -30,21 +34,23 @@ model {
     }
 
     testSuites {
-        crackingTheCodeCTest(CUnitTestSuiteSpec) {
-            sources {
-                c {
-                    source {
-                        srcDir "src/test/c"
-                        include "**/*.c"
-                    }
+        if (hasCUnit) {
+            crackingTheCodeCTest(CUnitTestSuiteSpec) {
+                sources {
+                    c {
+                        source {
+                            srcDir "src/test/c"
+                            include "**/*.c"
+                        }
 
-                    exportedHeaders {
-                        srcDir "src/test/c/include"
+                        exportedHeaders {
+                            srcDir "src/test/c/include"
+                        }
                     }
                 }
-            }
 
-            testing $.components.crackingTheCodeC
+                testing $.components.crackingTheCodeC
+            }
         }
     }
 
@@ -56,8 +62,10 @@ model {
             }
         }
 
-        withType(CUnitTestSuiteBinarySpec) {
-            lib library: "cunit", linkage: "static"
+        if (hasCUnit) {
+            withType(CUnitTestSuiteBinarySpec) {
+                lib library: "cunit", linkage: "static"
+            }
         }
     }
 }

@@ -1,12 +1,16 @@
+def hasGTest = file("/usr/local/Cellar/gtest/include").exists()
+
 model {
     repositories {
         libs(PrebuiltLibraries) {
             // TODO dynamically download, brew install cunit, then use gradlew check
-            gtest {
-                headers.srcDir "/usr/local/Cellar/gtest/include"
+            if (hasGTest) {
+                gtest {
+                    headers.srcDir "/usr/local/Cellar/gtest/include"
 
-                binaries.withType(StaticLibraryBinary) {
-                    staticLibraryFile = file("/usr/local/Cellar/gtest/libgtest.a")
+                    binaries.withType(StaticLibraryBinary) {
+                        staticLibraryFile = file("/usr/local/Cellar/gtest/libgtest.a")
+                    }
                 }
             }
         }
@@ -30,21 +34,23 @@ model {
     }
 
     testSuites {
-        crackingTheCodeCppTest(GoogleTestTestSuiteSpec) {
-            sources {
-                cpp {
-                    source {
-                        srcDir "src/test/cpp"
-                        include "**/*.cpp"
-                    }
+        if (hasGTest) {
+            crackingTheCodeCppTest(GoogleTestTestSuiteSpec) {
+                sources {
+                    cpp {
+                        source {
+                            srcDir "src/test/cpp"
+                            include "**/*.cpp"
+                        }
 
-                    exportedHeaders {
-                        srcDir "src/test/cpp/include"
+                        exportedHeaders {
+                            srcDir "src/test/cpp/include"
+                        }
                     }
                 }
-            }
 
-            testing $.components.crackingTheCodeCpp
+                testing $.components.crackingTheCodeCpp
+            }
         }
     }
 
@@ -56,8 +62,10 @@ model {
             }
         }
 
-        withType(GoogleTestTestSuiteBinarySpec) {
-            lib library: "gtest", linkage: "static"
+        if (hasGTest) {
+            withType(GoogleTestTestSuiteBinarySpec) {
+                lib library: "gtest", linkage: "static"
+            }
         }
     }
 }
