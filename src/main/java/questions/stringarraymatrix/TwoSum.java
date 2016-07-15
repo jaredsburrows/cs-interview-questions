@@ -4,10 +4,8 @@ import api.Pair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
@@ -18,24 +16,6 @@ public class TwoSum {
     public static List<Pair<Integer, Integer>> getSums2(final int[] numbers, final int target) {
 
         final List<Pair<Integer, Integer>> answer = new ArrayList<>();
-
-        for (final int first : numbers) {
-            for (final int second : numbers) {
-                if (first + second == target) {
-                    final Pair<Integer, Integer> pair = new Pair<>(first, second);
-
-                    answer.add(pair);
-                }
-            }
-        }
-
-        return answer;
-    }
-
-    // Time - O(N^2), Space - O(1)
-    public static Set<Pair<Integer, Integer>> getSums3(final int[] numbers, final int target) {
-
-        final Set<Pair<Integer, Integer>> answer = new HashSet<>();
 
         for (final int first : numbers) {
             for (final int second : numbers) {

@@ -47,3 +47,31 @@ tasks.withType(FindBugs) {
     effort = "max"
     reportLevel = "high"
 }
+
+tasks.withType(Pmd) {
+    reports {
+        xml {
+            enabled = false
+        }
+
+        html {
+            enabled = true
+        }
+    }
+}
+
+tasks.withType(CodeNarc) {
+    reports {
+        xml {
+            enabled = false
+        }
+
+        html {
+            enabled = true
+        }
+    }
+}
+
+codenarc {
+    reportFormat = "console"
+}

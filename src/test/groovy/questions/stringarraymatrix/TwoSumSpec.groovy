@@ -18,15 +18,6 @@ class TwoSumSpec extends BaseSpec {
         [1, 1] | 2 | [new Pair<>(1, 1), new Pair<>(1, 1), new Pair<>(1, 1), new Pair<>(1, 1)]
     }
 
-    def "test list all pairs(x ,y), equal given number"() {
-        expect:
-        TwoSum.getSums3(a as int[], b) == c
-
-        where:
-        a      | b | c
-        [1, 1] | 2 | new HashSet<>([new Pair<>(1, 1)])
-    }
-
     def "test list pairs(x ,y), equal given number, no duplicates"() {
         expect:
         TwoSum.getSums(a as int[], b) == c

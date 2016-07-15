@@ -1,11 +1,14 @@
 configurations {
     provided
-    providedPlusCompile.extendsFrom(compile, provided)
-    testCompile.extendsFrom(providedPlusCompile)
 }
 
 sourceSets {
     main {
-        compileClasspath = configurations.providedPlusCompile
+        compileClasspath += project.configurations.provided
+    }
+
+    test {
+        compileClasspath += project.configurations.provided
+        runtimeClasspath += project.configurations.provided
     }
 }
