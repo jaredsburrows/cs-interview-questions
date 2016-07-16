@@ -51,6 +51,7 @@ public final class Trie<T> {
         return current != null;
     }
 
+    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     public TrieNode<T> get(final String word) {
         if (word == null || word.isEmpty()) {
             return null;

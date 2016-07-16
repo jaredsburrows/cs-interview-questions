@@ -7,6 +7,7 @@ import api.Node;
  */
 public class Cycle {
 
+    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     public static boolean hasCycle(final Node<Integer> node) {
         if (node == null) {
             return false;

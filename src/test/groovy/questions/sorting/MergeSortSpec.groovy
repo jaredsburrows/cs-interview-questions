@@ -13,7 +13,7 @@ class MergeSortSpec extends BaseSpec {
         def expected = [1, 2, 3, 4, 6] as int[]
 
         when:
-        MergeSort.mergeSort(actual as int[], 0, actual.length - 1)
+        MergeSort.mergeSortIndex(actual as int[], 0, actual.length - 1)
 
         then:
         actual == expected
@@ -25,7 +25,7 @@ class MergeSortSpec extends BaseSpec {
         def expected = [1, 2, 3, 4, 6] as int[]
 
         when:
-        actual = MergeSort.mergeSort2(actual as int[], 0, actual.length - 1)
+        actual = MergeSort.mergeSortIndex2(actual as int[], 0, actual.length - 1)
 
         then:
         actual == expected
@@ -37,7 +37,7 @@ class MergeSortSpec extends BaseSpec {
         def expected = [1, 2, 3, 4, 6] as int[]
 
         when:
-        MergeSort.mergeSort(actual as int[])
+        MergeSort.mergeSortArray(actual as int[])
 
         then:
         actual == expected
@@ -49,7 +49,7 @@ class MergeSortSpec extends BaseSpec {
         def expected = [1, 2, 3, 4, 6] as int[]
 
         when:
-        actual = MergeSort.mergeSort2(actual as int[])
+        actual = MergeSort.mergeSortArray2(actual as int[])
 
         then:
         actual == expected

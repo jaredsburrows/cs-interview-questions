@@ -47,8 +47,8 @@ public class Chapter5BitManipulation {
      */
     public static int setBitPosition(final int left, final int right, final int positionA, final int positionB) {
         int max = ~0;
-        int shiftMax = max - 1 << positionB - 1;
-        int shift = 1 << positionA - 1;
+        int shiftMax = (max - 1) << (positionB - 1);
+        int shift = 1 << (positionA - 1);
         int mask = shiftMax | shift;
 
         return (left & mask) | (right << positionA);

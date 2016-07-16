@@ -107,7 +107,7 @@ public class Chapter19Moderate {
     // >> 31 - for only 32 bit numbers
     // Time - O(1), Space - O(1)
     public static long getMax(final long left, final long right) {
-        final long diff = left - right >> 31;    // >> 31 accounts for negatives
+        final long diff = (left - right) >> 31;    // >> 31 accounts for negatives
         final long diffFirst = diff & right;
         final long diffSecond = ~diff & left;
 
@@ -117,13 +117,13 @@ public class Chapter19Moderate {
     // Time - O(1), Space - O(1)
     public static long getMax2(final long left, final long right) {
         final long[] temp = {left, right};
-        return temp[(int) (left - right >> 31) & 1];
+        return temp[(int) ((left - right) >> 31) & 1];
     }
 
     // If you have the max, you can find min, vice-versa
     // Time - O(1), Space - O(1)
     public static long getMin(final long left, final long right) {
-        final long diff = left - right >> 31;    // >> 31 accounts for negatives
+        final long diff = (left - right) >> 31;    // >> 31 accounts for negatives
         final long diffFirst = diff & left;
         final long diffSecond = ~diff & right;
 

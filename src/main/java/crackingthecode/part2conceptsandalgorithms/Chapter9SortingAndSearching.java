@@ -17,7 +17,6 @@ public class Chapter9SortingAndSearching {
      * 9.1 - You are given two sorted arrays, A and B, and A has a large enough buffer at the end to
      * hold B. Write a method to merge B into A in sorted order.
      */
-    // TODO - review
     // Time - O(N), Space - O(1)
     public static int[] mergeBInA(final int[] arrayA, final int[] arrayB, final int sizeA) {
         if (arrayA == null) {
@@ -75,7 +74,6 @@ public class Chapter9SortingAndSearching {
      * Input: find 5 in array (15 16 19 20 25 1 3 4 5 7 10 14)
      * Output: 8 (the index of 5 in the array)
      */
-    // TODO - review
     // 15 16 19 20 25 1  3  4  5  7 10 14
     // 0  1  2  3  4  5  6  7  8  9 10 11
     // Time - Best - O(LOG N), Space - O(1) - does not work with duplicates

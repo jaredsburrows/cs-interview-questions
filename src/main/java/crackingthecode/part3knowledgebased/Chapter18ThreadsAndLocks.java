@@ -126,7 +126,7 @@ public class Chapter18ThreadsAndLocks {
      * Can you design a mechanism to make sure that all the methods will be executed in sequence?
      */
 
-    interface MethodsToCall {
+    public interface MethodsToCall {
         void methodA() throws Exception;
 
         void methodB() throws Exception;
@@ -135,27 +135,30 @@ public class Chapter18ThreadsAndLocks {
     }
 
     // terrible example, call method after another
-    abstract class MethodCall implements MethodsToCall {
+    public abstract static class MethodCall implements MethodsToCall {
 
+        @Override
         public void methodA() {
             // super
 
             this.methodB();
         }
 
+        @Override
         public void methodB() {
             // super
 
             this.methodC();
         }
 
+        @Override
         public void methodC() {
 
         }
     }
 
     // i)
-    class MethCallSemaphore implements MethodsToCall {
+    public static class MethCallSemaphore implements MethodsToCall {
 
         private Semaphore mSemaphoreA = new Semaphore(0);
         private Semaphore mSemaphoreB = new Semaphore(0);
@@ -178,7 +181,7 @@ public class Chapter18ThreadsAndLocks {
     }
 
     // ii)
-    class MethCallThreadSafeSemaphore implements MethodsToCall {
+    public static class MethCallThreadSafeSemaphore implements MethodsToCall {
 
         private Semaphore mSemaphoreA = new Semaphore(0);
         private Semaphore mSemaphoreB = new Semaphore(0);
@@ -208,7 +211,8 @@ public class Chapter18ThreadsAndLocks {
      * two threads in one instance of a program, can they call A at the same time? Can they call A
      * and C at the same time?
      */
-    class SomeSyncMethods {
+    public static class SomeSyncMethods {
+
         public synchronized void methodA() {
 
         }

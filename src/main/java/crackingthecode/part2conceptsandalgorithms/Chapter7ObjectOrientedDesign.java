@@ -47,23 +47,20 @@ public class Chapter7ObjectOrientedDesign {
      * able to handle it, then the call should be escalated to PM. Design the classes and data
      * structures for this problem. Implement a method getCallHandler().
      */
-    public class CallHandler {
-
-    }
 
     /**
      * 7.3 - Design a musical juke box using object oriented principles.
      */
     // MP3 Player?(more modern)
     // Song, Controls on Jukebox(previous, right), Playlist(contains songs)
-    class Song {
+    public static class Song {
         private UUID mUuid;
         private String mSong;
         private String mArtist;
         private String mAlbum;
     }
 
-    abstract class Playlist {
+    public abstract static class Playlist {
 
         private Song mSong;
         private Queue<Song> mList;
@@ -75,17 +72,16 @@ public class Chapter7ObjectOrientedDesign {
         abstract Song getCurrentSong();
     }
 
-    abstract class Selector {
+    public abstract static class Selector {
 
         private Song mCurrentSong;
 
         abstract void setTrack(final Song song);
 
         abstract Song getCurrentSong();
-
     }
 
-    public class JukeBox {
+    public static class JukeBox {
 
         private List<Song> mSongList;
         private Selector mSelector;
@@ -103,7 +99,9 @@ public class Chapter7ObjectOrientedDesign {
      * 7.5 - Design the data structures for an online book reader system.
      */
     public enum BookStatus {
-        ONLINE, AWAY, OFFLINE
+        ONLINE,
+        AWAY,
+        OFFLINE
     }
 
     /**
@@ -111,10 +109,13 @@ public class Chapter7ObjectOrientedDesign {
      * the puzzle.
      */
     public enum Edge {
-        CONNECT_IN, CONNECT_IN2, CONNECT_OUT, CONNECT_OUT2
+        CONNECT_IN,
+        CONNECT_IN2,
+        CONNECT_OUT,
+        CONNECT_OUT2
     }
 
-    public class Piece {
+    public static class Piece {
         public Edge left = Edge.CONNECT_IN;
         public Edge right = Edge.CONNECT_IN2;
         public Edge bottom = Edge.CONNECT_OUT;
@@ -122,7 +123,7 @@ public class Chapter7ObjectOrientedDesign {
         public int orientation;
     }
 
-    public abstract class Puzzle {
+    public abstract static class Puzzle {
         public Piece[][] current;
         public Piece[][] solution;
 
@@ -135,15 +136,17 @@ public class Chapter7ObjectOrientedDesign {
      * solve?
      */
     public enum StatusType {
-        ONLINE, AWAY, OFFLINE
+        ONLINE,
+        AWAY,
+        OFFLINE
     }
 
-    public class Status {
+    public static class Status {
         public StatusType statusType;
         public String message;
     }
 
-    public abstract class User {
+    public abstract static class User {
         public Status status;
         public String firstName;
         public String lastName;
@@ -155,12 +158,12 @@ public class Chapter7ObjectOrientedDesign {
         public abstract boolean removeUser(String username);
     }
 
-    public abstract class AddRequest {
+    public abstract static class AddRequest {
         public String fromUser;
         public String toUSer;
     }
 
-    public abstract class Server {
+    public abstract static class Server {
         public abstract boolean login(String user, String pass);
     }
 
@@ -199,11 +202,11 @@ public class Chapter7ObjectOrientedDesign {
         void delete(final File file);
     }
 
-    public class Drive {
+    public static class Drive {
 
     }
 
-    public class File implements BaseFileSystem {
+    public static class File implements BaseFileSystem {
 
         // contains metadata
         @Override
@@ -257,7 +260,7 @@ public class Chapter7ObjectOrientedDesign {
         }
     }
 
-    public class Folder implements BaseFileSystem {
+    public static class Folder implements BaseFileSystem {
 
         public List<File> fileList;
 
@@ -312,7 +315,7 @@ public class Chapter7ObjectOrientedDesign {
         }
     }
 
-    public class FileSystem {
+    public static class FileSystem {
         public List<BaseFileSystem> baseFileSystemList;
         public List<Drive> driveList;
     }

@@ -64,6 +64,7 @@ public class Chapter2LinkedLists {
         }
     }
 
+    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // Time - O(N^2)
     public static void removeDuplicates3(final Node<Integer> node) {
         if (node == null) {
@@ -85,6 +86,7 @@ public class Chapter2LinkedLists {
         }
     }
 
+    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // book
     public static void deleteDupsC(final Node<Integer> head) {
         if (head == null) {

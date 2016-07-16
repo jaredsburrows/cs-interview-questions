@@ -5,29 +5,29 @@ package questions.sorting;
  */
 public class MergeSort {
 
-    public static void mergeSort(final int[] numbers, final int left, final int right) {
+    public static int[] mergeSortIndex2(final int[] numbers, final int low, final int high) {
+        mergeSortIndex(numbers, low, high);
+        return numbers;
+    }
+
+    public static void mergeSortIndex(final int[] numbers, final int left, final int right) {
         if (numbers == null) {
             return;
         }
 
         if (right > left) {
             final int middle = (left + right) / 2;
-            mergeSort(numbers, left, middle);
-            mergeSort(numbers, middle + 1, right);
-            mergeSort(numbers, left, middle + 1, right);
+            mergeSortIndex(numbers, left, middle);
+            mergeSortIndex(numbers, middle + 1, right);
+            mergeSortIndex(numbers, left, middle + 1, right);
         }
     }
 
-    public static int[] mergeSort2(final int[] numbers, final int low, final int high) {
-        mergeSort(numbers, low, high);
-        return numbers;
-    }
-
-    static void mergeSort(final int[] numbers, int left, int mid, int right) {
+    private static void mergeSortIndex(final int[] numbers, int left, int mid, int right) {
         final int[] array = new int[right + left + 1];
-        int leftEnd = mid - 1;
+        final int leftEnd = mid - 1;
+        final int numElements = right - left + 1;
         int index = left;
-        int numElements = right - left + 1;
 
         while (left <= leftEnd && mid <= right) {
             if (numbers[left] <= numbers[mid]) {
@@ -51,7 +51,12 @@ public class MergeSort {
         }
     }
 
-    public static void mergeSort(final int[] numbers) {
+    public static int[] mergeSortArray2(final int[] numbers) {
+        mergeSortArray(numbers);
+        return numbers;
+    }
+
+    public static void mergeSortArray(final int[] numbers) {
         if (numbers == null) {
             return;
         }
@@ -69,17 +74,12 @@ public class MergeSort {
         System.arraycopy(numbers, 0, left, 0, mid);
         System.arraycopy(numbers, mid, right, 0, length - mid);
 
-        mergeSort(left);
-        mergeSort(right);
-        mergeSort(numbers, left, right);
+        mergeSortArray(left);
+        mergeSortArray(right);
+        mergeSortArray(numbers, left, right);
     }
 
-    public static int[] mergeSort2(final int[] numbers) {
-        mergeSort(numbers);
-        return numbers;
-    }
-
-    static void mergeSort(final int[] numbers, final int[] low, final int[] high) {
+    private static void mergeSortArray(final int[] numbers, final int[] low, final int[] high) {
         final int leftLength = low.length;
         final int rightLength = high.length;
         int indexLeft = 0;

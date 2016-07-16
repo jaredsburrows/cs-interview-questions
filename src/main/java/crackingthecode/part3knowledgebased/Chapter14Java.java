@@ -12,7 +12,7 @@ public class Chapter14Java {
     // "class can't be inherited"
 
     // Singleton
-    public class PrivateConstructor {
+    public static class PrivateConstructor {
 
         private PrivateConstructor mInstance = null;
 
@@ -29,7 +29,7 @@ public class Chapter14Java {
     }
 
     // Factory Pattern
-    public class BusinessClass {
+    public static class BusinessClass {
 
         private String mStr;
 
@@ -56,7 +56,7 @@ public class Chapter14Java {
      */
     // Yes, finally with always be "executed" unless the program exits before hand or the thread
     // executing the "finally" is killed off
-    private boolean someMethod() {
+    private static boolean someMethod() {
         try {
             System.out.print("Test - SomeMethod");
             return true;
@@ -88,7 +88,7 @@ public class Chapter14Java {
      */
     // http://en.wikipedia.org/wiki/Comparison_of_Java_and_C%2B%2B#Templates_vs._Generics
     // TODO
-    class Test<T> {
+    public static class Test<T> {
         void testMethod(final T item) {
 
         }

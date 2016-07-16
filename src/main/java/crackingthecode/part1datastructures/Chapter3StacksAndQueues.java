@@ -32,15 +32,17 @@ public class Chapter3StacksAndQueues {
 
         private final Stack<Integer> mMinStack = new Stack<>();
 
-        public void push(final int value) {
+        @Override
+        public Integer push(final Integer value) {
             if (value <= this.getMinimum()) {
                 this.mMinStack.push(value);
             }
 
-            super.push(value);
+            return super.push(value);
         }
 
-        public Integer pop() {
+        @Override
+        public synchronized Integer pop() {
             final int value = super.pop();
             if (value == this.getMinimum()) {
                 this.mMinStack.pop();
@@ -80,8 +82,7 @@ public class Chapter3StacksAndQueues {
         public SetOfStacks(final int capacity) {
             this.mCurrentStack = 0;
             this.mCapacity = capacity;
-            final Stack<T> stack = new Stack<>();
-            this.mStacks.add(stack);
+            this.mStacks.add(new Stack<T>());
         }
 
         public void push(final T item) {

@@ -39,8 +39,16 @@ public class ValidPalindrome {
         return true;
     }
 
+    public static boolean isLowerCase(final char character) {
+        return character >= 'a' && character <= 'z';
+    }
+
+    public static boolean isUpperCase(final char character) {
+        return character >= 'A' && character <= 'Z';
+    }
+
     public static boolean isChar(final char character) {
-        return character >= 'a' && character <= 'z' || character >= 'A' && character <= 'Z';
+        return isLowerCase(character) || isUpperCase(character);
     }
 
     public static boolean isNum(final char character) {

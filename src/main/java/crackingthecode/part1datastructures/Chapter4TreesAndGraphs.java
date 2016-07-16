@@ -140,6 +140,7 @@ public class Chapter4TreesAndGraphs {
      * binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not
      * necessarily a binary search tree.
      */
+    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // Time - O(LOG(N)) in Balanced binary tree, O(N) in skewed tree.
     public static <T> TreeNode<T> commonAncestor(final TreeNode<T> root, final TreeNode<T> node1,
                                                  final TreeNode<T> node2) {
@@ -161,8 +162,9 @@ public class Chapter4TreesAndGraphs {
         return left != null ? left : right;
     }
 
+    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     public static <T> TreeNode<T> commonAncestor2(final TreeNode<T> root, final TreeNode<T> node1,
-                                                 final TreeNode<T> node2) {
+                                                  final TreeNode<T> node2) {
         if (root == null) {
             return null;
         }
@@ -174,8 +176,11 @@ public class Chapter4TreesAndGraphs {
         final TreeNode<T> left = commonAncestor2(root.left, node1, node2);
         final TreeNode<T> right = commonAncestor2(root.right, node1, node2);
 
-        if (left == node1 && right == node2
-                || left == node2 && right == node2) {
+        if (left == node1 && right == node2) {
+            return root;
+        }
+
+        if (left == node2 && right == node2) {
             return root;
         }
 
@@ -186,6 +191,7 @@ public class Chapter4TreesAndGraphs {
      * 4.7 - You have two very large binary trees: T1, with millions of nodes, and T2, with hundreds
      * of nodes. Create an algorithm to decide if T2 is a subtree of T1.
      */
+    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // T1 - millions of nodes
     // T2 - supposed subtree of T1, should be the same or smaller
     public static <T> boolean isSubtree(final TreeNode<T> tree, final TreeNode<T> subTree) {

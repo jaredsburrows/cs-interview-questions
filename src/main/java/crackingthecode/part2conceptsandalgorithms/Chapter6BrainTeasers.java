@@ -20,7 +20,6 @@ public class Chapter6BrainTeasers {
      * 31 dominos to cover the entire board? Prove your answer (by providing an example, or
      * showing why it’s impossible).
      */
-    // TODO
     public static int chessPieces() {
         // 1 domino     = 2 squares
         // 31 dominoes  = 62 squares
@@ -63,7 +62,6 @@ public class Chapter6BrainTeasers {
      * FOLLOW UP
      * Prove that your solution is correct.
      */
-    // TODO
     public static int howLong() {
         // n - people
         // c - hats, atleast one person has a hat
@@ -76,7 +74,6 @@ public class Chapter6BrainTeasers {
      * break. If it’s dropped from any floor below, it will not break. You’re given 2 eggs. Find N,
      * while minimizing the number of drops for the worst case.
      */
-    // TODO
     public static int floor() {
         // 100 floors
         // if N >= break else !break

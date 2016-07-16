@@ -54,7 +54,6 @@ public class Chapter8Recursion {
      * Imagine certain squares are “off limits”, such that the robot can not step on them. Design an
      * algorithm to get all possible paths for the robot.
      */
-    // TODO
     // http://artofproblemsolving.com/community/c21002t54378f21002h1058853_lattice_paths
     // - n!/(r! * (n - r)!), N = 20, (40 20) - 40!/(20! * (40 - 20)!) - (20 * 2!/20!)/20! - > (21 -> 40)/20!
     // 2N! / (N! * (2N * N)!) -> (2N! / N!) / N!
@@ -71,8 +70,7 @@ public class Chapter8Recursion {
         if (initial.size() == size) {
             // empty set
             finalList = new ArrayList<>();
-            final List<Integer> list = new ArrayList<>();
-            finalList.add(list);
+            finalList.add(new ArrayList<Integer>());
         } else {
             finalList = getSubsets(initial, size + 1);
             final List<ArrayList<Integer>> newSetList = new ArrayList<>();

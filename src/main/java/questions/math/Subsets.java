@@ -18,8 +18,7 @@ public class Subsets {
         final List<ArrayList<T>> subsets = new ArrayList<>();
 
         // Empty Set
-        final ArrayList<T> list = new ArrayList<>();
-        subsets.add(list);
+        subsets.add(new ArrayList<T>());
 
         // Order
         Collections.sort(data);
@@ -48,8 +47,7 @@ public class Subsets {
         final List<List<T>> subsets = new ArrayList<>();
 
         // Empty Set
-        final List<T> list = new ArrayList<>();
-        subsets.add(list);
+        subsets.add(new ArrayList<T>());
 
         // Order
         Arrays.sort(data);
