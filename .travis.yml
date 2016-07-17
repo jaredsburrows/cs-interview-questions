@@ -17,9 +17,6 @@ branches:
   except:
     - gh-pages
 
-notifications:
-  email: false
-
 sudo: false
 
 before_cache:
