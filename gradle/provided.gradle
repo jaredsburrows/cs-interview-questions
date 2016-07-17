@@ -1,3 +1,5 @@
+// Create the Maven "provided" scope
+// See: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html
 configurations {
     provided
 }

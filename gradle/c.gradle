@@ -1,4 +1,6 @@
-def hasCUnit = file("/usr/local/Cellar/cunit/2.1-3/include").exists()
+// See: https://docs.gradle.org/current/userguide/native_software.html
+// See: https://docs.gradle.org/current/dsl/org.gradle.language.c.tasks.CCompile.html
+def hasCUnit = file("/usr/local/Cellar/cunit/2.1-3/include").file
 
 model {
     repositories {
@@ -61,7 +63,7 @@ model {
             }
 
             if (toolChain in VisualCpp) {
-                cCompiler.args "/Wall", "/Wx"
+                cCompiler.args "/Wall", "/Wx", "/O1", "/O2", "/Ox"
             }
         }
 

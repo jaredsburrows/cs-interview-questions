@@ -1,3 +1,5 @@
+// Representation of data captured as you run your build
+// See: https://plugins.gradle.org/plugin/com.gradle.build-scan
 buildScan {
     licenseAgreementUrl = "https://gradle.com/terms-of-service"
     licenseAgree = "yes"

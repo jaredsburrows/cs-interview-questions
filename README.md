@@ -6,64 +6,66 @@
 [![AppVeyor Windows Build](https://img.shields.io/appveyor/ci/jaredsburrows/cs-interview-questions/master.svg?label=Windows%20Build)](https://ci.appveyor.com/project/jaredsburrows/cs-interview-questions/branch/master)
 [![Coveralls Code Coverage](https://img.shields.io/coveralls/jaredsburrows/cs-interview-questions/master.svg?label=Code%20Coverage)](https://coveralls.io/github/jaredsburrows/cs-interview-questions?branch=master)
 
+This is a collection of my personal solutions to practice interview questions. The repository is built using Gradle for continuous integration and delivery.
+
 ## CodeEval
 
-**Site:** https://www.codeeval.com/
+ - **Site:** https://www.codeeval.com/
 
-**My Profile:** https://www.codeeval.com/profile/jaredsburrows/
+ - **My Profile:** https://www.codeeval.com/profile/jaredsburrows/
 
-**My Solutions:** [src/main/java/codeeval](src/main/java/codeeval)
+ - **My Solutions:** [src/main/java/codeeval](src/main/java/codeeval)
 
 
 
 ## Codingbat
 
-**Site:** http://codingbat.com
+ - **Site:** http://codingbat.com
 
-**My Solutions:** [src/main/java/codingbat](src/main/java/codingbat)
+ - **My Solutions:** [src/main/java/codingbat](src/main/java/codingbat)
 
 
 
 ## Cracking The Code Interview
 
-**Site:** http://www.careercup.com/book
+ - **Site:** http://www.careercup.com/book
 
-**Github:** https://github.com/gaylemcd/ctci
+ - **Github:** https://github.com/gaylemcd/ctci
 
-**My Solutions:** [src/main/java/crackingthecode](src/main/java/crackingthecode)
+ - **My Solutions:** [src/main/java/crackingthecode](src/main/java/crackingthecode)
 
 
 
 ## LeetCode
 
-**Site:** https://leetcode.com/
+ - **Site:** https://leetcode.com/
 
-**My Solutions:** [src/main/java/leetcode](src/main/java/leetcode)
+ - **My Solutions:** [src/main/java/leetcode](src/main/java/leetcode)
 
 
 
 ## Project Euler
 
-**Site:** http://projecteuler.net/
+ - **Site:** http://projecteuler.net/
 
-**My Solutions:** [src/main/java/projecteuler](src/main/java/projecteuler)
+ - **My Solutions:** [src/main/java/projecteuler](src/main/java/projecteuler)
 
-**My Profile:**
+ - **My Profile:**
 <img src="https://projecteuler.net/profile/jaredsburrows.png">
 
 
 
 ## Common Questions
 
-**My Solutions:** [src/main/java/questions](src/main/java/questions)
+- **My Solutions:** [src/main/java/questions](src/main/java/questions)
 
 
 
 ## StackOverflow
 
-**Site:** http://www.stackoverflow.com/
+- **Site:** http://www.stackoverflow.com/
 
-**My Profile:**
+- **My Profile:**
 <a href="http://stackexchange.com/users/918082"><img src="http://stackexchange.com/users/flair/918082.png"></a>
 
 

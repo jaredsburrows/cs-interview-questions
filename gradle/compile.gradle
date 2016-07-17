@@ -1,3 +1,7 @@
+// For any project that contains tasks with type "JavaCompile"
+// Eg. You would use "tasks.withType(JavaCompile)" in projects like Android projects
+// that do not allow you to specify the "java" plugin
+// See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.compile.JavaCompile.html
 tasks.withType(JavaCompile) {
     sourceCompatibility = JavaVersion.VERSION_1_7
     targetCompatibility = JavaVersion.VERSION_1_7
@@ -14,6 +18,10 @@ tasks.withType(JavaCompile) {
     }
 }
 
+// For any project that contains tasks with type "GroovyCompile"
+// Eg. You would use "tasks.withType(GroovyCompile)" in projects like Android projects
+// that do not allow you to specify the "groovy" plugin
+// See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.compile.GroovyCompile.html
 tasks.withType(GroovyCompile) {
     sourceCompatibility = JavaVersion.VERSION_1_7
     targetCompatibility = JavaVersion.VERSION_1_7
@@ -31,9 +39,14 @@ tasks.withType(GroovyCompile) {
 
     configure(groovyOptions) {
         encoding = "utf-8"
+        fork = true
     }
 }
 
+// For any project that contains tasks with type "Test"
+// Eg. You would use "tasks.withType(Test)" in projects like Android projects
+// that do not allow you to specify the "java" plugin
+// See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.testing.Test.html
 tasks.withType(Test) {
     testLogging {
         exceptionFormat "full"
@@ -45,6 +58,41 @@ tasks.withType(Test) {
     }
 }
 
+// For any project that contains tasks with type "Javadoc"
+// See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.javadoc.Javadoc.html
+tasks.withType(Javadoc) {
+    title = project.description
+    configure(options) {
+        header = project.description
+        windowTitle = "Documentation"
+        docTitle = "Documentation"
+        bottom = "Copyright &copy; 2015-" + Calendar.getInstance().get(Calendar.YEAR) + ", Jared Burrows"
+        memberLevel = JavadocMemberLevel.PROTECTED
+        links = ["http://docs.oracle.com/javase/8/docs/api/",
+                 "http://docs.oracle.com/javase/7/docs/api/"]
+        encoding = "utf-8"
+        docEncoding = "utf-8"
+        charSet = "utf-8"
+        if (JavaVersion.current().isJava8Compatible()) {
+            addStringOption("Xdoclint:none", "-quiet")
+        }
+    }
+}
+
+// For any project that contains tasks with type "GroovyDoc"
+// See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.javadoc.Groovydoc.html
+tasks.withType(Groovydoc) {
+    docTitle = "Documentation"
+    header = project.description
+    windowTitle = "Documentation"
+    footer = "Copyright &copy; 2015-" + Calendar.getInstance().get(Calendar.YEAR) + ", Jared Burrows"
+    links = ["http://docs.oracle.com/javase/8/docs/api/",
+             "http://docs.oracle.com/javase/7/docs/api/",
+             "http://docs.groovy-lang.org/docs/groovy-2.4.7/html/gapi/"]
+}
+
+// For any project that contains tasks with type "JavaForkOptions"
+// See: https://docs.gradle.org/current/javadoc/org/gradle/process/JavaForkOptions.html
 tasks.withType(JavaForkOptions) {
     // Prevent forked processes from stealing focus (on MacOS at least)
     jvmArgs "-Djava.awt.headless=true"

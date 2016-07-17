@@ -1,3 +1,5 @@
+// Plugins block for applying local and plugins from the Gradle repository
+// See: https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block
 plugins {
     id "com.gradle.build-scan"          version "1.0"
     id "net.ltgt.errorprone"            version "0.0.8"
@@ -19,18 +21,22 @@ plugins {
     id "codenarc"
 }
 
+// Repositories block for downloading dependencies in the "dependencies" block
+// See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories(groovy.lang.Closure)
 repositories {
     maven {
         url "https://plugins.gradle.org/m2/"
     }
 }
 
+// Apply extra configuration
 apply from: rootProject.file("gradle/buildScan.gradle")
+apply from: rootProject.file("gradle/provided.gradle")
 apply from: rootProject.file("gradle/compile.gradle")
 apply from: rootProject.file("gradle/codeQuality.gradle")
-apply from: rootProject.file("gradle/provided.gradle")
 apply from: rootProject.file("gradle/asciidoc.gradle")
 apply from: rootProject.file("gradle/java.gradle")
+apply from: rootProject.file("gradle/groovy.gradle")
 apply from: rootProject.file("gradle/c.gradle")
 apply from: rootProject.file("gradle/cpp.gradle")
 apply from: rootProject.file("gradle/dependencies.gradle")

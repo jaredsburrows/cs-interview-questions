@@ -1,4 +1,6 @@
-def hasGTest = file("/usr/local/Cellar/gtest/include").exists()
+// See: https://docs.gradle.org/current/userguide/native_software.html
+// See: https://docs.gradle.org/current/dsl/org.gradle.language.cpp.tasks.CppCompile.html
+def hasGTest = file("/usr/local/Cellar/gtest/include").file
 
 model {
     repositories {
@@ -62,8 +64,8 @@ model {
             }
 
             if (toolChain in VisualCpp) {
-                cCompiler.args "/Wall", "/Wx"
-                cppCompiler.args "/Wall", "/Wx"
+                cCompiler.args "/Wall", "/Wx", "/O1", "/O2", "/Ox"
+                cppCompiler.args "/Wall", "/Wx", "/O1", "/O2", "/Ox"
             }
         }
 

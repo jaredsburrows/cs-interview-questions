@@ -1,3 +1,5 @@
+// Text processor and publishing toolchain for converting AsciiDoc content to HTML5
+// See: http://asciidoctor.org/docs/asciidoctor-gradle-plugin/
 asciidoctor {
     description = project.description
 
@@ -6,6 +8,7 @@ asciidoctor {
     attributes "title": project.name
 }
 
+// Do not allow this plugin to add extra repositories to the build
 asciidoctorj {
     noDefaultRepositories = true
 }

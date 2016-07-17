@@ -1,4 +1,4 @@
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 #include "crackingthecode/part1datastructures/chapter1arraysandstrings.h"
 

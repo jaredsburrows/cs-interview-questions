@@ -15,3 +15,5 @@ gradle-app.setting
 ### Intellij ###
 *.iml
 .idea/
+
+/buildSrc

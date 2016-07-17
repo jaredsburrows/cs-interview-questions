@@ -1,17 +1,17 @@
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 #include "test/configurable_event_listener.h"
 
 int main(int argc, char **argv) {
 
-     // Init Gtest
+    // Init Gtest
     testing::InitGoogleTest(&argc, argv);
 
     // Remove the test default listener
     testing::TestEventListeners &listeners = testing::UnitTest::GetInstance()->listeners();
-    auto default_printer = listeners.Release(listeners.default_result_printer());
+    auto printer = listeners.Release(listeners.default_result_printer());
 
     // Configure new listener
-    ConfigurableEventListener *listener = ConfigurableEventListener::Builder(default_printer)
+    auto *listener = ConfigurableEventListener::Builder(printer)
                                                     .showFailures()
                                                     .build();
     listeners.Append(listener);
