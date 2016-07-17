@@ -1,3 +1,3 @@
 #include <cstdbool>
 
-const bool isUniqueCharacters(const char* input);
+bool isUniqueCharacters(const char* input);

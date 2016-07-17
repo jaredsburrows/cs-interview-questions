@@ -61,12 +61,12 @@ class ConfigurableEventListener : public TestEventListener {
     public:
         class Builder;
 
-        virtual ~ConfigurableEventListener() {
+        virtual ~ConfigurableEventListener() override {
             delete this->eventListener;
         }
 
         // Fired before any test activity starts.
-        virtual void OnTestProgramStart(const UnitTest& unit_test) {
+        virtual void OnTestProgramStart(const UnitTest& unit_test) override {
             if (this->showProgramStartEnd) {
                 this->eventListener->OnTestProgramStart(unit_test);
             }
@@ -75,53 +75,53 @@ class ConfigurableEventListener : public TestEventListener {
         // Fired before each iteration of tests starts.  There may be more than
         // one iteration if GTEST_FLAG(repeat) is set. iteration is the iteration
         // index, starting from 0.
-        virtual void OnTestIterationStart(const UnitTest& unit_test, int iteration) {
+        virtual void OnTestIterationStart(const UnitTest& unit_test, int iteration) override {
             if (this->showIterationsStartEnd) {
                 this->eventListener->OnTestIterationStart(unit_test, iteration);
             }
         }
 
         // Fired before environment set-up for each iteration of tests starts.
-        virtual void OnEnvironmentsSetUpStart(const UnitTest& unit_test) {
+        virtual void OnEnvironmentsSetUpStart(const UnitTest& unit_test) override {
             if (this->showEnvironment) {
                 this->eventListener->OnEnvironmentsSetUpStart(unit_test);
             }
         }
 
         // Fired after environment set-up for each iteration of tests ends.
-        virtual void OnEnvironmentsSetUpEnd(const UnitTest& unit_test) {
+        virtual void OnEnvironmentsSetUpEnd(const UnitTest& unit_test) override {
             if (this->showEnvironment) {
-               this->eventListener->OnEnvironmentsSetUpEnd(unit_test);
+                this->eventListener->OnEnvironmentsSetUpEnd(unit_test);
             }
         }
 
         // Fired before the test case starts.
-        virtual void OnTestCaseStart(const TestCase& test_case) {
+        virtual void OnTestCaseStart(const TestCase& test_case) override {
             if (this->showTestCases) {
                 this->eventListener->OnTestCaseStart(test_case);
             }
         }
 
         // Fired before the test starts.
-        virtual void OnTestStart(const TestInfo& test_info) {
+        virtual void OnTestStart(const TestInfo& test_info) override {
             if (this->showTestNames) {
                 this->eventListener->OnTestStart(test_info);
             }
         }
 
         // Fired after a failed assertion or a SUCCEED() invocation.
-        virtual void OnTestPartResult(const TestPartResult& result) {
-            if (showSuccesses && result.passed()) {
+        virtual void OnTestPartResult(const TestPartResult& result) override {
+            if (this->showSuccesses && result.passed()) {
                 this->eventListener->OnTestPartResult(result);
             }
 
-            if (showFailures && result.failed()) {
+            if (this->showFailures && result.failed()) {
                 this->eventListener->OnTestPartResult(result);
             }
         }
 
         // Fired after the test ends.
-        virtual void OnTestEnd(const TestInfo& test_info) {
+        virtual void OnTestEnd(const TestInfo& test_info) override {
             if ((this->showInlineFailures && test_info.result()->Failed())
                     || (this->showSuccesses && !test_info.result()->Failed())) {
                 this->eventListener->OnTestEnd(test_info);
@@ -129,35 +129,35 @@ class ConfigurableEventListener : public TestEventListener {
         }
 
         // Fired after the test case ends.
-        virtual void OnTestCaseEnd(const TestCase& test_case) {
+        virtual void OnTestCaseEnd(const TestCase& test_case) override {
             if (this->showTestCases) {
                 this->eventListener->OnTestCaseEnd(test_case);
             }
         }
 
         // Fired before environment tear-down for each iteration of tests starts.
-        virtual void OnEnvironmentsTearDownStart(const UnitTest& unit_test) {
+        virtual void OnEnvironmentsTearDownStart(const UnitTest& unit_test) override {
             if (this->showEnvironment) {
                 this->eventListener->OnEnvironmentsTearDownStart(unit_test);
             }
         }
 
         // Fired after environment tear-down for each iteration of tests ends.
-        virtual void OnEnvironmentsTearDownEnd(const UnitTest& unit_test) {
-            if (showEnvironment) {
+        virtual void OnEnvironmentsTearDownEnd(const UnitTest& unit_test) override {
+            if (this->showEnvironment) {
                 this->eventListener->OnEnvironmentsTearDownEnd(unit_test);
             }
         }
 
         // Fired after each iteration of tests finishes.
-        virtual void OnTestIterationEnd(const UnitTest& unit_test, int iteration) {
+        virtual void OnTestIterationEnd(const UnitTest& unit_test, int iteration) override {
             if (this->showIterationsStartEnd) {
                 this->eventListener->OnTestIterationEnd(unit_test, iteration);
             }
         }
 
         // Fired after all test activities have ended.
-        virtual void OnTestProgramEnd(const UnitTest& unit_test) {
+        virtual void OnTestProgramEnd(const UnitTest& unit_test) override {
             if (this->showProgramStartEnd) {
                 this->eventListener->OnTestProgramEnd(unit_test);
             }

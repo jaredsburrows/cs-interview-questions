@@ -39,12 +39,3 @@ TEST(graphnode, test_equals) {
 
 //    ASSERT_EQ(&left, &right);
 }
-
-TEST(graphnode, test_string) {
-    GraphNode<int> node;
-
-    std::string test;
-//    std::cout << node;
-
-//    ASSERT_EQ(left, right);
-}

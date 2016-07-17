@@ -3,7 +3,7 @@
 
 #include "crackingthecode/part1datastructures/chapter1arraysandstrings.h"
 
-const bool isUniqueCharacters(const char* input) {
+bool isUniqueCharacters(const char* input) {
     if (!input || *input == '\0') {
         return false;
     }

@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <math.h>
 
-const int isPrime003(const int n)
+int isPrime003(const int n)
 {
     int i = 0;
 
