@@ -1,12 +1,3 @@
-// See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:configurations(groovy.lang.Closure)
-configurations {
-    all {
-        resolutionStrategy {
-            force "com.google.errorprone:error_prone_core:2.0.9"
-        }
-    }
-}
-
 // See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies(groovy.lang.Closure)
 dependencies {
     provided "com.google.code.findbugs:annotations:3.0.1"
@@ -14,7 +5,7 @@ dependencies {
     testCompile localGroovy()
     testCompile "org.spockframework:spock-core:1.0-groovy-2.4", { exclude module: "groovy-all" }
     testCompile "cglib:cglib-nodep:3.2.4"
-    testCompile "nl.jqno.equalsverifier:equalsverifier:2.1.2"
+    testCompile "nl.jqno.equalsverifier:equalsverifier:2.1.4"
 
     testRuntime "org.slf4j:slf4j-api:1.7.21"
 
