@@ -12,8 +12,8 @@ int main(int argc, char **argv) {
 
     // Configure new listener
     auto *listener = ConfigurableEventListener::Builder(printer)
-                                                    .showFailures()
-                                                    .build();
+                     .showFailures()
+                     .build();
     listeners.Append(listener);
 
     // Run

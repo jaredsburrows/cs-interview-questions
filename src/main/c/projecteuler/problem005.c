@@ -5,24 +5,27 @@
  * number that is evenly divisible by all of the numbers from 1 to 20? */
 #include <stdio.h>
 
-int smallest(int n)
-{
+int smallest(int n) {
     int i = 0;
-    for (i = 1; i < 21; i++)
-        if (n % i)
+
+    for (i = 1; i < 21; i++) {
+        if (n % i) {
             return 0;
+        }
+    }
+
     return 1;
 }
 
 
- int problem005()
- {
+int problem005() {
     int i = 1;
 
-    while (! smallest(i))
+    while (! smallest(i)) {
         i++;
+    }
 
     printf("%d\n", i);
 
     return 0;
- }
+}

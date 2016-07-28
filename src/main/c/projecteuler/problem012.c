@@ -17,23 +17,31 @@
 #include <stdio.h>
 #include <math.h>
 
- int problem012()
- {
-    int i = 0, j = 0, sum = 0, max = 0, num = 0, count = 0;
+int problem012() {
+    int i = 0;
+    int j = 0;
+    int sum = 0;
+    int max = 0;
+    int num = 0;
+    int count = 0;
 
-    for (i = 1; max <= 500; i++)
-    {
-        sum += i, num = (int)pow(sum, 0.5);
+    for (i = 1; max <= 500; i++) {
+        sum += i;
+        num = (int)pow(sum, 0.5);
 
-        for (j = 1; j < num + 1; j++)
-            if (! (sum % j))
+        for (j = 1; j < num + 1; j++) {
+            if (! (sum % j)) {
                 count += 2;
+            }
+        }
 
-        if (num * num == sum)
+        if (num * num == sum) {
             count--;
+        }
 
-        if (max < count)
+        if (max < count) {
             max = count;
+        }
 
         count = 0;
     }
@@ -42,4 +50,4 @@
     printf("%d\n", sum);
 
     return 0;
- }
+}

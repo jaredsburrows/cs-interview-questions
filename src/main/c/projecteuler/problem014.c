@@ -16,14 +16,14 @@
 #include <stdio.h>
 #include <math.h>
 
-long seq(long a)
-{
+long seq(long a) {
     long count = 0;
 
-    while (a > 0)
-    {
-        if (a == 1)
+    while (a > 0) {
+
+        if (a == 1) {
             break;
+        }
 
         a = (a % 2 == 0) ? a / 2 : (3 * a) + 1;
 
@@ -33,15 +33,16 @@ long seq(long a)
     return ++count;
 }
 
- int problem014()
- {
-    long start = 0, num = 0, i = 1000000, temp = 0;
+int problem014() {
+    long start = 0;
+    long num = 0;
+    long i = 1000000;
+    long temp = 0;
 
-    while (i-- != 13)
-    {
+    while (i-- != 13) {
         temp = seq(i);
-        if (temp > start)
-        {
+
+        if (temp > start) {
             start = temp;
             num = i;
         }
@@ -51,4 +52,4 @@ long seq(long a)
     printf("%ld\n", num);
 
     return 0;
- }
+}

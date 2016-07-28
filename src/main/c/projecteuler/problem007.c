@@ -5,36 +5,39 @@
 #include <stdio.h>
 #include <math.h>
 
-int isPrime007(int n)
-{
+int isPrime007(int n) {
     int i = 0;
 
-    if (n < 4)
+    if (n < 4) {
         return 1;
+    }
 
-    if (! (n % 2))
+    if (! (n % 2)) {
         return 0;
+    }
 
-    for (i = 3; i <= pow(n, 0.5); i+=2)
-        if (! (n % i))
+    for (i = 3; i <= pow(n, 0.5); i+=2) {
+        if (! (n % i)) {
             return 0;
+        }
+    }
 
     return 1;
 }
 
- int problem007()
- {
-    int i = 0, count = 0;
+int problem007() {
+    int i = 0;
+    int count = 0;
 
-    while (count <= 10001)
-    {
+    while (count <= 10001) {
         i++;
-        if (isPrime007(i))
+        if (isPrime007(i)) {
             count++;
+        }
     }
 
     printf("%d\n", i);
 
 
     return 0;
- }
+}

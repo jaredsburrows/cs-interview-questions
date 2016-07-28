@@ -6,16 +6,18 @@
 #include <stdio.h>
 #include <math.h>
 
- int problem015()
- {
+int problem015() {
     /* (20 * 2!/20!)/20! - > (21 -> 40)/20! */
 
-    int i = 0, k = 0;
+    int i = 0;
+    int k = 0;
     double product = 1;
-    for (i = 21, k = 20; i < 41; i++, k--)
+
+    for (i = 21, k = 20; i < 41; i++, k--) {
         product *= ((double)i / k);
+    }
 
     printf("%ld\n", (long)ceil(product));
 
     return 0;
- }
+}

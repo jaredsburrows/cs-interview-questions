@@ -5,12 +5,12 @@
 
 template <typename T>
 class GraphNode {
-    public:
-        T value;
-        GraphNode<T>* next;
-        GraphNode<T>* previous;
-        GraphNode<T>() = default;
-        GraphNode<T>(const T& value) : value(value) { }
+  public:
+    T value;
+    GraphNode<T>* next;
+    GraphNode<T>* previous;
+    GraphNode<T>() = default;
+    GraphNode<T>(const T& value) : value(value) { }
 //        GraphNode(GraphNode<T>* next, T const& copy);   // copy
 //        GraphNode(GraphNode<T>* next, T&& move);        // move
 //        template<typename... Args>

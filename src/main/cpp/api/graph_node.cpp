@@ -28,9 +28,9 @@ bool GraphNode<T>::operator==(const GraphNode<T>& object) const {
 template <typename T>
 std::ostream& operator<<(std::ostream& strm, GraphNode<T>& object) {
     return strm << "GraphNode{"
-                << "value=" << object->value
-                << ", next=" << object->next
-                << ", neighbors=" << object->neighbors
-                << ", visited=" << object->visited
-                << '}';
+           << "value=" << object->value
+           << ", next=" << object->next
+           << ", neighbors=" << object->neighbors
+           << ", visited=" << object->visited
+           << '}';
 }

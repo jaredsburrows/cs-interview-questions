@@ -3,7 +3,7 @@
 
 template <typename T>
 class swap {
-    public:
+  public:
     static void swap(const T& a, const T& b) {
         const T temp = a;
         a = b;
