@@ -22,12 +22,11 @@ int problem012() {
     int j = 0;
     int sum = 0;
     int max = 0;
-    int num = 0;
     int count = 0;
 
     for (i = 1; max <= 500; i++) {
         sum += i;
-        num = (int)pow(sum, 0.5);
+        int num = (int)pow(sum, 0.5);
 
         for (j = 1; j < num + 1; j++) {
             if (! (sum % j)) {

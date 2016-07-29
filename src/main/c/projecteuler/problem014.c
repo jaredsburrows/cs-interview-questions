@@ -37,10 +37,9 @@ int problem014() {
     long start = 0;
     long num = 0;
     long i = 1000000;
-    long temp = 0;
 
     while (i-- != 13) {
-        temp = seq(i);
+        long temp = seq(i);
 
         if (temp > start) {
             start = temp;
