@@ -1,6 +1,5 @@
 package questions.tree
 
-import api.TreeNode
 import test.BaseSpec
 
 /**
@@ -8,25 +7,23 @@ import test.BaseSpec
  */
 class BstIsBstSpec extends BaseSpec {
 
-    def balancedTree = new TreeNode<>(5)
-    //      5
-    //     / \
-    //    3    9
-    //   / \  / \
-    //  1   4 6  10
-
-    def "setup"() {
-        balancedTree.right = new TreeNode<Integer>(9)
-        balancedTree.right.right = new TreeNode<Integer>(10)
-        balancedTree.right.left = new TreeNode<Integer>(6)
-        balancedTree.left = new TreeNode<Integer>(3)
-        balancedTree.left.right = new TreeNode<Integer>(4)
-        balancedTree.left.left = new TreeNode<Integer>(1)
-    }
-
     def "test isBst"() {
         expect:
-        BstIsBst.isBst(null)
-        BstIsBst.isBst(balancedTree)
+        BstIsBst.isBst(a) == b
+
+        where:
+        a               | b
+        null            | true
+        balancedTreeBST | true
+    }
+
+    def "test isBst2"() {
+        expect:
+        BstIsBst.isBst(a, b, c) == d
+
+        where:
+        a               | b                        | c                        | d
+        null            | Double.NEGATIVE_INFINITY | Double.POSITIVE_INFINITY | true
+        balancedTreeBST | Double.NEGATIVE_INFINITY | Double.POSITIVE_INFINITY | true
     }
 }

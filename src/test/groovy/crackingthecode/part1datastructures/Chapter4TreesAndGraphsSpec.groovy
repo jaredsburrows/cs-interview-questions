@@ -12,7 +12,6 @@ class Chapter4TreesAndGraphsSpec extends BaseSpec {
 
     @Shared def tree = new TreeNode(26)
     @Shared def subTree = new TreeNode(10)
-    @Shared def balancedTree = new TreeNode(0)
     @Shared def balancedTree2 = new TreeNode(0)
     @Shared def unbalancedTree = new TreeNode(5)
     @Shared def treeNode4 = new TreeNode<>(4)
@@ -24,13 +23,6 @@ class Chapter4TreesAndGraphsSpec extends BaseSpec {
     @Shared def treeNode7 = new TreeNode<>(7)
 
     def "setup"() {
-        balancedTree.right = new TreeNode(10)
-        balancedTree.right.left = new TreeNode(10)
-        balancedTree.right.right = new TreeNode(10)
-        balancedTree.left = new TreeNode(1)
-        balancedTree.left.left = new TreeNode(12)
-        balancedTree.left.right = new TreeNode(2)
-
         balancedTree2.right = new TreeNode(10)
         balancedTree2.right.left = new TreeNode(10)
         balancedTree2.left = new TreeNode(1)

@@ -44,32 +44,32 @@ class AddTwoNumbersSpec extends BaseSpec {
         shorterNumber.next.next = new Node<>(1)
 
         expect:
-        questions.linkedlist.AddTwoNumbers.addTwoNumbers(null, nine) == null
-        questions.linkedlist.AddTwoNumbers.addTwoNumbers(nine, null) == null
-        questions.linkedlist.AddTwoNumbers.addTwoNumbers(null, null) == null
+        AddTwoNumbers.addTwoNumbers(null, nine) == null
+        AddTwoNumbers.addTwoNumbers(nine, null) == null
+        AddTwoNumbers.addTwoNumbers(null, null) == null
 
-        def result = questions.linkedlist.AddTwoNumbers.addTwoNumbers(book1, book2)
+        def result = AddTwoNumbers.addTwoNumbers(book1, book2)
         result.value == 8
         result.next.value == 0
         result.next.next.value == 8
 
-        def result2 = questions.linkedlist.AddTwoNumbers.addTwoNumbers(pg, pg2)
+        def result2 = AddTwoNumbers.addTwoNumbers(pg, pg2)
         result2.value == 7
         result2.next.value == 0
         result2.next.next.value == 8
 
-        def result3 = questions.linkedlist.AddTwoNumbers.addTwoNumbers(nine, nine)
+        def result3 = AddTwoNumbers.addTwoNumbers(nine, nine)
         result3.value == 8
         result3.next.value == 9
         result3.next.next.value == 9
         result3.next.next.next.value == 1
 
-        def result4 = questions.linkedlist.AddTwoNumbers.addTwoNumbers(shortNumber, shorterNumber)
+        def result4 = AddTwoNumbers.addTwoNumbers(shortNumber, shorterNumber)
         result4.value == 2
         result4.next.value == 2
         result4.next.next.value == 1
 
-        def result5 = questions.linkedlist.AddTwoNumbers.addTwoNumbers(shorterNumber, shortNumber)
+        def result5 = AddTwoNumbers.addTwoNumbers(shorterNumber, shortNumber)
         result5.value == 2
         result5.next.value == 2
         result5.next.next.value == 1

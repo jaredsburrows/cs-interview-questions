@@ -14,6 +14,8 @@ class Chapter9SortingAndSearchingSpec extends BaseSpec {
 
         where:
         a                        | b         | c | d
+        null                     | null      | 0 | null
+        [4, 5, 6]                | null      | 0 | [4, 5, 6]
         [1, 2, 3, 0, 0, 0]       | [4, 5, 6] | 3 | [1, 2, 3, 4, 5, 6]
         [1, 2, 0, 0, 0]          | [3, 4]    | 2 | [1, 2, 3, 4, 0]
         [1, 2, 4, 6, 9, 0, 0, 0] | [3, 5, 7] | 5 | [1, 2, 3, 4, 5, 6, 7, 9]
@@ -54,8 +56,7 @@ class Chapter9SortingAndSearchingSpec extends BaseSpec {
 
         where:
         a                                                                | b         | c
-        ["a", "b", "c", "d", "e"]                                        | "b"       |
-                1 // normal - no spaces
+        ["a", "b", "c", "d", "e"]                                        | "b"       | 1 // normal - no spaces
         ["a", "b", "", "c", "d", "e"]                                    | "b"       | 1
         ["a", "", "b", "", "c", "", "", "", "d", "", "e"]                | "b"       | 2
         ["at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""] | "ball"    | 4

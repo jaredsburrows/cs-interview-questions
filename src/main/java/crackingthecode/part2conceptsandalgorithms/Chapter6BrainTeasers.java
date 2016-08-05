@@ -62,27 +62,19 @@ public class Chapter6BrainTeasers {
      * FOLLOW UP
      * Prove that your solution is correct.
      */
-    public static int howLong() {
-        // n - people
-        // c - hats, atleast one person has a hat
-
-        return 0;
-    }
+    // n - people
+    // c - hats, atleast one person has a hat
 
     /**
      * 6.5 - There is a building of 100 floors. If an egg drops from the Nth floor or above it will
      * break. If it’s dropped from any floor below, it will not break. You’re given 2 eggs. Find N,
      * while minimizing the number of drops for the worst case.
      */
-    public static int floor() {
-        // 100 floors
-        // if N >= break else !break
-        // Only given 2 eggs
+    // 100 floors
+    // if N >= break else !break
+    // Only given 2 eggs
 
-        // If we start from the bottom floor 1, first egg breaks at floor 2, then we know that N == 2
-
-        return 0;
-    }
+    // If we start from the bottom floor 1, first egg breaks at floor 2, then we know that N == 2
 
     /**
      * 6.6 - There are one hundred closed lockers in a hallway. A man begins by opening all one

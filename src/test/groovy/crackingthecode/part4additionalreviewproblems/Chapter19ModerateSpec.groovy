@@ -88,18 +88,16 @@ class Chapter19ModerateSpec extends BaseSpec {
 
     def "test 19.5 - getPseudoHits"() {
         expect:
-        Tuple<Integer, Integer> tuple = Chapter19Moderate.getPseudoHits("RGGB", "RGGB")
-        tuple.getLeft() == 4
-        tuple.getRight() == 0
-        Tuple<Integer, Integer> tuple2 = Chapter19Moderate.getPseudoHits("RGGB", "YRGB")
-        tuple2.getLeft() == 2
-        tuple2.getRight() == 1
-        Tuple<Integer, Integer> tuple3 = Chapter19Moderate.estimate("RGGB", "RGGB")
-        tuple3.getLeft() == 4
-        tuple3.getRight() == 0
-//        Tuple<Integer, Integer> tuple4 = Chapter19Moderate.estimate("RGGB", "YRGB")
-//        tuple4.getLeft() == 2
-//        tuple4.getRight() == 1
+        Chapter19Moderate.getPseudoHits(a, b) == c
+
+        where:
+        a      | b      | c
+        null   | null   | null
+        "RGGB" | null   | null
+        null   | "RGGB" | null
+        "123"  | "1324" | null
+        "RGGB" | "RGGB" | new Tuple<>(4, 0)
+        "RGGB" | "YRGB" | new Tuple<>(2, 1)
     }
 
     def "test 19.7 - getMaxSum"() {

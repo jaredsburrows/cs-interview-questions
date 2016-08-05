@@ -17,3 +17,10 @@ gradle-app.setting
 .idea/
 
 /buildSrc
+/src/main/cpp/extra
+
+### VSCode ###
+/.vscode
+
+### Mac OSX ###
+.DS_Store

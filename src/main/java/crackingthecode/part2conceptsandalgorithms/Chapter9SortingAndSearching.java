@@ -273,11 +273,10 @@ public class Chapter9SortingAndSearching {
     // Time - O(N*LOGN), Space -
     public static List<Tuple<Integer, Integer>> getCircusOrder(final ArrayList<Tuple<Integer, Integer>> original) {
 
-        // Java 6/7
         Collections.sort(original, new Comparator<Tuple<Integer, Integer>>() {
             @Override
-            public int compare(final Tuple<Integer, Integer> o1, final Tuple<Integer, Integer> o2) {
-                return o1.getRight() < o2.getRight() && o1.getLeft() < o2.getLeft() ? -1 : 1;
+            public int compare(final Tuple<Integer, Integer> left, final Tuple<Integer, Integer> right) {
+                return left.getRight() < right.getRight() && left.getLeft() < right.getLeft() ? -1 : 1;
             }
         });
 

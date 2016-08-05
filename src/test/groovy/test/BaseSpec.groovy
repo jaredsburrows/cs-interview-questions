@@ -1,6 +1,7 @@
 package test
 
 import api.Node
+import api.TreeNode
 import spock.lang.Shared
 import spock.lang.Specification
 
@@ -33,9 +34,44 @@ abstract class BaseSpec extends Specification {
     @Shared def node2 = new Node<>(2)
     @Shared def node3 = new Node<>(3)
     @Shared def node4 = new Node<>(4)
+    //     0
+    //    / \
+    //   1   1
+    //  / \ / \
+    // 2  3 3  2
+    @Shared def balancedTree = new TreeNode<>()
+    //     5
+    //    / \
+    //   3    9
+    //  / \  / \
+    // 1   4 6  10
+    @Shared def balancedTreeBST = new TreeNode<>(5)
+    //     0
+    //    / \
+    //   1   1
+    //  / \
+    // 2  3
+    @Shared def notBalancedTree = new TreeNode<>()
 
     def "setup"() {
+        balancedTree.right = new TreeNode<>(1)
+        balancedTree.right.left = new TreeNode<>(3)
+        balancedTree.right.right = new TreeNode<>(2)
+        balancedTree.left = new TreeNode<>(1)
+        balancedTree.left.left = new TreeNode<>(2)
+        balancedTree.left.right = new TreeNode<>(3)
 
+        balancedTreeBST.right = new TreeNode<Integer>(9)
+        balancedTreeBST.right.right = new TreeNode<Integer>(10)
+        balancedTreeBST.right.left = new TreeNode<Integer>(6)
+        balancedTreeBST.left = new TreeNode<Integer>(3)
+        balancedTreeBST.left.right = new TreeNode<Integer>(4)
+        balancedTreeBST.left.left = new TreeNode<Integer>(1)
+
+        notBalancedTree.right = new TreeNode<>(1)
+        notBalancedTree.right.left = new TreeNode<>(3)
+        notBalancedTree.right.right = new TreeNode<>(2)
+        notBalancedTree.left = new TreeNode<>(1)
     }
 
     def "cleanup"() {

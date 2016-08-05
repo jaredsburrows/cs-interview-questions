@@ -1,6 +1,5 @@
 package questions.tree
 
-import api.TreeNode
 import test.BaseSpec
 
 /**
@@ -8,25 +7,27 @@ import test.BaseSpec
  */
 class SymmetricTreeSpec extends BaseSpec {
 
-    def balancedTree = new TreeNode<>(1)
-
-    //     1
-    //    / \
-    //   2   2
-    //  / \ / \
-    // 3  4 4  3
-    def "setup"() {
-        balancedTree.right = new TreeNode<Integer>(2)
-        balancedTree.right.left = new TreeNode<Integer>(4)
-        balancedTree.right.right = new TreeNode<Integer>(3)
-        balancedTree.left = new TreeNode<Integer>(2)
-        balancedTree.left.left = new TreeNode<Integer>(3)
-        balancedTree.left.right = new TreeNode<Integer>(4)
-    }
-
     def "test isSymmetric"() {
         expect:
-        SymmetricTree.isSymmetric(null)
-        SymmetricTree.isSymmetric(balancedTree)
+        SymmetricTree.isSymmetric(a) == b
+
+        where:
+        a               | b
+        null            | true
+        balancedTree    | true
+        notBalancedTree | false
+    }
+
+    def "test isSymmetric2"() {
+        expect:
+        SymmetricTree.isSymmetric(a, b) == c
+
+        where:
+        a               | b               | c
+        null            | null            | true
+        null            | balancedTree    | false
+        balancedTree    | null            | false
+        balancedTree    | balancedTree    | true
+        balancedTree    | notBalancedTree | false
     }
 }

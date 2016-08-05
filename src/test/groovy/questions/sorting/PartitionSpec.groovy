@@ -19,7 +19,7 @@ class PartitionSpec extends BaseSpec {
         actual == expected
     }
 
-    def "test part3"() {
+    def "test part2"() {
         given:
         def actual = [4, 5, 3, 7, 2] as int[]
         def expected = [2, 3, 4, 7, 5] as int[]
