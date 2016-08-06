@@ -3,6 +3,7 @@ package crackingthecode.part3knowledgebased;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
+@SuppressWarnings("unused")
 public class Chapter15Databases {
 
     /**

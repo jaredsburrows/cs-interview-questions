@@ -3,6 +3,7 @@ package crackingthecode.part2conceptsandalgorithms;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
+@SuppressWarnings("unused")
 public class Chapter11Testing {
 
     /**

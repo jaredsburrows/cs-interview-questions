@@ -123,7 +123,6 @@ public class Chapter3StacksAndQueues {
      * (C) A disk can only be placed on top of a larger disk.
      * Write a program to move the disks from the first rod to the last using Stacks
      */
-    // TODO
 
     /**
      * 3.5 - Implement a MyQueue class which implements a queue using two mStacks.

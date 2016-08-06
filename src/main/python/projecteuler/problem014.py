@@ -21,7 +21,7 @@ def sequence(a):
     n = 0
     while a > 0:
         if a == 1:
-            break;
+            break
         if a % 2 == 0:
             a = a / 2
             n = n + 1

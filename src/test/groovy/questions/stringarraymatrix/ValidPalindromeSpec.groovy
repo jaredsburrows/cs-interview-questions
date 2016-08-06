@@ -13,11 +13,16 @@ class ValidPalindromeSpec extends BaseSpec {
 
         where:
         a                                | b
-        "ama"                            | true
+        null                             | false
         "amaf"                           | false
-        "A man, a plan, a canal: Panama" | true
         "race a car"                     | false
         "0P"                             | false
+        "123"                            | false
+        "123abc"                         | false
+        ""                               | true
+        "z"                              | true
+        "ama"                            | true
+        "A man, a plan, a canal: Panama" | true
         "aA"                             | true
     }
 }

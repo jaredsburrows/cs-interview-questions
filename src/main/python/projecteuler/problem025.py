@@ -4,7 +4,7 @@
 Problem 25
 The Fibonacci sequence is defined by the recurrence relation:
 
-Fn = Fn−1 + Fn−2, where F1 = 1 and F2 = 1.
+Fn = Fn-1 + Fn-2, where F1 = 1 and F2 = 1.
 Hence the first 12 terms will be:
 
 F1 = 1

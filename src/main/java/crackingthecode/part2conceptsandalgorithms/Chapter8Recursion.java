@@ -132,38 +132,22 @@ public class Chapter8Recursion {
 
         // make sure left is not greater than number of pairs
         if (left < pairs) {
-            generatedList.addAll(getValidParentheses(pairs, left + 1, right, pairString + "("));
+            final List<String> nextAdd = getValidParentheses(pairs, left + 1, right, pairString + "(");
+            if (nextAdd != null && !nextAdd.isEmpty()) {
+                generatedList.addAll(nextAdd);
+            }
         }
 
         // make sure right is not greater than number of pairs
         // make sure right is left than left, (()
         if (right < pairs && right < left) {
-            generatedList.addAll(getValidParentheses(pairs, left, right + 1, pairString + ")"));
+            final List<String> nextAdd = getValidParentheses(pairs, left, right + 1, pairString + ")");
+            if (nextAdd != null && !nextAdd.isEmpty()) {
+                generatedList.addAll(nextAdd);
+            }
         }
 
         return generatedList;
-    }
-
-    // the book question is missing - (()())
-    public static void generatedValidParentheses(int pairs, int left, int right, String pairString) {
-        if (pairs < 1 || left < 0 || right < 0 || pairString == null) {
-            return;
-        }
-
-        if (right == pairs) {
-            System.out.println(pairString);
-        }
-
-        // make sure left is not greater than number of pairs
-        if (left < pairs) {
-            getValidParentheses(pairs, left + 1, right, pairString + "(");
-        }
-
-        // make sure right is not greater than number of pairs
-        // make sure right is left than left, (()
-        if (right < pairs && right < left) {
-            getValidParentheses(pairs, left, right + 1, pairString + ")");
-        }
     }
 
     /**

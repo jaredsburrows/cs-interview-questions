@@ -3,7 +3,6 @@ package crackingthecode.part4additionalreviewproblems;
 import api.Tuple;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -164,27 +163,6 @@ public class Chapter19Moderate {
         return new Tuple<>(hits, pseudoHits);
     }
 
-    // Book solution used another class that held two ints
-    // Book solution fails on its own test case, 2 hits, 1 psuedo, RGGB, YRGB.
-    // Time - O(1), Space(O)
-    public static Tuple<Integer, Integer> estimate(final String guess, final String solution) {
-        int solutionMask = 0;
-        int hits = 0;
-        int pseudoHits = 0;
-        for (int i = 0; i < 4; ++i) {
-            solutionMask |= 1 << (1 + solution.charAt(i) - 'A');
-        }
-        for (int i = 0; i < 4; ++i) {
-            if (guess.charAt(i) == solution.charAt(i)) {
-                ++hits;
-            } else if ((solutionMask & (1 << (1 + guess.charAt(i) - 'A'))) >= 1) {
-                ++pseudoHits;
-            }
-        }
-
-        return new Tuple<>(hits, pseudoHits);
-    }
-
     /**
      * 19.6 - Given an integer between 0 and 999,999, print an English phrase that describes the
      * integer (eg, “One Thousand, Two Hundred and Thirty Four”).
@@ -322,26 +300,5 @@ public class Chapter19Moderate {
         }
 
         return uniquePairs;
-    }
-
-    // book solution, Time - O(N*LOG(N)), Space - O(N), only prints them out
-    public static void printPairSums(final int[] array, final int targetSum) {
-        Arrays.sort(array);
-        int first = 0;
-        int last = array.length - 1;
-        while (first < last) {
-            final int sum = array[first] + array[last];
-            if (sum == targetSum) {
-                System.out.println(array[first] + " " + array[last]);
-                ++first;
-                --last;
-            } else {
-                if (sum < targetSum) {
-                    ++first;
-                } else {
-                    --last;
-                }
-            }
-        }
     }
 }

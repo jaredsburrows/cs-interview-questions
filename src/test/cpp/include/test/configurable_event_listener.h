@@ -223,7 +223,7 @@ class ConfigurableEventListener::Builder {
 
     ConfigurableEventListener* build() {
         return new ConfigurableEventListener(this->eventListener, this->programStartEnd, this->iterationsStartEnd,
-                                             this->testCases, this->testNames, this->successes, this->failures, this->inlineFailures,
-                                             this->environment);
+                                             this->testCases, this->testNames, this->successes, this->failures,
+                                             this->inlineFailures, this->environment);
     }
 };

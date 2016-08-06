@@ -12,26 +12,6 @@ import java.util.Map;
  */
 public class ThreeSum {
 
-    // Time - O(N^3), Space - O(1)
-    public static List<Trio<Integer, Integer, Integer>> getSums2(final int[] numbers, final int target) {
-
-        final List<Trio<Integer, Integer, Integer>> answer = new ArrayList<>();
-
-        for (final int first : numbers) {
-            for (final int second : numbers) {
-                for (final int third : numbers) {
-                    if (first + second + third == target) {
-                        final Trio<Integer, Integer, Integer> pair = new Trio<>(first, second, third);
-
-                        answer.add(pair);
-                    }
-                }
-            }
-        }
-
-        return answer;
-    }
-
     // Time - O(N^2), Space - O(N)
     public static List<Trio<Integer, Integer, Integer>> getSums(final int[] numbers, final int target) {
 

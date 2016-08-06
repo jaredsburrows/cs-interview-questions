@@ -9,24 +9,6 @@ import test.BaseSpec
  */
 class ThreeSumSpec extends BaseSpec {
 
-    def "test list all trios(x ,y), equal given number, allow duplicates"() {
-        expect:
-        ThreeSum.getSums2(a as int[], b) == c
-
-        where:
-        a         | b | c
-        [1, 1, 1] | 0 | []
-        [1, 1, 1] | 3 | [new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1),
-                         new Trio<>(1, 1, 1), new Trio<>(1, 1, 1), new Trio<>(1, 1, 1)]
-    }
-
     @Ignore
     def "test list trios(x ,y), equal given number, no duplicates"() {
         expect:

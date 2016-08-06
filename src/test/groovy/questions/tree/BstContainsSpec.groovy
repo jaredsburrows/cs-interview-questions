@@ -1,6 +1,5 @@
 package questions.tree
 
-import api.TreeNode
 import test.BaseSpec
 
 /**
@@ -8,38 +7,25 @@ import test.BaseSpec
  */
 class BstContainsSpec extends BaseSpec {
 
-    def tree = new TreeNode<>(8)
-
-//                (8)
-//               /   \
-//            (2)     (21)
-//           /   \     /
-//         (1)   (5) (13)
-//               /
-//             (3)
-    def "setup"() {
-        tree.right = new TreeNode<>(21)
-        tree.right.left = new TreeNode<>(13)
-
-        tree.left = new TreeNode<>(2)
-        tree.left.left = new TreeNode<>(1)
-        tree.left.right = new TreeNode<>(5)
-        tree.left.right.left = new TreeNode<>(3)
-    }
-
     def "test contains"() {
         expect:
-        !BstContains.contains(null, 5)
-        !BstContains.contains(tree, 20)
+        BstContains.contains(a, b) == c
 
-        BstContains.contains(tree, 1)
-        BstContains.contains(tree, 2)
-        BstContains.contains(tree, 3)
-        BstContains.contains(tree, 5)
-
-        BstContains.contains(tree, 8)
-
-        BstContains.contains(tree, 13)
-        BstContains.contains(tree, 21)
+        where:
+        a                  | b   | c
+        null               | 5   | false
+        // not in tree
+        notBalancedBstTree | -10 | false
+        notBalancedBstTree | 100 | false
+        // < root
+        notBalancedBstTree | 1   | true
+        notBalancedBstTree | 2   | true
+        notBalancedBstTree | 3   | true
+        notBalancedBstTree | 5   | true
+        // == root
+        notBalancedBstTree | 8   | true
+        // > root
+        notBalancedBstTree | 13  | true
+        notBalancedBstTree | 21  | true
     }
 }

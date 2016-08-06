@@ -52,6 +52,14 @@ abstract class BaseSpec extends Specification {
     //  / \
     // 2  3
     @Shared def notBalancedTree = new TreeNode<>()
+    //       8
+    //     /   \
+    //    2     21
+    //  /  \    /
+    // 1   5  13
+    //       /
+    //      3
+    @Shared def notBalancedBstTree = new TreeNode<>(8)
 
     def "setup"() {
         balancedTree.right = new TreeNode<>(1)
@@ -72,6 +80,13 @@ abstract class BaseSpec extends Specification {
         notBalancedTree.right.left = new TreeNode<>(3)
         notBalancedTree.right.right = new TreeNode<>(2)
         notBalancedTree.left = new TreeNode<>(1)
+
+        notBalancedBstTree.right = new TreeNode<>(21)
+        notBalancedBstTree.right.left = new TreeNode<>(13)
+        notBalancedBstTree.left = new TreeNode<>(2)
+        notBalancedBstTree.left.left = new TreeNode<>(1)
+        notBalancedBstTree.left.right = new TreeNode<>(5)
+        notBalancedBstTree.left.right.left = new TreeNode<>(3)
     }
 
     def "cleanup"() {

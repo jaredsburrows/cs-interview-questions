@@ -92,13 +92,11 @@ public class Chapter20Hard {
      * words, each 52! permutations of the deck has to be equally likely. Assume that you are given
      * a random number generator which is perfect.
      */
-    // TODO
 
     /**
      * 20.3 - Write a method to randomly generate a set of m integers from an array of size n. Each
      * element must have equal probability of being chosen.
      */
-    // TODO
 
     /**
      * 20.4 - Write a method to count the number of 2s between 0 and n.
@@ -124,7 +122,6 @@ public class Chapter20Hard {
 
     // book answer
     // Time - O(N), Space - O(1)
-    // TODO
     public static int count2sI(int number) {
         int countof2s = 0;
         int digit;
@@ -222,25 +219,25 @@ public class Chapter20Hard {
      * Output: DAMP -> LAMP -> LIMP -> LIME -> LIKE
      */
     // what is the data structure of the dictionary? Map<Integer, String>
-    public static List<String> getTransformedList(final Map<String, String> dictionary, final String word,
-                                                  final String word2) {
-        if (dictionary == null || word == null || word2 == null) {
+    public static List<String> getTransformedList(final Map<String, String> dictionary, final String from,
+                                                  final String to) {
+        if (dictionary == null || from == null || to == null) {
             return null;
         }
 
-        if (!dictionary.containsKey(word) || !dictionary.containsKey(word2)) {
+        if (!dictionary.containsKey(from) || !dictionary.containsKey(to)) {
             return null;
         }
 
         final List<String> stringList = new ArrayList<>();
-        stringList.add(word);
+        stringList.add(from);
 
-        char[] temp = word.toCharArray();
+        char[] temp = from.toCharArray();
         int count = 0;
 
         while (count <= temp.length) {
 
-            temp[count] = word2.charAt(count);
+            temp[count] = to.charAt(count);
 
             String tmp = String.valueOf(temp);
 

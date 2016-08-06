@@ -16,7 +16,7 @@ Your task has been made easy, as the encryption key consists of three lower case
 """
 
 def main():
-    cipherFile = open("cipher1.txt").read().split(",");
+    cipherFile = open("cipher1.txt").read().split(",")
 
     for key in itertools.permutations(string.ascii_lowercase[:26], r=3):
         temp, t, sum = "", "", 0

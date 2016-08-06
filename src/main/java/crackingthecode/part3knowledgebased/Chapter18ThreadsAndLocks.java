@@ -5,6 +5,7 @@ import java.util.concurrent.Semaphore;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
+@SuppressWarnings("unused")
 public class Chapter18ThreadsAndLocks {
 
     /**
@@ -93,7 +94,6 @@ public class Chapter18ThreadsAndLocks {
     /**
      * 18.4 - Design a class which provides a lock only if there are no possible deadlocks.
      */
-    // TODO
     // question is too generic
     // lock for my class if there are no deadlocks?
     // can we use ThreadMXBean to check to dead locks?
@@ -211,6 +211,7 @@ public class Chapter18ThreadsAndLocks {
      * two threads in one instance of a program, can they call A at the same time? Can they call A
      * and C at the same time?
      */
+    @SuppressWarnings("EmptyMethod")
     public static class SomeSyncMethods {
 
         public synchronized void methodA() {

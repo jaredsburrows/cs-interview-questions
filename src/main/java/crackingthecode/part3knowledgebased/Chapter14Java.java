@@ -3,6 +3,7 @@ package crackingthecode.part3knowledgebased;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
+@SuppressWarnings("unused")
 public class Chapter14Java {
 
     /**
@@ -87,12 +88,6 @@ public class Chapter14Java {
      * 14.4 - Explain the difference between templates in C++ and generics in Java.
      */
     // http://en.wikipedia.org/wiki/Comparison_of_Java_and_C%2B%2B#Templates_vs._Generics
-    // TODO
-    public static class Test<T> {
-        void testMethod(final T item) {
-
-        }
-    }
 
     /**
      * 14.5 - Explain what object reflection is in Java and why it is useful.

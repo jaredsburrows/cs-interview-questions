@@ -58,13 +58,11 @@ public class Chapter5BitManipulation {
      * 5.2 - Given a (decimal - e.g. 3.72) number that is passed in as a string, print the binary
      * representation. If the number can not be represented accurately in binary, print “ERROR”.
      */
-    // TODO
 
     /**
      * 5.3 - Given an integer, print the next smallest and next largest number that have the same
      * number of 1 bits in their binary representation.
      */
-    // TODO
 
     /**
      * 5.4 - Explain what the following code does: ((n & (n-1)) == 0).
@@ -155,7 +153,6 @@ public class Chapter5BitManipulation {
     // so 1010 should become 0101?
     // 0x55555555 = 1431655765 = 01010101010101010101010101010101
     // 0xaaaaaaaa = 2863311530 = 10101010101010101010101010101010
-    // TODO - review
     // book answer
     public static int getSwapBits(final int number) {
         return ((number & 0xaaaaaaaa) >> 1) | ((number & 0x55555555) << 1);
@@ -168,7 +165,6 @@ public class Chapter5BitManipulation {
      * is “fetch the jth bit of A[i]”, which takes constant time. Write code to find the missing
      * integer. Can you do it in O(n) time?
      */
-    // TODO
     // A[1..n], 0 to n
     // one number missing
     // numbers in A are in binary

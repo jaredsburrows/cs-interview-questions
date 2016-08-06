@@ -15,6 +15,7 @@ class MergeSortedListsSpec extends BaseSpec {
         a                                 | b
         null                              | null
         [[]]                              | []
+        [[], []]                          | []
         [[1, 3, 5], null]                 | [1, 3, 5]
         [[1, 2, 3]]                       | [1, 2, 3]
         [[1, 3, 5], [3, 5, 6]]            | [1, 3, 3, 5, 5, 6]

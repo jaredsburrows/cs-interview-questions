@@ -3,7 +3,7 @@ package api;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-// TODO Current implementation is for strings, modify to make it generic
+// Current implementation is for strings, modify to make it generic
 public final class Trie<T> {
 
     private TrieNode<T> mRoot = new TrieNode<>();

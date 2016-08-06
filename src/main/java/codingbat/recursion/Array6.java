@@ -15,10 +15,6 @@ public class Array6 {
             return false;
         }
 
-        if (nums[index] == 6) {
-            return true;
-        }
-
-        return array6(nums, index + 1);
+        return nums[index] == 6 || array6(nums, index + 1);
     }
 }

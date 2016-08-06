@@ -15,11 +15,11 @@ public class BstDelete {
         return root;
     }
 
-    public static int findMaxValue(TreeNode<Integer> root) {
+    public static int findMaxValue(final TreeNode<Integer> root) {
         return findMaxNode(root).value;
     }
 
-    public static TreeNode<Integer> deleteNode(TreeNode<Integer> root, int value) {
+    public static TreeNode<Integer> deleteNode(TreeNode<Integer> root, final int value) {
         if (root == null) {
             return null;
         }
