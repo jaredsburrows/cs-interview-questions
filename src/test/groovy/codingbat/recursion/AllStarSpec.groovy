@@ -13,6 +13,9 @@ class AllStarSpec extends BaseSpec {
 
         where:
         a       | b
+        null    | null
+        ""      | ""
+        "1"     | "1"
         "hello" | "h*e*l*l*o"
         "abc"   | "a*b*c"
         "ab"    | "a*b"

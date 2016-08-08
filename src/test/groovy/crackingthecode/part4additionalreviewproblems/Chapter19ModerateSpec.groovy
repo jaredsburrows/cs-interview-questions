@@ -111,18 +111,20 @@ class Chapter19ModerateSpec extends BaseSpec {
         [-2, 1, -3, 4, -1, 2, 1, -5, 4] | 6
     }
 
-    def "test 19.8 - getWordOccurence"() {
+    def "test 19.8 - getWordOccurrence"() {
         expect:
         Chapter19Moderate.getWordOccurrence(a as String[], b) == c
 
         where:
-        a    | b      | c
-        null | null   | -1
-        null | "test" | -1
-//        ["test"]                                                        | null   | -1
-//        ["Against", "the", "entrance", "burns", "a", "salt", "ballet."] | "the"  | 1
-//        ["the", "the", "the"]                                           | "the"  | 3
-//        ["the", null, "the"]                                            | "the"  | 2
+        a                     | b      | c
+        null                  | null   | -1
+        null                  | "test" | -1
+        ["test"]              | null   | -1
+        ["the", "the", "the"] | "the"  | 3
+        ["the", null, "the"]  | "the"  | 2
+        ["the", null, "the"]  | "hat"  | 0
+        ["the", null, "the"]  | "hat"  | 0
+        ["the", "", "the"]  | "hat"  | 0
     }
 
     def "test 19.10 - rand7"() {

@@ -24,12 +24,12 @@ public class Chapter3StacksAndQueues {
 
     /**
      * 3.2 - How would you design a stack which, in addition to push and pop, also has a function
-     * min which returns the minimum element? Push, pop and min should all operate in O(1) time.
+     * getMinNode which returns the minimum element? Push, pop and getMinNode should all operate in O(1) time.
      */
-    // book suggest not to store min in each stack, too much memory from duplicates
-    @SuppressWarnings("serial")
+    // book suggest not to store getMinNode in each stack, too much memory from duplicates
     public static class MinStack extends Stack<Integer> {
 
+        private static final long serialVersionUID = 1L;
         private final Stack<Integer> mMinStack = new Stack<>();
 
         @Override

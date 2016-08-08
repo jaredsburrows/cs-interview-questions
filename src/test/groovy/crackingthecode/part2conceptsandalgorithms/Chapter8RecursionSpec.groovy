@@ -32,33 +32,38 @@ class Chapter8RecursionSpec extends BaseSpec {
 
     def "test getSubsets"() {
         expect:
-        Chapter8Recursion.getSubsets(a, 0) == b
+        Chapter8Recursion.getSubsets(a, b) == c
 
         where:
-        a      | b
-        null   | null
-        [0]    | [[], [0]]
-        [1, 2] | [[], [2], [1], [2, 1]]
+        a      | b  | c
+        null   | 0  | null
+        null   | -1 | null
+        [0]    | 0  | [[], [0]]
+        [1, 2] | 0  | [[], [2], [1], [2, 1]]
     }
 
     def "test getStringPermutations"() {
         expect:
-        Chapter8Recursion.getStringPermutations("", a) == b
+        Chapter8Recursion.getStringPermutations(a, b) == c
 
         where:
-        a     | b
-        "abc" | ["abc", "acb", "bca", "bac", "cab", "cba"]
+        a  | b     | c
+        "" | null  | null
+        "" | "abc" | ["abc", "acb", "bca", "bac", "cab", "cba"]
     }
 
     def "test getValidParentheses"() {
         expect:
-        Chapter8Recursion.getValidParentheses(a, 0, 0, "") == b
+        Chapter8Recursion.getValidParentheses(a, b, c, d) == e
 
         where:
-        a  | b
-        -1 | null
-        0  | null
-        3  | ["((()))", "(()())", "(())()", "()(())", "()()()"]
+        a  | b  | c  | d    | e
+        -1 | 0  | 0  | ""   | null
+        0  | -1 | 0  | ""   | null
+        0  | 0  | -1 | ""   | null
+        0  | 0  | 0  | null | null
+        0  | 0  | 0  | ""   | null
+        3  | 0  | 0  | ""   | ["((()))", "(()())", "(())()", "()(())", "()()()"]
     }
 
     def "test paintFill"() {

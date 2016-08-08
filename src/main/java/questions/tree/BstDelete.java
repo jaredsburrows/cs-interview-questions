@@ -7,27 +7,32 @@ import api.TreeNode;
  */
 public class BstDelete {
 
-    public static TreeNode<Integer> findMaxNode(TreeNode<Integer> root) {
-        while (root.right != null) {
-            root = root.right;
+    public static TreeNode<Integer> getMinNode(final TreeNode<Integer> node) {
+        if (node.left == null) {
+            return node;
+        } else {
+            return getMinNode(node.left);
         }
-
-        return root;
     }
 
-    public static int findMaxValue(final TreeNode<Integer> root) {
-        return findMaxNode(root).value;
+    public static TreeNode<Integer> deleteMin(final TreeNode<Integer> node) {
+        if (node.left == null) {
+            return node.right;
+        }
+        node.left = deleteMin(node.left);
+        return node;
     }
 
     public static TreeNode<Integer> deleteNode(TreeNode<Integer> root, final int value) {
+
         if (root == null) {
             return null;
         }
 
         if (value < root.value) {
-            root = deleteNode(root.left, value);
+            root.left = deleteNode(root.left, value);
         } else if (value > root.value) {
-            root = deleteNode(root.right, value);
+            root.right = deleteNode(root.right, value);
         } else {
             if (root.left == null && root.right == null) {
                 return null;
@@ -36,8 +41,10 @@ public class BstDelete {
             } else if (root.right == null) {
                 return root.left;
             } else {
-                root.value = findMaxValue(root.left);
-                root.left = deleteNode(root.left, value);
+                final TreeNode<Integer> temp = root;
+                root = getMinNode(temp.right);
+                root.right = deleteMin(temp.right);
+                root.left = temp.left;
             }
         }
 

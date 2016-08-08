@@ -14,10 +14,10 @@ class Chapter3StacksAndQueuesSpec extends BaseSpec {
         given:
         def minStack = new MinStack()
 
-        // 4 2 min 1
-        // 4 2 3   - min 2
-        // 4 2     - min 2
-        // 4       - min 4
+        // 4 2 getMinNode 1
+        // 4 2 3   - getMinNode 2
+        // 4 2     - getMinNode 2
+        // 4       - getMinNode 4
 
         expect:
         minStack.push(4)

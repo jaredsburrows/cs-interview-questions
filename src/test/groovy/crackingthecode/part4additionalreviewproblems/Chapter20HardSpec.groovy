@@ -66,9 +66,6 @@ class Chapter20HardSpec extends BaseSpec {
         ["DAMP": "", "LIKE": ""] | null       | "DAMP"     | null
         ["DAMP": "", "LIKE": ""] | "DAMP"     | "not here" | null
         ["DAMP": "", "LIKE": ""] | "not here" | "DAMP"     | null
-
-//        ["DAMP": "", "LIKE": ""] | "DAMP"  | "LIKE"       | null
-//        ["DAMP": "", "LIKE": ""] | "notin" | "dictionary" | null
-//        ["DAMP": "", "LIKE": ""] | "DAMP" | "LIKE" | ["DAMP", "LAMP", "LIMP", "LIME", "LIKE"]
+//        ["DAMP": "", "LIKE": ""] | "DAMP"     | "LIKE"     | ["DAMP", "LAMP", "LIMP", "LIME", "LIKE"]
     }
 }

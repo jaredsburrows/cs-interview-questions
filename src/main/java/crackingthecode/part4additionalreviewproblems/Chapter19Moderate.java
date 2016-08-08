@@ -119,7 +119,7 @@ public class Chapter19Moderate {
         return temp[(int) ((left - right) >> 31) & 1];
     }
 
-    // If you have the max, you can find min, vice-versa
+    // If you have the max, you can find getMinNode, vice-versa
     // Time - O(1), Space - O(1)
     public static long getMin(final long left, final long right) {
         final long diff = (left - right) >> 31;    // >> 31 accounts for negatives
@@ -220,9 +220,12 @@ public class Chapter19Moderate {
             if (string != null) {
                 string = string.toLowerCase().trim();
 
-                if (!string.isEmpty()) {
-                    if (occurrences.containsKey(string)) {
-                        occurrences.put(string, occurrences.get(string) + 1);
+                final boolean isEmpty = string.isEmpty();
+                if (!isEmpty) {
+                    final boolean hasWord = occurrences.containsKey(string);
+                    if (hasWord) {
+                        final int increment = occurrences.get(string) + 1;
+                        occurrences.put(string, increment);
                     } else {
                         occurrences.put(string, 1);
                     }
@@ -232,7 +235,8 @@ public class Chapter19Moderate {
 
         word = word.toLowerCase().trim();
 
-        if (occurrences.containsKey(word)) {
+        final boolean hasWord = occurrences.containsKey(word);
+        if (hasWord) {
             return occurrences.get(word);
         } else {
             return 0;

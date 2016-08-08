@@ -13,6 +13,8 @@ class Array6Spec extends BaseSpec {
 
         where:
         a         | b | c
+        []        | 0 | false
+        [1]       | 1 | false
         [1, 6, 4] | 0 | true
         [1, 4]    | 0 | false
         [6]       | 0 | true
