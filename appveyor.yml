@@ -2,7 +2,7 @@ install:
   - set JAVA_HOME=C:\Program Files\Java\jdk1.8.0
 
 build_script:
-  - gradlew.bat clean cobertura coveralls -Dscan --configure-on-demand --daemon --parallel --stacktrace
+  - gradlew.bat clean check cobertura coveralls -Dscan --configure-on-demand --daemon --parallel --stacktrace --console=plain -Dorg.gradle.jvmargs="-Dfile.encoding=UTF-8"
 
 artifacts:
   - path: build\reports\
