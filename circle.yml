@@ -4,7 +4,7 @@ machine:
 
 test:
   override:
-    - ./gradlew clean check cobertura coveralls -Dscan --configure-on-demand --daemon --parallel --stacktrace --console=plain -Dorg.gradle.jvmargs="-Dfile.encoding=UTF-8"
+    - ./gradlew clean check cobertura coveralls -Dscan --configure-on-demand --parallel --stacktrace --console=plain -Dorg.gradle.jvmargs="-Dfile.encoding=UTF-8"
   post:
     - cp -r build/test-results/*.xml $CIRCLE_TEST_REPORTS
     - cp -r build/reports/ $CIRCLE_ARTIFACTS

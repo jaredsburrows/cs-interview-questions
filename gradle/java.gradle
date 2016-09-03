@@ -1,3 +1,5 @@
+apply plugin: "java"
+
 // Configure Groovy directly using the "java" plugin
 // See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.compile.JavaCompile.html
 compileJava {

@@ -11,7 +11,6 @@ plugins {
     id "cunit-test-suite"
     id "cpp"
     id "google-test-test-suite"
-    id "build-dashboard"
     id "java"
     id "groovy"
     id "pmd"
@@ -19,6 +18,7 @@ plugins {
     id "findbugs"
     id "checkstyle"
     id "codenarc"
+    id "build-dashboard"
 }
 
 // Repositories block for downloading dependencies in the "dependencies" block

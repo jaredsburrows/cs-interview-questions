@@ -1,3 +1,9 @@
+apply plugin: "pmd"
+apply plugin: "jacoco"
+apply plugin: "findbugs"
+apply plugin: "checkstyle"
+apply plugin: "codenarc"
+
 // Returns lower coverage because of private constructions
 tasks.withType(JacocoReport) {
     reports {
