@@ -10,7 +10,7 @@ matrix:
 install: true
 
 script:
-  - ./gradlew clean check cobertura coveralls -Dscan --configure-on-demand --parallel --stacktrace --console=plain -Dorg.gradle.jvmargs="-Dfile.encoding=UTF-8" && .buildscript/publishDocs.sh
+  - ./gradlew clean check cobertura -Dscan --configure-on-demand --parallel --stacktrace && .buildscript/publishDocs.sh
 
 branches:
   except:

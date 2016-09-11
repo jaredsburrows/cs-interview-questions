@@ -2,49 +2,22 @@
 
 using namespace testing;
 
+/**
+ * Custom TestEventListener that only prints out failed test. The methods are organized
+ * in the order the corresponding events are fired.
+ *
+ * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ */
 class ConfigurableEventListener : public TestEventListener {
-
   private:
     TestEventListener* eventListener;
-
-    /**
-     * Show test program start/end.
-     */
     const bool showProgramStartEnd = false;
-
-    /**
-     * Show test iterations start/end.
-     */
     const bool showIterationsStartEnd = false;
-
-    /**
-     * Show the names of each test case.
-     */
     const bool showTestCases = false;
-
-    /**
-     * Show the names of each test.
-     */
     const bool showTestNames = false;
-
-    /**
-     * Show each success.
-     */
     const bool showSuccesses = false;
-
-    /**
-     * Show each failure.
-     */
     const bool showFailures = false;
-
-    /**
-     * Show each failure as it occurs. You will also see it at the bottom after the full suite is run.
-     */
     const bool showInlineFailures = false;
-
-    /**
-     * Show the setup of the global environment.
-     */
     const bool showEnvironment = false;
 
     ConfigurableEventListener(TestEventListener* eventListener, const bool showProgramStartEnd,
@@ -59,8 +32,10 @@ class ConfigurableEventListener : public TestEventListener {
           showEnvironment(showEnvironment) { }
 
   public:
+    // Helpful builder for setting up the TestEventListener
     class Builder;
 
+    // Decontructor
     virtual ~ConfigurableEventListener() override {
         delete this->eventListener;
     }
@@ -177,50 +152,80 @@ class ConfigurableEventListener::Builder {
     bool environment = false;
 
   public:
+    /**
+     * Set custom TestEventListener.
+     */
     Builder(TestEventListener* eventListener) {
         this->eventListener = eventListener;
     }
 
+    /**
+     * Show test program start/end.
+     */
     Builder showProgramStartEnd() {
         this->programStartEnd = true;
         return *this;
     }
 
+    /**
+     * Show test iterations start/end.
+     */
     Builder showIterationsStartEnd() {
         this->iterationsStartEnd = true;
         return *this;
     }
 
+    /**
+     * Show the names of each test case.
+     */
     Builder showTestCases() {
         this->testCases = true;
         return *this;
     }
 
+    /**
+     * Show the names of each test.
+     */
     Builder showTestNames() {
         this->testNames = true;
         return *this;
     }
 
+    /**
+     * Show each success.
+     */
     Builder showSuccesses() {
         this->successes = true;
         return *this;
     }
 
+    /**
+     * Show each failure.
+     */
     Builder showFailures() {
         this->failures = true;
         return *this;
     }
 
+    /**
+     * Show each failure as it occurs. You will also see it at the bottom after the full suite is run.
+     */
     Builder showInlineFailures() {
         this->inlineFailures = true;
         return *this;
     }
 
+    /**
+     * Show the setup of the global environment.
+     */
     Builder showEnvironment() {
         this->environment = true;
         return *this;
     }
 
+    /**
+     * Return a configured instance of ConfigurableEventListener.
+     */
     ConfigurableEventListener* build() {
         return new ConfigurableEventListener(this->eventListener, this->programStartEnd, this->iterationsStartEnd,
                                              this->testCases, this->testNames, this->successes, this->failures,
