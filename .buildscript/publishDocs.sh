@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
+#set -ex
+
 SLUG="jaredsburrows/cs-interview-questions"
 BRANCH="master"
+DIR=temp-clone
 
 if [ "$TRAVIS_REPO_SLUG" != "$SLUG" ]; then
     echo "Skipping: wrong repository. Expected '$SLUG' but was '$TRAVIS_REPO_SLUG'."
@@ -16,23 +19,38 @@ else
 
     # Generate docs
     ./gradlew clean asciidoc
-    cp -R build/asciidoc/html5 $HOME/asciidoc-latest
+    cp -R build/asciidoc/html5/ asciidoc-latest/
 
-    # Setup git and clone repo
+    # Delete any existing temporary website clone
+    rm -rf $DIR
+
+    # Clone the current repo into temp folder
     git config --global user.email "travis@travis-ci.org"
     git config --global user.name "travis-ci"
-    cd $HOME
-    git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/${SLUG} gh-pages &> /dev/null
+    git clone --quiet https://${GH_TOKEN}@github.com/${SLUG} $DIR &> /dev/null
 
-    # Commit to the github pages branch
-    cd gh-pages
-    if [ -d "./docs" ]; then
-        git rm -rf ./docs
-    fi
-    cp -Rf $HOME/asciidoc-latest ./docs
-    git add -f .
-    git commit -m "Publish docs from Travis CI build $TRAVIS_BUILD_NUMBER"
+    # Move working directory into temp folder
+    cd $DIR
+
+    # Checkout and track the gh-pages branch
+    git checkout -t origin/gh-pages
+
+    # Delete everything
+    rm -rf *
+
+    # Copy website files from real repo
+    cp -R ../asciidoc-latest/* .
+
+    # Stage all files in git and create a commit
+    git add .
+    git add -u
+    git commit -m "Website at $(date)"
+
+    # Push the new files up to GitHub
     git push -fq origin gh-pages > /dev/null
+
+    # Delete our temp folder
+    rm -rf ../$DIR
 
     echo -e "Published docs to gh-pages.\n"
 fi

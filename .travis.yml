@@ -28,4 +28,4 @@ cache:
 
 env:
   global:
-    - secure: "HhxxyHf+3SynXySDmzi6rQzJUUwRIsANrrdt0tj+2p5UnnrpsaCOmqS1PM5B5mHpj8Cq1rLV3mi9gYVuODlQMQKIKsWyw3ve6vjp9Xn547Cf5djvyf0pr6qRWfUwOP9dXgXYYeUkzZwDYatZ2iTw5BHkTlrfpntNdsb5h3Pp/1w="
+    - secure: JsJTTZ1ZezjedDLB/9jtAgqj6ruGj/o/WFPTYxgv46VvbahSZYM2o16w9yYAHPwFNKhMIQXg9HoF7FfleQ4Jqz7ZPo1jpeOkU3bQO3YVYEyrLahd2K2gA6ipU8w9dEDDMBk21pvkbt0wke1FFIBmG71FHSOlYS7X4jETuy44Nd4=
