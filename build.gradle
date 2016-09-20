@@ -1,7 +1,7 @@
 // Plugins block for applying local and plugins from the Gradle repository
 // See: https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block
 plugins {
-    id "com.gradle.build-scan"          version "1.0"
+    id "com.gradle.build-scan"          version "1.1"
     id "net.ltgt.errorprone"            version "0.0.8"
     id "com.github.kt3k.coveralls"      version "2.6.3"
     id "com.github.ben-manes.versions"  version "0.13.0"

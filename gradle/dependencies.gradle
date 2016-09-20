@@ -9,5 +9,5 @@ dependencies {
 
     testRuntime "org.slf4j:slf4j-api:1.7.21"                                                        // Cobertura plugin
 
-    checkstyle "com.puppycrawl.tools:checkstyle:7.1"
+    checkstyle "com.puppycrawl.tools:checkstyle:7.1.1"
 }
