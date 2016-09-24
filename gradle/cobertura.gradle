@@ -1,0 +1,12 @@
+apply plugin: "net.saliman.cobertura"
+
+// Ignores private constructors
+cobertura {
+    coverageFormats = ['xml', 'html']
+    coverageExcludes = [".*codeeval.*",
+                        ".*crackingthecode.part3knowledgebased.*",
+                        ".*Chapter7ObjectOrientedDesign.*",
+                        ".*Chapter11Testing.*",
+                        ".*Chapter12SystemDesignAndMemoryLimits.*"]
+    coverageIgnoreTrivial = true
+}

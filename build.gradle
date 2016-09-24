@@ -1,24 +1,26 @@
 // Plugins block for applying local and plugins from the Gradle repository
 // See: https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block
 plugins {
+    // Plugins from the gradle repository
     id "com.gradle.build-scan"          version "1.1"
     id "net.ltgt.errorprone"            version "0.0.8"
     id "com.github.kt3k.coveralls"      version "2.6.3"
     id "com.github.ben-manes.versions"  version "0.13.0"
     id "net.saliman.cobertura"          version "2.3.2"
     id "org.asciidoctor.convert"        version "1.5.3"
+    // Built in plugins
+    id "build-dashboard"
     id "c"
-    id "cunit-test-suite"
-    id "cpp"
-    id "google-test-test-suite"
-    id "java"
-    id "groovy"
-    id "pmd"
-    id "jacoco"
-    id "findbugs"
     id "checkstyle"
     id "codenarc"
-    id "build-dashboard"
+    id "cpp"
+    id "cunit-test-suite"
+    id "findbugs"
+    id "google-test-test-suite"
+    id "groovy"
+    id "jacoco"
+    id "java"
+    id "pmd"
 }
 
 // Repositories block for downloading dependencies in the "dependencies" block
@@ -30,13 +32,21 @@ repositories {
 }
 
 // Apply extra configuration
+// Place this first so it can scan the build
 apply from: rootProject.file("gradle/buildScan.gradle")
-apply from: rootProject.file("gradle/provided.gradle")
-apply from: rootProject.file("gradle/compile.gradle")
-apply from: rootProject.file("gradle/codeQuality.gradle")
+// Other plugin configurations
 apply from: rootProject.file("gradle/asciidoc.gradle")
-apply from: rootProject.file("gradle/java.gradle")
-apply from: rootProject.file("gradle/groovy.gradle")
 apply from: rootProject.file("gradle/c.gradle")
+apply from: rootProject.file("gradle/checkstyle.gradle")
+apply from: rootProject.file("gradle/cobertura.gradle")
+apply from: rootProject.file("gradle/codenarc.gradle")
+apply from: rootProject.file("gradle/compile.gradle")
 apply from: rootProject.file("gradle/cpp.gradle")
+apply from: rootProject.file("gradle/findbugs.gradle")
+apply from: rootProject.file("gradle/groovy.gradle")
+apply from: rootProject.file("gradle/jacoco.gradle")
+apply from: rootProject.file("gradle/java.gradle")
+apply from: rootProject.file("gradle/pmd.gradle")
+// Place this last to make sure all configurations are generated first
+apply from: rootProject.file("gradle/provided.gradle")
 apply from: rootProject.file("gradle/dependencies.gradle")

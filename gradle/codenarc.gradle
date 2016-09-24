@@ -1,0 +1,17 @@
+apply plugin: "codenarc"
+
+tasks.withType(CodeNarc) {
+    reports {
+        xml {
+            enabled = false
+        }
+
+        html {
+            enabled = true
+        }
+    }
+}
+
+codenarc {
+    reportFormat = "console"
+}

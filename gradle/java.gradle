@@ -26,6 +26,6 @@ test {
         showExceptions true
         showStackTraces true
         showStandardStreams true
-        events = ["failed", "skipped"]
+        events "failed", "skipped"
     }
 }
