@@ -14,15 +14,15 @@ bool GraphNode<T>::operator==(const GraphNode<T>& object) const {
 
     const GraphNode<T>* node = (GraphNode<T>*) object;
 
-    if (this->value != nullptr ? !this->value == node->value : node->value != nullptr) {
+    if (value != nullptr ? !value == node->value : node->value != nullptr) {
         return false;
     }
 
-    if (this->next != nullptr ? !this->next == node->next : node->next != nullptr) {
+    if (next != nullptr ? !next == node->next : node->next != nullptr) {
         return false;
     }
 
-    return this->previous != nullptr ? this->previous == node->previous : node->previous == nullptr;
+    return previous != nullptr ? previous == node->previous : node->previous == nullptr;
 }
 
 template <typename T>
