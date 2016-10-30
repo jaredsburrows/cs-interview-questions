@@ -12,7 +12,7 @@ public final class Trie<T> {
     }
 
     public Trie(final T value) {
-        this.insert((String) value);
+        insert(String.valueOf(value));
     }
 
     public void insert(final String word) {
@@ -20,7 +20,7 @@ public final class Trie<T> {
             return;
         }
 
-        TrieNode<T> current = this.root;
+        TrieNode<T> current = root;
 
         final int length = word.length();
 
@@ -42,12 +42,12 @@ public final class Trie<T> {
     }
 
     public boolean search(final String word) {
-        final TrieNode<T> current = this.get(word);
+        final TrieNode<T> current = get(word);
         return current != null && current.isEnd;
     }
 
     public boolean startsWith(final String prefix) {
-        final TrieNode<T> current = this.get(prefix);
+        final TrieNode<T> current = get(prefix);
         return current != null;
     }
 
@@ -57,7 +57,7 @@ public final class Trie<T> {
             return null;
         }
 
-        TrieNode<T> current = this.root;
+        TrieNode<T> current = root;
 
         final int length = word.length();
 
@@ -73,7 +73,7 @@ public final class Trie<T> {
             }
         }
 
-        if (current == this.root) {
+        if (current == root) {
             return null;
         }
 
@@ -86,24 +86,25 @@ public final class Trie<T> {
             return true;
         }
 
-        if (object == null || this.getClass() != object.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
         final Trie<?> trie = (Trie<?>) object;
 
-        return this.root != null ? this.root.equals(trie.root) : trie.root == null;
+        return root != null ? root.equals(trie.root) : trie.root == null;
     }
 
     @Override
     public int hashCode() {
-        return this.root != null ? this.root.hashCode() : 0;
+        return root != null ? root.hashCode() : 0;
     }
 
     @Override
     public String toString() {
         return "Trie{"
-                + "root=" + this.root
-                + '}';
+            + "root=" + root
+            + '}';
     }
+
 }

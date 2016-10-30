@@ -35,7 +35,7 @@ class TupleSpec extends BaseSpec {
     def "test toString"() {
         given:
         def actual = sut.toString()
-        def expected = "Tuple{mLeft=test, mRight=123}"
+        def expected = "Tuple{left=test, right=123}"
 
         expect:
         actual == expected

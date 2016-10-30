@@ -34,8 +34,8 @@ public final class Chapter3StacksAndQueues {
 
         @Override
         public Integer push(final Integer value) {
-            if (value <= this.getMinimum()) {
-                this.mMinStack.push(value);
+            if (value <= getMinimum()) {
+                mMinStack.push(value);
             }
 
             return super.push(value);
@@ -44,18 +44,18 @@ public final class Chapter3StacksAndQueues {
         @Override
         public synchronized Integer pop() {
             final int value = super.pop();
-            if (value == this.getMinimum()) {
-                this.mMinStack.pop();
+            if (value == getMinimum()) {
+                mMinStack.pop();
             }
 
             return value;
         }
 
         public Integer getMinimum() {
-            if (this.mMinStack.isEmpty()) {
+            if (mMinStack.isEmpty()) {
                 return Integer.MAX_VALUE;
             } else {
-                return this.mMinStack.peek();
+                return mMinStack.peek();
             }
         }
     }
@@ -63,7 +63,7 @@ public final class Chapter3StacksAndQueues {
     /**
      * 3.3 - Imagine a (literal) stack of plates. If the stack gets too high, it might topple.
      * Therefore, in real life, we would likely start a new stack when the previous stack exceeds
-     * some threshold. Implement a data structure SetOfStacks that mimics this. SetOfStacks should
+     * some threshold. Implement a data structure SetOfStacks that mimics  SetOfStacks should
      * be composed of several stacks, and should create a new stack once the previous one exceeds
      * capacity. SetOfStacks.push() and SetOfStacks.pop() should behave identically to a single
      * stack (that is, pop() should return the same values as it would if there were just a single
@@ -80,36 +80,37 @@ public final class Chapter3StacksAndQueues {
         private int capacity;
 
         public SetOfStacks(final int capacity) {
-            this.currentStack = 0;
             this.capacity = capacity;
-            this.stacks.add(new Stack<T>());
+
+            currentStack = 0;
+            stacks.add(new Stack<T>());
         }
 
         public void push(final T item) {
-            if (this.stacks.get(this.currentStack).size() == this.capacity) {
+            if (stacks.get(currentStack).size() == capacity) {
                 final Stack<T> stack = new Stack<>();
                 stack.push(item);
-                this.stacks.add(stack);
-                this.currentStack++;
+                stacks.add(stack);
+                currentStack++;
             } else {
-                this.stacks.get(this.currentStack).push(item);
+                stacks.get(currentStack).push(item);
             }
         }
 
         public T pop() {
-            if (!this.stacks.get(this.currentStack).isEmpty()) {
-                return this.stacks.get(this.currentStack).pop();
-            } else if (this.currentStack > 0 && this.stacks.get(this.currentStack).isEmpty()) {
-                this.stacks.remove(this.currentStack);
-                this.currentStack--;
-                return this.stacks.get(this.currentStack).pop();
+            if (!stacks.get(currentStack).isEmpty()) {
+                return stacks.get(currentStack).pop();
+            } else if (currentStack > 0 && stacks.get(currentStack).isEmpty()) {
+                stacks.remove(currentStack);
+                currentStack--;
+                return stacks.get(currentStack).pop();
             }
 
             return null;
         }
 
         public T popAt(int index) {
-            return this.stacks.get(index).pop();
+            return stacks.get(index).pop();
         }
     }
 
@@ -137,40 +138,40 @@ public final class Chapter3StacksAndQueues {
 
         // Time - O(1)
         public int size() {
-            return this.stack1.size() + this.stack2.size();
+            return stack1.size() + stack2.size();
         }
 
         // Time - O(1)
         public void push(final T item) {
-            this.stack1.push(item);
+            stack1.push(item);
         }
 
         // Time - O(N)
         public T remove() {
             // stack 2 needs to be empty to pop stack1
-            if (!this.stack2.isEmpty()) {
-                return this.stack2.pop();
+            if (!stack2.isEmpty()) {
+                return stack2.pop();
             }
 
-            while (!this.stack1.isEmpty()) {
-                this.stack2.push(this.stack1.pop());
+            while (!stack1.isEmpty()) {
+                stack2.push(stack1.pop());
             }
 
-            return this.stack2.pop();
+            return stack2.pop();
         }
 
         // Time - O(N)
         public T peek() {
             // stack 2 needs to be empty to peek stack1
-            if (!this.stack2.isEmpty()) {
-                return this.stack2.peek();
+            if (!stack2.isEmpty()) {
+                return stack2.peek();
             }
 
-            while (!this.stack1.isEmpty()) {
-                this.stack2.push(this.stack1.pop());
+            while (!stack1.isEmpty()) {
+                stack2.push(stack1.pop());
             }
 
-            return this.stack2.peek();
+            return stack2.peek();
         }
     }
 

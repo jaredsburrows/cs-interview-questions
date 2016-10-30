@@ -22,37 +22,38 @@ public final class Node<T> {
             return true;
         }
 
-        if (object == null || this.getClass() != object.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
         final Node<?> node = (Node<?>) object;
 
-        if (this.value != null ? !this.value.equals(node.value) : node.value != null) {
+        if (value != null ? !value.equals(node.value) : node.value != null) {
             return false;
         }
 
-        if (this.next != null ? !this.next.equals(node.next) : node.next != null) {
+        if (next != null ? !next.equals(node.next) : node.next != null) {
             return false;
         }
 
-        return this.previous != null ? this.previous.equals(node.previous) : node.previous == null;
+        return previous != null ? previous.equals(node.previous) : node.previous == null;
     }
 
     @Override
     public int hashCode() {
-        int result = this.value != null ? this.value.hashCode() : 0;
-        result = 31 * result + (this.next != null ? this.next.hashCode() : 0);
-        result = 31 * result + (this.previous != null ? this.previous.hashCode() : 0);
+        int result = value != null ? value.hashCode() : 0;
+        result = 31 * result + (next != null ? next.hashCode() : 0);
+        result = 31 * result + (previous != null ? previous.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "Node{"
-                + "value=" + this.value
-                + ", next=" + this.next
-                + ", previous=" + this.previous
-                + '}';
+            + "value=" + value
+            + ", next=" + next
+            + ", previous=" + previous
+            + '}';
     }
+
 }

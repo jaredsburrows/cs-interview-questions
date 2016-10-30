@@ -27,16 +27,16 @@ public final class Chapter7ObjectOrientedDesign {
         private int mCardNumber;
 
         public Card(final Suite suite, final int cardNumber) {
-            this.mSuite = suite;
-            this.mCardNumber = cardNumber;
+            mSuite = suite;
+            mCardNumber = cardNumber;
         }
 
         public int getNumber() {
-            return this.mCardNumber;
+            return mCardNumber;
         }
 
         public Suite getSuite() {
-            return this.mSuite;
+            return mSuite;
         }
     }
 
@@ -88,7 +88,7 @@ public final class Chapter7ObjectOrientedDesign {
         private Selector mSelector;
 
         public JukeBox(final List<Song> songList) {
-            this.mSongList = songList;
+            mSongList = songList;
         }
     }
 

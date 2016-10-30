@@ -12,23 +12,23 @@ public final class Stack<T> {
     }
 
     public Stack(final T value) {
-        this.push(new Node<>(value));
+        push(new Node<>(value));
     }
 
     public Node<T> peek() {
-        return this.top;
+        return top;
     }
 
     public void push(final Node<T> node) {
         if (node != null) {
-            node.next = this.top;
-            this.top = node;
+            node.next = top;
+            top = node;
         }
     }
 
     public void pop() {
-        if (this.top != null) {
-            this.top = this.top.next;
+        if (top != null) {
+            top = top.next;
         }
     }
 
@@ -38,26 +38,26 @@ public final class Stack<T> {
             return true;
         }
 
-        if (object == null || this.getClass() != object.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
         final Stack<?> stack = (Stack<?>) object;
 
-        return this.top != null ? this.top.equals(stack.top) : stack.top == null;
-
+        return top != null ? top.equals(stack.top) : stack.top == null;
     }
 
     @Override
     public int hashCode() {
-        return top != null ? this.top.hashCode() : 0;
+        return top != null ? top.hashCode() : 0;
     }
 
     @Override
     public String toString() {
         return "Stack{"
-                + "top="
-                + this.top
-                + '}';
+            + "top="
+            + top
+            + '}';
     }
+
 }

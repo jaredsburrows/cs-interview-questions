@@ -13,30 +13,30 @@ public final class Queue<T> {
     }
 
     public Queue(final T value) {
-        this.enqueue(new Node<>(value));
+        enqueue(new Node<>(value));
     }
 
     public Node<T> getFirst() {
-        return this.first;
+        return first;
     }
 
     public Node<T> getLast() {
-        return this.last;
+        return last;
     }
 
     public void enqueue(final Node<T> node) {
-        if (this.first == null) {
-            this.first = node;
-            this.last = this.first;
+        if (first == null) {
+            first = node;
+            last = first;
         } else {
-            this.last.next = node;
-            this.last = node;
+            last.next = node;
+            last = node;
         }
     }
 
     public void dequeue() {
-        if (this.first != null) {
-            this.first = this.first.next;
+        if (first != null) {
+            first = first.next;
         }
     }
 
@@ -46,31 +46,32 @@ public final class Queue<T> {
             return true;
         }
 
-        if (object == null || this.getClass() != object.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
         final Queue<?> queue = (Queue<?>) object;
 
-        if (this.first != null ? !this.first.equals(queue.first) : queue.first != null) {
+        if (first != null ? !first.equals(queue.first) : queue.first != null) {
             return false;
         }
 
-        return this.last != null ? this.last.equals(queue.last) : queue.last == null;
+        return last != null ? last.equals(queue.last) : queue.last == null;
     }
 
     @Override
     public int hashCode() {
-        int result = this.first != null ? this.first.hashCode() : 0;
-        result = 31 * result + (this.last != null ? this.last.hashCode() : 0);
+        int result = first != null ? first.hashCode() : 0;
+        result = 31 * result + (last != null ? last.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "Queue{"
-                + "first=" + this.first
-                + ", last=" + this.last
-                + '}';
+            + "first=" + first
+            + ", last=" + last
+            + '}';
     }
+
 }

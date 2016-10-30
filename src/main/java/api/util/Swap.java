@@ -10,4 +10,5 @@ public final class Swap {
         array[left] = array[right];
         array[right] = t;
     }
+
 }

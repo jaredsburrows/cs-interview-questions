@@ -90,7 +90,7 @@ public final class Chapter15Databases {
     // logical tables (called relations). If these relations are stored physically as separate disk
     // files, completing a database query that draws information from several relations
     // (a join operation) can be slow. If many relations are joined, it may be prohibitively slow.
-    // There are two strategies for dealing with this. The preferred method is to keep the logical
+    // There are two strategies for dealing with  The preferred method is to keep the logical
     // design normalized, but allow the database management system (DBMS) to store additional
     // redundant information on disk to optimise query response. In this case it is the DBMS
     // software's responsibility to ensure that any redundant copies are kept consistent. This

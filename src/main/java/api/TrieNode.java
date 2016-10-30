@@ -18,7 +18,7 @@ public final class TrieNode<T> {
 
     @SuppressWarnings("unchecked")
     public TrieNode(final int length) {
-        this.children = (TrieNode<T>[]) Array.newInstance(TrieNode.class, length);
+        children = (TrieNode<T>[]) Array.newInstance(TrieNode.class, length);
     }
 
     @Override
@@ -27,32 +27,33 @@ public final class TrieNode<T> {
             return true;
         }
 
-        if (object == null || this.getClass() != object.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
         final TrieNode<?> trieNode = (TrieNode<?>) object;
 
-        if (this.isEnd != trieNode.isEnd) {
+        if (isEnd != trieNode.isEnd) {
             return false;
         }
 
         // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        return Arrays.equals(this.children, trieNode.children);
+        return Arrays.equals(children, trieNode.children);
     }
 
     @Override
     public int hashCode() {
-        int result = Arrays.hashCode(this.children);
-        result = 31 * result + (this.isEnd ? 1 : 0);
+        int result = Arrays.hashCode(children);
+        result = 31 * result + (isEnd ? 1 : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "TrieNode{"
-                + "children=" + Arrays.toString(this.children)
-                + ", isEnd=" + this.isEnd
-                + '}';
+            + "children=" + Arrays.toString(children)
+            + ", isEnd=" + isEnd
+            + '}';
     }
+
 }

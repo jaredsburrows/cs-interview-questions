@@ -141,14 +141,14 @@ public final class Chapter18ThreadsAndLocks {
         public void methodA() {
             // super
 
-            this.methodB();
+            methodB();
         }
 
         @Override
         public void methodB() {
             // super
 
-            this.methodC();
+            methodC();
         }
 
         @Override
@@ -165,18 +165,18 @@ public final class Chapter18ThreadsAndLocks {
 
         @Override
         public void methodA() throws Exception {
-            this.mSemaphoreA.release(1); // release, free up permit
+            mSemaphoreA.release(1); // release, free up permit
         }
 
         @Override
         public void methodB() throws Exception {
-            this.mSemaphoreA.acquire(1); // acquire permit
-            this.mSemaphoreB.release(1); // release again
+            mSemaphoreA.acquire(1); // acquire permit
+            mSemaphoreB.release(1); // release again
         }
 
         @Override
         public void methodC() throws Exception {
-            this.mSemaphoreB.acquire(1); // acquire again
+            mSemaphoreB.acquire(1); // acquire again
         }
     }
 
@@ -189,20 +189,20 @@ public final class Chapter18ThreadsAndLocks {
 
         @Override
         public void methodA() throws Exception {
-            this.mSemaphoreC.acquire(1); // acquire permit
-            this.mSemaphoreA.release(1); // release, free up permit
+            mSemaphoreC.acquire(1); // acquire permit
+            mSemaphoreA.release(1); // release, free up permit
         }
 
         @Override
         public void methodB() throws Exception {
-            this.mSemaphoreA.acquire(1); // acquire permit
-            this.mSemaphoreB.release(1); // release again
+            mSemaphoreA.acquire(1); // acquire permit
+            mSemaphoreB.release(1); // release again
         }
 
         @Override
         public void methodC() throws Exception {
-            this.mSemaphoreB.acquire(1); // acquire again
-            this.mSemaphoreC.release(1); // release, make sure called in order
+            mSemaphoreB.acquire(1); // acquire again
+            mSemaphoreC.release(1); // release, make sure called in order
         }
     }
 

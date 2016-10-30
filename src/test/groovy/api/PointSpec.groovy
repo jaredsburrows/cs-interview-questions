@@ -32,7 +32,7 @@ class PointSpec extends BaseSpec {
     def "test toString"() {
         given:
         def actual = sut.toString()
-        def expected = "Point{mX=321, mY=123}"
+        def expected = "Point{x=321, y=123}"
 
         expect:
         actual == expected

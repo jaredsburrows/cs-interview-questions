@@ -5,20 +5,20 @@ package api;
  */
 public final class Point {
 
-    private final int mX;
-    private final int mY;
+    private final int x;
+    private final int y;
 
-    public Point(final int positionX, final int positionY) {
-        this.mX = positionX;
-        this.mY = positionY;
+    public Point(final int x, final int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public int getX() {
-        return this.mX;
+        return x;
     }
 
     public int getY() {
-        return this.mY;
+        return y;
     }
 
     @Override
@@ -27,31 +27,32 @@ public final class Point {
             return true;
         }
 
-        if (object == null || this.getClass() != object.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
         final Point point = (Point) object;
 
-        if (this.mX != point.mX) {
+        if (x != point.x) {
             return false;
         }
 
-        return this.mY == point.mY;
+        return y == point.y;
     }
 
     @Override
     public int hashCode() {
-        int result = this.mX;
-        result = 31 * result + this.mY;
+        int result = x;
+        result = 31 * result + y;
         return result;
     }
 
     @Override
     public String toString() {
         return "Point{"
-                + "mX=" + this.mX
-                + ", mY=" + this.mY
-                + '}';
+            + "x=" + x
+            + ", y=" + y
+            + '}';
     }
+
 }

@@ -40,7 +40,7 @@ class TrioSpec extends BaseSpec {
     def "test toString"() {
         given:
         def actual = sut.toString()
-        def expected = "Trio{mFirst=a, mSecond=1, mThird=a}"
+        def expected = "Trio{first=a, second=1, third=a}"
 
         expect:
         actual == expected

@@ -35,7 +35,7 @@ class PairSpec extends BaseSpec {
     def "test toString"() {
         given:
         def actual = sut.toString()
-        def expected = "Pair{mLeft=test, mRight=123}"
+        def expected = "Pair{left=test, right=123}"
 
         expect:
         actual == expected

@@ -5,32 +5,32 @@ package api;
  */
 public final class LinkedList<T> {
 
-    private Node<T> mHead;
+    private Node<T> head;
 
     public LinkedList(final T value) {
-        this.mHead = new Node<>(value);
+        head = new Node<>(value);
     }
 
     public Node<T> getHead() {
-        return this.mHead;
+        return head;
     }
 
     public Node<T> getNext() {
-        return this.mHead.next;
+        return head.next;
     }
 
     public void addToFront(final T value) {
         final Node<T> newNode = new Node<>(value);
-        newNode.next = this.mHead;
-        this.mHead = newNode;
+        newNode.next = head;
+        head = newNode;
     }
 
     public void add(final T value) {
-        this.addToEnd(value);
+        addToEnd(value);
     }
 
     public void addToEnd(final T value) {
-        Node<T> temp = this.mHead;
+        Node<T> temp = head;
         while (temp.next != null) {
             temp = temp.next;
         }
@@ -38,11 +38,11 @@ public final class LinkedList<T> {
     }
 
     public void removeFront() {
-        this.mHead = this.mHead.next;
+        head = head.next;
     }
 
     public void removeLast() {
-        Node<T> temp = this.mHead;
+        Node<T> temp = head;
         while (temp.next.next != null) {
             temp = temp.next;
         }
@@ -55,24 +55,25 @@ public final class LinkedList<T> {
             return true;
         }
 
-        if (object == null || this.getClass() != object.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
         final LinkedList<?> linkedList = (LinkedList<?>) object;
 
-        return this.mHead != null ? this.mHead.equals(linkedList.mHead) : linkedList.mHead == null;
+        return head != null ? head.equals(linkedList.head) : linkedList.head == null;
     }
 
     @Override
     public int hashCode() {
-        return this.mHead != null ? this.mHead.hashCode() : 0;
+        return head != null ? head.hashCode() : 0;
     }
 
     @Override
     public String toString() {
         return "LinkedList{"
-                + "mHead=" + this.mHead
-                + '}';
+            + "head=" + head
+            + '}';
     }
+
 }

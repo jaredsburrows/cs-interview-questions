@@ -3,28 +3,28 @@ package api;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public final class Trio<T1, T2, T3> {
+public final class Trio<First, Second, Third> {
 
-    private final T1 mFirst;
-    private final T2 mSecond;
-    private final T3 mThird;
+    private final First first;
+    private final Second second;
+    private final Third third;
 
-    public Trio(final T1 first, final T2 second, final T3 third) {
-        this.mFirst = first;
-        this.mSecond = second;
-        this.mThird = third;
+    public Trio(final First first, final Second second, final Third third) {
+        this.first = first;
+        this.second = second;
+        this.third = third;
     }
 
-    public T1 getFirst() {
-        return this.mFirst;
+    public First getFirst() {
+        return first;
     }
 
-    public T2 getSecond() {
-        return this.mSecond;
+    public Second getSecond() {
+        return second;
     }
 
-    public T3 getThird() {
-        return this.mThird;
+    public Third getThird() {
+        return third;
     }
 
     @Override
@@ -33,37 +33,38 @@ public final class Trio<T1, T2, T3> {
             return true;
         }
 
-        if (object == null || this.getClass() != object.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
         final Trio<?, ?, ?> trio = (Trio<?, ?, ?>) object;
 
-        if (this.mFirst != null ? !this.mFirst.equals(trio.mFirst) : trio.mFirst != null) {
+        if (first != null ? !first.equals(trio.first) : trio.first != null) {
             return false;
         }
 
-        if (this.mSecond != null ? !this.mSecond.equals(trio.mSecond) : trio.mSecond != null) {
+        if (second != null ? !second.equals(trio.second) : trio.second != null) {
             return false;
         }
 
-        return this.mThird != null ? this.mThird.equals(trio.mThird) : trio.mThird == null;
+        return third != null ? third.equals(trio.third) : trio.third == null;
     }
 
     @Override
     public int hashCode() {
-        int result = this.mFirst != null ? this.mFirst.hashCode() : 0;
-        result = 31 * result + (this.mSecond != null ? this.mSecond.hashCode() : 0);
-        result = 31 * result + (this.mThird != null ? this.mThird.hashCode() : 0);
+        int result = first != null ? first.hashCode() : 0;
+        result = 31 * result + (second != null ? second.hashCode() : 0);
+        result = 31 * result + (third != null ? third.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "Trio{"
-                + "mFirst=" + this.mFirst
-                + ", mSecond=" + this.mSecond
-                + ", mThird=" + this.mThird
-                + '}';
+            + "first=" + first
+            + ", second=" + second
+            + ", third=" + third
+            + '}';
     }
+
 }

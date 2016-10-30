@@ -22,10 +22,10 @@ public final class Chapter14Java {
         }
 
         public PrivateConstructor getInstance() {
-            if (this.mInstance == null) {
-                this.mInstance = new PrivateConstructor();
+            if (mInstance == null) {
+                mInstance = new PrivateConstructor();
             }
-            return this.mInstance;
+            return mInstance;
         }
     }
 
@@ -38,7 +38,7 @@ public final class Chapter14Java {
         }
 
         private BusinessClass(final String str) {
-            this.mStr = str;
+            mStr = str;
         }
 
         public BusinessClass createObject(final String myProperty) {

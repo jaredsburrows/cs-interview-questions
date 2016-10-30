@@ -22,37 +22,38 @@ public final class TreeNode<T> {
             return true;
         }
 
-        if (object == null || this.getClass() != object.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
         final TreeNode<?> treeNode = (TreeNode<?>) object;
 
-        if (this.value != null ? !this.value.equals(treeNode.value) : treeNode.value != null) {
+        if (value != null ? !value.equals(treeNode.value) : treeNode.value != null) {
             return false;
         }
 
-        if (this.left != null ? !this.left.equals(treeNode.left) : treeNode.left != null) {
+        if (left != null ? !left.equals(treeNode.left) : treeNode.left != null) {
             return false;
         }
 
-        return this.right != null ? this.right.equals(treeNode.right) : treeNode.right == null;
+        return right != null ? right.equals(treeNode.right) : treeNode.right == null;
     }
 
     @Override
     public int hashCode() {
-        int result = this.value != null ? this.value.hashCode() : 0;
-        result = 31 * result + (this.left != null ? this.left.hashCode() : 0);
-        result = 31 * result + (this.right != null ? this.right.hashCode() : 0);
+        int result = value != null ? value.hashCode() : 0;
+        result = 31 * result + (left != null ? left.hashCode() : 0);
+        result = 31 * result + (right != null ? right.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "TreeNode{"
-                + "value=" + this.value
-                + ", left=" + this.left
-                + ", right=" + this.right
-                + '}';
+            + "value=" + value
+            + ", left=" + left
+            + ", right=" + right
+            + '}';
     }
+
 }

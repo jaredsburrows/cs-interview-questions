@@ -30,44 +30,45 @@ public final class GraphNode<T> {
             return true;
         }
 
-        if (object == null || this.getClass() != object.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
         final GraphNode<?> graphNode = (GraphNode<?>) object;
 
-        if (this.visited != graphNode.visited) {
+        if (visited != graphNode.visited) {
             return false;
         }
 
-        if (this.value != null ? !this.value.equals(graphNode.value) : graphNode.value != null) {
+        if (value != null ? !value.equals(graphNode.value) : graphNode.value != null) {
             return false;
         }
 
-        if (this.next != null ? !this.next.equals(graphNode.next) : graphNode.next != null) {
+        if (next != null ? !next.equals(graphNode.next) : graphNode.next != null) {
             return false;
         }
 
         // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        return Arrays.equals(this.neighbors, graphNode.neighbors);
+        return Arrays.equals(neighbors, graphNode.neighbors);
     }
 
     @Override
     public int hashCode() {
-        int result = this.value != null ? this.value.hashCode() : 0;
-        result = 31 * result + (this.next != null ? this.next.hashCode() : 0);
-        result = 31 * result + Arrays.hashCode(this.neighbors);
-        result = 31 * result + (this.visited ? 1 : 0);
+        int result = value != null ? value.hashCode() : 0;
+        result = 31 * result + (next != null ? next.hashCode() : 0);
+        result = 31 * result + Arrays.hashCode(neighbors);
+        result = 31 * result + (visited ? 1 : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "GraphNode{"
-                + "value=" + this.value
-                + ", next=" + this.next
-                + ", neighbors=" + Arrays.toString(this.neighbors)
-                + ", visited=" + this.visited
-                + '}';
+            + "value=" + value
+            + ", next=" + next
+            + ", neighbors=" + Arrays.toString(neighbors)
+            + ", visited=" + visited
+            + '}';
     }
+
 }
