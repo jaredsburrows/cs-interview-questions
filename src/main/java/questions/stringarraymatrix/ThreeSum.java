@@ -42,7 +42,7 @@ public final class ThreeSum {
 
                     answer.add(trio);
 
-                    final int count2 = map.get(key2) != null ? - 1 : 0;
+                    final int count2 = map.get(key2) != null ? -1 : 0;
                     map.put(key2, count2);
                 }
             }

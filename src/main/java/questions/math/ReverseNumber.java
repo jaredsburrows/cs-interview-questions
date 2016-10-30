@@ -37,6 +37,6 @@ public final class ReverseNumber {
             return 0;
         }
 
-        return (int)reverseNumber;
+        return (int) reverseNumber;
     }
 }

@@ -28,7 +28,7 @@ public final class SymmetricTree {
         }
 
         return node.value == node2.value
-                && isSymmetric(node.left, node2.right)
-                && isSymmetric(node.right, node2.left);
+            && isSymmetric(node.left, node2.right)
+            && isSymmetric(node.right, node2.left);
     }
 }

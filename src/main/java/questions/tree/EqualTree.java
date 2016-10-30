@@ -17,7 +17,7 @@ public final class EqualTree {
         }
 
         return node.value == node2.value
-                && isEqual(node.left, node2.left)
-                && isEqual(node.right, node2.right);
+            && isEqual(node.left, node2.left)
+            && isEqual(node.right, node2.right);
     }
 }

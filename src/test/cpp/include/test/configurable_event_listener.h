@@ -35,7 +35,7 @@ class ConfigurableEventListener : public TestEventListener {
     // Helpful builder for setting up the TestEventListener
     class Builder;
 
-    // Decontructor
+    // Deconstructor
     virtual ~ConfigurableEventListener() override {
         delete eventListener;
     }

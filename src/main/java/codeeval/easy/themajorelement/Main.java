@@ -28,7 +28,7 @@ public final class Main {
                 ints[Integer.parseInt(string)]++;
             }
 
-            for (int i  = 0; i < ints.length; i++) {
+            for (int i = 0; i < ints.length; i++) {
                 if (ints[i] > (intStrings.length / 2) && ints[i] > occurrence) {
                     occurrence = ints[i];
                     number = i;

@@ -39,7 +39,7 @@ public final class Main {
             result.setTimeInMillis(Math.abs(calendar2.getTime().getTime() - calendar1.getTime().getTime()));
 
             System.out.printf("%02d:%02d:%02d\n", result.get(Calendar.HOUR_OF_DAY), result.get(Calendar.MINUTE),
-                    result.get(Calendar.SECOND));
+                result.get(Calendar.SECOND));
         }
     }
 }

@@ -105,7 +105,7 @@ public final class Chapter8Recursion {
             for (int i = 0; i < length; i++) {
                 // add to final list
                 finalList.addAll(getStringPermutations(prefix + string.charAt(i), string.substring(i + 1, length)
-                        + string.substring(0, i)));
+                    + string.substring(0, i)));
             }
         }
 
