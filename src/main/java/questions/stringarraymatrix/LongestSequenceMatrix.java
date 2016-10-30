@@ -3,7 +3,7 @@ package questions.stringarraymatrix;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class LongestSequenceMatrix {
+public final class LongestSequenceMatrix {
 
     /**
      * Given NxN matrix, 1..n - all numbers are unique

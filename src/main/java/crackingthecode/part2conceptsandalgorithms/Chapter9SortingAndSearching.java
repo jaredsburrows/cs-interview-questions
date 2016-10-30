@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Chapter9SortingAndSearching {
+public final class Chapter9SortingAndSearching {
 
     /**
      * 9.1 - You are given two sorted arrays, A and B, and A has a large enough buffer at the end to
@@ -110,7 +110,7 @@ public class Chapter9SortingAndSearching {
         return -1;
     }
 
-    /**
+    /*
      * 9.4 - If you have a 2 GB file with one string per line, which sorting algorithm would you use
      * to sort the file and why?
      */

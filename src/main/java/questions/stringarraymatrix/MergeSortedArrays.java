@@ -3,7 +3,7 @@ package questions.stringarraymatrix;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class MergeSortedArrays {
+public final class MergeSortedArrays {
 
     public static int[] merge(final int[] arrayA, final int[] arrayB) {
         if (arrayA == null && arrayB == null) {

@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Chapter2LinkedLists {
+public final class Chapter2LinkedLists {
 
     /**
      * 2.1 - Write code to remove duplicates from an unsorted linked list.

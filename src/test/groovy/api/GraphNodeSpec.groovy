@@ -13,6 +13,7 @@ class GraphNodeSpec extends BaseSpec {
     def graphNodes = [sut, sut] as GraphNode<Integer>[]
     def node2 = new GraphNode<>(123, graphNodes)
 
+    @SuppressWarnings("GroovyAssignabilityCheck")
     def "test default values"() {
         when:
         sut.value = 123
@@ -23,7 +24,7 @@ class GraphNodeSpec extends BaseSpec {
         !sut.visited
 
         node2.value == 123
-        node2.neighbors.equals(graphNodes)
+        node2.neighbors == graphNodes
         node2.next == null
         !node2.visited
     }

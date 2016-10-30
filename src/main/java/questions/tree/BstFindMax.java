@@ -5,7 +5,7 @@ import api.TreeNode;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class BstFindMax {
+public final class BstFindMax {
 
     public static TreeNode<Integer> findMaxNode(TreeNode<Integer> node) {
         while (node.right != null) {

@@ -3,7 +3,7 @@ package projecteuler;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Number003 {
+public final class Number003 {
 
     public static boolean isPrime(final long number) {
         if (number > 2 && (number & 1) == 0) {

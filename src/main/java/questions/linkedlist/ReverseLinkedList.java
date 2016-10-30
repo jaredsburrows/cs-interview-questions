@@ -6,7 +6,7 @@ import api.Node;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class ReverseLinkedList {
+public final class ReverseLinkedList {
 
     public static Node<Integer> reverse(final Node<Integer> node) {
 

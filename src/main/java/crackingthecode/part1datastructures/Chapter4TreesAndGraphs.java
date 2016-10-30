@@ -13,13 +13,14 @@ import java.util.Queue;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Chapter4TreesAndGraphs {
+public final class Chapter4TreesAndGraphs {
 
     /**
      * 4.1 - Implement a function to check if a tree is balanced. For the purposes of this question,
      * a balanced tree is defined to be a tree such that no two leaf nodes differ in distance from
      * the root by more than one.
      */
+    @SuppressWarnings("SimplifiableIfStatement")
     public static <T> boolean isBalanced(final TreeNode<T> node) {
         if (node == null) {
             return true;
@@ -129,7 +130,7 @@ public class Chapter4TreesAndGraphs {
         return listLinkedList;
     }
 
-    /**
+    /*
      * 4.5 - Write an algorithm to find the ‘next’ node (i.e., in-order successor) of a given node
      * in a binary search tree where each node has a link to its parent.
      */
@@ -210,10 +211,9 @@ public class Chapter4TreesAndGraphs {
         return EqualTree.isEqual(tree.left, subTree) || EqualTree.isEqual(tree.right, subTree); // important || vs &&
     }
 
-    /**
+    /*
      * 4.8 - You are given a binary tree in which each node contains a value. Design an algorithm to
      * print all paths which sum up to that value. Note that it can be any path in the tree
      * it does not have to start at the root.
      */
-
 }

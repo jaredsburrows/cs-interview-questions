@@ -3,7 +3,7 @@ package questions.sorting;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class MergeSort {
+public final class MergeSort {
 
     public static int[] mergeSortIndex2(final int[] numbers, final int low, final int high) {
         mergeSortIndex(numbers, low, high);

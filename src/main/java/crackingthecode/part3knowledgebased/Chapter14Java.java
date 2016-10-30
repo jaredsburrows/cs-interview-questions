@@ -4,7 +4,7 @@ package crackingthecode.part3knowledgebased;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 @SuppressWarnings("unused")
-public class Chapter14Java {
+public final class Chapter14Java {
 
     /**
      * 14.1 - In terms of inheritance, what is the effect of keeping a constructor private?
@@ -70,7 +70,7 @@ public class Chapter14Java {
         return false;
     }
 
-    /**
+    /*
      * 14.3 - What is the difference between final, finally, and finalize?
      */
     // final used for constants and can't be changed:
@@ -84,12 +84,12 @@ public class Chapter14Java {
     // finalize is a method that is called when an object is freed why the JVM(garbage collector)
     //  - protected void finalize() throws Throwable { }
 
-    /**
+    /*
      * 14.4 - Explain the difference between templates in C++ and generics in Java.
      */
     // http://en.wikipedia.org/wiki/Comparison_of_Java_and_C%2B%2B#Templates_vs._Generics
 
-    /**
+    /*
      * 14.5 - Explain what object reflection is in Java and why it is useful.
      */
     // Java reflection allows objects to edited/changed on runtime
@@ -98,7 +98,7 @@ public class Chapter14Java {
     // - altering final fields
     // - useful for debugging testing applications
 
-    /**
+    /*
      * 14.6 - Suppose you are using a map in your program, how would you count the number of times
      * the program calls the put() and get() functions?
      */

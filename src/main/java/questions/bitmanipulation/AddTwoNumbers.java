@@ -4,7 +4,7 @@ package questions.bitmanipulation;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class AddTwoNumbers {
+public final class AddTwoNumbers {
 
     // 010101101 - 173
     // 101011010 - 346

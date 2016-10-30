@@ -21,7 +21,6 @@ public final class Point {
         return this.mY;
     }
 
-    @SuppressWarnings("SimplifiableIfStatement")
     @Override
     public boolean equals(final Object object) {
         if (this == object) {

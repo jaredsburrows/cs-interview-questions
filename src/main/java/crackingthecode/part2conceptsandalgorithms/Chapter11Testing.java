@@ -4,9 +4,9 @@ package crackingthecode.part2conceptsandalgorithms;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 @SuppressWarnings("unused")
-public class Chapter11Testing {
+public final class Chapter11Testing {
 
-    /**
+    /*
      * 11.1 - Find the mistake(s) in the following code:
      * unsigned int i;
      * for(i=100;i<=0;--i)
@@ -17,7 +17,7 @@ public class Chapter11Testing {
     //   printf("%u\n", i);
     // }
 
-    /**
+    /*
      * 11.2 - You are given the source to an application which crashes when it is run. After running
      * it ten times in a debugger, you find it never crashes in the same place. The application is
      * single threaded, and uses only the C standard library. What programming errors could be
@@ -37,7 +37,7 @@ public class Chapter11Testing {
 
     // The book suggests: memory leak or random variable
 
-    /**
+    /*
      * 11.3 - We have the following method used in a chess game: boolean canMoveTo(int x, int y) x
      * and y are the coordinates of the chess board and it returns whether or not the piece can move
      * to that position. Explain how you would test this method.
@@ -52,7 +52,7 @@ public class Chapter11Testing {
     // - test combinations within 8x8
     // - test real moves, pawns move up 2 times for first move, pawns move up 1 time any other move
 
-    /**
+    /*
      * 11.4 - How would you load test a webpage without using any test tools?
      */
     // Always ask interview for specifics first
@@ -63,7 +63,7 @@ public class Chapter11Testing {
 
     // Write your own multi-threaded program to create users and create http requests simulating high load
 
-    /**
+    /*
      * 11.5 - How would you test a pen?
      */
     // Always ask interview for specifics first
@@ -89,7 +89,7 @@ public class Chapter11Testing {
     // ink ash off clothing?
     // is the pen's ink safe for children?
 
-    /**
+    /*
      * 11.6 - How would you test an ATM in a distributed banking system?
      */
     // Always ask interview for specifics first

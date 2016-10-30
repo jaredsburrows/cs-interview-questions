@@ -10,11 +10,10 @@ import java.util.Map;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class TwoSum {
+public final class TwoSum {
 
     // Time - O(N^2), Space - O(1)
     public static List<Pair<Integer, Integer>> getSums2(final int[] numbers, final int target) {
-
         final List<Pair<Integer, Integer>> answer = new ArrayList<>();
 
         for (final int first : numbers) {
@@ -32,7 +31,6 @@ public class TwoSum {
 
     // Time - O(N), Space - O(N)
     public static List<Pair<Integer, Integer>> getSums(final int[] numbers, final int target) {
-
         final List<Pair<Integer, Integer>> answer = new ArrayList<>();
         final Map<Integer, Integer> map = new HashMap<>();
 

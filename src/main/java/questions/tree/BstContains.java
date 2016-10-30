@@ -5,7 +5,7 @@ import api.TreeNode;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class BstContains {
+public final class BstContains {
 
     public static boolean contains(final TreeNode<Integer> root, final int value) {
         if (root == null) {

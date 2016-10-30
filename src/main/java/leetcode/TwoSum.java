@@ -10,7 +10,7 @@ import java.util.Map;
  *
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class TwoSum {
+public final class TwoSum {
 
     // Time - O(N^2), Space - O(1)
     public static int[] twoSum(final int[] nums, final int target) {

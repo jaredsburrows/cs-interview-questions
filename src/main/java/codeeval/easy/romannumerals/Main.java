@@ -4,7 +4,7 @@ import java.io.File;
 import java.nio.charset.Charset;
 import java.util.Scanner;
 
-public class Main {
+public final class Main {
 
     public static void main(final String[] args) throws Exception {
 

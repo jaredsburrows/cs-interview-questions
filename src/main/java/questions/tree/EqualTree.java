@@ -5,7 +5,7 @@ import api.TreeNode;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class EqualTree {
+public final class EqualTree {
 
     public static <T> boolean isEqual(final TreeNode<T> node, final TreeNode<T> node2) {
         if (node == null && node2 == null) {

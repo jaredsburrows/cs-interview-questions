@@ -3,7 +3,7 @@ package questions.stringarraymatrix;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class AddTwoNumbers {
+public final class AddTwoNumbers {
 
     // Time - O(MAX(M, N)), Space - O(MAX(M, N))
     public static String addTwoNumbers(final String left, final String right) {

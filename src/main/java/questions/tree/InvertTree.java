@@ -5,7 +5,7 @@ import api.TreeNode;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class InvertTree {
+public final class InvertTree {
 
     public static <T> TreeNode<T> reverseTree(final TreeNode<T> root) {
         if (root == null) {

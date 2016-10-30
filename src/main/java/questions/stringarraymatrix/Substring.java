@@ -3,7 +3,7 @@ package questions.stringarraymatrix;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Substring {
+public final class Substring {
 
     // Time - O(N), Space - O(N)
     public static String substring(final String input, final int end) {

@@ -3,7 +3,7 @@ package codingbat.recursion;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class PowerN {
+public final class PowerN {
 
     /**
      * Given base and n that are both 1 or more, compute recursively (no loops) the value of base to the n power,

@@ -65,7 +65,7 @@ class TrieSpec extends BaseSpec {
     def "test toString"() {
         given:
         def actual = sut.toString()
-        def expected = "Trie{mRoot=TrieNode{children=[TrieNode{children=[null, null, null, null, null, null, null, " +
+        def expected = "Trie{root=TrieNode{children=[TrieNode{children=[null, null, null, null, null, null, null, " +
                 "null, null, null, null, null, null, null, null, null, null, TrieNode{children=[null, null, null, " +
                 "null, TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null, " +
                 "null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=true}, " +

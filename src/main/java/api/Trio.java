@@ -27,7 +27,6 @@ public final class Trio<T1, T2, T3> {
         return this.mThird;
     }
 
-    @SuppressWarnings("SimplifiableIfStatement")
     @Override
     public boolean equals(final Object object) {
         if (this == object) {

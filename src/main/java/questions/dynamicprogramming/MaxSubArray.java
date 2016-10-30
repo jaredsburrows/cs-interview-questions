@@ -3,7 +3,7 @@ package questions.dynamicprogramming;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class MaxSubArray {
+public final class MaxSubArray {
 
     public static int getMax(final int[] array) {
         if (array == null) {

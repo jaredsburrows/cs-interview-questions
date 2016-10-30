@@ -6,9 +6,9 @@ import java.util.concurrent.Semaphore;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 @SuppressWarnings("unused")
-public class Chapter18ThreadsAndLocks {
+public final class Chapter18ThreadsAndLocks {
 
-    /**
+    /*
      * 18.1 - What’s the difference between a thread and a process?
      */
     // Process - This is an instance of a program. A process is made up of many threads, where each
@@ -18,7 +18,7 @@ public class Chapter18ThreadsAndLocks {
     // process can. Requires less resources and no address space. Threads share the same address
     // space.
 
-    /**
+    /*
      * 18.2 - How can you measure the time spent in a context switch?
      */
     // Context Switch - http://stackoverflow.com/a/7443719/950427
@@ -30,7 +30,7 @@ public class Chapter18ThreadsAndLocks {
 
     // Problems - we do not have control of kernel level context switches.
 
-    /**
+    /*
      * 18.3 - Implement a singleton design pattern as a template such that, for any given class Foo,
      * you can call Singleton::instance() and get a pointer to an instance of a singleton of type
      * Foo. Assume the existence of a class Lock which has acquire() and release() methods. How
@@ -91,7 +91,7 @@ public class Chapter18ThreadsAndLocks {
     //        return 0;
     //    }
 
-    /**
+    /*
      * 18.4 - Design a class which provides a lock only if there are no possible deadlocks.
      */
     // question is too generic

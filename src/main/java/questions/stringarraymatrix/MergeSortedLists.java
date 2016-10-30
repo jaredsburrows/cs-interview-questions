@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class MergeSortedLists {
+public final class MergeSortedLists {
 
     // Time - O(N*M), Space - O(N)
     public static List<Integer> merge(final List<List<Integer>> numbers) {

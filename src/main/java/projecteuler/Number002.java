@@ -3,7 +3,7 @@ package projecteuler;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Number002 {
+public final class Number002 {
 
     public static long getEvenFibonacciNumbers(final long number) {
         long first = 1;

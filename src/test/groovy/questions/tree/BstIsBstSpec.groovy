@@ -1,5 +1,6 @@
 package questions.tree
 
+import api.TreeNode
 import test.BaseSpec
 
 /**
@@ -19,7 +20,7 @@ class BstIsBstSpec extends BaseSpec {
 
     def "test isBst2"() {
         expect:
-        BstIsBst.isBst(a, b, c) == d
+        BstIsBst.isBst(a as TreeNode<Integer>, b as Double, c as Double) == d
 
         where:
         a               | b                        | c                        | d

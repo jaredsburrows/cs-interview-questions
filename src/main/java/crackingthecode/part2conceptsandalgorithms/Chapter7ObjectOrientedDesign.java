@@ -8,7 +8,7 @@ import java.util.UUID;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 @SuppressWarnings("unused")
-public class Chapter7ObjectOrientedDesign {
+public final class Chapter7ObjectOrientedDesign {
 
     /**
      * 7.1 - Design the data structures for a generic deck of cards. Explain how you would subclass
@@ -40,7 +40,7 @@ public class Chapter7ObjectOrientedDesign {
         }
     }
 
-    /**
+    /*
      * 7.2 - Imagine you have a call center with three levels of employees: fresher, technical lead
      * (TL), product manager (PM). There can be multiple employees, but only one TL or PM. An
      * incoming telephone call must be allocated to a fresher who is free. If a fresher can’t handle
@@ -92,7 +92,7 @@ public class Chapter7ObjectOrientedDesign {
         }
     }
 
-    /**
+    /*
      * 7.4 - Design a chess game using object oriented principles.
      */
 
@@ -168,7 +168,7 @@ public class Chapter7ObjectOrientedDesign {
         public abstract boolean login(String user, String pass);
     }
 
-    /**
+    /*
      * 7.8 - Othello is played as follows: Each Othello piece is white on one side and black on the
      * other. When a piece is surrounded by its opponents on both the left and right sides, or both
      * the top and bottom, it is said to be captured and its color is flipped. On your turn, you
@@ -322,7 +322,7 @@ public class Chapter7ObjectOrientedDesign {
         public List<Drive> driveList;
     }
 
-    /**
+    /*
      * 7.10 - Describe the data structures and algorithms that you would use to implement a garbage
      * collector in C++.
      */

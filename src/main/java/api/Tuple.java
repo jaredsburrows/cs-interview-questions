@@ -21,7 +21,6 @@ public final class Tuple<T1, T2> {
         return this.mRight;
     }
 
-    @SuppressWarnings("SimplifiableIfStatement")
     @Override
     public boolean equals(final Object object) {
         if (this == object) {

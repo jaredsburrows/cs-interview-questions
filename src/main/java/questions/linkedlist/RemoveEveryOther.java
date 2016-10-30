@@ -5,7 +5,7 @@ import api.Node;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class RemoveEveryOther {
+public final class RemoveEveryOther {
 
     // Time - O(N)
     public static void deleteEveryOtherRecursive(Node<Integer> node) {

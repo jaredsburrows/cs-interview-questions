@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.Charset;
 
-public class Main {
+public final class Main {
 
     public static void main(final String[] args) throws Exception {
 

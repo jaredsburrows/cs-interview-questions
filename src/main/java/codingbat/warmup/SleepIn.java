@@ -3,7 +3,7 @@ package codingbat.warmup;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class SleepIn {
+public final class SleepIn {
 
     /**
      * The parameter weekday is true if it is a weekday, and the parameter vacation is true if we are on vacation. We

@@ -23,9 +23,6 @@ class QueueSpec extends BaseSpec {
         expect:
         queue.getFirst() == valueNode
         queue.enqueue(valueNode2)
-//        queue.getFirst() == valueNode
-//        queue.enqueue(valueNode3)
-//        queue.getLast() == valueNode3
     }
 
     def "test getFirst"() {

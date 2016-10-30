@@ -3,7 +3,7 @@ package questions.searching;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class BinarySearch {
+public final class BinarySearch {
 
     // Time - O(LGN), Space - O(1)
     public static int search(final int[] array, final int target) {

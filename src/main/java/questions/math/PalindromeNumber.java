@@ -3,7 +3,7 @@ package questions.math;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class PalindromeNumber {
+public final class PalindromeNumber {
 
     public static boolean isPalindrome(long number) {
         if (number < 0) {

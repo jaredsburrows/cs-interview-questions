@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Chapter8Recursion {
+public final class Chapter8Recursion {
 
     /**
      * 8.1 - Write a method to generate the nth Fibonacci number.
@@ -47,7 +47,7 @@ public class Chapter8Recursion {
         return third;
     }
 
-    /**
+    /*
      * 8.2 - Imagine a robot sitting on the upper left hand corner of an NxN grid. The robot can
      * only move in two directions: right and down. How many possible paths are there for the robot?
      * FOLLOW UP
@@ -287,7 +287,7 @@ public class Chapter8Recursion {
         return ways;
     }
 
-    /**
+    /*
      * 8.8 - Write an algorithm to print all ways of arranging eight queens on a chess board so that
      * none of them share the same row, column or diagonal.
      */

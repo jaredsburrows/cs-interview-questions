@@ -3,7 +3,7 @@ package questions.math;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class TrailingZeros {
+public final class TrailingZeros {
 
     public static long getTrailingZeros(long number) {
 

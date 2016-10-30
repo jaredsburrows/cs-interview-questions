@@ -6,7 +6,7 @@ package api;
 // Current implementation is for strings, modify to make it generic
 public final class Trie<T> {
 
-    private TrieNode<T> mRoot = new TrieNode<>();
+    private final TrieNode<T> root = new TrieNode<>();
 
     public Trie() {
     }
@@ -20,7 +20,7 @@ public final class Trie<T> {
             return;
         }
 
-        TrieNode<T> current = this.mRoot;
+        TrieNode<T> current = this.root;
 
         final int length = word.length();
 
@@ -57,7 +57,7 @@ public final class Trie<T> {
             return null;
         }
 
-        TrieNode<T> current = this.mRoot;
+        TrieNode<T> current = this.root;
 
         final int length = word.length();
 
@@ -73,7 +73,7 @@ public final class Trie<T> {
             }
         }
 
-        if (current == this.mRoot) {
+        if (current == this.root) {
             return null;
         }
 
@@ -92,18 +92,18 @@ public final class Trie<T> {
 
         final Trie<?> trie = (Trie<?>) object;
 
-        return this.mRoot != null ? this.mRoot.equals(trie.mRoot) : trie.mRoot == null;
+        return this.root != null ? this.root.equals(trie.root) : trie.root == null;
     }
 
     @Override
     public int hashCode() {
-        return this.mRoot != null ? this.mRoot.hashCode() : 0;
+        return this.root != null ? this.root.hashCode() : 0;
     }
 
     @Override
     public String toString() {
         return "Trie{"
-                + "mRoot=" + this.mRoot
+                + "root=" + this.root
                 + '}';
     }
 }

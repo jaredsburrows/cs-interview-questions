@@ -4,9 +4,9 @@ package crackingthecode.part3knowledgebased;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 @SuppressWarnings("unused")
-public class Chapter15Databases {
+public final class Chapter15Databases {
 
-    /**
+    /*
      * 15.1 - Write a method to find the number of employees in each department.
      */
     // I feel the book was very unclear about this question.
@@ -27,7 +27,7 @@ public class Chapter15Databases {
     // GROUP BY
     //      Departments.Dept_ID, Dept_Name
 
-    /**
+    /*
      * 15.2 - What are the different types of joins? Please explain how they differ and why certain
      * types are better in certain situations.
      */
@@ -68,7 +68,7 @@ public class Chapter15Databases {
     // - - FROM employee FULL OUTER JOIN department
     // - - ON employee.DepartmentID = department.DepartmentID
 
-    /**
+    /*
      * 15.3 - What is denormalization? Explain the pros and cons.
      */
     // https://msdn.microsoft.com/en-us/library/cc505841.aspx
@@ -109,12 +109,12 @@ public class Chapter15Databases {
     // denormalized database under heavy write load may actually offer worse performance than its
     // functionally equivalent normalized counterpart.
 
-    /**
+    /*
      * 15.4 - Draw an entity-relationship diagram for a database with companies, people, and
      * professionals (people who work for companies).
      */
 
-    /**
+    /*
      * 15.5 - Imagine a simple database storing information for students’ grades. Design what this
      * database might look like, and provide a SQL query to return a list of the honor roll
      * students (top 10%), sorted by their grade point average.

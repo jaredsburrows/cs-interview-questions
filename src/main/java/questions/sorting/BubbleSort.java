@@ -3,7 +3,7 @@ package questions.sorting;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class BubbleSort {
+public final class BubbleSort {
 
     public static void sortDescending(final int[] numbers) {
         for (int i = 0; i < numbers.length - 1; i++) {

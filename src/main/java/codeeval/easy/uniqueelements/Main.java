@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class Main {
+public final class Main {
 
     public static void main(final String[] args) throws Exception {
 

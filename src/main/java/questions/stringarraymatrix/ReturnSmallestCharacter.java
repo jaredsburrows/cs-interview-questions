@@ -18,7 +18,7 @@ package questions.stringarraymatrix;
  *
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class ReturnSmallestCharacter {
+public final class ReturnSmallestCharacter {
 
     // Time - O(N), Space - O(1)
     public static char findInsPoint2(final String input, final char target) {

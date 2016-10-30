@@ -5,7 +5,7 @@ import api.Node;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Cycle {
+public final class Cycle {
 
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
     public static boolean hasCycle(final Node<Integer> node) {

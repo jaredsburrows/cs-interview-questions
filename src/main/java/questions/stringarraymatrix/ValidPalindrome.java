@@ -3,7 +3,7 @@ package questions.stringarraymatrix;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class ValidPalindrome {
+public final class ValidPalindrome {
 
     public static boolean isPalindrome(String input) {
         if (input == null) {
@@ -39,19 +39,19 @@ public class ValidPalindrome {
         return true;
     }
 
-    public static boolean isLowerCase(final char character) {
+    private static boolean isLowerCase(final char character) {
         return character >= 'a' && character <= 'z';
     }
 
-    public static boolean isUpperCase(final char character) {
+    private static boolean isUpperCase(final char character) {
         return character >= 'A' && character <= 'Z';
     }
 
-    public static boolean isChar(final char character) {
+    private static boolean isChar(final char character) {
         return isLowerCase(character) || isUpperCase(character);
     }
 
-    public static boolean isNum(final char character) {
+    private static boolean isNum(final char character) {
         return character >= '0' && character <= '9';
     }
 }

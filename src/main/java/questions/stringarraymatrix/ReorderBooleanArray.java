@@ -5,7 +5,7 @@ import api.util.Swap;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class ReorderBooleanArray {
+public final class ReorderBooleanArray {
 
     /**
      * Given an array A of n objects with Boolean-valued keys, reorder the array so that objects

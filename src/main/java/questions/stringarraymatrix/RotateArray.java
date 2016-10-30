@@ -3,7 +3,7 @@ package questions.stringarraymatrix;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class RotateArray {
+public final class RotateArray {
 
     // Start: 1,2,3,4,5,6, shift: 2
     // After:  5,6,1,2,3,4

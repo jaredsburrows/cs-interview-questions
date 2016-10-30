@@ -3,7 +3,7 @@ package projecteuler;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Number004 {
+public final class Number004 {
 
     public static boolean isPalindrome(final int number) {
         final String temp = Integer.toString(number);

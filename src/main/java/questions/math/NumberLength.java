@@ -3,7 +3,7 @@ package questions.math;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class NumberLength {
+public final class NumberLength {
 
     // Time - O(N), Space - O(1)
     public static int getIntegerLength(int number) {

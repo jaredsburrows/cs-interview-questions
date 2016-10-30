@@ -7,6 +7,7 @@ import test.BaseSpec
  */
 class PalindromeNumberSpec extends BaseSpec {
 
+    @SuppressWarnings("GroovyAssignabilityCheck")
     def "test isPalindrome"() {
         expect:
         PalindromeNumber.isPalindrome(a) == b

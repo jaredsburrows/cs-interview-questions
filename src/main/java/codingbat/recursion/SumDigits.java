@@ -3,7 +3,7 @@ package codingbat.recursion;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class SumDigits {
+public final class SumDigits {
 
     /**
      * Given a non-negative int n, return the sum of its digits recursively (no loops). Note that mod (%) by 10 yields

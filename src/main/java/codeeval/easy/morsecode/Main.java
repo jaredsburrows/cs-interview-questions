@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Main {
+public final class Main {
     public static void main(final String[] args) throws Exception {
 
         final Scanner scanner = new Scanner(new File(args[0]), Charset.defaultCharset().name());

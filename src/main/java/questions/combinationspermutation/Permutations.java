@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Permutations {
+public final class Permutations {
 
     public static List<String> getStringPermutations(final String prefix, final String string) {
         if (string == null) {

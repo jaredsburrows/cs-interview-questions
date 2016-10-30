@@ -5,7 +5,7 @@ import api.TreeNode;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class BstHeight {
+public final class BstHeight {
 
     public static int getHeight(final TreeNode<Integer> node) {
         if (node == null) {

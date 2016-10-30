@@ -3,7 +3,7 @@ package questions.math;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Pow {
+public final class Pow {
 
     public static long pow(final int number, final int exponent) {
         if (exponent < 0) {

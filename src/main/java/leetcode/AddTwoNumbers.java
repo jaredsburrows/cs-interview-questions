@@ -9,7 +9,7 @@ import api.Node;
  *
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class AddTwoNumbers {
+public final class AddTwoNumbers {
 
     // Time - O(MAX(M, N)), Space - O(MAX(M, N))
     public static Node<Integer> addTwoNumbers(Node<Integer> node, Node<Integer> node2) {

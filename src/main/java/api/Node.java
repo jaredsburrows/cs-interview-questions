@@ -16,7 +16,6 @@ public final class Node<T> {
         this.value = value;
     }
 
-    @SuppressWarnings("SimplifiableIfStatement")
     @Override
     public boolean equals(final Object object) {
         if (this == object) {

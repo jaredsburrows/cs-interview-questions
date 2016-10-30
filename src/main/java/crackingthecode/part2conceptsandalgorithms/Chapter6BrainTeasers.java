@@ -3,7 +3,7 @@ package crackingthecode.part2conceptsandalgorithms;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Chapter6BrainTeasers {
+public final class Chapter6BrainTeasers {
 
     /**
      * 6.1 - Add arithmetic operators (plus, minus, times, divide) to make the following expression
@@ -52,7 +52,7 @@ public class Chapter6BrainTeasers {
         return (5 - 3) * 2;
     }
 
-    /**
+    /*
      * 6.4 - A bunch of men are on an island. A genie comes down and gathers everyone to- gether and
      * places a magical hat on some people’s heads (i.e., at least one person has a hat). The hat is
      * magical: it can be seen by other people, but not by the wearer of the hat himself. To remove
@@ -65,7 +65,7 @@ public class Chapter6BrainTeasers {
     // n - people
     // c - hats, atleast one person has a hat
 
-    /**
+    /*
      * 6.5 - There is a building of 100 floors. If an egg drops from the Nth floor or above it will
      * break. If it’s dropped from any floor below, it will not break. You’re given 2 eggs. Find N,
      * while minimizing the number of drops for the worst case.

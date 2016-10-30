@@ -5,7 +5,7 @@ import api.Node;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class MergeTwoSortedLinkedLists {
+public final class MergeTwoSortedLinkedLists {
 
     public static Node<Integer> merge(final Node<Integer> left, final Node<Integer> right) {
         if (left == null || right == null) {

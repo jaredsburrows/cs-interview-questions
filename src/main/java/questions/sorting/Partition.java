@@ -3,7 +3,7 @@ package questions.sorting;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Partition {
+public final class Partition {
 
     public static void swap(final int[] array, final int left, final int right) {
         final int temp = array[left];

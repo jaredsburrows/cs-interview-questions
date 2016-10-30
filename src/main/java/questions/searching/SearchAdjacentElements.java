@@ -5,7 +5,7 @@ package questions.searching;
  *
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class SearchAdjacentElements {
+public final class SearchAdjacentElements {
 
     // Time - O(N), Space - O(1)
     public static int search(final int[] array, final int number) {

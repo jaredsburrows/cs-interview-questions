@@ -3,7 +3,7 @@ package questions.stringarraymatrix;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class ReverseArray {
+public final class ReverseArray {
 
     // Time - O(N), Space - O(1)
     public static int[] reverse(int[] array, int start, int end) {

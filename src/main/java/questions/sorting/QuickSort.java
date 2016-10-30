@@ -3,7 +3,7 @@ package questions.sorting;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class QuickSort {
+public final class QuickSort {
 
     public static void sortHelper(final int[] array, final int low, final int high) {
         if (array == null || array.length == 0) {

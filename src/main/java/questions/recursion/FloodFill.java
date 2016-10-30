@@ -3,7 +3,7 @@ package questions.recursion;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class FloodFill {
+public final class FloodFill {
 
     public static void floodFill(final int[][] array, final int positionX, final int positionY, final int newColor) {
         // Start with the color that x,y

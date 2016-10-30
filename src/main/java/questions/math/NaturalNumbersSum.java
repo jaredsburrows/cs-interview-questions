@@ -3,7 +3,7 @@ package questions.math;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class NaturalNumbersSum {
+public final class NaturalNumbersSum {
 
     // Time - O(1), Space - O(1)
     public static int getSumNaturalNumbers(final int number) {

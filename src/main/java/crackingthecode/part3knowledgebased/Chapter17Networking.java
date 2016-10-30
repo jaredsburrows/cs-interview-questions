@@ -4,9 +4,9 @@ package crackingthecode.part3knowledgebased;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 @SuppressWarnings("unused")
-public class Chapter17Networking {
+public final class Chapter17Networking {
 
-    /**
+    /*
      * 17.1 - Explain what happens, step by step, after you type a URL into a browser. Use as much
      * detail as possible.
      */
@@ -21,7 +21,7 @@ public class Chapter17Networking {
     // Browser caches data
     // Connections are terminated when browser is closed or navigated away from site
 
-    /**
+    /*
      * 17.2 - Explain any common routing protocol in detail. For example: BGP, OSPF, RIP.
      */
     // BGP - Border Gateway Protocol - Download and update routing tables. BGP routers send and
@@ -45,7 +45,7 @@ public class Chapter17Networking {
     // identifies the closest router for communication.
     // http://www.livinginternet.com/i/iw_route_igp_ospf.htm
 
-    /**
+    /*
      * 17.3 - Compare and contrast the IPv4 and IPv6 protocols.
      */
     // http://www.networkworld.com/article/2692482/ipv6/infographic-ipv4-vs-ipv6.html
@@ -65,7 +65,7 @@ public class Chapter17Networking {
     // 6. Multi-homing
     // 7. Scoped address: link-local, site-local and global-address space
 
-    /**
+    /*
      * 17.4 - What is a network / subnet mask? Explain how host A sends a message / packet to host
      * B when: (a) both are on same network and (b) both are on different networks. Explain which
      * layer makes the routing decision and how.
@@ -85,7 +85,7 @@ public class Chapter17Networking {
     // The Network Layer is the layer out of (1. Physical, 2. Data Link, 3. Network, 4. Transport,
     // 5. Session, 6. Presentation, 7. Application) handles the routing and forwarding of packets.
 
-    /**
+    /*
      * 17.5 - What are the differences between TCP and UDP? Explain how TCP handles reliable
      * delivery (explain ACK mechanism), flow control (explain TCP sender’s / receiver’s win- dow)
      * and congestion control.

@@ -3,7 +3,7 @@ package crackingthecode.part2conceptsandalgorithms;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Chapter5BitManipulation {
+public final class Chapter5BitManipulation {
 
     // binary bitwise
     // &  AND
@@ -54,17 +54,17 @@ public class Chapter5BitManipulation {
         return (left & mask) | (right << positionA);
     }
 
-    /**
+    /*
      * 5.2 - Given a (decimal - e.g. 3.72) number that is passed in as a string, print the binary
      * representation. If the number can not be represented accurately in binary, print “ERROR”.
      */
 
-    /**
+    /*
      * 5.3 - Given an integer, print the next smallest and next largest number that have the same
      * number of 1 bits in their binary representation.
      */
 
-    /**
+    /*
      * 5.4 - Explain what the following code does: ((n & (n-1)) == 0).
      */
     // Prints if number is a power of 2
@@ -158,7 +158,7 @@ public class Chapter5BitManipulation {
         return ((number & 0xaaaaaaaa) >> 1) | ((number & 0x55555555) << 1);
     }
 
-    /**
+    /*
      * 5.7 - An array A[1...n] contains all the integers from 0 to n except for one number which is
      * missing. In this problem, we cannot access an entire integer in A with a single operation.
      * The elements of A are represented in binary, and the only operation we can use to access them

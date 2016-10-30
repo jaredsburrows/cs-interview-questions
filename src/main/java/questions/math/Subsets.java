@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Subsets {
+public final class Subsets {
 
     public static <T extends Comparable<? super T>> List<ArrayList<T>> subsets(final List<T> data) {
         if (data == null) {

@@ -5,7 +5,7 @@ import api.TreeNode;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class BstInsert {
+public final class BstInsert {
 
     public static TreeNode<Integer> insertBst(final TreeNode<Integer> root, final int value) {
         return insertBst(root, new TreeNode<>(value));
