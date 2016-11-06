@@ -33,7 +33,7 @@ public final class MergeSortedLists {
     }
 
     // Time - O(N), Space - O(N)
-    static List<Integer> merge(List<Integer> left, List<Integer> right) {
+    private static List<Integer> merge(List<Integer> left, List<Integer> right) {
 
         if (left == null) {
             left = new ArrayList<>();

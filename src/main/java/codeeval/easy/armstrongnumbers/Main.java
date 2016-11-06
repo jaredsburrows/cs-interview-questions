@@ -11,7 +11,6 @@ import java.nio.charset.Charset;
 public final class Main {
 
     public static void main(final String[] args) throws Exception {
-
         final File inputFile = new File(args[0]);
         final InputStream fileStream = new FileInputStream(inputFile);
         final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
@@ -20,17 +19,17 @@ public final class Main {
         String line;
         while ((line = buffer.readLine()) != null) {
             final String string = line.trim();
-            int length = string.length();
+            final int length = string.length();
             int value = Integer.parseInt(string);
-            int originalValue = value;
-            int eval = 0;
+            final double originalValue = value;
+            double eval = 0;
             while (value != 0) {
-                int temp = value % 10;
+                final int temp = value % 10;
                 value /= 10;
                 eval += Math.pow(temp, length);
             }
 
-            System.out.println((originalValue == eval) ? "True" : "False");
+            System.out.println(Double.compare(originalValue, eval) == 0 ? "True" : "False");
         }
     }
 }

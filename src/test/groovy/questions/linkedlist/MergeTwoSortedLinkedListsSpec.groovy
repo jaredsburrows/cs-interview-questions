@@ -15,8 +15,8 @@ class MergeTwoSortedLinkedListsSpec extends BaseSpec {
         where:
         a             | b             | c
         null          | null          | null
-        new Node<>(0) | null          | null
-        null          | new Node<>(0) | null
+        new Node<>(0) | null          | new Node<>(0)
+        null          | new Node<>(0) | new Node<>(0)
     }
 
     def "test merge - sorted - different length"() {

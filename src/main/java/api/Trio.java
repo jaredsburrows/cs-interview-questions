@@ -3,27 +3,27 @@ package api;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public final class Trio<First, Second, Third> {
+public final class Trio<F, S, T> {
 
-    private final First first;
-    private final Second second;
-    private final Third third;
+    private final F first;
+    private final S second;
+    private final T third;
 
-    public Trio(final First first, final Second second, final Third third) {
+    public Trio(final F first, final S second, final T third) {
         this.first = first;
         this.second = second;
         this.third = third;
     }
 
-    public First getFirst() {
+    public F getFirst() {
         return first;
     }
 
-    public Second getSecond() {
+    public S getSecond() {
         return second;
     }
 
-    public Third getThird() {
+    public T getThird() {
         return third;
     }
 

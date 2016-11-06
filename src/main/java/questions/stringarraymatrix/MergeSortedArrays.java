@@ -5,35 +5,36 @@ package questions.stringarraymatrix;
  */
 public final class MergeSortedArrays {
 
-    public static int[] merge(final int[] arrayA, final int[] arrayB) {
-        if (arrayA == null && arrayB == null) {
+    // Time - O(N+M), Space - O(N+M)
+    public static int[] merge(final int[] left, final int[] right) {
+        if (left == null && right == null) {
             return null;
         }
 
-        if (arrayA == null) {
-            return arrayB;
+        if (left == null) {
+            return right;
         }
 
-        if (arrayB == null) {
-            return arrayA;
+        if (right == null) {
+            return left;
         }
 
-        int[] merge = new int[arrayA.length + arrayB.length];
+        final int[] merge = new int[left.length + right.length];
 
-        int indexA = 0;
-        int indexB = 0;
+        int leftIndex = 0;
+        int rightIndex = 0;
 
         for (int i = 0; i < merge.length; i++) {
-            if (indexA < arrayA.length && indexB < arrayB.length) {
-                if (arrayA[indexA] < arrayB[indexB]) {
-                    merge[i] = arrayA[indexA++];
+            if (leftIndex < left.length && rightIndex < right.length) {
+                if (left[leftIndex] < right[rightIndex]) {
+                    merge[i] = left[leftIndex++];
                 } else {
-                    merge[i] = arrayB[indexB++];
+                    merge[i] = right[rightIndex++];
                 }
-            } else if (indexA < arrayA.length) {
-                merge[i] = arrayA[indexA++];
+            } else if (leftIndex < left.length) {
+                merge[i] = left[leftIndex++];
             } else {
-                merge[i] = arrayB[indexB++];
+                merge[i] = right[rightIndex++];
             }
         }
 
