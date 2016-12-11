@@ -10,7 +10,7 @@ matrix:
 install: true
 
 script:
-  - ./gradlew clean check cobertura -Dscan --stacktrace && .buildscript/publishDocs.sh
+  - ./gradlew clean check jacocoTestReport coveralls -Dscan --stacktrace && .buildscript/publishDocs.sh
 
 branches:
   except:

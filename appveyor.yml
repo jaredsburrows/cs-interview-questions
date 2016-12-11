@@ -2,7 +2,7 @@ install:
   - set JAVA_HOME=C:\Program Files\Java\jdk1.8.0
 
 build_script:
-  - gradlew.bat clean check -Dscan --configure-on-demand --parallel --stacktrace
+  - gradlew.bat clean check -Dscan --stacktrace
 
 artifacts:
   - path: build\reports\
