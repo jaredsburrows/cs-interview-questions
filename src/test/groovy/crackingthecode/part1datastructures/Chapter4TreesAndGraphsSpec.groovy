@@ -9,7 +9,6 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-@SuppressWarnings("GroovyPointlessBoolean")
 final class Chapter4TreesAndGraphsSpec extends BaseSpec {
 
     @Shared def tree = new TreeNode(26)

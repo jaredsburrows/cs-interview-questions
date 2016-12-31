@@ -13,7 +13,6 @@ final class GraphNodeSpec extends BaseSpec {
     def graphNodes = [sut, sut] as GraphNode<Integer>[]
     def node2 = new GraphNode<>(123, graphNodes)
 
-    @SuppressWarnings("GroovyAssignabilityCheck")
     def "test default values"() {
         when:
         sut.value = 123

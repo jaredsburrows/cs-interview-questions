@@ -6,7 +6,6 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-@SuppressWarnings("GroovyPointlessBoolean")
 final class FibonacciSpec extends BaseSpec {
 
     @Unroll def "test fibonacci"() {

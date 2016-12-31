@@ -53,7 +53,6 @@ final class Chapter8RecursionSpec extends BaseSpec {
         "" | "abc" || ["abc", "acb", "bca", "bac", "cab", "cba"]
     }
 
-    @SuppressWarnings("GroovyAssignabilityCheck")
     @Unroll def "test getValidParentheses"() {
         expect:
         Chapter8Recursion.getValidParentheses(a, b, c, d) == e
