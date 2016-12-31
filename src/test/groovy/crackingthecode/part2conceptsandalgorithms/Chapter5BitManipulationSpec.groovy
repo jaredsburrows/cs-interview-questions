@@ -1,5 +1,6 @@
 package crackingthecode.part2conceptsandalgorithms
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class Chapter5BitManipulationSpec extends BaseSpec {
 
-    def "test getDiffBits"() {
+    @Unroll def "test getDiffBits"() {
         expect:
         Chapter5BitManipulation.getDiffBits(a, b) == c
         Chapter5BitManipulation.bitSwapRequired(a, b) == c
@@ -19,7 +20,7 @@ final class Chapter5BitManipulationSpec extends BaseSpec {
         4  | 4  | 0
     }
 
-    def "test getSwapBits"() {
+    @Unroll def "test getSwapBits"() {
         expect:
         Chapter5BitManipulation.getSwapBits(a) == b
 

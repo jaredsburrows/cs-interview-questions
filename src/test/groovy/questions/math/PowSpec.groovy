@@ -1,5 +1,6 @@
 package questions.math
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class PowSpec extends BaseSpec {
 
-    def "test pow"() {
+    @Unroll def "test pow"() {
         expect:
         Pow.pow(a, b) == c
 

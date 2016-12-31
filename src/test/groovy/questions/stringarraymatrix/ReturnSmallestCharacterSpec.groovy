@@ -1,5 +1,6 @@
 package questions.stringarraymatrix
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class ReturnSmallestCharacterSpec extends BaseSpec {
 
-    def "test findInsPoint2"() {
+    @Unroll def "test findInsPoint2"() {
         expect:
         ReturnSmallestCharacter.findInsPoint2(a, b as char) == c as char
 
@@ -25,7 +26,7 @@ final class ReturnSmallestCharacterSpec extends BaseSpec {
         "cfk"   | 'd' | 'f'
     }
 
-    def "test findInsPoint"() {
+    @Unroll def "test findInsPoint"() {
         expect:
         ReturnSmallestCharacter.findInsPoint(a, b as char) == c as char
 

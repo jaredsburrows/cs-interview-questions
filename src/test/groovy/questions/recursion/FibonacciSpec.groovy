@@ -1,5 +1,6 @@
 package questions.recursion
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class FibonacciSpec extends BaseSpec {
 
-    def "test fibonacci"() {
+    @Unroll def "test fibonacci"() {
         expect:
         Fibonacci.fibonacci(a) == b
 

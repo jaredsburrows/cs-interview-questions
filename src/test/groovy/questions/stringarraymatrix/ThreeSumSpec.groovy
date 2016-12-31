@@ -2,6 +2,7 @@ package questions.stringarraymatrix
 
 import api.Trio
 import spock.lang.Ignore
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -10,7 +11,7 @@ import test.BaseSpec
 final class ThreeSumSpec extends BaseSpec {
 
     @Ignore
-    def "test list trios(x ,y), equal given number, no duplicates"() {
+    @Unroll def "test list trios(x ,y), equal given number, no duplicates"() {
         expect:
         ThreeSum.getSums(a as int[], b) == c
 

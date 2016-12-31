@@ -1,5 +1,6 @@
 package crackingthecode.part1datastructures
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class Chapter1ArraysAndStringsSpec extends BaseSpec {
 
-    def "test isUniqueCharacters"() {
+    @Unroll def "test isUniqueCharacters"() {
         expect:
         Chapter1ArraysAndStrings.isUniqueCharacters(a) == b
         Chapter1ArraysAndStrings.isUniqueCharacters2(a) == b
@@ -22,7 +23,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
         "qwertyuiopplkjhgfdsazxcvbnm" | false
     }
 
-    def "test reverseString"() {
+    @Unroll def "test reverseString"() {
         expect:
         Chapter1ArraysAndStrings.reverseString(a as char[]) == b as char[]
 
@@ -35,7 +36,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
         "test"       | "tset"
     }
 
-    def "test removeDuplicates"() {
+    @Unroll def "test removeDuplicates"() {
         expect:
         Chapter1ArraysAndStrings.removeDuplicates(a) == b
 
@@ -48,7 +49,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
         "abcc"         | "abc"
     }
 
-    def "test isAnagram"() {
+    @Unroll def "test isAnagram"() {
         expect:
         Chapter1ArraysAndStrings.isAnagram(a, b) == c
         Chapter1ArraysAndStrings.isAnagram2(a, b) == c
@@ -66,7 +67,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
         "fall"       | "foul"       | false
     }
 
-    def "test replaceSpace"() {
+    @Unroll def "test replaceSpace"() {
         expect:
         Chapter1ArraysAndStrings.replaceSpaces(a) == b
         Chapter1ArraysAndStrings.replaceSpaces2(a) == b
@@ -80,7 +81,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
         "  "   | "%20%20"
     }
 
-    def "test rotateImage"() {
+    @Unroll def "test rotateImage"() {
         expect:
         Chapter1ArraysAndStrings.rotateImage(a as int[][]) == b as int[][]
         Chapter1ArraysAndStrings.rotateImage2(a as int[][]) == b as int[][]
@@ -102,7 +103,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
                           [6, 2, 8, 4]]
     }
 
-    def "test markRows"() {
+    @Unroll def "test markRows"() {
         expect:
         Chapter1ArraysAndStrings.markRows(a as int[][]) == b as int[][]
 
@@ -122,7 +123,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
 
     }
 
-    def "test isSubstring"() {
+    @Unroll def "test isSubstring"() {
         expect:
         Chapter1ArraysAndStrings.isSubstring(a, b) == c
 

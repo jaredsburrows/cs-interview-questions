@@ -1,6 +1,7 @@
 package crackingthecode.part2conceptsandalgorithms
 
 import api.Tuple
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -8,7 +9,7 @@ import test.BaseSpec
  */
 final class Chapter9SortingAndSearchingSpec extends BaseSpec {
 
-    def "test mergeAInB"() {
+    @Unroll def "test mergeAInB"() {
         expect:
         Chapter9SortingAndSearching.mergeBInA(a as int[], b as int[], c as int) == d as int[]
 
@@ -22,7 +23,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
     }
 
     // http://www2.vo.lu/homepages/phahn/anagrams/oneword.htm
-    def "test sortAnagrams"() {
+    @Unroll def "test sortAnagrams"() {
         expect:
         Chapter9SortingAndSearching.sortAnagrams(a) == b
 
@@ -34,7 +35,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
                 ["aceno", "aceno", "adeeglnnr", "adeeglnnr", "aestw", "ainpt", "ainpt"]
     }
 
-    def "test getRotatedIndexOf"() {
+    @Unroll def "test getRotatedIndexOf"() {
         expect:
         Chapter9SortingAndSearching.getRotatedIndexOf(a as int[], b) == c
 
@@ -48,7 +49,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
                 -1 // cant handle duplicates
     }
 
-    def "test findString"() {
+    @Unroll def "test findString"() {
         expect:
         Chapter9SortingAndSearching.findString(a as String[], b as String) == c
         Chapter9SortingAndSearching.findString2(a as String[], b as String) == c
@@ -63,7 +64,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
         ["at", "", "", "", "", "ball", "car", "", "", "dad", "", ""]     | "ballcar" | -1
     }
 
-    def "test findValue"() {
+    @Unroll def "test findValue"() {
         expect:
         Chapter9SortingAndSearching.findValue(a as int[][], b) == c
 

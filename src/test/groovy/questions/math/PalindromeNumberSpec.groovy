@@ -1,5 +1,6 @@
 package questions.math
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -8,7 +9,7 @@ import test.BaseSpec
 final class PalindromeNumberSpec extends BaseSpec {
 
     @SuppressWarnings("GroovyAssignabilityCheck")
-    def "test isPalindrome"() {
+    @Unroll def "test isPalindrome"() {
         expect:
         PalindromeNumber.isPalindrome(a) == b
 

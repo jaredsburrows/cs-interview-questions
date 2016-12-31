@@ -1,5 +1,6 @@
 package questions.bitmanipulation
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class AddTwoNumbersSpec extends BaseSpec {
 
-    def "test getBinarySum"() {
+    @Unroll def "test getBinarySum"() {
         expect:
         AddTwoNumbers.getBinarySumLib(a, b) == c
         AddTwoNumbers.getBinarySum(a, b) == c

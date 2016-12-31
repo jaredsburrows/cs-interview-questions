@@ -1,5 +1,6 @@
 package codingbat.recursion
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class FactorialSpec extends BaseSpec {
 
-    def "test factorial"() {
+    @Unroll def "test factorial"() {
         expect:
         Factorial.factorial(a) == b
 

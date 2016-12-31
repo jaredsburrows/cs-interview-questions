@@ -1,6 +1,7 @@
 package crackingthecode.part2conceptsandalgorithms
 
 import api.Color
+import spock.lang.Unroll
 import test.BaseSpec
 
 import static api.Color.*
@@ -10,7 +11,7 @@ import static api.Color.*
  */
 final class Chapter8RecursionSpec extends BaseSpec {
 
-    def "test getFibNumberRecursive"() {
+    @Unroll def "test getFibNumberRecursive"() {
         expect:
         Chapter8Recursion.getFibNumberRecursive(a) == b
         Chapter8Recursion.getFibNumberIterative(a) == b
@@ -30,7 +31,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
         8  | 21
     }
 
-    def "test getSubsets"() {
+    @Unroll def "test getSubsets"() {
         expect:
         Chapter8Recursion.getSubsets(a, b) == c
 
@@ -42,7 +43,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
         [1, 2] | 0  | [[], [2], [1], [2, 1]]
     }
 
-    def "test getStringPermutations"() {
+    @Unroll def "test getStringPermutations"() {
         expect:
         Chapter8Recursion.getStringPermutations(a, b) == c
 
@@ -53,7 +54,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
     }
 
     @SuppressWarnings("GroovyAssignabilityCheck")
-    def "test getValidParentheses"() {
+    @Unroll def "test getValidParentheses"() {
         expect:
         Chapter8Recursion.getValidParentheses(a, b, c, d) == e
 
@@ -114,7 +115,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
               [1, 1, 1, 1, 1, 3, 3, 1]] as int[][]
     }
 
-    def "test getRepresentCents"() {
+    @Unroll def "test getRepresentCents"() {
         expect:
         // starting with quarters
         Chapter8Recursion.getRepresentCents(a as int, 25) == b

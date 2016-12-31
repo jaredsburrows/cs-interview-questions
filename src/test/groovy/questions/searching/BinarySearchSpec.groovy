@@ -1,5 +1,6 @@
 package questions.searching
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class BinarySearchSpec extends BaseSpec {
 
-    def "test search"() {
+    @Unroll def "test search"() {
         expect:
         BinarySearch.search(a as int[], b) == c
 

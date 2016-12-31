@@ -1,5 +1,6 @@
 package questions.combinationspermutation
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class PermutationsSpec extends BaseSpec {
 
-    def "test getStringPermutations"() {
+    @Unroll def "test getStringPermutations"() {
         expect:
         Permutations.getStringPermutations("", a) == b
 

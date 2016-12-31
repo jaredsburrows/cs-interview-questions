@@ -1,5 +1,6 @@
 package questions.stringarraymatrix
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class AddTwoNumbersSpec extends BaseSpec {
 
-    def "test  addTwoNumbers"() {
+    @Unroll def "test  addTwoNumbers"() {
         expect:
         AddTwoNumbers.addTwoNumbers(a, b) == c
 

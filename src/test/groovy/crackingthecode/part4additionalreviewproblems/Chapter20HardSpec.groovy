@@ -1,5 +1,6 @@
 package crackingthecode.part4additionalreviewproblems
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class Chapter20HardSpec extends BaseSpec {
 
-    def "test 20.1 - addTwoNumbers"() {
+    @Unroll def "test 20.1 - addTwoNumbers"() {
         expect:
         Chapter20Hard.addTwoNumbers(a, b) == c
 
@@ -18,7 +19,7 @@ final class Chapter20HardSpec extends BaseSpec {
         14123 | 453115 | 467238
     }
 
-    def "test subtractTwoNumbers"() {
+    @Unroll def "test subtractTwoNumbers"() {
         expect:
         Chapter20Hard.substractTwoNumbers(a, b) == c
 
@@ -29,7 +30,7 @@ final class Chapter20HardSpec extends BaseSpec {
         467238 | 14123 | 453115
     }
 
-    def "test 20.4 - countNumber2s"() {
+    @Unroll def "test 20.4 - countNumber2s"() {
         expect:
         Chapter20Hard.countNumber2s(a) == b
         Chapter20Hard.count2sI(a) == b
@@ -40,7 +41,7 @@ final class Chapter20HardSpec extends BaseSpec {
         35 | 14
     }
 
-    def "test 20.6 - getTopMillion"() {
+    @Unroll def "test 20.6 - getTopMillion"() {
         expect:
         Chapter20Hard.getTopMillion(a) == b
 
@@ -51,7 +52,7 @@ final class Chapter20HardSpec extends BaseSpec {
         [1, 5, 2, 6, 4, 7, 3, 9, 3, 5] | [5, 5, 6, 7, 9]
     }
 
-    def "test 20.10 - getTransformedList"() {
+    @Unroll def "test 20.10 - getTransformedList"() {
         expect:
         Chapter20Hard.getTransformedList(a, b, c) == d
 

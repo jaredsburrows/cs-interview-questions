@@ -1,5 +1,6 @@
 package questions.math
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class FindMissingNumberSpec extends BaseSpec {
 
-    def "test findMissing"() {
+    @Unroll def "test findMissing"() {
         expect:
         FindMissingNumber.findMissing(a as int[]) == b
         FindMissingNumber.findMissing2(a as int[]) == b

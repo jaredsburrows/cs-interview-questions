@@ -1,6 +1,7 @@
 package questions.linkedlist
 
 import api.Node
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -8,7 +9,7 @@ import test.BaseSpec
  */
 final class MergeTwoSortedLinkedListsSpec extends BaseSpec {
 
-    def "test merge - null"() {
+    @Unroll def "test merge - null"() {
         expect:
         MergeTwoSortedLinkedLists.merge(a, b) == c
 

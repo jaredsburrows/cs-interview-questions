@@ -3,6 +3,7 @@ package crackingthecode.part1datastructures
 import api.GraphNode
 import api.TreeNode
 import spock.lang.Shared
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -126,7 +127,7 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
 
     }
 
-    def "test commonAncestor"() {
+    @Unroll def "test commonAncestor"() {
         given:
         treeNode4.left = treeNode2
         treeNode4.left.left = treeNode1
@@ -147,7 +148,7 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         treeNode4 | treeNode2 | treeNode5 | treeNode4
     }
 
-    def "test isSubtree"() {
+    @Unroll def "test isSubtree"() {
         expect:
         Chapter4TreesAndGraphs.isSubtree(a, b) == c
 

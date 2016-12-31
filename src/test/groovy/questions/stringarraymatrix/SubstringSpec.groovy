@@ -1,5 +1,6 @@
 package questions.stringarraymatrix
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class SubstringSpec extends BaseSpec {
 
-    def "test substring"() {
+    @Unroll def "test substring"() {
         expect:
         Substring.substring(a, b, c) == d
 
@@ -23,7 +24,7 @@ final class SubstringSpec extends BaseSpec {
         "hello" | 0  | 3  | "hel"
     }
 
-    def "test substring2"() {
+    @Unroll def "test substring2"() {
         expect:
         Substring.substring(a, c) == d
 

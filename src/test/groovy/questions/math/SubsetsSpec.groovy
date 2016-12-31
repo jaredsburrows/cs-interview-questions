@@ -1,5 +1,6 @@
 package questions.math
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class SubsetsSpec extends BaseSpec {
 
-    def "test subsets"() {
+    @Unroll def "test subsets"() {
         expect:
         Subsets.subsets(a) == b
         Subsets.subsets2(a as int[]) == b

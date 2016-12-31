@@ -1,5 +1,6 @@
 package questions.stringarraymatrix
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class RotateArraySpec extends BaseSpec {
 
-    def "test rotate"() {
+    @Unroll def "test rotate"() {
         expect:
         RotateArray.rotate(a as int[], b) == c as int[]
 

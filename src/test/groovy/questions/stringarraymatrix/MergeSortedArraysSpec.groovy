@@ -1,5 +1,6 @@
 package questions.stringarraymatrix
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class MergeSortedArraysSpec extends BaseSpec {
 
-    def "test merge"() {
+    @Unroll def "test merge"() {
         expect:
         MergeSortedArrays.merge(a as int[], b as int[]) == c as int[]
 

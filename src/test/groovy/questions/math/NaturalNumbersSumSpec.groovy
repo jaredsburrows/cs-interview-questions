@@ -1,5 +1,6 @@
 package questions.math
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class NaturalNumbersSumSpec extends BaseSpec {
 
-    def "test getSumNaturalNumbers"() {
+    @Unroll def "test getSumNaturalNumbers"() {
         expect:
         NaturalNumbersSum.getSumNaturalNumbers(a) == b
         NaturalNumbersSum.getSumNaturalNumbers2(a) == b

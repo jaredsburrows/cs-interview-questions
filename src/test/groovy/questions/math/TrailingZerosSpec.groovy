@@ -1,5 +1,6 @@
 package questions.math
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class TrailingZerosSpec extends BaseSpec {
 
-    def "test getTrailingZeros"() {
+    @Unroll def "test getTrailingZeros"() {
         expect:
         TrailingZeros.getTrailingZeros(a) == b
 

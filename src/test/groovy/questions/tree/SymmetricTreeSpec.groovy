@@ -1,5 +1,6 @@
 package questions.tree
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class SymmetricTreeSpec extends BaseSpec {
 
-    def "test isSymmetric"() {
+    @Unroll def "test isSymmetric"() {
         expect:
         SymmetricTree.isSymmetric(a) == b
 
@@ -18,7 +19,7 @@ final class SymmetricTreeSpec extends BaseSpec {
         notBalancedTree | false
     }
 
-    def "test isSymmetric2"() {
+    @Unroll def "test isSymmetric2"() {
         expect:
         SymmetricTree.isSymmetric(a, b) == c
 

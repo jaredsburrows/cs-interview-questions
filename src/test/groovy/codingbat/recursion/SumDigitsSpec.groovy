@@ -1,5 +1,6 @@
 package codingbat.recursion
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class SumDigitsSpec extends BaseSpec {
 
-    def "test sumDigits"() {
+    @Unroll def "test sumDigits"() {
         expect:
         SumDigits.sumDigits(a) == b
 

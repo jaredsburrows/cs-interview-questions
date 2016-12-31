@@ -1,5 +1,6 @@
 package leetcode
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class TwoSumSpec extends BaseSpec {
 
-    def "testTwoSum"() {
+    @Unroll def "testTwoSum"() {
         expect:
         TwoSum.twoSum(a as int[], b) == c as int[]
         TwoSum.twoSum2(a as int[], b) == c as int[]

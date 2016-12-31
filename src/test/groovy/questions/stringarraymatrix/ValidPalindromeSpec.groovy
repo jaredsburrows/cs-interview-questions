@@ -1,5 +1,6 @@
 package questions.stringarraymatrix
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class ValidPalindromeSpec extends BaseSpec {
 
-    def "test isPalindrome"() {
+    @Unroll def "test isPalindrome"() {
         expect:
         ValidPalindrome.isPalindrome(a) == b
 

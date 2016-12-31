@@ -1,5 +1,6 @@
 package questions.math
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class ReverseNumberSpec extends BaseSpec {
 
-    def "test reverseLong"() {
+    @Unroll def "test reverseLong"() {
         expect:
         ReverseNumber.reverseLong(a) == b
 
@@ -20,7 +21,7 @@ final class ReverseNumberSpec extends BaseSpec {
         1534236469 | 9646324351
     }
 
-    def "test reverseInt"() {
+    @Unroll def "test reverseInt"() {
         expect:
         ReverseNumber.reverseInt(a) == b
 

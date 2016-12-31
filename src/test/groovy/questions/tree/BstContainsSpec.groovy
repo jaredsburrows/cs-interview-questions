@@ -1,5 +1,6 @@
 package questions.tree
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class BstContainsSpec extends BaseSpec {
 
-    def "test contains"() {
+    @Unroll def "test contains"() {
         expect:
         BstContains.contains(a, b) == c
 

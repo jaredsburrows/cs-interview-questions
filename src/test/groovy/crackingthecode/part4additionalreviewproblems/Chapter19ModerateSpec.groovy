@@ -1,6 +1,7 @@
 package crackingthecode.part4additionalreviewproblems
 
 import api.Tuple
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -25,7 +26,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         b == 1
     }
 
-    def "test 19.2 - checkTicTacToe"() {
+    @Unroll def "test 19.2 - checkTicTacToe"() {
         expect:
         Chapter19Moderate.checkTicTacToe(a as int[][]) == b
 
@@ -49,7 +50,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
          [0, 0, 2]] | 2
     }
 
-    def "test 19.3 - numZeros"() {
+    @Unroll def "test 19.3 - numZeros"() {
         expect:
         Chapter19Moderate.numZeros(a) == b
 
@@ -61,7 +62,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         26 | 6
     }
 
-    def "test 19.4 - getMax"() {
+    @Unroll def "test 19.4 - getMax"() {
         expect:
         Chapter19Moderate.getMax(a as long, b as long) == c
         Chapter19Moderate.getMax2(a as long, b as long) == c
@@ -74,7 +75,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         213 | 321 | 321
     }
 
-    def "test getMin"() {
+    @Unroll def "test getMin"() {
         expect:
         Chapter19Moderate.getMin(a as long, b as long) == c
 
@@ -86,7 +87,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         213 | 321 | 213
     }
 
-    def "test 19.5 - getPseudoHits"() {
+    @Unroll def "test 19.5 - getPseudoHits"() {
         expect:
         Chapter19Moderate.getPseudoHits(a, b) == c
 
@@ -100,7 +101,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         "RGGB" | "YRGB" | new Tuple<>(2, 1)
     }
 
-    def "test 19.7 - getMaxSum"() {
+    @Unroll def "test 19.7 - getMaxSum"() {
         expect:
         Chapter19Moderate.getMaxSum(a as int[]) == b
 
@@ -111,7 +112,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         [-2, 1, -3, 4, -1, 2, 1, -5, 4] | 6
     }
 
-    def "test 19.8 - getWordOccurrence"() {
+    @Unroll def "test 19.8 - getWordOccurrence"() {
         expect:
         Chapter19Moderate.getWordOccurrence(a as String[], b) == c
 
@@ -134,7 +135,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         Chapter19Moderate.rand72() in 1..7
     }
 
-    def "test 19.11 - getPairSum"() {
+    @Unroll def "test 19.11 - getPairSum"() {
         expect:
         Chapter19Moderate.getPairSum(a as int[], b) == c as Map<Integer, Integer>
 

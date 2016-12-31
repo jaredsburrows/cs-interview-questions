@@ -1,5 +1,6 @@
 package questions.stringarraymatrix
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class FindKSmallestNumbersSpec extends BaseSpec {
 
-    def "test getSmallestNumbers"() {
+    @Unroll def "test getSmallestNumbers"() {
         expect:
         FindKSmallestNumbers.getSmallestNumbers(a, b) == c
 

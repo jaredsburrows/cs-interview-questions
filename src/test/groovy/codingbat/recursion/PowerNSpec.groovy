@@ -1,5 +1,6 @@
 package codingbat.recursion
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class PowerNSpec extends BaseSpec {
 
-    def "test powerN"() {
+    @Unroll def "test powerN"() {
         expect:
         PowerN.powerN(a, b) == c
 

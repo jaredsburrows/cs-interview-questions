@@ -1,5 +1,6 @@
 package codingbat.warmup
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class SleepInSpec extends BaseSpec {
 
-    def "test sleepIn"() {
+    @Unroll def "test sleepIn"() {
         expect:
         SleepIn.sleepIn(a, b) == c
 

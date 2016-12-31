@@ -1,6 +1,7 @@
 package questions.stringarraymatrix
 
 import api.Pair
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -8,7 +9,7 @@ import test.BaseSpec
  */
 final class TwoSumSpec extends BaseSpec {
 
-    def "test list all pairs(x ,y), equal given number, allow duplicates"() {
+    @Unroll def "test list all pairs(x ,y), equal given number, allow duplicates"() {
         expect:
         TwoSum.getSums2(a as int[], b) == c
 
@@ -18,7 +19,7 @@ final class TwoSumSpec extends BaseSpec {
         [1, 1] | 2 | [new Pair<>(1, 1), new Pair<>(1, 1), new Pair<>(1, 1), new Pair<>(1, 1)]
     }
 
-    def "test list pairs(x ,y), equal given number, no duplicates"() {
+    @Unroll def "test list pairs(x ,y), equal given number, no duplicates"() {
         expect:
         TwoSum.getSums(a as int[], b) == c
 

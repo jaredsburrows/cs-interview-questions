@@ -1,6 +1,7 @@
 package questions.tree
 
 import api.TreeNode
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -8,7 +9,7 @@ import test.BaseSpec
  */
 final class BstIsBstSpec extends BaseSpec {
 
-    def "test isBst"() {
+    @Unroll def "test isBst"() {
         expect:
         BstIsBst.isBst(a) == b
 
@@ -18,7 +19,7 @@ final class BstIsBstSpec extends BaseSpec {
         balancedTreeBST | true
     }
 
-    def "test isBst2"() {
+    @Unroll def "test isBst2"() {
         expect:
         BstIsBst.isBst(a as TreeNode<Integer>, b as Double, c as Double) == d
 

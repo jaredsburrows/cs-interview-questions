@@ -1,5 +1,6 @@
 package questions.dynamicprogramming
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class MaxSubArraySpec extends BaseSpec {
 
-    def "test getMax"() {
+    @Unroll def "test getMax"() {
         expect:
         MaxSubArray.getMax(a as int[]) == b
 
@@ -17,7 +18,7 @@ final class MaxSubArraySpec extends BaseSpec {
         [-2, 1, -3, 4, -1, 2, 1, -5, 4] | 6 // [4,−1,2,1]
     }
 
-    def "test maxContSubArray"() {
+    @Unroll def "test maxContSubArray"() {
         expect:
         MaxSubArray.maxContSubArray(a as int[]) == b
 
@@ -28,7 +29,7 @@ final class MaxSubArraySpec extends BaseSpec {
         [2, -1, 2, 3, 4, -5] | 10
     }
 
-    def "test maxNonContSubArray"() {
+    @Unroll def "test maxNonContSubArray"() {
         expect:
         MaxSubArray.maxNonContSubArray(a as int[]) == b
 

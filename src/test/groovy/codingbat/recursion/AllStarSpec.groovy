@@ -1,5 +1,6 @@
 package codingbat.recursion
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class AllStarSpec extends BaseSpec {
 
-    def "test allStar"() {
+    @Unroll def "test allStar"() {
         expect:
         AllStar.allStar(a) == b
 

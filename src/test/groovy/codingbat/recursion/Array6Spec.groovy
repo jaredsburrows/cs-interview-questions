@@ -1,5 +1,6 @@
 package codingbat.recursion
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class Array6Spec extends BaseSpec {
 
-    def "test array6"() {
+    @Unroll def "test array6"() {
         expect:
         Array6.array6(a as int[], b) == c
 

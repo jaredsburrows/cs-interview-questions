@@ -1,5 +1,6 @@
 package questions.math
 
+import spock.lang.Unroll
 import test.BaseSpec
 
 /**
@@ -7,7 +8,7 @@ import test.BaseSpec
  */
 final class NumberLengthSpec extends BaseSpec {
 
-    def "test getIntegerLength"() {
+    @Unroll def "test getIntegerLength"() {
         expect:
         NumberLength.getIntegerLength(a) == b
         NumberLength.lenHelper(a) == b
