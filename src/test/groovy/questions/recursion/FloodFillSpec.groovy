@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class FloodFillSpec extends BaseSpec {
+final class FloodFillSpec extends BaseSpec {
 
     def "test floodFill - error bounds"() {
         given:

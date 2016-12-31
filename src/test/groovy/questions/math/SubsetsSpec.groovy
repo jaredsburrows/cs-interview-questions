@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class SubsetsSpec extends BaseSpec {
+final class SubsetsSpec extends BaseSpec {
 
     def "test subsets"() {
         expect:

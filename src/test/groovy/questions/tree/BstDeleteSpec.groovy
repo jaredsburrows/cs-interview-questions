@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class BstDeleteSpec extends BaseSpec {
+final class BstDeleteSpec extends BaseSpec {
 
     def "test delete leaf node"() {
         given:

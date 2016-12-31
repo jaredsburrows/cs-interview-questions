@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class EqualTreeSpec extends BaseSpec {
+final class EqualTreeSpec extends BaseSpec {
 
     def tree = new TreeNode<>(26)
     def subTree = new TreeNode<>(10)

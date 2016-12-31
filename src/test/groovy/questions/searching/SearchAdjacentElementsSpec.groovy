@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class SearchAdjacentElementsSpec extends BaseSpec {
+final class SearchAdjacentElementsSpec extends BaseSpec {
 
     def "test search"() {
         expect:

@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ReverseNumberSpec extends BaseSpec {
+final class ReverseNumberSpec extends BaseSpec {
 
     def "test reverseLong"() {
         expect:

@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Array6Spec extends BaseSpec {
+final class Array6Spec extends BaseSpec {
 
     def "test array6"() {
         expect:

@@ -7,7 +7,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TreeNodeSpec extends BaseSpec {
+final class TreeNodeSpec extends BaseSpec {
 
     def sut = new TreeNode<>()
 

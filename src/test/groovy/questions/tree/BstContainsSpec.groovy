@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class BstContainsSpec extends BaseSpec {
+final class BstContainsSpec extends BaseSpec {
 
     def "test contains"() {
         expect:

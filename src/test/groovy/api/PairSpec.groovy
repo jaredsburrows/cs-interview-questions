@@ -7,7 +7,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class PairSpec extends BaseSpec {
+final class PairSpec extends BaseSpec {
 
     def sut = new Pair<>("test", 123)
 

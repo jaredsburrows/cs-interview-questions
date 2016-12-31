@@ -8,7 +8,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter4TreesAndGraphsSpec extends BaseSpec {
+final class Chapter4TreesAndGraphsSpec extends BaseSpec {
 
     @Shared def tree = new TreeNode(26)
     @Shared def subTree = new TreeNode(10)

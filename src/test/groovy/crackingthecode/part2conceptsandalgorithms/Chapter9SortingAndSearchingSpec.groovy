@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter9SortingAndSearchingSpec extends BaseSpec {
+final class Chapter9SortingAndSearchingSpec extends BaseSpec {
 
     def "test mergeAInB"() {
         expect:

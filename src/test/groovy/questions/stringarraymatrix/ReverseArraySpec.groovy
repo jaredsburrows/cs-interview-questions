@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ReverseArraySpec extends BaseSpec {
+final class ReverseArraySpec extends BaseSpec {
 
     def "test reverse - multiple arg"() {
         expect:

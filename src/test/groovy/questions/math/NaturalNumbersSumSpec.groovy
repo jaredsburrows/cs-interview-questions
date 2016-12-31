@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class NaturalNumbersSumSpec extends BaseSpec {
+final class NaturalNumbersSumSpec extends BaseSpec {
 
     def "test getSumNaturalNumbers"() {
         expect:

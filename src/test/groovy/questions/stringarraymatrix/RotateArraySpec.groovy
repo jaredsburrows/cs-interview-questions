@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class RotateArraySpec extends BaseSpec {
+final class RotateArraySpec extends BaseSpec {
 
     def "test rotate"() {
         expect:

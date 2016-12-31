@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ColorSpec extends BaseSpec {
+final class ColorSpec extends BaseSpec {
 
     def "test values"() {
         expect:

@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TwoSumSpec extends BaseSpec {
+final class TwoSumSpec extends BaseSpec {
 
     def "test list all pairs(x ,y), equal given number, allow duplicates"() {
         expect:

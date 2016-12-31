@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class InvertTreeSpec extends BaseSpec {
+final class InvertTreeSpec extends BaseSpec {
 
     def balancedTree = new TreeNode<>(0)
     def reversedBalancedTree = new TreeNode<>(0)

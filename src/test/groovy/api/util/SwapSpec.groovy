@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class SwapSpec extends BaseSpec {
+final class SwapSpec extends BaseSpec {
 
     def "test swap"() {
         given:

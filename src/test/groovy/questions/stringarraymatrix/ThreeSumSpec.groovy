@@ -7,7 +7,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ThreeSumSpec extends BaseSpec {
+final class ThreeSumSpec extends BaseSpec {
 
     @Ignore
     def "test list trios(x ,y), equal given number, no duplicates"() {

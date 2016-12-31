@@ -7,7 +7,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TreeHeightSpec extends BaseSpec {
+final class TreeHeightSpec extends BaseSpec {
 
     @Shared def tree = new TreeNode<>(26)
     @Shared def subTree = new TreeNode<>(10)

@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter2LinkedListsSpec extends BaseSpec {
+final class Chapter2LinkedListsSpec extends BaseSpec {
 
     def "test removeDuplicates"() {
         given:

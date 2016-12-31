@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class SleepInSpec extends BaseSpec {
+final class SleepInSpec extends BaseSpec {
 
     def "test sleepIn"() {
         expect:

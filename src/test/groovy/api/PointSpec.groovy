@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class PointSpec extends BaseSpec {
+final class PointSpec extends BaseSpec {
 
     def sut = new Point(321, 123)
 

@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class FindKSmallestNumbersSpec extends BaseSpec {
+final class FindKSmallestNumbersSpec extends BaseSpec {
 
     def "test getSmallestNumbers"() {
         expect:

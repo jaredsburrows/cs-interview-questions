@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter1ArraysAndStringsSpec extends BaseSpec {
+final class Chapter1ArraysAndStringsSpec extends BaseSpec {
 
     def "test isUniqueCharacters"() {
         expect:

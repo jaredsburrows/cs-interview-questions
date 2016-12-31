@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter19ModerateSpec extends BaseSpec {
+final class Chapter19ModerateSpec extends BaseSpec {
 
     def "test swapVar"() {
         given:

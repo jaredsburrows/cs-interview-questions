@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class PowerNSpec extends BaseSpec {
+final class PowerNSpec extends BaseSpec {
 
     def "test powerN"() {
         expect:

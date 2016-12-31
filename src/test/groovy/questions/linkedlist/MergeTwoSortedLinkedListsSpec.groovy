@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class MergeTwoSortedLinkedListsSpec extends BaseSpec {
+final class MergeTwoSortedLinkedListsSpec extends BaseSpec {
 
     def "test merge - null"() {
         expect:

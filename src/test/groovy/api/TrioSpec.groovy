@@ -7,7 +7,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TrioSpec extends BaseSpec {
+final class TrioSpec extends BaseSpec {
 
     def sut = new Trio<>("a", 1, 'a')
 

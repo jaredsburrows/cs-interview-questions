@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class FindMissingNumberSpec extends BaseSpec {
+final class FindMissingNumberSpec extends BaseSpec {
 
     def "test findMissing"() {
         expect:

@@ -8,7 +8,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter3StacksAndQueuesSpec extends BaseSpec {
+final class Chapter3StacksAndQueuesSpec extends BaseSpec {
 
     def "test MinStack"() {
         given:

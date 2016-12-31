@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class MergeSortedArraysSpec extends BaseSpec {
+final class MergeSortedArraysSpec extends BaseSpec {
 
     def "test merge"() {
         expect:

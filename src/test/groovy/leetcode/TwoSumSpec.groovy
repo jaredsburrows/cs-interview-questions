@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TwoSumSpec extends BaseSpec {
+final class TwoSumSpec extends BaseSpec {
 
     def "testTwoSum"() {
         expect:

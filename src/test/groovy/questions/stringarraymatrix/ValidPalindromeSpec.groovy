@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ValidPalindromeSpec extends BaseSpec {
+final class ValidPalindromeSpec extends BaseSpec {
 
     def "test isPalindrome"() {
         expect:

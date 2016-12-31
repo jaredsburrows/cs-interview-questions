@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class BstHeightSpec extends BaseSpec {
+final class BstHeightSpec extends BaseSpec {
 
     def tree = new TreeNode<>(3)
 

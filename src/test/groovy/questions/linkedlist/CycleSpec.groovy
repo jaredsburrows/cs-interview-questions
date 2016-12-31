@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class CycleSpec extends BaseSpec {
+final class CycleSpec extends BaseSpec {
 
     def "setup"() {
         node4 = new Node<>(4)

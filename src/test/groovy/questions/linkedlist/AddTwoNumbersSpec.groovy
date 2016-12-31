@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class AddTwoNumbersSpec extends BaseSpec {
+final class AddTwoNumbersSpec extends BaseSpec {
 
     def "test addTwoNumbers"() {
         given:

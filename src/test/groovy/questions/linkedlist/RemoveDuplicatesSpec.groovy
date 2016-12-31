@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class RemoveDuplicatesSpec extends BaseSpec {
+final class RemoveDuplicatesSpec extends BaseSpec {
 
     def "test removeDuplicates - sorted"() {
         given:

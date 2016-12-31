@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Number004Spec extends BaseSpec {
+final class Number004Spec extends BaseSpec {
 
     def "test GetLargestPalindromeProduct"() {
         expect:

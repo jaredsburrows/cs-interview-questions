@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class BstFindMaxSpec extends BaseSpec {
+final class BstFindMaxSpec extends BaseSpec {
 
     def tree = new TreeNode<>(8)
 

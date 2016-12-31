@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class AllStarSpec extends BaseSpec {
+final class AllStarSpec extends BaseSpec {
 
     def "test allStar"() {
         expect:

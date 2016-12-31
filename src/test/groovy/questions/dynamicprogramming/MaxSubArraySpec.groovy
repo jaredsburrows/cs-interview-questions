@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class MaxSubArraySpec extends BaseSpec {
+final class MaxSubArraySpec extends BaseSpec {
 
     def "test getMax"() {
         expect:

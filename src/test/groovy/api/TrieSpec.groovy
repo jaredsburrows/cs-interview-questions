@@ -7,7 +7,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TrieSpec extends BaseSpec {
+final class TrieSpec extends BaseSpec {
 
     def sut = new Trie<>()
 

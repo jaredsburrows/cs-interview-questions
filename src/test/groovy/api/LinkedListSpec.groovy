@@ -7,7 +7,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class LinkedListSpec extends BaseSpec {
+final class LinkedListSpec extends BaseSpec {
 
     def sut = new LinkedList<>(0)
 

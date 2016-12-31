@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ReverseLinkedListSpec extends BaseSpec {
+final class ReverseLinkedListSpec extends BaseSpec {
 
     def "test reverse"() {
         given:

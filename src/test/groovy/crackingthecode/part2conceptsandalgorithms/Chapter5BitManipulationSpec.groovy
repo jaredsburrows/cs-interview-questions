@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class Chapter5BitManipulationSpec extends BaseSpec {
+final class Chapter5BitManipulationSpec extends BaseSpec {
 
     def "test getDiffBits"() {
         expect:

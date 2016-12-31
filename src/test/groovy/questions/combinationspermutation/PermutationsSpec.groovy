@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class PermutationsSpec extends BaseSpec {
+final class PermutationsSpec extends BaseSpec {
 
     def "test getStringPermutations"() {
         expect:

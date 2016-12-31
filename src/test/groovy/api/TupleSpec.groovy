@@ -7,7 +7,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class TupleSpec extends BaseSpec {
+final class TupleSpec extends BaseSpec {
 
     def sut = new Tuple<>("test", 123)
 

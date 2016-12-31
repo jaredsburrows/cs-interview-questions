@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class PalindromeNumberSpec extends BaseSpec {
+final class PalindromeNumberSpec extends BaseSpec {
 
     @SuppressWarnings("GroovyAssignabilityCheck")
     def "test isPalindrome"() {

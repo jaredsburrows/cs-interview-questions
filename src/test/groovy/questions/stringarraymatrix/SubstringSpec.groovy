@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class SubstringSpec extends BaseSpec {
+final class SubstringSpec extends BaseSpec {
 
     def "test substring"() {
         expect:

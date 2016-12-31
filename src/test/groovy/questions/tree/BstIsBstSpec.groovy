@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class BstIsBstSpec extends BaseSpec {
+final class BstIsBstSpec extends BaseSpec {
 
     def "test isBst"() {
         expect:

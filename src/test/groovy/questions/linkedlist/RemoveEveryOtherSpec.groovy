@@ -6,7 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class RemoveEveryOtherSpec extends BaseSpec {
+final class RemoveEveryOtherSpec extends BaseSpec {
 
     def "test RemoveEveryOther"() {
         given:

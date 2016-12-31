@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class ReturnSmallestCharacterSpec extends BaseSpec {
+final class ReturnSmallestCharacterSpec extends BaseSpec {
 
     def "test findInsPoint2"() {
         expect:

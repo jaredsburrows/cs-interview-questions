@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class FibonacciSpec extends BaseSpec {
+final class FibonacciSpec extends BaseSpec {
 
     def "test fibonacci"() {
         expect:

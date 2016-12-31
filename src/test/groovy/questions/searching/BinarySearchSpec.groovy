@@ -5,7 +5,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class BinarySearchSpec extends BaseSpec {
+final class BinarySearchSpec extends BaseSpec {
 
     def "test search"() {
         expect:
