@@ -13,9 +13,9 @@ final class PermutationsSpec extends BaseSpec {
         Permutations.getStringPermutations("", a) == b
 
         where:
-        a     | b
-        null  | null
-        ""    | [""]
-        "abc" | ["abc", "acb", "bca", "bac", "cab", "cba"]
+        a     || b
+        null  || null
+        ""    || [""]
+        "abc" || ["abc", "acb", "bca", "bac", "cab", "cba"]
     }
 }

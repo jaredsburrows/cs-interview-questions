@@ -6,6 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
+@SuppressWarnings("GroovyPointlessBoolean")
 final class SleepInSpec extends BaseSpec {
 
     @Unroll def "test sleepIn"() {
@@ -13,9 +14,9 @@ final class SleepInSpec extends BaseSpec {
         SleepIn.sleepIn(a, b) == c
 
         where:
-        a     | b     | c
-        false | false | true
-        true  | false | false
-        false | true  | true
+        a     | b     || c
+        false | false || true
+        true  | false || false
+        false | true  || true
     }
 }

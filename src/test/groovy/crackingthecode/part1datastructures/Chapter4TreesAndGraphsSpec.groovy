@@ -9,6 +9,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
+@SuppressWarnings("GroovyPointlessBoolean")
 final class Chapter4TreesAndGraphsSpec extends BaseSpec {
 
     @Shared def tree = new TreeNode(26)
@@ -141,11 +142,11 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         Chapter4TreesAndGraphs.commonAncestor2(a, b, c) == d
 
         where:
-        a         | b         | c         | d
-        null      | treeNode2 | treeNode5 | null
-        null      | null      | treeNode5 | null
-        null      | null      | null      | null
-        treeNode4 | treeNode2 | treeNode5 | treeNode4
+        a         | b         | c         || d
+        null      | treeNode2 | treeNode5 || null
+        null      | null      | treeNode5 || null
+        null      | null      | null      || null
+        treeNode4 | treeNode2 | treeNode5 || treeNode4
     }
 
     @Unroll def "test isSubtree"() {
@@ -153,12 +154,12 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         Chapter4TreesAndGraphs.isSubtree(a, b) == c
 
         where:
-        a              | b            | c
-        null           | null         | true
-        null           | balancedTree | false
-        unbalancedTree | null         | true
-        unbalancedTree | balancedTree | false
-        tree           | tree         | true
-        tree           | subTree      | true
+        a              | b            || c
+        null           | null         || true
+        null           | balancedTree || false
+        unbalancedTree | null         || true
+        unbalancedTree | balancedTree || false
+        tree           | tree         || true
+        tree           | subTree      || true
     }
 }

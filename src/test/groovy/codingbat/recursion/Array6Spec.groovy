@@ -13,11 +13,11 @@ final class Array6Spec extends BaseSpec {
         Array6.array6(a as int[], b) == c
 
         where:
-        a         | b | c
-        []        | 0 | false
-        [1]       | 1 | false
-        [1, 6, 4] | 0 | true
-        [1, 4]    | 0 | false
-        [6]       | 0 | true
+        a         | b || c
+        []        | 0 || false
+        [1]       | 1 || false
+        [1, 6, 4] | 0 || true
+        [1, 4]    | 0 || false
+        [6]       | 0 || true
     }
 }

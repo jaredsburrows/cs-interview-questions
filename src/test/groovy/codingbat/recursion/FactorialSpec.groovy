@@ -6,6 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
+@SuppressWarnings("GroovyPointlessBoolean")
 final class FactorialSpec extends BaseSpec {
 
     @Unroll def "test factorial"() {
@@ -13,9 +14,9 @@ final class FactorialSpec extends BaseSpec {
         Factorial.factorial(a) == b
 
         where:
-        a | b
-        1 | 1
-        2 | 2
-        3 | 6
+        a || b
+        1 || 1
+        2 || 2
+        3 || 6
     }
 }

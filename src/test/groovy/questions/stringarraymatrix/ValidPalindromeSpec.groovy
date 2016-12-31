@@ -13,17 +13,17 @@ final class ValidPalindromeSpec extends BaseSpec {
         ValidPalindrome.isPalindrome(a) == b
 
         where:
-        a                                | b
-        null                             | false
-        "amaf"                           | false
-        "race a car"                     | false
-        "0P"                             | false
-        "123"                            | false
-        "123abc"                         | false
-        ""                               | true
-        "z"                              | true
-        "ama"                            | true
-        "A man, a plan, a canal: Panama" | true
-        "aA"                             | true
+        a                                || b
+        null                             || false
+        "amaf"                           || false
+        "race a car"                     || false
+        "0P"                             || false
+        "123"                            || false
+        "123abc"                         || false
+        ""                               || true
+        "z"                              || true
+        "ama"                            || true
+        "A man, a plan, a canal: Panama" || true
+        "aA"                             || true
     }
 }

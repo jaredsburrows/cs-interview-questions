@@ -13,17 +13,17 @@ final class ReturnSmallestCharacterSpec extends BaseSpec {
         ReturnSmallestCharacter.findInsPoint2(a, b as char) == c as char
 
         where:
-        a       | b   | c
-        "abc"   | 'a' | 'b'
-        "abc"   | 'b' | 'c'
-        "abc"   | 'c' | 'a'
-        "cfjpv" | 'a' | 'c'
-        "cfjpv" | 'c' | 'f'
-        "cfjpv" | 'k' | 'p'
-        "cfjpv" | 'z' | 'c'
-        "cfk"   | 'f' | 'k'
-        "cfk"   | 'c' | 'f'
-        "cfk"   | 'd' | 'f'
+        a       | b   || c
+        "abc"   | 'a' || 'b'
+        "abc"   | 'b' || 'c'
+        "abc"   | 'c' || 'a'
+        "cfjpv" | 'a' || 'c'
+        "cfjpv" | 'c' || 'f'
+        "cfjpv" | 'k' || 'p'
+        "cfjpv" | 'z' || 'c'
+        "cfk"   | 'f' || 'k'
+        "cfk"   | 'c' || 'f'
+        "cfk"   | 'd' || 'f'
     }
 
     @Unroll def "test findInsPoint"() {
@@ -31,16 +31,16 @@ final class ReturnSmallestCharacterSpec extends BaseSpec {
         ReturnSmallestCharacter.findInsPoint(a, b as char) == c as char
 
         where:
-        a       | b   | c
-        "abc"   | 'a' | 'b'
-        "abc"   | 'b' | 'c'
-        "abc"   | 'c' | 'a'
-        "cfjpv" | 'a' | 'c'
-        "cfjpv" | 'c' | 'f'
-        "cfjpv" | 'k' | 'p'
-        "cfjpv" | 'z' | 'c'
-        "cfk"   | 'f' | 'k'
-        "cfk"   | 'c' | 'f'
-        "cfk"   | 'd' | 'f'
+        a       | b   || c
+        "abc"   | 'a' || 'b'
+        "abc"   | 'b' || 'c'
+        "abc"   | 'c' || 'a'
+        "cfjpv" | 'a' || 'c'
+        "cfjpv" | 'c' || 'f'
+        "cfjpv" | 'k' || 'p'
+        "cfjpv" | 'z' || 'c'
+        "cfk"   | 'f' || 'k'
+        "cfk"   | 'c' || 'f'
+        "cfk"   | 'd' || 'f'
     }
 }

@@ -14,11 +14,11 @@ final class NaturalNumbersSumSpec extends BaseSpec {
         NaturalNumbersSum.getSumNaturalNumbers2(a) == b
 
         where:
-        a    | b
-        10   | 55
-        50   | 1275
-        75   | 2850
-        100  | 5050
-        1000 | 500500
+        a    || b
+        10   || 55
+        50   || 1275
+        75   || 2850
+        100  || 5050
+        1000 || 500500
     }
 }

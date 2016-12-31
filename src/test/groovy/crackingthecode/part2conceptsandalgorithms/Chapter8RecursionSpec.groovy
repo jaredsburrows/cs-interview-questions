@@ -17,18 +17,18 @@ final class Chapter8RecursionSpec extends BaseSpec {
         Chapter8Recursion.getFibNumberIterative(a) == b
 
         where:
-        a  | b
-        -5 | -5
-        -1 | -1
-        0  | 0
-        1  | 1
-        2  | 1
-        3  | 2
-        4  | 3
-        5  | 5
-        6  | 8
-        7  | 13
-        8  | 21
+        a  || b
+        -5 || -5
+        -1 || -1
+        0  || 0
+        1  || 1
+        2  || 1
+        3  || 2
+        4  || 3
+        5  || 5
+        6  || 8
+        7  || 13
+        8  || 21
     }
 
     @Unroll def "test getSubsets"() {
@@ -36,11 +36,11 @@ final class Chapter8RecursionSpec extends BaseSpec {
         Chapter8Recursion.getSubsets(a, b) == c
 
         where:
-        a      | b  | c
-        null   | 0  | null
-        null   | -1 | null
-        [0]    | 0  | [[], [0]]
-        [1, 2] | 0  | [[], [2], [1], [2, 1]]
+        a      | b  || c
+        null   | 0  || null
+        null   | -1 || null
+        [0]    | 0  || [[], [0]]
+        [1, 2] | 0  || [[], [2], [1], [2, 1]]
     }
 
     @Unroll def "test getStringPermutations"() {
@@ -48,9 +48,9 @@ final class Chapter8RecursionSpec extends BaseSpec {
         Chapter8Recursion.getStringPermutations(a, b) == c
 
         where:
-        a  | b     | c
-        "" | null  | null
-        "" | "abc" | ["abc", "acb", "bca", "bac", "cab", "cba"]
+        a  | b     || c
+        "" | null  || null
+        "" | "abc" || ["abc", "acb", "bca", "bac", "cab", "cba"]
     }
 
     @SuppressWarnings("GroovyAssignabilityCheck")
@@ -59,13 +59,13 @@ final class Chapter8RecursionSpec extends BaseSpec {
         Chapter8Recursion.getValidParentheses(a, b, c, d) == e
 
         where:
-        a  | b  | c  | d    | e
-        -1 | 0  | 0  | ""   | null
-        0  | -1 | 0  | ""   | null
-        0  | 0  | -1 | ""   | null
-        0  | 0  | 0  | null | null
-        0  | 0  | 0  | ""   | null
-        3  | 0  | 0  | ""   | ["((()))", "(()())", "(())()", "()(())", "()()()"]
+        a  | b  | c  | d    || e
+        -1 | 0  | 0  | ""   || null
+        0  | -1 | 0  | ""   || null
+        0  | 0  | -1 | ""   || null
+        0  | 0  | 0  | null || null
+        0  | 0  | 0  | ""   || null
+        3  | 0  | 0  | ""   || ["((()))", "(()())", "(())()", "()(())", "()()()"]
     }
 
     def "test paintFill"() {
@@ -122,10 +122,10 @@ final class Chapter8RecursionSpec extends BaseSpec {
         Chapter8Recursion.makeChange(a as int, 25) == b
 
         where:
-        a    | b
-        1000 | 142511
-        100  | 242
-        10   | 4
-        1    | 1
+        a    || b
+        1000 || 142511
+        100  || 242
+        10   || 4
+        1    || 1
     }
 }

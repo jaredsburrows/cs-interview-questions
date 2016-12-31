@@ -13,11 +13,11 @@ final class TrailingZerosSpec extends BaseSpec {
         TrailingZeros.getTrailingZeros(a) == b
 
         where:
-        a           | b
-        0           | 0
-        9           | 0 // none
-        5           | 0 // none
-        10          | 1
-        10011013000 | 3
+        a           || b
+        0           || 0
+        9           || 0 // none
+        5           || 0 // none
+        10          || 1
+        10011013000 || 3
     }
 }

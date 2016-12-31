@@ -6,6 +6,7 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
+@SuppressWarnings("GroovyPointlessBoolean")
 final class AllStarSpec extends BaseSpec {
 
     @Unroll def "test allStar"() {
@@ -13,12 +14,12 @@ final class AllStarSpec extends BaseSpec {
         AllStar.allStar(a) == b
 
         where:
-        a       | b
-        null    | null
-        ""      | ""
-        "1"     | "1"
-        "hello" | "h*e*l*l*o"
-        "abc"   | "a*b*c"
-        "ab"    | "a*b"
+        a       || b
+        null    || null
+        ""      || ""
+        "1"     || "1"
+        "hello" || "h*e*l*l*o"
+        "abc"   || "a*b*c"
+        "ab"    || "a*b"
     }
 }

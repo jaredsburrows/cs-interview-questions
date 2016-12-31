@@ -16,9 +16,9 @@ final class ThreeSumSpec extends BaseSpec {
         ThreeSum.getSums(a as int[], b) == c
 
         where:
-        a                     | b | c
-        [1, 1, 1]             | 0 | []
-        [-1, 0, 1, 2, -1, -4] | 0 | [new Trio<>(-1, -1, 2), new Trio<>(-1, 0, 1)]
+        a                     | b || c
+        [1, 1, 1]             | 0 || []
+        [-1, 0, 1, 2, -1, -4] | 0 || [new Trio<>(-1, -1, 2), new Trio<>(-1, 0, 1)]
         //          [Trio{first=0, second=-1, third=1}, Trio{first=2, second=2, third=-4}]
 
     }
