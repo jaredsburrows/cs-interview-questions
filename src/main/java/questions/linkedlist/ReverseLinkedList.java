@@ -1,6 +1,5 @@
 package questions.linkedlist;
 
-
 import api.Node;
 
 /**
