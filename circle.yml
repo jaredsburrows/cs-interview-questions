@@ -4,7 +4,7 @@ machine:
 
 test:
   override:
-    - ./gradlew clean check -Dscan --stacktrace --console=plain
+    - ./gradlew clean check -Dscan --stacktrace --console=plain --parallel
   post:
     - cp -r build/test-results/*.xml $CIRCLE_TEST_REPORTS
     - cp -r build/reports/ $CIRCLE_ARTIFACTS
