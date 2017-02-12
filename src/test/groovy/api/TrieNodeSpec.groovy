@@ -36,21 +36,11 @@ final class TrieNodeSpec extends BaseSpec {
     def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(TrieNode.class)
-                .withPrefabValues(TrieNode.class, new TrieNode<>(), new TrieNode<>(1))
-                .suppress(Warning.NONFINAL_FIELDS)
-                .verify()
+            .withPrefabValues(TrieNode.class, new TrieNode<>(), new TrieNode<>(1))
+            .suppress(Warning.NONFINAL_FIELDS)
+            .verify()
 
         then:
         noExceptionThrown()
-    }
-
-    def "test toString"() {
-        given:
-        def actual = sut.toString()
-        def expected = "TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null, " +
-                "null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=false}"
-
-        expect:
-        actual == expected
     }
 }

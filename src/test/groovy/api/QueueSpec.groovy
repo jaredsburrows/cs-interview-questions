@@ -132,13 +132,4 @@ final class QueueSpec extends BaseSpec {
         then:
         noExceptionThrown()
     }
-
-    def "test toString"() {
-        given:
-        def actual = sut.toString()
-        def expected = "Queue{first=null, last=null}"
-
-        expect:
-        actual == expected
-    }
 }

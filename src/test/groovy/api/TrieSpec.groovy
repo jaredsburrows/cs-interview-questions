@@ -61,32 +61,4 @@ final class TrieSpec extends BaseSpec {
         then:
         noExceptionThrown()
     }
-
-    def "test toString"() {
-        given:
-        def actual = sut.toString()
-        def expected = "Trie{root=TrieNode{children=[TrieNode{children=[null, null, null, null, null, null, null, " +
-                "null, null, null, null, null, null, null, null, null, null, TrieNode{children=[null, null, null, " +
-                "null, TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null, " +
-                "null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=true}, " +
-                "null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, " +
-                "null, null, null, null, null], isEnd=false}, null, null, null, null, null, null, null, null], " +
-                "isEnd=false}, null, null, null, null, null, null, null, null, " +
-                "TrieNode{children=[TrieNode{children=[null, null, null, null, null, null, null, null, null, null," +
-                " null, null, null, null, null, null, null, TrieNode{children=[null, null, null, null, null, null," +
-                " null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null," +
-                " null, null, null, null], isEnd=true}, null, null, null, null, null, null, null, null]," +
-                " isEnd=false}, null, null, null, null, null, null, null, null, null, null, null, null, null, null," +
-                " null, null, null, null, null, null, null, null, null, null, null], isEnd=false}, null, null, null," +
-                " null, null, null, null, TrieNode{children=[null, null, null, null, TrieNode{children=[null, null," +
-                " null, TrieNode{children=[null, null, null, null, null, null, null, null, null, null, null, null," +
-                " null, null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=true}," +
-                " null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null," +
-                " null, null, null, null, null, null], isEnd=false}, null, null, null, null, null, null, null, null," +
-                " null, null, null, null, null, null, null, null, null, null, null, null, null], isEnd=false}, null," +
-                " null, null, null, null, null, null, null], isEnd=false}}"
-
-        expect:
-        actual == expected
-    }
 }

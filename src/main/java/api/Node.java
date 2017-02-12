@@ -46,14 +46,4 @@ public final class Node<T> {
         result = 31 * result + (previous != null ? previous.hashCode() : 0);
         return result;
     }
-
-    @Override
-    public String toString() {
-        return "Node{"
-            + "value=" + value
-            + ", next=" + next
-            + ", previous=" + previous
-            + '}';
-    }
-
 }

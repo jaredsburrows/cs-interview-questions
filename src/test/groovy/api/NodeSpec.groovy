@@ -44,13 +44,4 @@ final class NodeSpec extends BaseSpec {
         then:
         noExceptionThrown()
     }
-
-    def "test toString"() {
-        given:
-        def actual = sut.toString()
-        def expected = "Node{value=null, next=null, previous=null}"
-
-        expect:
-        actual == expected
-    }
 }

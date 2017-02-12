@@ -65,13 +65,4 @@ public final class Queue<T> {
         result = 31 * result + (last != null ? last.hashCode() : 0);
         return result;
     }
-
-    @Override
-    public String toString() {
-        return "Queue{"
-            + "first=" + first
-            + ", last=" + last
-            + '}';
-    }
-
 }

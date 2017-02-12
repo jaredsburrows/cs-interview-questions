@@ -74,13 +74,4 @@ final class LinkedListSpec extends BaseSpec {
         then:
         noExceptionThrown()
     }
-
-    def "test toString"() {
-        given:
-        def actual = sut.toString()
-        def expected = "LinkedList{head=Node{value=0, next=null, previous=null}}"
-
-        expect:
-        actual == expected
-    }
 }

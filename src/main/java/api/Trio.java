@@ -57,14 +57,4 @@ public final class Trio<F, S, T> {
         result = 31 * result + (third != null ? third.hashCode() : 0);
         return result;
     }
-
-    @Override
-    public String toString() {
-        return "Trio{"
-            + "first=" + first
-            + ", second=" + second
-            + ", third=" + third
-            + '}';
-    }
-
 }

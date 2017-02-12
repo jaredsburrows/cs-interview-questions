@@ -36,13 +36,4 @@ final class TreeNodeSpec extends BaseSpec {
         then:
         noExceptionThrown()
     }
-
-    def "test toString"() {
-        given:
-        def actual = sut.toString()
-        def expected = "TreeNode{value=null, left=null, right=null}"
-
-        expect:
-        actual == expected
-    }
 }

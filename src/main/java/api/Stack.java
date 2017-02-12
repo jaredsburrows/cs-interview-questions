@@ -51,13 +51,4 @@ public final class Stack<T> {
     public int hashCode() {
         return top != null ? top.hashCode() : 0;
     }
-
-    @Override
-    public String toString() {
-        return "Stack{"
-            + "top="
-            + top
-            + '}';
-    }
-
 }

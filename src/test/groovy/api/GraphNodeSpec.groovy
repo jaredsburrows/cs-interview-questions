@@ -48,13 +48,4 @@ final class GraphNodeSpec extends BaseSpec {
         then:
         noExceptionThrown()
     }
-
-    def "test toString"() {
-        given:
-        def actual = sut.toString()
-        def expected = "GraphNode{value=null, next=null, neighbors=null, visited=false}"
-
-        expect:
-        actual == expected
-    }
 }

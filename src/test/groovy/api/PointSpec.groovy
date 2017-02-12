@@ -28,13 +28,4 @@ final class PointSpec extends BaseSpec {
         then:
         noExceptionThrown()
     }
-
-    def "test toString"() {
-        given:
-        def actual = sut.toString()
-        def expected = "Point{x=321, y=123}"
-
-        expect:
-        actual == expected
-    }
 }

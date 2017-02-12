@@ -60,15 +60,4 @@ public final class GraphNode<T> {
         result = 31 * result + (visited ? 1 : 0);
         return result;
     }
-
-    @Override
-    public String toString() {
-        return "GraphNode{"
-            + "value=" + value
-            + ", next=" + next
-            + ", neighbors=" + Arrays.toString(neighbors)
-            + ", visited=" + visited
-            + '}';
-    }
-
 }
