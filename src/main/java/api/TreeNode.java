@@ -26,17 +26,17 @@ public final class TreeNode<T> {
             return false;
         }
 
-        final TreeNode<?> treeNode = (TreeNode<?>) object;
+        final TreeNode<?> node = (TreeNode<?>) object;
 
-        if (value != null ? !value.equals(treeNode.value) : treeNode.value != null) {
+        if (value != null ? !value.equals(node.value) : node.value != null) {
             return false;
         }
 
-        if (left != null ? !left.equals(treeNode.left) : treeNode.left != null) {
+        if (left != null ? !left.equals(node.left) : node.left != null) {
             return false;
         }
 
-        return right != null ? right.equals(treeNode.right) : treeNode.right == null;
+        return right != null ? right.equals(node.right) : node.right == null;
     }
 
     @Override

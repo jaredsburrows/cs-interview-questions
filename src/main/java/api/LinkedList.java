@@ -20,9 +20,9 @@ public final class LinkedList<T> {
     }
 
     public void addToFront(final T value) {
-        final Node<T> newNode = new Node<>(value);
-        newNode.next = head;
-        head = newNode;
+        final Node<T> node = new Node<>(value);
+        node.next = head;
+        head = node;
     }
 
     public void add(final T value) {

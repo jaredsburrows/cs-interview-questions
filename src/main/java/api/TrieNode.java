@@ -31,14 +31,14 @@ public final class TrieNode<T> {
             return false;
         }
 
-        final TrieNode<?> trieNode = (TrieNode<?>) object;
+        final TrieNode<?> node = (TrieNode<?>) object;
 
-        if (isEnd != trieNode.isEnd) {
+        if (isEnd != node.isEnd) {
             return false;
         }
 
         // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        return Arrays.equals(children, trieNode.children);
+        return Arrays.equals(children, node.children);
     }
 
     @Override

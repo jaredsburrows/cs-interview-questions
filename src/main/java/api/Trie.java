@@ -47,8 +47,7 @@ public final class Trie<T> {
     }
 
     public boolean startsWith(final String prefix) {
-        final TrieNode<T> current = get(prefix);
-        return current != null;
+        return get(prefix) != null;
     }
 
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
