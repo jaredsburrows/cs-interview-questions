@@ -45,6 +45,4 @@ apply from: rootProject.file("gradle/java.gradle")
 apply from: rootProject.file("gradle/pmd.gradle")
 apply from: rootProject.file("gradle/wrapper.gradle")
 // Place this last to make sure all configurations are generated first
-apply from: rootProject.file("gradle/provided.gradle")
 apply from: rootProject.file("gradle/dependencies.gradle")
-
