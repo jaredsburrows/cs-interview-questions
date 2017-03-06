@@ -2,12 +2,7 @@ apply plugin: "checkstyle"
 
 tasks.withType(Checkstyle) {
     reports {
-        xml {
-            enabled = false
-        }
-
-        html {
-            enabled = true
-        }
+        xml.enabled = false
+        html.enabled = true
     }
 }

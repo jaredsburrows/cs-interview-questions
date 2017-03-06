@@ -2,13 +2,8 @@ apply plugin: "codenarc"
 
 tasks.withType(CodeNarc) {
     reports {
-        xml {
-            enabled = false
-        }
-
-        html {
-            enabled = true
-        }
+        xml.enabled = false
+        html.enabled = true
     }
 }
 

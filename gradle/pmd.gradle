@@ -2,12 +2,7 @@ apply plugin: "pmd"
 
 tasks.withType(Pmd) {
     reports {
-        xml {
-            enabled = false
-        }
-
-        html {
-            enabled = true
-        }
+        xml.enabled = false
+        html.enabled = true
     }
 }
