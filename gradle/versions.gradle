@@ -1,0 +1,10 @@
+ext.deps = [
+    // compileOnly
+    "annotations"   : "com.google.code.findbugs:annotations:3.0.1",
+
+    // testImplementation
+    "spockCore"     : "org.spockframework:spock-core:1.1-groovy-2.4",
+    "cglibNodep"    : "cglib:cglib-nodep:3.2.5",
+    "equalsverifier": "nl.jqno.equalsverifier:equalsverifier:2.3",
+    "slf4jApi"      : "org.slf4j:slf4j-api:1.7.24"
+]

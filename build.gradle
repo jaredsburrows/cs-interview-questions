@@ -1,8 +1,12 @@
 // Plugins block for applying local and plugins from the Gradle repository
 // See: https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block
+buildscript {
+    apply from: rootProject.file("gradle/versions.gradle")
+}
+
 plugins {
     // Plugins from the gradle repository
-    id "com.gradle.build-scan" version "1.6"
+    id "com.gradle.build-scan" version "1.8"
     id "net.ltgt.errorprone" version "0.0.10"
     id "com.github.kt3k.coveralls" version "2.8.1"
     id "com.github.ben-manes.versions" version "0.15.0"
@@ -30,29 +34,27 @@ repositories {
 
 // Apply extra configuration
 // Place this first so it can scan the build
-apply from: rootProject.file("gradle/buildScan.gradle")
+apply from: rootProject.file("gradle/scan.gradle")
 // Other plugin configurations
 apply from: rootProject.file("gradle/asciidoc.gradle")
 apply from: rootProject.file("gradle/c.gradle")
 apply from: rootProject.file("gradle/checkstyle.gradle")
 apply from: rootProject.file("gradle/codenarc.gradle")
 apply from: rootProject.file("gradle/compile.gradle")
+apply from: rootProject.file("gradle/coveralls.gradle")
 apply from: rootProject.file("gradle/cpp.gradle")
 apply from: rootProject.file("gradle/findbugs.gradle")
-apply from: rootProject.file("gradle/groovy.gradle")
 apply from: rootProject.file("gradle/jacoco.gradle")
-apply from: rootProject.file("gradle/java.gradle")
 apply from: rootProject.file("gradle/pmd.gradle")
 apply from: rootProject.file("gradle/wrapper.gradle")
 
 // See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies(groovy.lang.Closure)
 dependencies {
-    compileOnly "com.google.code.findbugs:annotations:3.0.1"
+    compileOnly deps.annotations
 
     testImplementation localGroovy()
-    testImplementation "org.spockframework:spock-core:1.1-groovy-2.4", { exclude module: "groovy-all" }    // Use localGroovy()
-    testImplementation "cglib:cglib-nodep:3.2.5"
-    testImplementation "nl.jqno.equalsverifier:equalsverifier:2.3"
-
-    testImplementation "org.slf4j:slf4j-api:1.7.24"                                                        // Cobertura plugin
+    testImplementation deps.spockCore, { exclude module: "groovy-all" } // Use localGroovy()
+    testImplementation deps.cglibNodep
+    testImplementation deps.equalsverifier
+    testImplementation deps.slf4jApi // Cobertura plugin
 }
