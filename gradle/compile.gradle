@@ -3,8 +3,8 @@
 // that do not allow you to specify the "java" plugin
 // See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.compile.JavaCompile.html
 tasks.withType(JavaCompile) {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+    sourceCompatibility = rootProject.ext.sourceCompatibilityVersion
+    targetCompatibility = rootProject.ext.sourceCompatibilityVersion
 
     // Show all warnings except boot classpath
     configure(options) {
@@ -23,8 +23,8 @@ tasks.withType(JavaCompile) {
 // that do not allow you to specify the "groovy" plugin
 // See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.compile.GroovyCompile.html
 tasks.withType(GroovyCompile) {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+    sourceCompatibility = rootProject.ext.sourceCompatibilityVersion
+    targetCompatibility = rootProject.ext.sourceCompatibilityVersion
 
     // Show all warnings except boot classpath
     configure(options) {
