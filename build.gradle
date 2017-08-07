@@ -57,7 +57,5 @@ dependencies {
 
     testImplementation localGroovy()
     testImplementation deps.spockCore, { exclude module: "groovy-all" } // Use localGroovy()
-    testImplementation deps.cglibNodep
     testImplementation deps.equalsverifier
-    testImplementation deps.slf4jApi // Cobertura plugin
 }
