@@ -1,3 +1,6 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
 // For any project that contains tasks with type "JavaCompile"
 // Eg. You would use "tasks.withType(JavaCompile)" in projects like Android projects
 // that do not allow you to specify the "java" plugin
@@ -7,15 +10,13 @@ tasks.withType(JavaCompile) {
     targetCompatibility = rootProject.ext.sourceCompatibilityVersion
 
     // Show all warnings except boot classpath
-    configure(options) {
-        compilerArgs << "-Xlint:all"            // Turn on all warnings
-        compilerArgs << "-Xlint:-options"       // Turn off "missing" bootclasspath warning
-        compilerArgs << "-Werror"               // Turn warnings into errors
-        compilerArgs << "-Xdiags:verbose"       // Turn on verbose errors
-        encoding = "utf-8"
-        incremental = true
-        fork = true
-    }
+    options.compilerArgs << "-Xlint:all"                        // Turn on all warnings
+    options.compilerArgs << "-Xlint:-options"                   // Turn off "missing" bootclasspath warning
+    options.compilerArgs << "-Werror"                           // Turn warnings into errors
+    options.compilerArgs << "-Xdiags:verbose"                   // Turn on verbose errors
+    options.encoding = "utf-8"
+    options.incremental = true
+    options.fork = true
 }
 
 // For any project that contains tasks with type "GroovyCompile"
@@ -27,20 +28,16 @@ tasks.withType(GroovyCompile) {
     targetCompatibility = rootProject.ext.sourceCompatibilityVersion
 
     // Show all warnings except boot classpath
-    configure(options) {
-        compilerArgs << "-Xlint:all"            // Turn on all warnings
-        compilerArgs << "-Xlint:-options"       // Turn off "missing" bootclasspath warning
-        compilerArgs << "-Werror"               // Turn warnings into errors
-        compilerArgs << "-Xdiags:verbose"       // Turn on verbose errors
-        encoding = "utf-8"
-        incremental = true
-        fork = true
-    }
+    options.compilerArgs << "-Xlint:all"                        // Turn on all warnings
+    options.compilerArgs << "-Xlint:-options"                   // Turn off "missing" bootclasspath warning
+    options.compilerArgs << "-Werror"                           // Turn warnings into errors
+    options.compilerArgs << "-Xdiags:verbose"                   // Turn on verbose errors
+    options.encoding = "utf-8"
+    options.incremental = true
+    options.fork = true
 
-    configure(groovyOptions) {
-        encoding = "utf-8"
-        fork = true
-    }
+    groovyOptions.encoding = "utf-8"
+    groovyOptions.fork = true
 }
 
 // For any project that contains tasks with type "Test"
@@ -49,32 +46,33 @@ tasks.withType(GroovyCompile) {
 // See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.testing.Test.html
 tasks.withType(Test) {
     testLogging {
-        exceptionFormat "full"
-        showCauses true
-        showExceptions true
-        showStackTraces true
-        events "failed", "skipped"
+        exceptionFormat = TestExceptionFormat.FULL
+        showCauses = true
+        showExceptions = true
+        showStackTraces = true
+        events = [TestLogEvent.FAILED, TestLogEvent.SKIPPED]
     }
+
+    def maxWorkerCount = gradle.startParameter.maxWorkerCount
+    maxParallelForks = (maxWorkerCount < 2) ? 1 : maxWorkerCount / 2
 }
 
 // For any project that contains tasks with type "Javadoc"
 // See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.javadoc.Javadoc.html
 tasks.withType(Javadoc) {
     title = project.description
-    configure(options) {
-        header = project.description
-        windowTitle = "Documentation"
-        docTitle = "Documentation"
-        bottom = "Copyright &copy; 2015-" + Calendar.getInstance().get(Calendar.YEAR) + ", Jared Burrows"
-        memberLevel = JavadocMemberLevel.PROTECTED
-        links = ["http://docs.oracle.com/javase/8/docs/api/",
-                 "http://docs.oracle.com/javase/7/docs/api/"]
-        encoding = "utf-8"
-        docEncoding = "utf-8"
-        charSet = "utf-8"
-        if (JavaVersion.current().isJava8Compatible()) {
-            addStringOption("Xdoclint:none", "-quiet")
-        }
+    options.header = project.description
+    options.windowTitle = "Documentation"
+    options.docTitle = "Documentation"
+    options.bottom = "Copyright &copy; 2015-" + Calendar.getInstance().get(Calendar.YEAR) + ", Jared Burrows"
+    options.memberLevel = JavadocMemberLevel.PROTECTED
+    options.links = ["http://docs.oracle.com/javase/8/docs/api/",
+                     "http://docs.oracle.com/javase/7/docs/api/"]
+    options.encoding = "utf-8"
+    options.docEncoding = "utf-8"
+    options.charSet = "utf-8"
+    if (JavaVersion.current().isJava8Compatible()) {
+        options.addStringOption("Xdoclint:none", "-quiet")
     }
 }
 
@@ -94,5 +92,7 @@ tasks.withType(Groovydoc) {
 // See: https://docs.gradle.org/current/javadoc/org/gradle/process/JavaForkOptions.html
 tasks.withType(JavaForkOptions) {
     // Prevent forked processes from stealing focus (on MacOS at least)
-    jvmArgs "-Djava.awt.headless=true"
+    jvmArgs = ["-XX:+UseCompressedOops",
+               "-Djava.awt.headless=true",
+               "-Dapple.awt.UIElement=true"]
 }

@@ -5,12 +5,7 @@ apply plugin: "org.asciidoctor.gradle.asciidoctor"
 asciidoctor {
     description = project.description
 
-    attributes "source-highlighter": "coderay"
-    attributes "linkcss": true
-    attributes "title": project.name
-}
-
-// Do not allow this plugin to add extra repositories to the build
-asciidoctorj {
-    noDefaultRepositories = true
+    attributes = ["source-highlighter": "coderay",
+                  "linkcss"           : true,
+                  "title"             : project.name]
 }
