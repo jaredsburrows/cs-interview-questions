@@ -11,6 +11,7 @@ plugins {
     id "com.github.kt3k.coveralls" version "2.8.1"
     id "com.github.ben-manes.versions" version "0.15.0"
     id "org.asciidoctor.convert" version "1.5.3"
+    id "org.jetbrains.kotlin.jvm" version "1.1.3-2"
     // Built in plugins
     id "build-dashboard"
     id "c"
@@ -50,6 +51,8 @@ apply from: rootProject.file("gradle/wrapper.gradle")
 
 // See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies(groovy.lang.Closure)
 dependencies {
+    implementation deps.kotlinStdlib
+
     compileOnly deps.annotations
 
     testImplementation localGroovy()
