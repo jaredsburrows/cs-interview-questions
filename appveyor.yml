@@ -2,10 +2,7 @@ install:
   - set JAVA_HOME=C:\Program Files\Java\jdk1.8.0
 
 build_script:
-  - gradlew.bat clean check -Dscan --stacktrace --parallel
-
-artifacts:
-  - path: build\reports\
+  - gradlew.bat clean check --stacktrace --scan
 
 cache:
   - "%USERPROFILE%\\.gradle"
