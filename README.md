@@ -1,8 +1,7 @@
 # CS Interview Practice
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![TravisCI OSX/Linux Build](https://img.shields.io/travis/jaredsburrows/cs-interview-questions/master.svg?label=OSX/Linux%20Build)](https://travis-ci.org/jaredsburrows/cs-interview-questions)
-[![AppVeyor Windows Build](https://img.shields.io/appveyor/ci/jaredsburrows/cs-interview-questions/master.svg?label=Windows%20Build)](https://ci.appveyor.com/project/jaredsburrows/cs-interview-questions/branch/master)
+[![Build Status](https://travis-ci.org/jaredsburrows/cs-interview-questions.svg?branch=master)](https://travis-ci.org/jaredsburrows/cs-interview-questions)
 [![Coveralls Code Coverage](https://img.shields.io/coveralls/jaredsburrows/cs-interview-questions/master.svg?label=Code%20Coverage)](https://coveralls.io/github/jaredsburrows/cs-interview-questions?branch=master)
 [![Twitter Follow](https://img.shields.io/twitter/follow/jaredsburrows.svg?style=social)](https://twitter.com/jaredsburrows)
 
