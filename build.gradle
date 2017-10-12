@@ -1,17 +1,17 @@
 // Plugins block for applying local and plugins from the Gradle repository
 // See: https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block
 buildscript {
-    apply from: rootProject.file("gradle/versions.gradle")
+    apply from: rootProject.file("gradle/dependencies.gradle")
 }
 
 plugins {
     // Plugins from the gradle repository
-    id "com.gradle.build-scan" version "1.8"
+    id "com.gradle.build-scan" version "1.9"
     id "net.ltgt.errorprone" version "0.0.11"
     id "com.github.kt3k.coveralls" version "2.8.1"
     id "com.github.ben-manes.versions" version "0.15.0"
-    id "org.asciidoctor.convert" version "1.5.3"
-    id "org.jetbrains.kotlin.jvm" version "1.1.4-3"
+    id "org.asciidoctor.convert" version "1.5.6"
+    id "org.jetbrains.kotlin.jvm" version "1.1.51"
     // Built in plugins
     id "c"
     id "cpp"
