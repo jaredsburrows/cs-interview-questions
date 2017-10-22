@@ -13,6 +13,7 @@ import java.util.Queue;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
+@SuppressWarnings("JdkObsolete")
 public final class Chapter4TreesAndGraphs {
 
     /**

@@ -16,15 +16,9 @@ public final class Problem485MaxConsecutiveOnes {
         int maxCount = -1;
 
         for (int number : nums) {
-            if (number == 1) {
-                count++;
-            } else {
-                count = 0;
-            }
+            count = number == 1 ? count + 1 : 0;
 
-            if (count > maxCount) {
-                maxCount = count;
-            }
+            maxCount = Math.max(count, maxCount);
         }
 
         return maxCount;
