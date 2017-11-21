@@ -1,0 +1,22 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "1.1.51"
+}
+
+// Repositories block for downloading dependencies in the "dependencies" block
+// See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories(groovy.lang.Closure)
+repositories {
+    jcenter()
+}
+
+tasks.withType(KotlinCompile) {
+    kotlinOptions {
+        jvmTarget = rootProject.ext.javaVersion
+    }
+}
+
+// See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies(groovy.lang.Closure)
+dependencies {
+    implementation deps.kotlinStdlib
+}

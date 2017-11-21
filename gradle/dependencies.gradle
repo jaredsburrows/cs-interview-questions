@@ -1,6 +1,5 @@
 ext {
-    sourceCompatibilityVersion = "1.8"
-    targetCompatibilityVersion = "1.8"
+    javaVersion = "1.8"
 }
 
 ext.deps = [

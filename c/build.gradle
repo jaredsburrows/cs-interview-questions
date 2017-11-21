@@ -1,5 +1,7 @@
-apply plugin: "c"
-apply plugin: "cunit-test-suite"
+plugins {
+    id "c"
+    id "cunit-test-suite"
+}
 
 // See: https://docs.gradle.org/current/userguide/native_software.html
 // See: https://docs.gradle.org/current/dsl/org.gradle.language.c.tasks.CCompile.html

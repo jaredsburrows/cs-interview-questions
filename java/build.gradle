@@ -1,0 +1,24 @@
+plugins {
+    id "java-library"
+    id "groovy"
+    id "jacoco"
+    id "com.github.kt3k.coveralls" version "2.8.1"
+}
+
+// Repositories block for downloading dependencies in the "dependencies" block
+// See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories(groovy.lang.Closure)
+repositories {
+    jcenter()
+}
+
+apply from: rootProject.file("gradle/jacoco.gradle")
+apply from: rootProject.file("gradle/coveralls.gradle")
+
+// See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies(groovy.lang.Closure)
+dependencies {
+    compileOnly deps.annotations
+
+    testImplementation localGroovy()
+    testImplementation deps.spockCore, { exclude module: "groovy-all" } // Use localGroovy()
+    testImplementation deps.equalsverifier
+}

@@ -1,25 +1,15 @@
 // Plugins block for applying local and plugins from the Gradle repository
 // See: https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block
 buildscript {
-    apply from: rootProject.file("gradle/dependencies.gradle")
+    apply from: "gradle/dependencies.gradle"
 }
 
 plugins {
     // Plugins from the gradle repository
     id "com.gradle.build-scan" version "1.9"
     id "net.ltgt.errorprone" version "0.0.11"
-    id "com.github.kt3k.coveralls" version "2.8.1"
     id "com.github.ben-manes.versions" version "0.15.0"
     id "org.asciidoctor.convert" version "1.5.6"
-    id "org.jetbrains.kotlin.jvm" version "1.1.51"
-    // Built in plugins
-    id "c"
-    id "cpp"
-    id "cunit-test-suite"
-    id "google-test-test-suite"
-    id "groovy"
-    id "jacoco"
-    id "java-library"
 }
 
 // Repositories block for downloading dependencies in the "dependencies" block
@@ -30,23 +20,7 @@ repositories {
 
 // Apply extra configuration
 // Place this first so it can scan the build
-apply from: rootProject.file("gradle/scan.gradle")
-// Other plugin configurations
-apply from: rootProject.file("gradle/asciidoc.gradle")
-apply from: rootProject.file("gradle/c.gradle")
-apply from: rootProject.file("gradle/compile.gradle")
-apply from: rootProject.file("gradle/coveralls.gradle")
-apply from: rootProject.file("gradle/cpp.gradle")
-apply from: rootProject.file("gradle/jacoco.gradle")
-apply from: rootProject.file("gradle/wrapper.gradle")
-
-// See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies(groovy.lang.Closure)
-dependencies {
-    implementation deps.kotlinStdlib
-
-    compileOnly deps.annotations
-
-    testImplementation localGroovy()
-    testImplementation deps.spockCore, { exclude module: "groovy-all" } // Use localGroovy()
-    testImplementation deps.equalsverifier
-}
+apply from: "gradle/scan.gradle"
+apply from: "gradle/asciidoc.gradle"
+apply from: "gradle/compile.gradle"
+apply from: "gradle/wrapper.gradle"
