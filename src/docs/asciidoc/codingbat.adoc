@@ -2,4 +2,4 @@
 
 *Site:* http://codingbat.com
 
-*My Solutions:* link:src/main/java/codingbat[src/main/java/codingbat]
+*My Solutions:* link:java/src/main/java/codingbat[java/src/main/java/codingbat]

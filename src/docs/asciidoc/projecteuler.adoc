@@ -2,7 +2,7 @@
 
 *Site:* http://projecteuler.net/
 
-*My Solutions:* link:src/main/java/projecteuler[src/main/java/projecteuler]
+*My Solutions:* link:java/rc/main/java/projecteuler[java/src/main/java/projecteuler]
 
 *My Profile:*
 

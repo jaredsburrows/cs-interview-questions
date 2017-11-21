@@ -2,4 +2,4 @@
 
 *Site:* https://leetcode.com/
 
-*My Solutions:* link:src/main/java/leetcode[src/main/java/leetcode]
+*My Solutions:* link:java/src/main/java/leetcode[java/src/main/java/leetcode]

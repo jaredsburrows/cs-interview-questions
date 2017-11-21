@@ -4,4 +4,4 @@
 
 *Github:* https://github.com/gaylemcd/ctci
 
-*My Solutions:* link:src/main/java/crackingthecode[src/main/java/crackingthecode]
+*My Solutions:* link:java/src/main/java/crackingthecode[java/src/main/java/crackingthecode]

@@ -1,9 +1,5 @@
 // Plugins block for applying local and plugins from the Gradle repository
 // See: https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block
-buildscript {
-    apply from: "gradle/dependencies.gradle"
-}
-
 plugins {
     // Plugins from the gradle repository
     id "com.gradle.build-scan" version "1.9"
@@ -21,6 +17,7 @@ repositories {
 // Apply extra configuration
 // Place this first so it can scan the build
 apply from: "gradle/scan.gradle"
+apply from: "gradle/dependencies.gradle"
 apply from: "gradle/asciidoc.gradle"
 apply from: "gradle/compile.gradle"
 apply from: "gradle/wrapper.gradle"
