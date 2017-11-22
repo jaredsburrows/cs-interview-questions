@@ -16,7 +16,7 @@ def isPandigital(a):
 
 
 def main():
-    sum = 0
+    total = 0
     q, t, w = [], [], []
     for i in range(1, 10000):
         for j in range(1, 10000):
@@ -27,8 +27,8 @@ def main():
                 w.append(t[2])
     w = list(set(w))
     for i in range(len(w)):
-        sum = sum + int(w[i])
-    print(sum)
+        total = total + int(w[i])
+    print(total)
 
 
 if __name__ == "__main__":

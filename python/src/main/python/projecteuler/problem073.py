@@ -7,7 +7,6 @@ https://projecteuler.net/problem=73
 
 def main():
     q = []
-    temp = 0
     for i in range(1, 12000):
         for j in range(1, 12000 + 1):
             if j > i:

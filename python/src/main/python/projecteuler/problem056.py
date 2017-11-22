@@ -7,10 +7,10 @@ https://projecteuler.net/problem=56
 
 def digitalsum(n):
     n = list(str(n))
-    sum = 0
+    total = 0
     for i in range(len(n)):
-        sum = sum + int(n[i])
-    return sum
+        total = total + int(n[i])
+    return total
 
 
 def main():

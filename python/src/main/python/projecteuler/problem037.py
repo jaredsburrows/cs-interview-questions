@@ -35,7 +35,6 @@ def rtruncateprime(n):
 def ltruncateprime(n):
     length = len(str(n))
     count = 0
-    temp = ""
     while n > 0:
         if isprime(n):
             count = count + 1

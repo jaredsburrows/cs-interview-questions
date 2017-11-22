@@ -23,7 +23,6 @@ def concatenate(n, k):
 
 
 def main():
-    test = 0
     for i in range(1, 10000):
         for j in range(1, 10):
             test = concatenate(i, j)

@@ -12,13 +12,13 @@ def chose(x, y):
 
 
 def main():
-    sum = 0
+    total = 0
     for i in range(1, 100 + 1):
         for j in range(1, 100 + 1):
             if i > j:
                 if chose(i, j) > 1000000:
-                    sum = sum + 1
-    print(sum)
+                    total = total + 1
+    print(total)
 
 
 if __name__ == "__main__":

@@ -14,11 +14,11 @@ def int2bin(n):
 
 
 def main():
-    sum = 0
+    total = 0
     for i in range(1000000):
         if ispalindrome(str(i)) and ispalindrome(str(int2bin(i))):
-            sum = sum + i
-    print(sum)
+            total = total + i
+    print(total)
 
 
 if __name__ == "__main__":

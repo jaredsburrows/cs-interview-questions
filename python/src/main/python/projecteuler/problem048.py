@@ -6,10 +6,10 @@ https://projecteuler.net/problem=48
 
 
 def main():
-    sum = 0
+    total = 0
     for i in range(1, 1000):
-        sum = sum + i ** i
-    print(str(sum)[-10:len(str(sum))])
+        total = total + i ** i
+    print(str(total)[-10:len(str(total))])
 
 
 if __name__ == "__main__":

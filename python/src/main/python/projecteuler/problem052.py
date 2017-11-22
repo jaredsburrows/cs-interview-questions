@@ -26,15 +26,11 @@ def samedigits(n, m):
 def main():
     for i in range(1, 1000000):
         length = len(str(i))
-        if length == len(str(2 * i)) \
-            and length == len(str(3 * i)) \
-            and length == len(str(4 * i)) \
-            and length == len(str(5 * i)) \
+        if length == len(str(2 * i)) and length == len(str(3 * i)) \
+            and length == len(str(4 * i)) and length == len(str(5 * i)) \
             and length == len(str(6 * i)):
-            if samedigits(i, 2 * i) \
-                and samedigits(i, 3 * i) \
-                and samedigits(i, 4 * i) \
-                and samedigits(i, 5 * i) \
+            if samedigits(i, 2 * i) and samedigits(i, 3 * i) \
+                and samedigits(i, 4 * i) and samedigits(i, 5 * i) \
                 and samedigits(i, 6 * i):
                 print(i)
 
