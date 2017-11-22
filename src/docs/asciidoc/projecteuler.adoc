@@ -2,7 +2,7 @@
 
 *Site:* http://projecteuler.net/
 
-*My Solutions:* link:java/rc/main/java/projecteuler[java/src/main/java/projecteuler]
+*My Solutions:* link:java/rc/main/java/projecteuler[https://github.com/jaredsburrows/cs-interview-questions/tree/master/java/src/main/java/projecteuler]
 
 *My Profile:*
 

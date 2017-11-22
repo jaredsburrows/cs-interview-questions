@@ -4,4 +4,4 @@
 
 *My Profile:* https://www.codeeval.com/profile/jaredsburrows/
 
-*My Solutions:* link:java/src/main/java/codeeval[java/src/main/java/codeeval]
+*My Solutions:* link:java/src/main/java/codeeval[https://github.com/jaredsburrows/cs-interview-questions/tree/master/java/src/main/java/codeeval]

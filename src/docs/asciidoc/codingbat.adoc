@@ -2,4 +2,4 @@
 
 *Site:* http://codingbat.com
 
-*My Solutions:* link:java/src/main/java/codingbat[java/src/main/java/codingbat]
+*My Solutions:* link:java/src/main/java/codingbat[https://github.com/jaredsburrows/cs-interview-questions/tree/master/java/src/main/java/codingbat]

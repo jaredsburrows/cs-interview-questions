@@ -1,3 +1,3 @@
 = Questions
 
-*My Solutions:* link:java/src/main/java/questions[java/src/main/java/questions]
+*My Solutions:* link:java/src/main/java/questions[https://github.com/jaredsburrows/cs-interview-questions/tree/master/java/src/main/java/src/main/java/questions]
