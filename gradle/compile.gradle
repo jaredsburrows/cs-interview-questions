@@ -12,9 +12,7 @@ tasks.withType(JavaCompile) {
     // Show all warnings except boot classpath
     configure(options) {
         compilerArgs << "-Xlint:all"            // Turn on all warnings
-        compilerArgs << "-Xlint:-options"       // Turn off "missing" bootclasspath warning
         compilerArgs << "-Werror"               // Turn warnings into errors
-        compilerArgs << "-Xdiags:verbose"       // Turn on verbose errors
         encoding = "utf-8"
         incremental = true
         fork = true
@@ -32,9 +30,7 @@ tasks.withType(GroovyCompile) {
     // Show all warnings except boot classpath
     configure(options) {
         compilerArgs << "-Xlint:all"            // Turn on all warnings
-        compilerArgs << "-Xlint:-options"       // Turn off "missing" bootclasspath warning
         compilerArgs << "-Werror"               // Turn warnings into errors
-        compilerArgs << "-Xdiags:verbose"       // Turn on verbose errors
         encoding = "utf-8"
         incremental = true
         fork = true
@@ -59,15 +55,14 @@ tasks.withType(Test) {
         events = [TestLogEvent.FAILED, TestLogEvent.SKIPPED]
     }
 
-    def maxWorkerCount = gradle.startParameter.maxWorkerCount
-    maxParallelForks = (maxWorkerCount < 2) ? 1 : maxWorkerCount / 2
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
 }
 
 // For any project that contains tasks with type "JavaForkOptions"
 // See: https://docs.gradle.org/current/javadoc/org/gradle/process/JavaForkOptions.html
 tasks.withType(JavaForkOptions) {
     // Prevent forked processes from stealing focus (on MacOS at least)
-    jvmArgs = ["-XX:+UseCompressedOops",
-               "-Djava.awt.headless=true",
-               "-Dapple.awt.UIElement=true"]
+    jvmArgs << "-XX:+UseCompressedOops"
+    jvmArgs << "-Djava.awt.headless=true"
+    jvmArgs << "-Dapple.awt.UIElement=true"
 }

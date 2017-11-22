@@ -1,5 +1,3 @@
-apply plugin: "jacoco"
-
 // Returns lower coverage because of private constructions
 tasks.withType(JacocoReport) {
     reports {

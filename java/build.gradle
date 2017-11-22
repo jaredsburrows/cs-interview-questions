@@ -1,6 +1,7 @@
 plugins {
     id "java-library"
     id "groovy"
+    id "net.ltgt.errorprone" version "0.0.13"
     id "jacoco"
     id "com.github.kt3k.coveralls" version "2.8.2"
 }
