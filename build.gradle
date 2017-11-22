@@ -3,15 +3,9 @@
 plugins {
     // Plugins from the gradle repository
     id "com.gradle.build-scan" version "1.10.2"
-    id "net.ltgt.errorprone" version "0.0.11"
+    id "net.ltgt.errorprone" version "0.0.13"
     id "com.github.ben-manes.versions" version "0.17.0"
     id "org.asciidoctor.convert" version "1.5.6"
-}
-
-// Repositories block for downloading dependencies in the "dependencies" block
-// See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories(groovy.lang.Closure)
-repositories {
-    jcenter()
 }
 
 // Apply extra configuration
