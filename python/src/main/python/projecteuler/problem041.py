@@ -1,12 +1,9 @@
 #!/usr/bin/python
 """
 Pandigital prime
-Problem 41
-We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once. For example,
-2143 is a 4-digit pandigital and is also prime.
-
-What is the largest n-digit pandigital prime that exists?
+https://projecteuler.net/problem=41
 """
+
 
 def isPrime(n):
     n = abs(int(n))
@@ -16,10 +13,11 @@ def isPrime(n):
         return True
     if not n & 1:
         return False
-    for i in range(3, int(n**0.5)+1, 2):
+    for i in range(3, int(n ** 0.5) + 1, 2):
         if n % i == 0:
             return False
     return True
+
 
 def isOneToN(n):
     n.sort()
@@ -30,10 +28,12 @@ def isOneToN(n):
         temp += 1
     return True
 
+
 def getHighest(n):
     n = list(str(n))
     n.sort()
     return n[len(n) - 3]
+
 
 def ispandigital19(n):
     q = []
@@ -48,12 +48,14 @@ def ispandigital19(n):
     else:
         return False
 
+
 def main():
     for i in range(7654321, 0, -2):
         if isPrime(i):
             if ispandigital19(i):
                 print(i)
                 break
+
 
 if __name__ == "__main__":
     main()

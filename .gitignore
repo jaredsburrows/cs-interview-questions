@@ -26,3 +26,9 @@ gradle-app.setting
 
 ### Mac OSX ###
 .DS_Store
+
+### Android Studio ###
+local.properties
+
+python/activate
+python/pinned.txt
