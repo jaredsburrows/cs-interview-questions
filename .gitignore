@@ -2,6 +2,7 @@
 .gradle/
 build/
 /*/build/
+out/
 CUnitAutomated-*.xml
 
 # Ignore Gradle GUI config

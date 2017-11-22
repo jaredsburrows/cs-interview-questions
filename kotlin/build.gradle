@@ -1,7 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id "org.jetbrains.kotlin.jvm" version "1.1.51"
+    id "org.jetbrains.kotlin.jvm" version "1.1.60"
+    id "org.junit.platform.gradle.plugin" version "1.0.2"
 }
 
 // Repositories block for downloading dependencies in the "dependencies" block
@@ -16,7 +17,22 @@ tasks.withType(KotlinCompile) {
     }
 }
 
+junitPlatform {
+    filters {
+        engines {
+            include "spek"
+        }
+    }
+}
+
 // See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies(groovy.lang.Closure)
 dependencies {
     implementation deps.kotlinStdlib
+    implementation deps.kotlinReflect
+
+    testImplementation deps.spekApi
+    testImplementation deps.spekJunitPlatformEngine
+    testImplementation deps.junitPlatformRunner
+    testImplementation deps.truth
+    testImplementation deps.equalsverifier
 }

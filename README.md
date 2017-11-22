@@ -13,7 +13,7 @@ This is a collection of my personal solutions to practice interview questions. T
 
  - **My Profile:** https://www.codeeval.com/profile/jaredsburrows/
 
- - **My Solutions:** [src/main/java/codeeval](src/main/java/codeeval)
+ - **My Solutions:** [java/src/main/java/codeeval](java/src/main/java/codeeval)
 
 
 
@@ -21,7 +21,7 @@ This is a collection of my personal solutions to practice interview questions. T
 
  - **Site:** http://codingbat.com
 
- - **My Solutions:** [src/main/java/codingbat](src/main/java/codingbat)
+ - **My Solutions:** [java/src/main/java/codingbat](java/src/main/java/codingbat)
 
 
 
@@ -31,7 +31,7 @@ This is a collection of my personal solutions to practice interview questions. T
 
  - **Github:** https://github.com/gaylemcd/ctci
 
- - **My Solutions:** [src/main/java/crackingthecode](src/main/java/crackingthecode)
+ - **My Solutions:** [java/src/main/java/crackingthecode](java/src/main/java/crackingthecode)
 
 
 
@@ -39,7 +39,7 @@ This is a collection of my personal solutions to practice interview questions. T
 
  - **Site:** https://leetcode.com/
 
- - **My Solutions:** [src/main/java/leetcode](src/main/java/leetcode)
+ - **My Solutions:** [java/src/main/java/leetcode](java/src/main/java/leetcode)
 
 
 
@@ -47,7 +47,7 @@ This is a collection of my personal solutions to practice interview questions. T
 
  - **Site:** http://projecteuler.net/
 
- - **My Solutions:** [src/main/java/projecteuler](src/main/java/projecteuler)
+ - **My Solutions:** [java/src/main/java/projecteuler](java/src/main/java/projecteuler)
 
  - **My Profile:**
 <img src="https://projecteuler.net/profile/jaredsburrows.png">
@@ -56,7 +56,7 @@ This is a collection of my personal solutions to practice interview questions. T
 
 ## Common Questions
 
-- **My Solutions:** [src/main/java/questions](src/main/java/questions)
+- **My Solutions:** [java/src/main/java/questions](java/src/main/java/questions)
 
 
 
@@ -80,13 +80,14 @@ This is a collection of my personal solutions to practice interview questions. T
  - http://leetcode.com/
 
 ## Languages used
- - **C** - [src/main/c](src/main/c)
- - **C++** - [src/main/cpp](src/main/cpp)
- - **Java** - [src/main/java](src/main/java)
- - **Python** - [src/main/python](src/main/python)
- - **Groovy** - [src/test/groovy](src/test/groovy)
+ - **C** - [c/src/main/c](c/src/main/c)
+ - **C++** - [cpp/src/main/cpp](cpp/src/main/cpp)
+ - **Java** - [java/src/main/java](java/src/main/java)
+ - **Python** - [python/src/main/python](python/src/main/python)
+ - **Groovy** - [java/src/test/groovy](java/src/test/groovy)
 
 ## Testing frameworks used
  - **CUnit** - (http://cunit.sourceforge.net/) for C
  - **GTest** - (https://github.com/google/googletest) for C++
  - **Spock** - (https://github.com/spockframework/spock) for Java
+ - **Spek**  - (https://github.com/spekframework/spek) for Kotlin

@@ -6,8 +6,8 @@ package api.util;
 public final class Swap {
 
     public static <T> void swap(final T[] array, final int left, final int right) {
-        final T t = array[left];
+        final T temp = array[left];
         array[left] = array[right];
-        array[right] = t;
+        array[right] = temp;
     }
 }
