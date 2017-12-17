@@ -1,6 +1,6 @@
 package crackingthecode.part2conceptsandalgorithms
 
-import api.Tuple
+import api.Pair
 import spock.lang.Unroll
 import test.BaseSpec
 
@@ -117,19 +117,19 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
     def "test getCircusOrder"() {
         given:
         // (65, 100) (70, 150) (56, 90) (75, 190) (60, 95) (68, 110)
-        def actual = [new Tuple<Integer, Integer>(65, 100),
-                      new Tuple<Integer, Integer>(70, 150),
-                      new Tuple<Integer, Integer>(56, 90),
-                      new Tuple<Integer, Integer>(75, 190),
-                      new Tuple<Integer, Integer>(60, 95),
-                      new Tuple<Integer, Integer>(68, 110)]
+        def actual = [new Pair<Integer, Integer>(65, 100),
+                      new Pair<Integer, Integer>(70, 150),
+                      new Pair<Integer, Integer>(56, 90),
+                      new Pair<Integer, Integer>(75, 190),
+                      new Pair<Integer, Integer>(60, 95),
+                      new Pair<Integer, Integer>(68, 110)]
         // (56, 90) (60,95) (65,100) (68,110) (70,150) (75,190)
-        def expected = [new Tuple<Integer, Integer>(56, 90),
-                        new Tuple<Integer, Integer>(60, 95),
-                        new Tuple<Integer, Integer>(65, 100),
-                        new Tuple<Integer, Integer>(68, 110),
-                        new Tuple<Integer, Integer>(70, 150),
-                        new Tuple<Integer, Integer>(75, 190)]
+        def expected = [new Pair<Integer, Integer>(56, 90),
+                        new Pair<Integer, Integer>(60, 95),
+                        new Pair<Integer, Integer>(65, 100),
+                        new Pair<Integer, Integer>(68, 110),
+                        new Pair<Integer, Integer>(70, 150),
+                        new Pair<Integer, Integer>(75, 190)]
         when:
         actual = Chapter9SortingAndSearching.getCircusOrder(actual)
 

@@ -1,6 +1,6 @@
 package crackingthecode.part2conceptsandalgorithms;
 
-import api.Tuple;
+import api.Pair;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -266,12 +266,12 @@ public final class Chapter9SortingAndSearching {
     // sort by height, sort by weight
     // return new map
     // Time - O(N*LOGN), Space -
-    public static List<Tuple<Integer, Integer>> getCircusOrder(
-        ArrayList<Tuple<Integer, Integer>> original) {
+    public static List<Pair<Integer, Integer>> getCircusOrder(
+        ArrayList<Pair<Integer, Integer>> original) {
 
-        Collections.sort(original, new Comparator<Tuple<Integer, Integer>>() {
+        Collections.sort(original, new Comparator<Pair<Integer, Integer>>() {
             @Override
-            public int compare(Tuple<Integer, Integer> left, Tuple<Integer, Integer> right) {
+            public int compare(Pair<Integer, Integer> left, Pair<Integer, Integer> right) {
                 return left.getRight() < right.getRight() && left.getLeft() < right.getLeft() ? -1
                     : 1;
             }

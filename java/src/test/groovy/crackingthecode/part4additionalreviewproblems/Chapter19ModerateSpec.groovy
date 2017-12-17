@@ -1,6 +1,6 @@
 package crackingthecode.part4additionalreviewproblems
 
-import api.Tuple
+import api.Pair
 import spock.lang.Unroll
 import test.BaseSpec
 
@@ -97,8 +97,8 @@ final class Chapter19ModerateSpec extends BaseSpec {
         "RGGB" | null   || null
         null   | "RGGB" || null
         "123"  | "1324" || null
-        "RGGB" | "RGGB" || new Tuple<>(4, 0)
-        "RGGB" | "YRGB" || new Tuple<>(2, 1)
+        "RGGB" | "RGGB" || new Pair<>(4, 0)
+        "RGGB" | "YRGB" || new Pair<>(2, 1)
     }
 
     @Unroll def "test 19.7 - getMaxSum"() {

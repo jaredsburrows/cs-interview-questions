@@ -1,6 +1,6 @@
 package crackingthecode.part4additionalreviewproblems;
 
-import api.Tuple;
+import api.Pair;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.HashMap;
 import java.util.Map;
@@ -136,7 +136,7 @@ public final class Chapter19Moderate {
     // length should be 4
     // will the slots allow for different lengths, more/less guesses?
     // Time - O(N^2), however we know it is only 4 length, O(4^2) -> O(16) -> O(1), Space - O(1)
-    public static Tuple<Integer, Integer> getPseudoHits(String solution, String guess) {
+    public static Pair<Integer, Integer> getPseudoHits(String solution, String guess) {
         if (solution == null || guess == null || solution.length() != guess.length()) {
             return null;
         }
@@ -152,7 +152,7 @@ public final class Chapter19Moderate {
             }
         }
 
-        return new Tuple<>(hits, pseudoHits);
+        return new Pair<>(hits, pseudoHits);
     }
 
     /*
