@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id "org.jetbrains.kotlin.jvm" version "1.1.60"
+    id "org.jetbrains.kotlin.jvm" version "1.2.0"
     id "org.junit.platform.gradle.plugin" version "1.0.2"
     id "konan" version "0.3.4"
 }
@@ -15,6 +15,7 @@ repositories {
 tasks.withType(KotlinCompile) {
     kotlinOptions {
         jvmTarget = rootProject.ext.javaVersion
+        allWarningsAsErrors = true
     }
 }
 
