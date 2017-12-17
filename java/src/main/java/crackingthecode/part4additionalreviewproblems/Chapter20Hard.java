@@ -10,7 +10,6 @@ import java.util.Map;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Chapter20Hard {
-
     // binary bitwise
     // &  AND
     // ^  exclusive OR (XOR)
@@ -103,7 +102,7 @@ public final class Chapter20Hard {
      */
     // 2, 12, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 32
     // Time - O(N*M), Space - O(1)
-    public static long countNumber2s(final int number) {
+    public static long countNumber2s(int number) {
         long count = 0;
 
         for (long i = 0; i <= number; i++) { // N
@@ -165,12 +164,12 @@ public final class Chapter20Hard {
     // any two words? what about duplicates?
 
     /**
-     * 20.6 - Describe an algorithm to find the largest 1 million numbers in 1 billion numbers.
-     * Assume that the computer memory can hold all one billion numbers.
+     * 20.6 - Describe an algorithm to find the largest 1 million numbers in 1 billion numbers. Assume
+     * that the computer memory can hold all one billion numbers.
      */
     // only doing 10 for testing
     // Time - O(N *LOG(N)), Space - O(1) -> Time - O(1), Space - O(1), since we already know N and sublist each time
-    public static List<Integer> getTopMillion(final List<Integer> billion) {
+    public static List<Integer> getTopMillion(List<Integer> billion) {
         if (billion == null || billion.size() != 10) { // would be 1,000,000
             return null;
         }
@@ -179,7 +178,7 @@ public final class Chapter20Hard {
 
         Collections.sort(integerList, new Comparator<Integer>() {
             @Override
-            public int compare(final Integer o1, final Integer o2) {
+            public int compare(Integer o1, Integer o2) {
                 return o1 > o2 ? 1 : -1;
             }
         });
@@ -212,15 +211,13 @@ public final class Chapter20Hard {
 
     /**
      * 20.10 - Given two words of equal length that are in a dictionary, write a method to transform
-     * one word into another word by changing only one letter at a time. The new word you get in
-     * each step must be in the dictionary.
-     * EXAMPLE
-     * Input: DAMP, LIKE
-     * Output: DAMP -> LAMP -> LIMP -> LIME -> LIKE
+     * one word into another word by changing only one letter at a time. The new word you get in each
+     * step must be in the dictionary. EXAMPLE Input: DAMP, LIKE Output: DAMP -> LAMP -> LIMP -> LIME
+     * -> LIKE
      */
     // what is the data structure of the dictionary? Map<Integer, String>
-    public static List<String> getTransformedList(final Map<String, String> dictionary, final String from,
-                                                  final String to) {
+    public static List<String> getTransformedList(Map<String, String> dictionary, String from,
+        final String to) {
         if (dictionary == null || from == null || to == null) {
             return null;
         }

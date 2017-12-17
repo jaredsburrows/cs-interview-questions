@@ -7,7 +7,7 @@ import api.Node;
  */
 public final class ReverseLinkedList {
 
-    public static Node<Integer> reverse(final Node<Integer> node) {
+    public static Node<Integer> reverse(Node<Integer> node) {
 
         Node<Integer> current = node;
         Node<Integer> previous = null;

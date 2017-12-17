@@ -6,9 +6,10 @@ package codingbat.recursion;
 public final class AllStar {
 
     /**
-     * Given a string, compute recursively a new string where all the adjacent chars are now separated by a "*".
+     * Given a string, compute recursively a new string where all the adjacent chars are now separated
+     * by a "*".
      */
-    public static String allStar(final String str) {
+    public static String allStar(String str) {
         if (str == null || str.isEmpty() || str.length() == 1) {
             return str;
         }

@@ -17,6 +17,6 @@ final class Problem541ReverseStringIISpec extends Specification {
         "abcdefg" | 2 || "bacdfeg"
         "abcdef"  | 2 || "bacdfe"
         "abcdef"  | 3 || "cbadef"
-//        "abcdefg" | 8 || "cbadef"
+        //        "abcdefg" | 8 || "cbadef"
     }
 }

@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
 
 public final class Main {
 
-    public static void main(final String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         final File inputFile = new File(args[0]);
         final InputStream fileStream = new FileInputStream(inputFile);
@@ -54,7 +54,7 @@ public final class Main {
             // 3 - 1
             // 4 - 4
 
-            for (final String number : numbers) {
+            for (String number : numbers) {
                 int position = Integer.parseInt(number) - 1;
                 fixedWords[position] = sentence[position];
             }

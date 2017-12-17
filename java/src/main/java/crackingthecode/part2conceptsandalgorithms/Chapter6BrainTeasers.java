@@ -16,9 +16,9 @@ public final class Chapter6BrainTeasers {
 
     /**
      * 6.2 - There is an 8x8 chess board in which two diagonally opposite corners have been cut off.
-     * You are given 31 dominos, and a single domino can cover exactly two squares. Can you use the
-     * 31 dominos to cover the entire board? Prove your answer (by providing an example, or
-     * showing why it’s impossible).
+     * You are given 31 dominos, and a single domino can cover exactly two squares. Can you use the 31
+     * dominos to cover the entire board? Prove your answer (by providing an example, or showing why
+     * it’s impossible).
      */
     public static int chessPieces() {
         // 1 domino     = 2 squares
@@ -37,10 +37,9 @@ public final class Chapter6BrainTeasers {
     }
 
     /**
-     * 6.3 - You have a five quart jug and a three quart jug, and an unlimited supply of water (but
-     * no measuring cups). How would you come up with exactly four quarts of water?
-     * NOTE: The jugs are oddly shaped, such that filling up exactly ‘half’ of the jug would be
-     * impossible.
+     * 6.3 - You have a five quart jug and a three quart jug, and an unlimited supply of water (but no
+     * measuring cups). How would you come up with exactly four quarts of water? NOTE: The jugs are
+     * oddly shaped, such that filling up exactly ‘half’ of the jug would be impossible.
      */
     public static int exactJugs() {
         // Sine you have a 5 quart jug and a 3 quart jug, you can fill up the 5 quart jug and
@@ -122,7 +121,7 @@ public final class Chapter6BrainTeasers {
         }
 
         // Count open lockers
-        for (final boolean bool : lockers) {
+        for (boolean bool : lockers) {
             if (bool) {
                 openLockers++;
             }

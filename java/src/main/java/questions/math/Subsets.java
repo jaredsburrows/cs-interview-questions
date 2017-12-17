@@ -10,7 +10,7 @@ import java.util.List;
  */
 public final class Subsets {
 
-    public static <T extends Comparable<? super T>> List<ArrayList<T>> subsets(final List<T> data) {
+    public static <T extends Comparable<? super T>> List<ArrayList<T>> subsets(List<T> data) {
         if (data == null) {
             return null;
         }
@@ -23,7 +23,7 @@ public final class Subsets {
         // Order
         Collections.sort(data);
 
-        for (final T obj : data) {
+        for (T obj : data) {
             final int subsetSize = subsets.size();
 
             for (int j = 0; j < subsetSize; j++) {
@@ -39,7 +39,7 @@ public final class Subsets {
         return subsets;
     }
 
-    public static <T> List<List<T>> subsets2(final T[] data) {
+    public static <T> List<List<T>> subsets2(T[] data) {
         if (data == null) {
             return null;
         }
@@ -52,7 +52,7 @@ public final class Subsets {
         // Order
         Arrays.sort(data);
 
-        for (final T obj : data) {
+        for (T obj : data) {
             final int subsetSize = subsets.size();
 
             for (int j = 0; j < subsetSize; j++) {

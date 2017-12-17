@@ -24,7 +24,7 @@ public final class Number001 {
     // 3    - 999   ->  999 % 3     = 0
     // 5    - 995   ->  995 % 5     = 0
     // 15   - 990   ->  990 % 15    = 0
-    public static double getSumTerms(final int difference, final int number) {
+    public static double getSumTerms(int difference, int number) {
         return (number * (number + difference)) / (difference * 2.0);
     }
 

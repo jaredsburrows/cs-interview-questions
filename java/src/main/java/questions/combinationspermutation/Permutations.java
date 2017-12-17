@@ -8,7 +8,7 @@ import java.util.List;
  */
 public final class Permutations {
 
-    public static List<String> getStringPermutations(final String prefix, final String string) {
+    public static List<String> getStringPermutations(String prefix, String string) {
         if (string == null) {
             return null;
         }
@@ -21,8 +21,9 @@ public final class Permutations {
         } else {
             for (int i = 0; i < length; i++) {
                 // add to final list
-                finalList.addAll(getStringPermutations(prefix + string.charAt(i), string.substring(i + 1, length)
-                    + string.substring(0, i)));
+                finalList.addAll(
+                    getStringPermutations(prefix + string.charAt(i), string.substring(i + 1, length)
+                        + string.substring(0, i)));
             }
         }
 

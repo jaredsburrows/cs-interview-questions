@@ -25,7 +25,6 @@ public final class Problem344ReverseString {
             j--;
         }
 
-
         return String.valueOf(array);
     }
 }

@@ -15,7 +15,7 @@ public final class BstFindMax {
         return node;
     }
 
-    public static int findMaxValue(final TreeNode<Integer> node) {
+    public static int findMaxValue(TreeNode<Integer> node) {
         return findMaxNode(node).value;
     }
 }

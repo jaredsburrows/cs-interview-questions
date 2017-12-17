@@ -1,7 +1,6 @@
 package questions.stringarraymatrix;
 
 import api.Pair;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,11 +12,11 @@ import java.util.Map;
 public final class TwoSum {
 
     // Time - O(N^2), Space - O(1)
-    public static List<Pair<Integer, Integer>> getSums2(final int[] numbers, final int target) {
+    public static List<Pair<Integer, Integer>> getSums2(int[] numbers, int target) {
         final List<Pair<Integer, Integer>> answer = new ArrayList<>();
 
-        for (final int first : numbers) {
-            for (final int second : numbers) {
+        for (int first : numbers) {
+            for (int second : numbers) {
                 if (first + second == target) {
                     final Pair<Integer, Integer> pair = new Pair<>(first, second);
 
@@ -30,7 +29,7 @@ public final class TwoSum {
     }
 
     // Time - O(N), Space - O(N)
-    public static List<Pair<Integer, Integer>> getSums(final int[] numbers, final int target) {
+    public static List<Pair<Integer, Integer>> getSums(int[] numbers, int target) {
         final List<Pair<Integer, Integer>> answer = new ArrayList<>();
         final Map<Integer, Integer> map = new HashMap<>();
 
@@ -46,7 +45,7 @@ public final class TwoSum {
         }
 
         // O(N)
-        for (final Map.Entry<Integer, Integer> entry : map.entrySet()) {
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             final int key = entry.getKey();
             final int difference = target - key;
 

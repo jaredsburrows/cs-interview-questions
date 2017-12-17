@@ -10,13 +10,13 @@ final class BstHeightSpec extends BaseSpec {
 
     def tree = new TreeNode<>(3)
 
-//                (3)
-//               /   \
-//            (2)     (5)
-//           /   \      \
-//         (1)   (4)    (6)
-//                        \
-//                         (7)
+    //                (3)
+    //               /   \
+    //            (2)     (5)
+    //           /   \      \
+    //         (1)   (4)    (6)
+    //                        \
+    //                         (7)
     def "setup"() {
         tree.right = new TreeNode<>(5)
         tree.right.right = new TreeNode<>(6)

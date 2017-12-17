@@ -99,7 +99,7 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         Chapter4TreesAndGraphs.getMinimumTree(sortedArray, -1, sortedArray.size()) == null
         Chapter4TreesAndGraphs.getMinimumTree(sortedArray, 0, -1) == null
         def tree = Chapter4TreesAndGraphs.
-                getMinimumTree(sortedArray, 0, sortedArray.size() - 1)
+            getMinimumTree(sortedArray, 0, sortedArray.size() - 1)
         tree.value == 4
         tree.left.value == 2
         tree.left.left.value == 1
@@ -121,10 +121,9 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         expect:
         Chapter4TreesAndGraphs.getLinkedListLevels(null) == null
         Chapter4TreesAndGraphs.getLinkedListLevels(treeNode4) ==
-                [[treeNode4],
-                 [treeNode2, treeNode5],
-                 [treeNode1, treeNode3, treeNode6, treeNode7]] as List<LinkedList<TreeNode<Integer>>>
-
+            [[treeNode4],
+             [treeNode2, treeNode5],
+             [treeNode1, treeNode3, treeNode6, treeNode7]] as List<LinkedList<TreeNode<Integer>>>
     }
 
     @Unroll def "test commonAncestor"() {

@@ -8,7 +8,7 @@ public final class RotateArray {
     // Start: 1,2,3,4,5,6, shift: 2
     // After:  5,6,1,2,3,4
     // Time - O(N), Space - O(1)
-    public static int[] rotate(final int[] array, int shift) {
+    public static int[] rotate(int[] array, int shift) {
         if (array == null || shift < 0) {
             return null;
         }

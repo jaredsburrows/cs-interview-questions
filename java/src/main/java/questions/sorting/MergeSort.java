@@ -5,12 +5,12 @@ package questions.sorting;
  */
 public final class MergeSort {
 
-    public static int[] mergeSortIndex2(final int[] numbers, final int low, final int high) {
+    public static int[] mergeSortIndex2(int[] numbers, int low, int high) {
         mergeSortIndex(numbers, low, high);
         return numbers;
     }
 
-    public static void mergeSortIndex(final int[] numbers, final int left, final int right) {
+    public static void mergeSortIndex(int[] numbers, int left, int right) {
         if (numbers == null) {
             return;
         }
@@ -23,7 +23,7 @@ public final class MergeSort {
         }
     }
 
-    private static void mergeSortIndex(final int[] numbers, int left, int mid, int right) {
+    private static void mergeSortIndex(int[] numbers, int left, int mid, int right) {
         final int[] array = new int[right + left + 1];
         final int leftEnd = mid - 1;
         final int numElements = right - left + 1;
@@ -51,12 +51,12 @@ public final class MergeSort {
         }
     }
 
-    public static int[] mergeSortArray2(final int[] numbers) {
+    public static int[] mergeSortArray2(int[] numbers) {
         mergeSortArray(numbers);
         return numbers;
     }
 
-    public static void mergeSortArray(final int[] numbers) {
+    public static void mergeSortArray(int[] numbers) {
         if (numbers == null) {
             return;
         }
@@ -79,7 +79,7 @@ public final class MergeSort {
         mergeSortArray(numbers, left, right);
     }
 
-    private static void mergeSortArray(final int[] numbers, final int[] low, final int[] high) {
+    private static void mergeSortArray(int[] numbers, int[] low, int[] high) {
         final int leftLength = low.length;
         final int rightLength = high.length;
         int indexLeft = 0;

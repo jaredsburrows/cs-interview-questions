@@ -8,7 +8,7 @@ import api.Node;
 public final class RemoveDuplicates {
 
     // Time - O(N)
-    public static void removeDuplicatesSorted(final Node<Integer> node) {
+    public static void removeDuplicatesSorted(Node<Integer> node) {
         if (node == null) {
             return;
         }

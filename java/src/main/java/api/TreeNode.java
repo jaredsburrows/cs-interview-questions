@@ -4,7 +4,6 @@ package api;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class TreeNode<T> {
-
     public T value;
     public TreeNode<T> left;
     public TreeNode<T> right;
@@ -12,12 +11,12 @@ public final class TreeNode<T> {
     public TreeNode() {
     }
 
-    public TreeNode(final T value) {
+    public TreeNode(T value) {
         this.value = value;
     }
 
     @Override
-    public boolean equals(final Object object) {
+    public boolean equals(Object object) {
         if (this == object) {
             return true;
         }

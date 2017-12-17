@@ -2,7 +2,6 @@ package crackingthecode.part4additionalreviewproblems;
 
 import api.Tuple;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -11,7 +10,6 @@ import java.util.Random;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Chapter19Moderate {
-
     /**
      * 19.1 - Write a function to swap a number in place without temporary variables.
      */
@@ -38,7 +36,7 @@ public final class Chapter19Moderate {
      */
     // Outcomes - X - Player 1, O - Player 2, no one
     // Time - O(1), Space - O(1) (since we know it is 3x3 array)
-    public static int checkTicTacToe(final int[][] board) {
+    public static int checkTicTacToe(int[][] board) {
         if (board == null) {
             return -1;
         }
@@ -82,7 +80,7 @@ public final class Chapter19Moderate {
      */
     // 5 * 2 = 10
     // misinterpreted the question, I thought we were given the factorial
-    public static int numZeros(final int number) {
+    public static int numZeros(int number) {
         int count = 0;
         if (number < 0) {
             return 0;
@@ -96,15 +94,12 @@ public final class Chapter19Moderate {
     }
 
     /**
-     * 19.4 - Write a method which finds the maximum of two numbers. You should not use if-else or
-     * any other comparison operator.
-     * EXAMPLE
-     * Input: 5, 10
-     * Output: 10
+     * 19.4 - Write a method which finds the maximum of two numbers. You should not use if-else or any
+     * other comparison operator. EXAMPLE Input: 5, 10 Output: 10
      */
     // >> 31 - for only 32 bit numbers
     // Time - O(1), Space - O(1)
-    public static long getMax(final long left, final long right) {
+    public static long getMax(long left, long right) {
         final long diff = (left - right) >> 31;    // >> 31 accounts for negatives
         final long diffFirst = diff & right;
         final long diffSecond = ~diff & left;
@@ -113,14 +108,14 @@ public final class Chapter19Moderate {
     }
 
     // Time - O(1), Space - O(1)
-    public static long getMax2(final long left, final long right) {
+    public static long getMax2(long left, long right) {
         final long[] temp = {left, right};
         return temp[(int) ((left - right) >> 31) & 1];
     }
 
     // If you have the max, you can find getMinNode, vice-versa
     // Time - O(1), Space - O(1)
-    public static long getMin(final long left, final long right) {
+    public static long getMin(long left, long right) {
         final long diff = (left - right) >> 31;    // >> 31 accounts for negatives
         final long diffFirst = diff & left;
         final long diffSecond = ~diff & right;
@@ -130,20 +125,18 @@ public final class Chapter19Moderate {
 
     /**
      * 19.5 - The Game of Master Mind is played as follows: The computer has four slots containing
-     * balls that are red (R), yellow (Y), green (G) or blue (B). For example, the computer might
-     * have RGGB (e.g., Slot #1 is red, Slots #2 and #3 are green, Slot #4 is blue). You, the user,
-     * are trying to guess the solution. You might, for example, guess YRGB. When you guess the
-     * correct color for the correct slot, you get a “hit”. If you guess a color that exists but is
-     * in the wrong slot, you get a “pseudo-hit”. For example, the guess YRGB has 2 hits and one
-     * pseudo hit.
-     * For each guess, you are told the number of hits and pseudo-hits.
-     * Write a method that, given a guess and a solution, returns the number of hits and pseudo
-     * hits.
+     * balls that are red (R), yellow (Y), green (G) or blue (B). For example, the computer might have
+     * RGGB (e.g., Slot #1 is red, Slots #2 and #3 are green, Slot #4 is blue). You, the user, are
+     * trying to guess the solution. You might, for example, guess YRGB. When you guess the correct
+     * color for the correct slot, you get a “hit”. If you guess a color that exists but is in the
+     * wrong slot, you get a “pseudo-hit”. For example, the guess YRGB has 2 hits and one pseudo hit.
+     * For each guess, you are told the number of hits and pseudo-hits. Write a method that, given a
+     * guess and a solution, returns the number of hits and pseudo hits.
      */
     // length should be 4
     // will the slots allow for different lengths, more/less guesses?
     // Time - O(N^2), however we know it is only 4 length, O(4^2) -> O(16) -> O(1), Space - O(1)
-    public static Tuple<Integer, Integer> getPseudoHits(final String solution, final String guess) {
+    public static Tuple<Integer, Integer> getPseudoHits(String solution, String guess) {
         if (solution == null || guess == null || solution.length() != guess.length()) {
             return null;
         }
@@ -169,14 +162,12 @@ public final class Chapter19Moderate {
 
     /**
      * 19.7 - You are given an array of integers (both positive and negative). Find the continuous
-     * sequence with the largest sum. Return the sum.
-     * EXAMPLE
-     * Input: {2, -8, 3, -2, 4, -10}
-     * Output: 5 (i.e., {3, -2, 4} )
+     * sequence with the largest sum. Return the sum. EXAMPLE Input: {2, -8, 3, -2, 4, -10} Output: 5
+     * (i.e., {3, -2, 4} )
      */
     // Time - O(N), Space - O(1)
     // max "sub array"
-    public static int getMaxSum(final int[] array) {
+    public static int getMaxSum(int[] array) {
         if (array == null) {
             return 0;
         }
@@ -184,7 +175,7 @@ public final class Chapter19Moderate {
         int sum = 0;
         int max = 0;
 
-        for (final int item : array) {
+        for (int item : array) {
             max = Math.max(max + item, item);
             sum = Math.max(max, sum);
         }
@@ -208,7 +199,7 @@ public final class Chapter19Moderate {
     // For single queries, just count the all the strings in the array
     // For repetitive queries we would create the hashmap one time
     // Time - O(N)
-    public static int getWordOccurrence(final String[] array, String word) {
+    public static int getWordOccurrence(String[] array, String word) {
         if (array == null || word == null) {
             return -1;
         }
@@ -258,8 +249,8 @@ public final class Chapter19Moderate {
      */
 
     /**
-     * 19.10 - Write a method to generate a random number between 1 and 7, given a method
-     * that generates a random number between 1 and 5 (i.e., implement rand7() using rand5()).
+     * 19.10 - Write a method to generate a random number between 1 and 7, given a method that
+     * generates a random number between 1 and 5 (i.e., implement rand7() using rand5()).
      */
     // book solution
     public static int rand7() {
@@ -286,17 +277,17 @@ public final class Chapter19Moderate {
      * specified value.
      */
     // Time - O(N)
-    public static Map<Integer, Integer> getPairSum(final int[] array, final int target) {
+    public static Map<Integer, Integer> getPairSum(int[] array, int target) {
         final Map<Integer, Integer> pairs = new HashMap<>();
         final Map<Integer, Integer> uniquePairs = new HashMap<>();
 
-        for (final int anArray : array) {
+        for (int anArray : array) {
             if (!pairs.containsKey(anArray)) {
                 pairs.put(target - anArray, anArray);
             }
         }
 
-        for (final int anArray : array) {
+        for (int anArray : array) {
             if (pairs.containsKey(anArray)) {
                 uniquePairs.put(anArray, pairs.get(anArray));
             }

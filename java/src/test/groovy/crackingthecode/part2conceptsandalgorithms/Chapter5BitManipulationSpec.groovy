@@ -16,7 +16,7 @@ final class Chapter5BitManipulationSpec extends BaseSpec {
         where:
         a  | b  || c
         31 | 14 || 2
-//        4  | 3  | 1 // book answer is wrong, 3?
+        //        4  | 3  | 1 // book answer is wrong, 3?
         4  | 4  || 0
     }
 

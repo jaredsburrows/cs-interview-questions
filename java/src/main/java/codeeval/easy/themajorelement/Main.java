@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
 
 public final class Main {
 
-    public static void main(final String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         final File inputFile = new File(args[0]);
         final InputStream fileStream = new FileInputStream(inputFile);
@@ -24,7 +24,7 @@ public final class Main {
             int occurrence = -1;
             int number = -1;
 
-            for (final String string : intStrings) {
+            for (String string : intStrings) {
                 ints[Integer.parseInt(string)]++;
             }
 

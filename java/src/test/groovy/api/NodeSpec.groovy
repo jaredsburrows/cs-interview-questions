@@ -37,9 +37,9 @@ final class NodeSpec extends BaseSpec {
     def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Node.class)
-                .withPrefabValues(Node.class, new Node<>(), new Node<>(1))
-                .suppress(Warning.NONFINAL_FIELDS)
-                .verify()
+            .withPrefabValues(Node.class, new Node<>(), new Node<>(1))
+            .suppress(Warning.NONFINAL_FIELDS)
+            .verify()
 
         then:
         noExceptionThrown()

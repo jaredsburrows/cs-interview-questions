@@ -5,7 +5,6 @@ package crackingthecode.part2conceptsandalgorithms;
  */
 @SuppressWarnings("unused")
 public final class Chapter12SystemDesignAndMemoryLimits {
-
     /*
      * 12.1 - If you were integrating a feed of end of day stock price information (open, high, low,
      * and closing price) for 5,000 companies, how would you do it? You are responsible for the

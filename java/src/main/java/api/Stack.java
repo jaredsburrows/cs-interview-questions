@@ -5,13 +5,12 @@ package api;
  */
 // LIFO - Last in first out
 public final class Stack<T> {
-
     public Node<T> top;
 
     public Stack() {
     }
 
-    public Stack(final T value) {
+    public Stack(T value) {
         push(new Node<>(value));
     }
 
@@ -19,7 +18,7 @@ public final class Stack<T> {
         return top;
     }
 
-    public void push(final Node<T> node) {
+    public void push(Node<T> node) {
         if (node != null) {
             node.next = top;
             top = node;
@@ -33,7 +32,7 @@ public final class Stack<T> {
     }
 
     @Override
-    public boolean equals(final Object object) {
+    public boolean equals(Object object) {
         if (this == object) {
             return true;
         }

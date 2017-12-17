@@ -5,6 +5,24 @@ package crackingthecode.part3knowledgebased;
  */
 @SuppressWarnings("unused")
 public final class Chapter14Java {
+    /**
+     * 14.2 - In Java, does the finally block gets executed if we insert a return statement inside the
+     * try block of a try-catch-finally?
+     */
+    // Yes, ly with always be "executed" unless the program exits before hand or the thread
+    // executing the "finally" is killed off
+    private static boolean someMethod() {
+        try {
+            System.out.print("Test - SomeMethod");
+            return true;
+        } catch (Exception e) {
+            System.out.print("Test - SomeMethod - catch");
+        } finally {
+            System.out.print("Test - SomeMethod - Finally");
+        }
+
+        return false;
+    }
 
     /**
      * 14.1 - In terms of inheritance, what is the effect of keeping a constructor private?
@@ -37,11 +55,11 @@ public final class Chapter14Java {
         private BusinessClass() {
         }
 
-        private BusinessClass(final String str) {
+        private BusinessClass(String str) {
             mStr = str;
         }
 
-        public BusinessClass createObject(final String myProperty) {
+        public BusinessClass createObject(String myProperty) {
 
             if (myProperty != null) {
                 return new BusinessClass(myProperty);
@@ -51,27 +69,8 @@ public final class Chapter14Java {
         }
     }
 
-    /**
-     * 14.2 - In Java, does the finally block gets executed if we insert a return statement inside
-     * the try block of a try-catch-finally?
-     */
-    // Yes, finally with always be "executed" unless the program exits before hand or the thread
-    // executing the "finally" is killed off
-    private static boolean someMethod() {
-        try {
-            System.out.print("Test - SomeMethod");
-            return true;
-        } catch (final Exception e) {
-            System.out.print("Test - SomeMethod - catch");
-        } finally {
-            System.out.print("Test - SomeMethod - Finally");
-        }
-
-        return false;
-    }
-
     /*
-     * 14.3 - What is the difference between final, finally, and finalize?
+     * 14.3 - What is the difference between final, ly, and finalize?
      */
     // final used for constants and can't be changed:
     //  - public final String CONSTANT = "CONSTANT";

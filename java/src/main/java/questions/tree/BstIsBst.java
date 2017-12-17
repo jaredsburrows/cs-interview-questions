@@ -7,11 +7,11 @@ import api.TreeNode;
  */
 public final class BstIsBst {
 
-    public static boolean isBst(final TreeNode<Integer> root) {
+    public static boolean isBst(TreeNode<Integer> root) {
         return isBst(root, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);
     }
 
-    public static boolean isBst(final TreeNode<Integer> root, final double min, final double max) {
+    public static boolean isBst(TreeNode<Integer> root, double min, double max) {
         if (root == null) {
             return true;
         }

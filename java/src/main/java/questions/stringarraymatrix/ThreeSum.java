@@ -1,7 +1,6 @@
 package questions.stringarraymatrix;
 
 import api.Trio;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.Map;
 public final class ThreeSum {
 
     // Time - O(N^2), Space - O(N)
-    public static List<Trio<Integer, Integer, Integer>> getSums(final int[] numbers, final int target) {
+    public static List<Trio<Integer, Integer, Integer>> getSums(int[] numbers, int target) {
         final List<Trio<Integer, Integer, Integer>> answer = new ArrayList<>();
         final Map<Integer, Integer> map = new HashMap<>();
 
@@ -29,10 +28,10 @@ public final class ThreeSum {
         }
 
         // O(N^2)
-        for (final Map.Entry<Integer, Integer> entry : map.entrySet()) {
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             final int key = entry.getKey();
 
-            for (final Map.Entry<Integer, Integer> entry2 : map.entrySet()) {
+            for (Map.Entry<Integer, Integer> entry2 : map.entrySet()) {
                 final int key2 = entry2.getKey();
                 final int difference = target - (key + key2);
 

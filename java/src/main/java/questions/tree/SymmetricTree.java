@@ -8,17 +8,13 @@ import api.TreeNode;
 public final class SymmetricTree {
 
     /**
-     * 1
-     * / \
-     * 2   2
-     * / \ / \
-     * 3  4 4  3
+     * 1 / \ 2   2 / \ / \ 3  4 4  3
      */
-    public static <T> boolean isSymmetric(final TreeNode<T> root) {
+    public static <T> boolean isSymmetric(TreeNode<T> root) {
         return isSymmetric(root, root);
     }
 
-    public static <T> boolean isSymmetric(final TreeNode<T> node, final TreeNode<T> node2) {
+    public static <T> boolean isSymmetric(TreeNode<T> node, TreeNode<T> node2) {
         if (node == null && node2 == null) {
             return true;
         }

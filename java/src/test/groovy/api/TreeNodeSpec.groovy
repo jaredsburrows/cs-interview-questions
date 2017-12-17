@@ -29,9 +29,9 @@ final class TreeNodeSpec extends BaseSpec {
     def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(TreeNode.class)
-                .withPrefabValues(TreeNode.class, new TreeNode<>(), new TreeNode<>(1))
-                .suppress(Warning.NONFINAL_FIELDS)
-                .verify()
+            .withPrefabValues(TreeNode.class, new TreeNode<>(), new TreeNode<>(1))
+            .suppress(Warning.NONFINAL_FIELDS)
+            .verify()
 
         then:
         noExceptionThrown()

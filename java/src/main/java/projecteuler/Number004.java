@@ -5,7 +5,7 @@ package projecteuler;
  */
 public final class Number004 {
 
-    public static boolean isPalindrome(final int number) {
+    public static boolean isPalindrome(int number) {
         final String temp = Integer.toString(number);
         return temp.equals(new StringBuilder(temp).reverse().toString());
     }

@@ -4,10 +4,9 @@ package api;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class LinkedList<T> {
-
     private Node<T> head;
 
-    public LinkedList(final T value) {
+    public LinkedList(T value) {
         head = new Node<>(value);
     }
 
@@ -19,17 +18,17 @@ public final class LinkedList<T> {
         return head.next;
     }
 
-    public void addToFront(final T value) {
+    public void addToFront(T value) {
         final Node<T> node = new Node<>(value);
         node.next = head;
         head = node;
     }
 
-    public void add(final T value) {
+    public void add(T value) {
         addToEnd(value);
     }
 
-    public void addToEnd(final T value) {
+    public void addToEnd(T value) {
         Node<T> temp = head;
         while (temp.next != null) {
             temp = temp.next;
@@ -50,7 +49,7 @@ public final class LinkedList<T> {
     }
 
     @Override
-    public boolean equals(final Object object) {
+    public boolean equals(Object object) {
         if (this == object) {
             return true;
         }

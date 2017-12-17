@@ -7,7 +7,7 @@ import api.TreeNode;
  */
 public final class BstPostOrder {
 
-    public static void printPostOrder(final TreeNode<Integer> node) {
+    public static void printPostOrder(TreeNode<Integer> node) {
         if (node == null) {
             return;
         }

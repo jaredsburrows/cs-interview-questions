@@ -7,7 +7,7 @@ import api.TreeNode;
  */
 public final class InvertTree {
 
-    public static <T> TreeNode<T> reverseTree(final TreeNode<T> root) {
+    public static <T> TreeNode<T> reverseTree(TreeNode<T> root) {
         if (root == null) {
             return null;
         }
@@ -17,7 +17,7 @@ public final class InvertTree {
         return root;
     }
 
-    public static <T> void reverse(final TreeNode<T> root) {
+    public static <T> void reverse(TreeNode<T> root) {
         if (root == null) {
             return;
         }

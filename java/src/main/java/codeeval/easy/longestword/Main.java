@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
 
 public final class Main {
 
-    public static void main(final String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         final File inputFile = new File(args[0]);
         final InputStream fileStream = new FileInputStream(inputFile);
@@ -23,7 +23,7 @@ public final class Main {
             int maxLength = 0;
             String word = "";
 
-            for (final String string : split) {
+            for (String string : split) {
                 int length = string.length();
                 if (length > maxLength) {
                     maxLength = length;

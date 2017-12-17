@@ -39,7 +39,8 @@ final class LinkedListSpec extends BaseSpec {
 
     def "test removeFront"() {
         given:
-        def linkedList2 = new LinkedList<>(0) // 1 element
+        def linkedList2 = new LinkedList<>(0)
+        // 1 element
 
         when:
         sut.addToEnd(6) // 2 elements
@@ -66,10 +67,10 @@ final class LinkedListSpec extends BaseSpec {
     def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(LinkedList.class)
-                .withPrefabValues(LinkedList.class, new LinkedList<>(1), new LinkedList<>(2))
-                .withPrefabValues(Node.class, new Node<>(1), new Node<>(2))
-                .suppress(Warning.NONFINAL_FIELDS)
-                .verify()
+            .withPrefabValues(LinkedList.class, new LinkedList<>(1), new LinkedList<>(2))
+            .withPrefabValues(Node.class, new Node<>(1), new Node<>(2))
+            .suppress(Warning.NONFINAL_FIELDS)
+            .verify()
 
         then:
         noExceptionThrown()

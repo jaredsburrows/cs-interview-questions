@@ -7,7 +7,7 @@ import api.TreeNode;
  */
 public final class BstDelete {
 
-    public static TreeNode<Integer> getMinNode(final TreeNode<Integer> node) {
+    public static TreeNode<Integer> getMinNode(TreeNode<Integer> node) {
         if (node.left == null) {
             return node;
         } else {
@@ -15,7 +15,7 @@ public final class BstDelete {
         }
     }
 
-    public static TreeNode<Integer> deleteMin(final TreeNode<Integer> node) {
+    public static TreeNode<Integer> deleteMin(TreeNode<Integer> node) {
         if (node.left == null) {
             return node.right;
         }
@@ -23,7 +23,7 @@ public final class BstDelete {
         return node;
     }
 
-    public static TreeNode<Integer> deleteNode(TreeNode<Integer> root, final int value) {
+    public static TreeNode<Integer> deleteNode(TreeNode<Integer> root, int value) {
 
         if (root == null) {
             return null;

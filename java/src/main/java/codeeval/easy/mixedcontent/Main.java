@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
 
 public final class Main {
 
-    public static void main(final String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         final File inputFile = new File(args[0]);
         final InputStream fileStream = new FileInputStream(inputFile);
@@ -24,7 +24,7 @@ public final class Main {
             String fruits = "";
             boolean printFruit = false;
             boolean printNumbers = false;
-            for (final String string : strings) {
+            for (String string : strings) {
                 if (Character.isDigit(string.toCharArray()[0])) {
                     numbers += string + ",";
                     printFruit = true;

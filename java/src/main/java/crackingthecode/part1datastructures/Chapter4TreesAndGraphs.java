@@ -2,27 +2,25 @@ package crackingthecode.part1datastructures;
 
 import api.GraphNode;
 import api.TreeNode;
-import questions.tree.EqualTree;
-import questions.tree.TreeHeight;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import questions.tree.EqualTree;
+import questions.tree.TreeHeight;
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 @SuppressWarnings("JdkObsolete")
 public final class Chapter4TreesAndGraphs {
-
     /**
-     * 4.1 - Implement a function to check if a tree is balanced. For the purposes of this question,
-     * a balanced tree is defined to be a tree such that no two leaf nodes differ in distance from
-     * the root by more than one.
+     * 4.1 - Implement a function to check if a tree is balanced. For the purposes of this question, a
+     * balanced tree is defined to be a tree such that no two leaf nodes differ in distance from the
+     * root by more than one.
      */
     @SuppressWarnings("SimplifiableIfStatement")
-    public static <T> boolean isBalanced(final TreeNode<T> node) {
+    public static <T> boolean isBalanced(TreeNode<T> node) {
         if (node == null) {
             return true;
         }
@@ -31,11 +29,11 @@ public final class Chapter4TreesAndGraphs {
     }
 
     /**
-     * 4.2 - Given a directed graph, design an algorithm to find out whether there is a route
-     * between two nodes.
+     * 4.2 - Given a directed graph, design an algorithm to find out whether there is a route between
+     * two nodes.
      */
     // BFS
-    public static <T> boolean hasGraphNodeBfs(final GraphNode<T> start, final GraphNode<T> end) {
+    public static <T> boolean hasGraphNodeBfs(GraphNode<T> start, GraphNode<T> end) {
         final Queue<GraphNode<T>> queue = new LinkedList<>();
 
         start.visited = true;
@@ -43,7 +41,7 @@ public final class Chapter4TreesAndGraphs {
 
         while (!queue.isEmpty()) {
             final GraphNode<T> currentNode = queue.poll();
-            for (final GraphNode<T> node : currentNode.neighbors) {
+            for (GraphNode<T> node : currentNode.neighbors) {
                 if (!node.visited) {
                     node.visited = true;
                     if (node.value == end.value) {
@@ -58,8 +56,8 @@ public final class Chapter4TreesAndGraphs {
     }
 
     /**
-     * 4.3 - Given a sorted (increasing order) array, write an algorithm to create a binary tree
-     * with minimal height.
+     * 4.3 - Given a sorted (increasing order) array, write an algorithm to create a binary tree with
+     * minimal height.
      */
     // 1 2 3 4 5 6 7
     //      4
@@ -68,15 +66,17 @@ public final class Chapter4TreesAndGraphs {
     //   /\   /\
     //  1  3  5 7
     // (length - 0) / 2
-    public static TreeNode<Integer> getMinimumTree(final int[] array, final int start, final int end) {
+    public static TreeNode<Integer> getMinimumTree(int[] array, int start, int end) {
         if (array == null || array.length == 0 || start < 0 || start > end) {
             return null;
         }
 
         final int mid = (start + end) / 2;
         final TreeNode<Integer> treeNode = new TreeNode<>(array[mid]);
-        treeNode.left = getMinimumTree(array, start, mid - 1);   // 1 2 3 4 5 6 // remove one from left
-        treeNode.right = getMinimumTree(array, mid + 1, end);    // 2 3 4 5 6 7 // remove one from front
+        treeNode.left =
+            getMinimumTree(array, start, mid - 1);   // 1 2 3 4 5 6 // remove one from left
+        treeNode.right =
+            getMinimumTree(array, mid + 1, end);    // 2 3 4 5 6 7 // remove one from front
 
         return treeNode;
     }
@@ -139,13 +139,13 @@ public final class Chapter4TreesAndGraphs {
 
     /**
      * 4.6 - Design an algorithm and write code to find the first common ancestor of two nodes in a
-     * binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not
-     * necessarily a binary search tree.
+     * binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not necessarily
+     * a binary search tree.
      */
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // Time - O(LOG(N)) in Balanced binary tree, O(N) in skewed tree.
-    public static <T> TreeNode<T> commonAncestor(final TreeNode<T> root, final TreeNode<T> node1,
-                                                 final TreeNode<T> node2) {
+    public static <T> TreeNode<T> commonAncestor(TreeNode<T> root, TreeNode<T> node1,
+        final TreeNode<T> node2) {
         if (root == null) {
             return null;
         }
@@ -165,8 +165,8 @@ public final class Chapter4TreesAndGraphs {
     }
 
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
-    public static <T> TreeNode<T> commonAncestor2(final TreeNode<T> root, final TreeNode<T> node1,
-                                                  final TreeNode<T> node2) {
+    public static <T> TreeNode<T> commonAncestor2(TreeNode<T> root, TreeNode<T> node1,
+        final TreeNode<T> node2) {
         if (root == null) {
             return null;
         }
@@ -196,7 +196,7 @@ public final class Chapter4TreesAndGraphs {
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // T1 - millions of nodes
     // T2 - supposed subtree of T1, should be the same or smaller
-    public static <T> boolean isSubtree(final TreeNode<T> tree, final TreeNode<T> subTree) {
+    public static <T> boolean isSubtree(TreeNode<T> tree, TreeNode<T> subTree) {
         if (subTree == null) {
             return true;
         }
@@ -209,7 +209,8 @@ public final class Chapter4TreesAndGraphs {
             return true;
         }
 
-        return EqualTree.isEqual(tree.left, subTree) || EqualTree.isEqual(tree.right, subTree); // important || vs &&
+        return EqualTree.isEqual(tree.left, subTree)
+            || EqualTree.isEqual(tree.right, subTree); // important || vs &&
     }
 
     /*

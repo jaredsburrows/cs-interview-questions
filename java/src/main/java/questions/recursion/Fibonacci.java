@@ -5,7 +5,7 @@ package questions.recursion;
  */
 public final class Fibonacci {
 
-    public static long fibonacci(final long number) {
+    public static long fibonacci(long number) {
         if (number < 2) {
             return number;
         }

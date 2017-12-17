@@ -29,9 +29,9 @@ final class TrioSpec extends BaseSpec {
     def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Trio.class)
-                .withPrefabValues(Trio.class, new Trio<>("a", 1, 'a'), new Trio<>("b", 2, 'b'))
-                .suppress(Warning.NONFINAL_FIELDS)
-                .verify()
+            .withPrefabValues(Trio.class, new Trio<>("a", 1, 'a'), new Trio<>("b", 2, 'b'))
+            .suppress(Warning.NONFINAL_FIELDS)
+            .verify()
 
         then:
         noExceptionThrown()

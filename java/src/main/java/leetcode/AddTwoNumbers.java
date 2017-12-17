@@ -3,14 +3,9 @@ package leetcode;
 import api.Node;
 
 /**
- * You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each
- * of their nodes contain a single digit. Add the two numbers and return it as a linked list.
- * https://leetcode.com/problems/add-two-numbers/
- *
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class AddTwoNumbers {
-
     // Time - O(MAX(M, N)), Space - O(MAX(M, N))
     public static Node<Integer> addTwoNumbers(Node<Integer> node, Node<Integer> node2) {
         if (node == null || node2 == null) {

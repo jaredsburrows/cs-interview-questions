@@ -1,27 +1,19 @@
 package questions.stringarraymatrix;
 
 /**
- * Return the smallest character that is strictly larger than the search character,
- * otherwise return the first character in the string.
- * <p>
- * Given:
- * - sorted list of letters, sorted in ascending order.
- * - character for which we are searching.
- * Given the following inputs we expect the corresponding output:
- * ['c', 'f', 'j', 'p', 'v'], 'a' => 'c'
- * ['c', 'f', 'j', 'p', 'v'], 'c' => 'f'
- * ['c', 'f', 'j', 'p', 'v'], 'k' => 'p'
- * ['c', 'f', 'j', 'p', 'v'], 'z' => 'c' // The wrap around case -
- * ['c', 'f', 'k'], 'f' => 'k'
- * ['c', 'f', 'k'], 'c' => 'f'
- * ['c', 'f', 'k'], 'd' => 'f'
+ * Return the smallest character that is strictly larger than the search character, otherwise return
+ * the first character in the string. <p> Given: - sorted list of letters, sorted in ascending
+ * order. - character for which we are searching. Given the following inputs we expect the
+ * corresponding output: ['c', 'f', 'j', 'p', 'v'], 'a' => 'c' ['c', 'f', 'j', 'p', 'v'], 'c' => 'f'
+ * ['c', 'f', 'j', 'p', 'v'], 'k' => 'p' ['c', 'f', 'j', 'p', 'v'], 'z' => 'c' // The wrap around
+ * case - ['c', 'f', 'k'], 'f' => 'k' ['c', 'f', 'k'], 'c' => 'f' ['c', 'f', 'k'], 'd' => 'f'
  *
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class ReturnSmallestCharacter {
 
     // Time - O(N), Space - O(1)
-    public static char findInsPoint2(final String input, final char target) {
+    public static char findInsPoint2(String input, char target) {
         for (int i = 0; i < input.length(); i++) {
 
             final char current = input.charAt(i);
@@ -34,7 +26,7 @@ public final class ReturnSmallestCharacter {
     }
 
     // Time - O(LG N), Space - O(1)
-    public static char findInsPoint(final String input, final char target) {
+    public static char findInsPoint(String input, char target) {
 
         int length = input.length() - 1;
         int low = 0;

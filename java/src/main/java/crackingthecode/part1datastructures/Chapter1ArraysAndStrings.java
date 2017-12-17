@@ -8,13 +8,12 @@ import java.util.Set;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Chapter1ArraysAndStrings {
-
     /**
      * 1.1 - Implement an algorithm to determine if a string has all unique characters. What if you
      * can not use additional data structures?
      */
     // Time - O(N), Space - O(1)
-    public static boolean isUniqueCharacters(final String input) {
+    public static boolean isUniqueCharacters(String input) {
         if (input == null || input.trim().isEmpty()) {
             return false;
         }
@@ -43,7 +42,7 @@ public final class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(N)
-    public static boolean isUniqueCharacters2(final String input) {
+    public static boolean isUniqueCharacters2(String input) {
         if (input == null || input.trim().isEmpty()) {
             return false;
         }
@@ -69,7 +68,7 @@ public final class Chapter1ArraysAndStrings {
      * five characters, including the null character.)
      */
     // Time - O(N), Space - O(1)
-    public static char[] reverseString(final char[] input) {
+    public static char[] reverseString(char[] input) {
         if (input == null) {
             return null;
         }
@@ -88,15 +87,13 @@ public final class Chapter1ArraysAndStrings {
     }
 
     /**
-     * 1.3 - Design an algorithm and write code to remove the duplicate characters in a string
-     * without using any additional buffer. NOTE: One or two additional variables are fine. An extra
-     * copy of the array is not.
-     * FOLLOW UP
-     * Write the test cases for this method.
+     * 1.3 - Design an algorithm and write code to remove the duplicate characters in a string without
+     * using any additional buffer. NOTE: One or two additional variables are fine. An extra copy of
+     * the array is not. FOLLOW UP Write the test cases for this method.
      */
     // in java you can print the bytes and show that '\0' is not removing chars, the book answer does this
     // the book answer fails for strings like "baaaaaaaaaad"
-    public static String removeDuplicates(final String input) {
+    public static String removeDuplicates(String input) {
         if (input == null) {
             return null;
         }
@@ -123,7 +120,7 @@ public final class Chapter1ArraysAndStrings {
      * 1.4 - Write a method to decide if two strings are anagrams or not.
      */
     // Time - O(NLOG(N)), Space - O(N)
-    public static boolean isAnagram(final String input, final String input2) {
+    public static boolean isAnagram(String input, String input2) {
         if (input == null || input2 == null) {
             return false;
         }
@@ -144,7 +141,7 @@ public final class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(N)
-    public static boolean isAnagram2(final String input, final String input2) {
+    public static boolean isAnagram2(String input, String input2) {
         if (input == null || input2 == null) {
             return false;
         }
@@ -178,7 +175,7 @@ public final class Chapter1ArraysAndStrings {
      * 1.5 - Write a method to replace all spaces in a string with '%20'.
      */
     // Time - O(N), Space - O(N)
-    public static String replaceSpaces(final String input) {
+    public static String replaceSpaces(String input) {
         if (input == null) {
             return null;
         }
@@ -186,7 +183,7 @@ public final class Chapter1ArraysAndStrings {
         final StringBuilder stringBuilder = new StringBuilder();
         final char[] chars = input.toCharArray();
 
-        for (final char c : chars) {
+        for (char c : chars) {
             stringBuilder.append(c == ' ' ? "%20" : c);
         }
 
@@ -194,7 +191,7 @@ public final class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(N)
-    public static String replaceSpaces2(final String input) {
+    public static String replaceSpaces2(String input) {
         if (input == null) {
             return null;
         }
@@ -207,7 +204,7 @@ public final class Chapter1ArraysAndStrings {
      * write a method to rotate the image by 90 degrees. Can you do this in place?
      */
     // Time - O(N), Space - O(1)
-    public static int[][] rotateImage(final int[][] image) {
+    public static int[][] rotateImage(int[][] image) {
         if (image == null) {
             return null;
         }
@@ -231,7 +228,7 @@ public final class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(N)
-    public static int[][] rotateImage2(final int[][] image) {
+    public static int[][] rotateImage2(int[][] image) {
         if (image == null) {
             return null;
         }
@@ -253,7 +250,7 @@ public final class Chapter1ArraysAndStrings {
      * column is set to 0.
      */
     // Time - O(NM), Space - O(OM)
-    public static int[][] markRows(final int[][] matrix) {
+    public static int[][] markRows(int[][] matrix) {
         if (matrix == null) {
             return null;
         }
@@ -288,12 +285,12 @@ public final class Chapter1ArraysAndStrings {
     }
 
     /**
-     * 1.8 - Assume you have a method isSubstring which checks if one word is a substring of
-     * another. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using
-     * only one call to isSubstring (i.e., “waterbottle” is a rotation of “erbottlewat”).
+     * 1.8 - Assume you have a method isSubstring which checks if one word is a substring of another.
+     * Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using only one call
+     * to isSubstring (i.e., “waterbottle” is a rotation of “erbottlewat”).
      */
     // Time - O(n), Space O(N)
-    public static boolean isSubstring(final String input, final String input2) {
+    public static boolean isSubstring(String input, String input2) {
         if (input == null || input2 == null) {
             return false;
         }

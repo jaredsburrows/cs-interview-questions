@@ -5,7 +5,6 @@ package crackingthecode.part3knowledgebased;
  */
 @SuppressWarnings("unused")
 public final class Chapter17Networking {
-
     /*
      * 17.1 - Explain what happens, step by step, after you type a URL into a browser. Use as much
      * detail as possible.

@@ -53,10 +53,10 @@ final class TrieSpec extends BaseSpec {
     def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Trie.class)
-                .withPrefabValues(Trie.class, new Trie<>(), new Trie<>("test"))
-                .withPrefabValues(TrieNode.class, new TrieNode<>(), new TrieNode<>(1))
-                .suppress(Warning.NONFINAL_FIELDS)
-                .verify()
+            .withPrefabValues(Trie.class, new Trie<>(), new Trie<>("test"))
+            .withPrefabValues(TrieNode.class, new TrieNode<>(), new TrieNode<>(1))
+            .suppress(Warning.NONFINAL_FIELDS)
+            .verify()
 
         then:
         noExceptionThrown()

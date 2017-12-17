@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public final class Main {
-    public static void main(final String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         final Scanner scanner = new Scanner(new File(args[0]), Charset.defaultCharset().name());
         final Map<String, Character> morseCode = new HashMap<>();
@@ -50,7 +50,7 @@ public final class Main {
 
         while (scanner.hasNextLine()) {
             final String[] sequence = scanner.nextLine().split(" ");
-            for (final String string : sequence) {
+            for (String string : sequence) {
                 final Character c = morseCode.get(string);
                 System.out.print(c != null ? c : " ");
             }

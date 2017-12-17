@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
 
 public final class Main {
 
-    public static void main(final String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         final File inputFile = new File(args[0]);
         final InputStream fileStream = new FileInputStream(inputFile);
@@ -22,7 +22,7 @@ public final class Main {
             final String[] numbers = line.trim().split(" ");
             int[] counts = new int[numbers.length];
 
-            for (final String string : numbers) {
+            for (String string : numbers) {
                 counts[Integer.parseInt(string)]++;
             }
 
@@ -36,10 +36,9 @@ public final class Main {
             }
             System.out.println("");
 
-            for (final String number : numbers) {
+            for (String number : numbers) {
                 System.out.print(number + " ");
             }
-
 
             System.out.println("");
             System.out.println("");

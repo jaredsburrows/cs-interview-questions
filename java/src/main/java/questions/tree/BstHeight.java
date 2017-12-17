@@ -7,7 +7,7 @@ import api.TreeNode;
  */
 public final class BstHeight {
 
-    public static int getHeight(final TreeNode<Integer> node) {
+    public static int getHeight(TreeNode<Integer> node) {
         if (node == null) {
             return -1;
         }

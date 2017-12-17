@@ -9,24 +9,81 @@ import java.util.UUID;
  */
 @SuppressWarnings("unused")
 public final class Chapter7ObjectOrientedDesign {
+    /**
+     * 7.5 - Design the data structures for an online book reader system.
+     */
+    public enum BookStatus {
+        ONLINE,
+        AWAY,
+        OFFLINE
+    }
+
+    /*
+     * 7.2 - Imagine you have a call center with three levels of employees: fresher, technical lead
+     * (TL), product manager (PM). There can be multiple employees, but only one TL or PM. An
+     * incoming telephone call must be allocated to a fresher who is free. If a fresher can’t handle
+     * the call, he or she must escalate the call to technical lead. If the TL is not free or not
+     * able to handle it, then the call should be escalated to PM. Design the classes and data
+     * structures for this problem. Implement a method getCallHandler().
+     */
 
     /**
-     * 7.1 - Design the data structures for a generic deck of cards. Explain how you would subclass
-     * it to implement particular card games.
+     * 7.6 - Implement a jigsaw puzzle. Design the data structures and explain an algorithm to solve
+     * the puzzle.
+     */
+    public enum Edge {
+        CONNECT_IN,
+        CONNECT_IN2,
+        CONNECT_OUT,
+        CONNECT_OUT2
+    }
+
+    /**
+     * 7.7 - Explain how you would design a chat server. In particular, provide details about the
+     * various backend components, classes, and methods. What would be the hardest problems to solve?
+     */
+    public enum StatusType {
+        ONLINE,
+        AWAY,
+        OFFLINE
+    }
+
+    /**
+     * 7.9 - Explain the data structures and algorithms that you would use to design an in-memory file
+     * system. Illustrate with an example in code where possible
+     */
+    @SuppressWarnings("EmptyMethod")
+    public interface BaseFileSystem {
+        void mount();
+
+        void unmount();
+
+        void createFile(String name);
+
+        void createDirectory(String name);
+
+        void openFile(File file, String mode);
+
+        void closeFile(File file);
+
+        void readFile(File file);
+
+        void writeFile(File file);
+
+        void copy(File source,  File destination);
+
+        void delete(File file);
+    }
+
+    /**
+     * 7.1 - Design the data structures for a generic deck of cards. Explain how you would subclass it
+     * to implement particular card games.
      */
     public static class Card {
 
-        public enum Suite {
-            HEARTS,
-            DIAMONDS,
-            CLUBS,
-            SPADES
-        }
-
         private Suite mSuite;
         private int mCardNumber;
-
-        public Card(final Suite suite, final int cardNumber) {
+        public Card(Suite suite,  int cardNumber) {
             mSuite = suite;
             mCardNumber = cardNumber;
         }
@@ -38,15 +95,17 @@ public final class Chapter7ObjectOrientedDesign {
         public Suite getSuite() {
             return mSuite;
         }
+
+        public enum Suite {
+            HEARTS,
+            DIAMONDS,
+            CLUBS,
+            SPADES
+        }
     }
 
     /*
-     * 7.2 - Imagine you have a call center with three levels of employees: fresher, technical lead
-     * (TL), product manager (PM). There can be multiple employees, but only one TL or PM. An
-     * incoming telephone call must be allocated to a fresher who is free. If a fresher can’t handle
-     * the call, he or she must escalate the call to technical lead. If the TL is not free or not
-     * able to handle it, then the call should be escalated to PM. Design the classes and data
-     * structures for this problem. Implement a method getCallHandler().
+     * 7.4 - Design a chess game using object oriented principles.
      */
 
     /**
@@ -66,9 +125,9 @@ public final class Chapter7ObjectOrientedDesign {
         private Song mSong;
         private Queue<Song> mList;
 
-        abstract void enqueueSong(final Song song);
+        abstract void enqueueSong(Song song);
 
-        abstract void dequeueSong(final Song song);
+        abstract void dequeueSong(Song song);
 
         abstract Song getCurrentSong();
     }
@@ -77,7 +136,7 @@ public final class Chapter7ObjectOrientedDesign {
 
         private Song mCurrentSong;
 
-        abstract void setTrack(final Song song);
+        abstract void setTrack(Song song);
 
         abstract Song getCurrentSong();
     }
@@ -87,33 +146,9 @@ public final class Chapter7ObjectOrientedDesign {
         private List<Song> mSongList;
         private Selector mSelector;
 
-        public JukeBox(final List<Song> songList) {
+        public JukeBox(List<Song> songList) {
             mSongList = songList;
         }
-    }
-
-    /*
-     * 7.4 - Design a chess game using object oriented principles.
-     */
-
-    /**
-     * 7.5 - Design the data structures for an online book reader system.
-     */
-    public enum BookStatus {
-        ONLINE,
-        AWAY,
-        OFFLINE
-    }
-
-    /**
-     * 7.6 - Implement a jigsaw puzzle. Design the data structures and explain an algorithm to solve
-     * the puzzle.
-     */
-    public enum Edge {
-        CONNECT_IN,
-        CONNECT_IN2,
-        CONNECT_OUT,
-        CONNECT_OUT2
     }
 
     public static class Piece {
@@ -129,17 +164,6 @@ public final class Chapter7ObjectOrientedDesign {
         public Piece[][] solution;
 
         public abstract boolean check(Piece[][] current, Piece[][] solution);
-    }
-
-    /**
-     * 7.7 - Explain how you would design a chat server. In particular, provide details about the
-     * various backend components, classes, and methods. What would be the hardest problems to
-     * solve?
-     */
-    public enum StatusType {
-        ONLINE,
-        AWAY,
-        OFFLINE
     }
 
     public static class Status {
@@ -164,10 +188,6 @@ public final class Chapter7ObjectOrientedDesign {
         public String toUSer;
     }
 
-    public abstract static class Server {
-        public abstract boolean login(String user, String pass);
-    }
-
     /*
      * 7.8 - Othello is played as follows: Each Othello piece is white on one side and black on the
      * other. When a piece is surrounded by its opponents on both the left and right sides, or both
@@ -177,31 +197,8 @@ public final class Chapter7ObjectOrientedDesign {
      * object oriented design for Othello.
      */
 
-    /**
-     * 7.9 - Explain the data structures and algorithms that you would use to design an in-memory
-     * file system. Illustrate with an example in code where possible
-     */
-    @SuppressWarnings("EmptyMethod")
-    public interface BaseFileSystem {
-        void mount();
-
-        void unmount();
-
-        void createFile(final String name);
-
-        void createDirectory(final String name);
-
-        void openFile(final File file, String mode);
-
-        void closeFile(final File file);
-
-        void readFile(final File file);
-
-        void writeFile(final File file);
-
-        void copy(final File source, final File destination);
-
-        void delete(final File file);
+    public abstract static class Server {
+        public abstract boolean login(String user, String pass);
     }
 
     public static class Drive {
@@ -222,42 +219,42 @@ public final class Chapter7ObjectOrientedDesign {
         }
 
         @Override
-        public void createFile(final String name) {
+        public void createFile(String name) {
 
         }
 
         @Override
-        public void createDirectory(final String name) {
+        public void createDirectory(String name) {
 
         }
 
         @Override
-        public void openFile(final File file, final String mode) {
+        public void openFile(File file,  String mode) {
 
         }
 
         @Override
-        public void closeFile(final File file) {
+        public void closeFile(File file) {
 
         }
 
         @Override
-        public void readFile(final File file) {
+        public void readFile(File file) {
 
         }
 
         @Override
-        public void writeFile(final File file) {
+        public void writeFile(File file) {
 
         }
 
         @Override
-        public void copy(final File source, final File destination) {
+        public void copy(File source,  File destination) {
 
         }
 
         @Override
-        public void delete(final File file) {
+        public void delete(File file) {
 
         }
     }
@@ -277,42 +274,42 @@ public final class Chapter7ObjectOrientedDesign {
         }
 
         @Override
-        public void createFile(final String name) {
+        public void createFile(String name) {
 
         }
 
         @Override
-        public void createDirectory(final String name) {
+        public void createDirectory(String name) {
 
         }
 
         @Override
-        public void openFile(final File file, final String mode) {
+        public void openFile(File file,  String mode) {
 
         }
 
         @Override
-        public void closeFile(final File file) {
+        public void closeFile(File file) {
 
         }
 
         @Override
-        public void readFile(final File file) {
+        public void readFile(File file) {
 
         }
 
         @Override
-        public void writeFile(final File file) {
+        public void writeFile(File file) {
 
         }
 
         @Override
-        public void copy(final File source, final File destination) {
+        public void copy(File source,  File destination) {
 
         }
 
         @Override
-        public void delete(final File file) {
+        public void delete(File file) {
 
         }
     }

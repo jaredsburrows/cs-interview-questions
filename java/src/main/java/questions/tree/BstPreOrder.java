@@ -7,7 +7,7 @@ import api.TreeNode;
  */
 public final class BstPreOrder {
 
-    public static void printPreOrder(final TreeNode<Integer> node) {
+    public static void printPreOrder(TreeNode<Integer> node) {
         if (node == null) {
             return;
         }

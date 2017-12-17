@@ -13,8 +13,6 @@ public final class Problem541ReverseStringII {
         }
 
         final char[] array = s.toCharArray();
-        //System.out.println(String.valueOf(array));
-
         int length = array.length;
         if (!(array.length % 2 == 0)) {
             length = length - 1;
@@ -24,8 +22,6 @@ public final class Problem541ReverseStringII {
             final char temporary = array[i];
             array[i] = array[i + k - 1];
             array[i + k - 1] = temporary;
-
-            //System.out.println(String.valueOf(array));
         }
 
         return String.valueOf(array);

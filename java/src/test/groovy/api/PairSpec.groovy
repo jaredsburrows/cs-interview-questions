@@ -24,9 +24,9 @@ final class PairSpec extends BaseSpec {
     def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Pair.class)
-                .withPrefabValues(Pair.class, new Pair<>("a", 1), new Pair<>("b", 2))
-                .suppress(Warning.NONFINAL_FIELDS)
-                .verify()
+            .withPrefabValues(Pair.class, new Pair<>("a", 1), new Pair<>("b", 2))
+            .suppress(Warning.NONFINAL_FIELDS)
+            .verify()
 
         then:
         noExceptionThrown()

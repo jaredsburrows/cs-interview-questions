@@ -7,7 +7,7 @@ import api.Node;
  */
 public final class MergeTwoSortedLinkedLists {
 
-    public static Node<Integer> merge(final Node<Integer> left, final Node<Integer> right) {
+    public static Node<Integer> merge(Node<Integer> left, Node<Integer> right) {
         if (left == null && right == null) {
             return null;
         }

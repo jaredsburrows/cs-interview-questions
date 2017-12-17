@@ -38,14 +38,13 @@ public final class Chapter5BitManipulation {
     // 1 | 1 = 1
 
     /**
-     * 5.1 - You are given two 32-bit numbers, N and M, and two bit positions, i and j. Write a
-     * method to set all bits between i and j in N equal to M (e.g., M becomes a substring of N
-     * located at i and starting at j).
-     * EXAMPLE:
-     * Input: N = 10000000000, M = 10101, i = 2, j = 6
-     * Output: N = 10001010100
+     * 5.1 - You are given two 32-bit numbers, N and M, and two bit positions, i and j. Write a method
+     * to set all bits between i and j in N equal to M (e.g., M becomes a substring of N located at i
+     * and starting at j). EXAMPLE: Input: N = 10000000000, M = 10101, i = 2, j = 6 Output: N =
+     * 10001010100
      */
-    public static int setBitPosition(final int left, final int right, final int positionA, final int positionB) {
+    public static int setBitPosition(int left, int right, int positionA,
+        final int positionB) {
         int max = ~0;
         int shiftMax = (max - 1) << (positionB - 1);
         int shift = 1 << (positionA - 1);
@@ -82,10 +81,8 @@ public final class Chapter5BitManipulation {
     // Step 3. ((n & (n-1)) == 0)   - returns true if value from step 2 is 0, false is other value
 
     /**
-     * 5.5 - Write a function to determine the number of bits required to convert integer A to
-     * integer B.
-     * Input: 31, 14
-     * Output: 2
+     * 5.5 - Write a function to determine the number of bits required to convert integer A to integer
+     * B. Input: 31, 14 Output: 2
      */
     // 0011 - 4
     // 0010 - 3
@@ -98,8 +95,7 @@ public final class Chapter5BitManipulation {
     // output: 2
     // assuming 32 bit integers
     // Time - O(32) == O(1), Space - O(1)
-    public static int getDiffBits(final int left, final int right) {
-
+    public static int getDiffBits(int left, int right) {
         final int zeroDiff;
         final int oneDiff;
         int zeroA = 0;
@@ -136,7 +132,7 @@ public final class Chapter5BitManipulation {
     }
 
     // book answer
-    public static int bitSwapRequired(final int left, final int right) {
+    public static int bitSwapRequired(int left, int right) {
         int count = 0;
         for (int c = left ^ right; c != 0; c = c >> 1) {
             count += c & 1;
@@ -154,7 +150,7 @@ public final class Chapter5BitManipulation {
     // 0x55555555 = 1431655765 = 01010101010101010101010101010101
     // 0xaaaaaaaa = 2863311530 = 10101010101010101010101010101010
     // book answer
-    public static int getSwapBits(final int number) {
+    public static int getSwapBits(int number) {
         return ((number & 0xaaaaaaaa) >> 1) | ((number & 0x55555555) << 1);
     }
 

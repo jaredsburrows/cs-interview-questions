@@ -5,7 +5,7 @@ package questions.sorting;
  */
 public final class QuickSort {
 
-    public static void sortHelper(final int[] array, final int low, final int high) {
+    public static void sortHelper(int[] array, int low, int high) {
         if (array == null || array.length == 0) {
             return;
         }
@@ -46,18 +46,18 @@ public final class QuickSort {
         }
     }
 
-    public static int[] sort(final int[] array, final int low, final int high) {
+    public static int[] sort(int[] array, int low, int high) {
         sortHelper(array, low, high);
         return array;
     }
 
-    public static void swap(final int[] array, final int left, final int right) {
+    public static void swap(int[] array, int left, int right) {
         final int temp = array[left];
         array[left] = array[right];
         array[right] = temp;
     }
 
-    public static int partition(final int[] array, int low, int high) {
+    public static int partition(int[] array, int low, int high) {
         int pivot = array[low];
 
         while (low < high) {
@@ -75,7 +75,7 @@ public final class QuickSort {
         return low;
     }
 
-    public static void sortHelper2(final int[] array, final int low, final int high) {
+    public static void sortHelper2(int[] array, int low, int high) {
         if (array == null || array.length == 0) {
             return;
         }
@@ -89,7 +89,7 @@ public final class QuickSort {
         sortHelper2(array, pivot + 1, high);
     }
 
-    public static int[] sort2(final int[] array, final int low, final int high) {
+    public static int[] sort2(int[] array, int low, int high) {
         sortHelper(array, low, high);
         return array;
     }

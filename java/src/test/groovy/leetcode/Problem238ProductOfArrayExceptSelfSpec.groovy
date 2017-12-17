@@ -12,7 +12,7 @@ final class Problem238ProductOfArrayExceptSelfSpec extends Specification {
         Problem238ProductOfArrayExceptSelf.productExceptSelf(a as int[]) == b as int[]
 
         where:
-        a                                    || b
-        null                                 || []
+        a    || b
+        null || []
     }
 }

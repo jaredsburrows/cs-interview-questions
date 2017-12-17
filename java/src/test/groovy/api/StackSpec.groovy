@@ -91,10 +91,10 @@ final class StackSpec extends BaseSpec {
     def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Stack.class)
-                .withPrefabValues(Stack.class, new Stack<>(), new Stack<>(1))
-                .withPrefabValues(Node.class, new Node<>(), new Node<>(1))
-                .suppress(Warning.NONFINAL_FIELDS)
-                .verify()
+            .withPrefabValues(Stack.class, new Stack<>(), new Stack<>(1))
+            .withPrefabValues(Node.class, new Node<>(), new Node<>(1))
+            .suppress(Warning.NONFINAL_FIELDS)
+            .verify()
 
         then:
         noExceptionThrown()

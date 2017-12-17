@@ -5,7 +5,7 @@ package questions.sorting;
  */
 public final class BubbleSort {
 
-    public static void sortDescending(final int[] numbers) {
+    public static void sortDescending(int[] numbers) {
         for (int i = 0; i < numbers.length - 1; i++) {
             for (int j = 1; j < numbers.length - 1; j++) {
                 if (numbers[j - 1] < numbers[j]) {
@@ -17,12 +17,12 @@ public final class BubbleSort {
         }
     }
 
-    public static int[] sortDescending2(final int[] numbers) {
+    public static int[] sortDescending2(int[] numbers) {
         sortDescending(numbers);
         return numbers;
     }
 
-    public static void sort(final int[] numbers) {
+    public static void sort(int[] numbers) {
         for (int i = 0; i < numbers.length - 1; i++) {
             for (int j = 0; j < numbers.length - i - 1; j++) {
                 if (numbers[j] > numbers[j + 1]) {
@@ -34,7 +34,7 @@ public final class BubbleSort {
         }
     }
 
-    public static int[] sort2(final int[] numbers) {
+    public static int[] sort2(int[] numbers) {
         sort(numbers);
         return numbers;
     }

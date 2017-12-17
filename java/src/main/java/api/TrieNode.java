@@ -7,7 +7,6 @@ import java.util.Arrays;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class TrieNode<T> {
-
     private static final int ALPHABET_COUNT = 26;
     public TrieNode<T>[] children;
     public boolean isEnd;
@@ -17,12 +16,12 @@ public final class TrieNode<T> {
     }
 
     @SuppressWarnings("unchecked")
-    public TrieNode(final int length) {
+    public TrieNode(int length) {
         children = (TrieNode<T>[]) Array.newInstance(TrieNode.class, length);
     }
 
     @Override
-    public boolean equals(final Object object) {
+    public boolean equals(Object object) {
         if (this == object) {
             return true;
         }

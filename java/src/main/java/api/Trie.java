@@ -5,17 +5,16 @@ package api;
  */
 // Current implementation is for strings, modify to make it generic
 public final class Trie<T> {
-
     private final TrieNode<T> root = new TrieNode<>();
 
     public Trie() {
     }
 
-    public Trie(final T value) {
+    public Trie(T value) {
         insert(String.valueOf(value));
     }
 
-    public void insert(final String word) {
+    public void insert(String word) {
         if (word == null) {
             return;
         }
@@ -41,17 +40,17 @@ public final class Trie<T> {
         current.isEnd = true;
     }
 
-    public boolean search(final String word) {
+    public boolean search(String word) {
         final TrieNode<T> current = get(word);
         return current != null && current.isEnd;
     }
 
-    public boolean startsWith(final String prefix) {
+    public boolean startsWith(String prefix) {
         return get(prefix) != null;
     }
 
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
-    public TrieNode<T> get(final String word) {
+    public TrieNode<T> get(String word) {
         if (word == null || word.isEmpty()) {
             return null;
         }
@@ -80,7 +79,7 @@ public final class Trie<T> {
     }
 
     @Override
-    public boolean equals(final Object object) {
+    public boolean equals(Object object) {
         if (this == object) {
             return true;
         }

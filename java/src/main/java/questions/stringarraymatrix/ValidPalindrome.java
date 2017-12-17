@@ -39,19 +39,19 @@ public final class ValidPalindrome {
         return true;
     }
 
-    private static boolean isLowerCase(final char character) {
+    private static boolean isLowerCase(char character) {
         return character >= 'a' && character <= 'z';
     }
 
-    private static boolean isUpperCase(final char character) {
+    private static boolean isUpperCase(char character) {
         return character >= 'A' && character <= 'Z';
     }
 
-    private static boolean isChar(final char character) {
+    private static boolean isChar(char character) {
         return isLowerCase(character) || isUpperCase(character);
     }
 
-    private static boolean isNum(final char character) {
+    private static boolean isNum(char character) {
         return character >= '0' && character <= '9';
     }
 }

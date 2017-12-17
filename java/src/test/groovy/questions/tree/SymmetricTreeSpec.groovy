@@ -24,11 +24,11 @@ final class SymmetricTreeSpec extends BaseSpec {
         SymmetricTree.isSymmetric(a, b) == c
 
         where:
-        a               | b               || c
-        null            | null            || true
-        null            | balancedTree    || false
-        balancedTree    | null            || false
-        balancedTree    | balancedTree    || true
-        balancedTree    | notBalancedTree || false
+        a            | b               || c
+        null         | null            || true
+        null         | balancedTree    || false
+        balancedTree | null            || false
+        balancedTree | balancedTree    || true
+        balancedTree | notBalancedTree || false
     }
 }

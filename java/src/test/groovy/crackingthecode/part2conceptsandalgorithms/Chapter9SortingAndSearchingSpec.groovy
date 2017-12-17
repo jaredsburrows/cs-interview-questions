@@ -45,7 +45,8 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
         [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14]               | 100 || -1
         [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14]               | 5   || 8
         [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14]               | 20  || 3
-        [2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] | 3   || -1 // cant handle duplicates
+        [2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] | 3   ||
+            -1 // cant handle duplicates
     }
 
     @Unroll def "test findString"() {
@@ -56,7 +57,8 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
 
         where:
         a                                                                | b         || c
-        ["a", "b", "c", "d", "e"]                                        | "b"       || 1 // normal - no spaces
+        ["a", "b", "c", "d", "e"]                                        | "b"       ||
+            1 // normal - no spaces
         ["a", "b", "", "c", "d", "e"]                                    | "b"       || 1
         ["a", "", "b", "", "c", "", "", "", "d", "", "e"]                | "b"       || 2
         ["at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""] | "ball"    || 4
@@ -72,16 +74,16 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
         // normal
         null                | -1 || false
         null                | 8  || false
-//        [[1, 1, 1, 1, 1],
-//         [1, 2, 2, 2, 2],
-//         [1, 2, 3, 3, 3],
-//         [1, 2, 3, 4, 4],
-//         [1, 2, 3, 4, 5]] | 5 | true
+        //        [[1, 1, 1, 1, 1],
+        //         [1, 2, 2, 2, 2],
+        //         [1, 2, 3, 3, 3],
+        //         [1, 2, 3, 4, 4],
+        //         [1, 2, 3, 4, 5]] | 5 | true
         // book fails for [4][5], it claims to work for nxm
-//        [[1, 2, 4, 5, 6],
-//         [2, 3, 5, 7, 8],
-//         [4, 6, 8, 9, 10],
-//         [5, 8, 9, 10, 11]] | 11 | true
+        //        [[1, 2, 4, 5, 6],
+        //         [2, 3, 5, 7, 8],
+        //         [4, 6, 8, 9, 10],
+        //         [5, 8, 9, 10, 11]] | 11 | true
         [[1, 2, 4, 5, 6],
          [2, 3, 5, 7, 8],
          [4, 6, 8, 9, 10],

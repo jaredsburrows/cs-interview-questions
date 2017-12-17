@@ -41,9 +41,9 @@ final class GraphNodeSpec extends BaseSpec {
     def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(GraphNode.class)
-                .withPrefabValues(GraphNode.class, new GraphNode<>(), new GraphNode<>(1))
-                .suppress(Warning.NONFINAL_FIELDS)
-                .verify()
+            .withPrefabValues(GraphNode.class, new GraphNode<>(), new GraphNode<>(1))
+            .suppress(Warning.NONFINAL_FIELDS)
+            .verify()
 
         then:
         noExceptionThrown()

@@ -7,7 +7,6 @@ import java.util.concurrent.Semaphore;
  */
 @SuppressWarnings("unused")
 public final class Chapter18ThreadsAndLocks {
-
     /*
      * 18.1 - What’s the difference between a thread and a process?
      */
@@ -100,30 +99,14 @@ public final class Chapter18ThreadsAndLocks {
     // are we checking the entire vm for deadlocks?
 
     /**
-     * 18.5 - Suppose we have the following code:
-     * class Foo {
-     * public:
-     * A(.....); // If A is called, a new thread will be created and the corresponding function will be executed.
-     * methodB(.....); // same as above
-     * methodC(.....); // same as above
-     * }
-     * <p>
-     * Foo f;
-     * f.A(.....);
-     * f.methodB(.....);
-     * f.methodC(.....);
-     * <p>
-     * i) Can you design a mechanism to make sure that methodB is executed after A, and methodC is executed
-     * after methodB?
-     * <p>
-     * ii) Suppose we have the following code to use class Foo. We do not know how the threads will
-     * be scheduled in the OS.
-     * <p>
-     * Foo f;
-     * f.A(.....); f.methodB(.....); f.methodC(.....);
-     * f.A(.....); f.methodB(.....); f.methodC(.....);
-     * <p>
-     * Can you design a mechanism to make sure that all the methods will be executed in sequence?
+     * 18.5 - Suppose we have the following code: class Foo { public: A(.....); // If A is called, a
+     * new thread will be created and the corresponding function will be executed. methodB(.....); //
+     * same as above methodC(.....); // same as above } <p> Foo f; f.A(.....); f.methodB(.....);
+     * f.methodC(.....); <p> i) Can you design a mechanism to make sure that methodB is executed after
+     * A, and methodC is executed after methodB? <p> ii) Suppose we have the following code to use
+     * class Foo. We do not know how the threads will be scheduled in the OS. <p> Foo f; f.A(.....);
+     * f.methodB(.....); f.methodC(.....); f.A(.....); f.methodB(.....); f.methodC(.....); <p> Can you
+     * design a mechanism to make sure that all the methods will be executed in sequence?
      */
 
     public interface MethodsToCall {
@@ -207,9 +190,9 @@ public final class Chapter18ThreadsAndLocks {
     }
 
     /**
-     * 18.6 - You are given a class with synchronized method A, and a normal method C. If you have
-     * two threads in one instance of a program, can they call A at the same time? Can they call A
-     * and C at the same time?
+     * 18.6 - You are given a class with synchronized method A, and a normal method C. If you have two
+     * threads in one instance of a program, can they call A at the same time? Can they call A and C
+     * at the same time?
      */
     @SuppressWarnings("EmptyMethod")
     public static class SomeSyncMethods {

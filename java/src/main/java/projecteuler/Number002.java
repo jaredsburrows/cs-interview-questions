@@ -5,7 +5,7 @@ package projecteuler;
  */
 public final class Number002 {
 
-    public static long getEvenFibonacciNumbers(final long number) {
+    public static long getEvenFibonacciNumbers(long number) {
         long first = 1;
         long second = 1;
         long sum = 0;

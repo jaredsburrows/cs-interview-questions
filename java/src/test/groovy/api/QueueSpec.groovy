@@ -124,10 +124,10 @@ final class QueueSpec extends BaseSpec {
     def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Queue.class)
-                .withPrefabValues(Queue.class, new Queue<>(), new Queue<>(1))
-                .withPrefabValues(Node.class, new Node<>(), new Node<>(1))
-                .suppress(Warning.NONFINAL_FIELDS)
-                .verify()
+            .withPrefabValues(Queue.class, new Queue<>(), new Queue<>(1))
+            .withPrefabValues(Node.class, new Node<>(), new Node<>(1))
+            .suppress(Warning.NONFINAL_FIELDS)
+            .verify()
 
         then:
         noExceptionThrown()

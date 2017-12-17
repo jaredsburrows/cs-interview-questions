@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.util.Scanner;
 
 public final class Main {
-    public static void main(final String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         final Scanner scanner = new Scanner(new File(args[0]), Charset.defaultCharset().name());
 

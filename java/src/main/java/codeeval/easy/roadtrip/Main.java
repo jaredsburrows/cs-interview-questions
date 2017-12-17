@@ -13,7 +13,7 @@ import java.util.List;
 
 public final class Main {
 
-    public static void main(final String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         final File inputFile = new File(args[0]);
         final InputStream fileStream = new FileInputStream(inputFile);
@@ -24,7 +24,7 @@ public final class Main {
         while ((line = buffer.readLine()) != null) {
             final List<Integer> integerList = new ArrayList<>();
             final String[] intStrings = line.trim().split(";");
-            for (final String string : intStrings) {
+            for (String string : intStrings) {
                 integerList.add(Integer.valueOf(string.split(",")[1]));
             }
 

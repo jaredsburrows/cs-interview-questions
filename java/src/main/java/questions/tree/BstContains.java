@@ -7,7 +7,7 @@ import api.TreeNode;
  */
 public final class BstContains {
 
-    public static boolean contains(final TreeNode<Integer> root, final int value) {
+    public static boolean contains(TreeNode<Integer> root, int value) {
         if (root == null) {
             return false;
         }

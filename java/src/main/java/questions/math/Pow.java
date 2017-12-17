@@ -5,7 +5,7 @@ package questions.math;
  */
 public final class Pow {
 
-    public static long pow(final int number, final int exponent) {
+    public static long pow(int number, int exponent) {
         if (exponent < 0) {
             return 0;
         }

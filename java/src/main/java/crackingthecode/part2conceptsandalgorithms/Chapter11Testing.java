@@ -5,7 +5,6 @@ package crackingthecode.part2conceptsandalgorithms;
  */
 @SuppressWarnings("unused")
 public final class Chapter11Testing {
-
     /*
      * 11.1 - Find the mistake(s) in the following code:
      * unsigned int i;

@@ -13,7 +13,7 @@ import java.util.Set;
 
 public final class Main {
 
-    public static void main(final String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         final File inputFile = new File(args[0]);
         final InputStream fileStream = new FileInputStream(inputFile);
@@ -31,7 +31,8 @@ public final class Main {
                 temp += string + ",";
             }
 
-            System.out.println((temp.lastIndexOf(",") != -1) ? temp.substring(0, temp.lastIndexOf(",")) : temp);
+            System.out.println(
+                (temp.lastIndexOf(",") != -1) ? temp.substring(0, temp.lastIndexOf(",")) : temp);
         }
     }
 }

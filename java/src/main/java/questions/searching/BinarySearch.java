@@ -6,7 +6,7 @@ package questions.searching;
 public final class BinarySearch {
 
     // Time - O(LGN), Space - O(1)
-    public static int search(final int[] array, final int target) {
+    public static int search(int[] array, int target) {
 
         int low = array[0];
         int high = array[array.length - 1];

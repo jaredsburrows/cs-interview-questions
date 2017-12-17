@@ -6,12 +6,12 @@ package questions.stringarraymatrix;
 public final class Substring {
 
     // Time - O(N), Space - O(N)
-    public static String substring(final String input, final int end) {
+    public static String substring(String input, int end) {
         return substring(input, 0, end);
     }
 
     // Time - O(N), Space - O(N)
-    public static String substring(final String input, final int start, final int end) {
+    public static String substring(String input, int start, int end) {
 
         if (input == null) {
             return null;

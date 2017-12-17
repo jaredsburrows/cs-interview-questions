@@ -12,9 +12,9 @@ final class Problem125ValidPalindromeSpec extends Specification {
         Problem125ValidPalindrome.isPalindrome(a) == b
 
         where:
-        a                                || b
-        null                             || true
-//        "A man, a plan, a canal: Panama" || true
-//        "race a car"                     || false
+        a    || b
+        null || true
+        //        "A man, a plan, a canal: Panama" || true
+        //        "race a car"                     || false
     }
 }

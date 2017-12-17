@@ -7,11 +7,12 @@ import api.TreeNode;
  */
 public final class BstInsert {
 
-    public static TreeNode<Integer> insertBst(final TreeNode<Integer> root, final int value) {
+    public static TreeNode<Integer> insertBst(TreeNode<Integer> root, int value) {
         return insertBst(root, new TreeNode<>(value));
     }
 
-    public static TreeNode<Integer> insertBst(final TreeNode<Integer> root, final TreeNode<Integer> node) {
+    public static TreeNode<Integer> insertBst(TreeNode<Integer> root,
+        final TreeNode<Integer> node) {
         if (root == null) {
             return node;
         }

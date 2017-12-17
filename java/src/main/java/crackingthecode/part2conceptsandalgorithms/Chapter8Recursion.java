@@ -1,7 +1,6 @@
 package crackingthecode.part2conceptsandalgorithms;
 
 import api.Color;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,11 +8,10 @@ import java.util.List;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Chapter8Recursion {
-
     /**
      * 8.1 - Write a method to generate the nth Fibonacci number.
      */
-    public static long getFibNumberRecursive(final long number) {
+    public static long getFibNumberRecursive(long number) {
         if (number < 2) {
             return number;
         }
@@ -21,7 +19,7 @@ public final class Chapter8Recursion {
         return getFibNumberRecursive(number - 1) + getFibNumberRecursive(number - 2);
     }
 
-    public static long getFibNumberIterative(final long number) {
+    public static long getFibNumberIterative(long number) {
         if (number < 0) {
             return number;
         }
@@ -61,7 +59,7 @@ public final class Chapter8Recursion {
     /**
      * 8.3 - Write a method that returns all subsets of a set.
      */
-    public static List<List<Integer>> getSubsets(final List<Integer> initial, final int size) {
+    public static List<List<Integer>> getSubsets(List<Integer> initial, int size) {
         if (initial == null || size < 0) {
             return null;
         }
@@ -74,7 +72,7 @@ public final class Chapter8Recursion {
         } else {
             finalList = getSubsets(initial, size + 1);
             final List<ArrayList<Integer>> newSetList = new ArrayList<>();
-            for (final List<Integer> set : finalList) {
+            for (List<Integer> set : finalList) {
                 // new set is being created
                 final ArrayList<Integer> temp = new ArrayList<>();
                 temp.addAll(set);
@@ -91,7 +89,7 @@ public final class Chapter8Recursion {
     /**
      * 8.4 - Write a method to compute all permutations of a string.
      */
-    public static List<String> getStringPermutations(final String prefix, final String string) {
+    public static List<String> getStringPermutations(String prefix, String string) {
         if (string == null) {
             return null;
         }
@@ -104,8 +102,9 @@ public final class Chapter8Recursion {
         } else {
             for (int i = 0; i < length; i++) {
                 // add to final list
-                finalList.addAll(getStringPermutations(prefix + string.charAt(i), string.substring(i + 1, length)
-                    + string.substring(0, i)));
+                finalList.addAll(
+                    getStringPermutations(prefix + string.charAt(i), string.substring(i + 1, length)
+                        + string.substring(0, i)));
             }
         }
 
@@ -113,13 +112,12 @@ public final class Chapter8Recursion {
     }
 
     /**
-     * 8.5 - Implement an algorithm to print all valid (e.g., properly opened and closed)
-     * combi- nations of n-pairs of parentheses.
-     * EXAMPLE:
-     * input: 3 (e.g., 3 pairs of parentheses)
-     * output: ()()(), ()(()), (())(), ((()))
+     * 8.5 - Implement an algorithm to print all valid (e.g., properly opened and closed) combi-
+     * nations of n-pairs of parentheses. EXAMPLE: input: 3 (e.g., 3 pairs of parentheses) output:
+     * ()()(), ()(()), (())(), ((()))
      */
-    public static List<String> getValidParentheses(int pairs, int left, int right, String pairString) {
+    public static List<String> getValidParentheses(int pairs, int left, int right,
+        String pairString) {
         if (pairs < 1 || left < 0 || right < 0 || pairString == null) {
             return null;
         }
@@ -132,7 +130,8 @@ public final class Chapter8Recursion {
 
         // make sure left is not greater than number of pairs
         if (left < pairs) {
-            final List<String> nextAdd = getValidParentheses(pairs, left + 1, right, pairString + "(");
+            final List<String> nextAdd =
+                getValidParentheses(pairs, left + 1, right, pairString + "(");
             if (nextAdd != null && !nextAdd.isEmpty()) {
                 generatedList.addAll(nextAdd);
             }
@@ -141,7 +140,8 @@ public final class Chapter8Recursion {
         // make sure right is not greater than number of pairs
         // make sure right is left than left, (()
         if (right < pairs && right < left) {
-            final List<String> nextAdd = getValidParentheses(pairs, left, right + 1, pairString + ")");
+            final List<String> nextAdd =
+                getValidParentheses(pairs, left, right + 1, pairString + ")");
             if (nextAdd != null && !nextAdd.isEmpty()) {
                 generatedList.addAll(nextAdd);
             }
@@ -155,9 +155,12 @@ public final class Chapter8Recursion {
      * That is, given a screen (represented by a 2-dimensional array of Colors), a point, and a new
      * color, fill in the surrounding area until you hit a border of that color.
      */
-    public static void paintFill(final Color[][] pixels, final int positionX, final int positionY,
-                                 final Color prevColor, final Color newColor) {
-        if (positionX < 0 || positionX >= pixels[0].length || positionY < 0 || positionY >= pixels.length) {
+    public static void paintFill(Color[][] pixels, int positionX, int positionY,
+        final Color prevColor, Color newColor) {
+        if (positionX < 0
+            || positionX >= pixels[0].length
+            || positionY < 0
+            || positionY >= pixels.length) {
             return;
         }
 
@@ -175,15 +178,15 @@ public final class Chapter8Recursion {
         paintFill(pixels, positionX, positionY - 1, prevColor, newColor); // up
     }
 
-    public static void paintFill(final Color[][] pixels, final int positionX, final int positionY,
-                                 final Color newColor) {
+    public static void paintFill(Color[][] pixels, int positionX, int positionY,
+        final Color newColor) {
         final Color oldColor = pixels[positionX][positionY];
 
         paintFill(pixels, positionX, positionY, oldColor, newColor);
     }
 
-    public static void floodFillUtil(final int[][] screen, final int positionX, final int positionY,
-                                     final int prevColor, final int newColor) {
+    public static void floodFillUtil(int[][] screen, int positionX, int positionY,
+        final int prevColor, int newColor) {
         // Base cases
         if (positionX < 0 || positionX >= 8) {
             return;
@@ -207,15 +210,16 @@ public final class Chapter8Recursion {
         floodFillUtil(screen, positionX, positionY - 1, prevColor, newColor);
     }
 
-    public static void floodFill(final int[][] screen, final int positionX, final int positionY, final int newColor) {
+    public static void floodFill(int[][] screen, int positionX, int positionY,
+        final int newColor) {
         final int oldColor = screen[positionX][positionY];
 
         floodFillUtil(screen, positionX, positionY, oldColor, newColor);
     }
 
     /**
-     * 8.7 - Given an infinite number of quarters (25 cents), dimes (10 cents), nickels (5 cents)
-     * and pennies (1 cent), write code to calculate the number of ways of representing n cents.
+     * 8.7 - Given an infinite number of quarters (25 cents), dimes (10 cents), nickels (5 cents) and
+     * pennies (1 cent), write code to calculate the number of ways of representing n cents.
      */
     // number of ways
     // dollar   == 100  cents
@@ -223,7 +227,7 @@ public final class Chapter8Recursion {
     // dimes    == 10   cents
     // nickels  == 5    cents
     // pennies  == 1    cent
-    public static int getRepresentCents(final int cents, final int denomination) {
+    public static int getRepresentCents(int cents, int denomination) {
         if (cents < 2) {
             return 1;
         }
@@ -262,7 +266,7 @@ public final class Chapter8Recursion {
     }
 
     // Book answer
-    public static int makeChange(final int number, final int denom) {
+    public static int makeChange(int number, int denom) {
         int nextDenom;
 
         switch (denom) {

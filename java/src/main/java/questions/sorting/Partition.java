@@ -5,13 +5,13 @@ package questions.sorting;
  */
 public final class Partition {
 
-    public static void swap(final int[] array, final int left, final int right) {
+    public static void swap(int[] array, int left, int right) {
         final int temp = array[left];
         array[left] = array[right];
         array[right] = temp;
     }
 
-    public static void part(final int[] array, final int pivotIndex) {
+    public static void part(int[] array, int pivotIndex) {
         if (array == null || array.length == 0) {
             return;
         }
@@ -37,16 +37,16 @@ public final class Partition {
         }
     }
 
-    public static void part(final int[] array) {
+    public static void part(int[] array) {
         part(array, 0);
     }
 
-    public static int[] partition(final int[] array, final int pivotIndex) {
+    public static int[] partition(int[] array, int pivotIndex) {
         part(array, pivotIndex);
         return array;
     }
 
-    public static int[] partition(final int[] array) {
+    public static int[] partition(int[] array) {
         partition(array, 0);
         return array;
     }

@@ -4,11 +4,10 @@ package api;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Point {
-
     private final int x;
     private final int y;
 
-    public Point(final int x, final int y) {
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -22,7 +21,7 @@ public final class Point {
     }
 
     @Override
-    public boolean equals(final Object object) {
+    public boolean equals(Object object) {
         if (this == object) {
             return true;
         }

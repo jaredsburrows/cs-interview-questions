@@ -19,7 +19,7 @@ public final class NumberLength {
 
     // Time - O(1), Space - O(1)
     // http://stackoverflow.com/a/3069580/950427
-    public static int lenHelper(final int number) {
+    public static int lenHelper(int number) {
         if (number >= 1000000000) {
             return 10;
         }
@@ -59,7 +59,7 @@ public final class NumberLength {
         return 1;
     }
 
-    public static double getIntegerLogLength(final int number) {
+    public static double getIntegerLogLength(int number) {
         return Math.floor(Math.log10(Math.abs(number))) + 1;
     }
 }

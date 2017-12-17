@@ -9,7 +9,7 @@ import java.util.List;
 public final class MergeSortedLists {
 
     // Time - O(N*M), Space - O(N)
-    public static List<Integer> merge(final List<List<Integer>> numbers) {
+    public static List<Integer> merge(List<List<Integer>> numbers) {
 
         if (numbers == null) {
             return null;
@@ -21,7 +21,7 @@ public final class MergeSortedLists {
 
         final List<Integer> sortedList = new ArrayList<>();
 
-        for (final List<Integer> number : numbers) {
+        for (List<Integer> number : numbers) {
             final List<Integer> mergedList = merge(number, sortedList);
 
             sortedList.clear();

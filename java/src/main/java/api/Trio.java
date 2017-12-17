@@ -4,12 +4,11 @@ package api;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Trio<F, S, T> {
-
     private final F first;
     private final S second;
     private final T third;
 
-    public Trio(final F first, final S second, final T third) {
+    public Trio(F first, S second, T third) {
         this.first = first;
         this.second = second;
         this.third = third;
@@ -28,7 +27,7 @@ public final class Trio<F, S, T> {
     }
 
     @Override
-    public boolean equals(final Object object) {
+    public boolean equals(Object object) {
         if (this == object) {
             return true;
         }

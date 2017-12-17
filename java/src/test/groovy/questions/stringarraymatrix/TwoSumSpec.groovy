@@ -26,7 +26,8 @@ final class TwoSumSpec extends BaseSpec {
         where:
         a                               | b || c
         [1, 1]                          | 0 || []
-        [2, 4, 3, 5, 6, -2, 4, 7, 8, 9] | 7 || [new Pair<>(-2, 9), new Pair<>(2, 5), new Pair<>(3, 4)]
+        [2, 4, 3, 5, 6, -2, 4, 7, 8, 9] | 7 ||
+            [new Pair<>(-2, 9), new Pair<>(2, 5), new Pair<>(3, 4)]
         [2, 7, 11, 15]                  | 9 || [new Pair<>(2, 7)]
         [1, 1]                          | 2 || [new Pair<>(1, 1)]
     }

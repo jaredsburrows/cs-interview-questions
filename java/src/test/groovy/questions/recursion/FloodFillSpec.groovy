@@ -21,13 +21,13 @@ final class FloodFillSpec extends BaseSpec {
                       [1, 1, 1, 1, 1, 2, 2, 1]] as int[][]
 
         def expected = [[1, 1, 1, 1, 1, 1, 1, 1],
-                      [1, 1, 1, 1, 1, 1, 0, 0],
-                      [1, 0, 0, 1, 1, 0, 1, 1],
-                      [1, 2, 2, 2, 2, 0, 1, 0],
-                      [1, 1, 1, 2, 2, 0, 1, 0],
-                      [1, 1, 1, 2, 2, 2, 2, 0],
-                      [1, 1, 1, 1, 1, 2, 1, 1],
-                      [1, 1, 1, 1, 1, 2, 2, 1]] as int[][]
+                        [1, 1, 1, 1, 1, 1, 0, 0],
+                        [1, 0, 0, 1, 1, 0, 1, 1],
+                        [1, 2, 2, 2, 2, 0, 1, 0],
+                        [1, 1, 1, 2, 2, 0, 1, 0],
+                        [1, 1, 1, 2, 2, 2, 2, 0],
+                        [1, 1, 1, 1, 1, 2, 1, 1],
+                        [1, 1, 1, 1, 1, 2, 2, 1]] as int[][]
         when:
         FloodFill.floodFill(actual as int[][], -1, 4, oldColor, newColor)
         FloodFill.floodFill(actual as int[][], 100, 4, oldColor, newColor)

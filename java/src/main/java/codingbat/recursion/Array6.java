@@ -6,11 +6,12 @@ package codingbat.recursion;
 public final class Array6 {
 
     /**
-     * Given an array of ints, compute recursively if the array contains a 6. We'll use the convention of considering
-     * only the part of the array that begins at the given index. In this way, a recursive call can pass index+1 to
-     * move down the array. The initial call will pass in index as 0.
+     * Given an array of ints, compute recursively if the array contains a 6. We'll use the convention
+     * of considering only the part of the array that begins at the given index. In this way, a
+     * recursive call can pass index+1 to move down the array. The initial call will pass in index as
+     * 0.
      */
-    public static boolean array6(final int[] nums, final int index) {
+    public static boolean array6(int[] nums, int index) {
         if (nums.length == 0 || nums.length == index) {
             return false;
         }

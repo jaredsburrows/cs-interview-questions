@@ -14,7 +14,7 @@ final class BstContainsSpec extends BaseSpec {
 
         where:
         a                  | b   || c
-        null               | 5   | false
+        null               | 5    | false
         // not in tree
         notBalancedBstTree | -10 || false
         notBalancedBstTree | 100 || false

@@ -24,9 +24,9 @@ final class TupleSpec extends BaseSpec {
     def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Tuple.class)
-                .withPrefabValues(Tuple.class, new Tuple<>(1, 2), new Tuple<>(3, 4))
-                .suppress(Warning.NONFINAL_FIELDS)
-                .verify()
+            .withPrefabValues(Tuple.class, new Tuple<>(1, 2), new Tuple<>(3, 4))
+            .suppress(Warning.NONFINAL_FIELDS)
+            .verify()
 
         then:
         noExceptionThrown()

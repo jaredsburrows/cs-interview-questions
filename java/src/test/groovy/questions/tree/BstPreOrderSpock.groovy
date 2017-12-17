@@ -12,13 +12,13 @@ final class BstPreOrderSpock extends BaseSpec {
     def errContent = new ByteArrayOutputStream()
     def tree = new TreeNode<>(8)
 
-//                (8)
-//               /   \
-//            (2)     (21)
-//           /   \     /
-//         (1)   (5) (13)
-//               /
-//             (3)
+    //                (8)
+    //               /   \
+    //            (2)     (21)
+    //           /   \     /
+    //         (1)   (5) (13)
+    //               /
+    //             (3)
     def "setup"() {
         System.setOut(new PrintStream(outContent))
         System.setErr(new PrintStream(errContent))

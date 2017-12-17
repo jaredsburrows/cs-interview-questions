@@ -15,7 +15,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         def b = 2
 
         when:
-//        Chapter19Moderate.swapVar(a, b)
+        //        Chapter19Moderate.swapVar(a, b)
         Chapter19Moderate.swapVar2(a, b)
         a ^= b
         b ^= a
@@ -69,8 +69,8 @@ final class Chapter19ModerateSpec extends BaseSpec {
 
         where:
         a   | b   || c
-        -1  | -1  || -1     // same value
-        10  | 0   || 10     // 0 value
+        -1  | -1  || -1 // same value
+        10  | 0   || 10 // 0 value
         100 | 50  || 100
         213 | 321 || 321
     }
@@ -81,8 +81,8 @@ final class Chapter19ModerateSpec extends BaseSpec {
 
         where:
         a   | b   || c
-        -1  | -1  || -1     // same value
-        10  | 0   || 0      // 0 value
+        -1  | -1  || -1 // same value
+        10  | 0   || 0 // 0 value
         100 | 50  || 50
         213 | 321 || 213
     }

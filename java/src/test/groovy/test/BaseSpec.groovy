@@ -90,6 +90,5 @@ abstract class BaseSpec extends Specification {
     }
 
     def "cleanup"() {
-
     }
 }

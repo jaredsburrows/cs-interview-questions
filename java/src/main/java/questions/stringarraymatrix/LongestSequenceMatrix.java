@@ -6,10 +6,9 @@ package questions.stringarraymatrix;
 public final class LongestSequenceMatrix {
 
     /**
-     * Given NxN matrix, 1..n - all numbers are unique
-     * Find largest sequence of consecutive numbers.
+     * Given NxN matrix, 1..n - all numbers are unique Find largest sequence of consecutive numbers.
      */
-    public static int getLongestSequence(final int[][] matrix) {
+    public static int getLongestSequence(int[][] matrix) {
         if (matrix == null) {
             return -1;
         }

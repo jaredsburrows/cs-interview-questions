@@ -23,7 +23,7 @@ final class PointSpec extends BaseSpec {
     def "test equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Point.class)
-                .verify()
+            .verify()
 
         then:
         noExceptionThrown()

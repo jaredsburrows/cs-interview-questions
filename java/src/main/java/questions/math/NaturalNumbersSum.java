@@ -6,12 +6,12 @@ package questions.math;
 public final class NaturalNumbersSum {
 
     // Time - O(1), Space - O(1)
-    public static int getSumNaturalNumbers(final int number) {
+    public static int getSumNaturalNumbers(int number) {
         return (number * (number + 1)) / 2;
     }
 
     // Time - O(N), Space - O(1)
-    public static int getSumNaturalNumbers2(final int number) {
+    public static int getSumNaturalNumbers2(int number) {
         int sum = 0;
         for (int i = 0; i <= number; i++) {
             sum += i;

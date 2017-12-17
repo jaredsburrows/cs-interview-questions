@@ -5,14 +5,13 @@ package api;
  */
 // FIFO - First in first out
 public final class Queue<T> {
-
     public Node<T> first;
     public Node<T> last;
 
     public Queue() {
     }
 
-    public Queue(final T value) {
+    public Queue(T value) {
         enqueue(new Node<>(value));
     }
 
@@ -24,7 +23,7 @@ public final class Queue<T> {
         return last;
     }
 
-    public void enqueue(final Node<T> node) {
+    public void enqueue(Node<T> node) {
         if (first == null) {
             first = node;
             last = first;
@@ -41,7 +40,7 @@ public final class Queue<T> {
     }
 
     @Override
-    public boolean equals(final Object object) {
+    public boolean equals(Object object) {
         if (this == object) {
             return true;
         }

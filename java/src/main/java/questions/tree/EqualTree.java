@@ -6,8 +6,7 @@ import api.TreeNode;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class EqualTree {
-
-    public static <T> boolean isEqual(final TreeNode<T> node, final TreeNode<T> node2) {
+    public static <T> boolean isEqual(TreeNode<T> node, TreeNode<T> node2) {
         if (node == null && node2 == null) {
             return true;
         }

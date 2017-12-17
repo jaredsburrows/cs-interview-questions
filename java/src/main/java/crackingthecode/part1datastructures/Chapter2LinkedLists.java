@@ -1,7 +1,6 @@
 package crackingthecode.part1datastructures;
 
 import api.Node;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,14 +8,12 @@ import java.util.Set;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Chapter2LinkedLists {
-
     /**
-     * 2.1 - Write code to remove duplicates from an unsorted linked list.
-     * FOLLOW UP
-     * How would you solve this problem if a temporary buffer is not allowed?
+     * 2.1 - Write code to remove duplicates from an unsorted linked list. FOLLOW UP How would you
+     * solve this problem if a temporary buffer is not allowed?
      */
     // Time - O(N)
-    public static void removeDuplicates(final Node<Integer> node) {
+    public static void removeDuplicates(Node<Integer> node) {
         if (node == null) {
             return;
         }
@@ -40,7 +37,7 @@ public final class Chapter2LinkedLists {
     }
 
     // Time - O(N^2), Space - O(1)
-    public static void removeDuplicates2(final Node<Integer> node) {
+    public static void removeDuplicates2(Node<Integer> node) {
         if (node == null) {
             return;
         }
@@ -66,7 +63,7 @@ public final class Chapter2LinkedLists {
 
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // Time - O(N^2)
-    public static void removeDuplicates3(final Node<Integer> node) {
+    public static void removeDuplicates3(Node<Integer> node) {
         if (node == null) {
             return;
         }
@@ -88,7 +85,7 @@ public final class Chapter2LinkedLists {
 
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // book
-    public static void deleteDupsC(final Node<Integer> head) {
+    public static void deleteDupsC(Node<Integer> head) {
         if (head == null) {
             return;
         }
@@ -128,7 +125,7 @@ public final class Chapter2LinkedLists {
      * 2.2 - Implement an algorithm to find the nth to last element of a singly linked list.
      */
     // Time - O(N), Space - O(1)
-    public static Node<Integer> findNthLastElement(Node<Integer> head, final int position) {
+    public static Node<Integer> findNthLastElement(Node<Integer> head, int position) {
         if (head == null || position < 1) {
             return null;
         }
@@ -156,14 +153,12 @@ public final class Chapter2LinkedLists {
     }
 
     /**
-     * 2.3 - Implement an algorithm to delete a node in the middle of a single linked list, given
-     * only access to that node.
-     * EXAMPLE
-     * Input: the node ‘c’ from the linked list a->b->c->d->e
-     * Result: nothing is returned, but the new linked list looks like a->b->d->e
+     * 2.3 - Implement an algorithm to delete a node in the middle of a single linked list, given only
+     * access to that node. EXAMPLE Input: the node ‘c’ from the linked list a->b->c->d->e Result:
+     * nothing is returned, but the new linked list looks like a->b->d->e
      */
     // Time - O(1)
-    public static void deleteMiddleNode(final Node<Character> node) {
+    public static void deleteMiddleNode(Node<Character> node) {
         if (node == null || node.next == null) {
             return;
         }
@@ -176,11 +171,8 @@ public final class Chapter2LinkedLists {
     /**
      * 2.4 - You have two numbers represented by a linked list, where each node contains a single
      * digit. The digits are stored in reverse order, such that the 1’s digit is at the head of the
-     * list. Write a function that adds the two numbers and returns the sum as a linked list.
-     * <p>
-     * EXAMPLE
-     * Input: (3 -> 1 -> 5) + (5 -> 9 -> 2)
-     * Output: 8 -> 0 -> 8
+     * list. Write a function that adds the two numbers and returns the sum as a linked list. <p>
+     * EXAMPLE Input: (3 -> 1 -> 5) + (5 -> 9 -> 2) Output: 8 -> 0 -> 8
      */
     // Linked list  - 3-1-5 (513)
     // Linked list2 - 5-9-2 (295)
@@ -218,14 +210,10 @@ public final class Chapter2LinkedLists {
     }
 
     /**
-     * 2.5 - Given a circular linked list, implement an algorithm which returns node at the
-     * beginning of the loop.
-     * DEFINITION
-     * Circular linked list: A (corrupt) linked list in which a node’s next pointer points to an
-     * earlier node, so as to make a loop in the linked list.
-     * EXAMPLE
-     * input: A -> B -> C -> D -> E -> C [the same C as earlier]
-     * output: C
+     * 2.5 - Given a circular linked list, implement an algorithm which returns node at the beginning
+     * of the loop. DEFINITION Circular linked list: A (corrupt) linked list in which a node’s next
+     * pointer points to an earlier node, so as to make a loop in the linked list. EXAMPLE input: A ->
+     * B -> C -> D -> E -> C [the same C as earlier] output: C
      */
     // Book has a longer solution but seems very unnecessary
     // Time - O(N), Space - O(1)

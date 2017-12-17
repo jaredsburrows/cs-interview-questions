@@ -11,7 +11,7 @@ import java.util.Calendar;
 
 public final class Main {
 
-    public static void main(final String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         final File inputFile = new File(args[0]);
         final InputStream fileStream = new FileInputStream(inputFile);
@@ -36,9 +36,11 @@ public final class Main {
             calendar2.set(Calendar.SECOND, Integer.parseInt(time2[2]));
 
             Calendar result = Calendar.getInstance();
-            result.setTimeInMillis(Math.abs(calendar2.getTime().getTime() - calendar1.getTime().getTime()));
+            result.setTimeInMillis(
+                Math.abs(calendar2.getTime().getTime() - calendar1.getTime().getTime()));
 
-            System.out.printf("%02d:%02d:%02d\n", result.get(Calendar.HOUR_OF_DAY), result.get(Calendar.MINUTE),
+            System.out.printf("%02d:%02d:%02d\n", result.get(Calendar.HOUR_OF_DAY),
+                result.get(Calendar.MINUTE),
                 result.get(Calendar.SECOND));
         }
     }

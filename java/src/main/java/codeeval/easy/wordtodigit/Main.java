@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
 
 public final class Main {
 
-    public static void main(final String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         final File inputFile = new File(args[0]);
         final InputStream fileStream = new FileInputStream(inputFile);
@@ -21,7 +21,7 @@ public final class Main {
         while ((line = buffer.readLine()) != null) {
             final String[] lineArray = line.split(";");
             if (lineArray.length > 0) {
-                for (final String element : lineArray) {
+                for (String element : lineArray) {
                     int number = -1;
                     if ("zero".equals(element)) {
                         number = 0;
