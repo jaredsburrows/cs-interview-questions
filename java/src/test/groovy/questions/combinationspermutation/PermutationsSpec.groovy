@@ -13,7 +13,7 @@ final class PermutationsSpec extends BaseSpec {
 
         where:
         a     || b
-        null  || null
+        null  || []
         ""    || [""]
         "abc" || ["abc", "acb", "bca", "bac", "cab", "cba"]
     }

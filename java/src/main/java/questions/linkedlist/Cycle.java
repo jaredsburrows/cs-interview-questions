@@ -6,7 +6,6 @@ import api.Node;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Cycle {
-
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // Time - O(N), Space - O(1)
     public static boolean hasCycle(Node<Integer> head) {

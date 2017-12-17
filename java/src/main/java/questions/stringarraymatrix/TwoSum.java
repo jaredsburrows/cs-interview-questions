@@ -10,7 +10,6 @@ import java.util.Map;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class TwoSum {
-
     // Time - O(N^2), Space - O(1)
     public static List<Pair<Integer, Integer>> getSums2(int[] numbers, int target) {
         final List<Pair<Integer, Integer>> answer = new ArrayList<>();

@@ -13,7 +13,7 @@ final class MergeSortedListsSpec extends BaseSpec {
 
         where:
         a                                 || b
-        null                              || null
+        null                              || []
         [[]]                              || []
         [[], []]                          || []
         [[1, 3, 5], null]                 || [1, 3, 5]

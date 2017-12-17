@@ -4,7 +4,6 @@ package questions.sorting;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class BubbleSort {
-
     public static void sortDescending(int[] numbers) {
         for (int i = 0; i < numbers.length - 1; i++) {
             for (int j = 1; j < numbers.length - 1; j++) {

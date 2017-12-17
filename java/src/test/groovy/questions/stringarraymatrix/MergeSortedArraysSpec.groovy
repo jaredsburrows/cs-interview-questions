@@ -13,7 +13,7 @@ final class MergeSortedArraysSpec extends BaseSpec {
 
         where:
         a         | b         || c
-        null      | null      || null
+        null      | null      || []
         [1, 3, 5] | null      || [1, 3, 5]
         null      | [1, 3, 5] || [1, 3, 5]
         [1, 3, 5] | [2, 4, 6] || [1, 2, 3, 4, 5, 6]

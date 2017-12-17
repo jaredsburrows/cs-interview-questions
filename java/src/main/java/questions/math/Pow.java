@@ -11,7 +11,6 @@ public final class Pow {
         }
 
         long product = number;
-
         for (int i = 1; i < exponent; i++) {
             product *= number;
         }

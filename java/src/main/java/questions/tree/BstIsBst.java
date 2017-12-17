@@ -6,7 +6,6 @@ import api.TreeNode;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class BstIsBst {
-
     public static boolean isBst(TreeNode<Integer> root) {
         return isBst(root, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);
     }

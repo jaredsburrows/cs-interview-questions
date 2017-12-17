@@ -11,19 +11,19 @@ import java.util.List;
 public final class Problem412FizzBuzz {
     // Time - O(N), Space - O(N)
     public static List<String> fizzBuzz(int n) {
-        final List<String> fizzBuzz = new ArrayList<>();
+        final List<String> words = new ArrayList<>();
         for (int i = 1; i <= n; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
-                fizzBuzz.add("FizzBuzz");
+                words.add("FizzBuzz");
             } else if (i % 3 == 0) {
-                fizzBuzz.add("Fizz");
+                words.add("Fizz");
             } else if (i % 5 == 0) {
-                fizzBuzz.add("Buzz");
+                words.add("Buzz");
             } else {
-                fizzBuzz.add(String.valueOf(i));
+                words.add(String.valueOf(i));
             }
         }
 
-        return fizzBuzz;
+        return words;
     }
 }

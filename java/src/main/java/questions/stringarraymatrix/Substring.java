@@ -4,7 +4,6 @@ package questions.stringarraymatrix;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Substring {
-
     // Time - O(N), Space - O(N)
     public static String substring(String input, int end) {
         return substring(input, 0, end);
@@ -12,7 +11,6 @@ public final class Substring {
 
     // Time - O(N), Space - O(N)
     public static String substring(String input, int start, int end) {
-
         if (input == null) {
             return null;
         }
@@ -30,7 +28,6 @@ public final class Substring {
         }
 
         final StringBuilder stringBuilder = new StringBuilder();
-
         for (int i = start; i < end; i++) {
             stringBuilder.append(input.charAt(i));
         }

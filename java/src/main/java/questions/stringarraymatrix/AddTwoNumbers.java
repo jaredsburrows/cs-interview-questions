@@ -4,7 +4,6 @@ package questions.stringarraymatrix;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class AddTwoNumbers {
-
     // Time - O(MAX(M, N)), Space - O(MAX(M, N))
     public static String addTwoNumbers(String left, String right) {
         if (left == null && right == null) {

@@ -7,13 +7,11 @@ import java.util.List;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class FindKSmallestNumbers {
-
     /**
      * Return smallest K numbers from N sorted list of M sorted integers.
      */
     // Time - O(N*M)
     public static List<Integer> getSmallestNumbers(List<List<Integer>> numbers, int target) {
-
         final List<Integer> toReturn = new ArrayList<>(target);
         final int length = numbers.size() - 1;
         final int[] indexes = new int[length];

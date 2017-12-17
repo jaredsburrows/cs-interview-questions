@@ -4,7 +4,6 @@ package questions.stringarraymatrix;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class ValidPalindrome {
-
     public static boolean isPalindrome(String input) {
         if (input == null) {
             return false;

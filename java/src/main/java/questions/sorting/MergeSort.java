@@ -4,7 +4,6 @@ package questions.sorting;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class MergeSort {
-
     public static int[] mergeSortIndex2(int[] numbers, int low, int high) {
         mergeSortIndex(numbers, low, high);
         return numbers;

@@ -13,8 +13,8 @@ final class ReverseArraySpec extends BaseSpec {
 
         where:
         a                  | b | c || d
-        null               | 2 | 2 || null
-        [1]                | 2 | 2 || null
+        null               | 2 | 2 || []
+        [1]                | 2 | 2 || [1]
         [1, 2, 3, 4, 5, 6] | 4 | 5 || [1, 2, 3, 4, 6, 5]
     }
 }

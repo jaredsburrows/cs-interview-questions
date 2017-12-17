@@ -6,7 +6,6 @@ import api.TreeNode;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class InvertTree {
-
     public static <T> TreeNode<T> reverseTree(TreeNode<T> root) {
         if (root == null) {
             return null;
@@ -27,7 +26,6 @@ public final class InvertTree {
         root.right = temp;
 
         reverse(root.left);
-
         reverse(root.right);
     }
 }

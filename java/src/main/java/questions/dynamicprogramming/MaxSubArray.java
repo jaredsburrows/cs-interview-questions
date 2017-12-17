@@ -4,7 +4,6 @@ package questions.dynamicprogramming;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class MaxSubArray {
-
     public static int getMax(int[] array) {
         if (array == null) {
             return -1;

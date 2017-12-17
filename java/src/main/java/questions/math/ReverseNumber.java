@@ -4,7 +4,6 @@ package questions.math;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class ReverseNumber {
-
     // Time - O(LOG(N), Space - O(1)
     public static long reverseLong(long number) {
         long reverseNumber = 0;

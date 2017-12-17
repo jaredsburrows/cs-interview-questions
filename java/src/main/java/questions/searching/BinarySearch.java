@@ -4,7 +4,6 @@ package questions.searching;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class BinarySearch {
-
     // Time - O(LGN), Space - O(1)
     public static int search(int[] array, int target) {
 

@@ -7,15 +7,9 @@ import java.util.List;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class MergeSortedLists {
-
     // Time - O(N*M), Space - O(N)
     public static List<Integer> merge(List<List<Integer>> numbers) {
-
         if (numbers == null) {
-            return null;
-        }
-
-        if (numbers.isEmpty()) {
             return new ArrayList<>();
         }
 
@@ -34,6 +28,9 @@ public final class MergeSortedLists {
 
     // Time - O(N), Space - O(N)
     private static List<Integer> merge(List<Integer> left, List<Integer> right) {
+        if (left == null && right == null) {
+            return new ArrayList<>();
+        }
 
         if (left == null) {
             left = new ArrayList<>();

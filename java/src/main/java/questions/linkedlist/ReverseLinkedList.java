@@ -6,9 +6,8 @@ import api.Node;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class ReverseLinkedList {
-
+    // Time - O(N), Space - O(1)
     public static Node<Integer> reverse(Node<Integer> node) {
-
         Node<Integer> current = node;
         Node<Integer> previous = null;
 

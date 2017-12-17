@@ -4,11 +4,10 @@ package questions.stringarraymatrix;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class MergeSortedArrays {
-
     // Time - O(N+M), Space - O(N+M)
     public static int[] merge(int[] left, int[] right) {
         if (left == null && right == null) {
-            return null;
+            return new int[]{};
         }
 
         if (left == null) {

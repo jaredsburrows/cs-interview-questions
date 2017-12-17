@@ -4,7 +4,6 @@ package questions.sorting;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Partition {
-
     public static void swap(int[] array, int left, int right) {
         final int temp = array[left];
         array[left] = array[right];

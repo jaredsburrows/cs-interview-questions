@@ -10,7 +10,6 @@ import java.util.Map;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class ThreeSum {
-
     // Time - O(N^2), Space - O(N)
     public static List<Trio<Integer, Integer, Integer>> getSums(int[] numbers, int target) {
         final List<Trio<Integer, Integer, Integer>> answer = new ArrayList<>();

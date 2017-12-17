@@ -6,10 +6,6 @@ import api.TreeNode;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class SymmetricTree {
-
-    /**
-     * 1 / \ 2   2 / \ / \ 3  4 4  3
-     */
     public static <T> boolean isSymmetric(TreeNode<T> root) {
         return isSymmetric(root, root);
     }

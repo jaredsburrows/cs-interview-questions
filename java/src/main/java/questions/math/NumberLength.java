@@ -4,10 +4,8 @@ package questions.math;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class NumberLength {
-
     // Time - O(N), Space - O(1)
     public static int getIntegerLength(int number) {
-
         int count = 0;
         while (number != 0) {
             number /= 10;
@@ -59,6 +57,7 @@ public final class NumberLength {
         return 1;
     }
 
+    // Time - O(1), Space - O(1)
     public static double getIntegerLogLength(int number) {
         return Math.floor(Math.log10(Math.abs(number))) + 1;
     }

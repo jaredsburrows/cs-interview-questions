@@ -156,7 +156,7 @@ public final class Chapter8Recursion {
      * color, fill in the surrounding area until you hit a border of that color.
      */
     public static void paintFill(Color[][] pixels, int positionX, int positionY,
-        final Color prevColor, Color newColor) {
+                                 Color prevColor, Color newColor) {
         if (positionX < 0
             || positionX >= pixels[0].length
             || positionY < 0
@@ -178,15 +178,14 @@ public final class Chapter8Recursion {
         paintFill(pixels, positionX, positionY - 1, prevColor, newColor); // up
     }
 
-    public static void paintFill(Color[][] pixels, int positionX, int positionY,
-        final Color newColor) {
+    public static void paintFill(Color[][] pixels, int positionX, int positionY, Color newColor) {
         final Color oldColor = pixels[positionX][positionY];
 
         paintFill(pixels, positionX, positionY, oldColor, newColor);
     }
 
     public static void floodFillUtil(int[][] screen, int positionX, int positionY,
-        final int prevColor, int newColor) {
+                                     int prevColor, int newColor) {
         // Base cases
         if (positionX < 0 || positionX >= 8) {
             return;

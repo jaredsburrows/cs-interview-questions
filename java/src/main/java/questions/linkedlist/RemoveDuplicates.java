@@ -6,8 +6,7 @@ import api.Node;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class RemoveDuplicates {
-
-    // Time - O(N)
+    // Time - O(N), Space - O(1)
     public static void removeDuplicatesSorted(Node<Integer> node) {
         if (node == null) {
             return;

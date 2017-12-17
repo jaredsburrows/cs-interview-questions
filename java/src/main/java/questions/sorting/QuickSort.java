@@ -4,7 +4,6 @@ package questions.sorting;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class QuickSort {
-
     public static void sortHelper(int[] array, int low, int high) {
         if (array == null || array.length == 0) {
             return;
