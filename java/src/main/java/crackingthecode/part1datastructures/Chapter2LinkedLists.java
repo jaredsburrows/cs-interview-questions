@@ -228,19 +228,21 @@ public final class Chapter2LinkedLists {
      * output: C
      */
     // Book has a longer solution but seems very unnecessary
-    public static Node<Integer> getCircular(final Node<Integer> node) {
-        if (node == null) {
+    // Time - O(N), Space - O(1)
+    @SuppressWarnings("ReferenceEquality") // we want to compare reference
+    public static Node<Integer> getCircular(Node<Integer> head) {
+        if (head == null) {
             return null;
         }
 
-        Node<Integer> first = node;
-        Node<Integer> second = node;
+        Node<Integer> first = head;
+        Node<Integer> runner = head;
 
-        while (first.next != null && second.next != null) {
+        while (first.next != null && runner != null && runner.next != null) {
             first = first.next;
-            second = second.next.next;
+            runner = runner.next.next;
 
-            if (first.equals(second)) {
+            if (first == runner) {
                 return first;
             }
         }

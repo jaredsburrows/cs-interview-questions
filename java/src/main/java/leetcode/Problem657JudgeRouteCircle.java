@@ -16,21 +16,24 @@ public final class Problem657JudgeRouteCircle {
         int x = 0;
         int y = 0;
 
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == 'R') {
-                x++;
-            }
+        for (char anArray : array) {
+            switch (anArray) {
+                default:
+                case 'R':
+                    x++;
+                    break;
 
-            if (array[i] == 'L') {
-                x--;
-            }
+                case 'L':
+                    x--;
+                    break;
 
-            if (array[i] == 'U') {
-                y++;
-            }
+                case 'U':
+                    y++;
+                    break;
 
-            if (array[i] == 'D') {
-                y--;
+                case 'D':
+                    y--;
+                    break;
             }
         }
 

@@ -12,22 +12,22 @@ final class TreeHeightSpec extends BaseSpec {
 
     @Shared def tree = new TreeNode<>(26)
     @Shared def subTree = new TreeNode<>(10)
-    @Shared def balancedTree = new TreeNode<>(0)
-    @Shared def balancedTree2 = new TreeNode<>(0)
+    @Shared def balancedTreeNodes = new TreeNode<>(0)
+    @Shared def balancedTreeNodes2 = new TreeNode<>(0)
     @Shared def unbalancedTree = new TreeNode<>(5)
 
     def "setup"() {
-        balancedTree.right = new TreeNode<Integer>(10)
-        balancedTree.right.left = new TreeNode<Integer>(10)
-        balancedTree.right.right = new TreeNode<Integer>(10)
-        balancedTree.left = new TreeNode<Integer>(1)
-        balancedTree.left.left = new TreeNode<Integer>(12)
-        balancedTree.left.right = new TreeNode<Integer>(2)
+        balancedTreeNodes.right = new TreeNode<Integer>(10)
+        balancedTreeNodes.right.left = new TreeNode<Integer>(10)
+        balancedTreeNodes.right.right = new TreeNode<Integer>(10)
+        balancedTreeNodes.left = new TreeNode<Integer>(1)
+        balancedTreeNodes.left.left = new TreeNode<Integer>(12)
+        balancedTreeNodes.left.right = new TreeNode<Integer>(2)
 
-        balancedTree2.right = new TreeNode<Integer>(10)
-        balancedTree2.right.left = new TreeNode<Integer>(10)
-        balancedTree2.left = new TreeNode<Integer>(1)
-        balancedTree2.left.right = new TreeNode<Integer>(2)
+        balancedTreeNodes2.right = new TreeNode<Integer>(10)
+        balancedTreeNodes2.right.left = new TreeNode<Integer>(10)
+        balancedTreeNodes2.left = new TreeNode<Integer>(1)
+        balancedTreeNodes2.left.right = new TreeNode<Integer>(2)
 
         unbalancedTree.right = new TreeNode<Integer>(10)
         unbalancedTree.left = new TreeNode<Integer>(1)
@@ -51,11 +51,11 @@ final class TreeHeightSpec extends BaseSpec {
         TreeHeight.getHeight(a) == b
 
         where:
-        a              || b
-        null           || 0
-        balancedTree   || 3
-        balancedTree2  || 3
-        unbalancedTree || -1
+        a                  || b
+        null               || 0
+        balancedTreeNodes  || 3
+        balancedTreeNodes2 || 3
+        unbalancedTree     || -1
     }
 
     @Unroll def "test getMinHeight"() {
@@ -63,11 +63,11 @@ final class TreeHeightSpec extends BaseSpec {
         TreeHeight.getMinHeight(a) == b
 
         where:
-        a              || b
-        null           || 0
-        balancedTree   || 3
-        balancedTree2  || 2
-        unbalancedTree || 2
+        a                  || b
+        null               || 0
+        balancedTreeNodes  || 3
+        balancedTreeNodes2 || 2
+        unbalancedTree     || 2
     }
 
     @Unroll def "test getMaxHeight"() {
@@ -75,10 +75,10 @@ final class TreeHeightSpec extends BaseSpec {
         TreeHeight.getMaxHeight(a) == b
 
         where:
-        a              || b
-        null           || 0
-        balancedTree   || 3
-        balancedTree2  || 3
-        unbalancedTree || 4
+        a                  || b
+        null               || 0
+        balancedTreeNodes  || 3
+        balancedTreeNodes2 || 3
+        unbalancedTree     || 4
     }
 }

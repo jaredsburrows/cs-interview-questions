@@ -8,19 +8,20 @@ import api.Node;
 public final class Cycle {
 
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
-    public static boolean hasCycle(final Node<Integer> node) {
-        if (node == null) {
+    // Time - O(N), Space - O(1)
+    public static boolean hasCycle(Node<Integer> head) {
+        if (head == null) {
             return false;
         }
 
-        Node<Integer> first = node;
-        Node<Integer> second = node;
+        Node<Integer> first = head;
+        Node<Integer> runner = head;
 
-        while (first.next != null && second != null && second.next != null) {
+        while (first.next != null && runner != null && runner.next != null) {
             first = first.next;
-            second = second.next.next;
+            runner = runner.next.next;
 
-            if (first == second) {
+            if (first == runner) {
                 return true;
             }
         }
