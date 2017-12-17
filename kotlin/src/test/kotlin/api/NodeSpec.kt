@@ -22,7 +22,6 @@ object NodeSpec : Spek({
             }
         }
 
-        val nextNode = Node(123)
         on("basic usage with inital value") {
             it("should be 123") {
                 assertThat(Color.values().size).isEqualTo(3)
