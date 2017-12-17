@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class MergeSortedListsSpec extends BaseSpec {
-
     @Unroll def "test merge"() {
         expect:
         MergeSortedLists.merge(a as List<List<Integer>>) == b as List

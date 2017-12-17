@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class BstInOrderSpock extends BaseSpec {
-
     def outContent = new ByteArrayOutputStream()
     def errContent = new ByteArrayOutputStream()
     def tree = new TreeNode<>(8)

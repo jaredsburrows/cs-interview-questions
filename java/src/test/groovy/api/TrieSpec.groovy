@@ -8,7 +8,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class TrieSpec extends BaseSpec {
-
     def sut = new Trie<>()
 
     def "setup"() {

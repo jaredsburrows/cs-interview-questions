@@ -6,8 +6,8 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
+@SuppressWarnings("GroovyPointlessBoolean")
 final class Chapter1ArraysAndStringsSpec extends BaseSpec {
-
     @Unroll def "test isUniqueCharacters"() {
         expect:
         Chapter1ArraysAndStrings.isUniqueCharacters(a) == b

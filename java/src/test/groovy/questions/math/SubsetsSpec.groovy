@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class SubsetsSpec extends BaseSpec {
-
     @Unroll def "test subsets"() {
         expect:
         Subsets.subsets(a) == b

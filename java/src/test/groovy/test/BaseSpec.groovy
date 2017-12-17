@@ -13,7 +13,6 @@ import static java.util.UUID.randomUUID
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 abstract class BaseSpec extends Specification {
-
     // Testing Comparisons
     @Shared def static final NUMBER_NEGATIVE_ONE = -1
     @Shared def static final NUMBER_ZERO = 0

@@ -6,7 +6,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class ReorderBooleanArraySpec extends BaseSpec {
-
     def "test reorder boolean - primitive"() {
         given:
         def actual = [false, true, true, true, false, true] as boolean[]

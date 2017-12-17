@@ -7,8 +7,8 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
+@SuppressWarnings("GroovyPointlessBoolean")
 final class Chapter9SortingAndSearchingSpec extends BaseSpec {
-
     @Unroll def "test mergeAInB"() {
         expect:
         Chapter9SortingAndSearching.mergeBInA(a as int[], b as int[], c as int) == d as int[]

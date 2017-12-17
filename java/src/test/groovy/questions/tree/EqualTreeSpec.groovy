@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class EqualTreeSpec extends BaseSpec {
-
     def tree = new TreeNode<>(26)
     def subTree = new TreeNode<>(10)
     def balancedTree = new TreeNode<>(0)

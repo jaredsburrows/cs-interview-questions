@@ -8,7 +8,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class TreeNodeSpec extends BaseSpec {
-
     def sut = new TreeNode<>()
 
     def "test values"() {

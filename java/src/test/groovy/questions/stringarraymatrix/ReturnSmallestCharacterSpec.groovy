@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class ReturnSmallestCharacterSpec extends BaseSpec {
-
     @Unroll def "test findInsPoint2"() {
         expect:
         ReturnSmallestCharacter.findInsPoint2(a, b as char) == c as char

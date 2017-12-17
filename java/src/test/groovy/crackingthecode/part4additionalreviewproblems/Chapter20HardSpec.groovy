@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Chapter20HardSpec extends BaseSpec {
-
     @Unroll def "test 20.1 - addTwoNumbers"() {
         expect:
         Chapter20Hard.addTwoNumbers(a, b) == c

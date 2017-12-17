@@ -8,7 +8,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class MergeTwoSortedLinkedListsSpec extends BaseSpec {
-
     @Unroll def "test merge - null"() {
         expect:
         MergeTwoSortedLinkedLists.merge(a, b) == c

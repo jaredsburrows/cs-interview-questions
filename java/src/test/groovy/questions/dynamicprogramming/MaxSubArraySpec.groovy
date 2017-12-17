@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class MaxSubArraySpec extends BaseSpec {
-
     @Unroll def "test getMax"() {
         expect:
         MaxSubArray.getMax(a as int[]) == b

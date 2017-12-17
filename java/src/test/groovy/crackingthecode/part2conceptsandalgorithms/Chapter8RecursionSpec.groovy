@@ -10,7 +10,6 @@ import static api.Color.*
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Chapter8RecursionSpec extends BaseSpec {
-
     @Unroll def "test getFibNumberRecursive"() {
         expect:
         Chapter8Recursion.getFibNumberRecursive(a) == b

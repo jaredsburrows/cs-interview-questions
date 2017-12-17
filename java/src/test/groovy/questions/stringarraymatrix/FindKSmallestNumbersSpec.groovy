@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class FindKSmallestNumbersSpec extends BaseSpec {
-
     @Unroll def "test getSmallestNumbers"() {
         expect:
         FindKSmallestNumbers.getSmallestNumbers(a, b) == c

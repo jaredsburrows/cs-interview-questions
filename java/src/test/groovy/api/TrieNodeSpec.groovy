@@ -8,7 +8,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class TrieNodeSpec extends BaseSpec {
-
     def sut = new TrieNode<>()
     def nextNode = new TrieNode<>(123)
 

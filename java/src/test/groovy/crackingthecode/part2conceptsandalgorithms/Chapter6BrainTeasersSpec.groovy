@@ -6,7 +6,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Chapter6BrainTeasersSpec extends BaseSpec {
-
     def "test arithmeticOperators"() {
         expect:
         Chapter6BrainTeasers.arithmeticOperators() == 8

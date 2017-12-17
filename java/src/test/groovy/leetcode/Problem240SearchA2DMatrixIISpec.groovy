@@ -6,6 +6,7 @@ import spock.lang.Unroll
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
+@SuppressWarnings("GroovyPointlessBoolean")
 final class Problem240SearchA2DMatrixIISpec extends Specification {
     @Unroll def "testSearchMatrix"() {
         expect:

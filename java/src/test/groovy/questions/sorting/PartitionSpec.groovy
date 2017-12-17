@@ -6,7 +6,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class PartitionSpec extends BaseSpec {
-
     def "test part"() {
         given:
         def actual = [4, 5, 3, 7, 2] as int[]

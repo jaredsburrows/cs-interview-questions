@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class NaturalNumbersSumSpec extends BaseSpec {
-
     @Unroll def "test getSumNaturalNumbers"() {
         expect:
         NaturalNumbersSum.getSumNaturalNumbers(a) == b

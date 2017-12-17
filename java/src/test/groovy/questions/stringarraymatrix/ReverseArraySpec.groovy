@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class ReverseArraySpec extends BaseSpec {
-
     @Unroll def "test reverse - multiple arg"() {
         expect:
         ReverseArray.reverse(a as int[], b, c) == d as int[]

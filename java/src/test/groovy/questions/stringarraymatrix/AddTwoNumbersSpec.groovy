@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class AddTwoNumbersSpec extends BaseSpec {
-
     @Unroll def "test  addTwoNumbers"() {
         expect:
         AddTwoNumbers.addTwoNumbers(a, b) == c

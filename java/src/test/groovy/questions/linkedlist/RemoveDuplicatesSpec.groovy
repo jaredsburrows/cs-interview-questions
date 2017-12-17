@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class RemoveDuplicatesSpec extends BaseSpec {
-
     def "test removeDuplicates - sorted"() {
         given:
         def node = new Node<>(0)

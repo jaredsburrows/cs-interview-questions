@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class RotateArraySpec extends BaseSpec {
-
     @Unroll def "test rotate"() {
         expect:
         RotateArray.rotate(a as int[], b) == c as int[]

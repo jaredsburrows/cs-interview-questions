@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Chapter2LinkedListsSpec extends BaseSpec {
-
     def "test removeDuplicates"() {
         given:
         def node = new Node<>(1)

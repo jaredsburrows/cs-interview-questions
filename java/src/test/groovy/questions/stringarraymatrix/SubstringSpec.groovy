@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class SubstringSpec extends BaseSpec {
-
     @Unroll def "test substring"() {
         expect:
         Substring.substring(a, b, c) == d

@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class SumDigitsSpec extends BaseSpec {
-
     @Unroll def "test sumDigits"() {
         expect:
         SumDigits.sumDigits(a) == b

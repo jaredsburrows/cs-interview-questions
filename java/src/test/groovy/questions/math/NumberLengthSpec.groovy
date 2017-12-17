@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class NumberLengthSpec extends BaseSpec {
-
     @Unroll def "test getIntegerLength"() {
         expect:
         NumberLength.getIntegerLength(a) == b

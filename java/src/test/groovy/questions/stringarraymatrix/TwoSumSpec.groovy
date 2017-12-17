@@ -8,7 +8,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class TwoSumSpec extends BaseSpec {
-
     @Unroll def "test list all pairs(x ,y), equal given number, allow duplicates"() {
         expect:
         TwoSum.getSums2(a as int[], b) == c

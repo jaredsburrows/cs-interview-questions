@@ -8,7 +8,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class StackSpec extends BaseSpec {
-
     def sut = new Stack<>()
     def valueNode = new Node<>(1)
     def valueNode2 = new Node<>(2)

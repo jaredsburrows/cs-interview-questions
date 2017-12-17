@@ -8,7 +8,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class PairSpec extends BaseSpec {
-
     def sut = new Pair<>("test", 123)
 
     def "test getLeft"() {

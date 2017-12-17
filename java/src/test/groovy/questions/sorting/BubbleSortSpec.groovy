@@ -6,7 +6,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class BubbleSortSpec extends BaseSpec {
-
     def "test sortDescending"() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]

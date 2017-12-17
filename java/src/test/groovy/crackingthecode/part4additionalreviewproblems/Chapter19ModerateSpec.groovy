@@ -8,7 +8,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Chapter19ModerateSpec extends BaseSpec {
-
     def "test swapVar"() {
         given:
         def a = 1

@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class AllStarSpec extends BaseSpec {
-
     @Unroll def "test allStar"() {
         expect:
         AllStar.allStar(a) == b

@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class BstFindMinSpec extends BaseSpec {
-
     def tree = new TreeNode<>(8)
 
     //                (8)

@@ -7,7 +7,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Chapter5BitManipulationSpec extends BaseSpec {
-
     @Unroll def "test getDiffBits"() {
         expect:
         Chapter5BitManipulation.getDiffBits(a, b) == c

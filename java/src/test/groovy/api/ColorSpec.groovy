@@ -6,7 +6,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class ColorSpec extends BaseSpec {
-
     def "test values"() {
         expect:
         Color.valueOf(Color.BLUE.toString())

@@ -8,7 +8,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class GraphNodeSpec extends BaseSpec {
-
     def sut = new GraphNode<>()
     def graphNodes = [sut, sut] as GraphNode<Integer>[]
     def node2 = new GraphNode<>(123, graphNodes)

@@ -6,8 +6,8 @@ import test.BaseSpec
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
+@SuppressWarnings("GroovyPointlessBoolean")
 final class ValidPalindromeSpec extends BaseSpec {
-
     @Unroll def "test isPalindrome"() {
         expect:
         ValidPalindrome.isPalindrome(a) == b

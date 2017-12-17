@@ -6,7 +6,6 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Number001Spec extends BaseSpec {
-
     def "test GetMultiplesOf3And5"() {
         expect:
         Number001.getMultiplesOf3And5() == 233168
