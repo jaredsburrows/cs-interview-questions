@@ -1,7 +1,7 @@
 ext {
     javaVersion = "1.8"
-    kotlinVersion = "1.2.0"
-    spekVersion = "1.1.5"
+    kotlinVersion = "1.2.10"
+    spekVersion = "1.1.5" // 1.1.19 issue
 }
 
 ext.deps = [
@@ -18,5 +18,5 @@ ext.deps = [
     "junitPlatformRunner"    : "org.junit.platform:junit-platform-runner:1.0.2",
     "spockCore"              : "org.spockframework:spock-core:1.1-groovy-2.4",
     "equalsverifier"         : "nl.jqno.equalsverifier:equalsverifier:2.4",
-    "truth"                  : "com.google.truth:truth:0.36"
+    "truth"                  : "com.google.truth:truth:0.37"
 ]
