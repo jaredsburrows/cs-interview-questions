@@ -6,7 +6,7 @@ jdk:
 install: true
 
 script:
-  - ./gradlew clean check jacocoTestReport coveralls --stacktrace --scan
+  - ./gradlew clean check -s --scan
 
 after_success:
   - .buildscript/publishDocs.sh

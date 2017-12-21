@@ -144,8 +144,9 @@ public final class Chapter4TreesAndGraphs {
      */
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // Time - O(LOG(N)) in Balanced binary tree, O(N) in skewed tree.
-    public static <T> TreeNode<T> commonAncestor(TreeNode<T> root, TreeNode<T> node1,
-        final TreeNode<T> node2) {
+    public static <T> TreeNode<T> commonAncestor(TreeNode<T> root,
+                                                 TreeNode<T> node1,
+                                                 TreeNode<T> node2) {
         if (root == null) {
             return null;
         }
@@ -165,8 +166,9 @@ public final class Chapter4TreesAndGraphs {
     }
 
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
-    public static <T> TreeNode<T> commonAncestor2(TreeNode<T> root, TreeNode<T> node1,
-        final TreeNode<T> node2) {
+    public static <T> TreeNode<T> commonAncestor2(TreeNode<T> root,
+                                                  TreeNode<T> node1,
+                                                  TreeNode<T> node2) {
         if (root == null) {
             return null;
         }

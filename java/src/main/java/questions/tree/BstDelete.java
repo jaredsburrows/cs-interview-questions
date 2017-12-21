@@ -23,7 +23,6 @@ public final class BstDelete {
     }
 
     public static TreeNode<Integer> deleteNode(TreeNode<Integer> root, int value) {
-
         if (root == null) {
             return null;
         }

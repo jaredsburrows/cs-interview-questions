@@ -2,8 +2,6 @@ plugins {
     id "java-library"
     id "groovy"
     id "net.ltgt.errorprone" version "0.0.13"
-    id "jacoco"
-    id "com.github.kt3k.coveralls" version "2.8.2"
 }
 
 // Repositories block for downloading dependencies in the "dependencies" block
@@ -11,9 +9,6 @@ plugins {
 repositories {
     jcenter()
 }
-
-apply from: rootProject.file("gradle/jacoco.gradle")
-apply from: rootProject.file("gradle/coveralls.gradle")
 
 // See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies(groovy.lang.Closure)
 dependencies {

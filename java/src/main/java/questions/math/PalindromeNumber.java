@@ -13,10 +13,10 @@ public final class PalindromeNumber {
         long reverseNumber = 0;
 
         while (number != 0) {
-            final long multiply10 = reverseNumber * 10;
+            final long moveDigit = reverseNumber * 10;
             final long lastDigit = number % 10;
 
-            reverseNumber = multiply10 + lastDigit;
+            reverseNumber = moveDigit + lastDigit;
 
             number /= 10;
         }

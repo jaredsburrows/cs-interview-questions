@@ -48,11 +48,11 @@ tasks.withType(GroovyCompile) {
 // See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.testing.Test.html
 tasks.withType(Test) {
     testLogging {
-        exceptionFormat = TestExceptionFormat.FULL
-        showCauses = true
-        showExceptions = true
-        showStackTraces = true
-        events = [TestLogEvent.FAILED, TestLogEvent.SKIPPED]
+        exceptionFormat "full"
+        showCauses true
+        showExceptions true
+        showStackTraces true
+        events = ["failed", "skipped"]
     }
 
     maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1

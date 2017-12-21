@@ -11,7 +11,7 @@ public final class BstInsert {
     }
 
     public static TreeNode<Integer> insertBst(TreeNode<Integer> root,
-        final TreeNode<Integer> node) {
+                                              TreeNode<Integer> node) {
         if (root == null) {
             return node;
         }
