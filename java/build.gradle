@@ -7,7 +7,7 @@ plugins {
 // Repositories block for downloading dependencies in the "dependencies" block
 // See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories(groovy.lang.Closure)
 repositories {
-    jcenter()
+    gradlePluginPortal()
 }
 
 // See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies(groovy.lang.Closure)

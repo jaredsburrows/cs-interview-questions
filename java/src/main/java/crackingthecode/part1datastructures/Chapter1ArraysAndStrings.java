@@ -210,7 +210,6 @@ public final class Chapter1ArraysAndStrings {
         }
 
         final int length = image.length;
-
         for (int i = 0; i < length / 2; i++) {
             final int last = length - 1 - i;
             for (int j = i; j < last; j++) {
@@ -227,7 +226,7 @@ public final class Chapter1ArraysAndStrings {
         return image;
     }
 
-    // Time - O(N), Space - O(N)
+    // Time - O(N), Space - O(1)
     public static int[][] rotateImage2(int[][] image) {
         if (image == null) {
             return null;

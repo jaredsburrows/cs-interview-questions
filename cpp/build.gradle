@@ -3,8 +3,6 @@ plugins {
     id "google-test-test-suite"
 }
 
-// See: https://docs.gradle.org/current/userguide/native_software.html
-// See: https://docs.gradle.org/current/dsl/org.gradle.language.cpp.tasks.CppCompile.html
 def hasGTest = file("/usr/local/Cellar/gtest/include").directory
 
 model {

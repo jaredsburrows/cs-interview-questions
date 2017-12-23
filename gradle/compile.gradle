@@ -1,10 +1,3 @@
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
-import org.gradle.api.tasks.testing.logging.TestLogEvent
-
-// For any project that contains tasks with type "JavaCompile"
-// Eg. You would use "tasks.withType(JavaCompile)" in projects like Android projects
-// that do not allow you to specify the "java" plugin
-// See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.compile.JavaCompile.html
 tasks.withType(JavaCompile) {
     sourceCompatibility = rootProject.ext.javaVersion
     targetCompatibility = rootProject.ext.javaVersion
@@ -19,10 +12,6 @@ tasks.withType(JavaCompile) {
     }
 }
 
-// For any project that contains tasks with type "GroovyCompile"
-// Eg. You would use "tasks.withType(GroovyCompile)" in projects like Android projects
-// that do not allow you to specify the "groovy" plugin
-// See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.compile.GroovyCompile.html
 tasks.withType(GroovyCompile) {
     sourceCompatibility = rootProject.ext.javaVersion
     targetCompatibility = rootProject.ext.javaVersion
@@ -42,10 +31,6 @@ tasks.withType(GroovyCompile) {
     }
 }
 
-// For any project that contains tasks with type "Test"
-// Eg. You would use "tasks.withType(Test)" in projects like Android projects
-// that do not allow you to specify the "java" plugin
-// See: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.testing.Test.html
 tasks.withType(Test) {
     testLogging {
         exceptionFormat "full"
@@ -58,8 +43,6 @@ tasks.withType(Test) {
     maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
 }
 
-// For any project that contains tasks with type "JavaForkOptions"
-// See: https://docs.gradle.org/current/javadoc/org/gradle/process/JavaForkOptions.html
 tasks.withType(JavaForkOptions) {
     // Prevent forked processes from stealing focus (on MacOS at least)
     jvmArgs << "-XX:+UseCompressedOops"

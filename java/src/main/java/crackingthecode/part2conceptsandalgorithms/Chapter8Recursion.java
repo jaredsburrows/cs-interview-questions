@@ -61,7 +61,7 @@ public final class Chapter8Recursion {
      */
     public static List<List<Integer>> getSubsets(List<Integer> initial, int size) {
         if (initial == null || size < 0) {
-            return null;
+            return new ArrayList<>();
         }
 
         final List<List<Integer>> finalList;
@@ -91,7 +91,7 @@ public final class Chapter8Recursion {
      */
     public static List<String> getStringPermutations(String prefix, String string) {
         if (string == null) {
-            return null;
+            return new ArrayList<>();
         }
 
         final List<String> finalList = new ArrayList<>();
@@ -117,9 +117,9 @@ public final class Chapter8Recursion {
      * ()()(), ()(()), (())(), ((()))
      */
     public static List<String> getValidParentheses(int pairs, int left, int right,
-        String pairString) {
+                                                   String pairString) {
         if (pairs < 1 || left < 0 || right < 0 || pairString == null) {
-            return null;
+            return new ArrayList<>();
         }
 
         final List<String> generatedList = new ArrayList<>();
@@ -130,20 +130,18 @@ public final class Chapter8Recursion {
 
         // make sure left is not greater than number of pairs
         if (left < pairs) {
-            final List<String> nextAdd =
-                getValidParentheses(pairs, left + 1, right, pairString + "(");
-            if (nextAdd != null && !nextAdd.isEmpty()) {
-                generatedList.addAll(nextAdd);
+            final List<String> next = getValidParentheses(pairs, left + 1, right, pairString + "(");
+            if (!next.isEmpty()) {
+                generatedList.addAll(next);
             }
         }
 
         // make sure right is not greater than number of pairs
         // make sure right is left than left, (()
         if (right < pairs && right < left) {
-            final List<String> nextAdd =
-                getValidParentheses(pairs, left, right + 1, pairString + ")");
-            if (nextAdd != null && !nextAdd.isEmpty()) {
-                generatedList.addAll(nextAdd);
+            final List<String> next = getValidParentheses(pairs, left, right + 1, pairString + ")");
+            if (!next.isEmpty()) {
+                generatedList.addAll(next);
             }
         }
 

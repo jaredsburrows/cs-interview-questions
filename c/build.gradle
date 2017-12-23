@@ -3,8 +3,6 @@ plugins {
     id "cunit-test-suite"
 }
 
-// See: https://docs.gradle.org/current/userguide/native_software.html
-// See: https://docs.gradle.org/current/dsl/org.gradle.language.c.tasks.CCompile.html
 def hasCUnit = file("/usr/local/Cellar/cunit/2.1-3/include").directory
 
 model {

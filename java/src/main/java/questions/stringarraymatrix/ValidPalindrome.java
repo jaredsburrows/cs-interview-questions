@@ -18,11 +18,11 @@ public final class ValidPalindrome {
         final char[] array = input.toCharArray();
 
         for (int i = 0, j = array.length - 1; i < j; i++, j--) {
-            while (i < j && !isChar(array[i]) && !isNum(array[i])) {
+            while (i < j && !isChar(array[i]) && !Character.isDigit(array[i])) {
                 i++;
             }
 
-            while (i < j && !isChar(array[j]) && !isNum(array[j])) {
+            while (i < j && !isChar(array[j]) && !Character.isDigit(array[j])) {
                 j--;
             }
 
@@ -38,19 +38,7 @@ public final class ValidPalindrome {
         return true;
     }
 
-    private static boolean isLowerCase(char character) {
-        return character >= 'a' && character <= 'z';
-    }
-
-    private static boolean isUpperCase(char character) {
-        return character >= 'A' && character <= 'Z';
-    }
-
     private static boolean isChar(char character) {
-        return isLowerCase(character) || isUpperCase(character);
-    }
-
-    private static boolean isNum(char character) {
-        return character >= '0' && character <= '9';
+        return Character.isLowerCase(character) || Character.isUpperCase(character);
     }
 }

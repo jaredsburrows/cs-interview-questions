@@ -10,7 +10,7 @@ import static api.Color.*
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Chapter8RecursionSpec extends BaseSpec {
-    @Unroll def "test getFibNumberRecursive"() {
+    @Unroll def "getFibNumberRecursive(#a) -> #b"() {
         expect:
         Chapter8Recursion.getFibNumberRecursive(a) == b
         Chapter8Recursion.getFibNumberIterative(a) == b
@@ -36,8 +36,8 @@ final class Chapter8RecursionSpec extends BaseSpec {
 
         where:
         a      | b  || c
-        null   | 0  || null
-        null   | -1 || null
+        null   | 0  || []
+        null   | -1 || []
         [0]    | 0  || [[], [0]]
         [1, 2] | 0  || [[], [2], [1], [2, 1]]
     }
@@ -48,7 +48,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
 
         where:
         a  | b     || c
-        "" | null  || null
+        "" | null  || []
         "" | "abc" || ["abc", "acb", "bca", "bac", "cab", "cba"]
     }
 
@@ -58,11 +58,11 @@ final class Chapter8RecursionSpec extends BaseSpec {
 
         where:
         a  | b  | c  | d    || e
-        -1 | 0  | 0  | ""   || null
-        0  | -1 | 0  | ""   || null
-        0  | 0  | -1 | ""   || null
-        0  | 0  | 0  | null || null
-        0  | 0  | 0  | ""   || null
+        -1 | 0  | 0  | ""   || []
+        0  | -1 | 0  | ""   || []
+        0  | 0  | -1 | ""   || []
+        0  | 0  | 0  | null || []
+        0  | 0  | 0  | ""   || []
         3  | 0  | 0  | ""   || ["((()))", "(()())", "(())()", "()(())", "()()()"]
     }
 
@@ -113,7 +113,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
               [1, 1, 1, 1, 1, 3, 3, 1]] as int[][]
     }
 
-    @Unroll def "test getRepresentCents"() {
+    @Unroll def "getRepresentCents(#a) -> #b"() {
         expect:
         // starting with quarters
         Chapter8Recursion.getRepresentCents(a as int, 25) == b

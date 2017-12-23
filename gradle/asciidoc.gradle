@@ -1,5 +1,3 @@
-// Text processor and publishing toolchain for converting AsciiDoc content to HTML5
-// See: http://asciidoctor.org/docs/asciidoctor-gradle-plugin/
 asciidoctor {
     description = project.description
 
