@@ -7,7 +7,7 @@ import spock.lang.Unroll
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Problem541ReverseStringIISpec extends Specification {
-    @Unroll def "testReverseStr"() {
+    @Unroll def "reverseStr"() {
         expect:
         Problem541ReverseStringII.reverseStr(a, b) == c
 

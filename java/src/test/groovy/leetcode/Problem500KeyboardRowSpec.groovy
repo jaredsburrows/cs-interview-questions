@@ -7,7 +7,7 @@ import spock.lang.Unroll
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Problem500KeyboardRowSpec extends Specification {
-    @Unroll def "testFindWords"() {
+    @Unroll def "findWords"() {
         expect:
         Problem500KeyboardRow.findWords(a as String[]) == b as String[]
 

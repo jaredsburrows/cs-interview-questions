@@ -10,7 +10,7 @@ import test.BaseSpec
 final class LinkedListSpec extends BaseSpec {
     def sut = new LinkedList<>(0)
 
-    def "test addtoFront"() {
+    def "addtoFront"() {
         when:
         sut.addToEnd(6)
         sut.add(5)
@@ -23,7 +23,7 @@ final class LinkedListSpec extends BaseSpec {
         sut.next.next.next.value == 5
     }
 
-    def "test addToEnd"() {
+    def "addToEnd"() {
         when:
         sut.addToEnd(1)
         sut.add(2)
@@ -36,7 +36,7 @@ final class LinkedListSpec extends BaseSpec {
         sut.next.next.next.value == 3
     }
 
-    def "test removeFront"() {
+    def "removeFront"() {
         given:
         def linkedList2 = new LinkedList<>(0)
         // 1 element
@@ -51,7 +51,7 @@ final class LinkedListSpec extends BaseSpec {
         linkedList2.getHead() == null
     }
 
-    def "test removeLast"() {
+    def "removeLast"() {
         when:
         sut.addToEnd(6)
         sut.add(7)
@@ -63,7 +63,7 @@ final class LinkedListSpec extends BaseSpec {
         sut.next.next == null
     }
 
-    def "test equals/hashCode"() {
+    def "equals/hashCode"() {
         when:
         EqualsVerifier.forClass(LinkedList.class)
             .withPrefabValues(LinkedList.class, new LinkedList<>(1), new LinkedList<>(2))

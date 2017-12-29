@@ -19,7 +19,7 @@ final class CycleSpec extends BaseSpec {
         node3.next = node4
     }
 
-    def "test cycle - true"() {
+    def "cycle - true"() {
         given:
         node4.next = node1
 
@@ -29,7 +29,7 @@ final class CycleSpec extends BaseSpec {
         Cycle.hasCycle(node0)
     }
 
-    def "test cycle - false"() {
+    def "cycle - false"() {
         given:
         def nullNext = new Node<>(12)
         nullNext.next = null
@@ -41,7 +41,7 @@ final class CycleSpec extends BaseSpec {
         !Cycle.hasCycle(node0)
     }
 
-    def "test cycle2"() {
+    def "cycle2"() {
         given:
         // n0 -> n1
         def node = new Node<>(1)

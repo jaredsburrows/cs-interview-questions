@@ -8,7 +8,7 @@ import test.BaseSpec
  */
 @SuppressWarnings("GroovyPointlessBoolean")
 final class ValidPalindromeSpec extends BaseSpec {
-    @Unroll def "isPalindrome(#a) is #b"() {
+    @Unroll def "isPalindrome(#a) is '#b'"() {
         expect:
         ValidPalindrome.isPalindrome(a) == b
 

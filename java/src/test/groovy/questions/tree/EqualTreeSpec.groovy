@@ -43,7 +43,7 @@ final class EqualTreeSpec extends BaseSpec {
         tree.left.right = new TreeNode<Integer>(6)
     }
 
-    def "test isEqual"() {
+    def "isEqual"() {
         expect:
         EqualTree.isEqual(null, null)
         !EqualTree.isEqual(null, balancedTree)

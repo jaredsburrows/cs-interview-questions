@@ -11,7 +11,7 @@ final class NodeSpec extends BaseSpec {
     def sut = new Node<>()
     def nextNode = new Node<>(123)
 
-    def "test default values"() {
+    def "default values"() {
         when:
         sut.value = 123
 
@@ -21,7 +21,7 @@ final class NodeSpec extends BaseSpec {
         sut.previous == null
     }
 
-    def "test getters/setters"() {
+    def "getters/setters"() {
         when:
         sut.value = 123
         sut.next = nextNode
@@ -33,7 +33,7 @@ final class NodeSpec extends BaseSpec {
         sut.previous.value == 123
     }
 
-    def "test equals/hashCode"() {
+    def "equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Node.class)
             .withPrefabValues(Node.class, new Node<>(), new Node<>(1))

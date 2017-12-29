@@ -8,7 +8,7 @@ import test.BaseSpec
  */
 @SuppressWarnings("GroovyPointlessBoolean")
 final class SleepInSpec extends BaseSpec {
-    @Unroll def "test sleepIn"() {
+    @Unroll def "sleepIn(#a, #b) == '#c'"() {
         expect:
         SleepIn.sleepIn(a, b) == c
 

@@ -4,7 +4,6 @@ package codingbat.recursion;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Fibonacci {
-
     /**
      * The fibonacci sequence is a famous bit of mathematics, and it happens to have a recursive
      * definition. The first two values in the sequence are 0 and 1 (essentially 2 base cases). Each

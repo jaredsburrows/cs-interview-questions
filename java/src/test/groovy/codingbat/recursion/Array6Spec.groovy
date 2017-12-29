@@ -8,7 +8,7 @@ import test.BaseSpec
  */
 @SuppressWarnings("GroovyPointlessBoolean")
 final class Array6Spec extends BaseSpec {
-    @Unroll def "test array6"() {
+    @Unroll def "array6(#a, #b) == '#c'"() {
         expect:
         Array6.array6(a as int[], b) == c
 

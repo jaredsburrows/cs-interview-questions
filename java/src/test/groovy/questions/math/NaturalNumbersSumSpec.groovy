@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class NaturalNumbersSumSpec extends BaseSpec {
-    @Unroll def "test getSumNaturalNumbers"() {
+    @Unroll def "getSumNaturalNumbers(#a) == '#b'"() {
         expect:
         NaturalNumbersSum.getSumNaturalNumbers(a) == b
         NaturalNumbersSum.getSumNaturalNumbers2(a) == b
@@ -23,7 +23,7 @@ final class NaturalNumbersSumSpec extends BaseSpec {
         1000 || 500500
     }
 
-    @Unroll def "test getSumNaturalNumbersArray"() {
+    @Unroll def "getSumNaturalNumbersArray(#a) == '#b'"() {
         expect:
         NaturalNumbersSum.getSumNaturalNumbersArray(a as int[]) == b
 

@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class BinarySearchSpec extends BaseSpec {
-    @Unroll def "test search"() {
+    @Unroll def "search(#a, #b) == '#c'"() {
         expect:
         BinarySearch.search(a as int[], b) == c
 

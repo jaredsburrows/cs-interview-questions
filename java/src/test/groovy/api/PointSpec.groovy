@@ -9,17 +9,17 @@ import test.BaseSpec
 final class PointSpec extends BaseSpec {
     def sut = new Point(321, 123)
 
-    def "test getX"() {
+    def "getX"() {
         expect:
         sut.getX() == 321
     }
 
-    def "test getY"() {
+    def "getY"() {
         expect:
         sut.getY() == 123
     }
 
-    def "test equals/hashCode"() {
+    def "equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Point.class)
             .verify()

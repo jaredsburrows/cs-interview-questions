@@ -7,7 +7,7 @@ import spock.lang.Unroll
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Problem485MaxConsecutiveOnesSpec extends Specification {
-    @Unroll def "testFindMaxConsecutiveOnes"() {
+    @Unroll def "findMaxConsecutiveOnes"() {
         expect:
         Problem485MaxConsecutiveOnes.findMaxConsecutiveOnes(a as int[]) == b
 

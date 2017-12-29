@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class FactorialSpec extends BaseSpec {
-    @Unroll def "test factorial"() {
+    @Unroll def "factorial(#a) == '#b'"() {
         expect:
         Factorial.factorial(a) == b
 

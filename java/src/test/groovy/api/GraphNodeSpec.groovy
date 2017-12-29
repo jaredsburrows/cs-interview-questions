@@ -12,7 +12,7 @@ final class GraphNodeSpec extends BaseSpec {
     def graphNodes = [sut, sut] as GraphNode<Integer>[]
     def node2 = new GraphNode<>(123, graphNodes)
 
-    def "test default values"() {
+    def "default values"() {
         when:
         sut.value = 123
 
@@ -27,7 +27,7 @@ final class GraphNodeSpec extends BaseSpec {
         !node2.visited
     }
 
-    def "test getters/setters"() {
+    def "getters/setters"() {
         when:
         sut.value = 123
         sut.next = sut
@@ -37,7 +37,7 @@ final class GraphNodeSpec extends BaseSpec {
         sut.next.value == 123
     }
 
-    def "test equals/hashCode"() {
+    def "equals/hashCode"() {
         when:
         EqualsVerifier.forClass(GraphNode.class)
             .withPrefabValues(GraphNode.class, new GraphNode<>(), new GraphNode<>(1))

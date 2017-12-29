@@ -6,7 +6,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class MergeSortSpec extends BaseSpec {
-    def "test mergeSort"() {
+    def "mergeSort"() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -18,7 +18,7 @@ final class MergeSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "test mergeSort2"() {
+    def "mergeSort2"() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -30,7 +30,7 @@ final class MergeSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "test sort"() {
+    def "sort"() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -42,7 +42,7 @@ final class MergeSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "test sort2"() {
+    def "sort2"() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]

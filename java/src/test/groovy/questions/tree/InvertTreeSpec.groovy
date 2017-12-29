@@ -38,7 +38,7 @@ final class InvertTreeSpec extends BaseSpec {
         reversedUnbalancedTree.right.right.right = new TreeNode<Integer>(12)
     }
 
-    def "test reverseTree"() {
+    def "reverseTree"() {
         expect:
         InvertTree.reverseTree(null) == null
         InvertTree.reverseTree(balancedTree) == reversedBalancedTree

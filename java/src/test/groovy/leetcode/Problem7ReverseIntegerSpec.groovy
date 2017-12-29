@@ -7,7 +7,7 @@ import spock.lang.Unroll
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Problem7ReverseIntegerSpec extends Specification {
-    @Unroll def "testReverse"() {
+    @Unroll def "reverse"() {
         expect:
         Problem7ReverseInteger.reverse(a) == b
 

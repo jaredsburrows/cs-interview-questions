@@ -70,7 +70,7 @@ public final class Chapter1ArraysAndStrings {
     // Time - O(N), Space - O(1)
     public static char[] reverseString(char[] input) {
         if (input == null) {
-            return null;
+            return new char[0];
         }
 
         if (input.length == 0) {
@@ -95,10 +95,10 @@ public final class Chapter1ArraysAndStrings {
     // the book answer fails for strings like "baaaaaaaaaad"
     public static String removeDuplicates(String input) {
         if (input == null) {
-            return null;
+            return "";
         }
 
-        if (input.isEmpty()) {
+        if (input.trim().isEmpty()) {
             return input;
         }
 
@@ -177,7 +177,7 @@ public final class Chapter1ArraysAndStrings {
     // Time - O(N), Space - O(N)
     public static String replaceSpaces(String input) {
         if (input == null) {
-            return null;
+            return "";
         }
 
         final StringBuilder stringBuilder = new StringBuilder();
@@ -193,7 +193,7 @@ public final class Chapter1ArraysAndStrings {
     // Time - O(N), Space - O(N)
     public static String replaceSpaces2(String input) {
         if (input == null) {
-            return null;
+            return "";
         }
 
         return input.replaceAll(" ", "%20");
@@ -206,7 +206,7 @@ public final class Chapter1ArraysAndStrings {
     // Time - O(N), Space - O(1)
     public static int[][] rotateImage(int[][] image) {
         if (image == null) {
-            return null;
+            return new int[0][0];
         }
 
         final int length = image.length;
@@ -229,7 +229,7 @@ public final class Chapter1ArraysAndStrings {
     // Time - O(N), Space - O(1)
     public static int[][] rotateImage2(int[][] image) {
         if (image == null) {
-            return null;
+            return new int[0][0];
         }
 
         final int length = image.length;

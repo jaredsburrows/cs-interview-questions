@@ -26,7 +26,7 @@ final class BstFindMaxSpec extends BaseSpec {
         tree.left.right.left = new TreeNode<>(3)
     }
 
-    def "test findMaxValue"() {
+    def "findMaxValue"() {
         expect:
         BstFindMax.findMaxValue(tree) == 21
     }

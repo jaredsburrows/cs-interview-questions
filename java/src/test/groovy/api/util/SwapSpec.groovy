@@ -6,7 +6,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class SwapSpec extends BaseSpec {
-    def "test swap"() {
+    def "swap"() {
         given:
         def actual = [1, 2] as Integer[]
         def expected = [2, 1] as Integer[]

@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class FibonacciSpec extends BaseSpec {
-    @Unroll def "test fibonacci"() {
+    @Unroll def "fibonacci(#a) == '#b'"() {
         expect:
         Fibonacci.fibonacci(a) == b
 

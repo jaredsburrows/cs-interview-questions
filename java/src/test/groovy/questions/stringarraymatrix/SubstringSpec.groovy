@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class SubstringSpec extends BaseSpec {
-    @Unroll def "test substring"() {
+    @Unroll def "substring(#a, #b, #c) == '#d'"() {
         expect:
         Substring.substring(a, b, c) == d
 
@@ -23,12 +23,12 @@ final class SubstringSpec extends BaseSpec {
         "hello" | 0  | 3  || "hel"
     }
 
-    @Unroll def "test substring2"() {
+    @Unroll def "substring2(#a, #b) == '#c'"() {
         expect:
-        Substring.substring(a, c) == d
+        Substring.substring(a, b) == c
 
         where:
-        a       | c  || d
+        a       | b  || c
         null    | 0  || null
         ""      | 0  || ""
         "jared" | -1 || null

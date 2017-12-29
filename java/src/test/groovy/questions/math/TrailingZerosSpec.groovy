@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class TrailingZerosSpec extends BaseSpec {
-    @Unroll def "test getTrailingZeros"() {
+    @Unroll def "getTrailingZeros(#a) == '#b'"() {
         expect:
         TrailingZeros.getTrailingZeros(a) == b
 

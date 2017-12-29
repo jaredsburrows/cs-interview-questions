@@ -4,7 +4,6 @@ package questions.bitmanipulation;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class AddTwoNumbers {
-
     // 010101101 - 173
     // 101011010 - 346
     //   173
@@ -15,7 +14,7 @@ public final class AddTwoNumbers {
     // python - to binary   - bin(519)
     public static String getBinarySumLib(String left, String right) {
         if (left == null && right == null) {
-            return null;
+            return "";
         }
 
         if (left == null) {
@@ -41,7 +40,7 @@ public final class AddTwoNumbers {
     // limited by integers
     public static String getBinarySum(String binary1, String binary2) {
         if (binary1 == null && binary2 == null) {
-            return null;
+            return "";
         }
 
         if (binary1 == null) {
@@ -89,11 +88,43 @@ public final class AddTwoNumbers {
         return stringBuilder.reverse().toString();
     }
 
+    public static String getBinarySum2(String a, String b) {
+        if (a == null && b == null) {
+            return "";
+        }
+
+        if (a == null) {
+            return b;
+        }
+
+        if (b == null) {
+            return a;
+        }
+
+        final StringBuilder stringBuilder = new StringBuilder();
+
+        int carry = 0;
+        for (int i = a.length() - 1, j = b.length() - 1; i >= 0 || j >= 0 || carry == 1; i--, j--) {
+            final int digit1 = i < 0 ? 0 : a.charAt(i) - '0';
+            final int digit2 = j < 0 ? 0 : b.charAt(j) - '0';
+            final int sum = digit1 + digit2 + carry;
+
+            stringBuilder.insert(0, sum % 2);
+            carry = sum / 2;
+        }
+
+        if (carry > 0) {
+            stringBuilder.insert(0, 1);
+        }
+
+        return stringBuilder.toString();
+    }
+
     // 0 >> 1 = 0,  1 >> 1 = 0,  2 >> 1 = 1,  3 >> 1 = 1
     // 0 &  0 = 0,  0 &  1 = 1,  1 &  1 = 1,  2 &  1 = 1
     public static String getBinarySumBit(String binary1, String binary2) {
         if (binary1 == null && binary2 == null) {
-            return null;
+            return "";
         }
 
         if (binary1 == null) {

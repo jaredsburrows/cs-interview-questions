@@ -12,9 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public final class Main {
-
     public static void main(String[] args) throws Exception {
-
         final File inputFile = new File(args[0]);
         final InputStream fileStream = new FileInputStream(inputFile);
         final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
@@ -26,13 +24,13 @@ public final class Main {
             final Set<String> set = new LinkedHashSet<>();
             Collections.addAll(set, strings);
             final Object[] objects = set.toArray();
-            String temp = "";
+            final StringBuilder temp = new StringBuilder();
             for (Object string : objects) {
-                temp += string + ",";
+                temp.append(string).append(",");
             }
 
             System.out.println(
-                (temp.lastIndexOf(",") != -1) ? temp.substring(0, temp.lastIndexOf(",")) : temp);
+                (temp.lastIndexOf(",") != -1) ? temp.substring(0, temp.lastIndexOf(",")) : temp.toString());
         }
     }
 }

@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class PowSpec extends BaseSpec {
-    @Unroll def "test pow"() {
+    @Unroll def "pow(#a, #b) == '#c'"() {
         expect:
         Pow.pow(a, b) == c
 

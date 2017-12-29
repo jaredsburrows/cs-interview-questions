@@ -10,7 +10,7 @@ import test.BaseSpec
  */
 final class ThreeSumSpec extends BaseSpec {
     @Ignore
-    @Unroll def "test list trios(x ,y), equal given number, no duplicates"() {
+    @Unroll def "list trios(x ,y), equal given number, no duplicates"() {
         expect:
         ThreeSum.getSums(a as int[], b) == c
 

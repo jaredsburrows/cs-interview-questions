@@ -8,7 +8,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class MergeTwoSortedLinkedListsSpec extends BaseSpec {
-    @Unroll def "test merge - null"() {
+    @Unroll def "null - merge(#a) == '#b'"() {
         expect:
         MergeTwoSortedLinkedLists.merge(a, b) == c
 
@@ -19,7 +19,7 @@ final class MergeTwoSortedLinkedListsSpec extends BaseSpec {
         null          | new Node<>(0) || new Node<>(0)
     }
 
-    def "test merge - sorted - different length"() {
+    def "merge - sorted - different length"() {
         given:
         def left = new Node<>(0)
         left.next = new Node<>(2)
@@ -39,7 +39,7 @@ final class MergeTwoSortedLinkedListsSpec extends BaseSpec {
         answer.next.next.next.next.value == 4
     }
 
-    def "test merge - sorted - same length"() {
+    def "merge - sorted - same length"() {
         given:
         def left = new Node<>(0)
         left.next = new Node<>(2)

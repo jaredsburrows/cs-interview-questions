@@ -36,6 +36,7 @@ public final class Chapter19Moderate {
      */
     // Outcomes - X - Player 1, O - Player 2, no one
     // Time - O(1), Space - O(1) (since we know it is 3x3 array)
+    @SuppressWarnings("ForLoopReplaceableByForEach")
     public static int checkTicTacToe(int[][] board) {
         if (board == null) {
             return -1;

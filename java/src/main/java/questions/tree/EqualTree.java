@@ -6,17 +6,21 @@ import api.TreeNode;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class EqualTree {
-    public static <T> boolean isEqual(TreeNode<T> node, TreeNode<T> node2) {
-        if (node == null && node2 == null) {
+    public static <T> boolean isEqual(TreeNode<T> root) {
+        return isEqual(root, root);
+    }
+
+    public static <T> boolean isEqual(TreeNode<T> leftRoot, TreeNode<T> rightRoot) {
+        if (leftRoot == null && rightRoot == null) {
             return true;
         }
 
-        if (node == null || node2 == null) {
+        if (leftRoot == null || rightRoot == null) {
             return false;
         }
 
-        return node.value == node2.value
-            && isEqual(node.left, node2.left)
-            && isEqual(node.right, node2.right);
+        return leftRoot.value == rightRoot.value
+            && isEqual(leftRoot.left, rightRoot.left)
+            && isEqual(leftRoot.right, rightRoot.right);
     }
 }

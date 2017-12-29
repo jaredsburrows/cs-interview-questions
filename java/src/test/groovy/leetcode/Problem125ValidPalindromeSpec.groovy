@@ -7,7 +7,7 @@ import spock.lang.Unroll
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Problem125ValidPalindromeSpec extends Specification {
-    @Unroll def "testIsPalindrome"() {
+    @Unroll def "isPalindrome"() {
         expect:
         Problem125ValidPalindrome.isPalindrome(a) == b
 

@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class SearchAdjacentElementsSpec extends BaseSpec {
-    @Unroll def "test search"() {
+    @Unroll def "search(#a, #b) == '#c'"() {
         expect:
         SearchAdjacentElements.search(a as int[], b) == c
         SearchAdjacentElements.search2(a as int[], b) == c

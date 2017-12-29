@@ -16,8 +16,7 @@ public final class ThreeSum {
         final Map<Integer, Integer> map = new HashMap<>();
 
         // O(N) - preprocessing
-        for (int i = 0; i < numbers.length; i++) {
-            final int key = numbers[i];
+        for (final int key : numbers) {
             if (map.containsKey(key)) {
                 final int count = map.get(key) + 1;
                 map.put(key, count);

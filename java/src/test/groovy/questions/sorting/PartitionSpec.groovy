@@ -6,7 +6,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class PartitionSpec extends BaseSpec {
-    def "test part"() {
+    def "part"() {
         given:
         def actual = [4, 5, 3, 7, 2] as int[]
         def expected = [2, 3, 4, 7, 5] as int[]
@@ -18,7 +18,7 @@ final class PartitionSpec extends BaseSpec {
         actual == expected
     }
 
-    def "test part2"() {
+    def "part2"() {
         given:
         def actual = [4, 5, 3, 7, 2] as int[]
         def expected = [2, 3, 4, 7, 5] as int[]

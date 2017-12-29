@@ -207,12 +207,9 @@ public final class Chapter4TreesAndGraphs {
             return false;
         }
 
-        if (EqualTree.isEqual(tree, subTree)) {
-            return true;
-        }
-
-        return EqualTree.isEqual(tree.left, subTree)
-            || EqualTree.isEqual(tree.right, subTree); // important || vs &&
+        return EqualTree.isEqual(tree, subTree)
+            || isSubtree(tree.left, subTree)
+            || isSubtree(tree.right, subTree);
     }
 
     /*

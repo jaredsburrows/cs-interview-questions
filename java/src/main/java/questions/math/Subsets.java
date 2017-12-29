@@ -9,7 +9,6 @@ import java.util.List;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Subsets {
-
     public static <T extends Comparable<? super T>> List<ArrayList<T>> subsets(List<T> data) {
         if (data == null) {
             return null;
@@ -18,7 +17,7 @@ public final class Subsets {
         final List<ArrayList<T>> subsets = new ArrayList<>();
 
         // Empty Set
-        subsets.add(new ArrayList<T>());
+        subsets.add(new ArrayList<>());
 
         // Order
         Collections.sort(data);
@@ -47,7 +46,7 @@ public final class Subsets {
         final List<List<T>> subsets = new ArrayList<>();
 
         // Empty Set
-        subsets.add(new ArrayList<T>());
+        subsets.add(new ArrayList<>());
 
         // Order
         Arrays.sort(data);

@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class BstDeleteSpec extends BaseSpec {
-    def "test delete leaf node"() {
+    def "delete leaf node"() {
         given:
         //       8
         //     /   \
@@ -43,7 +43,7 @@ final class BstDeleteSpec extends BaseSpec {
         actual == expected
     }
 
-    def "test delete middle node"() {
+    def "delete middle node"() {
         given:
         //       8
         //     /   \

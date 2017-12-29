@@ -7,7 +7,7 @@ import spock.lang.Unroll
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Problem371SumOfTwoIntegersSpec extends Specification {
-    @Unroll def "testGetSum"() {
+    @Unroll def "getSum"() {
         expect:
         Problem371SumOfTwoIntegers.getSum(a, b) == c
 

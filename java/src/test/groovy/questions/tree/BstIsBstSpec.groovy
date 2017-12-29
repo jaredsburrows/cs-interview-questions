@@ -8,7 +8,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class BstIsBstSpec extends BaseSpec {
-    @Unroll def "test isBst"() {
+    @Unroll def "isBst(#a) == '#b'"() {
         expect:
         BstIsBst.isBst(a) == b
 
@@ -18,7 +18,7 @@ final class BstIsBstSpec extends BaseSpec {
         balancedTreeBST || true
     }
 
-    @Unroll def "test isBst2"() {
+    @Unroll def "isBst2(#a, #b, #c) == '#d'"() {
         expect:
         BstIsBst.isBst(a as TreeNode<Integer>, b as Double, c as Double) == d
 

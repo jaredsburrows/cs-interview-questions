@@ -10,22 +10,22 @@ import test.BaseSpec
 final class TrioSpec extends BaseSpec {
     def sut = new Trio<>("a", 1, 'a')
 
-    def "test getFirst"() {
+    def "getFirst"() {
         expect:
         sut.getFirst() == "a"
     }
 
-    def "test getSecond"() {
+    def "getSecond"() {
         expect:
         sut.getSecond() == 1
     }
 
-    def "test getThird"() {
+    def "getThird"() {
         expect:
         sut.getThird() == 'a'
     }
 
-    def "test equals/hashCode"() {
+    def "equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Trio.class)
             .withPrefabValues(Trio.class, new Trio<>("a", 1, 'a'), new Trio<>("b", 2, 'b'))

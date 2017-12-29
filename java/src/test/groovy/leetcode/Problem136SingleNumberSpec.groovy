@@ -7,7 +7,7 @@ import spock.lang.Unroll
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Problem136SingleNumberSpec extends Specification {
-    @Unroll def "testSingleNumber"() {
+    @Unroll def "singleNumber"() {
         expect:
         Problem136SingleNumber.singleNumber(a as int[]) == b
 

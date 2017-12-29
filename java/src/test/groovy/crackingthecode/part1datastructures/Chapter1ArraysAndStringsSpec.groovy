@@ -8,7 +8,7 @@ import test.BaseSpec
  */
 @SuppressWarnings("GroovyPointlessBoolean")
 final class Chapter1ArraysAndStringsSpec extends BaseSpec {
-    @Unroll def "test isUniqueCharacters"() {
+    @Unroll def "isUniqueCharacters(#a) == '#b'"() {
         expect:
         Chapter1ArraysAndStrings.isUniqueCharacters(a) == b
         Chapter1ArraysAndStrings.isUniqueCharacters2(a) == b
@@ -23,33 +23,33 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
         "qwertyuiopplkjhgfdsazxcvbnm" || false
     }
 
-    @Unroll def "test reverseString"() {
+    @Unroll def "reverseString(#a) == '#b'"() {
         expect:
         Chapter1ArraysAndStrings.reverseString(a as char[]) == b as char[]
 
         where:
         a            || b
-        null         || null
+        null         || ""
         ""           || ""
         "bad"        || "dab"
         "1234567890" || "0987654321"
         "test"       || "tset"
     }
 
-    @Unroll def "test removeDuplicates"() {
+    @Unroll def "removeDuplicates(#a) == '#b'"() {
         expect:
         Chapter1ArraysAndStrings.removeDuplicates(a) == b
 
         where:
         a              || b
-        null           || null
+        null           || ""
         ""             || ""
         "baaaaaaaaaad" || "bad"
         "1123"         || "123"
         "abcc"         || "abc"
     }
 
-    @Unroll def "test isAnagram"() {
+    @Unroll def "isAnagram(#a) == '#b'"() {
         expect:
         Chapter1ArraysAndStrings.isAnagram(a, b) == c
         Chapter1ArraysAndStrings.isAnagram2(a, b) == c
@@ -67,28 +67,28 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
         "fall"       | "foul"       || false
     }
 
-    @Unroll def "test replaceSpace"() {
+    @Unroll def "replaceSpace(#a) == '#b'"() {
         expect:
         Chapter1ArraysAndStrings.replaceSpaces(a) == b
         Chapter1ArraysAndStrings.replaceSpaces2(a) == b
 
         where:
         a      || b
-        null   || null
+        null   || ""
         " "    || "%20"
         "abc"  || "abc"
         "a bc" || "a%20bc"
         "  "   || "%20%20"
     }
 
-    @Unroll def "test rotateImage"() {
+    @Unroll def "rotateImage(#a) == '#b'"() {
         expect:
         Chapter1ArraysAndStrings.rotateImage(a as int[][]) == b as int[][]
         Chapter1ArraysAndStrings.rotateImage2(a as int[][]) == b as int[][]
 
         where:
         a              || b
-        null           || null
+        null           || []
         [[1, 2, 3],
          [1, 2, 3],
          [1, 2, 3]]    || [[1, 1, 1],
@@ -103,7 +103,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
                            [6, 2, 8, 4]]
     }
 
-    @Unroll def "test markRows"() {
+    @Unroll def "markRows(#a) == '#b'"() {
         expect:
         Chapter1ArraysAndStrings.markRows(a as int[][]) == b as int[][]
 
@@ -122,7 +122,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
                         [5, 0, 5]]
     }
 
-    @Unroll def "test isSubstring"() {
+    @Unroll def "isSubstring(#a, #b) == '#c'"() {
         expect:
         Chapter1ArraysAndStrings.isSubstring(a, b) == c
 

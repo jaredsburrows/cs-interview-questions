@@ -10,17 +10,17 @@ public final class SymmetricTree {
         return isSymmetric(root, root);
     }
 
-    public static <T> boolean isSymmetric(TreeNode<T> node, TreeNode<T> node2) {
-        if (node == null && node2 == null) {
+    public static <T> boolean isSymmetric(TreeNode<T> leftRoot, TreeNode<T> rightRoot) {
+        if (leftRoot == null && rightRoot == null) {
             return true;
         }
 
-        if (node == null || node2 == null) {
+        if (leftRoot == null || rightRoot == null) {
             return false;
         }
 
-        return node.value == node2.value
-            && isSymmetric(node.left, node2.right)
-            && isSymmetric(node.right, node2.left);
+        return leftRoot.value == rightRoot.value
+            && isSymmetric(leftRoot.left, rightRoot.right)
+            && isSymmetric(leftRoot.right, rightRoot.left);
     }
 }

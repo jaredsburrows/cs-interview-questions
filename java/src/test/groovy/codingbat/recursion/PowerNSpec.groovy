@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class PowerNSpec extends BaseSpec {
-    @Unroll def "test powerN"() {
+    @Unroll def "powerN(#a, #b) == '#c'"() {
         expect:
         PowerN.powerN(a, b) == c
 

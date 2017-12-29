@@ -7,7 +7,7 @@ import spock.lang.Unroll
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Problem442FindAllDuplicatesInAnArraySpec extends Specification {
-    @Unroll def "testFindDuplicates"() {
+    @Unroll def "findDuplicates"() {
         expect:
         Problem442FindAllDuplicatesInAnArray.findDuplicates(a as int[]) == b
 

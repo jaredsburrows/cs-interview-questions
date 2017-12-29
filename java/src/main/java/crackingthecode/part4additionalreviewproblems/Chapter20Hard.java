@@ -175,14 +175,7 @@ public final class Chapter20Hard {
         }
 
         final List<Integer> integerList = new ArrayList<>(billion);
-
-        Collections.sort(integerList, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1 > o2 ? 1 : -1;
-            }
-        });
-
+        integerList.sort((o1, o2) -> o1 > o2 ? 1 : -1);
         return integerList.subList(5, 10);
     }
 

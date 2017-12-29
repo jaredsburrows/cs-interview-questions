@@ -16,7 +16,7 @@ final class TrieSpec extends BaseSpec {
         sut.insert("are")
     }
 
-    def "test insert/get"() {
+    def "insert/get"() {
         when:
         sut.insert(null)
         sut.insert("")
@@ -31,7 +31,7 @@ final class TrieSpec extends BaseSpec {
         sut.get("are")
     }
 
-    def "test search"() {
+    def "search"() {
         expect:
         !sut.search(null)
         !sut.search("")
@@ -40,7 +40,7 @@ final class TrieSpec extends BaseSpec {
         sut.search("are")
     }
 
-    def "test startsWith"() {
+    def "startsWith"() {
         expect:
         !sut.startsWith(null)
         !sut.startsWith("")
@@ -49,7 +49,7 @@ final class TrieSpec extends BaseSpec {
         sut.startsWith("ar")
     }
 
-    def "test equals/hashCode"() {
+    def "equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Trie.class)
             .withPrefabValues(Trie.class, new Trie<>(), new Trie<>("test"))

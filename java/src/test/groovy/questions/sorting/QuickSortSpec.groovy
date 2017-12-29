@@ -6,7 +6,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class QuickSortSpec extends BaseSpec {
-    def "test sortHelper"() {
+    def "sortHelper"() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -18,7 +18,7 @@ final class QuickSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "test sort"() {
+    def "sort"() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -30,7 +30,7 @@ final class QuickSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "test sortHelper2"() {
+    def "sortHelper2"() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -42,7 +42,7 @@ final class QuickSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "test sort2"() {
+    def "sort2"() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]

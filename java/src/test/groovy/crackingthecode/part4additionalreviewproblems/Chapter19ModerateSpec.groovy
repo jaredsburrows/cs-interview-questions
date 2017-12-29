@@ -8,7 +8,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Chapter19ModerateSpec extends BaseSpec {
-    def "test swapVar"() {
+    def "swapVar"() {
         given:
         def a = 1
         def b = 2
@@ -25,7 +25,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         b == 1
     }
 
-    @Unroll def "test 19.2 - checkTicTacToe"() {
+    @Unroll def "19.2 - checkTicTacToe(#a) == '#b'"() {
         expect:
         Chapter19Moderate.checkTicTacToe(a as int[][]) == b
 
@@ -49,7 +49,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
          [0, 0, 2]] || 2
     }
 
-    @Unroll def "test 19.3 - numZeros"() {
+    @Unroll def "19.3 - numZeros(#a) == '#b'"() {
         expect:
         Chapter19Moderate.numZeros(a) == b
 
@@ -61,7 +61,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         26 || 6
     }
 
-    @Unroll def "test 19.4 - getMax"() {
+    @Unroll def "19.4 - getMax(#a, #b) == '#c'"() {
         expect:
         Chapter19Moderate.getMax(a as long, b as long) == c
         Chapter19Moderate.getMax2(a as long, b as long) == c
@@ -74,7 +74,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         213 | 321 || 321
     }
 
-    @Unroll def "test getMin"() {
+    @Unroll def "getMin(#a, #b) == '#c'"() {
         expect:
         Chapter19Moderate.getMin(a as long, b as long) == c
 
@@ -86,7 +86,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         213 | 321 || 213
     }
 
-    @Unroll def "test 19.5 - getPseudoHits"() {
+    @Unroll def "19.5 - getPseudoHits(#a, #b) == '#c'"() {
         expect:
         Chapter19Moderate.getPseudoHits(a, b) == c
 
@@ -100,7 +100,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         "RGGB" | "YRGB" || new Pair<>(2, 1)
     }
 
-    @Unroll def "test 19.7 - getMaxSum"() {
+    @Unroll def "19.7 - getMaxSum(#a) == '#b'"() {
         expect:
         Chapter19Moderate.getMaxSum(a as int[]) == b
 
@@ -111,7 +111,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         [-2, 1, -3, 4, -1, 2, 1, -5, 4] || 6
     }
 
-    @Unroll def "test 19.8 - getWordOccurrence"() {
+    @Unroll def "19.8 - getWordOccurrence(#a, #b) == '#c'"() {
         expect:
         Chapter19Moderate.getWordOccurrence(a as String[], b) == c
 
@@ -127,14 +127,14 @@ final class Chapter19ModerateSpec extends BaseSpec {
         ["the", "", "the"]    | "hat"  || 0
     }
 
-    def "test 19.10 - rand7"() {
+    def "19.10 - rand7"() {
         expect:
         Chapter19Moderate.rand5() in 1..5
         Chapter19Moderate.rand7() in 1..7
         Chapter19Moderate.rand72() in 1..7
     }
 
-    @Unroll def "test 19.11 - getPairSum"() {
+    @Unroll def "19.11 - getPairSum(#a, #b) == '#c'"() {
         expect:
         Chapter19Moderate.getPairSum(a as int[], b) == c as Map<Integer, Integer>
 

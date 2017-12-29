@@ -7,7 +7,7 @@ import spock.lang.Unroll
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Problem412FizzBuzzSpec extends Specification {
-    @Unroll def "testFizzBuzz"() {
+    @Unroll def "fizzBuzz"() {
         expect:
         Problem412FizzBuzz.fizzBuzz(a) == b
 

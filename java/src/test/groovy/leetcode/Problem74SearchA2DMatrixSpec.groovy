@@ -8,7 +8,7 @@ import spock.lang.Unroll
  */
 @SuppressWarnings("GroovyPointlessBoolean")
 final class Problem74SearchA2DMatrixSpec extends Specification {
-    @Unroll def "testSearchMatrix"() {
+    @Unroll def "searchMatrix"() {
         expect:
         Problem74SearchA2DMatrix.searchMatrix(a as int[][], b) == c
 

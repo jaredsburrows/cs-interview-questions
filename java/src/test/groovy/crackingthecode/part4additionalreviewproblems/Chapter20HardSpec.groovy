@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Chapter20HardSpec extends BaseSpec {
-    @Unroll def "test 20.1 - addTwoNumbers"() {
+    @Unroll def "20.1 - addTwoNumbers(#a, #b) == '#c'"() {
         expect:
         Chapter20Hard.addTwoNumbers(a, b) == c
 
@@ -18,7 +18,7 @@ final class Chapter20HardSpec extends BaseSpec {
         14123 | 453115 || 467238
     }
 
-    @Unroll def "test subtractTwoNumbers"() {
+    @Unroll def "subtractTwoNumbers(#a, #b) == '#c'"() {
         expect:
         Chapter20Hard.substractTwoNumbers(a, b) == c
 
@@ -29,7 +29,7 @@ final class Chapter20HardSpec extends BaseSpec {
         467238 | 14123 || 453115
     }
 
-    @Unroll def "test 20.4 - countNumber2s"() {
+    @Unroll def "20.4 - countNumber2s(#a) == '#b'"() {
         expect:
         Chapter20Hard.countNumber2s(a) == b
         Chapter20Hard.count2sI(a) == b
@@ -40,7 +40,7 @@ final class Chapter20HardSpec extends BaseSpec {
         35 || 14
     }
 
-    @Unroll def "test 20.6 - getTopMillion"() {
+    @Unroll def "20.6 - getTopMillion(#a) == '#b'"() {
         expect:
         Chapter20Hard.getTopMillion(a) == b
 
@@ -51,7 +51,7 @@ final class Chapter20HardSpec extends BaseSpec {
         [1, 5, 2, 6, 4, 7, 3, 9, 3, 5] || [5, 5, 6, 7, 9]
     }
 
-    @Unroll def "test 20.10 - getTransformedList"() {
+    @Unroll def "20.10 - getTransformedList(#a, #b, #c) == '#d'"() {
         expect:
         Chapter20Hard.getTransformedList(a, b, c) == d
 

@@ -7,7 +7,7 @@ import spock.lang.Specification
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Problem237DeleteNodeInALinkedListSpec extends Specification {
-    def "testDeleteNode"() {
+    def "deleteNode"() {
         given:
         def list = new Node<>(1)
         list.next = new Node<>(2)

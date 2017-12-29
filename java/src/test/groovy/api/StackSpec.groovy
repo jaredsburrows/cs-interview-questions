@@ -15,14 +15,14 @@ final class StackSpec extends BaseSpec {
     def blankNode = new Node<>(0)
     def blankNode2 = new Node<>(0)
 
-    def "test peek"() {
+    def "peek"() {
         expect:
         !sut.peek()
         sut.push(blankNode)
         sut.peek() == blankNode
     }
 
-    def "test peek - multiple"() {
+    def "peek - multiple"() {
         expect:
         !sut.peek()
         sut.push(blankNode)
@@ -31,7 +31,7 @@ final class StackSpec extends BaseSpec {
         sut.peek() == blankNode2
     }
 
-    def "test push - single"() {
+    def "push - single"() {
         def blankNode = new Node<>(0)
 
         expect:
@@ -42,7 +42,7 @@ final class StackSpec extends BaseSpec {
         sut.peek() == blankNode
     }
 
-    def "test push - multiple"() {
+    def "push - multiple"() {
         expect:
         !sut.peek()
         sut.push(null)
@@ -55,7 +55,7 @@ final class StackSpec extends BaseSpec {
         sut.peek() == valueNode3
     }
 
-    def "test pop"() {
+    def "pop"() {
         expect:
         !sut.peek()
         sut.push(null)
@@ -66,7 +66,7 @@ final class StackSpec extends BaseSpec {
         !sut.peek()
     }
 
-    def "test pop - multiple"() {
+    def "pop - multiple"() {
         expect:
         !sut.peek()
         sut.push(null)
@@ -87,7 +87,7 @@ final class StackSpec extends BaseSpec {
         !sut.peek()
     }
 
-    def "test equals/hashCode"() {
+    def "equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Stack.class)
             .withPrefabValues(Stack.class, new Stack<>(), new Stack<>(1))

@@ -36,7 +36,7 @@ final class BstPreOrderSpock extends BaseSpec {
         System.setErr(null)
     }
 
-    def "test printPreOrder"() {
+    def "printPreOrder"() {
         when:
         BstPreOrder.printPreOrder(tree)
 

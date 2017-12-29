@@ -30,7 +30,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
         8  || 21
     }
 
-    @Unroll def "test getSubsets"() {
+    @Unroll def "getSubsets(#a, #b) == '#c'"() {
         expect:
         Chapter8Recursion.getSubsets(a, b) == c
 
@@ -42,7 +42,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
         [1, 2] | 0  || [[], [2], [1], [2, 1]]
     }
 
-    @Unroll def "test getStringPermutations"() {
+    @Unroll def "getStringPermutations(#a) == '#b'"() {
         expect:
         Chapter8Recursion.getStringPermutations(a, b) == c
 
@@ -52,7 +52,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
         "" | "abc" || ["abc", "acb", "bca", "bac", "cab", "cba"]
     }
 
-    @Unroll def "test getValidParentheses"() {
+    @Unroll def "getValidParentheses(#a, #b, #c, #d) == '#e'"() {
         expect:
         Chapter8Recursion.getValidParentheses(a, b, c, d) == e
 
@@ -66,7 +66,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
         3  | 0  | 0  | ""   || ["((()))", "(()())", "(())()", "()(())", "()()()"]
     }
 
-    def "test paintFill"() {
+    def "paintFill"() {
         given:
         def a = [[RED, RED, GREEN, GREEN, GREEN],
                  [GREEN, RED, RED, GREEN, GREEN],
@@ -85,7 +85,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
               [GREEN, GREEN, GREEN, GREEN, BLUE]] as Color[][]
     }
 
-    def "test floodFill"() {
+    def "floodFill"() {
         given:
         def a = [[1, 1, 1, 1, 1, 1, 1, 1],
                  [1, 1, 1, 1, 1, 1, 0, 0],

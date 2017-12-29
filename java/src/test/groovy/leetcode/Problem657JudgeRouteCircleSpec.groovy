@@ -8,7 +8,7 @@ import spock.lang.Unroll
  */
 @SuppressWarnings("GroovyPointlessBoolean")
 final class Problem657JudgeRouteCircleSpec extends Specification {
-    @Unroll def "testJudgeCircle"() {
+    @Unroll def "judgeCircle"() {
         expect:
         Problem657JudgeRouteCircle.judgeCircle(a) == b
 

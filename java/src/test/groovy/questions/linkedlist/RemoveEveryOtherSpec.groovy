@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class RemoveEveryOtherSpec extends BaseSpec {
-    def "test RemoveEveryOther"() {
+    def "RemoveEveryOther"() {
         given:
         def node = new Node<>(1)
         node.next = new Node<>(1)

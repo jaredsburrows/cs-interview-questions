@@ -111,7 +111,7 @@ public final class Chapter3StacksAndQueues {
             this.capacity = capacity;
 
             currentStack = 0;
-            stacks.add(new Stack<T>());
+            stacks.add(new Stack<>());
         }
 
         public void push(T item) {

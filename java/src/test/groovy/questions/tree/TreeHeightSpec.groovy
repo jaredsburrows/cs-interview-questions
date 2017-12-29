@@ -45,7 +45,7 @@ final class TreeHeightSpec extends BaseSpec {
         tree.left.right = new TreeNode<Integer>(6)
     }
 
-    @Unroll def "test getHeight"() {
+    @Unroll def "getHeight(#a) == '#b'"() {
         expect:
         TreeHeight.getHeight(a) == b
 
@@ -57,7 +57,7 @@ final class TreeHeightSpec extends BaseSpec {
         unbalancedTree     || -1
     }
 
-    @Unroll def "test getMinHeight"() {
+    @Unroll def "getMinHeight(#a) == '#b'"() {
         expect:
         TreeHeight.getMinHeight(a) == b
 
@@ -69,7 +69,7 @@ final class TreeHeightSpec extends BaseSpec {
         unbalancedTree     || 2
     }
 
-    @Unroll def "test getMaxHeight"() {
+    @Unroll def "getMaxHeight(#a) == '#b'"() {
         expect:
         TreeHeight.getMaxHeight(a) == b
 

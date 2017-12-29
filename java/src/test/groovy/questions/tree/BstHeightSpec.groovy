@@ -26,7 +26,7 @@ final class BstHeightSpec extends BaseSpec {
         tree.left.left = new TreeNode<>(1)
     }
 
-    def "test getHeight"() {
+    def "getHeight"() {
         expect:
         BstHeight.getHeight(tree) == 3
     }

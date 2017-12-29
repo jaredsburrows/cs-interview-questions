@@ -8,7 +8,7 @@ import test.BaseSpec
  */
 @SuppressWarnings("GroovyPointlessBoolean")
 final class BstContainsSpec extends BaseSpec {
-    @Unroll def "test contains"() {
+    @Unroll def "contains(#a, #b) == '#c'"() {
         expect:
         BstContains.contains(a, b) == c
 

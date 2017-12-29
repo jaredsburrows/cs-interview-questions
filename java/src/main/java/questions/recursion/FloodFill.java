@@ -5,30 +5,28 @@ package questions.recursion;
  */
 public final class FloodFill {
     public static void floodFill(int[][] array, int positionX, int positionY, int newColor) {
-        // Start with the color that x,y
-        final int oldColor = array[positionX][positionY];
+        if (array == null                                   // based
+            || array[positionX][positionY] == newColor) {   // // check previous color
+            return;
+        }
 
-        floodFill(array, positionX, positionY, oldColor, newColor);
+        floodFill(array,
+            positionX,
+            positionY,
+            array[positionX][positionY], // oldColor
+            newColor);
     }
 
     public static void floodFill(int[][] array, int positionX, int positionY, int oldColor,
                                  int newColor) {
-        final int length = array.length;
-
-        if (positionX < 0 || positionX >= length) {
+        if (array == null                                       // base
+            || positionX < 0 || positionX >= array.length       // x
+            || positionY < 0 || positionY >= array[0].length    // y
+            || array[positionX][positionY] != oldColor) {       // check previous color
             return;
         }
 
-        if (positionY < 0 || positionY >= length) {
-            return;
-        }
-
-        if (array[positionX][positionY] != oldColor) {
-            return;
-        }
-
-        // Set new color
-        array[positionX][positionY] = newColor;
+        array[positionX][positionY] = newColor; // Set new color
 
         floodFill(array, positionX + 1, positionY, oldColor, newColor); // right
         floodFill(array, positionX - 1, positionY, oldColor, newColor); // left

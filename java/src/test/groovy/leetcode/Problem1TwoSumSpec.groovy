@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Problem1TwoSumSpec extends BaseSpec {
-    @Unroll def "testTwoSum"() {
+    @Unroll def "twoSum"() {
         expect:
         Problem1TwoSum.twoSum(a as int[], b) == c as int[]
 

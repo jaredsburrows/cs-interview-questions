@@ -6,7 +6,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class FloodFillSpec extends BaseSpec {
-    def "test floodFill - error bounds"() {
+    def "floodFill - error bounds"() {
         given:
         def oldColor = 2
         def newColor = 3
@@ -37,7 +37,7 @@ final class FloodFillSpec extends BaseSpec {
         actual == expected
     }
 
-    def "test floodFill - change color"() {
+    def "floodFill - change color"() {
         given:
         // Start on 4, 4
         def positionX = 4
@@ -68,7 +68,7 @@ final class FloodFillSpec extends BaseSpec {
         actual == expected
     }
 
-    def "test floodFill - choose color"() {
+    def "floodFill - choose color"() {
         given:
         // Start on 4, 4
         def positionX = 4

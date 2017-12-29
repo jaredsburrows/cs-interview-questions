@@ -9,7 +9,7 @@ import test.BaseSpec
  */
 @SuppressWarnings("GroovyPointlessBoolean")
 final class Chapter9SortingAndSearchingSpec extends BaseSpec {
-    @Unroll def "test mergeAInB"() {
+    @Unroll def "mergeAInB(#a, #b, #c) == '#d'"() {
         expect:
         Chapter9SortingAndSearching.mergeBInA(a as int[], b as int[], c as int) == d as int[]
 
@@ -23,7 +23,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
     }
 
     // http://www2.vo.lu/homepages/phahn/anagrams/oneword.htm
-    @Unroll def "test sortAnagrams"() {
+    @Unroll def "sortAnagrams(#a) == '#b'"() {
         expect:
         Chapter9SortingAndSearching.sortAnagrams(a) == b
 
@@ -35,7 +35,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
             ["aceno", "aceno", "adeeglnnr", "adeeglnnr", "aestw", "ainpt", "ainpt"]
     }
 
-    @Unroll def "test getRotatedIndexOf"() {
+    @Unroll def "getRotatedIndexOf(#a, #b) == '#c'"() {
         expect:
         Chapter9SortingAndSearching.getRotatedIndexOf(a as int[], b) == c
 
@@ -49,7 +49,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
             -1 // cant handle duplicates
     }
 
-    @Unroll def "test findString"() {
+    @Unroll def "findString(#a, #b) == '#c'"() {
         expect:
         Chapter9SortingAndSearching.findString(a as String[], b as String) == c
         Chapter9SortingAndSearching.findString2(a as String[], b as String) == c
@@ -65,7 +65,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
         ["at", "", "", "", "", "ball", "car", "", "", "dad", "", ""]     | "ballcar" || -1
     }
 
-    @Unroll def "test findValue"() {
+    @Unroll def "findValue(#a, #b) == '#c'"() {
         expect:
         Chapter9SortingAndSearching.findValue(a as int[][], b) == c
 
@@ -114,7 +114,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
          [32, 33, 39, 50]]  | 29 || true
     }
 
-    def "test getCircusOrder"() {
+    def "getCircusOrder"() {
         given:
         // (65, 100) (70, 150) (56, 90) (75, 190) (60, 95) (68, 110)
         def actual = [new Pair<Integer, Integer>(65, 100),

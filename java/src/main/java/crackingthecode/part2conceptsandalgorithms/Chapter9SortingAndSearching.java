@@ -266,16 +266,11 @@ public final class Chapter9SortingAndSearching {
     // sort by height, sort by weight
     // return new map
     // Time - O(N*LOGN), Space -
-    public static List<Pair<Integer, Integer>> getCircusOrder(
-        ArrayList<Pair<Integer, Integer>> original) {
-
-        Collections.sort(original, new Comparator<Pair<Integer, Integer>>() {
-            @Override
-            public int compare(Pair<Integer, Integer> left, Pair<Integer, Integer> right) {
-                return left.getRight() < right.getRight() && left.getLeft() < right.getLeft() ? -1
-                    : 1;
-            }
-        });
+    public static List<Pair<Integer, Integer>> getCircusOrder(List<Pair<Integer, Integer>> original) {
+        original.sort((left, right) ->
+            left.getRight() < right.getRight() && left.getLeft() < right.getLeft()
+                ? -1
+                : 1);
 
         return original;
     }

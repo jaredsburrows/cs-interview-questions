@@ -10,7 +10,7 @@ import test.BaseSpec
 final class TreeNodeSpec extends BaseSpec {
     def sut = new TreeNode<>()
 
-    def "test values"() {
+    def "values"() {
         def valueNode = new TreeNode<>(5)
         sut.right = valueNode
 
@@ -25,7 +25,7 @@ final class TreeNodeSpec extends BaseSpec {
         !sut.right.right
     }
 
-    def "test equals/hashCode"() {
+    def "equals/hashCode"() {
         when:
         EqualsVerifier.forClass(TreeNode.class)
             .withPrefabValues(TreeNode.class, new TreeNode<>(), new TreeNode<>(1))

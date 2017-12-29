@@ -10,17 +10,17 @@ import test.BaseSpec
 final class PairSpec extends BaseSpec {
     def sut = new Pair<>("test", 123)
 
-    def "test getLeft"() {
+    def "getLeft"() {
         expect:
         sut.getLeft() == "test"
     }
 
-    def "test getRight"() {
+    def "getRight"() {
         expect:
         sut.getRight() == 123
     }
 
-    def "test equals/hashCode"() {
+    def "equals/hashCode"() {
         when:
         EqualsVerifier.forClass(Pair.class)
             .withPrefabValues(Pair.class, new Pair<>("a", 1), new Pair<>("b", 2))

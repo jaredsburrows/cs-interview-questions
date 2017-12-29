@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class AddTwoNumbersSpec extends BaseSpec {
-    def "test addTwoNumbers"() {
+    def "addTwoNumbers"() {
         given:
         // book
         // 315 + 592 = 808

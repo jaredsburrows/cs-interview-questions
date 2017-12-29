@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class Chapter5BitManipulationSpec extends BaseSpec {
-    @Unroll def "test getDiffBits"() {
+    @Unroll def "getDiffBits(#a, #b) == '#c'"() {
         expect:
         Chapter5BitManipulation.getDiffBits(a, b) == c
         Chapter5BitManipulation.bitSwapRequired(a, b) == c
@@ -19,7 +19,7 @@ final class Chapter5BitManipulationSpec extends BaseSpec {
         4  | 4  || 0
     }
 
-    @Unroll def "test getSwapBits"() {
+    @Unroll def "getSwapBits(#a) == '#b'"() {
         expect:
         Chapter5BitManipulation.getSwapBits(a) == b
 

@@ -7,15 +7,16 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class AddTwoNumbersSpec extends BaseSpec {
-    @Unroll def "test getBinarySum"() {
+    @Unroll def "getBinaryX(#a, #b) == '#c'"() {
         expect:
         AddTwoNumbers.getBinarySumLib(a, b) == c
         AddTwoNumbers.getBinarySum(a, b) == c
+        AddTwoNumbers.getBinarySum2(a, b) == c
         AddTwoNumbers.getBinarySumBit(a, b) == c
 
         where:
         a           | b           || c
-        null        | null        || null
+        null        | null        || ""
         "010101101" | null        || "010101101"
         null        | "010101101" || "010101101"
         "010101101" | "101011010" || "1000000111"

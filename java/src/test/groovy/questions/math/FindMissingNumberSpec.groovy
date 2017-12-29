@@ -7,7 +7,7 @@ import test.BaseSpec
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 final class FindMissingNumberSpec extends BaseSpec {
-    @Unroll def "test findMissing"() {
+    @Unroll def "findMissing(#a) == '#b'"() {
         expect:
         FindMissingNumber.findMissing(a as int[]) == b
         FindMissingNumber.findMissing2(a as int[]) == b

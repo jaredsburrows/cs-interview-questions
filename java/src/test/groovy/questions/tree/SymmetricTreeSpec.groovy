@@ -8,7 +8,7 @@ import test.BaseSpec
  */
 @SuppressWarnings("GroovyPointlessBoolean")
 final class SymmetricTreeSpec extends BaseSpec {
-    @Unroll def "test isSymmetric"() {
+    @Unroll def "isSymmetric(#a) == '#b'"() {
         expect:
         SymmetricTree.isSymmetric(a) == b
 
@@ -19,7 +19,7 @@ final class SymmetricTreeSpec extends BaseSpec {
         notBalancedTree || false
     }
 
-    @Unroll def "test isSymmetric2"() {
+    @Unroll def "isSymmetric2(#a, #b) == '#c'"() {
         expect:
         SymmetricTree.isSymmetric(a, b) == c
 

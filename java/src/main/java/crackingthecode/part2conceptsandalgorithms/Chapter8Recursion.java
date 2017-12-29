@@ -68,7 +68,7 @@ public final class Chapter8Recursion {
         if (initial.size() == size) {
             // empty set
             finalList = new ArrayList<>();
-            finalList.add(new ArrayList<Integer>());
+            finalList.add(new ArrayList<>());
         } else {
             finalList = getSubsets(initial, size + 1);
             final List<ArrayList<Integer>> newSetList = new ArrayList<>();
