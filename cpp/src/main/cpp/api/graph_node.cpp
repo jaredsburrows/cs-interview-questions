@@ -3,7 +3,7 @@
 #include "api/graph_node.h"
 
 template <typename T>
-bool GraphNode<T>::operator==(const GraphNode<T>& object) const {
+bool GraphNode<T>::operator==(GraphNode<T>& object) {
     if (this == object) {
         return true;
     }

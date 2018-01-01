@@ -20,11 +20,15 @@ class ConfigurableEventListener : public TestEventListener {
     const bool showInlineFailures = false;
     const bool showEnvironment = false;
 
-    ConfigurableEventListener(TestEventListener* eventListener, const bool showProgramStartEnd,
-                              const bool showIterationsStartEnd, const bool showTestCases,
-                              const bool showTestNames, const bool showSuccesses,
-                              const bool showFailures, const bool showInlineFailures,
-                              const bool showEnvironment)
+    ConfigurableEventListener(TestEventListener* eventListener,
+                              bool showProgramStartEnd,
+                              bool showIterationsStartEnd,
+                              bool showTestCases,
+                              bool showTestNames,
+                              bool showSuccesses,
+                              bool showFailures,
+                              bool showInlineFailures,
+                              bool showEnvironment)
         : eventListener(eventListener), showProgramStartEnd(showProgramStartEnd),
           showIterationsStartEnd(showIterationsStartEnd), showTestCases(showTestCases),
           showTestNames(showTestNames), showSuccesses(showSuccesses),
