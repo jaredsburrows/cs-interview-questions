@@ -4,7 +4,6 @@ package projecteuler;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Number002 {
-
     public static long getEvenFibonacciNumbers(long number) {
         long first = 1;
         long second = 1;

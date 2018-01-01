@@ -4,13 +4,10 @@ plugins {
     id "net.ltgt.errorprone" version "0.0.13"
 }
 
-// Repositories block for downloading dependencies in the "dependencies" block
-// See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories(groovy.lang.Closure)
 repositories {
     gradlePluginPortal()
 }
 
-// See: https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies(groovy.lang.Closure)
 dependencies {
     compileOnly deps.annotations
 

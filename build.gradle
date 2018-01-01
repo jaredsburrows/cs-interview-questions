@@ -4,8 +4,6 @@ plugins {
     id "org.asciidoctor.convert" version "1.5.7"
 }
 
-// Apply extra configuration
-// Place this first so it can scan the build
 apply from: "gradle/scan.gradle"
 apply from: "gradle/dependencies.gradle"
 apply from: "gradle/asciidoc.gradle"

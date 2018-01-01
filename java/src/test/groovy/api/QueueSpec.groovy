@@ -21,63 +21,63 @@ final class QueueSpec extends BaseSpec {
 
         expect:
         queue.getFirst() == valueNode
-        queue.enqueue(valueNode2)
+        queue.add(valueNode2)
     }
 
     def "getFirst"() {
         expect:
         !sut.getFirst()
-        sut.enqueue(blankNode)
+        sut.add(blankNode)
         sut.getFirst() == blankNode
     }
 
     def "getFirst - multiple"() {
         expect:
         !sut.getFirst()
-        sut.enqueue(blankNode)
+        sut.add(blankNode)
         sut.getFirst() == blankNode
-        sut.enqueue(blankNode2)
+        sut.add(blankNode2)
         sut.getFirst() == blankNode
     }
 
     def "getLast"() {
         expect:
         !sut.getLast()
-        sut.enqueue(blankNode)
+        sut.add(blankNode)
         sut.getLast() == blankNode
     }
 
     def "getLast - multiple"() {
         expect:
         !sut.getLast()
-        sut.enqueue(blankNode)
+        sut.add(blankNode)
         sut.getLast() == blankNode
-        sut.enqueue(blankNode2)
+        sut.add(blankNode2)
         sut.getLast() == blankNode2
     }
 
     def "enqueue - single"() {
         expect:
         !sut.getFirst()
-        sut.enqueue(null)
+        sut.add(null)
         !sut.getFirst()
-        sut.enqueue(blankNode)
+        sut.add(blankNode)
         sut.getFirst() == blankNode
     }
 
     def "enqueue - multiple"() {
         expect:
         !sut.getFirst()
-        sut.enqueue(null)
+        sut.add(null)
         !sut.getFirst()
         !sut.getLast()
-        sut.enqueue(valueNode)
+        sut.add(valueNode)
         sut.getFirst() == valueNode
         sut.getLast() == valueNode
-        sut.enqueue(valueNode2)
+        sut.add(valueNode2)
         sut.getFirst() == valueNode
         sut.getLast() == valueNode2
-        sut.enqueue(valueNode3)
+        sut.add(valueNode3)
         sut.getFirst() == valueNode
         sut.getLast() == valueNode3
     }
@@ -85,38 +85,38 @@ final class QueueSpec extends BaseSpec {
     def "dequeue"() {
         expect:
         !sut.getFirst()
-        sut.enqueue(null)
+        sut.add(null)
         !sut.getFirst()
         !sut.getLast()
-        sut.enqueue(blankNode)
+        sut.add(blankNode)
         sut.getFirst() == blankNode
         sut.getLast() == blankNode
-        sut.dequeue()
+        sut.poll()
         !sut.getFirst()
     }
 
     def "dequeue - multiple"() {
         expect:
         !sut.getFirst()
-        sut.enqueue(null)
+        sut.add(null)
         !sut.getFirst()
         !sut.getLast()
-        sut.enqueue(valueNode)
+        sut.add(valueNode)
         sut.getFirst() == valueNode
         sut.getLast() == valueNode
-        sut.enqueue(valueNode2)
+        sut.add(valueNode2)
         sut.getFirst() == valueNode
         sut.getLast() == valueNode2
-        sut.enqueue(valueNode3)
+        sut.add(valueNode3)
         sut.getFirst() == valueNode
         sut.getLast() == valueNode3
-        sut.dequeue()
+        sut.poll()
         sut.getFirst() == valueNode2
-        sut.dequeue()
+        sut.poll()
         sut.getFirst() == valueNode3
-        sut.dequeue()
+        sut.poll()
         !sut.getFirst()
-        sut.dequeue()
+        sut.poll()
         !sut.getFirst()
     }
 

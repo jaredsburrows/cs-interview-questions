@@ -111,15 +111,12 @@ public final class Chapter18ThreadsAndLocks {
 
     public interface MethodsToCall {
         void methodA() throws Exception;
-
         void methodB() throws Exception;
-
         void methodC() throws Exception;
     }
 
     // terrible example, call method after another
     public abstract static class MethodCall implements MethodsToCall {
-
         @Override
         public void methodA() {
             // super
@@ -136,13 +133,11 @@ public final class Chapter18ThreadsAndLocks {
 
         @Override
         public void methodC() {
-
         }
     }
 
     // i)
     public static class MethCallSemaphore implements MethodsToCall {
-
         private Semaphore mSemaphoreA = new Semaphore(0);
         private Semaphore mSemaphoreB = new Semaphore(0);
 
@@ -165,7 +160,6 @@ public final class Chapter18ThreadsAndLocks {
 
     // ii)
     public static class MethCallThreadSafeSemaphore implements MethodsToCall {
-
         private Semaphore mSemaphoreA = new Semaphore(0);
         private Semaphore mSemaphoreB = new Semaphore(0);
         private Semaphore mSemaphoreC = new Semaphore(1);
@@ -196,13 +190,10 @@ public final class Chapter18ThreadsAndLocks {
      */
     @SuppressWarnings("EmptyMethod")
     public static class SomeSyncMethods {
-
         public synchronized void methodA() {
-
         }
 
         public void methodC() {
-
         }
     }
 

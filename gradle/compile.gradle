@@ -2,7 +2,6 @@ tasks.withType(JavaCompile) {
     sourceCompatibility = rootProject.ext.javaVersion
     targetCompatibility = rootProject.ext.javaVersion
 
-    // Show all warnings except boot classpath
     configure(options) {
         compilerArgs << "-Xlint:all"            // Turn on all warnings
         compilerArgs << "-Werror"               // Turn warnings into errors
@@ -16,7 +15,6 @@ tasks.withType(GroovyCompile) {
     sourceCompatibility = rootProject.ext.javaVersion
     targetCompatibility = rootProject.ext.javaVersion
 
-    // Show all warnings except boot classpath
     configure(options) {
         compilerArgs << "-Xlint:all"            // Turn on all warnings
         compilerArgs << "-Werror"               // Turn warnings into errors

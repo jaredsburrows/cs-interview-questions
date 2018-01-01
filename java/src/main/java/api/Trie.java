@@ -97,4 +97,11 @@ public final class Trie<T> {
     public int hashCode() {
         return root != null ? root.hashCode() : 0;
     }
+
+    @Override
+    public String toString() {
+        return "Trie{" +
+            "root=" + root +
+            '}';
+    }
 }

@@ -45,4 +45,13 @@ public final class TreeNode<T> {
         result = 31 * result + (right != null ? right.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "TreeNode{" +
+            "value=" + value +
+            ", left=" + left +
+            ", right=" + right +
+            '}';
+    }
 }

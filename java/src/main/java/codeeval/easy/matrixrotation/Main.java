@@ -9,9 +9,7 @@ import java.io.Reader;
 import java.nio.charset.Charset;
 
 public final class Main {
-
     public static void main(String[] args) throws Exception {
-
         final File inputFile = new File(args[0]);
         final InputStream fileStream = new FileInputStream(inputFile);
         final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
@@ -20,9 +18,9 @@ public final class Main {
         String line;
         while ((line = buffer.readLine()) != null) {
             final String[] strings = line.trim().split(" ");
-            int length = strings.length / 2;
-            char[][] originalMatrix = new char[length][length];
-            char[][] rotatedMatrix = new char[length][length];
+            final int length = strings.length / 2;
+            final char[][] originalMatrix = new char[length][length];
+            final char[][] rotatedMatrix = new char[length][length];
 
             for (int i = 0; i < length; i++) {
                 for (int j = 0; j < length; j++) {

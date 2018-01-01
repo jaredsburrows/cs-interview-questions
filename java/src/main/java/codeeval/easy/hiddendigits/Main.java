@@ -9,9 +9,7 @@ import java.io.Reader;
 import java.nio.charset.Charset;
 
 public final class Main {
-
     public static void main(String[] args) throws Exception {
-
         final File inputFile = new File(args[0]);
         final InputStream fileStream = new FileInputStream(inputFile);
         final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());

@@ -4,7 +4,6 @@ package crackingthecode.part2conceptsandalgorithms;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Chapter6BrainTeasers {
-
     /**
      * 6.1 - Add arithmetic operators (plus, minus, times, divide) to make the following expression
      * true: 3 1 3 6 = 8. You can use any parentheses you’d like.

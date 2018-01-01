@@ -12,7 +12,7 @@ public final class Queue<T> {
     }
 
     public Queue(T value) {
-        enqueue(new Node<>(value));
+        add(new Node<>(value));
     }
 
     public Node<T> getFirst() {
@@ -23,7 +23,7 @@ public final class Queue<T> {
         return last;
     }
 
-    public void enqueue(Node<T> node) {
+    public void add(Node<T> node) {
         if (first == null) {
             first = node;
             last = first;
@@ -33,7 +33,7 @@ public final class Queue<T> {
         }
     }
 
-    public void dequeue() {
+    public void poll() {
         if (first != null) {
             first = first.next;
         }
@@ -63,5 +63,13 @@ public final class Queue<T> {
         int result = first != null ? first.hashCode() : 0;
         result = 31 * result + (last != null ? last.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Queue{" +
+            "first=" + first +
+            ", last=" + last +
+            '}';
     }
 }

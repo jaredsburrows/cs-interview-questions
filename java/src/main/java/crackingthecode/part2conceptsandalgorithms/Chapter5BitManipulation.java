@@ -4,7 +4,6 @@ package crackingthecode.part2conceptsandalgorithms;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Chapter5BitManipulation {
-
     // binary bitwise
     // &  AND
     // ^  exclusive OR (XOR)

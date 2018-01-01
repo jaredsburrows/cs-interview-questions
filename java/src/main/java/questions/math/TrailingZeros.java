@@ -4,9 +4,7 @@ package questions.math;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class TrailingZeros {
-
     public static long getTrailingZeros(long number) {
-
         long numZeros = 0;
 
         while (number != 0) {

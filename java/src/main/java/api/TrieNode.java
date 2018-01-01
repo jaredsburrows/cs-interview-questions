@@ -46,4 +46,12 @@ public final class TrieNode<T> {
         result = 31 * result + (isEnd ? 1 : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "TrieNode{" +
+            "children=" + Arrays.toString(children) +
+            ", isEnd=" + isEnd +
+            '}';
+    }
 }

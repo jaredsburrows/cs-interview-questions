@@ -67,4 +67,11 @@ public final class LinkedList<T> {
     public int hashCode() {
         return head != null ? head.hashCode() : 0;
     }
+
+    @Override
+    public String toString() {
+        return "LinkedList{" +
+            "head=" + head +
+            '}';
+    }
 }

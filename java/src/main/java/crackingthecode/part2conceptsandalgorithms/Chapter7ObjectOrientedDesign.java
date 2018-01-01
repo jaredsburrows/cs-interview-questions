@@ -55,23 +55,14 @@ public final class Chapter7ObjectOrientedDesign {
     @SuppressWarnings("EmptyMethod")
     public interface BaseFileSystem {
         void mount();
-
         void unmount();
-
         void createFile(String name);
-
         void createDirectory(String name);
-
         void openFile(File file, String mode);
-
         void closeFile(File file);
-
         void readFile(File file);
-
         void writeFile(File file);
-
         void copy(File source,  File destination);
-
         void delete(File file);
     }
 
@@ -80,7 +71,6 @@ public final class Chapter7ObjectOrientedDesign {
      * to implement particular card games.
      */
     public static class Card {
-
         private Suite mSuite;
         private int mCardNumber;
         public Card(Suite suite,  int cardNumber) {
@@ -121,7 +111,6 @@ public final class Chapter7ObjectOrientedDesign {
     }
 
     public abstract static class Playlist {
-
         private Song mSong;
         private Queue<Song> mList;
 
@@ -142,7 +131,6 @@ public final class Chapter7ObjectOrientedDesign {
     }
 
     public static class JukeBox {
-
         private List<Song> mSongList;
         private Selector mSelector;
 
@@ -202,115 +190,92 @@ public final class Chapter7ObjectOrientedDesign {
     }
 
     public static class Drive {
-
     }
 
     public static class File implements BaseFileSystem {
-
         // contains metadata
         @Override
         public void mount() {
-
         }
 
         @Override
         public void unmount() {
-
         }
 
         @Override
         public void createFile(String name) {
-
         }
 
         @Override
         public void createDirectory(String name) {
-
         }
 
         @Override
         public void openFile(File file,  String mode) {
-
         }
 
         @Override
         public void closeFile(File file) {
-
         }
 
         @Override
         public void readFile(File file) {
-
         }
 
         @Override
         public void writeFile(File file) {
-
         }
 
         @Override
         public void copy(File source,  File destination) {
-
         }
 
         @Override
         public void delete(File file) {
-
         }
     }
 
     public static class Folder implements BaseFileSystem {
-
         public List<File> fileList;
 
         @Override
         public void mount() {
-
         }
 
         @Override
         public void unmount() {
-
         }
 
         @Override
         public void createFile(String name) {
-
         }
 
         @Override
         public void createDirectory(String name) {
-
         }
 
         @Override
         public void openFile(File file,  String mode) {
-
         }
 
         @Override
         public void closeFile(File file) {
-
         }
 
         @Override
         public void readFile(File file) {
-
         }
 
         @Override
         public void writeFile(File file) {
-
         }
 
         @Override
         public void copy(File source,  File destination) {
-
         }
 
         @Override
         public void delete(File file) {
-
         }
     }
 
