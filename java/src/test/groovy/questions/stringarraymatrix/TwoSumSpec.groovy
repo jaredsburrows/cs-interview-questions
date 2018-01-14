@@ -10,7 +10,7 @@ import test.BaseSpec
 final class TwoSumSpec extends BaseSpec {
     @Unroll def "list all pairs(x ,y), equal given number, allow duplicates"() {
         expect:
-        TwoSum.getSums2(a as int[], b) == c
+        TwoSum.twoSum2(a as int[], b) == c
 
         where:
         a      | b || c
@@ -20,7 +20,7 @@ final class TwoSumSpec extends BaseSpec {
 
     @Unroll def "list pairs(x ,y), equal given number, no duplicates"() {
         expect:
-        TwoSum.getSums(a as int[], b) == c
+        TwoSum.twoSum(a as int[], b) == c
 
         where:
         a                               | b || c

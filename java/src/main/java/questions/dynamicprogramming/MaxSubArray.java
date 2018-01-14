@@ -4,35 +4,21 @@ package questions.dynamicprogramming;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class MaxSubArray {
-    public static int getMax(int[] array) {
-        if (array == null) {
-            return -1;
+    public static int maxSubArray(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
         }
 
-        int tempSum = array[0];
-        int maxSum = array[0];
-        for (int i = 1; i < array.length - 1; i++) {
-            tempSum = Math.max(tempSum + array[i], array[i]);
-            maxSum = Math.max(tempSum, maxSum);
+        int max = nums[0];
+        int temp = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            final int currentNumber = nums[i];
+            temp = Math.max(temp + currentNumber, currentNumber);
+            max = Math.max(max, temp);
         }
 
-        return maxSum;
-    }
-
-    public static int maxContSubArray(int[] array) {
-        if (array == null) {
-            return -1;
-        }
-
-        int tempSum = array[0];
-        int maxSum = array[0];
-
-        for (int i = 1; i < array.length; i++) {
-            tempSum = Math.max(tempSum + array[i], array[i]);
-            maxSum = Math.max(tempSum, maxSum);
-        }
-
-        return maxSum;
+        return max;
     }
 
     public static int maxNonContSubArray(int[] array) {

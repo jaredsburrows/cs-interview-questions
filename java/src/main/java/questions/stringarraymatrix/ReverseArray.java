@@ -7,7 +7,7 @@ public final class ReverseArray {
     // Time - O(N), Space - O(1)
     public static int[] reverse(int[] array, int start, int end) {
         if (array == null) {
-            return new int[] {};
+            return new int[0];
         }
 
         if (array.length < 2) {

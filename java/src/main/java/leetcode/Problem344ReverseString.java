@@ -9,7 +9,7 @@ public final class Problem344ReverseString {
     // Time - O(N), Space - O(N)
     public static String reverseString(String s) {
         if (s == null) {
-            return null;
+            return "";
         }
 
         final char[] array = s.toCharArray();

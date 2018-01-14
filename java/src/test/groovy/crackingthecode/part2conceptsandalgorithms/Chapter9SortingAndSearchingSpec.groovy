@@ -15,7 +15,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
 
         where:
         a                        | b         | c || d
-        null                     | null      | 0 || null
+        null                     | null      | 0 || []
         [4, 5, 6]                | null      | 0 || [4, 5, 6]
         [1, 2, 3, 0, 0, 0]       | [4, 5, 6] | 3 || [1, 2, 3, 4, 5, 6]
         [1, 2, 0, 0, 0]          | [3, 4]    | 2 || [1, 2, 3, 4, 0]

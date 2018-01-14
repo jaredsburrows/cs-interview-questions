@@ -12,7 +12,7 @@ public final class Problem1TwoSum {
     // Time - O(N), Space - O(N)
     public static int[] twoSum(int[] nums, int target) {
         if (nums == null) {
-            return new int[] {};
+            return new int[0];
         }
 
         final Map<Integer, Integer> pairs = new HashMap<>();
@@ -28,6 +28,6 @@ public final class Problem1TwoSum {
             pairs.put(value, i);
         }
 
-        return new int[] {};
+        return new int[0];
     }
 }

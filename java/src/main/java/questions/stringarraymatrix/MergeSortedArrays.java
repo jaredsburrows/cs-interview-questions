@@ -7,7 +7,7 @@ public final class MergeSortedArrays {
     // Time - O(N+M), Space - O(N+M)
     public static int[] merge(int[] left, int[] right) {
         if (left == null && right == null) {
-            return new int[]{};
+            return new int[0];
         }
 
         if (left == null) {

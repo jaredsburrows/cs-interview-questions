@@ -9,7 +9,7 @@ public final class Problem238ProductOfArrayExceptSelf {
     // Time - O(1), Space - (1)
     public static int[] productExceptSelf(int[] nums) {
         if (nums == null) {
-            return new int[] {};
+            return new int[0];
         }
 
         int product = 1;

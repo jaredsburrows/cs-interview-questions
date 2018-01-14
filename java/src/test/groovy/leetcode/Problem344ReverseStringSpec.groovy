@@ -13,7 +13,7 @@ final class Problem344ReverseStringSpec extends Specification {
 
         where:
         a                                    || b
-        null                                 || null
+        null                                 || ""
         "hello"                              || "olleh"
         "the lazy fox jumped over the fence" || "ecnef eht revo depmuj xof yzal eht"
     }

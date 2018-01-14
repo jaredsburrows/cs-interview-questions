@@ -13,12 +13,12 @@ final class SubstringSpec extends BaseSpec {
 
         where:
         a       | b  | c  || d
-        null    | 0  | 0  || null
+        null    | 0  | 0  || ""
         ""      | 0  | 0  || ""
-        "jared" | -1 | 2  || null
-        "jared" | 0  | -1 || null
-        "jared" | 50 | 2  || null
-        "jared" | 0  | 50 || null
+        "jared" | -1 | 2  || ""
+        "jared" | 0  | -1 || ""
+        "jared" | 50 | 2  || ""
+        "jared" | 0  | 50 || ""
         "01234" | 0  | 3  || "012"
         "hello" | 0  | 3  || "hel"
     }
@@ -29,11 +29,11 @@ final class SubstringSpec extends BaseSpec {
 
         where:
         a       | b  || c
-        null    | 0  || null
+        null    | 0  || ""
         ""      | 0  || ""
-        "jared" | -1 || null
+        "jared" | -1 || ""
         "jared" | 2  || "ja"
-        "jared" | 50 || null
+        "jared" | 50 || ""
         "01234" | 3  || "012"
         "hello" | 3  || "hel"
     }

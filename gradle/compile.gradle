@@ -5,6 +5,7 @@ tasks.withType(JavaCompile) {
     configure(options) {
         compilerArgs << "-Xlint:all"            // Turn on all warnings
         compilerArgs << "-Werror"               // Turn warnings into errors
+        compilerArgs << "-Xep:StringSplitter:OFF"
         encoding = "utf-8"
         incremental = true
         fork = true

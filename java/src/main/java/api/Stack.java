@@ -20,14 +20,14 @@ public final class Stack<T> {
 
     public void push(Node<T> node) {
         if (node != null) {
-            node.next = top;
+            node.previous = top;
             top = node;
         }
     }
 
     public void pop() {
         if (top != null) {
-            top = top.next;
+            top = top.previous;
         }
     }
 

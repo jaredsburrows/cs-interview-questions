@@ -18,7 +18,7 @@ public final class Chapter9SortingAndSearching {
     // Time - O(N), Space - O(1)
     public static int[] mergeBInA(int[] arrayA, int[] arrayB, int sizeA) {
         if (arrayA == null) {
-            return null;
+            return new int[0];
         }
 
         if (arrayB == null) {

@@ -13,7 +13,7 @@ public final class Problem500KeyboardRow {
     // Time - , Space -
     public static String[] findWords(String[] words) {
         if (words == null) {
-            return null;
+            return new String[0];
         }
 
         final List<String> wordList = new ArrayList<>();

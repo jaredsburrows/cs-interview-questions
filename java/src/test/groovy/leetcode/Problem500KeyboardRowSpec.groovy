@@ -13,7 +13,7 @@ final class Problem500KeyboardRowSpec extends Specification {
 
         where:
         a                                   || b
-        null                                || null
+        null                                || []
         ["Hello", "Alaska", "Dad", "Peace"] || ["Alaska", "Dad"]
     }
 }

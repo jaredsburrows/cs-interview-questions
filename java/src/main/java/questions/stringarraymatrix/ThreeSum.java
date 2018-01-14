@@ -16,13 +16,8 @@ public final class ThreeSum {
         final Map<Integer, Integer> map = new HashMap<>();
 
         // O(N) - preprocessing
-        for (final int key : numbers) {
-            if (map.containsKey(key)) {
-                final int count = map.get(key) + 1;
-                map.put(key, count);
-            } else {
-                map.put(key, 1);
-            }
+        for (int key : numbers) {
+            map.put(key, map.getOrDefault(key, 0) + 1);
         }
 
         // O(N^2)

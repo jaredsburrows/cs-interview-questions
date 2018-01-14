@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public final class TwoSum {
     // Time - O(N^2), Space - O(1)
-    public static List<Pair<Integer, Integer>> getSums2(int[] numbers, int target) {
+    public static List<Pair<Integer, Integer>> twoSum2(int[] numbers, int target) {
         final List<Pair<Integer, Integer>> answer = new ArrayList<>();
 
         for (int first : numbers) {
@@ -28,18 +28,13 @@ public final class TwoSum {
     }
 
     // Time - O(N), Space - O(N)
-    public static List<Pair<Integer, Integer>> getSums(int[] numbers, int target) {
+    public static List<Pair<Integer, Integer>> twoSum(int[] numbers, int target) {
         final List<Pair<Integer, Integer>> answer = new ArrayList<>();
         final Map<Integer, Integer> map = new HashMap<>();
 
         // O(N) - preprocessing
-        for (final int key : numbers) {
-            if (map.containsKey(key)) {
-                final int count = map.get(key) + 1;
-                map.put(key, count);
-            } else {
-                map.put(key, 1);
-            }
+        for (int key : numbers) {
+            map.put(key, map.getOrDefault(key, 0) + 1);
         }
 
         // O(N)

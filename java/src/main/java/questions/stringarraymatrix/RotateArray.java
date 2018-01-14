@@ -15,18 +15,19 @@ public final class RotateArray {
         // Adjust based on shift
         shift %= array.length;
 
-        final int length = array.length - 1;
-        final int shiftLength = length - shift;
+        if (shift > array.length) {
+            shift %= array.length;
+        }
 
-        // Reverse non-shift elements
-        ReverseArray.reverse(array, 0, shiftLength);            // 4,3,2,1,|5,6
+        final int[] result = new int[array.length];
+        int j = 0;
+        for (int i = shift; i < array.length; i++) {
+            result[i] = array[j++];
+        }
 
-        // Reverse shift elements
-        ReverseArray.reverse(array, shiftLength + 1, length);   // 4,3,2,1,|6,5
+        System.arraycopy(array, array.length - shift, result, 0, shift);
 
-        // Reverse the entire array
-        ReverseArray.reverse(array, 0, length);                 // 5,6|,1,2,3,4
-
+        System.arraycopy(result, 0, array, 0, array.length);
         return array;
     }
 }

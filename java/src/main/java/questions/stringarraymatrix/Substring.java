@@ -12,7 +12,7 @@ public final class Substring {
     // Time - O(N), Space - O(N)
     public static String substring(String input, int start, int end) {
         if (input == null) {
-            return null;
+            return "";
         }
 
         if (input.isEmpty()) {
@@ -20,11 +20,11 @@ public final class Substring {
         }
 
         if (start < 0 || start > input.length() || start > end) {
-            return null;
+            return "";
         }
 
         if (end < 0 || end > input.length() || end < start) {
-            return null;
+            return "";
         }
 
         final StringBuilder stringBuilder = new StringBuilder();
