@@ -72,11 +72,7 @@ public final class Chapter3StacksAndQueues {
         }
 
         public Integer getMinimum() {
-            if (stack.isEmpty()) {
-                return Integer.MAX_VALUE;
-            } else {
-                return stack.peek();
-            }
+            return stack.isEmpty() ? Integer.MAX_VALUE : stack.peek();
         }
     }
 

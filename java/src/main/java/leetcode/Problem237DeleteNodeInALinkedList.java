@@ -1,6 +1,6 @@
 package leetcode;
 
-import api.Node;
+import leetcode.api.ListNode;
 
 /**
  * https://leetcode.com/problems/delete-node-in-a-linked-list
@@ -9,7 +9,7 @@ import api.Node;
  */
 public final class Problem237DeleteNodeInALinkedList {
     // Time - O(1), Space - (1)
-    public static void deleteNode(Node<Integer> node) {
+    public static void deleteNode(ListNode node) {
         if (node == null) {
             return;
         }

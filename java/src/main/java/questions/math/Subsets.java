@@ -9,29 +9,29 @@ import java.util.List;
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Subsets {
-    public static <T extends Comparable<? super T>> List<ArrayList<T>> subsets(List<T> data) {
-        if (data == null) {
-            return null;
-        }
+    public static <T extends Comparable<? super T>> List<List<T>> subsets(List<T> data) {
+        final List<List<T>> subsets = new ArrayList<>();
 
-        final List<ArrayList<T>> subsets = new ArrayList<>();
+        if (data == null || data.isEmpty()) {
+            return subsets;
+        }
 
         // Empty Set
         subsets.add(new ArrayList<>());
 
         // Order
-        Collections.sort(data);
+        Collections.sort(data); // not needed
 
         for (T obj : data) {
             final int subsetSize = subsets.size();
 
             for (int j = 0; j < subsetSize; j++) {
+                // Save off original size before we add to 'subsets'
+                final List<T> subset = new ArrayList<>(subsets.get(j));
 
-                final ArrayList<T> temp = new ArrayList<>(subsets.get(j));
+                subset.add(obj);
 
-                temp.add(obj);
-
-                subsets.add(temp);
+                subsets.add(subset);
             }
         }
 
@@ -39,28 +39,27 @@ public final class Subsets {
     }
 
     public static <T> List<List<T>> subsets2(T[] data) {
-        if (data == null) {
-            return null;
-        }
-
         final List<List<T>> subsets = new ArrayList<>();
+
+        if (data == null || data.length == 0) {
+            return subsets;
+        }
 
         // Empty Set
         subsets.add(new ArrayList<>());
 
         // Order
-        Arrays.sort(data);
+        Arrays.sort(data); // not needed
 
         for (T obj : data) {
+            // Save off original size before we add to 'subsets'
             final int subsetSize = subsets.size();
 
             for (int j = 0; j < subsetSize; j++) {
+                final List<T> subset = new ArrayList<>(subsets.get(j));
+                subset.add(obj);
 
-                final List<T> temp = new ArrayList<>(subsets.get(j));
-
-                temp.add(obj);
-
-                subsets.add(temp);
+                subsets.add(subset);
             }
         }
 

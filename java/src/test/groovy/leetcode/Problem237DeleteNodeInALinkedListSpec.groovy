@@ -1,6 +1,6 @@
 package leetcode
 
-import api.Node
+import leetcode.api.ListNode
 import spock.lang.Specification
 
 /**
@@ -9,10 +9,10 @@ import spock.lang.Specification
 final class Problem237DeleteNodeInALinkedListSpec extends Specification {
     def "deleteNode"() {
         given:
-        def list = new Node<>(1)
-        list.next = new Node<>(2)
-        list.next.next = new Node<>(3)
-        list.next.next.next = new Node<>(4)
+        def list = new ListNode(1)
+        list.next = new ListNode(2)
+        list.next.next = new ListNode(3)
+        list.next.next.next = new ListNode(4)
 
         expect:
         Problem237DeleteNodeInALinkedList.deleteNode(list.next.next)
