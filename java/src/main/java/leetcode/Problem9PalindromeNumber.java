@@ -5,7 +5,8 @@ package leetcode;
  *
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public class Problem9PalindromeNumber {
+public final class Problem9PalindromeNumber {
+    // Time - O(N), Space - O(1)
     public static boolean isPalindrome(int x) {
         if (x < 0 || (x != 0 && x % 10 == 0)) {
             return false;

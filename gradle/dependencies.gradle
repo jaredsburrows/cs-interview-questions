@@ -1,6 +1,6 @@
 ext {
     javaVersion = "8"
-    kotlinVersion = "1.2.10"
+    kotlinVersion = "1.2.20"
     spekVersion = "1.1.5" // 1.1.19 issue
 }
 
@@ -17,6 +17,6 @@ ext.deps = [
     "spekJunitPlatformEngine": "org.jetbrains.spek:spek-junit-platform-engine:$spekVersion",
     "junitPlatformRunner"    : "org.junit.platform:junit-platform-runner:1.0.2",
     "spockCore"              : "org.spockframework:spock-core:1.1-groovy-2.4",
-    "equalsverifier"         : "nl.jqno.equalsverifier:equalsverifier:2.4",
+    "equalsverifier"         : "nl.jqno.equalsverifier:equalsverifier:2.4.2",
     "truth"                  : "com.google.truth:truth:0.39"
 ]

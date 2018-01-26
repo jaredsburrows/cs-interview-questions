@@ -44,4 +44,10 @@ final class InvertTreeSpec extends BaseSpec {
         InvertTree.reverseTree(balancedTree) == reversedBalancedTree
         InvertTree.reverseTree(unbalancedTree) == reversedUnbalancedTree
     }
+
+    def "reverseTree2"() {
+        InvertTree.reverseTree2(null) == null
+        InvertTree.reverseTree2(balancedTree) == reversedBalancedTree
+        InvertTree.reverseTree2(unbalancedTree) == reversedUnbalancedTree
+    }
 }

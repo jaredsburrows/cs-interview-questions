@@ -3,11 +3,12 @@ package leetcode.api;
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-public final class ListNode {
+public final class TreeNode {
     public int value;
-    public ListNode next;
+    public TreeNode left;
+    public TreeNode right;
 
-    public ListNode(int x) {
+    public TreeNode(int x) {
         value = x;
     }
 }

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * https://leetcode.com/problems/two-sum
+ * https://leetcode.com/problems/two-sum/description
  *
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */

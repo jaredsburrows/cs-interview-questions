@@ -15,7 +15,7 @@ public final class Problem541ReverseStringII {
         final char[] array = s.toCharArray();
         int length = array.length;
         if (!(array.length % 2 == 0)) {
-            length = length - 1;
+            length--;
         }
 
         for (int i = 0; i < length; i += 2 * k) {

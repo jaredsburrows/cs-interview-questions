@@ -52,8 +52,7 @@ public final class Chapter1ArraysAndStrings {
 
         for (int i = 0; i < input.length(); i++) {
             final int value = input.charAt(i);
-            final boolean isTrue = charset[value];
-            if (isTrue) {
+            if (charset[value]) {
                 return false;
             }
 

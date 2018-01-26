@@ -12,6 +12,9 @@ public final class Problem412FizzBuzz {
     // Time - O(N), Space - O(N)
     public static List<String> fizzBuzz(int n) {
         final List<String> words = new ArrayList<>();
+        if (n < 0) {
+            return words;
+        }
         for (int i = 1; i <= n; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
                 words.add("FizzBuzz");

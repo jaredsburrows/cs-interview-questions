@@ -12,8 +12,7 @@ public final class Problem442FindAllDuplicatesInAnArray {
     // Time - O(N), Space - O(1)
     public static List<Integer> findDuplicates(int[] nums) {
         final List<Integer> duplicates = new ArrayList<>();
-
-        if (nums == null) {
+        if (nums == null || nums.length == 0) {
             return duplicates;
         }
 

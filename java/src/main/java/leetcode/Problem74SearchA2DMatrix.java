@@ -8,21 +8,12 @@ package leetcode;
 public final class Problem74SearchA2DMatrix {
     // Time - O(N), Space - O(1)
     public static boolean searchMatrix(int[][] matrix, int target) {
-        if (matrix == null) {
+        if (matrix == null || matrix.length == 0) {
             return false;
         }
 
-        // Rows
         int n = matrix.length;
-        if (n == 0) {
-            return false;
-        }
-
-        // Cols
         int m = matrix[0].length;
-        if (m == 0) {
-            return false;
-        }
 
         int x = 0;
         int y = m - 1;
