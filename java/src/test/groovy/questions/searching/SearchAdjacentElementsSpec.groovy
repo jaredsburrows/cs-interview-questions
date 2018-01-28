@@ -1,11 +1,9 @@
 package questions.searching
 
+import questions.SearchAdjacentElements
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class SearchAdjacentElementsSpec extends BaseSpec {
     @Unroll def "search(#a, #b) == '#c'"() {
         expect:

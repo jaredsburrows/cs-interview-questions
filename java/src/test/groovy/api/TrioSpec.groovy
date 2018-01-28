@@ -4,9 +4,6 @@ import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class TrioSpec extends BaseSpec {
     def sut = new Trio<>("a", 1, 'a')
 

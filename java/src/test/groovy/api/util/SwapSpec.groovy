@@ -2,9 +2,6 @@ package api.util
 
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class SwapSpec extends BaseSpec {
     def "swap"() {
         given:

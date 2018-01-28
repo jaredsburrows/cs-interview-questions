@@ -3,9 +3,6 @@ package questions.stringarraymatrix;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class MergeSortedLists {
     // Time - O(N*M), Space - O(N)
     public static List<Integer> merge(List<List<Integer>> numbers) {

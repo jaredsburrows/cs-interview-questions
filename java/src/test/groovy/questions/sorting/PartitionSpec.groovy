@@ -1,10 +1,8 @@
 package questions.sorting
 
+import questions.Partition
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class PartitionSpec extends BaseSpec {
     def "part"() {
         given:

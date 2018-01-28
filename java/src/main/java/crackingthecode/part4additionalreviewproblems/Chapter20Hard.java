@@ -6,9 +6,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class Chapter20Hard {
     // binary bitwise
     // &  AND
@@ -128,7 +125,7 @@ public final class Chapter20Hard {
         int position = 0;
         int pow10Pos = 1;
         /* maintaining this value instead of calling pow() is an 6x perf
-         * gain (48s -> 8s) pow10_posMinus1. maintaining this value
+         * gain (48s -> 8s) pow10_posMinus1. maintaining this val
          * instead of calling Numof2s is an 2x perf gain (8s -> 4s).
          * overall > 10x speedup */
         while (number > 0) {

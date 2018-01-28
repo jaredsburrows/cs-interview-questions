@@ -3,9 +3,6 @@ package questions.tree
 import api.TreeNode
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class BstPreOrderSpock extends BaseSpec {
     def outContent = new ByteArrayOutputStream()
     def errContent = new ByteArrayOutputStream()

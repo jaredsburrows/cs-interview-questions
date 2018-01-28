@@ -1,8 +1,5 @@
 package api;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 // LIFO - Last in first out
 public final class Stack<T> {
     public Node<T> top;

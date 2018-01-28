@@ -8,8 +8,6 @@ import java.util.PriorityQueue;
 
 /**
  * https://leetcode.com/problems/top-k-frequent-words/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem692TopKFrequentWords {
     public static List<String> topKFrequent(String[] words, int k) {

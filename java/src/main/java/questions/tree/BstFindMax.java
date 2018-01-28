@@ -2,9 +2,6 @@ package questions.tree;
 
 import api.TreeNode;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class BstFindMax {
     public static TreeNode<Integer> findMaxNode(TreeNode<Integer> node) {
         while (node.right != null) {

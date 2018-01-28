@@ -2,8 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/reverse-string-ii
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem541ReverseStringII {
     // Time - O(N), Space - O(N)

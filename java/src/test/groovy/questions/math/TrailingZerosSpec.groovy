@@ -1,11 +1,9 @@
 package questions.math
 
+import questions.TrailingZeros
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class TrailingZerosSpec extends BaseSpec {
     @Unroll def "getTrailingZeros(#a) == '#b'"() {
         expect:

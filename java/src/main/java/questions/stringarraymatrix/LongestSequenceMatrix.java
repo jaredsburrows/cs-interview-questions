@@ -1,8 +1,5 @@
 package questions.stringarraymatrix;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class LongestSequenceMatrix {
     /**
      * Given NxN matrix, 1..n - all numbers are unique Find largest sequence of consecutive numbers.

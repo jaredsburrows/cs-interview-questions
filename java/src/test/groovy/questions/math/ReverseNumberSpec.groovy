@@ -1,11 +1,9 @@
 package questions.math
 
+import questions.ReverseNumber
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class ReverseNumberSpec extends BaseSpec {
     @Unroll def "reverseLong(#a) == '#b'"() {
         expect:

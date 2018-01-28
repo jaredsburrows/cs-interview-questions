@@ -2,8 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/remove-duplicates-from-sorted-array/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem26RemoveDuplicatesFromSortedArray {
     // Time - O(N), Space - O(1)

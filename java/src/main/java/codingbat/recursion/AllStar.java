@@ -1,8 +1,5 @@
 package codingbat.recursion;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class AllStar {
     /**
      * Given a string, compute recursively a new string where all the adjacent chars are now separated

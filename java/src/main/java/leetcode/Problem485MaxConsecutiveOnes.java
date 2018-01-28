@@ -2,8 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/max-consecutive-ones
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem485MaxConsecutiveOnes {
     // Time - O(N), Space - O(1)

@@ -3,9 +3,6 @@ package questions.tree
 import api.TreeNode
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class BstInsertSpec extends BaseSpec {
     def "insertBST"() {
         given:

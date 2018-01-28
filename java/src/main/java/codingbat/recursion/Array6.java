@@ -1,8 +1,5 @@
 package codingbat.recursion;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class Array6 {
     /**
      * Given an array of ints, compute recursively if the array contains a 6. We'll use the convention

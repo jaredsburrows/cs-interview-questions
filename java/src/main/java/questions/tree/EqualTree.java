@@ -2,9 +2,6 @@ package questions.tree;
 
 import api.TreeNode;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class EqualTree {
     public static <T> boolean isEqual(TreeNode<T> root) {
         return isEqual(root, root);

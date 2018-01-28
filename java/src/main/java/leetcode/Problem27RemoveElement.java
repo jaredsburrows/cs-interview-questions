@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
+ * https://leetcode.com/problems/remove-element/description
  */
 public final class Problem27RemoveElement {
     // Time - O(N), Space - O(1)

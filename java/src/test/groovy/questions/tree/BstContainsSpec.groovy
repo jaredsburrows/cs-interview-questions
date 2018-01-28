@@ -3,9 +3,6 @@ package questions.tree
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 @SuppressWarnings("GroovyPointlessBoolean")
 final class BstContainsSpec extends BaseSpec {
     @Unroll def "contains(#a, #b) == '#c'"() {

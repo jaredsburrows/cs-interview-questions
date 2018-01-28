@@ -4,9 +4,6 @@ import api.Pair
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class TwoSumSpec extends BaseSpec {
     @Unroll def "list all pairs(x ,y), equal given number, allow duplicates"() {
         expect:

@@ -8,8 +8,6 @@ import java.util.PriorityQueue;
 
 /**
  * https://leetcode.com/problems/top-k-frequent-elements/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem347TopKFrequentElements {
     public static List<Integer> topKFrequent(int[] nums, int k) {

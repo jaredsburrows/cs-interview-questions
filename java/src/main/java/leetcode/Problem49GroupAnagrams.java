@@ -8,8 +8,6 @@ import java.util.Map;
 
 /**
  * https://leetcode.com/problems/group-anagrams/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem49GroupAnagrams {
     public static List<List<String>> groupAnagrams(String[] strs) {

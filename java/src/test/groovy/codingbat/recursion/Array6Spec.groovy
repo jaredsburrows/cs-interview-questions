@@ -3,9 +3,6 @@ package codingbat.recursion
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 @SuppressWarnings("GroovyPointlessBoolean")
 final class Array6Spec extends BaseSpec {
     @Unroll def "array6(#a, #b) == '#c'"() {

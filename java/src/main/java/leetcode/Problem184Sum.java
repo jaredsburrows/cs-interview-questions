@@ -6,8 +6,6 @@ import java.util.List;
 
 /**
  * https://leetcode.com/problems/4sum/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem184Sum {
     public List<List<Integer>> fourSum(int[] nums, int target) {

@@ -5,9 +5,6 @@ import spock.lang.Shared
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class TreeHeightSpec extends BaseSpec {
     @Shared def tree = new TreeNode<>(26)
     @Shared def subTree = new TreeNode<>(10)

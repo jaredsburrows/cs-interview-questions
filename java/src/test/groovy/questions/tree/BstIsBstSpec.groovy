@@ -4,9 +4,6 @@ import api.TreeNode
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class BstIsBstSpec extends BaseSpec {
     @Unroll def "isBst(#a) == '#b'"() {
         expect:

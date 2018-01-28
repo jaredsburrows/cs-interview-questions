@@ -2,9 +2,6 @@ package questions.tree;
 
 import api.TreeNode;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class BstInOrder {
     public static void printInOrder(TreeNode<Integer> node) {
         if (node == null) {

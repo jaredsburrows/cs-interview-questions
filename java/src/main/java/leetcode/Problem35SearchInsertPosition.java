@@ -2,8 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/search-insert-position/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem35SearchInsertPosition {
     // Time - LOG(N), Space - O(1)

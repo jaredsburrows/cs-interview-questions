@@ -7,9 +7,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class Chapter9SortingAndSearching {
     /**
      * 9.1 - You are given two sorted arrays, A and B, and A has a large enough buffer at the end to

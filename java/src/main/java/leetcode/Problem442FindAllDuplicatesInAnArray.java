@@ -5,8 +5,6 @@ import java.util.List;
 
 /**
  * https://leetcode.com/problems/find-all-duplicates-in-an-array
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem442FindAllDuplicatesInAnArray {
     // Time - O(N), Space - O(1)

@@ -4,10 +4,9 @@ import leetcode.api.ListNode;
 
 /**
  * https://leetcode.com/problems/reverse-linked-list/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem206ReverseLinkedList {
+    // Time - O(N), Space - O(1)
     public static ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;

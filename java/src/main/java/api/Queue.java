@@ -1,8 +1,5 @@
 package api;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 // FIFO - First in first out
 public final class Queue<T> {
     public Node<T> first;

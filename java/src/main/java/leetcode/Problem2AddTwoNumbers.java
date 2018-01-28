@@ -2,9 +2,6 @@ package leetcode;
 
 import leetcode.api.ListNode;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class Problem2AddTwoNumbers {
     // Time - O(MAX(M, N)), Space - O(MAX(M, N))
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -18,12 +15,12 @@ public final class Problem2AddTwoNumbers {
 
         while (l1 != null || l2 != null) {
             if (l1 != null) {
-                carry += l1.value;
+                carry += l1.val;
                 l1 = l1.next;
             }
 
             if (l2 != null) {
-                carry += l2.value;
+                carry += l2.val;
                 l2 = l2.next;
             }
 

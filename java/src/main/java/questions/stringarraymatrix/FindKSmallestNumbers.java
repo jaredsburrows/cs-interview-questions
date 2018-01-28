@@ -3,9 +3,6 @@ package questions.stringarraymatrix;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class FindKSmallestNumbers {
     /**
      * Return smallest K numbers from N sorted list of M sorted integers.

@@ -1,11 +1,9 @@
 package questions.stringarraymatrix
 
+import questions.ReverseArray
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class ReverseArraySpec extends BaseSpec {
     @Unroll def "reverse - multiple arg(#a, #b, #c) == '#d'"() {
         expect:

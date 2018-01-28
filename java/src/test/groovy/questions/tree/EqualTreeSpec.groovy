@@ -3,9 +3,6 @@ package questions.tree
 import api.TreeNode
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class EqualTreeSpec extends BaseSpec {
     def tree = new TreeNode<>(26)
     def subTree = new TreeNode<>(10)

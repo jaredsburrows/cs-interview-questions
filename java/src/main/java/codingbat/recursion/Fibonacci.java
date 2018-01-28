@@ -1,8 +1,5 @@
 package codingbat.recursion;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class Fibonacci {
     /**
      * The fibonacci sequence is a famous bit of mathematics, and it happens to have a recursive

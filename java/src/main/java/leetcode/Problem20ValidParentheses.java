@@ -5,8 +5,6 @@ import java.util.Deque;
 
 /**
  * https://leetcode.com/problems/valid-parentheses/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem20ValidParentheses {
     // Time - O(N), Space - O(N)

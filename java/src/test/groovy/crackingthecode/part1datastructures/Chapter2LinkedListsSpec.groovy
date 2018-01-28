@@ -3,9 +3,6 @@ package crackingthecode.part1datastructures
 import api.Node
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class Chapter2LinkedListsSpec extends BaseSpec {
     def "removeDuplicates"() {
         given:

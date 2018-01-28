@@ -4,9 +4,6 @@ import api.Pair
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class Chapter19ModerateSpec extends BaseSpec {
     def "swapVar"() {
         given:
@@ -68,8 +65,8 @@ final class Chapter19ModerateSpec extends BaseSpec {
 
         where:
         a   | b   || c
-        -1  | -1  || -1 // same value
-        10  | 0   || 10 // 0 value
+        -1  | -1  || -1 // same val
+        10  | 0   || 10 // 0 val
         100 | 50  || 100
         213 | 321 || 321
     }
@@ -80,8 +77,8 @@ final class Chapter19ModerateSpec extends BaseSpec {
 
         where:
         a   | b   || c
-        -1  | -1  || -1 // same value
-        10  | 0   || 0 // 0 value
+        -1  | -1  || -1 // same val
+        10  | 0   || 0 // 0 val
         100 | 50  || 50
         213 | 321 || 213
     }

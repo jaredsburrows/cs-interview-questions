@@ -1,11 +1,9 @@
 package questions.searching
 
+import questions.BinarySearch
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class BinarySearchSpec extends BaseSpec {
     @Unroll def "search(#a, #b) == '#c'"() {
         expect:

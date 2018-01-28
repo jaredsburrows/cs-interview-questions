@@ -1,8 +1,5 @@
 package projecteuler;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class Number003 {
     public static boolean isPrime(long number) {
         if (number > 2 && (number & 1) == 0) {

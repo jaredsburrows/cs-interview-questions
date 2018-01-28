@@ -2,8 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/judge-route-circle
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem657JudgeRouteCircle {
     // Time - O(N), Space - O(N)

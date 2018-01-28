@@ -2,8 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/valid-anagram/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem242ValidAnagram {
     // Time - O(N), Space - O(N)
