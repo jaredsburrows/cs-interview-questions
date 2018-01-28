@@ -5,8 +5,6 @@ import java.util.List;
 
 /**
  * https://leetcode.com/problems/fizz-buzz
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem412FizzBuzz {
     // Time - O(N), Space - O(N)

@@ -1,10 +1,8 @@
 package questions.sorting
 
+import questions.MergeSort
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class MergeSortSpec extends BaseSpec {
     def "mergeSort"() {
         given:

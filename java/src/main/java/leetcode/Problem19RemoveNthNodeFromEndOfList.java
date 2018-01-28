@@ -4,8 +4,6 @@ import leetcode.api.ListNode;
 
 /**
  * https://leetcode.com/problems/remove-nth-node-from-end-of-list/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem19RemoveNthNodeFromEndOfList {
     public static ListNode removeNthFromEnd(ListNode head, int n) {

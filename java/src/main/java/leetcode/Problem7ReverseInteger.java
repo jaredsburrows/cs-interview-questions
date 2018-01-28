@@ -2,8 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/reverse-integer
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem7ReverseInteger {
     // Time - O(N), Space - O(1)

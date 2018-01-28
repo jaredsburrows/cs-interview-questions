@@ -4,9 +4,6 @@ import api.Pair
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 @SuppressWarnings("GroovyPointlessBoolean")
 final class Chapter9SortingAndSearchingSpec extends BaseSpec {
     @Unroll def "mergeAInB(#a, #b, #c) == '#d'"() {

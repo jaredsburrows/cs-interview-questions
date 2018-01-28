@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class Chapter1ArraysAndStrings {
     /**
      * 1.1 - Implement an algorithm to determine if a string has all unique characters. What if you

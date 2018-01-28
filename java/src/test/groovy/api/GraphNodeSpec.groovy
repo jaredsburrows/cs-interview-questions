@@ -4,9 +4,6 @@ import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class GraphNodeSpec extends BaseSpec {
     def sut = new GraphNode<>()
     def graphNodes = [sut, sut] as GraphNode<Integer>[]

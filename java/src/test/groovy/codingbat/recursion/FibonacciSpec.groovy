@@ -3,9 +3,6 @@ package codingbat.recursion
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class FibonacciSpec extends BaseSpec {
     @Unroll def "fibonacci(#a) == '#b'"() {
         expect:

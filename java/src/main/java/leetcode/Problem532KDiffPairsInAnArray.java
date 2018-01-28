@@ -5,8 +5,6 @@ import java.util.Map;
 
 /**
  * https://leetcode.com/problems/k-diff-pairs-in-an-array/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem532KDiffPairsInAnArray {
     public static int findPairs(int[] nums, int k) {

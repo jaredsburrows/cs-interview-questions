@@ -3,9 +3,6 @@ package api;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class TrieNode<T> {
     private static final int ALPHABET_COUNT = 26;
     public TrieNode<T>[] children;

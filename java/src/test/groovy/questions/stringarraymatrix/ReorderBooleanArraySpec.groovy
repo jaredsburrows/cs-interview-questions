@@ -1,10 +1,8 @@
 package questions.stringarraymatrix
 
+import questions.ReorderBooleanArray
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class ReorderBooleanArraySpec extends BaseSpec {
     def "reorder boolean - primitive"() {
         given:

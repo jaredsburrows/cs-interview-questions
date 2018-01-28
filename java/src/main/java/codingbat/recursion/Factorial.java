@@ -1,8 +1,5 @@
 package codingbat.recursion;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class Factorial {
     /**
      * Given n of 1 or more, return the factorial of n, which is n * (n-1) * (n-2) ... 1. Compute the

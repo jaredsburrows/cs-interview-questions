@@ -3,9 +3,6 @@ package questions.stringarraymatrix
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class ReturnSmallestCharacterSpec extends BaseSpec {
     @Unroll def "findInsPoint2(#a, #b) == '#c'"() {
         expect:

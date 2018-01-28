@@ -7,8 +7,6 @@ package questions.stringarraymatrix;
  * corresponding output: ['c', 'f', 'j', 'p', 'v'], 'a' => 'c' ['c', 'f', 'j', 'p', 'v'], 'c' => 'f'
  * ['c', 'f', 'j', 'p', 'v'], 'k' => 'p' ['c', 'f', 'j', 'p', 'v'], 'z' => 'c' // The wrap around
  * case - ['c', 'f', 'k'], 'f' => 'k' ['c', 'f', 'k'], 'c' => 'f' ['c', 'f', 'k'], 'd' => 'f'
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class ReturnSmallestCharacter {
     // Time - O(N), Space - O(1)

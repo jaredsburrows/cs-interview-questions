@@ -5,8 +5,6 @@ import java.util.Queue;
 
 /**
  * https://leetcode.com/problems/kth-largest-element-in-an-array/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem215KthLargestElementInAnArray {
     // Time - O(N), Space - O(N)

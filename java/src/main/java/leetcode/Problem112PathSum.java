@@ -4,8 +4,6 @@ import leetcode.api.TreeNode;
 
 /**
  * https://leetcode.com/problems/path-sum/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem112PathSum {
     public static boolean hasPathSum(TreeNode root, int sum) {

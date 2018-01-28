@@ -5,8 +5,6 @@ import java.util.Map;
 
 /**
  * https://leetcode.com/problems/roman-to-integer/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem13RomanToInteger {
     // Time - O(N), Space - O(N)

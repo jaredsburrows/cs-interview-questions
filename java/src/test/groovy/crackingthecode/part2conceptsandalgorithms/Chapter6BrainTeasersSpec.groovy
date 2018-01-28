@@ -2,9 +2,6 @@ package crackingthecode.part2conceptsandalgorithms
 
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class Chapter6BrainTeasersSpec extends BaseSpec {
     def "arithmeticOperators"() {
         expect:

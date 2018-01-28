@@ -1,10 +1,8 @@
 package questions.sorting
 
+import questions.QuickSort
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class QuickSortSpec extends BaseSpec {
     def "sortHelper"() {
         given:

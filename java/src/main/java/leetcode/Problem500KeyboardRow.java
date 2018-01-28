@@ -6,8 +6,6 @@ import java.util.regex.Pattern;
 
 /**
  * https://leetcode.com/problems/keyboard-row
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem500KeyboardRow {
     // Time - , Space -

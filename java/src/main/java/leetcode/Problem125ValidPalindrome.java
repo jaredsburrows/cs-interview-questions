@@ -2,8 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/valid-palindrome
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem125ValidPalindrome {
     // Time - O(N), Space - O(1)

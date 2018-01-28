@@ -1,8 +1,5 @@
 package projecteuler;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class Number001 {
     public static int getMultiplesOf3And5() {
         // O(N) solution

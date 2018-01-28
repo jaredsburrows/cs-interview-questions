@@ -1,8 +1,5 @@
 package architecture.mvp;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public interface Contract {
     // Activity/Fragment/View
     interface View {

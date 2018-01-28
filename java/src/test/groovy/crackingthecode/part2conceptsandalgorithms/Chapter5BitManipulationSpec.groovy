@@ -3,9 +3,6 @@ package crackingthecode.part2conceptsandalgorithms
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class Chapter5BitManipulationSpec extends BaseSpec {
     @Unroll def "getDiffBits(#a, #b) == '#c'"() {
         expect:

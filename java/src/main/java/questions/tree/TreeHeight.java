@@ -2,9 +2,6 @@ package questions.tree;
 
 import api.TreeNode;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class TreeHeight {
     public static <T> int getHeight(TreeNode<T> treeNode) {
         if (treeNode == null) {

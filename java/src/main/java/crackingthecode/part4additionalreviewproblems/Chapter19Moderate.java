@@ -6,9 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class Chapter19Moderate {
     /**
      * 19.1 - Write a function to swap a number in place without temporary variables.
@@ -275,7 +272,7 @@ public final class Chapter19Moderate {
 
     /**
      * 19.11 - Design an algorithm to find all pairs of integers within an array which sum to a
-     * specified value.
+     * specified val.
      */
     // Time - O(N)
     public static Map<Integer, Integer> getPairSum(int[] array, int target) {

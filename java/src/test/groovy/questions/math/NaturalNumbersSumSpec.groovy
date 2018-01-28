@@ -1,11 +1,9 @@
 package questions.math
 
+import questions.NaturalNumbersSum
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class NaturalNumbersSumSpec extends BaseSpec {
     @Unroll def "getSumNaturalNumbers(#a) == '#b'"() {
         expect:
@@ -25,7 +23,7 @@ final class NaturalNumbersSumSpec extends BaseSpec {
 
     @Unroll def "getSumNaturalNumbersArray(#a) == '#b'"() {
         expect:
-        NaturalNumbersSum.getSumNaturalNumbersArray(a as int[]) == b
+        NaturalNumbersSum.getSumNaturalNumbers(a as int[]) == b
 
         where:
         a                                                   || b

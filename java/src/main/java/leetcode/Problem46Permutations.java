@@ -7,8 +7,6 @@ import java.util.stream.Collectors;
 
 /**
  * https://leetcode.com/problems/permutations/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem46Permutations {
     public static List<List<Integer>> permute(int[] nums) {

@@ -5,8 +5,6 @@ import java.util.Map;
 
 /**
  * https://leetcode.com/problems/find-anagram-mappings/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem760FindAnagramMappings {
     public static int[] anagramMappings(int[] A, int[] B) {

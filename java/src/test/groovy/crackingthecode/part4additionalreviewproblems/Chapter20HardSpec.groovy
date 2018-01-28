@@ -3,9 +3,6 @@ package crackingthecode.part4additionalreviewproblems
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class Chapter20HardSpec extends BaseSpec {
     @Unroll def "20.1 - addTwoNumbers(#a, #b) == '#c'"() {
         expect:

@@ -3,9 +3,6 @@ package leetcode
 import leetcode.api.ListNode
 import spock.lang.Specification
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class Problem237DeleteNodeInALinkedListSpec extends Specification {
     def "deleteNode"() {
         given:
@@ -16,9 +13,9 @@ final class Problem237DeleteNodeInALinkedListSpec extends Specification {
 
         expect:
         Problem237DeleteNodeInALinkedList.deleteNode(list.next.next)
-        list.value == 1
-        list.next.value == 2
-        list.next.next.value == 4
+        list.val == 1
+        list.next.val == 2
+        list.next.next.val == 4
         list.next.next.next == null
     }
 }

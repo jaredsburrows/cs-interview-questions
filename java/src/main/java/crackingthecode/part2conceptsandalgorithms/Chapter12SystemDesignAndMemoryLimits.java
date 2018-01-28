@@ -1,8 +1,5 @@
 package crackingthecode.part2conceptsandalgorithms;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 @SuppressWarnings("unused")
 public final class Chapter12SystemDesignAndMemoryLimits {
     /*

@@ -1,8 +1,5 @@
 package api;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 // Current implementation is for strings, modify to make it generic
 public final class Trie<T> {
     private final TrieNode<T> root = new TrieNode<>();
@@ -71,11 +68,7 @@ public final class Trie<T> {
             }
         }
 
-        if (current == root) {
-            return null;
-        }
-
-        return current;
+        return current == root ? null : current;
     }
 
     @Override

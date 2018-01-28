@@ -1,8 +1,5 @@
 package api;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class Pair<L, R> {
     private final L left;
     private final R right;

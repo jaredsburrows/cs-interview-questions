@@ -2,8 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/product-of-array-except-self
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem238ProductOfArrayExceptSelf {
     // Time - O(1), Space - (1)

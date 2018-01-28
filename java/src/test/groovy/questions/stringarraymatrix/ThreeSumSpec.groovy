@@ -5,9 +5,6 @@ import spock.lang.Ignore
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class ThreeSumSpec extends BaseSpec {
     @Ignore
     @Unroll def "list trios(x ,y), equal given number, no duplicates"() {

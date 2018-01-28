@@ -1,8 +1,5 @@
 package api;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class LinkedList<T> {
     private Node<T> head;
 

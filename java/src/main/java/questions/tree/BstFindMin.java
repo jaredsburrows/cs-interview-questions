@@ -2,9 +2,6 @@ package questions.tree;
 
 import api.TreeNode;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class BstFindMin {
     public static TreeNode<Integer> findMinNode(TreeNode<Integer> root) {
         while (root.left != null) {

@@ -4,8 +4,6 @@ import leetcode.api.ListNode;
 
 /**
  * https://leetcode.com/problems/merge-two-sorted-lists/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem21MergeTwoSortedLists {
     // Time - O(N), Space - O(1)
@@ -25,7 +23,7 @@ public final class Problem21MergeTwoSortedLists {
         ListNode head = toReturn;
 
         while (p1 != null && p2 != null) {
-            if (p1.value <= p2.value) {
+            if (p1.val <= p2.val) {
                 head.next = p1;
                 p1 = p1.next;
             } else {

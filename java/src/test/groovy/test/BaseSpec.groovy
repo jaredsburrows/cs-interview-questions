@@ -9,8 +9,6 @@ import static java.util.UUID.randomUUID
 
 /**
  * Base class for all specifications.
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 abstract class BaseSpec extends Specification {
     // Testing Comparisons

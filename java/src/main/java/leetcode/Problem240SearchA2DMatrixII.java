@@ -2,8 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/search-a-2d-matrix-ii
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem240SearchA2DMatrixII {
     // Time - O(N), Space - O(1)

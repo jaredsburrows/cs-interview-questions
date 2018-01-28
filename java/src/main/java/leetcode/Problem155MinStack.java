@@ -2,8 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/min-stack/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem155MinStack {
     public class MinStack {

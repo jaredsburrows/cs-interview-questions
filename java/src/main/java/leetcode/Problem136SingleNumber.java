@@ -2,8 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/single-number
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem136SingleNumber {
     // Time - O(N), Space - O(1)

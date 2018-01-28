@@ -9,9 +9,6 @@ import java.util.Queue;
 import questions.tree.EqualTree;
 import questions.tree.TreeHeight;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 @SuppressWarnings("JdkObsolete")
 public final class Chapter4TreesAndGraphs {
     /**

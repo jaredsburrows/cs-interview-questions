@@ -4,9 +4,6 @@ import java.util.List;
 import java.util.Queue;
 import java.util.UUID;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 @SuppressWarnings("unused")
 public final class Chapter7ObjectOrientedDesign {
     /**

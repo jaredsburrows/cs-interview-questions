@@ -1,8 +1,5 @@
 package architecture.mvp;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public class ViewImpl implements Contract.View {
     private Contract.Presenter presenter;
     private String title;

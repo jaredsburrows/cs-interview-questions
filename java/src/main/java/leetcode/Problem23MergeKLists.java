@@ -7,8 +7,6 @@ import leetcode.api.ListNode;
 
 /**
  * https://leetcode.com/problems/merge-k-sorted-lists/description
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 public final class Problem23MergeKLists {
     public static ListNode mergeKLists(ListNode[] lists) {
@@ -17,7 +15,7 @@ public final class Problem23MergeKLists {
         }
 
         final Queue<ListNode> queue =
-            new PriorityQueue<>(Comparator.comparingInt(left -> left.value));
+            new PriorityQueue<>(Comparator.comparingInt(left -> left.val));
 
         for (ListNode listNode : lists) {
             if (listNode != null) {

@@ -1,11 +1,9 @@
 package questions.math
 
+import questions.Pow
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class PowSpec extends BaseSpec {
     @Unroll def "pow(#a, #b) == '#c'"() {
         expect:

@@ -3,9 +3,6 @@ package questions.stringarraymatrix
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class MergeSortedArraysSpec extends BaseSpec {
     @Unroll def "merge(#a, #b) == '#c'"() {
         expect:

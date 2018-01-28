@@ -5,9 +5,6 @@ import crackingthecode.part1datastructures.Chapter3StacksAndQueues.MyQueue
 import crackingthecode.part1datastructures.Chapter3StacksAndQueues.SetOfStacks
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class Chapter3StacksAndQueuesSpec extends BaseSpec {
     def "MinStack"() {
         given:

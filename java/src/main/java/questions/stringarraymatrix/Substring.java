@@ -1,8 +1,5 @@
 package questions.stringarraymatrix;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class Substring {
     // Time - O(N), Space - O(N)
     public static String substring(String input, int end) {

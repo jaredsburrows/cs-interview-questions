@@ -3,9 +3,6 @@ package leetcode
 import spock.lang.Unroll
 import test.BaseSpec
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 final class Problem1TwoSumSpec extends BaseSpec {
     @Unroll def "twoSum"() {
         expect:

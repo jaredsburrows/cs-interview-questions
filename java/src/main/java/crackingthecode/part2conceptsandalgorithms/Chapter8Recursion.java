@@ -4,9 +4,6 @@ import api.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class Chapter8Recursion {
     /**
      * 8.1 - Write a method to generate the nth Fibonacci number.

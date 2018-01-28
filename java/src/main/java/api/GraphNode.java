@@ -2,9 +2,6 @@ package api;
 
 import java.util.Arrays;
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 public final class GraphNode<T> {
     public T value;
     public GraphNode<T> next;
