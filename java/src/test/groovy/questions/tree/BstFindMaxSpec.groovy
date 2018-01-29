@@ -1,6 +1,7 @@
 package questions.tree
 
 import api.TreeNode
+import questions.BstFindMax
 import test.BaseSpec
 
 final class BstFindMaxSpec extends BaseSpec {

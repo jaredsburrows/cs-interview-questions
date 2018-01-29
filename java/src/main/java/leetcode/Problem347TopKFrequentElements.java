@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
  * https://leetcode.com/problems/top-k-frequent-elements/description
@@ -21,7 +22,7 @@ public final class Problem347TopKFrequentElements {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
 
-        final PriorityQueue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<>(
+        final Queue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<>(
             (left, right) -> right.getValue() - left.getValue());
         queue.addAll(map.entrySet());
 

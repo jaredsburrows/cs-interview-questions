@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import questions.tree.EqualTree;
-import questions.tree.TreeHeight;
+import questions.TreeHeight;
 
 @SuppressWarnings("JdkObsolete")
 public final class Chapter4TreesAndGraphs {
@@ -22,7 +21,23 @@ public final class Chapter4TreesAndGraphs {
             return true;
         }
 
-        return TreeHeight.getHeight(node) != -1;
+        return getHeight(node) != -1;
+    }
+
+    private static <T> int getHeight(TreeNode<T> treeNode) {
+        if (treeNode == null) {
+            return 0;
+        }
+
+        final int left = getHeight(treeNode.left);
+        final int right = getHeight(treeNode.right);
+
+        // no node never differ by more than 1
+        if (left == -1 || right == -1 || Math.abs(left - right) > 1) {
+            return -1;
+        }
+
+        return Math.max(left, right) + 1;
     }
 
     /**
@@ -195,18 +210,32 @@ public final class Chapter4TreesAndGraphs {
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // T1 - millions of nodes
     // T2 - supposed subtree of T1, should be the same or smaller
-    public static <T> boolean isSubtree(TreeNode<T> tree, TreeNode<T> subTree) {
-        if (subTree == null) {
-            return true;
-        }
-
-        if (tree == null) {
+    public static <T> boolean isSubtree(TreeNode<T> t, TreeNode<T> s) {
+        if (s == null) {
             return false;
         }
 
-        return EqualTree.isEqual(tree, subTree)
-            || isSubtree(tree.left, subTree)
-            || isSubtree(tree.right, subTree);
+        if (t == null) {
+            return false;
+        }
+
+        return isSameTree(t, s)
+            || isSubtree(t.left, s)
+            || isSubtree(t.right, s);
+    }
+
+    private static <T> boolean isSameTree(TreeNode<T> p, TreeNode<T> q) {
+        if (p == null && q == null) {
+            return true;
+        }
+
+        if (p == null || q == null) {
+            return false;
+        }
+
+        return p.value == q.value
+            && isSameTree(p.left, q.left)
+            && isSameTree(p.right, q.right);
     }
 
     /*

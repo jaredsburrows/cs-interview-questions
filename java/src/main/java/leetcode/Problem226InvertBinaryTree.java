@@ -1,21 +1,53 @@
 package leetcode;
 
 import java.util.ArrayDeque;
-import java.util.Queue;
+import java.util.Deque;
 import leetcode.api.TreeNode;
 
+/**
+ * https://leetcode.com/problems/invert-binary-tree/description
+ */
 public final class Problem226InvertBinaryTree {
+    // iterative
     public static TreeNode invertTree(TreeNode root) {
         if (root == null) {
             return null;
         }
 
-        invert(root);
+        final Deque<TreeNode> queue = new ArrayDeque<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            final TreeNode node = queue.poll();
+
+            if (node.left != null) {
+                queue.offer(node.left);
+            }
+
+            if (node.right != null) {
+                queue.offer(node.right);
+            }
+
+            final TreeNode temp = node.left;
+            node.left = node.right;
+            node.right = temp;
+        }
 
         return root;
     }
 
-    private static void invert(TreeNode root) {
+    // recursion
+    public static TreeNode invertTree2(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+
+        invert2(root);
+
+        return root;
+    }
+
+    private static void invert2(TreeNode root) {
         if (root == null) {
             return;
         }
@@ -24,34 +56,7 @@ public final class Problem226InvertBinaryTree {
         root.right = root.left;
         root.left = temp;
 
-        invert(root.left);
-        invert(root.right);
-    }
-
-    public static TreeNode reverseTree2(TreeNode root) {
-        if (root == null) {
-            return null;
-        }
-
-        final Queue<TreeNode> queue = new ArrayDeque<>();
-        queue.add(root);
-
-        while (!queue.isEmpty()) {
-            final TreeNode node = queue.poll();
-
-            if (node.left != null) {
-                queue.add(node.left);
-            }
-
-            if (node.right != null) {
-                queue.add(node.right);
-            }
-
-            final TreeNode temp = root.left;
-            root.left = root.right;
-            root.right = temp;
-        }
-
-        return root;
+        invert2(root.left);
+        invert2(root.right);
     }
 }

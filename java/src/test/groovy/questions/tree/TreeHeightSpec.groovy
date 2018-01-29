@@ -1,6 +1,7 @@
 package questions.tree
 
 import api.TreeNode
+import questions.TreeHeight
 import spock.lang.Shared
 import spock.lang.Unroll
 import test.BaseSpec

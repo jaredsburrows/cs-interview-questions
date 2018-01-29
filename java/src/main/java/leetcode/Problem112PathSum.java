@@ -10,7 +10,7 @@ public final class Problem112PathSum {
         if (root == null) {
             return false;
         } else {
-            final int diff = sum - root.value;
+            final int diff = sum - root.val;
             boolean answer = false;
 
             if (diff == 0 && root.left == null && root.right == null) {

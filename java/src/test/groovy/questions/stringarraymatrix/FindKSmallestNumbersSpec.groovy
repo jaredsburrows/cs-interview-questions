@@ -1,5 +1,6 @@
 package questions.stringarraymatrix
 
+import questions.FindKSmallestNumbers
 import spock.lang.Unroll
 import test.BaseSpec
 

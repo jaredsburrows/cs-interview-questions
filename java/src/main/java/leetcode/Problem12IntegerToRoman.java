@@ -17,7 +17,10 @@ public final class Problem12IntegerToRoman {
         final String C[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
         final String X[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         final String I[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
-        return M[num / 1000] + C[(num % 1000) / 100] + X[(num % 100) / 10] + I[num % 10];
+        return M[num / 1000]            // eg 3999 -> 3.999
+            + C[(num % 1000) / 100]     // eg 3999 -> 9.99
+            + X[(num % 100) / 10]       // eg 3999 -> 9.9
+            + I[num % 10];              // eg 3999 -> 9
     }
 
     // Time limit exceeded

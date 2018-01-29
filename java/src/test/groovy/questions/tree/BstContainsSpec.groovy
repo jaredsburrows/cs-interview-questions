@@ -1,5 +1,6 @@
 package questions.tree
 
+import questions.BstContains
 import spock.lang.Unroll
 import test.BaseSpec
 

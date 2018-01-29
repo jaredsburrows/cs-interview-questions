@@ -3,7 +3,7 @@ package leetcode;
 /**
  * https://leetcode.com/problems/flood-fill/description
  */
-public class Problem733FloodFill {
+public final class Problem733FloodFill {
     public static int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
         if (image == null                       // base
             || image[sr][sc] == newColor) {     // check start position color

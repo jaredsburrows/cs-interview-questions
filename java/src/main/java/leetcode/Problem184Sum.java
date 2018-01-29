@@ -8,7 +8,7 @@ import java.util.List;
  * https://leetcode.com/problems/4sum/description
  */
 public final class Problem184Sum {
-    public List<List<Integer>> fourSum(int[] nums, int target) {
+    public static List<List<Integer>> fourSum(int[] nums, int target) {
         final List<List<Integer>> sums = new ArrayList<>();
         if (nums == null || nums.length < 4) {
             return sums;

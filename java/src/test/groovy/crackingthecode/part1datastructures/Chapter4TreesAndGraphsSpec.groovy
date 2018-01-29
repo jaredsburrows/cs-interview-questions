@@ -150,9 +150,9 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
 
         where:
         a              | b            || c
-        null           | null         || true
+        null           | null         || false
         null           | balancedTree || false
-        unbalancedTree | null         || true
+        unbalancedTree | null         || false
         unbalancedTree | balancedTree || false
         tree           | tree         || true
         tree           | subTree      || true
