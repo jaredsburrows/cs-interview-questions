@@ -6,8 +6,11 @@ import spock.lang.Unroll
 @SuppressWarnings("GroovyPointlessBoolean")
 final class Problem74SearchA2DMatrixSpec extends Specification {
     @Unroll def "searchMatrix"() {
+        given:
+        def sut = new Problem74SearchA2DMatrix()
+
         expect:
-        Problem74SearchA2DMatrix.searchMatrix(a as int[][], b) == c
+        sut.searchMatrix(a as int[][], b) == c
 
         where:
         a                      | b  || c

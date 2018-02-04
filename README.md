@@ -70,13 +70,13 @@ This is a collection of my personal solutions to practice interview questions. T
 
 ## Others resources used
  - http://www.bigocheatsheet.com/
+ - http://leetcode.com/
+ - http://www.programcreek.com/
+   - http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
  - http://www.geeksforgeeks.org/
  - http://www.glassdoor.com/
  - http://www.hackerrank.com/
- - http://www.programcreek.com/
-   - http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
  - http://www.topcoder.com/
- - http://leetcode.com/
 
 ## Languages used
  - **C** - [c/src/main/c](c/src/main/c)

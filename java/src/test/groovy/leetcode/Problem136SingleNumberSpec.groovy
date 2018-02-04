@@ -5,8 +5,11 @@ import spock.lang.Unroll
 
 final class Problem136SingleNumberSpec extends Specification {
     @Unroll def "singleNumber"() {
+        given:
+        def sut = new Problem136SingleNumber()
+
         expect:
-        Problem136SingleNumber.singleNumber(a as int[]) == b
+        sut.singleNumber(a as int[]) == b
 
         where:
         a                           || b

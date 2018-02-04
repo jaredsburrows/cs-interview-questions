@@ -6,9 +6,11 @@ import test.BaseSpec
 
 @SuppressWarnings("GroovyPointlessBoolean")
 final class Chapter9SortingAndSearchingSpec extends BaseSpec {
+    def sut = new Chapter9SortingAndSearching()
+
     @Unroll def "mergeAInB(#a, #b, #c) == '#d'"() {
         expect:
-        Chapter9SortingAndSearching.mergeBInA(a as int[], b as int[], c as int) == d as int[]
+        sut.mergeBInA(a as int[], b as int[], c as int) == d as int[]
 
         where:
         a                        | b         | c || d
@@ -22,7 +24,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
     // http://www2.vo.lu/homepages/phahn/anagrams/oneword.htm
     @Unroll def "sortAnagrams(#a) == '#b'"() {
         expect:
-        Chapter9SortingAndSearching.sortAnagrams(a) == b
+        sut.sortAnagrams(a) == b
 
         where:
         a                                                                             || b
@@ -34,7 +36,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
 
     @Unroll def "getRotatedIndexOf(#a, #b) == '#c'"() {
         expect:
-        Chapter9SortingAndSearching.getRotatedIndexOf(a as int[], b) == c
+        sut.getRotatedIndexOf(a as int[], b) == c
 
         where:
         a                                                         | b   || c
@@ -48,9 +50,9 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
 
     @Unroll def "findString(#a, #b) == '#c'"() {
         expect:
-        Chapter9SortingAndSearching.findString(a as String[], b as String) == c
-        Chapter9SortingAndSearching.findString2(a as String[], b as String) == c
-        Chapter9SortingAndSearching.findString3(a as String[], b as String) == c
+        sut.findString(a as String[], b as String) == c
+        sut.findString2(a as String[], b as String) == c
+        sut.findString3(a as String[], b as String) == c
 
         where:
         a                                                                | b         || c
@@ -64,7 +66,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
 
     @Unroll def "findValue(#a, #b) == '#c'"() {
         expect:
-        Chapter9SortingAndSearching.findValue(a as int[][], b) == c
+        sut.findValue(a as int[][], b) == c
 
         where:
         a                   | b  || c
@@ -128,7 +130,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
                         new Pair<Integer, Integer>(70, 150),
                         new Pair<Integer, Integer>(75, 190)]
         when:
-        actual = Chapter9SortingAndSearching.getCircusOrder(actual)
+        actual = sut.getCircusOrder(actual)
 
         then:
         // (56, 90) (60,95) (65,100) (68,110) (70,150) (75,190)

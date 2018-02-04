@@ -8,7 +8,7 @@ public final class Chapter14Java {
      */
     // Yes, ly with always be "executed" unless the program exits before hand or the thread
     // executing the "finally" is killed off
-    private static boolean someMethod() {
+    private boolean someMethod() {
         try {
             System.out.print("Test - SomeMethod");
             return true;
@@ -28,7 +28,7 @@ public final class Chapter14Java {
     // "class can't be inherited"
 
     // Singleton
-    public static class PrivateConstructor {
+    public class PrivateConstructor {
 
         private PrivateConstructor mInstance = null;
 
@@ -45,7 +45,7 @@ public final class Chapter14Java {
     }
 
     // Factory Pattern
-    public static class BusinessClass {
+    public class BusinessClass {
 
         private String mStr;
 

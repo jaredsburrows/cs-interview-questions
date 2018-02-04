@@ -1,11 +1,18 @@
 package codingbat;
 
+/**
+ * http://codingbat.com/prob/p120015
+ */
 public final class Fibonacci {
-    public long fibonacci(long number) {
-        if (number < 2) {
-            return number;
+    public int fibonacci(int n) {
+        if (n < 1) {
+            return 0;
         }
 
-        return fibonacci(number - 1) + fibonacci(number - 2);
+        if (n < 2) {
+            return 1;
+        }
+
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 }

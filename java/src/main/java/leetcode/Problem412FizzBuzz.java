@@ -8,7 +8,7 @@ import java.util.List;
  */
 public final class Problem412FizzBuzz {
     // Time - O(N), Space - O(N)
-    public static List<String> fizzBuzz(int n) {
+    public List<String> fizzBuzz(int n) {
         final List<String> words = new ArrayList<>();
         if (n < 0) {
             return words;

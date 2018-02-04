@@ -7,7 +7,7 @@ import leetcode.api.ListNode;
  */
 public final class Problem83RemoveDuplicatesFromSortedList {
     // Time - O(N), Space - O(1)
-    public static ListNode deleteDuplicates(ListNode head) {
+    public ListNode deleteDuplicates(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }

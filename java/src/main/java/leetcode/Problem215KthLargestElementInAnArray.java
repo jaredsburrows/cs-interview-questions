@@ -8,7 +8,7 @@ import java.util.Queue;
  */
 public final class Problem215KthLargestElementInAnArray {
     // Time - O(N), Space - O(N)
-    public static int findKthLargest(int[] nums, int k) {
+    public int findKthLargest(int[] nums, int k) {
         if (nums == null || nums.length == 0 || k < 0) {
             return -1;
         }

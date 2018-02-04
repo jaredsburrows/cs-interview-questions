@@ -4,6 +4,8 @@ import api.Node
 import test.BaseSpec
 
 final class Chapter2LinkedListsSpec extends BaseSpec {
+    def sut = new Chapter2LinkedLists()
+
     def "removeDuplicates"() {
         given:
         def node = new Node<>(1)
@@ -14,8 +16,8 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         node.next.next.next.next.next = new Node<>(4)
 
         when:
-        Chapter2LinkedLists.removeDuplicates(null)
-        Chapter2LinkedLists.removeDuplicates(node)
+        sut.removeDuplicates(null)
+        sut.removeDuplicates(node)
 
         then:
         node.value == 1
@@ -34,8 +36,8 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         node.next.next.next.next.next = new Node<>(4)
 
         when:
-        Chapter2LinkedLists.removeDuplicates2(null)
-        Chapter2LinkedLists.removeDuplicates2(node)
+        sut.removeDuplicates2(null)
+        sut.removeDuplicates2(node)
 
         then:
         node.value == 1
@@ -54,8 +56,8 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         node.next.next.next.next.next = new Node<>(4)
 
         when:
-        Chapter2LinkedLists.removeDuplicates3(null)
-        Chapter2LinkedLists.removeDuplicates3(node)
+        sut.removeDuplicates3(null)
+        sut.removeDuplicates3(node)
 
         then:
         node.value == 1
@@ -74,8 +76,8 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         node.next.next.next.next.next = new Node<>(4)
 
         when:
-        Chapter2LinkedLists.deleteDupsC(null)
-        Chapter2LinkedLists.deleteDupsC(node)
+        sut.deleteDupsC(null)
+        sut.deleteDupsC(node)
 
         then:
         node.value == 1
@@ -93,14 +95,14 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         node.next.next.next.next.next = new Node<>(5)
 
         expect:
-        Chapter2LinkedLists.findNthLastElement(null, 6) == null
-        Chapter2LinkedLists.findNthLastElement(node, 0) == null
-        Chapter2LinkedLists.findNthLastElement(node, 6).value == 0
-        Chapter2LinkedLists.findNthLastElement(node, 5).value == 1
-        Chapter2LinkedLists.findNthLastElement(node, 4).value == 2
-        Chapter2LinkedLists.findNthLastElement(node, 3).value == 3
-        Chapter2LinkedLists.findNthLastElement(node, 2).value == 4
-        Chapter2LinkedLists.findNthLastElement(node, 1).value == 5
+        sut.findNthLastElement(null, 6) == null
+        sut.findNthLastElement(node, 0) == null
+        sut.findNthLastElement(node, 6).value == 0
+        sut.findNthLastElement(node, 5).value == 1
+        sut.findNthLastElement(node, 4).value == 2
+        sut.findNthLastElement(node, 3).value == 3
+        sut.findNthLastElement(node, 2).value == 4
+        sut.findNthLastElement(node, 1).value == 5
     }
 
     def "deleteMiddleNode"() {
@@ -112,8 +114,8 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         node1.next.next.next.next = new Node<>("e" as Character)
 
         when:
-        Chapter2LinkedLists.deleteMiddleNode(null)
-        Chapter2LinkedLists.deleteMiddleNode(node1.next.next)
+        sut.deleteMiddleNode(null)
+        sut.deleteMiddleNode(node1.next.next)
 
         then:
         node1.value == "a"
@@ -151,21 +153,21 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         nine.next.next = new Node<>(9)
 
         expect:
-        Chapter2LinkedLists.addTwoLists(null, nine) == null
-        Chapter2LinkedLists.addTwoLists(nine, null) == null
-        Chapter2LinkedLists.addTwoLists(null, null) == null
+        sut.addTwoLists(null, nine) == null
+        sut.addTwoLists(nine, null) == null
+        sut.addTwoLists(null, null) == null
 
-        def result = Chapter2LinkedLists.addTwoLists(book1, book2)
+        def result = sut.addTwoLists(book1, book2)
         result.value == 8
         result.next.value == 0
         result.next.next.value == 8
 
-        def result2 = Chapter2LinkedLists.addTwoLists(pg, pg2)
+        def result2 = sut.addTwoLists(pg, pg2)
         result2.value == 7
         result2.next.value == 0
         result2.next.next.value == 8
 
-        def result3 = Chapter2LinkedLists.addTwoLists(nine, nine)
+        def result3 = sut.addTwoLists(nine, nine)
         result3.value == 8
         result3.next.value == 9
         result3.next.next.value == 9
@@ -191,8 +193,8 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         nodeE.next = nodeC
 
         when:
-        def nullResult = Chapter2LinkedLists.getCircular(null)
-        def result = Chapter2LinkedLists.getCircular(nodeA)
+        def nullResult = sut.getCircular(null)
+        def result = sut.getCircular(nodeA)
 
         then:
         !nullResult
@@ -216,8 +218,8 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         node3.next = node4
 
         when:
-        def nullResult = Chapter2LinkedLists.getCircular(null)
-        def result = Chapter2LinkedLists.getCircular(node0)
+        def nullResult = sut.getCircular(null)
+        def result = sut.getCircular(node0)
 
         then:
         !nullResult

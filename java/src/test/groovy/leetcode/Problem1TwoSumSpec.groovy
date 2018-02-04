@@ -5,8 +5,11 @@ import test.BaseSpec
 
 final class Problem1TwoSumSpec extends BaseSpec {
     @Unroll def "twoSum"() {
+        given:
+        def sut = new Problem1TwoSum()
+
         expect:
-        Problem1TwoSum.twoSum(a as int[], b) == c as int[]
+        sut.twoSum(a as int[], b) == c as int[]
 
         where:
         a              | b || c

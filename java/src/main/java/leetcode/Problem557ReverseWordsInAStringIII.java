@@ -4,7 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/reverse-words-in-a-string-iii/description
  */
 public final class Problem557ReverseWordsInAStringIII {
-    public static String reverseWords(String s) {
+    public String reverseWords(String s) {
         if (s == null) {
             return null;
         }
@@ -25,7 +25,7 @@ public final class Problem557ReverseWordsInAStringIII {
         return stringBuilder.toString().trim();
     }
 
-    private static void flip(char[] array, int left, int right) {
+    private void flip(char[] array, int left, int right) {
         final char temp = array[left];
         array[left] = array[right];
         array[right] = temp;

@@ -4,7 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/implement-strstr/description
  */
 public final class Problem28ImplementStrStr {
-    public static int strStr(String haystack, String needle) {
+    public int strStr(String haystack, String needle) {
         if (haystack == null || needle == null) {
             return -1;
         }

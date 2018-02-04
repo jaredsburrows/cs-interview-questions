@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem125ValidPalindrome {
     // Time - O(N), Space - O(1)
-    public static boolean isPalindrome(String s) {
+    public boolean isPalindrome(String s) {
         if (s == null) {
             return false;
         }

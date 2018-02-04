@@ -7,10 +7,12 @@ import test.BaseSpec
 import static api.Color.*
 
 final class Chapter8RecursionSpec extends BaseSpec {
+    def sut = new Chapter8Recursion()
+
     @Unroll def "getFibNumberRecursive(#a) -> #b"() {
         expect:
-        Chapter8Recursion.getFibNumberRecursive(a) == b
-        Chapter8Recursion.getFibNumberIterative(a) == b
+        sut.getFibNumberRecursive(a) == b
+        sut.getFibNumberIterative(a) == b
 
         where:
         a  || b
@@ -29,7 +31,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
 
     @Unroll def "getSubsets(#a, #b) == '#c'"() {
         expect:
-        Chapter8Recursion.getSubsets(a, b) == c
+        sut.getSubsets(a, b) == c
 
         where:
         a      | b  || c
@@ -41,7 +43,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
 
     @Unroll def "getStringPermutations(#a) == '#b'"() {
         expect:
-        Chapter8Recursion.getStringPermutations(a, b) == c
+        sut.getStringPermutations(a, b) == c
 
         where:
         a  | b     || c
@@ -51,7 +53,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
 
     @Unroll def "getValidParentheses(#a, #b, #c, #d) == '#e'"() {
         expect:
-        Chapter8Recursion.getValidParentheses(a, b, c, d) == e
+        sut.getValidParentheses(a, b, c, d) == e
 
         where:
         a  | b  | c  | d    || e
@@ -72,7 +74,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
                  [GREEN, GREEN, GREEN, GREEN, RED]] as Color[][]
 
         when:
-        Chapter8Recursion.paintFill(a as Color[][], 0, 0, BLUE)
+        sut.paintFill(a as Color[][], 0, 0, BLUE)
 
         then:
         a == [[BLUE, BLUE, GREEN, GREEN, GREEN],
@@ -97,7 +99,7 @@ final class Chapter8RecursionSpec extends BaseSpec {
         def newC = 3
 
         when:
-        Chapter8Recursion.floodFill(a as int[][], x, y, newC)
+        sut.floodFill(a as int[][], x, y, newC)
 
         then:
         a == [[1, 1, 1, 1, 1, 1, 1, 1],
@@ -113,8 +115,8 @@ final class Chapter8RecursionSpec extends BaseSpec {
     @Unroll def "getRepresentCents(#a) -> #b"() {
         expect:
         // starting with quarters
-        Chapter8Recursion.getRepresentCents(a as int, 25) == b
-        Chapter8Recursion.makeChange(a as int, 25) == b
+        sut.getRepresentCents(a as int, 25) == b
+        sut.makeChange(a as int, 25) == b
 
         where:
         a    || b

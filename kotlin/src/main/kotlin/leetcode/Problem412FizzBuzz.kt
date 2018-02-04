@@ -1,8 +1,5 @@
 package leetcode
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 class Problem412FizzBuzz {
     // Time - O(N), Space - O(N)
     fun fizzBuzz(n: Int): List<String> {

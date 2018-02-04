@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem7ReverseInteger {
     // Time - O(N), Space - O(1)
-    public static int reverse(int x) {
+    public int reverse(int x) {
         long reverseNumber = 0;
 
         while (x != 0) {

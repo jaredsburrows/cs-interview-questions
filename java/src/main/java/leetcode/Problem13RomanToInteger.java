@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public final class Problem13RomanToInteger {
     // Time - O(N), Space - O(N)
-    public static int romanToInt(String s) {
+    public int romanToInt(String s) {
         if (s == null) {
             return -1;
         }

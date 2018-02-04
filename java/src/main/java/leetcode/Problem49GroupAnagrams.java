@@ -10,7 +10,7 @@ import java.util.Map;
  * https://leetcode.com/problems/group-anagrams/description
  */
 public final class Problem49GroupAnagrams {
-    public static List<List<String>> groupAnagrams(String[] strs) {
+    public List<List<String>> groupAnagrams(String[] strs) {
         final List<List<String>> strings = new ArrayList<>();
         if (strs == null || strs.length == 0) {
             return strings;

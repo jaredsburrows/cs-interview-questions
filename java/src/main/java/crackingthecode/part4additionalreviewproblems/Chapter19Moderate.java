@@ -13,7 +13,7 @@ public final class Chapter19Moderate {
     // Time - O(1), Space - O(1)
     @SuppressWarnings("UnusedAssignment")
     @SuppressFBWarnings("DLS_DEAD_LOCAL_STORE")
-    public static void swapVar(int left, int right) {
+    public void swapVar(int left, int right) {
         left ^= right;
         right ^= left;
         left ^= right;
@@ -22,7 +22,7 @@ public final class Chapter19Moderate {
     // Time - O(1), Space - O(1)
     @SuppressWarnings("UnusedAssignment")
     @SuppressFBWarnings("DLS_DEAD_LOCAL_STORE")
-    public static void swapVar2(int left, int right) {
+    public void swapVar2(int left, int right) {
         left = right - left;    // 4 = 9 - 5
         right = right - left;   // 5 = 9 - 4
         left = left + right;    // 9 = 4 + 5
@@ -34,7 +34,7 @@ public final class Chapter19Moderate {
     // Outcomes - X - Player 1, O - Player 2, no one
     // Time - O(1), Space - O(1) (since we know it is 3x3 array)
     @SuppressWarnings("ForLoopReplaceableByForEach")
-    public static int checkTicTacToe(int[][] board) {
+    public int checkTicTacToe(int[][] board) {
         if (board == null) {
             return -1;
         }
@@ -78,7 +78,7 @@ public final class Chapter19Moderate {
      */
     // 5 * 2 = 10
     // misinterpreted the question, I thought we were given the factorial
-    public static int numZeros(int number) {
+    public int numZeros(int number) {
         int count = 0;
         if (number < 0) {
             return 0;
@@ -97,7 +97,7 @@ public final class Chapter19Moderate {
      */
     // >> 31 - for only 32 bit numbers
     // Time - O(1), Space - O(1)
-    public static long getMax(long left, long right) {
+    public long getMax(long left, long right) {
         final long diff = (left - right) >> 31;    // >> 31 accounts for negatives
         final long diffFirst = diff & right;
         final long diffSecond = ~diff & left;
@@ -106,14 +106,14 @@ public final class Chapter19Moderate {
     }
 
     // Time - O(1), Space - O(1)
-    public static long getMax2(long left, long right) {
+    public long getMax2(long left, long right) {
         final long[] temp = {left, right};
         return temp[(int) ((left - right) >> 31) & 1];
     }
 
     // If you have the max, you can find getMinNode, vice-versa
     // Time - O(1), Space - O(1)
-    public static long getMin(long left, long right) {
+    public long getMin(long left, long right) {
         final long diff = (left - right) >> 31;    // >> 31 accounts for negatives
         final long diffFirst = diff & left;
         final long diffSecond = ~diff & right;
@@ -134,7 +134,7 @@ public final class Chapter19Moderate {
     // length should be 4
     // will the slots allow for different lengths, more/less guesses?
     // Time - O(N^2), however we know it is only 4 length, O(4^2) -> O(16) -> O(1), Space - O(1)
-    public static Pair<Integer, Integer> getPseudoHits(String solution, String guess) {
+    public Pair<Integer, Integer> getPseudoHits(String solution, String guess) {
         if (solution == null || guess == null || solution.length() != guess.length()) {
             return null;
         }
@@ -165,7 +165,7 @@ public final class Chapter19Moderate {
      */
     // Time - O(N), Space - O(1)
     // max "sub array"
-    public static int getMaxSum(int[] array) {
+    public int getMaxSum(int[] array) {
         if (array == null) {
             return 0;
         }
@@ -197,7 +197,7 @@ public final class Chapter19Moderate {
     // For single queries, just count the all the strings in the array
     // For repetitive queries we would create the hashmap one time
     // Time - O(N)
-    public static int getWordOccurrence(String[] array, String word) {
+    public int getWordOccurrence(String[] array, String word) {
         if (array == null || word == null) {
             return -1;
         }
@@ -251,7 +251,7 @@ public final class Chapter19Moderate {
      * generates a random number between 1 and 5 (i.e., implement rand7() using rand5()).
      */
     // book solution
-    public static int rand7() {
+    public int rand7() {
         while (true) {
             final int number = 5 * rand5() - 1 + rand5() - 1;
             if (number < 21) {
@@ -261,12 +261,12 @@ public final class Chapter19Moderate {
     }
 
     // can we use Math.random?
-    public static int rand72() {
+    public int rand72() {
         return new Random().nextInt(rand5()) + 2;
     }
 
     // Here is our "rand5" - 1..5
-    public static int rand5() {
+    public int rand5() {
         return new Random().nextInt(4) + 1;
     }
 
@@ -275,7 +275,7 @@ public final class Chapter19Moderate {
      * specified val.
      */
     // Time - O(N)
-    public static Map<Integer, Integer> getPairSum(int[] array, int target) {
+    public Map<Integer, Integer> getPairSum(int[] array, int target) {
         final Map<Integer, Integer> pairs = new HashMap<>();
         final Map<Integer, Integer> uniquePairs = new HashMap<>();
 

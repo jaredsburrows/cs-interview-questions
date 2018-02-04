@@ -9,7 +9,7 @@ import leetcode.api.TreeNode;
  */
 public final class Problem226InvertBinaryTree {
     // iterative
-    public static TreeNode invertTree(TreeNode root) {
+    public TreeNode invertTree(TreeNode root) {
         if (root == null) {
             return null;
         }
@@ -37,7 +37,7 @@ public final class Problem226InvertBinaryTree {
     }
 
     // recursion
-    public static TreeNode invertTree2(TreeNode root) {
+    public TreeNode invertTree2(TreeNode root) {
         if (root == null) {
             return null;
         }
@@ -47,7 +47,7 @@ public final class Problem226InvertBinaryTree {
         return root;
     }
 
-    private static void invert2(TreeNode root) {
+    private void invert2(TreeNode root) {
         if (root == null) {
             return;
         }

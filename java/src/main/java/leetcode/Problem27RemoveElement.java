@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem27RemoveElement {
     // Time - O(N), Space - O(1)
-    public static int removeElement(int[] nums, int val) {
+    public int removeElement(int[] nums, int val) {
         if (nums == null || nums.length == 0) {
             return 0;
         }

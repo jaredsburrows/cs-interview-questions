@@ -5,7 +5,7 @@ public final class Chapter6BrainTeasers {
      * 6.1 - Add arithmetic operators (plus, minus, times, divide) to make the following expression
      * true: 3 1 3 6 = 8. You can use any parentheses you’d like.
      */
-    public static double arithmeticOperators() {
+    public double arithmeticOperators() {
         // int division = 0, use double
         return (3.0 + 1.0) / (3.0 / 6.0); // ((3 + 1) / 3) * 6 = 8
     }
@@ -16,7 +16,7 @@ public final class Chapter6BrainTeasers {
      * dominos to cover the entire board? Prove your answer (by providing an example, or showing why
      * it’s impossible).
      */
-    public static int chessPieces() {
+    public int chessPieces() {
         // 1 domino     = 2 squares
         // 31 dominoes  = 62 squares
         // 8x8 grid     = 64 squares
@@ -37,7 +37,7 @@ public final class Chapter6BrainTeasers {
      * measuring cups). How would you come up with exactly four quarts of water? NOTE: The jugs are
      * oddly shaped, such that filling up exactly ‘half’ of the jug would be impossible.
      */
-    public static int exactJugs() {
+    public int exactJugs() {
         // Sine you have a 5 quart jug and a 3 quart jug, you can fill up the 5 quart jug and
         // use the 5 quart jug to full up the 3 quart jug. When the 3 quart jug is full, you know
         // that you have exactly 2 quarts.
@@ -79,7 +79,7 @@ public final class Chapter6BrainTeasers {
      * hundred, how many lockers are open?
      */
     // Time - O(N), Space - O(N)
-    public static int lockersOpen() {
+    public int lockersOpen() {
         // 100 - open
         // 100/2 - 50 - closes every second locker
 

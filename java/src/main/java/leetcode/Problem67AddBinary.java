@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem67AddBinary {
     // Time - O(N), Space - O(N)
-    public static String addBinary(String a, String b) {
+    public String addBinary(String a, String b) {
         if (a == null && b == null) {
             return "";
         }
@@ -45,7 +45,7 @@ public final class Problem67AddBinary {
     // returns 1000000111
     // python - to int      - int('1000000111', 2)
     // python - to binary   - bin(519)
-    public static String getBinarySumLib(String left, String right) {
+    public String getBinarySumLib(String left, String right) {
         if (left == null && right == null) {
             return "";
         }
@@ -71,7 +71,7 @@ public final class Problem67AddBinary {
     // 1 + 1 = 2, 1
     // 1 + 1 + 1 = 3, 1 + carry
     // limited by integers
-    public static String getBinarySum(String binary1, String binary2) {
+    public String getBinarySum(String binary1, String binary2) {
         if (binary1 == null && binary2 == null) {
             return "";
         }
@@ -123,7 +123,7 @@ public final class Problem67AddBinary {
 
     // 0 >> 1 = 0,  1 >> 1 = 0,  2 >> 1 = 1,  3 >> 1 = 1
     // 0 &  0 = 0,  0 &  1 = 1,  1 &  1 = 1,  2 &  1 = 1
-    public static String getBinarySumBit(String binary1, String binary2) {
+    public String getBinarySumBit(String binary1, String binary2) {
         if (binary1 == null && binary2 == null) {
             return "";
         }

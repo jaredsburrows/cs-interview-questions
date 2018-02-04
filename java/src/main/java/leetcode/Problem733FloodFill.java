@@ -4,7 +4,8 @@ package leetcode;
  * https://leetcode.com/problems/flood-fill/description
  */
 public final class Problem733FloodFill {
-    public static int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+    // Time - O(N*M), Space - O(1)
+    public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
         if (image == null                       // base
             || image[sr][sc] == newColor) {     // check start position color
             return image;
@@ -15,7 +16,8 @@ public final class Problem733FloodFill {
         return image;
     }
 
-    private static void fill(int[][] image, int sr, int sc, int oldColor, int newColor) {
+    // dfs
+    private void fill(int[][] image, int sr, int sc, int oldColor, int newColor) {
         if (image == null                       // base
             || sr < 0 || sr >= image.length     // x
             || sc < 0 || sc >= image[0].length  // y

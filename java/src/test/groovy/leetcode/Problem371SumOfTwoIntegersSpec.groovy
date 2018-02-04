@@ -5,8 +5,11 @@ import spock.lang.Unroll
 
 final class Problem371SumOfTwoIntegersSpec extends Specification {
     @Unroll def "getSum"() {
+        given:
+        def sut = new Problem371SumOfTwoIntegers()
+
         expect:
-        Problem371SumOfTwoIntegers.getSum(a, b) == c
+        sut.getSum(a, b) == c
 
         where:
         a  | b  || c

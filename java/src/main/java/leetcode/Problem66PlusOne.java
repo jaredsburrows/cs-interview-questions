@@ -4,7 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/plus-one/description
  */
 public final class Problem66PlusOne {
-    public static int[] plusOne(int[] digits) {
+    public int[] plusOne(int[] digits) {
         if (digits == null || digits.length == 0) {
             return new int[0];
         }

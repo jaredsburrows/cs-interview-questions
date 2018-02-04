@@ -8,7 +8,7 @@ import java.util.Deque;
  */
 public final class Problem20ValidParentheses {
     // Time - O(N), Space - O(N)
-    public static boolean isValid(String s) {
+    public boolean isValid(String s) {
         if (s == null || s.isEmpty()) {
             return false;
         }

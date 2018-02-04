@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public final class Problem12IntegerToRoman {
     // Time - O(1), Space - O(1)
-    public static String intToRoman(int num) {
+    public String intToRoman(int num) {
         if (num <= 0) {
             return "";
         }
@@ -24,7 +24,7 @@ public final class Problem12IntegerToRoman {
     }
 
     // Time limit exceeded
-    public static String intToRoman2(int num) {
+    public String intToRoman2(int num) {
         if (num <= 0) {
             return "";
         }

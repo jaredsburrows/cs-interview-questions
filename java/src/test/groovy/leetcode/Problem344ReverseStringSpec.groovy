@@ -5,8 +5,11 @@ import spock.lang.Unroll
 
 final class Problem344ReverseStringSpec extends Specification {
     @Unroll def "reverseString"() {
+        given:
+        def sut = new Problem344ReverseString()
+
         expect:
-        Problem344ReverseString.reverseString(a) == b
+        sut.reverseString(a) == b
 
         where:
         a                                    || b

@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem136SingleNumber {
     // Time - O(N), Space - O(1)
-    public static int singleNumber(int[] nums) {
+    public int singleNumber(int[] nums) {
         if (nums == null) {
             return 0;
         }

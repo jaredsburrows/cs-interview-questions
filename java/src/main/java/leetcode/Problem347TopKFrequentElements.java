@@ -11,7 +11,7 @@ import java.util.Queue;
  * https://leetcode.com/problems/top-k-frequent-elements/description
  */
 public final class Problem347TopKFrequentElements {
-    public static List<Integer> topKFrequent(int[] nums, int k) {
+    public List<Integer> topKFrequent(int[] nums, int k) {
         final List<Integer> numbers = new ArrayList<>();
         if (nums == null || nums.length == 0 || k < 0) {
             return numbers;

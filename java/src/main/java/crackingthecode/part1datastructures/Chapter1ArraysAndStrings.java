@@ -10,7 +10,7 @@ public final class Chapter1ArraysAndStrings {
      * can not use additional data structures?
      */
     // Time - O(N), Space - O(1)
-    public static boolean isUniqueCharacters(String input) {
+    public boolean isUniqueCharacters(String input) {
         if (input == null || input.trim().isEmpty()) {
             return false;
         }
@@ -39,7 +39,7 @@ public final class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(N)
-    public static boolean isUniqueCharacters2(String input) {
+    public boolean isUniqueCharacters2(String input) {
         if (input == null || input.trim().isEmpty()) {
             return false;
         }
@@ -64,7 +64,7 @@ public final class Chapter1ArraysAndStrings {
      * five characters, including the null character.)
      */
     // Time - O(N), Space - O(1)
-    public static char[] reverseString(char[] input) {
+    public char[] reverseString(char[] input) {
         if (input == null) {
             return new char[0];
         }
@@ -89,7 +89,7 @@ public final class Chapter1ArraysAndStrings {
      */
     // in java you can print the bytes and show that '\0' is not removing chars, the book answer does this
     // the book answer fails for strings like "baaaaaaaaaad"
-    public static String removeDuplicates(String input) {
+    public String removeDuplicates(String input) {
         if (input == null) {
             return "";
         }
@@ -116,7 +116,7 @@ public final class Chapter1ArraysAndStrings {
      * 1.4 - Write a method to decide if two strings are anagrams or not.
      */
     // Time - O(NLOG(N)), Space - O(N)
-    public static boolean isAnagram(String input, String input2) {
+    public boolean isAnagram(String input, String input2) {
         if (input == null || input2 == null) {
             return false;
         }
@@ -137,7 +137,7 @@ public final class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(N)
-    public static boolean isAnagram2(String input, String input2) {
+    public boolean isAnagram2(String input, String input2) {
         if (input == null || input2 == null) {
             return false;
         }
@@ -171,7 +171,7 @@ public final class Chapter1ArraysAndStrings {
      * 1.5 - Write a method to replace all spaces in a string with '%20'.
      */
     // Time - O(N), Space - O(N)
-    public static String replaceSpaces(String input) {
+    public String replaceSpaces(String input) {
         if (input == null) {
             return "";
         }
@@ -187,7 +187,7 @@ public final class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(N)
-    public static String replaceSpaces2(String input) {
+    public String replaceSpaces2(String input) {
         if (input == null) {
             return "";
         }
@@ -200,7 +200,7 @@ public final class Chapter1ArraysAndStrings {
      * write a method to rotate the image by 90 degrees. Can you do this in place?
      */
     // Time - O(N), Space - O(1)
-    public static int[][] rotateImage(int[][] image) {
+    public int[][] rotateImage(int[][] image) {
         if (image == null) {
             return new int[0][0];
         }
@@ -223,7 +223,7 @@ public final class Chapter1ArraysAndStrings {
     }
 
     // Time - O(N), Space - O(1)
-    public static int[][] rotateImage2(int[][] image) {
+    public int[][] rotateImage2(int[][] image) {
         if (image == null) {
             return new int[0][0];
         }
@@ -245,7 +245,7 @@ public final class Chapter1ArraysAndStrings {
      * column is set to 0.
      */
     // Time - O(NM), Space - O(OM)
-    public static int[][] markRows(int[][] matrix) {
+    public int[][] markRows(int[][] matrix) {
         if (matrix == null) {
             return null;
         }
@@ -285,7 +285,7 @@ public final class Chapter1ArraysAndStrings {
      * to isSubstring (i.e., “waterbottle” is a rotation of “erbottlewat”).
      */
     // Time - O(n), Space O(N)
-    public static boolean isSubstring(String input, String input2) {
+    public boolean isSubstring(String input, String input2) {
         if (input == null || input2 == null) {
             return false;
         }

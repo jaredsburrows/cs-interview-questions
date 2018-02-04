@@ -5,8 +5,11 @@ import spock.lang.Unroll
 
 final class Problem442FindAllDuplicatesInAnArraySpec extends Specification {
     @Unroll def "findDuplicates"() {
+        given:
+        def sut = new Problem442FindAllDuplicatesInAnArray()
+
         expect:
-        Problem442FindAllDuplicatesInAnArray.findDuplicates(a as int[]) == b
+        sut.findDuplicates(a as int[]) == b
 
         where:
         a                        || b

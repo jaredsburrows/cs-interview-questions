@@ -10,9 +10,10 @@ import leetcode.api.ListNode;
 /**
  * https://leetcode.com/problems/merge-k-sorted-lists/description
  */
+@SuppressWarnings("ClassCanBeStatic")
 public final class Problem23MergeKLists {
     // Time - O(N*LOG(K))
-    public static ListNode mergeKLists(ListNode[] lists) {
+    public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) {
             return null;
         }
@@ -42,7 +43,7 @@ public final class Problem23MergeKLists {
     }
 
     // Time - O(N*LOG(K))
-    public static List<Integer> mergeKLists(int[][] arrays) {
+    public List<Integer> mergeKLists(int[][] arrays) {
         final List<Integer> toReturn = new ArrayList<>();
         if (arrays == null || arrays.length == 0 || arrays[0].length == 0) {
             return toReturn;
@@ -74,7 +75,7 @@ public final class Problem23MergeKLists {
         return toReturn;
     }
 
-    private static class Node {
+    private class Node {
         final int[] array;
         int pos;
 

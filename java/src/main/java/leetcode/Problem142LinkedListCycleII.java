@@ -6,7 +6,7 @@ import leetcode.api.ListNode;
  * https://leetcode.com/problems/linked-list-cycle/description
  */
 public final class Problem142LinkedListCycleII {
-    public static ListNode detectCycle(ListNode head) {
+    public ListNode detectCycle(ListNode head) {
         if (head == null) {
             return null;
         }

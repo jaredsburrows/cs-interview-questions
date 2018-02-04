@@ -4,10 +4,12 @@ import spock.lang.Unroll
 import test.BaseSpec
 
 final class Chapter5BitManipulationSpec extends BaseSpec {
+    def sut = new Chapter5BitManipulation()
+
     @Unroll def "getDiffBits(#a, #b) == '#c'"() {
         expect:
-        Chapter5BitManipulation.getDiffBits(a, b) == c
-        Chapter5BitManipulation.bitSwapRequired(a, b) == c
+        sut.getDiffBits(a, b) == c
+        sut.bitSwapRequired(a, b) == c
 
         where:
         a  | b  || c
@@ -18,7 +20,7 @@ final class Chapter5BitManipulationSpec extends BaseSpec {
 
     @Unroll def "getSwapBits(#a) == '#b'"() {
         expect:
-        Chapter5BitManipulation.getSwapBits(a) == b
+        sut.getSwapBits(a) == b
 
         where:
         a  || b

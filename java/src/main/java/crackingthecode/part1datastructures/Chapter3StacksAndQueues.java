@@ -25,7 +25,7 @@ public final class Chapter3StacksAndQueues {
      * write this program: push | pop | peek | isEmpty.
      */
     // Time - O(N^2), Space - O(N)
-    public static Stack<Integer> getSortedStack(Stack<Integer> stack) {
+    public Stack<Integer> getSortedStack(Stack<Integer> stack) {
         final Stack<Integer> sortedStack = new Stack<>();
 
         while (!stack.isEmpty()) {

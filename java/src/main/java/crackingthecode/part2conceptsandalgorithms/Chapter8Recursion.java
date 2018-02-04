@@ -8,7 +8,7 @@ public final class Chapter8Recursion {
     /**
      * 8.1 - Write a method to generate the nth Fibonacci number.
      */
-    public static long getFibNumberRecursive(long number) {
+    public long getFibNumberRecursive(long number) {
         if (number < 2) {
             return number;
         }
@@ -16,7 +16,7 @@ public final class Chapter8Recursion {
         return getFibNumberRecursive(number - 1) + getFibNumberRecursive(number - 2);
     }
 
-    public static long getFibNumberIterative(long number) {
+    public long getFibNumberIterative(long number) {
         if (number < 0) {
             return number;
         }
@@ -56,7 +56,7 @@ public final class Chapter8Recursion {
     /**
      * 8.3 - Write a method that returns all subsets of a set.
      */
-    public static List<List<Integer>> getSubsets(List<Integer> initial, int size) {
+    public List<List<Integer>> getSubsets(List<Integer> initial, int size) {
         if (initial == null || size < 0) {
             return new ArrayList<>();
         }
@@ -86,7 +86,7 @@ public final class Chapter8Recursion {
     /**
      * 8.4 - Write a method to compute all permutations of a string.
      */
-    public static List<String> getStringPermutations(String prefix, String string) {
+    public List<String> getStringPermutations(String prefix, String string) {
         if (string == null) {
             return new ArrayList<>();
         }
@@ -113,8 +113,8 @@ public final class Chapter8Recursion {
      * nations of n-pairs of parentheses. EXAMPLE: input: 3 (e.g., 3 pairs of parentheses) output:
      * ()()(), ()(()), (())(), ((()))
      */
-    public static List<String> getValidParentheses(int pairs, int left, int right,
-                                                   String pairString) {
+    public List<String> getValidParentheses(int pairs, int left, int right,
+                                            String pairString) {
         if (pairs < 1 || left < 0 || right < 0 || pairString == null) {
             return new ArrayList<>();
         }
@@ -150,8 +150,8 @@ public final class Chapter8Recursion {
      * That is, given a screen (represented by a 2-dimensional array of Colors), a point, and a new
      * color, fill in the surrounding area until you hit a border of that color.
      */
-    public static void paintFill(Color[][] pixels, int positionX, int positionY,
-                                 Color prevColor, Color newColor) {
+    public void paintFill(Color[][] pixels, int positionX, int positionY,
+                          Color prevColor, Color newColor) {
         if (positionX < 0
             || positionX >= pixels[0].length
             || positionY < 0
@@ -173,14 +173,14 @@ public final class Chapter8Recursion {
         paintFill(pixels, positionX, positionY - 1, prevColor, newColor); // up
     }
 
-    public static void paintFill(Color[][] pixels, int positionX, int positionY, Color newColor) {
+    public void paintFill(Color[][] pixels, int positionX, int positionY, Color newColor) {
         final Color oldColor = pixels[positionX][positionY];
 
         paintFill(pixels, positionX, positionY, oldColor, newColor);
     }
 
-    public static void floodFillUtil(int[][] screen, int positionX, int positionY,
-                                     int prevColor, int newColor) {
+    public void floodFillUtil(int[][] screen, int positionX, int positionY,
+                              int prevColor, int newColor) {
         // Base cases
         if (positionX < 0 || positionX >= 8) {
             return;
@@ -204,8 +204,8 @@ public final class Chapter8Recursion {
         floodFillUtil(screen, positionX, positionY - 1, prevColor, newColor);
     }
 
-    public static void floodFill(int[][] screen, int positionX, int positionY,
-        final int newColor) {
+    public void floodFill(int[][] screen, int positionX, int positionY,
+                          final int newColor) {
         final int oldColor = screen[positionX][positionY];
 
         floodFillUtil(screen, positionX, positionY, oldColor, newColor);
@@ -221,7 +221,7 @@ public final class Chapter8Recursion {
     // dimes    == 10   cents
     // nickels  == 5    cents
     // pennies  == 1    cent
-    public static int getRepresentCents(int cents, int denomination) {
+    public int getRepresentCents(int cents, int denomination) {
         if (cents < 2) {
             return 1;
         }
@@ -260,7 +260,7 @@ public final class Chapter8Recursion {
     }
 
     // Book answer
-    public static int makeChange(int number, int denom) {
+    public int makeChange(int number, int denom) {
         int nextDenom;
 
         switch (denom) {

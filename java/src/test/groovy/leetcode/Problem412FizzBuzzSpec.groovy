@@ -5,8 +5,11 @@ import spock.lang.Unroll
 
 final class Problem412FizzBuzzSpec extends Specification {
     @Unroll def "fizzBuzz"() {
+        given:
+        def sut = new Problem412FizzBuzz()
+
         expect:
-        Problem412FizzBuzz.fizzBuzz(a) == b
+        sut.fizzBuzz(a) == b
 
         where:
         a  || b

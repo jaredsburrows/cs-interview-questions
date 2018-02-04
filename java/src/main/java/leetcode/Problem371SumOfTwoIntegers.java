@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem371SumOfTwoIntegers {
     // Time - O(N), Space - O(1)
-    public static int getSum(int a, int b) {
+    public int getSum(int a, int b) {
         while (b != 0) {
             // carry contains common bits of a and b
             final int carry = a & b;

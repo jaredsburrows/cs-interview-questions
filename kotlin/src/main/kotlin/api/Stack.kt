@@ -1,8 +1,5 @@
 package api
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 data class Stack<T>(private var value: T?) {
     var peek: Node<T>? = null
 

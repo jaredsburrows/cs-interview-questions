@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem9PalindromeNumber {
     // Time - O(N), Space - O(1)
-    public static boolean isPalindrome(int x) {
+    public boolean isPalindrome(int x) {
         if (x < 0 || (x != 0 && x % 10 == 0)) {
             return false;
         }
@@ -23,7 +23,7 @@ public final class Problem9PalindromeNumber {
         return x == reverseNumber || x == reverseNumber / 10;
     }
 
-    public static boolean isPalindrome2(long number) {
+    public boolean isPalindrome2(long number) {
         if (number < 0) {
             return false;
         }

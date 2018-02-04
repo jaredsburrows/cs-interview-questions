@@ -7,7 +7,7 @@ import leetcode.api.ListNode;
  */
 public final class Problem237DeleteNodeInALinkedList {
     // Time - O(1), Space - (1)
-    public static void deleteNode(ListNode node) {
+    public void deleteNode(ListNode node) {
         if (node == null) {
             return;
         }

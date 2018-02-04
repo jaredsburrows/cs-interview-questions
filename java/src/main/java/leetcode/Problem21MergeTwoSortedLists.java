@@ -7,7 +7,7 @@ import leetcode.api.ListNode;
  */
 public final class Problem21MergeTwoSortedLists {
     // Time - O(N), Space - O(1)
-    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
         }

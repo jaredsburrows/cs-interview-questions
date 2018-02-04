@@ -6,7 +6,7 @@ import leetcode.api.ListNode;
  * https://leetcode.com/problems/linked-list-cycle/description
  */
 public final class Problem141LinkedListCycle {
-    public static boolean hasCycle(ListNode head) {
+    public boolean hasCycle(ListNode head) {
         if (head == null) {
             return false;
         }

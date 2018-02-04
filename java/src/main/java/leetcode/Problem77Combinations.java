@@ -7,7 +7,7 @@ import java.util.List;
  * https://leetcode.com/problems/combinations/description
  */
 public final class Problem77Combinations {
-    public static List<List<Integer>> combine(int n, int k) {
+    public List<List<Integer>> combine(int n, int k) {
         final List<List<Integer>> combinations = new ArrayList<>();
 
         if (n <= 0 || k <= 0 || n < k) {
@@ -22,7 +22,7 @@ public final class Problem77Combinations {
     }
 
     // backtrack
-    private static void combine(List<List<Integer>> combinations, List<Integer> current, int n, int k, int start, int length) {
+    private void combine(List<List<Integer>> combinations, List<Integer> current, int n, int k, int start, int length) {
         if (k == length) {
             combinations.add(new ArrayList<>(current));
             return;

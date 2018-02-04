@@ -19,6 +19,7 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
     @Shared def treeNode5 = new TreeNode<>(5)
     @Shared def treeNode6 = new TreeNode<>(6)
     @Shared def treeNode7 = new TreeNode<>(7)
+    def sut = new Chapter4TreesAndGraphs()
 
     def "setup"() {
         balancedTree2.right = new TreeNode(10)
@@ -45,10 +46,10 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
 
     def "isBalanced"() {
         expect:
-        Chapter4TreesAndGraphs.isBalanced(null)
-        !Chapter4TreesAndGraphs.isBalanced(unbalancedTree)
-        Chapter4TreesAndGraphs.isBalanced(balancedTree)
-        Chapter4TreesAndGraphs.isBalanced(balancedTree2)
+        sut.isBalanced(null)
+        !sut.isBalanced(unbalancedTree)
+        sut.isBalanced(balancedTree)
+        sut.isBalanced(balancedTree2)
     }
 
     def "hasGraphNodeBFS"() {
@@ -66,8 +67,8 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         n5.neighbors = [n1, n3, n4]
 
         expect:
-        Chapter4TreesAndGraphs.hasGraphNodeBfs(n1, n5)
-        !Chapter4TreesAndGraphs.hasGraphNodeBfs(n1, new GraphNode<Integer>(9))
+        sut.hasGraphNodeBfs(n1, n5)
+        !sut.hasGraphNodeBfs(n1, new GraphNode<Integer>(9))
     }
 
     def "getBinaryTree"() {
@@ -90,12 +91,12 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         //   /\   /\
         //  1  3  5 7
         expect:
-        Chapter4TreesAndGraphs.getMinimumTree(null, 0, sortedArray.size() - 1) == null
-        Chapter4TreesAndGraphs.getMinimumTree(empty, 0, sortedArray.size() - 1) == null
-        Chapter4TreesAndGraphs.getMinimumTree(sortedArray, sortedArray.size(), 0) == null
-        Chapter4TreesAndGraphs.getMinimumTree(sortedArray, -1, sortedArray.size()) == null
-        Chapter4TreesAndGraphs.getMinimumTree(sortedArray, 0, -1) == null
-        def tree = Chapter4TreesAndGraphs.
+        sut.getMinimumTree(null, 0, sortedArray.size() - 1) == null
+        sut.getMinimumTree(empty, 0, sortedArray.size() - 1) == null
+        sut.getMinimumTree(sortedArray, sortedArray.size(), 0) == null
+        sut.getMinimumTree(sortedArray, -1, sortedArray.size()) == null
+        sut.getMinimumTree(sortedArray, 0, -1) == null
+        def tree = sut.
             getMinimumTree(sortedArray, 0, sortedArray.size() - 1)
         tree.value == 4
         tree.left.value == 2
@@ -116,8 +117,8 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         treeNode4.right.right = treeNode7
 
         expect:
-        Chapter4TreesAndGraphs.getLinkedListLevels(null) == null
-        Chapter4TreesAndGraphs.getLinkedListLevels(treeNode4) ==
+        sut.getLinkedListLevels(null) == null
+        sut.getLinkedListLevels(treeNode4) ==
             [[treeNode4],
              [treeNode2, treeNode5],
              [treeNode1, treeNode3, treeNode6, treeNode7]] as List<LinkedList<TreeNode<Integer>>>
@@ -133,8 +134,8 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         treeNode4.right.right = treeNode7
 
         expect:
-        Chapter4TreesAndGraphs.commonAncestor(a, b, c) == d
-        Chapter4TreesAndGraphs.commonAncestor2(a, b, c) == d
+        sut.commonAncestor(a, b, c) == d
+        sut.commonAncestor2(a, b, c) == d
 
         where:
         a         | b         | c         || d
@@ -146,7 +147,7 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
 
     @Unroll def "isSubtree(#a, #b) == '#c'"() {
         expect:
-        Chapter4TreesAndGraphs.isSubtree(a, b) == c
+        sut.isSubtree(a, b) == c
 
         where:
         a              | b            || c

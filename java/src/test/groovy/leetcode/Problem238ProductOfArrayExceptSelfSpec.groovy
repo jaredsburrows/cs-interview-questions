@@ -5,8 +5,11 @@ import spock.lang.Unroll
 
 final class Problem238ProductOfArrayExceptSelfSpec extends Specification {
     @Unroll def "productExceptSelf"() {
+        given:
+        def sut = new Problem238ProductOfArrayExceptSelf()
+
         expect:
-        Problem238ProductOfArrayExceptSelf.productExceptSelf(a as int[]) == b as int[]
+        sut.productExceptSelf(a as int[]) == b as int[]
 
         where:
         a    || b

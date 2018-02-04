@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  * https://leetcode.com/problems/permutations/description
  */
 public final class Problem46Permutations {
-    public static List<List<Integer>> permute(int[] nums) {
+    public List<List<Integer>> permute(int[] nums) {
         final List<List<Integer>> permutations = new ArrayList<>();
 
         if (nums == null || nums.length == 0) {
@@ -21,7 +21,7 @@ public final class Problem46Permutations {
     }
 
     // backtrack
-    private static void permute(List<List<Integer>> list, List<Integer> tempList, int[] nums) {
+    private void permute(List<List<Integer>> list, List<Integer> tempList, int[] nums) {
         if (tempList.size() == nums.length) {
             list.add(new ArrayList<>(tempList));
         } else {
@@ -37,7 +37,7 @@ public final class Problem46Permutations {
     }
 
     // recursion + swap
-    public static List<List<Integer>> permute2(int[] nums) {
+    public List<List<Integer>> permute2(int[] nums) {
         final List<List<Integer>> permutations = new ArrayList<>();
 
         if (nums == null || nums.length == 0) {
@@ -48,7 +48,7 @@ public final class Problem46Permutations {
         return permutations;
     }
 
-    private static void permute(int[] nums, int start, List<List<Integer>> permutations) {
+    private void permute(int[] nums, int start, List<List<Integer>> permutations) {
         if (start >= nums.length) {
             permutations.add(Arrays.stream(nums).boxed().collect(Collectors.toList()));
         }
@@ -60,7 +60,7 @@ public final class Problem46Permutations {
         }
     }
 
-    private static void swap(int[] array, int left, int right) {
+    private void swap(int[] array, int left, int right) {
         final int temp = array[left];
         array[left] = array[right];
         array[right] = temp;

@@ -1,8 +1,6 @@
 package crackingthecode.part4additionalreviewproblems;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -44,7 +42,7 @@ public final class Chapter20Hard {
      * operators.
      */
     // Time - O(LOG(N)), Space - O(1)
-    public static long addTwoNumbers(long left, long right) {
+    public long addTwoNumbers(long left, long right) {
         // if a = 4, b = 5
 
         while (right != 0) {
@@ -66,7 +64,7 @@ public final class Chapter20Hard {
     }
 
     // Time - O(LOG(N)), Space - O(1)
-    public static long substractTwoNumbers(long left, long right) {
+    public long substractTwoNumbers(long left, long right) {
         // if a = 5, b = 4
 
         while (right != 0) {
@@ -99,7 +97,7 @@ public final class Chapter20Hard {
      */
     // 2, 12, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 32
     // Time - O(N*M), Space - O(1)
-    public static long countNumber2s(int number) {
+    public long countNumber2s(int number) {
         long count = 0;
 
         for (long i = 0; i <= number; i++) { // N
@@ -118,7 +116,7 @@ public final class Chapter20Hard {
 
     // book answer
     // Time - O(N), Space - O(1)
-    public static int count2sI(int number) {
+    public int count2sI(int number) {
         int countof2s = 0;
         int digit;
         int seendigits = 0;
@@ -166,7 +164,7 @@ public final class Chapter20Hard {
      */
     // only doing 10 for testing
     // Time - O(N *LOG(N)), Space - O(1) -> Time - O(1), Space - O(1), since we already know N and sublist each time
-    public static List<Integer> getTopMillion(List<Integer> billion) {
+    public List<Integer> getTopMillion(List<Integer> billion) {
         if (billion == null || billion.size() != 10) { // would be 1,000,000
             return null;
         }
@@ -206,7 +204,7 @@ public final class Chapter20Hard {
      * -> LIKE
      */
     // what is the data structure of the dictionary? Map<Integer, String>
-    public static List<String> getTransformedList(Map<String, String> dictionary, String from,
+    public List<String> getTransformedList(Map<String, String> dictionary, String from,
         final String to) {
         if (dictionary == null || from == null || to == null) {
             return null;

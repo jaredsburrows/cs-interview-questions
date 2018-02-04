@@ -11,7 +11,7 @@ import leetcode.api.TreeNode;
  */
 public final class Problem144BinaryTreePreorderTraversal {
     // iterative
-    public static List<Integer> preorderTraversal(TreeNode root) {
+    public List<Integer> preorderTraversal(TreeNode root) {
         final List<Integer> values = new ArrayList<>();
         if (root == null) {
             return values;
@@ -37,7 +37,7 @@ public final class Problem144BinaryTreePreorderTraversal {
     }
 
     // recursion
-    public static List<Integer> preorderTraversal2(TreeNode root) {
+    public List<Integer> preorderTraversal2(TreeNode root) {
         final List<Integer> list = new ArrayList<>();
 
         preorderTraversal(root, list);
@@ -45,7 +45,7 @@ public final class Problem144BinaryTreePreorderTraversal {
         return list;
     }
 
-    private static void preorderTraversal(TreeNode root, List<Integer> list) {
+    private void preorderTraversal(TreeNode root, List<Integer> list) {
         if (root == null) {
             return;
         }
@@ -56,7 +56,7 @@ public final class Problem144BinaryTreePreorderTraversal {
     }
 
     // print
-    public static void preorderTraversal3(TreeNode node) {
+    public void preorderTraversal3(TreeNode node) {
         if (node == null) {
             return;
         }

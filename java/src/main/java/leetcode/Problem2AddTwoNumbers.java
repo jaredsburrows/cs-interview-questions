@@ -4,7 +4,7 @@ import leetcode.api.ListNode;
 
 public final class Problem2AddTwoNumbers {
     // Time - O(MAX(M, N)), Space - O(MAX(M, N))
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null || l2 == null) {
             return null;
         }

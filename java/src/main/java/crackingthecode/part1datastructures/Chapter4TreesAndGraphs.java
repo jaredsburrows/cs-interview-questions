@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import questions.TreeHeight;
 
 @SuppressWarnings("JdkObsolete")
 public final class Chapter4TreesAndGraphs {
@@ -16,7 +15,7 @@ public final class Chapter4TreesAndGraphs {
      * root by more than one.
      */
     @SuppressWarnings("SimplifiableIfStatement")
-    public static <T> boolean isBalanced(TreeNode<T> node) {
+    public <T> boolean isBalanced(TreeNode<T> node) {
         if (node == null) {
             return true;
         }
@@ -24,7 +23,7 @@ public final class Chapter4TreesAndGraphs {
         return getHeight(node) != -1;
     }
 
-    private static <T> int getHeight(TreeNode<T> treeNode) {
+    private <T> int getHeight(TreeNode<T> treeNode) {
         if (treeNode == null) {
             return 0;
         }
@@ -45,7 +44,7 @@ public final class Chapter4TreesAndGraphs {
      * two nodes.
      */
     // BFS
-    public static <T> boolean hasGraphNodeBfs(GraphNode<T> start, GraphNode<T> end) {
+    public <T> boolean hasGraphNodeBfs(GraphNode<T> start, GraphNode<T> end) {
         final Queue<GraphNode<T>> queue = new LinkedList<>();
 
         start.visited = true;
@@ -78,7 +77,7 @@ public final class Chapter4TreesAndGraphs {
     //   /\   /\
     //  1  3  5 7
     // (length - 0) / 2
-    public static TreeNode<Integer> getMinimumTree(int[] array, int start, int end) {
+    public TreeNode<Integer> getMinimumTree(int[] array, int start, int end) {
         if (array == null || array.length == 0 || start < 0 || start > end) {
             return null;
         }
@@ -98,7 +97,7 @@ public final class Chapter4TreesAndGraphs {
      * nodes at each depth (i.e., if you have a tree with depth D, you’ll have D linked lists).
      */
     // simply traversing from top to bottom, do not over think this
-    public static <T> List<LinkedList<TreeNode<T>>> getLinkedListLevels(TreeNode<T> node) {
+    public <T> List<LinkedList<TreeNode<T>>> getLinkedListLevels(TreeNode<T> node) {
         if (node == null) {
             return null;
         }
@@ -156,7 +155,7 @@ public final class Chapter4TreesAndGraphs {
      */
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // Time - O(LOG(N)) in Balanced binary tree, O(N) in skewed tree.
-    public static <T> TreeNode<T> commonAncestor(TreeNode<T> root,
+    public <T> TreeNode<T> commonAncestor(TreeNode<T> root,
                                                  TreeNode<T> node1,
                                                  TreeNode<T> node2) {
         if (root == null) {
@@ -178,7 +177,7 @@ public final class Chapter4TreesAndGraphs {
     }
 
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
-    public static <T> TreeNode<T> commonAncestor2(TreeNode<T> root,
+    public <T> TreeNode<T> commonAncestor2(TreeNode<T> root,
                                                   TreeNode<T> node1,
                                                   TreeNode<T> node2) {
         if (root == null) {
@@ -210,7 +209,7 @@ public final class Chapter4TreesAndGraphs {
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // T1 - millions of nodes
     // T2 - supposed subtree of T1, should be the same or smaller
-    public static <T> boolean isSubtree(TreeNode<T> t, TreeNode<T> s) {
+    public <T> boolean isSubtree(TreeNode<T> t, TreeNode<T> s) {
         if (s == null) {
             return false;
         }
@@ -224,7 +223,7 @@ public final class Chapter4TreesAndGraphs {
             || isSubtree(t.right, s);
     }
 
-    private static <T> boolean isSameTree(TreeNode<T> p, TreeNode<T> q) {
+    private <T> boolean isSameTree(TreeNode<T> p, TreeNode<T> q) {
         if (p == null && q == null) {
             return true;
         }

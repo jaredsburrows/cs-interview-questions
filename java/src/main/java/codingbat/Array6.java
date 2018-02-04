@@ -1,8 +1,11 @@
 package codingbat;
 
+/**
+ * http://codingbat.com/prob/p108997
+ */
 public final class Array6 {
     public boolean array6(int[] nums, int index) {
-        if (nums.length == 0 || nums.length == index) {
+        if (nums == null || nums.length == 0 || nums.length == index) {
             return false;
         }
 

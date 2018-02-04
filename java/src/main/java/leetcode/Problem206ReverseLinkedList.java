@@ -7,7 +7,7 @@ import leetcode.api.ListNode;
  */
 public final class Problem206ReverseLinkedList {
     // Time - O(N), Space - O(1)
-    public static ListNode reverseList(ListNode head) {
+    public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }

@@ -10,7 +10,7 @@ public final class Problem101SymmetricTree {
         return isSymmetric(root, root);
     }
 
-    private static boolean isSymmetric(TreeNode node, TreeNode node2) {
+    private boolean isSymmetric(TreeNode node, TreeNode node2) {
         if (node == null && node2 == null) {
             return true;
         }

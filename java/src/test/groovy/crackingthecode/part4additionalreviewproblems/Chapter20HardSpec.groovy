@@ -4,9 +4,11 @@ import spock.lang.Unroll
 import test.BaseSpec
 
 final class Chapter20HardSpec extends BaseSpec {
+    def sut = new Chapter20Hard()
+
     @Unroll def "20.1 - addTwoNumbers(#a, #b) == '#c'"() {
         expect:
-        Chapter20Hard.addTwoNumbers(a, b) == c
+        sut.addTwoNumbers(a, b) == c
 
         where:
         a     | b      || c
@@ -17,7 +19,7 @@ final class Chapter20HardSpec extends BaseSpec {
 
     @Unroll def "subtractTwoNumbers(#a, #b) == '#c'"() {
         expect:
-        Chapter20Hard.substractTwoNumbers(a, b) == c
+        sut.substractTwoNumbers(a, b) == c
 
         where:
         a      | b     || c
@@ -28,8 +30,8 @@ final class Chapter20HardSpec extends BaseSpec {
 
     @Unroll def "20.4 - countNumber2s(#a) == '#b'"() {
         expect:
-        Chapter20Hard.countNumber2s(a) == b
-        Chapter20Hard.count2sI(a) == b
+        sut.countNumber2s(a) == b
+        sut.count2sI(a) == b
 
         where:
         a  || b
@@ -39,7 +41,7 @@ final class Chapter20HardSpec extends BaseSpec {
 
     @Unroll def "20.6 - getTopMillion(#a) == '#b'"() {
         expect:
-        Chapter20Hard.getTopMillion(a) == b
+        sut.getTopMillion(a) == b
 
         where:
         a                              || b
@@ -50,7 +52,7 @@ final class Chapter20HardSpec extends BaseSpec {
 
     @Unroll def "20.10 - getTransformedList(#a, #b, #c) == '#d'"() {
         expect:
-        Chapter20Hard.getTransformedList(a, b, c) == d
+        sut.getTransformedList(a, b, c) == d
 
         where:
         a                        | b          | c          || d

@@ -1,14 +1,21 @@
 package crackingthecode.part1datastructures
 
+import spock.lang.Shared
 import spock.lang.Unroll
 import test.BaseSpec
 
 @SuppressWarnings("GroovyPointlessBoolean")
 final class Chapter1ArraysAndStringsSpec extends BaseSpec {
+    @Shared def sut
+
+    def "setup"() {
+        sut = new Chapter1ArraysAndStrings()
+    }
+
     @Unroll def "isUniqueCharacters(#a) == '#b'"() {
         expect:
-        Chapter1ArraysAndStrings.isUniqueCharacters(a) == b
-        Chapter1ArraysAndStrings.isUniqueCharacters2(a) == b
+        sut.isUniqueCharacters(a) == b
+        sut.isUniqueCharacters2(a) == b
 
         where:
         a                             || b
@@ -22,7 +29,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
 
     @Unroll def "reverseString(#a) == '#b'"() {
         expect:
-        Chapter1ArraysAndStrings.reverseString(a as char[]) == b as char[]
+        sut.reverseString(a as char[]) == b as char[]
 
         where:
         a            || b
@@ -35,7 +42,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
 
     @Unroll def "removeDuplicates(#a) == '#b'"() {
         expect:
-        Chapter1ArraysAndStrings.removeDuplicates(a) == b
+        sut.removeDuplicates(a) == b
 
         where:
         a              || b
@@ -48,8 +55,8 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
 
     @Unroll def "isAnagram(#a) == '#b'"() {
         expect:
-        Chapter1ArraysAndStrings.isAnagram(a, b) == c
-        Chapter1ArraysAndStrings.isAnagram2(a, b) == c
+        sut.isAnagram(a, b) == c
+        sut.isAnagram2(a, b) == c
 
         where:
         a            | b            || c
@@ -66,8 +73,8 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
 
     @Unroll def "replaceSpace(#a) == '#b'"() {
         expect:
-        Chapter1ArraysAndStrings.replaceSpaces(a) == b
-        Chapter1ArraysAndStrings.replaceSpaces2(a) == b
+        sut.replaceSpaces(a) == b
+        sut.replaceSpaces2(a) == b
 
         where:
         a      || b
@@ -80,8 +87,8 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
 
     @Unroll def "rotateImage(#a) == '#b'"() {
         expect:
-        Chapter1ArraysAndStrings.rotateImage(a as int[][]) == b as int[][]
-        Chapter1ArraysAndStrings.rotateImage2(a as int[][]) == b as int[][]
+        sut.rotateImage(a as int[][]) == b as int[][]
+        sut.rotateImage2(a as int[][]) == b as int[][]
 
         where:
         a              || b
@@ -102,7 +109,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
 
     @Unroll def "markRows(#a) == '#b'"() {
         expect:
-        Chapter1ArraysAndStrings.markRows(a as int[][]) == b as int[][]
+        sut.markRows(a as int[][]) == b as int[][]
 
         where:
         a           || b
@@ -121,7 +128,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
 
     @Unroll def "isSubstring(#a, #b) == '#c'"() {
         expect:
-        Chapter1ArraysAndStrings.isSubstring(a, b) == c
+        sut.isSubstring(a, b) == c
 
         where:
         a             | b             || c

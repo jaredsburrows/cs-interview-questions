@@ -1,10 +1,8 @@
 package crackingthecode.part2conceptsandalgorithms;
 
 import api.Pair;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public final class Chapter9SortingAndSearching {
@@ -13,7 +11,7 @@ public final class Chapter9SortingAndSearching {
      * hold B. Write a method to merge B into A in sorted order.
      */
     // Time - O(N), Space - O(1)
-    public static int[] mergeBInA(int[] arrayA, int[] arrayB, int sizeA) {
+    public int[] mergeBInA(int[] arrayA, int[] arrayB, int sizeA) {
         if (arrayA == null) {
             return new int[0];
         }
@@ -49,7 +47,7 @@ public final class Chapter9SortingAndSearching {
     // [anagram, anagram, notanagram, notanagram]?
     // [Aanagram, anagramA, Banagram, anagramB]?
     // Time - O(N^2 LOG N), Space - O(n)
-    public static List<String> sortAnagrams(List<String> anagrams) {
+    public List<String> sortAnagrams(List<String> anagrams) {
         for (int i = 0; i < anagrams.size(); i++) {
             char[] tempArray = anagrams.get(i).toCharArray();
             Arrays.sort(tempArray);
@@ -70,7 +68,7 @@ public final class Chapter9SortingAndSearching {
     // 15 16 19 20 25 1  3  4  5  7 10 14
     // 0  1  2  3  4  5  6  7  8  9 10 11
     // Time - Best - O(LOG N), Space - O(1) - does not work with duplicates
-    public static int getRotatedIndexOf(int[] array, int target) {
+    public int getRotatedIndexOf(int[] array, int target) {
         if (array == null) {
             return -1;
         }
@@ -120,7 +118,7 @@ public final class Chapter9SortingAndSearching {
      * to find the location of a given string.
      */
     // Time - O(LOGN)?, Space - O(1) - Binary Search
-    public static int findString(String[] strings, String target) {
+    public int findString(String[] strings, String target) {
         int min = 0;
         int max = strings.length - 1;
 
@@ -159,7 +157,7 @@ public final class Chapter9SortingAndSearching {
     }
 
     // Time - O(N), Space - O(1) - Linear Search
-    public static int findString2(String[] strings, String target) {
+    public int findString2(String[] strings, String target) {
         int pos = -1;
 
         for (int i = 0; i < strings.length; i++) {
@@ -173,7 +171,7 @@ public final class Chapter9SortingAndSearching {
     }
 
     // book answer
-    public static int findString3(String[] strings, String target, int left, int right) {
+    public int findString3(String[] strings, String target, int left, int right) {
         while (left <= right) {
             // Ensure there is something at the end
             while (left <= right && strings[right].isEmpty()) {
@@ -202,7 +200,7 @@ public final class Chapter9SortingAndSearching {
         return -1;
     }
 
-    public static int findString3(String[] strings, String target) {
+    public int findString3(String[] strings, String target) {
         if (strings == null || target == null) {
             return -1;
         }
@@ -225,7 +223,7 @@ public final class Chapter9SortingAndSearching {
     // binary search for the 2d array
     // row, col search only?
     // Time - O(N), Space - O(1)
-    public static boolean findValue(int[][] matrix, int target) {
+    public boolean findValue(int[][] matrix, int target) {
         if (matrix == null) {
             return false;
         }
@@ -263,7 +261,7 @@ public final class Chapter9SortingAndSearching {
     // sort by height, sort by weight
     // return new map
     // Time - O(N*LOGN), Space -
-    public static List<Pair<Integer, Integer>> getCircusOrder(List<Pair<Integer, Integer>> original) {
+    public List<Pair<Integer, Integer>> getCircusOrder(List<Pair<Integer, Integer>> original) {
         original.sort((left, right) ->
             left.getRight() < right.getRight() && left.getLeft() < right.getLeft()
                 ? -1

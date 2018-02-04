@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem541ReverseStringII {
     // Time - O(N), Space - O(N)
-    public static String reverseStr(String s, int k) {
+    public String reverseStr(String s, int k) {
         if (s == null) {
             return null;
         }

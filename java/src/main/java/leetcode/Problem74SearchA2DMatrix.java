@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem74SearchA2DMatrix {
     // Time - O(N), Space - O(1)
-    public static boolean searchMatrix(int[][] matrix, int target) {
+    public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0) {
             return false;
         }

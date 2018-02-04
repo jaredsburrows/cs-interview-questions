@@ -6,6 +6,8 @@ import test.BaseSpec
 final class Problem2AddTwoNumbersSpec extends BaseSpec {
     def "addTwoNumbers"() {
         given:
+        def sut = new Problem2AddTwoNumbers()
+
         // book
         // 315 + 592 = 808
         def book1 = new ListNode(3)
@@ -40,32 +42,32 @@ final class Problem2AddTwoNumbersSpec extends BaseSpec {
         shorterNumber.next.next = new ListNode(1)
 
         expect:
-        Problem2AddTwoNumbers.addTwoNumbers(null, nine) == null
-        Problem2AddTwoNumbers.addTwoNumbers(nine, null) == null
-        Problem2AddTwoNumbers.addTwoNumbers(null, null) == null
+        sut.addTwoNumbers(null, nine) == null
+        sut.addTwoNumbers(nine, null) == null
+        sut.addTwoNumbers(null, null) == null
 
-        def result = Problem2AddTwoNumbers.addTwoNumbers(book1, book2)
+        def result = sut.addTwoNumbers(book1, book2)
         result.val == 8
         result.next.val == 0
         result.next.next.val == 8
 
-        def result2 = Problem2AddTwoNumbers.addTwoNumbers(pg, pg2)
+        def result2 = sut.addTwoNumbers(pg, pg2)
         result2.val == 7
         result2.next.val == 0
         result2.next.next.val == 8
 
-        def result3 = Problem2AddTwoNumbers.addTwoNumbers(nine, nine)
+        def result3 = sut.addTwoNumbers(nine, nine)
         result3.val == 8
         result3.next.val == 9
         result3.next.next.val == 9
         result3.next.next.next.val == 1
 
-        def result4 = Problem2AddTwoNumbers.addTwoNumbers(shortNumber, shorterNumber)
+        def result4 = sut.addTwoNumbers(shortNumber, shorterNumber)
         result4.val == 2
         result4.next.val == 2
         result4.next.next.val == 1
 
-        def result5 = Problem2AddTwoNumbers.addTwoNumbers(shorterNumber, shortNumber)
+        def result5 = sut.addTwoNumbers(shorterNumber, shortNumber)
         result5.val == 2
         result5.next.val == 2
         result5.next.next.val == 1

@@ -4,7 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/regular-expression-matching/description
  */
 public final class Problem10RegularExpressionMatching {
-    public static boolean isMatch(String s, String p) {
+    public boolean isMatch(String s, String p) {
         if (s == null && p == null) {
             return true;
         }

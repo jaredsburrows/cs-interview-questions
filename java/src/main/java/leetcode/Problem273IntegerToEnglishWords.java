@@ -4,11 +4,11 @@ package leetcode;
  * https://leetcode.com/problems/integer-to-english-words/description
  */
 public final class Problem273IntegerToEnglishWords {
-    private static final String[] UNDER_20 = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
-    private static final String[] TENS = {"", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
-    private static final String[] THOUSANDS = {"", "Thousand", "Million", "Billion"};
+    private final String[] UNDER_20 = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+    private final String[] TENS = {"", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+    private final String[] THOUSANDS = {"", "Thousand", "Million", "Billion"};
 
-    public static String numberToWords(int num) {
+    public String numberToWords(int num) {
         if (num == 0) {
             return "Zero";
         }
@@ -28,7 +28,7 @@ public final class Problem273IntegerToEnglishWords {
         return sb.toString().trim();
     }
 
-    private static String helper(int num) {
+    private String helper(int num) {
         if (num == 0) {
             return "";
         } else if (num < 20) {

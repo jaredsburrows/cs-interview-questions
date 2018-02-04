@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
  * https://leetcode.com/problems/top-k-frequent-words/description
  */
 public final class Problem692TopKFrequentWords {
-    public static List<String> topKFrequent(String[] words, int k) {
+    public List<String> topKFrequent(String[] words, int k) {
         final List<String> strings = new ArrayList<>();
         if (words == null || words.length == 0 || k < 0) {
             return strings;

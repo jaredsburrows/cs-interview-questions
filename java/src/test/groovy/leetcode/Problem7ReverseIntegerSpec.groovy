@@ -5,8 +5,11 @@ import spock.lang.Unroll
 
 final class Problem7ReverseIntegerSpec extends Specification {
     @Unroll def "reverse"() {
+        given:
+        def sut = new Problem7ReverseInteger()
+
         expect:
-        Problem7ReverseInteger.reverse(a) == b
+        sut.reverse(a) == b
 
         where:
         a          || b

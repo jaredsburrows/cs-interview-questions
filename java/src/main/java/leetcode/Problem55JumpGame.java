@@ -4,7 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/jump-game/description
  */
 public final class Problem55JumpGame {
-    public static boolean canJump(int[] nums) {
+    public boolean canJump(int[] nums) {
         if (nums == null || nums.length == 0) {
             return false;
         }

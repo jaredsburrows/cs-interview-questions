@@ -4,7 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/maximum-subarray/description
  */
 public final class Problem53MaximumSubarray {
-    public static int maxSubArray(int[] nums) {
+    public int maxSubArray(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }

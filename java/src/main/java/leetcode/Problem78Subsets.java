@@ -10,7 +10,7 @@ import java.util.List;
  */
 public final class Problem78Subsets {
     // recursion
-    public static List<List<Integer>> subsets(int[] nums) {
+    public List<List<Integer>> subsets(int[] nums) {
         final List<List<Integer>> subsets = new ArrayList<>();
 
         if (nums == null || nums.length == 0) {
@@ -25,7 +25,7 @@ public final class Problem78Subsets {
     }
 
     // backtrack
-    private static void subsets(List<List<Integer>> subsets, List<Integer> subset, int[] nums, int start) {
+    private void subsets(List<List<Integer>> subsets, List<Integer> subset, int[] nums, int start) {
         subsets.add(new ArrayList<>(subset));
 
         for (int i = start; i < nums.length; i++) {
@@ -36,7 +36,7 @@ public final class Problem78Subsets {
     }
 
     // iteration
-    public static <T extends Comparable<? super T>> List<List<T>> subsets(List<T> data) {
+    public <T extends Comparable<? super T>> List<List<T>> subsets(List<T> data) {
         final List<List<T>> subsets = new ArrayList<>();
 
         if (data == null || data.isEmpty()) {
@@ -65,7 +65,7 @@ public final class Problem78Subsets {
         return subsets;
     }
 
-    public static <T> List<List<T>> subsets2(T[] data) {
+    public <T> List<List<T>> subsets2(T[] data) {
         final List<List<T>> subsets = new ArrayList<>();
 
         if (data == null || data.length == 0) {

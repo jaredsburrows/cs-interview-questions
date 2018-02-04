@@ -6,7 +6,7 @@ import leetcode.api.TreeNode;
  * https://leetcode.com/problems/same-tree/description
  */
 public final class Problem100SameTree {
-    public static boolean isSameTree(TreeNode p, TreeNode q) {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null && q == null) {
             return true;
         }

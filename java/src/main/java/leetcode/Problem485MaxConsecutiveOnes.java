@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem485MaxConsecutiveOnes {
     // Time - O(N), Space - O(1)
-    public static int findMaxConsecutiveOnes(int[] nums) {
+    public int findMaxConsecutiveOnes(int[] nums) {
         if (nums == null) {
             return 0;
         }

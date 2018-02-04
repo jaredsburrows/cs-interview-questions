@@ -5,8 +5,6 @@ using namespace testing;
 /**
  * Custom TestEventListener that only prints out failed test. The methods are organized
  * in the order the corresponding events are fired.
- *
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
 class ConfigurableEventListener : public TestEventListener {
   private:

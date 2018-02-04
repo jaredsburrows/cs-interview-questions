@@ -1,14 +1,13 @@
 package crackingthecode.part1datastructures
 
-import crackingthecode.part1datastructures.Chapter3StacksAndQueues.MinStack
-import crackingthecode.part1datastructures.Chapter3StacksAndQueues.MyQueue
-import crackingthecode.part1datastructures.Chapter3StacksAndQueues.SetOfStacks
 import test.BaseSpec
 
 final class Chapter3StacksAndQueuesSpec extends BaseSpec {
+    def sut = new Chapter3StacksAndQueues()
+
     def "MinStack"() {
         given:
-        def minStack = new MinStack()
+        def minStack = new Chapter3StacksAndQueues.MinStack()
 
         // 4 2 getMinNode 1
         // 4 2 3   - getMinNode 2
@@ -35,7 +34,7 @@ final class Chapter3StacksAndQueuesSpec extends BaseSpec {
 
     def "SetOfStacks"() {
         given:
-        def setOfStacks = new SetOfStacks<>(3)
+        def setOfStacks = new Chapter3StacksAndQueues.SetOfStacks<Integer>(3)
 
         when:
         setOfStacks.pop() == null
@@ -74,7 +73,7 @@ final class Chapter3StacksAndQueuesSpec extends BaseSpec {
 
     def "MyQueue<T>"() {
         given:
-        def myQueue = new MyQueue<>()
+        def myQueue = new Chapter3StacksAndQueues.MyQueue<Integer>()
 
         when:
         myQueue.push(1)
@@ -109,7 +108,7 @@ final class Chapter3StacksAndQueuesSpec extends BaseSpec {
 
     def "getSortedStack"() {
         given:
-        def unsorted = new Stack<>()
+        def unsorted = new Stack<Integer>()
         unsorted.push(1)
         unsorted.push(5)
         unsorted.push(7)
@@ -117,7 +116,7 @@ final class Chapter3StacksAndQueuesSpec extends BaseSpec {
         unsorted.push(5)
         unsorted.push(6)
 
-        def sorted = new Stack<>()
+        def sorted = new Stack<Integer>()
         sorted.push(0)
         sorted.push(1)
         sorted.push(5)
@@ -126,7 +125,7 @@ final class Chapter3StacksAndQueuesSpec extends BaseSpec {
         sorted.push(7)
 
         when:
-        def result = Chapter3StacksAndQueues.getSortedStack(unsorted)
+        def result = sut.getSortedStack(unsorted)
 
         then:
         result == sorted

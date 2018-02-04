@@ -4,7 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/rotate-array/description
  */
 public final class Problem189RotateArray {
-    public static void rotate(int[] nums, int k) {
+    public void rotate(int[] nums, int k) {
         if (nums == null || k < 0) {
             return;
         }

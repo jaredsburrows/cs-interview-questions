@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem35SearchInsertPosition {
     // Time - LOG(N), Space - O(1)
-    public static int searchInsert(int[] nums, int target) {
+    public int searchInsert(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return -1;
         }

@@ -1,0 +1,22 @@
+package codingbat;
+
+/**
+ * http://codingbat.com/prob/p186177
+ */
+public final class StrCount {
+    public int strCount(String str, String sub) {
+        if (str == null
+            || str.isEmpty()
+            || sub == null
+            || sub.isEmpty()
+            || str.length() < sub.length()) {
+            return 0;
+        }
+
+        if (str.substring(0, sub.length()).equals(sub)) {
+            return strCount(str.substring(sub.length(), str.length()), sub) + 1;
+        } else {
+            return strCount(str.substring(1, str.length()), sub);
+        }
+    }
+}

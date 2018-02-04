@@ -7,7 +7,7 @@ import java.util.List;
  * https://leetcode.com/problems/merge-sorted-array/description
  */
 public final class Problem88MergeSortedArray {
-    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
         if (nums1 == null || nums2 == null) {
             return;
         }
@@ -32,7 +32,7 @@ public final class Problem88MergeSortedArray {
     }
 
     // Time - O(N+M), Space - O(N+M)
-    public static int[] merge(int[] left, int[] right) {
+    public int[] merge(int[] left, int[] right) {
         if (left == null && right == null) {
             return new int[0];
         }
@@ -68,7 +68,7 @@ public final class Problem88MergeSortedArray {
     }
 
     // Time - O(N*M), Space - O(N)
-    public static List<Integer> merge(List<List<Integer>> numbers) {
+    public List<Integer> merge(List<List<Integer>> numbers) {
         if (numbers == null) {
             return new ArrayList<>();
         }
@@ -87,7 +87,7 @@ public final class Problem88MergeSortedArray {
     }
 
     // Time - O(N), Space - O(N)
-    private static List<Integer> merge(List<Integer> left, List<Integer> right) {
+    private List<Integer> merge(List<Integer> left, List<Integer> right) {
         if (left == null && right == null) {
             return new ArrayList<>();
         }

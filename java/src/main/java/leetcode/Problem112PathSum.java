@@ -6,7 +6,7 @@ import leetcode.api.TreeNode;
  * https://leetcode.com/problems/path-sum/description
  */
 public final class Problem112PathSum {
-    public static boolean hasPathSum(TreeNode root, int sum) {
+    public boolean hasPathSum(TreeNode root, int sum) {
         if (root == null) {
             return false;
         } else {

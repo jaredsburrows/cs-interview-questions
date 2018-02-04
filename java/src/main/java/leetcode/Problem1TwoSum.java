@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public final class Problem1TwoSum {
     // Time - O(N), Space - O(N)
-    public static int[] twoSum(int[] nums, int target) {
+    public int[] twoSum(int[] nums, int target) {
         if (nums == null) {
             return new int[0];
         }

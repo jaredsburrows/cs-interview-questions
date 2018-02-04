@@ -6,7 +6,7 @@ import leetcode.api.TreeNode;
  * https://leetcode.com/problems/minimum-depth-of-binary-tree/description
  */
 public final class Problem111MinimumDepthOfBinaryTree {
-    public static int minDepth(TreeNode root) {
+    public int minDepth(TreeNode root) {
         if (root == null) {
             return 0;
         }

@@ -10,7 +10,7 @@ public final class Chapter2LinkedLists {
      * solve this problem if a temporary buffer is not allowed?
      */
     // Time - O(N)
-    public static void removeDuplicates(Node<Integer> node) {
+    public void removeDuplicates(Node<Integer> node) {
         if (node == null) {
             return;
         }
@@ -34,7 +34,7 @@ public final class Chapter2LinkedLists {
     }
 
     // Time - O(N^2), Space - O(1)
-    public static void removeDuplicates2(Node<Integer> node) {
+    public void removeDuplicates2(Node<Integer> node) {
         if (node == null) {
             return;
         }
@@ -60,7 +60,7 @@ public final class Chapter2LinkedLists {
 
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // Time - O(N^2)
-    public static void removeDuplicates3(Node<Integer> node) {
+    public void removeDuplicates3(Node<Integer> node) {
         if (node == null) {
             return;
         }
@@ -82,7 +82,7 @@ public final class Chapter2LinkedLists {
 
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // book
-    public static void deleteDupsC(Node<Integer> head) {
+    public void deleteDupsC(Node<Integer> head) {
         if (head == null) {
             return;
         }
@@ -122,7 +122,7 @@ public final class Chapter2LinkedLists {
      * 2.2 - Implement an algorithm to find the nth to last element of a singly linked list.
      */
     // Time - O(N), Space - O(1)
-    public static Node<Integer> findNthLastElement(Node<Integer> head, int position) {
+    public Node<Integer> findNthLastElement(Node<Integer> head, int position) {
         if (head == null || position < 1) {
             return null;
         }
@@ -155,7 +155,7 @@ public final class Chapter2LinkedLists {
      * nothing is returned, but the new linked list looks like a->b->d->e
      */
     // Time - O(1)
-    public static void deleteMiddleNode(Node<Character> node) {
+    public void deleteMiddleNode(Node<Character> node) {
         if (node == null || node.next == null) {
             return;
         }
@@ -174,7 +174,7 @@ public final class Chapter2LinkedLists {
     // Linked list  - 3-1-5 (513)
     // Linked list2 - 5-9-2 (295)
     // sum          - 8-0-8
-    public static Node<Integer> addTwoLists(Node<Integer> node, Node<Integer> node2) {
+    public Node<Integer> addTwoLists(Node<Integer> node, Node<Integer> node2) {
         if (node == null || node2 == null) {
             return null;
         }
@@ -215,7 +215,7 @@ public final class Chapter2LinkedLists {
     // Book has a longer solution but seems very unnecessary
     // Time - O(N), Space - O(1)
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
-    public static Node<Integer> getCircular(Node<Integer> head) {
+    public Node<Integer> getCircular(Node<Integer> head) {
         if (head == null) {
             return null;
         }

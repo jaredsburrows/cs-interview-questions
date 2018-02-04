@@ -10,7 +10,7 @@ import leetcode.api.UndirectedGraphNode;
  * https://leetcode.com/problems/clone-graph/description
  */
 public final class Problem133CloneGraph {
-    public static UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
         if (node == null) {
             return null;
         }

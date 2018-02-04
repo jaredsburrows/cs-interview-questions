@@ -10,7 +10,7 @@ import leetcode.api.TreeNode;
  * https://leetcode.com/problems/average-of-levels-in-binary-tree/description
  */
 public final class Problem637AverageOfLevelsInBinaryTree {
-    public static List<Double> averageOfLevels(TreeNode root) {
+    public List<Double> averageOfLevels(TreeNode root) {
         final List<Double> averages = new ArrayList<>();
         if (root == null) {
             return averages;

@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  */
 public final class Problem500KeyboardRow {
     // Time - , Space -
-    public static String[] findWords(String[] words) {
+    public String[] findWords(String[] words) {
         if (words == null) {
             return new String[0];
         }

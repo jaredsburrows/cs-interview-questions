@@ -8,9 +8,6 @@ import org.jetbrains.spek.api.dsl.on
 import org.junit.platform.runner.JUnitPlatform
 import org.junit.runner.RunWith
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 @RunWith(JUnitPlatform::class)
 object ColorSpec : Spek({
     describe("Color Enum") {

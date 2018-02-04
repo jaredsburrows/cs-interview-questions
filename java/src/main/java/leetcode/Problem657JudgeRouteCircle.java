@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem657JudgeRouteCircle {
     // Time - O(N), Space - O(N)
-    public static boolean judgeCircle(String moves) {
+    public boolean judgeCircle(String moves) {
         if (moves == null) {
             return false;
         }

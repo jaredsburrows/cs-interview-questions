@@ -1,8 +1,5 @@
 package api
 
-/**
- * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
- */
 // FIFO - First in first out
 data class Queue<T>(private var value: T?) {
     var first: Node<T>? = null
