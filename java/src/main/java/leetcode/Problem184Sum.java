@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * https://leetcode.com/problems/4sum/description
+ * https://leetcode.com/problems/4sum/description/
  */
 public final class Problem184Sum {
     public List<List<Integer>> fourSum(int[] nums, int target) {

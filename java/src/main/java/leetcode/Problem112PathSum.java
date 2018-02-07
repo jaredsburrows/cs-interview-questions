@@ -3,7 +3,8 @@ package leetcode;
 import leetcode.api.TreeNode;
 
 /**
- * https://leetcode.com/problems/path-sum/description
+ * https://leetcode.com/problems/path-sum/description/
+ * https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/537/
  */
 public final class Problem112PathSum {
     public boolean hasPathSum(TreeNode root, int sum) {

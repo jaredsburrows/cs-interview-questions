@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * https://leetcode.com/problems/jewels-and-stones/description
+ * https://leetcode.com/problems/jewels-and-stones/description/
  */
 public final class Problem771JewelsAndStones {
     public int numJewelsInStones(String J, String S) {

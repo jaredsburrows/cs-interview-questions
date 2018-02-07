@@ -3,7 +3,8 @@ package leetcode;
 import leetcode.api.TreeNode;
 
 /**
- * https://leetcode.com/problems/validate-binary-search-tree/description
+ * https://leetcode.com/problems/validate-binary-search-tree/description/
+ * https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/140/introduction-to-a-bst/997
  */
 public final class Problem98ValidateBinarySearchTree {
     public boolean isValidBST(TreeNode root) {

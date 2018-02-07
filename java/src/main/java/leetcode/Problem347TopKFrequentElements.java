@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 /**
- * https://leetcode.com/problems/top-k-frequent-elements/description
+ * https://leetcode.com/problems/top-k-frequent-elements/description/
  */
 public final class Problem347TopKFrequentElements {
     public List<Integer> topKFrequent(int[] nums, int k) {

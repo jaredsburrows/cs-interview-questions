@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * https://leetcode.com/problems/combinations/description
+ * https://leetcode.com/problems/combinations/description/
  */
 public final class Problem77Combinations {
     public List<List<Integer>> combine(int n, int k) {

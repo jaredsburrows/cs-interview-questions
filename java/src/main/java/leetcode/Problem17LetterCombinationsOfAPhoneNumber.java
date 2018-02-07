@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * https://leetcode.com/problems/letter-combinations-of-a-phone-number/description
+ * https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
  */
 public final class Problem17LetterCombinationsOfAPhoneNumber {
     public List<String> letterCombinations(String digits) {

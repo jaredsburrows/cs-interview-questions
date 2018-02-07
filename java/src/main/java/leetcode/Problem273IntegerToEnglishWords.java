@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/integer-to-english-words/description
+ * https://leetcode.com/problems/integer-to-english-words/description/
  */
 public final class Problem273IntegerToEnglishWords {
     private final String[] UNDER_20 = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};

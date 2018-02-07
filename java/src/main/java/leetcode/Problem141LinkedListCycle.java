@@ -3,7 +3,7 @@ package leetcode;
 import leetcode.api.ListNode;
 
 /**
- * https://leetcode.com/problems/linked-list-cycle/description
+ * https://leetcode.com/problems/linked-list-cycle/description/
  */
 public final class Problem141LinkedListCycle {
     public boolean hasCycle(ListNode head) {

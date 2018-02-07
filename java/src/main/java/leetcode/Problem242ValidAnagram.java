@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/valid-anagram/description
+ * https://leetcode.com/problems/valid-anagram/description/
  */
 public final class Problem242ValidAnagram {
     // Time - O(N), Space - O(N)

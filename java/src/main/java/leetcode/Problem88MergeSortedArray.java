@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * https://leetcode.com/problems/merge-sorted-array/description
+ * https://leetcode.com/problems/merge-sorted-array/description/
  */
 public final class Problem88MergeSortedArray {
     public void merge(int[] nums1, int m, int[] nums2, int n) {

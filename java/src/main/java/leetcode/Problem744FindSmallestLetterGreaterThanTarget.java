@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/find-smallest-letter-greater-than-target/description
+ * https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/
  */
 public final class Problem744FindSmallestLetterGreaterThanTarget {
     // Time - O(LG(N), Space - O(1)

@@ -3,7 +3,7 @@ package leetcode;
 import leetcode.api.ListNode;
 
 /**
- * https://leetcode.com/problems/merge-two-sorted-lists/description
+ * https://leetcode.com/problems/merge-two-sorted-lists/description/
  */
 public final class Problem21MergeTwoSortedLists {
     // Time - O(N), Space - O(1)

@@ -5,7 +5,7 @@ import java.util.Comparator;
 import leetcode.api.Interval;
 
 /**
- * https://leetcode.com/problems/meeting-rooms/description
+ * https://leetcode.com/problems/meeting-rooms/description/
  */
 public final class Problem252MeetingRooms {
     public boolean canAttendMeetings(Interval[] intervals) {

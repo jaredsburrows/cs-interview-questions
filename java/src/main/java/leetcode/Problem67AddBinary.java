@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/add-binary/description
+ * https://leetcode.com/problems/add-binary/description/
  */
 public final class Problem67AddBinary {
     // Time - O(N), Space - O(N)

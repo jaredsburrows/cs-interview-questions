@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/jump-game/description
+ * https://leetcode.com/problems/jump-game/description/
  */
 public final class Problem55JumpGame {
     public boolean canJump(int[] nums) {

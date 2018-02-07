@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/remove-element/description
+ * https://leetcode.com/problems/remove-element/description/
  */
 public final class Problem27RemoveElement {
     // Time - O(N), Space - O(1)

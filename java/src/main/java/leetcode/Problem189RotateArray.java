@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/rotate-array/description
+ * https://leetcode.com/problems/rotate-array/description/
  */
 public final class Problem189RotateArray {
     public void rotate(int[] nums, int k) {

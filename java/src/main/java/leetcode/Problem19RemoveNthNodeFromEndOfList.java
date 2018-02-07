@@ -3,7 +3,7 @@ package leetcode;
 import leetcode.api.ListNode;
 
 /**
- * https://leetcode.com/problems/remove-nth-node-from-end-of-list/description
+ * https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
  */
 public final class Problem19RemoveNthNodeFromEndOfList {
     public ListNode removeNthFromEnd(ListNode head, int n) {

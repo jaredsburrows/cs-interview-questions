@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/regular-expression-matching/description
+ * https://leetcode.com/problems/regular-expression-matching/description/
  */
 public final class Problem10RegularExpressionMatching {
     public boolean isMatch(String s, String p) {

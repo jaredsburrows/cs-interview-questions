@@ -3,7 +3,8 @@ package leetcode;
 import leetcode.api.TreeNode;
 
 /**
- * https://leetcode.com/problems/symmetric-tree/description
+ * https://leetcode.com/problems/symmetric-tree/description/
+ * https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/536/
  */
 public final class Problem101SymmetricTree {
     public boolean isSymmetric(TreeNode root) {

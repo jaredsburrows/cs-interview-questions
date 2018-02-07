@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * https://leetcode.com/problems/subsets/description
+ * https://leetcode.com/problems/subsets/description/
  */
 public final class Problem78Subsets {
     // recursion
@@ -36,7 +36,7 @@ public final class Problem78Subsets {
     }
 
     // iteration
-    public <T extends Comparable<? super T>> List<List<T>> subsets(List<T> data) {
+    public <T extends Comparable<? super T>> List<List<T>> subsets2(List<T> data) {
         final List<List<T>> subsets = new ArrayList<>();
 
         if (data == null || data.isEmpty()) {
@@ -65,7 +65,7 @@ public final class Problem78Subsets {
         return subsets;
     }
 
-    public <T> List<List<T>> subsets2(T[] data) {
+    public <T> List<List<T>> subsets3(T[] data) {
         final List<List<T>> subsets = new ArrayList<>();
 
         if (data == null || data.length == 0) {
