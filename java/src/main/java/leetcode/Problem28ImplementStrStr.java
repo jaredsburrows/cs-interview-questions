@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/implement-strstr/description/
+ * https://leetcode.com/problems/implement-strstr
  */
 public final class Problem28ImplementStrStr {
     public int strStr(String haystack, String needle) {

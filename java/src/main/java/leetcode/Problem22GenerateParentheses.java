@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * https://leetcode.com/problems/generate-parentheses/description/
+ * https://leetcode.com/problems/generate-parentheses
  */
 public final class Problem22GenerateParentheses {
     // Space - O(N)

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * https://leetcode.com/problems/two-sum/description/
+ * https://leetcode.com/problems/two-sum
  */
 public final class Problem1TwoSum {
     // Time - O(N), Space - O(N)

@@ -3,7 +3,7 @@ package leetcode;
 import leetcode.api.TreeNode;
 
 /**
- * https://leetcode.com/problems/subtree-of-another-tree/description/
+ * https://leetcode.com/problems/subtree-of-another-tree
  */
 public final class Problem572SubtreeOfAnotherTree {
     public boolean isSubtree(TreeNode s, TreeNode t) {

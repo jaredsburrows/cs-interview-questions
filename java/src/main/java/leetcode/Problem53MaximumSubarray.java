@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/maximum-subarray/description/
+ * https://leetcode.com/problems/maximum-subarray
  */
 public final class Problem53MaximumSubarray {
     public int maxSubArray(int[] nums) {

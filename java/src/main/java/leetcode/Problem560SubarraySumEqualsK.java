@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * https://leetcode.com/problems/subarray-sum-equals-k/description/
+ * https://leetcode.com/problems/subarray-sum-equals-k
  */
 public final class Problem560SubarraySumEqualsK {
     public int subarraySum(int[] nums, int k) {

@@ -7,7 +7,7 @@ import java.util.Map;
 import leetcode.api.UndirectedGraphNode;
 
 /**
- * https://leetcode.com/problems/clone-graph/description/
+ * https://leetcode.com/problems/clone-graph
  */
 public final class Problem133CloneGraph {
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {

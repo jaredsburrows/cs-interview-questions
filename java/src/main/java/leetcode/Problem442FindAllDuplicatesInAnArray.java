@@ -7,7 +7,7 @@ import java.util.List;
  * https://leetcode.com/problems/find-all-duplicates-in-an-array
  */
 public final class Problem442FindAllDuplicatesInAnArray {
-    // Time - O(N), Space - O(1)
+    // Time - O(N), Space - O(N)
     public List<Integer> findDuplicates(int[] nums) {
         final List<Integer> duplicates = new ArrayList<>();
         if (nums == null || nums.length == 0) {

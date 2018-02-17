@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 /**
- * https://leetcode.com/problems/kth-largest-element-in-an-array/description/
+ * https://leetcode.com/problems/kth-largest-element-in-an-array
  */
 public final class Problem215KthLargestElementInAnArray {
     // Time - O(N), Space - O(N)

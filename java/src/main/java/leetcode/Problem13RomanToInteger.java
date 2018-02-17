@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * https://leetcode.com/problems/roman-to-integer/description/
+ * https://leetcode.com/problems/roman-to-integer
  */
 public final class Problem13RomanToInteger {
     // Time - O(N), Space - O(N)

@@ -7,7 +7,7 @@ import java.util.List;
 import leetcode.api.TreeNode;
 
 /**
- * https://leetcode.com/problems/binary-tree-preorder-traversal/description/
+ * https://leetcode.com/problems/binary-tree-preorder-traversal
  * https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/928/
  */
 public final class Problem144BinaryTreePreorderTraversal {

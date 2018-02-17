@@ -3,7 +3,7 @@ package leetcode;
 import leetcode.api.ListNode;
 
 /**
- * https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
+ * https://leetcode.com/problems/remove-duplicates-from-sorted-list
  */
 public final class Problem83RemoveDuplicatesFromSortedList {
     // Time - O(N), Space - O(1)

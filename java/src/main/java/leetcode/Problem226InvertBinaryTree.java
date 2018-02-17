@@ -5,7 +5,7 @@ import java.util.Deque;
 import leetcode.api.TreeNode;
 
 /**
- * https://leetcode.com/problems/invert-binary-tree/description/
+ * https://leetcode.com/problems/invert-binary-tree
  */
 public final class Problem226InvertBinaryTree {
     // iterative

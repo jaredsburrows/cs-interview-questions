@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/missing-number/description/
+ * https://leetcode.com/problems/missing-number
  */
 public final class Problem268MissingNumber {
     public int missingNumber(int[] nums) {

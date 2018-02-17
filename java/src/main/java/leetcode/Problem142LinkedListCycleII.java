@@ -3,7 +3,7 @@ package leetcode;
 import leetcode.api.ListNode;
 
 /**
- * https://leetcode.com/problems/linked-list-cycle/description/
+ * https://leetcode.com/problems/linked-list-cycle
  */
 public final class Problem142LinkedListCycleII {
     public ListNode detectCycle(ListNode head) {

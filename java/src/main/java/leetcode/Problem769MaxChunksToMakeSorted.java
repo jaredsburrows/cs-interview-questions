@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/max-chunks-to-make-sorted/description/
+ * https://leetcode.com/problems/max-chunks-to-make-sorted
  */
 public final class Problem769MaxChunksToMakeSorted {
     public int maxChunksToSorted(int[] arr) {

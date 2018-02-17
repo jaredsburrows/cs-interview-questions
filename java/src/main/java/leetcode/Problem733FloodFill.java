@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/flood-fill/description/
+ * https://leetcode.com/problems/flood-fill
  */
 public final class Problem733FloodFill {
     // Time - O(N*M), Space - O(1)

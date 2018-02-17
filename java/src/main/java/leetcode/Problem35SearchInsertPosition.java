@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/search-insert-position/description/
+ * https://leetcode.com/problems/search-insert-position
  */
 public final class Problem35SearchInsertPosition {
     // Time - LOG(N), Space - O(1)

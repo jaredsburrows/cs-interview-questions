@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/min-stack/description/
+ * https://leetcode.com/problems/min-stack
  */
 public final class Problem155MinStack {
     public class MinStack {

@@ -6,7 +6,7 @@ import java.util.List;
 import leetcode.api.Interval;
 
 /**
- * https://leetcode.com/problems/merge-intervals/description/
+ * https://leetcode.com/problems/merge-intervals
  */
 public final class Problem56MergeIntervals {
     public List<Interval> merge(List<Interval> intervals) {

@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/plus-one/description/
+ * https://leetcode.com/problems/plus-one
  */
 public final class Problem66PlusOne {
     public int[] plusOne(int[] digits) {

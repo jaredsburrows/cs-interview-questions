@@ -3,7 +3,7 @@ package leetcode;
 import leetcode.api.TreeNode;
 
 /**
- * https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
+ * https://leetcode.com/problems/flatten-binary-tree-to-linked-list
  */
 public final class Problem114FlattenBinaryTreeToLinkedList {
     public void flatten(TreeNode root) {

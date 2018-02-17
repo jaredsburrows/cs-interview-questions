@@ -20,7 +20,7 @@ public final class AGMonochrome {
 
         for (int i = 1; i < rows; i++) {
             for (int j = 1; j < cols; j++) {
-                array[i][j] = array[i - 1][j - 1] + array[i - 1][j] + array[i][j - 1] + array[i][j];
+                array[i][j] =  array[i - 1][j] + array[i][j - 1] + array[i][j] - array[i - 1][j - 1];
             }
         }
     }

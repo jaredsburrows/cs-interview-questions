@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/reverse-words-in-a-string-iii/description/
+ * https://leetcode.com/problems/reverse-words-in-a-string-iii
  */
 public final class Problem557ReverseWordsInAStringIII {
     public String reverseWords(String s) {

@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/powx-n/description/
+ * https://leetcode.com/problems/powx-n
  */
 public final class Problem50Pow {
     // recursion

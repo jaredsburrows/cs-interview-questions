@@ -3,7 +3,7 @@ package leetcode;
 import leetcode.api.TreeNode;
 
 /**
- * https://leetcode.com/problems/same-tree/description/
+ * https://leetcode.com/problems/same-tree
  */
 public final class Problem100SameTree {
     public boolean isSameTree(TreeNode p, TreeNode q) {

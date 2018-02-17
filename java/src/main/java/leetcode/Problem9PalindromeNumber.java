@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/palindrome-number/description/
+ * https://leetcode.com/problems/palindrome-number
  */
 public final class Problem9PalindromeNumber {
     // Time - O(N), Space - O(1)

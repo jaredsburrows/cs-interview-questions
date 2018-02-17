@@ -7,7 +7,7 @@ import java.util.List;
 import leetcode.api.NestedInteger;
 
 /**
- * https://leetcode.com/problems/nested-list-weight-sum/description/
+ * https://leetcode.com/problems/nested-list-weight-sum
  */
 public final class Problem339NestedListWeightSum {
     // queue

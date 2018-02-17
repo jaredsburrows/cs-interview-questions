@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
- * https://leetcode.com/problems/valid-parentheses/description/
+ * https://leetcode.com/problems/valid-parentheses
  */
 public final class Problem20ValidParentheses {
     // Time - O(N), Space - O(N)

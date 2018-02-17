@@ -8,7 +8,7 @@ import java.util.Queue;
 import leetcode.api.ListNode;
 
 /**
- * https://leetcode.com/problems/merge-k-sorted-lists/description/
+ * https://leetcode.com/problems/merge-k-sorted-lists
  */
 @SuppressWarnings("ClassCanBeStatic")
 public final class Problem23MergeKLists {

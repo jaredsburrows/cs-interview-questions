@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * https://leetcode.com/problems/subsets/description/
+ * https://leetcode.com/problems/subsets
  */
 public final class Problem78Subsets {
     // recursion

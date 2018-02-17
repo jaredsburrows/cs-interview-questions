@@ -3,7 +3,7 @@ package leetcode;
 import leetcode.api.TreeNode;
 
 /**
- * https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
+ * https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree
  * https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/143/appendix-height-balanced-bst/1015/
  */
 public final class Problem108ConvertSortedArrayToBinarySearchTree {

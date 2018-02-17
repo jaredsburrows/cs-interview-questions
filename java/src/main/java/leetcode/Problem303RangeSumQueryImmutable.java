@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/range-sum-query-immutable/description/
+ * https://leetcode.com/problems/range-sum-query-immutable
  */
 @SuppressWarnings("ClassCanBeStatic")
 public final class Problem303RangeSumQueryImmutable {
