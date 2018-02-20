@@ -26,4 +26,24 @@ public final class Problem236LowestCommonAncestorOfABinaryTree {
 
         return left != null ? left : right;
     }
+
+    // values instead of nodes
+    public TreeNode lowestCommonAncestor2(TreeNode root, int v1, int v2) {
+        if (root == null) {
+            return null;
+        }
+
+        if (root.val == v1 || root.val == v2) {
+            return root;
+        }
+
+        final TreeNode left = lowestCommonAncestor2(root.left, v1, v2);
+        final TreeNode right = lowestCommonAncestor2(root.right, v1, v2);
+
+        if (left != null && right != null) {
+            return root;
+        }
+
+        return left != null ? left : right;
+    }
 }

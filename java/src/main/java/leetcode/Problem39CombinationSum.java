@@ -21,9 +21,12 @@ public final class Problem39CombinationSum {
         return combinations;
     }
 
-    private void combinationSum(List<List<Integer>> combinations, List<Integer> current, int[] candidates, int target, int start) {
+    private static void combinationSum(List<List<Integer>> combinations, List<Integer> current, int[] candidates, int target, int start) {
         if (target < 0) {
-        } else if (target == 0) {
+            return;
+        }
+
+        if (target == 0) {
             combinations.add(new ArrayList<>(current));
         } else {
             for (int i = start; i < candidates.length; i++) {

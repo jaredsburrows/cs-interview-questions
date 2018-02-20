@@ -1,5 +1,6 @@
 package leetcode;
 
+import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -13,7 +14,7 @@ public final class Problem215KthLargestElementInAnArray {
             return -1;
         }
 
-        final Queue<Integer> queue = new PriorityQueue<>((o1, o2) -> o2 - o1);
+        final Queue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
         for (int num : nums) {
             queue.add(num);
         }

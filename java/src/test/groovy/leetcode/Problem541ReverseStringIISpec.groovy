@@ -13,7 +13,7 @@ final class Problem541ReverseStringIISpec extends Specification {
 
         where:
         a         | b || c
-        null      | 0 || null
+        null      | 0 || ""
         "abcdefg" | 2 || "bacdfeg"
         "abcdef"  | 2 || "bacdfe"
         "abcdef"  | 3 || "cbadef"

@@ -7,13 +7,13 @@ import java.util.List;
 import leetcode.api.TreeNode;
 
 /**
- * https://leetcode.com/problems/average-of-levels-in-binary-tree
+ * https://leetcode.com/problems/find-largest-value-in-each-tree-row
  */
-public final class Problem637AverageOfLevelsInBinaryTree {
-    public List<Double> averageOfLevels(TreeNode root) {
-        final List<Double> averages = new ArrayList<>();
+public final class Problem515FindLargestValueInEachTreeRow {
+    public List<Integer> largestValues(TreeNode root) {
+        final List<Integer> largest = new ArrayList<>();
         if (root == null) {
-            return averages;
+            return largest;
         }
 
         final Deque<TreeNode> queue = new ArrayDeque<>();
@@ -21,12 +21,11 @@ public final class Problem637AverageOfLevelsInBinaryTree {
 
         while (!queue.isEmpty()) {
             int size = queue.size();
-            final int currentLevel = size;
-            double currentTotal = 0.0d;
+            int max = Integer.MIN_VALUE;
 
             while (size > 0) {
                 final TreeNode node = queue.poll();
-                currentTotal += node.val;
+                max = Math.max(max, node.val);
 
                 if (node.left != null) {
                     queue.offer(node.left);
@@ -39,10 +38,9 @@ public final class Problem637AverageOfLevelsInBinaryTree {
                 size--;
             }
 
-            final double currentAverage = currentTotal / currentLevel;
-            averages.add(currentAverage);
+            largest.add(max);
         }
 
-        return averages;
+        return largest;
     }
 }

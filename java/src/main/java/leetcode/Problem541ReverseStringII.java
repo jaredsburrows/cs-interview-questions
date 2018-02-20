@@ -7,7 +7,7 @@ public final class Problem541ReverseStringII {
     // Time - O(N), Space - O(N)
     public String reverseStr(String s, int k) {
         if (s == null) {
-            return null;
+            return "";
         }
 
         final char[] array = s.toCharArray();
@@ -17,11 +17,15 @@ public final class Problem541ReverseStringII {
         }
 
         for (int i = 0; i < length; i += 2 * k) {
-            final char temporary = array[i];
-            array[i] = array[i + k - 1];
-            array[i + k - 1] = temporary;
+            swap(array, i, i + k - 1);
         }
 
         return String.valueOf(array);
+    }
+
+    private void swap(char[] array, int left, int right) {
+        final char temp = array[left];
+        array[left] = array[right];
+        array[right] = temp;
     }
 }

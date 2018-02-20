@@ -1,4 +1,4 @@
-package leetcode;
+package questions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ public final class AG10CharWindow {
     // alphabet - a b c d
     public String getFrequent(String input) {
         if (input == null || input.isEmpty()) {
-            return null;
+            return "";
         }
 
         final Map<Integer, Integer> map = new HashMap<>();

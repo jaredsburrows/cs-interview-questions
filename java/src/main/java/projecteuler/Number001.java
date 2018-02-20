@@ -25,6 +25,8 @@ public final class Number001 {
     }
 
     public static int getMultiplesOf3And52() {
-        return (int) (getSumTerms(3, 999) + getSumTerms(5, 995) - getSumTerms(15, 990));
+        return (int) (getSumTerms(3, 999)
+            + getSumTerms(5, 995)
+            - getSumTerms(15, 990));
     }
 }

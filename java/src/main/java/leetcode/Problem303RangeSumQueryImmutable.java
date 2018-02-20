@@ -5,7 +5,7 @@ package leetcode;
  */
 @SuppressWarnings("ClassCanBeStatic")
 public final class Problem303RangeSumQueryImmutable {
-    public class NumArray {
+    public final class NumArray {
         private final int[] nums;
 
         public NumArray(int[] nums) {

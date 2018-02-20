@@ -4,7 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/min-stack
  */
 public final class Problem155MinStack {
-    public class MinStack {
+    public final class MinStack {
         private Node top;
 
         public void push(int x) {

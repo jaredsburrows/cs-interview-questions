@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
  * https://leetcode.com/problems/top-k-frequent-words
@@ -21,12 +22,11 @@ public final class Problem692TopKFrequentWords {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
-        final PriorityQueue<Map.Entry<String, Integer>> queue = new PriorityQueue<>(
+        final Queue<Map.Entry<String, Integer>> queue = new PriorityQueue<>(
             (left, right) -> {
-                final int value = right.getValue() - left.getValue();
+                final int value = Integer.compare(right.getValue(), left.getValue());
                 return value == 0 ? left.getKey().compareTo(right.getKey()) : value;
             });
-
         queue.addAll(map.entrySet());
 
         int count = 0;

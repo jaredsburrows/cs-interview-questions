@@ -6,7 +6,7 @@ package leetcode;
 public final class Problem557ReverseWordsInAStringIII {
     public String reverseWords(String s) {
         if (s == null) {
-            return null;
+            return "";
         }
 
         final String[] sentence = s.split("\\s+");
@@ -15,7 +15,7 @@ public final class Problem557ReverseWordsInAStringIII {
             final char[] array = string.toCharArray();
 
             for (int i = 0, j = array.length - 1; i < j; i++, j--) {
-                flip(array, i, j);
+                swap(array, i, j);
             }
 
             stringBuilder.append(new String(array));
@@ -25,7 +25,7 @@ public final class Problem557ReverseWordsInAStringIII {
         return stringBuilder.toString().trim();
     }
 
-    private void flip(char[] array, int left, int right) {
+    private void swap(char[] array, int left, int right) {
         final char temp = array[left];
         array[left] = array[right];
         array[right] = temp;

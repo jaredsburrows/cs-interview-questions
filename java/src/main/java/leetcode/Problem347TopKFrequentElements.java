@@ -23,7 +23,7 @@ public final class Problem347TopKFrequentElements {
         }
 
         final Queue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<>(
-            (left, right) -> right.getValue() - left.getValue());
+            (left, right) -> Integer.compare(right.getValue(), left.getValue()));
         queue.addAll(map.entrySet());
 
         while (numbers.size() < k) {

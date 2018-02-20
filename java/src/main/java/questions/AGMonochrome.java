@@ -1,4 +1,4 @@
-package leetcode;
+package questions;
 
 public final class AGMonochrome {
     // summation black/white monochrome -> summation

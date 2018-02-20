@@ -45,4 +45,33 @@ public final class Problem102BinaryTreeLevelOrderTraversal {
 
         return data;
     }
+
+    // print
+    public void levelOrder2(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        final Deque<TreeNode> queue = new ArrayDeque<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            int levelNodes = queue.size();
+
+            while (levelNodes > 0) {
+                final TreeNode node = queue.poll();
+                System.out.print(node.val + " ");
+
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+
+                levelNodes--;
+            }
+        }
+    }
 }

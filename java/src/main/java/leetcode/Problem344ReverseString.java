@@ -15,14 +15,18 @@ public final class Problem344ReverseString {
         int j = array.length - 1;
 
         while (i < j) {
-            final char temporary = array[i];
-            array[i] = array[j];
-            array[j] = temporary;
+            swap(array, i, j);
 
             i++;
             j--;
         }
 
         return String.valueOf(array);
+    }
+
+    private void swap(char[] array, int left, int right) {
+        final char temp = array[left];
+        array[left] = array[right];
+        array[right] = temp;
     }
 }
