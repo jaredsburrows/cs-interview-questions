@@ -1,5 +1,6 @@
 package crackingthecode.part1datastructures
 
+import crackingthecode.Chapter3StacksAndQueues
 import test.BaseSpec
 
 final class Chapter3StacksAndQueuesSpec extends BaseSpec {

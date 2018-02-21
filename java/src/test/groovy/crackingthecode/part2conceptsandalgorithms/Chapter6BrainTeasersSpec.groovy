@@ -1,5 +1,6 @@
 package crackingthecode.part2conceptsandalgorithms
 
+import crackingthecode.Chapter6BrainTeasers
 import test.BaseSpec
 
 final class Chapter6BrainTeasersSpec extends BaseSpec {

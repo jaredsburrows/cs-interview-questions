@@ -1,5 +1,6 @@
 package crackingthecode.part4additionalreviewproblems
 
+import crackingthecode.Chapter20Hard
 import spock.lang.Unroll
 import test.BaseSpec
 

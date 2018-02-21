@@ -1,5 +1,6 @@
 package crackingthecode.part2conceptsandalgorithms
 
+import crackingthecode.Chapter5BitManipulation
 import spock.lang.Unroll
 import test.BaseSpec
 

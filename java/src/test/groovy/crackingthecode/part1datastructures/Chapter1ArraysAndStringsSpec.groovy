@@ -1,5 +1,6 @@
 package crackingthecode.part1datastructures
 
+import crackingthecode.Chapter1ArraysAndStrings
 import spock.lang.Shared
 import spock.lang.Unroll
 import test.BaseSpec

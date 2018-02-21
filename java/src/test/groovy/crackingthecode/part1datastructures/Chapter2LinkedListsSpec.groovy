@@ -1,6 +1,7 @@
 package crackingthecode.part1datastructures
 
 import api.Node
+import crackingthecode.Chapter2LinkedLists
 import test.BaseSpec
 
 final class Chapter2LinkedListsSpec extends BaseSpec {

@@ -2,6 +2,7 @@ package crackingthecode.part1datastructures
 
 import api.GraphNode
 import api.TreeNode
+import crackingthecode.Chapter4TreesAndGraphs
 import spock.lang.Shared
 import spock.lang.Unroll
 import test.BaseSpec
