@@ -1,12 +1,11 @@
 package leetcode.api;
 
 public final class Interval {
-    public int start;
-    public int end;
+    public final int start;
+    public final int end;
 
     public Interval() {
-        start = 0;
-        end = 0;
+        this(0, 0);
     }
 
     public Interval(int s, int e) {

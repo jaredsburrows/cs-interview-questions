@@ -46,8 +46,8 @@ final class Chapter20HardSpec extends BaseSpec {
 
         where:
         a                              || b
-        null                           || null
-        [0]                            || null
+        null                           || []
+        [0]                            || []
         [1, 5, 2, 6, 4, 7, 3, 9, 3, 5] || [5, 5, 6, 7, 9]
     }
 
@@ -57,15 +57,15 @@ final class Chapter20HardSpec extends BaseSpec {
 
         where:
         a                        | b          | c          || d
-        null                     | null       | null       || null
-        null                     | "DAMP"     | null       || null
-        null                     | null       | "DAMP"     || null
-        null                     | "DAMP"     | "DAMP"     || null
-        ["DAMP": "", "LIKE": ""] | null       | null       || null
-        ["DAMP": "", "LIKE": ""] | "DAMP"     | null       || null
-        ["DAMP": "", "LIKE": ""] | null       | "DAMP"     || null
-        ["DAMP": "", "LIKE": ""] | "DAMP"     | "not here" || null
-        ["DAMP": "", "LIKE": ""] | "not here" | "DAMP"     || null
+        null                     | null       | null       || []
+        null                     | "DAMP"     | null       || []
+        null                     | null       | "DAMP"     || []
+        null                     | "DAMP"     | "DAMP"     || []
+        ["DAMP": "", "LIKE": ""] | null       | null       || []
+        ["DAMP": "", "LIKE": ""] | "DAMP"     | null       || []
+        ["DAMP": "", "LIKE": ""] | null       | "DAMP"     || []
+        ["DAMP": "", "LIKE": ""] | "DAMP"     | "not here" || []
+        ["DAMP": "", "LIKE": ""] | "not here" | "DAMP"     || []
         //        ["DAMP": "", "LIKE": ""] | "DAMP"     | "LIKE"     | ["DAMP", "LAMP", "LIMP", "LIME", "LIKE"]
     }
 }

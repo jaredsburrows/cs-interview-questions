@@ -4,7 +4,6 @@ import leetcode.api.TreeNode;
 
 /**
  * https://leetcode.com/problems/balanced-binary-tree
- * https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/143/appendix-height-balanced-bst/1027/
  */
 public final class Problem110BalancedBinaryTree {
     public boolean isBalanced(TreeNode root) {

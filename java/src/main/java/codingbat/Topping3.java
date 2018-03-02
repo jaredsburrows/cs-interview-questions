@@ -1,5 +1,6 @@
 package codingbat;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Map;
 public final class Topping3 {
     public Map<String, String> topping3(Map<String, String> map) {
         if (map == null) {
-            return null;
+            return new HashMap<>();
         }
 
         if (map.containsKey("potato")) {

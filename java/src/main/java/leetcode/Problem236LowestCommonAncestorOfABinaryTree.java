@@ -4,8 +4,6 @@ import leetcode.api.TreeNode;
 
 /**
  * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree
- * https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/142/conclusion/1012/
- * https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/932/
  */
 public final class Problem236LowestCommonAncestorOfABinaryTree {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

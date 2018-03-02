@@ -99,7 +99,7 @@ public final class Chapter4TreesAndGraphs {
     // simply traversing from top to bottom, do not over think this
     public <T> List<LinkedList<TreeNode<T>>> getLinkedListLevels(TreeNode<T> node) {
         if (node == null) {
-            return null;
+            return new ArrayList<>();
         }
 
         final List<LinkedList<TreeNode<T>>> listLinkedList = new ArrayList<>();

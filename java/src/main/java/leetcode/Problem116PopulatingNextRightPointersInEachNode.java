@@ -4,7 +4,6 @@ import leetcode.api.TreeLinkNode;
 
 /**
  * https://leetcode.com/problems/populating-next-right-pointers-in-each-node
- * https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/994/
  */
 public final class Problem116PopulatingNextRightPointersInEachNode {
     public void connect(TreeLinkNode root) {

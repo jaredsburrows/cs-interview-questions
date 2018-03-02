@@ -1,5 +1,6 @@
 package codingbat;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Map;
 public final class MapBully {
     public Map<String, String> mapBully(Map<String, String> map) {
         if (map == null) {
-            return null;
+            return new HashMap<>();
         }
 
         if (map.containsKey("a")) {

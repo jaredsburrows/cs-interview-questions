@@ -2,7 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/valid-perfect-square
- * https://leetcode.com/explore/learn/card/binary-search/137/conclusion/978/
  */
 public final class Problem367ValidPerfectSquare {
     public boolean isPerfectSquare(int num) {

@@ -2,7 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/first-bad-version
- * https://leetcode.com/explore/learn/card/binary-search/126/template-ii/947/
  */
 public final class Problem278FirstBadVersion {
     public int firstBadVersion(int n) {

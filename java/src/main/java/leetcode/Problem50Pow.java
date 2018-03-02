@@ -2,7 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/powx-n
- * https://leetcode.com/explore/learn/card/binary-search/137/conclusion/982/
  */
 public final class Problem50Pow {
     // recursion

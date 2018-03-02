@@ -166,7 +166,7 @@ public final class Chapter20Hard {
     // Time - O(N *LOG(N)), Space - O(1) -> Time - O(1), Space - O(1), since we already know N and sublist each time
     public List<Integer> getTopMillion(List<Integer> billion) {
         if (billion == null || billion.size() != 10) { // would be 1,000,000
-            return null;
+            return new ArrayList<>();
         }
 
         final List<Integer> integerList = new ArrayList<>(billion);
@@ -207,17 +207,17 @@ public final class Chapter20Hard {
     public List<String> getTransformedList(Map<String, String> dictionary, String from,
         final String to) {
         if (dictionary == null || from == null || to == null) {
-            return null;
+            return new ArrayList<>();
         }
 
         if (!dictionary.containsKey(from) || !dictionary.containsKey(to)) {
-            return null;
+            return new ArrayList<>();
         }
 
         final List<String> stringList = new ArrayList<>();
         stringList.add(from);
 
-        char[] temp = from.toCharArray();
+        final char[] temp = from.toCharArray();
         int count = 0;
 
         while (count <= temp.length) {

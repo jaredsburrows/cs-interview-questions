@@ -11,17 +11,16 @@ public final class Problem344ReverseString {
         }
 
         final char[] array = s.toCharArray();
-        int i = 0;
-        int j = array.length - 1;
 
-        while (i < j) {
-            swap(array, i, j);
-
-            i++;
-            j--;
-        }
+        reverse(array);
 
         return String.valueOf(array);
+    }
+
+    private void reverse(char[] str) {
+        for (int i = 0; i < str.length / 2; i ++) {
+            swap(str, i, str.length - i - 1);
+        }
     }
 
     private void swap(char[] array, int left, int right) {

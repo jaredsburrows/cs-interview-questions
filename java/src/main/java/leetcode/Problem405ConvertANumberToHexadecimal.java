@@ -1,16 +1,15 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/base-7
+ * https://leetcode.com/problems/convert-a-number-to-hexadecimal
  */
-public final class Problem504Base7 {
-    public String convertToBase7(int num) {
+public final class Problem405ConvertANumberToHexadecimal {
+    public String toHex(int num) {
         if (num == 0) {
             return "0";
         }
 
-        final String result = fromDecimal(Math.abs(num), 7);
-        return num < 0 ? "-" + result : result;
+        return fromDecimal(num, 16);
     }
 
     private String fromDecimal(long num, int base) {

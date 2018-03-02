@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem283MoveZeroes {
     public void moveZeroes(int[] nums) {
-        if (nums == null) {
+        if (nums == null || nums.length == 0) {
             return;
         }
 

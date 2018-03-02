@@ -18,9 +18,7 @@ public final class Trie<T> {
 
         TrieNode<T> current = root;
 
-        final int length = word.length();
-
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < word.length(); i++) {
             final char character = word.charAt(i);
             final int index = character - 'a';
 
@@ -38,12 +36,16 @@ public final class Trie<T> {
     }
 
     public boolean search(String word) {
+        if (word == null || word.isEmpty()) {
+            return false;
+        }
+
         final TrieNode<T> current = get(word);
         return current != null && current.isEnd;
     }
 
     public boolean startsWith(String prefix) {
-        return get(prefix) != null;
+        return prefix != null && !prefix.isEmpty() && get(prefix) != null;
     }
 
     @SuppressWarnings("ReferenceEquality") // we want to compare reference
@@ -54,9 +56,7 @@ public final class Trie<T> {
 
         TrieNode<T> current = root;
 
-        final int length = word.length();
-
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < word.length(); i++) {
             final char character = word.charAt(i);
             final int index = character - 'a';
 

@@ -2,7 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/moving-average-from-data-stream
- * https://leetcode.com/explore/interview/card/google/65/design-4/336/
  */
 public final class Problem346MovingAverageFromDataStream {
     public static class MovingAverage {

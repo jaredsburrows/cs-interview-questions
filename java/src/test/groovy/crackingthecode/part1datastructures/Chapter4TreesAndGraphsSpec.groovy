@@ -118,7 +118,7 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         treeNode4.right.right = treeNode7
 
         expect:
-        sut.getLinkedListLevels(null) == null
+        sut.getLinkedListLevels(null) == []
         sut.getLinkedListLevels(treeNode4) ==
             [[treeNode4],
              [treeNode2, treeNode5],

@@ -247,7 +247,7 @@ public final class Chapter1ArraysAndStrings {
     // Time - O(NM), Space - O(OM)
     public int[][] markRows(int[][] matrix) {
         if (matrix == null) {
-            return null;
+            return new int[0][0];
         }
 
         final int rows = matrix.length;

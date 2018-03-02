@@ -13,7 +13,7 @@ public final class Problem17LetterCombinationsOfAPhoneNumber {
             return combos;
         }
 
-        final String[] keys = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+        final String[] keys = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
         letterCombinations(keys, combos, digits, "", 0);
 

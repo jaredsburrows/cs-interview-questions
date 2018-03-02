@@ -2,7 +2,6 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/guess-number-higher-or-lower
- * https://leetcode.com/explore/learn/card/binary-search/125/template-i/951/
  */
 public final class Problem374GuessNumberHigherOrLower {
     public int guessNumber(int n) {

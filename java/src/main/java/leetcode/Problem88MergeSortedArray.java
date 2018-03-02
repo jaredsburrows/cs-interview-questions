@@ -87,7 +87,7 @@ public final class Problem88MergeSortedArray {
     }
 
     // Time - O(N), Space - O(N)
-    private List<Integer> merge(List<Integer> left, List<Integer> right) {
+    public List<Integer> merge(List<Integer> left, List<Integer> right) {
         if (left == null && right == null) {
             return new ArrayList<>();
         }
