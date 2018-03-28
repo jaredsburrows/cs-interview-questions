@@ -17,6 +17,6 @@ ext.deps = [
     "spekJunitPlatformEngine": "org.jetbrains.spek:spek-junit-platform-engine:$spekVersion",
     "junitPlatformRunner"    : "org.junit.platform:junit-platform-runner:1.1.0",
     "spockCore"              : "org.spockframework:spock-core:1.1-groovy-2.4",
-    "equalsverifier"         : "nl.jqno.equalsverifier:equalsverifier:2.4.3",
+    "equalsverifier"         : "nl.jqno.equalsverifier:equalsverifier:2.4.5",
     "truth"                  : "com.google.truth:truth:0.39"
 ]
