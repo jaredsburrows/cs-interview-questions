@@ -6,15 +6,15 @@ ext {
 
 ext.deps = [
     // implementation
-    "kotlinStdlib"           : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
-    "kotlinReflect"          : "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion",
+    "kotlinStdlib"           : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+    "kotlinReflect"          : "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}",
 
     // compileOnly
     "annotations"            : "com.google.code.findbugs:annotations:3.0.1",
 
     // testImplementation
-    "spekApi"                : "org.jetbrains.spek:spek-api:$spekVersion",
-    "spekJunitPlatformEngine": "org.jetbrains.spek:spek-junit-platform-engine:$spekVersion",
+    "spekApi"                : "org.jetbrains.spek:spek-api:${spekVersion}",
+    "spekJunitPlatformEngine": "org.jetbrains.spek:spek-junit-platform-engine:${spekVersion}",
     "junitPlatformRunner"    : "org.junit.platform:junit-platform-runner:1.1.0",
     "spockCore"              : "org.spockframework:spock-core:1.1-groovy-2.4",
     "equalsverifier"         : "nl.jqno.equalsverifier:equalsverifier:2.4.5",
