@@ -1,6 +1,5 @@
 plugins {
     id "java-library"
-    id "application"
     id "groovy"
     id "net.ltgt.errorprone" version "0.0.13"
 }
