@@ -62,7 +62,8 @@ model {
     binaries {
         all {
             if (toolChain in Gcc || toolChain in Clang) {
-                cppCompiler.args "-std=c++11", "-Wall", "-Wextra", "-Werror", "-O3", "-pedantic"
+//                cppCompiler.args "-std=c++11", "-Wall", "-Wextra", "-Werror", "-O3", "-pedantic"
+                cppCompiler.args "-std=c++11", "-Wall", "-Wextra", "-O3", "-pedantic"
             }
 
             if (toolChain in VisualCpp) {

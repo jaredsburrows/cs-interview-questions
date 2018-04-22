@@ -163,9 +163,9 @@ public final class Chapter7ObjectOrientedDesign {
         public String userName;
         public User[] friendsList;
 
-        public abstract boolean addUser(String username);
+        public abstract boolean addUser(String userName);
 
-        public abstract boolean removeUser(String username);
+        public abstract boolean removeUser(String userName);
     }
 
     public abstract static class AddRequest {
