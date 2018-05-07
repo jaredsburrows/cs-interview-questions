@@ -1,5 +1,7 @@
 package api;
 
+import java.util.Objects;
+
 // Current implementation is for strings, modify to make it generic
 public final class Trie<T> {
     private final TrieNode<T> root = new TrieNode<>();
@@ -48,7 +50,6 @@ public final class Trie<T> {
         return prefix != null && !prefix.isEmpty() && get(prefix) != null;
     }
 
-    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     public TrieNode<T> get(String word) {
         if (word == null || word.isEmpty()) {
             return null;
@@ -68,7 +69,7 @@ public final class Trie<T> {
             }
         }
 
-        return current == root ? null : current;
+        return Objects.equals(current, root) ? null : current;
     }
 
     @Override

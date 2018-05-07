@@ -1,5 +1,6 @@
 package leetcode;
 
+import java.util.Objects;
 import leetcode.api.TreeNode;
 
 /**
@@ -11,7 +12,7 @@ public final class Problem236LowestCommonAncestorOfABinaryTree {
             return null;
         }
 
-        if (root == p || root == q) {
+        if (Objects.equals(root, p) || Objects.equals(root, q)) {
             return root;
         }
 

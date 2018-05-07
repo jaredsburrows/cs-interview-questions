@@ -15,5 +15,7 @@ final class Problem172FactorialTrailingZeroesSpec extends Specification {
         a      || b
         0      || 0
         123000 || 30747
+        3      || 0
+        5      || 1
     }
 }

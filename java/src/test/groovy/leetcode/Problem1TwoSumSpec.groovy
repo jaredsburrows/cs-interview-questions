@@ -1,22 +1,22 @@
 package leetcode
 
+import spock.lang.Specification
 import spock.lang.Unroll
-import test.BaseSpec
 
-final class Problem1TwoSumSpec extends BaseSpec {
-    @Unroll def "twoSum"() {
+final class Problem1TwoSumSpec extends Specification {
+    @Unroll def "twoSum(#nums, #target) = #answer"() {
         given:
         def sut = new Problem1TwoSum()
 
         expect:
-        sut.twoSum(a as int[], b) == c as int[]
+        sut.twoSum(nums as int[], target) == answer as int[]
 
         where:
-        a              | b || c
-        null           | 0 || []
-        []             | 0 || []
-        [1, 1]         | 0 || []
-        [2, 7, 11, 15] | 9 || [0, 1]
-        [3, 2, 4]      | 6 || [1, 2]
+        nums           | target || answer
+        null           | 0      || []
+        []             | 0      || []
+        [1, 1]         | 0      || []
+        [3, 2, 4]      | 6      || [1, 2]
+        [2, 7, 11, 15] | 9      || [0, 1]
     }
 }

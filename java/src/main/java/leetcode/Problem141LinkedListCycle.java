@@ -1,5 +1,6 @@
 package leetcode;
 
+import java.util.Objects;
 import leetcode.api.ListNode;
 
 /**
@@ -18,7 +19,7 @@ public final class Problem141LinkedListCycle {
             slow = slow.next;
             fast = fast.next.next;
 
-            if (slow == fast) {
+            if (Objects.equals(slow, fast)) {
                 return true;
             }
         }

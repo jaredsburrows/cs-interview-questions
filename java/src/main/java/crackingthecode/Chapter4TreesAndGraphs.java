@@ -5,6 +5,7 @@ import api.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Queue;
 
 @SuppressWarnings("JdkObsolete")
@@ -153,16 +154,15 @@ public final class Chapter4TreesAndGraphs {
      * binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not necessarily
      * a binary search tree.
      */
-    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // Time - O(LOG(N)) in Balanced binary tree, O(N) in skewed tree.
     public <T> TreeNode<T> commonAncestor(TreeNode<T> root,
-                                                 TreeNode<T> node1,
-                                                 TreeNode<T> node2) {
+                                          TreeNode<T> node1,
+                                          TreeNode<T> node2) {
         if (root == null) {
             return null;
         }
 
-        if (root == node1 || root == node2) {
+        if (Objects.equals(root, node1) || Objects.equals(root, node2)) {
             return root;
         }
 
@@ -176,26 +176,25 @@ public final class Chapter4TreesAndGraphs {
         return left != null ? left : right;
     }
 
-    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     public <T> TreeNode<T> commonAncestor2(TreeNode<T> root,
-                                                  TreeNode<T> node1,
-                                                  TreeNode<T> node2) {
+                                           TreeNode<T> node1,
+                                           TreeNode<T> node2) {
         if (root == null) {
             return null;
         }
 
-        if (root == node1 || root == node2) {
+        if (Objects.equals(root, node1) || Objects.equals(root, node2)) {
             return root;
         }
 
         final TreeNode<T> left = commonAncestor2(root.left, node1, node2);
         final TreeNode<T> right = commonAncestor2(root.right, node1, node2);
 
-        if (left == node1 && right == node2) {
+        if (Objects.equals(left, node1) && Objects.equals(right, node2)) {
             return root;
         }
 
-        if (left == node2 && right == node2) {
+        if (Objects.equals(left, node2) && Objects.equals(right, node2)) {
             return root;
         }
 
@@ -206,7 +205,6 @@ public final class Chapter4TreesAndGraphs {
      * 4.7 - You have two very large binary trees: T1, with millions of nodes, and T2, with hundreds
      * of nodes. Create an algorithm to decide if T2 is a subtree of T1.
      */
-    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // T1 - millions of nodes
     // T2 - supposed subtree of T1, should be the same or smaller
     public <T> boolean isSubtree(TreeNode<T> t, TreeNode<T> s) {

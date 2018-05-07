@@ -122,7 +122,7 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         sut.getLinkedListLevels(treeNode4) ==
             [[treeNode4],
              [treeNode2, treeNode5],
-             [treeNode1, treeNode3, treeNode6, treeNode7]] as List<LinkedList<TreeNode<Integer>>>
+             [treeNode1, treeNode3, treeNode6, treeNode7]]
     }
 
     @Unroll def "commonAncestor(#a, #b, #c) == '#d'"() {

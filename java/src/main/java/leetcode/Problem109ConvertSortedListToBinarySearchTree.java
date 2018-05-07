@@ -1,11 +1,13 @@
 package leetcode;
 
+import java.util.Objects;
 import leetcode.api.ListNode;
 import leetcode.api.TreeNode;
 
 /**
  * https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree
  */
+@SuppressWarnings("ReferenceEquality")
 public final class Problem109ConvertSortedListToBinarySearchTree {
     public TreeNode sortedListToBST(ListNode head) {
         if (head == null) {
@@ -19,7 +21,7 @@ public final class Problem109ConvertSortedListToBinarySearchTree {
         ListNode slow = head;
         ListNode fast = head;
 
-        if (slow == tail) {
+        if (Objects.equals(slow, tail)) {
             return null;
         }
 

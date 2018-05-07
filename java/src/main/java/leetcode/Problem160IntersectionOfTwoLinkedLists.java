@@ -1,5 +1,6 @@
 package leetcode;
 
+import java.util.Objects;
 import leetcode.api.ListNode;
 
 /**
@@ -14,7 +15,7 @@ public final class Problem160IntersectionOfTwoLinkedLists {
         ListNode runnerA = headA;
         ListNode runnerB = headB;
 
-        while (runnerA != runnerB) {
+        while (!Objects.equals(runnerA, runnerB)) {
             runnerA = runnerA == null ? headB : runnerA.next;
             runnerB = runnerB == null ? headA : runnerB.next;
         }

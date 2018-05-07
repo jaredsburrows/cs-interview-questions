@@ -1,9 +1,10 @@
 package leetcode;
 
+import java.util.Objects;
 import leetcode.api.ListNode;
 
 /**
- * https://leetcode.com/problems/linked-list-cycle
+ * https://leetcode.com/problems/linked-list-cycle-ii
  */
 public final class Problem142LinkedListCycleII {
     public ListNode detectCycle(ListNode head) {
@@ -18,7 +19,7 @@ public final class Problem142LinkedListCycleII {
             slow = slow.next;
             fast = fast.next.next;
 
-            if (slow == fast) {
+            if (Objects.equals(slow, fast)) {
                 break;
             }
         }
@@ -29,7 +30,7 @@ public final class Problem142LinkedListCycleII {
 
         slow = head;
 
-        while (slow != fast) {
+        while (!Objects.equals(slow, fast)) {
             slow = slow.next;
             fast = fast.next;
         }

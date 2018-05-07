@@ -2,6 +2,7 @@ package crackingthecode;
 
 import api.Node;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public final class Chapter2LinkedLists {
@@ -58,7 +59,6 @@ public final class Chapter2LinkedLists {
         }
     }
 
-    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // Time - O(N^2)
     public void removeDuplicates3(Node<Integer> node) {
         if (node == null) {
@@ -80,7 +80,6 @@ public final class Chapter2LinkedLists {
         }
     }
 
-    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     // book
     public void deleteDupsC(Node<Integer> head) {
         if (head == null) {
@@ -92,7 +91,7 @@ public final class Chapter2LinkedLists {
         while (current != null) {
             // Look backwards for dups, and remove any that you see.
             Node<Integer> runner = head;
-            while (runner != current) {
+            while (!Objects.equals(runner, current)) {
                 if (runner.value.equals(current.value)) {
                     Node<Integer> tmp = current.next;
                     previous.next = tmp;
@@ -111,7 +110,7 @@ public final class Chapter2LinkedLists {
              * If runner != current, then we must have hit the ‘break’
              * condition, in which case we found a dup and current has
              * already been incremented.*/
-            if (runner == current) {
+            if (Objects.equals(runner, current)) {
                 previous = current;
                 current = current.next;
             }
@@ -214,7 +213,6 @@ public final class Chapter2LinkedLists {
      */
     // Book has a longer solution but seems very unnecessary
     // Time - O(N), Space - O(1)
-    @SuppressWarnings("ReferenceEquality") // we want to compare reference
     public Node<Integer> getCircular(Node<Integer> head) {
         if (head == null) {
             return null;
@@ -227,7 +225,7 @@ public final class Chapter2LinkedLists {
             first = first.next;
             runner = runner.next.next;
 
-            if (first == runner) {
+            if (Objects.equals(first, runner)) {
                 return first;
             }
         }

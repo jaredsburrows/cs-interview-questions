@@ -13,7 +13,7 @@ public final class Problem268MissingNumber {
         return getSumNaturalNumbers(nums) - arraySum;
     }
 
-    public int getSumNaturalNumbers(int[] numbers) {
+    private int getSumNaturalNumbers(int[] numbers) {
         final int length = numbers.length;
         return (length * (length + 1)) / 2;
     }
