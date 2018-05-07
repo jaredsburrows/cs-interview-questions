@@ -15,7 +15,7 @@ public final class Problem151ReverseWordsInAString {
             return s;
         }
 
-        final String[] sentence = s.split("\\s+");
+        final String[] sentence = s.split("\\s+", -1);
         final StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0, j = sentence.length - 1; i < j; i++, j--) {
             swap(sentence, i, j);

@@ -17,7 +17,7 @@ public final class Main {
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] lineArray = line.split(";");
+            final String[] lineArray = line.split(";", -1);
             if (lineArray.length > 0) {
                 for (String element : lineArray) {
                     int number = -1;

@@ -9,7 +9,7 @@ public final class Problem557ReverseWordsInAStringIII {
             return "";
         }
 
-        final String[] sentence = s.split("\\s+");
+        final String[] sentence = s.split("\\s+", -1);
         final StringBuilder stringBuilder = new StringBuilder(sentence.length);
         for (String string : sentence) {
             final char[] array = string.toCharArray();

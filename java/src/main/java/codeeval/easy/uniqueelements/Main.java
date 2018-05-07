@@ -20,7 +20,7 @@ public final class Main {
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] strings = line.trim().split(",");
+            final String[] strings = line.trim().split(",", -1);
             final Set<String> set = new LinkedHashSet<>();
             Collections.addAll(set, strings);
             final Object[] objects = set.toArray();

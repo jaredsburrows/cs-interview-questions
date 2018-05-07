@@ -18,7 +18,7 @@ public final class Main {
         String line;
         while ((line = buffer.readLine()) != null) {
             final int[] ints = new int[100];
-            final String[] intStrings = line.trim().split(",");
+            final String[] intStrings = line.trim().split(",", -1);
             int occurrence = -1;
             int number = -1;
 

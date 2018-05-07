@@ -7,7 +7,6 @@ import leetcode.api.TreeNode;
 /**
  * https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree
  */
-@SuppressWarnings("ReferenceEquality")
 public final class Problem109ConvertSortedListToBinarySearchTree {
     public TreeNode sortedListToBST(ListNode head) {
         if (head == null) {
@@ -25,7 +24,7 @@ public final class Problem109ConvertSortedListToBinarySearchTree {
             return null;
         }
 
-        while (fast != tail && fast.next != tail) {
+        while (!Objects.equals(fast, tail) && Objects.equals(fast.next, tail)) {
             slow = slow.next;
             fast = fast.next.next;
         }

@@ -17,9 +17,9 @@ public final class Main {
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] words = line.trim().split(";");
-            final String[] sentence = words[0].split(" ");
-            final String[] numbers = words[1].split(" ");
+            final String[] words = line.trim().split(";", -1);
+            final String[] sentence = words[0].split(" ", -1);
+            final String[] numbers = words[1].split(" ", -1);
             final String[] fixedWords = new String[sentence.length];
 
             // However, it was not implemented until 1998 and 2000

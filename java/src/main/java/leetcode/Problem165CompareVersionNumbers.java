@@ -17,8 +17,8 @@ public final class Problem165CompareVersionNumbers {
             return 0;
         }
 
-        final String[] left = version1.split("\\.");
-        final String[] right = version2.split("\\.");
+        final String[] left = version1.split("\\.", -1);
+        final String[] right = version2.split("\\.", -1);
         final int length = Math.max(left.length, right.length);
 
         for (int i = 0; i < length; i++) {

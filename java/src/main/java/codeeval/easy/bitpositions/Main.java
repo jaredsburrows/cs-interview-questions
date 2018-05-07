@@ -17,7 +17,7 @@ public final class Main {
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] strings = line.trim().split(",");
+            final String[] strings = line.trim().split(",", -1);
             final int number = Integer.parseInt(strings[0]);
             final int p1 = Integer.parseInt(strings[1]);
             final int p2 = Integer.parseInt(strings[2]);

@@ -19,7 +19,7 @@ public final class Main {
         while ((line = buffer.readLine()) != null) {
             final String replaceLine =
                 line.trim().replaceAll("\\(", "").replaceAll("\\)", "").replaceAll(",", "");
-            final String[] strings = replaceLine.split(" ");
+            final String[] strings = replaceLine.split(" ", -1);
 
             final int x1 = Integer.parseInt(strings[0]);
             final int y1 = Integer.parseInt(strings[1]);

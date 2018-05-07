@@ -17,7 +17,7 @@ public final class Main {
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] strings = line.trim().split(" ");
+            final String[] strings = line.trim().split(" ", -1);
             final int length = strings.length / 2;
             final char[][] originalMatrix = new char[length][length];
             final char[][] rotatedMatrix = new char[length][length];

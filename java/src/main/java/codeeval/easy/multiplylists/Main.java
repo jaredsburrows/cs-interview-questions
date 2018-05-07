@@ -17,9 +17,9 @@ public final class Main {
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] split = line.trim().split("\\|");
-            final String[] left = split[0].split(" ");
-            final String[] right = split[1].split(" ");
+            final String[] split = line.trim().split("\\|", -1);
+            final String[] left = split[0].split(" ", -1);
+            final String[] right = split[1].split(" ", -1);
 
             for (int i = 0; i < left.length; i++) {
                 System.out.print(Integer.parseInt(left[i]) * Integer.parseInt(right[i + 1]) + " ");

@@ -21,9 +21,9 @@ public final class Main {
         String line;
         while ((line = buffer.readLine()) != null) {
             final List<Integer> integerList = new ArrayList<>();
-            final String[] intStrings = line.trim().split(";");
+            final String[] intStrings = line.trim().split(";", -1);
             for (String string : intStrings) {
-                integerList.add(Integer.valueOf(string.split(",")[1]));
+                integerList.add(Integer.valueOf(string.split(",", -1)[1]));
             }
 
             Collections.sort(integerList);

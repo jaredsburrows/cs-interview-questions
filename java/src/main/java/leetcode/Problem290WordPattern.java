@@ -13,7 +13,7 @@ public final class Problem290WordPattern {
             return false;
         }
 
-        final String[] words = str.split("\\s+");
+        final String[] words = str.split("\\s+", -1);
         if (words.length != pattern.length()) {
             return false;
         }

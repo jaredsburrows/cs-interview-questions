@@ -20,7 +20,7 @@ public final class Main {
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] intStrings = line.trim().split(" ");
+            final String[] intStrings = line.trim().split(" ", -1);
             int count = 0;
             int length = intStrings.length;
             for (int i = 0; i < length; i++) {

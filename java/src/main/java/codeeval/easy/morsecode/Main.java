@@ -48,7 +48,7 @@ public final class Main {
         morseCode.put("----.", '9');
 
         while (scanner.hasNextLine()) {
-            final String[] sequence = scanner.nextLine().split(" ");
+            final String[] sequence = scanner.nextLine().split(" ", -1);
             for (String string : sequence) {
                 final Character c = morseCode.get(string);
                 System.out.print(c != null ? c : " ");

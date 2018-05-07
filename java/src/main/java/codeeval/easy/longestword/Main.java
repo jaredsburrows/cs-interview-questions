@@ -17,7 +17,7 @@ public final class Main {
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] split = line.trim().split(" ");
+            final String[] split = line.trim().split(" ", -1);
             int maxLength = 0;
             String word = "";
 

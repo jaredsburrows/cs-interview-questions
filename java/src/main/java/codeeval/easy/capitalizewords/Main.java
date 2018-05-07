@@ -17,7 +17,7 @@ public final class Main {
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] words = line.trim().split(" ");
+            final String[] words = line.trim().split(" ", -1);
             for (int i = 0; i < words.length; i++) {
                 words[i] = Character.toUpperCase(words[i].charAt(0)) + words[i].substring(1);
                 System.out.print(words[i] + " ");

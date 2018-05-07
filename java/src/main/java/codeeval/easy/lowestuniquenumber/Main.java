@@ -17,7 +17,7 @@ public final class Main {
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] numbers = line.trim().split(" ");
+            final String[] numbers = line.trim().split(" ", -1);
             int[] counts = new int[numbers.length];
 
             for (String string : numbers) {
