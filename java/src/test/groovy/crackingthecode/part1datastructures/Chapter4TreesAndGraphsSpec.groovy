@@ -7,7 +7,6 @@ import spock.lang.Shared
 import spock.lang.Unroll
 import test.BaseSpec
 
-@SuppressWarnings("GroovyPointlessBoolean")
 final class Chapter4TreesAndGraphsSpec extends BaseSpec {
     @Shared def tree = new TreeNode(26)
     @Shared def subTree = new TreeNode(10)

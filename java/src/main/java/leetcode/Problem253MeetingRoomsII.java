@@ -8,6 +8,7 @@ import leetcode.api.Interval;
  * https://leetcode.com/problems/meeting-rooms-ii
  */
 public final class Problem253MeetingRoomsII {
+    // Time - O(N LGN)
     public int minMeetingRooms(Interval[] intervals) {
         if (intervals == null || intervals.length == 0) {
             return 0;

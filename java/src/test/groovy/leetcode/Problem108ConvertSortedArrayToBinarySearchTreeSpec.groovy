@@ -7,7 +7,7 @@ import spock.lang.Unroll
 
 final class Problem108ConvertSortedArrayToBinarySearchTreeSpec extends Specification {
     @Ignore
-    @Unroll def "sortedArrayToBST(#nums) = #answer"() {
+    @Unroll def "sortedArrayToBST(#nums) = #expected"() {
         given:
         def sut = new Problem108ConvertSortedArrayToBinarySearchTree()
         def nums = [-10, -3, 0, 5, 9]

@@ -4,6 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/missing-number
  */
 public final class Problem268MissingNumber {
+    // Time - O(N)
     public int missingNumber(int[] nums) {
         int arraySum = 0;
         for (int num : nums) {

@@ -4,15 +4,15 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem412FizzBuzzSpec extends Specification {
-    @Unroll def "fizzBuzz"() {
+    @Unroll def "fizzBuzz(#n) = #answer"() {
         given:
         def sut = new Problem412FizzBuzz()
 
         expect:
-        sut.fizzBuzz(a) == b
+        sut.fizzBuzz(n) == answer
 
         where:
-        a  || b
+        n  || answer
         0  || []
         15 || ["1",
                "2",

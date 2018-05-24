@@ -3,7 +3,6 @@ package leetcode
 import spock.lang.Specification
 import spock.lang.Unroll
 
-@SuppressWarnings("GroovyPointlessBoolean")
 final class Problem242ValidAnagramSpec extends Specification {
     @Unroll def "isAnagram(#s, #t) = #answer"() {
         given:

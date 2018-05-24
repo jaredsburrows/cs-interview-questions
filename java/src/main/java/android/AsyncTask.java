@@ -8,7 +8,7 @@ import java.util.concurrent.FutureTask;
 
 @SuppressWarnings("unchecked")
 public abstract class AsyncTask<Params, Progress, Result> {
-    private ExecutorService service = Executors.newFixedThreadPool(5);
+    private final ExecutorService service = Executors.newFixedThreadPool(5);
     private final WorkerRunnable<Params, Result> workerRunnable;
     private final FutureTask<Result> futureTask;
 

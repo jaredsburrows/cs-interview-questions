@@ -3,7 +3,6 @@ package leetcode
 import spock.lang.Specification
 import spock.lang.Unroll
 
-@SuppressWarnings("GroovyPointlessBoolean")
 final class Problem9PalindromeNumberSpec extends Specification {
     @Unroll def "isPalindrome(#x) = #answer"() {
         given:

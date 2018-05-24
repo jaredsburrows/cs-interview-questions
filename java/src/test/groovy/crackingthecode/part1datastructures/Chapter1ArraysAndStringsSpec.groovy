@@ -5,7 +5,6 @@ import spock.lang.Shared
 import spock.lang.Unroll
 import test.BaseSpec
 
-@SuppressWarnings("GroovyPointlessBoolean")
 final class Chapter1ArraysAndStringsSpec extends BaseSpec {
     @Shared def sut
 

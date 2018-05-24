@@ -4,15 +4,15 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem541ReverseStringIISpec extends Specification {
-    @Unroll def "reverseStr"() {
+    @Unroll def "reverseStr(#s, #k) = #answer"() {
         given:
         def sut = new Problem541ReverseStringII()
 
         expect:
-        sut.reverseStr(a, b) == c
+        sut.reverseStr(s, k) == answer
 
         where:
-        a         | b || c
+        s         | k || answer
         null      | 0 || ""
         "abcdefg" | 2 || "bacdfeg"
         "abcdef"  | 2 || "bacdfe"

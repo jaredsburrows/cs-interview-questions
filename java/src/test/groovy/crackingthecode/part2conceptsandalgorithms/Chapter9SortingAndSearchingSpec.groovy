@@ -5,7 +5,6 @@ import crackingthecode.Chapter9SortingAndSearching
 import spock.lang.Unroll
 import test.BaseSpec
 
-@SuppressWarnings("GroovyPointlessBoolean")
 final class Chapter9SortingAndSearchingSpec extends BaseSpec {
     def sut = new Chapter9SortingAndSearching()
 

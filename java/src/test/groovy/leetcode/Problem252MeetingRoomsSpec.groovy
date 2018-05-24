@@ -4,7 +4,6 @@ import leetcode.api.Interval
 import spock.lang.Specification
 import spock.lang.Unroll
 
-@SuppressWarnings("GroovyPointlessBoolean")
 final class Problem252MeetingRoomsSpec extends Specification {
     @Unroll def "canAttendMeetings(#intervals) = #answer"() {
         given:

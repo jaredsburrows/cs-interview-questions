@@ -3,17 +3,16 @@ package leetcode
 import spock.lang.Specification
 import spock.lang.Unroll
 
-@SuppressWarnings("GroovyPointlessBoolean")
 final class Problem125ValidPalindromeSpec extends Specification {
-    @Unroll def "isPalindrome"() {
+    @Unroll def "isPalindrome(#a) = #answer"() {
         given:
         def sut = new Problem125ValidPalindrome()
 
         expect:
-        sut.isPalindrome(a) == b
+        sut.isPalindrome(a) == answer
 
         where:
-        a                                || b
+        a                                || answer
         null                             || false
         "A man, a plan, a canal: Panama" || true
         "race a car"                     || false

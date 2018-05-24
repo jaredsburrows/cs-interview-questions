@@ -4,15 +4,15 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem442FindAllDuplicatesInAnArraySpec extends Specification {
-    @Unroll def "findDuplicates"() {
+    @Unroll def "findDuplicates(#nums) = #answer"() {
         given:
         def sut = new Problem442FindAllDuplicatesInAnArray()
 
         expect:
-        sut.findDuplicates(a as int[]) == b
+        sut.findDuplicates(nums as int[]) == answer
 
         where:
-        a                        || b
+        nums                     || answer
         null                     || []
         [4, 3, 2, 7, 8, 2, 3, 1] || [2, 3]
         [39, 31, 8, 14, 14, 38, 5, 15,

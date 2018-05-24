@@ -3,7 +3,6 @@ package leetcode
 import spock.lang.Specification
 import spock.lang.Unroll
 
-@SuppressWarnings("GroovyPointlessBoolean")
 final class Problem55JumpGameSpec extends Specification {
     @Unroll def "canJump(#nums) = #answer"() {
         given:

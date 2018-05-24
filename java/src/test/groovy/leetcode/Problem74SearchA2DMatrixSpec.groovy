@@ -3,17 +3,16 @@ package leetcode
 import spock.lang.Specification
 import spock.lang.Unroll
 
-@SuppressWarnings("GroovyPointlessBoolean")
 final class Problem74SearchA2DMatrixSpec extends Specification {
-    @Unroll def "searchMatrix"() {
+    @Unroll def "searchMatrix(#a, #b) = #answer"() {
         given:
         def sut = new Problem74SearchA2DMatrix()
 
         expect:
-        sut.searchMatrix(a as int[][], b) == c
+        sut.searchMatrix(a as int[][], b) == answer
 
         where:
-        a                      | b  || c
+        a                      | b  || answer
         null                   | 0  || false
         [[]]                   | 0  || false
         [[1, 4, 7, 11, 15],

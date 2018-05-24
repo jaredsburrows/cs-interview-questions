@@ -3,7 +3,6 @@ package leetcode
 import spock.lang.Specification
 import spock.lang.Unroll
 
-@SuppressWarnings("GroovyPointlessBoolean")
 final class Problem10RegularExpressionMatchingSpec extends Specification {
     @Unroll def "isMatch(#s, #p) = #answer"() {
         given:

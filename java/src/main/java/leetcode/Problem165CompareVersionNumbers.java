@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.Objects;
+
 /**
  * https://leetcode.com/problems/compare-version-numbers
  */
@@ -13,7 +15,7 @@ public final class Problem165CompareVersionNumbers {
             return 1;
         }
 
-        if (version1.equals(version2)) {
+        if (Objects.equals(version1, version2)) {
             return 0;
         }
 
