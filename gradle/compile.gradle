@@ -6,7 +6,6 @@ tasks.withType(JavaCompile) {
         compilerArgs << "-Xlint:all"            // Turn on all warnings
         compilerArgs << "-Werror"               // Turn warnings into errors
         encoding = "utf-8"
-        incremental = true
         fork = true
     }
 }
@@ -19,7 +18,6 @@ tasks.withType(GroovyCompile) {
         compilerArgs << "-Xlint:all"            // Turn on all warnings
         compilerArgs << "-Werror"               // Turn warnings into errors
         encoding = "utf-8"
-        incremental = true
         fork = true
     }
 
