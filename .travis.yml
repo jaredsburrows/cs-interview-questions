@@ -4,11 +4,9 @@ jdk: oraclejdk9
 
 install: true
 
-script:
-  - ./gradlew clean check -s --scan
+script: ./gradlew clean check -s --scan
 
-after_success:
-  - .buildscript/publishDocs.sh
+after_success: .buildscript/publishDocs.sh
 
 branches:
   except:
