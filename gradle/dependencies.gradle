@@ -1,7 +1,7 @@
 ext {
     javaVersion = "8"
     kotlinVersion = "1.2.70"
-    spekVersion = "1.2.1" // 1.1.19 issue
+    spekVersion = "1.2.1"
 }
 
 ext.deps = [

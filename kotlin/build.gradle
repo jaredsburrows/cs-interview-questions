@@ -1,8 +1,5 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     id "org.jetbrains.kotlin.jvm" version "1.2.70"
-    id "org.junit.platform.gradle.plugin" version "1.2.0"
     id "konan" version "0.7"
 }
 
@@ -10,18 +7,16 @@ repositories {
     gradlePluginPortal()
 }
 
-tasks.withType(KotlinCompile) {
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
     kotlinOptions {
         jvmTarget = "1.8"
         allWarningsAsErrors = true
     }
 }
 
-junitPlatform {
-    filters {
-        engines {
-            include "spek"
-        }
+test {
+    useJUnitPlatform {
+        includeEngines "spek"
     }
 }
 

@@ -6,10 +6,6 @@ pluginManagement {
 
     resolutionStrategy {
         eachPlugin {
-            if (requested.id.id == "org.junit.platform.gradle.plugin") {
-                useModule "org.junit.platform:junit-platform-gradle-plugin:${requested.version}"
-            }
-
             if (requested.id.id == "konan") {
                 useModule "org.jetbrains.kotlin:kotlin-native-gradle-plugin:${requested.version}"
             }
