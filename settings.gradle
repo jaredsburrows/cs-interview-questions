@@ -1,18 +1,3 @@
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        maven { url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies" }
-    }
-
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id == "konan") {
-                useModule "org.jetbrains.kotlin:kotlin-native-gradle-plugin:${requested.version}"
-            }
-        }
-    }
-}
-
 rootProject.name = "cs-interview-questions"
 
 include "c"

@@ -1,6 +1,5 @@
 plugins {
     id "org.jetbrains.kotlin.jvm" version "1.2.70"
-    id "konan" version "0.7"
 }
 
 repositories {
