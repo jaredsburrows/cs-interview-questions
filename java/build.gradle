@@ -11,6 +11,9 @@ repositories {
 dependencies {
     compileOnly deps.annotations
 
+    errorprone deps.errorprone
+    errorproneJavac deps.errorproneJavac
+
     testImplementation localGroovy()
     testImplementation deps.spockCore, { exclude module: "groovy-all" } // Use localGroovy()
     testImplementation deps.equalsverifier

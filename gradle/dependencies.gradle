@@ -12,6 +12,12 @@ ext.deps = [
     // compileOnly
     "annotations"            : "com.google.code.findbugs:annotations:3.0.1",
 
+    // errorprone
+    "errorprone"             : "com.google.errorprone:error_prone_core:2.3.1",
+
+    // errorproneJavac
+    "errorproneJavac"        : "com.google.errorprone:javac:9+181-r4173-1",
+
     // testImplementation
     "spekApi"                : "org.jetbrains.spek:spek-api:${spekVersion}",
     "spekJunitPlatformEngine": "org.jetbrains.spek:spek-junit-platform-engine:${spekVersion}",
