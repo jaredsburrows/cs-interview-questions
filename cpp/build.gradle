@@ -1,80 +1,66 @@
 plugins {
-    id "cpp"
-    id "google-test-test-suite"
+    id "cpp-library"
+    id "cpp-unit-test"
 }
 
-def hasGTest = file("/usr/local/Cellar/gtest/include").directory
+repositories {
+    maven {
+        url "https://repo.gradle.org/gradle/libs-snapshots-local/"
+    }
+}
 
-model {
-    repositories {
-        libs(PrebuiltLibraries) {
-            // TODO dynamically download, brew install cunit, then use gradlew check
-            if (hasGTest) {
-                gtest {
-                    headers.srcDir "/usr/local/Cellar/gtest/include"
+unitTest {
+    binaries.whenElementFinalized {
+        def metadataFormat = org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.ModuleMetadataParser.FORMAT_VERSION
 
-                    binaries.withType(StaticLibraryBinary) {
-                        staticLibraryFile = file("/usr/local/Cellar/gtest/libgtest.a")
-                    }
-                }
-            }
+        dependencies {
+            println metadataFormat
+            implementation "org.gradle.cpp-samples:googletest_${metadataFormat}:latest.integration"
         }
     }
+}
 
-    components {
-        crackingTheCodeCpp(NativeLibrarySpec) {
-            sources {
-                cpp {
-                    source {
-                        srcDir "src/main/cpp"
-                        include "**/*.cpp"
-                    }
-
-                    exportedHeaders {
-                        srcDir "src/main/cpp/include"
-                    }
-                }
-            }
+tasks.withType(CppCompile) {
+    compilerArgs.addAll toolChain.map { toolChain ->
+        List<String> compilerSpecificArgs = []
+        if (toolChain instanceof Gcc || toolChain instanceof Clang) {
+            compilerSpecificArgs << "-std=c++11"
+            compilerSpecificArgs << "-Wall"
+            compilerSpecificArgs << "-Wextra"
+            compilerSpecificArgs << "-Werror"
+            compilerSpecificArgs << "-O3"
+            compilerSpecificArgs << "-pedantic"
         }
+        if (toolChain in VisualCpp) {
+            compilerSpecificArgs << "/Wall"
+            compilerSpecificArgs << "/Wx"
+            compilerSpecificArgs << "/O1"
+            compilerSpecificArgs << "/O2"
+            compilerSpecificArgs << "/Ox"
+        }
+        return compilerSpecificArgs
     }
+}
 
-    testSuites {
-        if (hasGTest) {
-            crackingTheCodeCppTest(GoogleTestTestSuiteSpec) {
-                sources {
-                    cpp {
-                        source {
-                            srcDir "src/test/cpp"
-                            include "**/*.cpp"
-                        }
-
-                        exportedHeaders {
-                            srcDir "src/test/cpp/include"
-                        }
-                    }
-                }
-
-                testing $.components.crackingTheCodeCpp
-            }
-        }
-    }
-
-    binaries {
-        all {
-            if (toolChain in Gcc || toolChain in Clang) {
-//                cppCompiler.args "-std=c++11", "-Wall", "-Wextra", "-Werror", "-O3", "-pedantic"
-                cppCompiler.args "-std=c++11", "-Wall", "-Wextra", "-O3", "-pedantic"
-            }
-
-            if (toolChain in VisualCpp) {
-                cppCompiler.args "/Wall", "/Wx", "/O1", "/O2", "/Ox"
-            }
+tasks.withType(LinkSharedLibrary) {
+    linkerArgs.addAll toolChain.map { toolChain ->
+        List<String> compilerSpecificArgs = []
+        if (toolChain instanceof Gcc || toolChain instanceof Clang) {
+            compilerSpecificArgs << "-std=c++11"
+            compilerSpecificArgs << "-Wall"
+            compilerSpecificArgs << "-Wextra"
+            compilerSpecificArgs << "-Werror"
+            compilerSpecificArgs << "-O3"
+            compilerSpecificArgs << "-pedantic"
         }
 
-        if (hasGTest) {
-            withType(GoogleTestTestSuiteBinarySpec) {
-                lib library: "gtest", linkage: "static"
-            }
+        if (toolChain in VisualCpp) {
+            compilerSpecificArgs << "/Wall"
+            compilerSpecificArgs << "/Wx"
+            compilerSpecificArgs << "/O1"
+            compilerSpecificArgs << "/O2"
+            compilerSpecificArgs << "/Ox"
         }
+        return compilerSpecificArgs
     }
 }
