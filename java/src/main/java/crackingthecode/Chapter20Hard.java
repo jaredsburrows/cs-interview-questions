@@ -68,7 +68,7 @@ public final class Chapter20Hard {
         // if a = 5, b = 4
 
         while (right != 0) {
-            long carry = ~(left) & right;       // 0 = -6 & 4
+            long carry = ~left & right;         // 0 = -6 & 4
             left = left ^ right;                // 1 = 5 ^ 4
             right = carry << 1;                 // 0 = 0 << 1
         }

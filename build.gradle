@@ -1,13 +1,13 @@
 plugins {
-    id "com.gradle.build-scan" version "1.16"
-    id "com.github.ben-manes.versions" version "0.20.0"
-    id "org.asciidoctor.convert" version "1.5.8.1"
+    id 'com.gradle.build-scan' version '1.16'
+    id 'com.github.ben-manes.versions' version '0.20.0'
+    id 'org.asciidoctor.convert' version '1.5.8.1'
 }
 
-apply from: "gradle/scan.gradle"
-apply from: "gradle/dependencies.gradle"
-apply from: "gradle/asciidoc.gradle"
+apply from: 'gradle/scan.gradle'
+apply from: 'gradle/dependencies.gradle'
+apply from: 'gradle/asciidoc.gradle'
 
 subprojects {
-    apply from: rootProject.file("gradle/compile.gradle")
+    apply from: rootProject.file('gradle/compile.gradle')
 }

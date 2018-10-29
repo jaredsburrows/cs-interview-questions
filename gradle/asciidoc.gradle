@@ -1,7 +1,7 @@
 asciidoctor {
     description = project.description
 
-    attributes = ["source-highlighter": "coderay",
-                  "linkcss"           : true,
-                  "title"             : project.name]
+    attributes = ['source-highlighter': 'coderay',
+                  'linkcss'           : true,
+                  'title'             : project.name]
 }

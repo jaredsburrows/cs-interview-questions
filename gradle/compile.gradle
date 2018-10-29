@@ -3,9 +3,9 @@ tasks.withType(JavaCompile) {
     targetCompatibility = rootProject.ext.javaVersion
 
     configure(options) {
-        compilerArgs << "-Xlint:all"            // Turn on all warnings
-        compilerArgs << "-Werror"               // Turn warnings into errors
-        encoding = "utf-8"
+        compilerArgs << '-Xlint:all'            // Turn on all warnings
+        compilerArgs << '-Werror'               // Turn warnings into errors
+        encoding = 'utf-8'
         fork = true
     }
 }
@@ -15,25 +15,25 @@ tasks.withType(GroovyCompile) {
     targetCompatibility = rootProject.ext.javaVersion
 
     configure(options) {
-        compilerArgs << "-Xlint:all"            // Turn on all warnings
-        compilerArgs << "-Werror"               // Turn warnings into errors
-        encoding = "utf-8"
+        compilerArgs << '-Xlint:all'            // Turn on all warnings
+        compilerArgs << '-Werror'               // Turn warnings into errors
+        encoding = 'utf-8'
         fork = true
     }
 
     configure(groovyOptions) {
-        encoding = "utf-8"
+        encoding = 'utf-8'
         fork = true
     }
 }
 
 tasks.withType(Test) {
     testLogging {
-        exceptionFormat "full"
+        exceptionFormat 'full'
         showCauses true
         showExceptions true
         showStackTraces true
-        events = ["failed", "skipped"]
+        events = ['failed', 'skipped']
     }
 
     failFast = true
@@ -42,7 +42,7 @@ tasks.withType(Test) {
 
 tasks.withType(JavaForkOptions) {
     // Prevent forked processes from stealing focus (on MacOS at least)
-    jvmArgs << "-XX:+UseCompressedOops"
-    jvmArgs << "-Djava.awt.headless=true"
-    jvmArgs << "-Dapple.awt.UIElement=true"
+    jvmArgs << '-XX:+UseCompressedOops'
+    jvmArgs << '-Djava.awt.headless=true'
+    jvmArgs << '-Dapple.awt.UIElement=true'
 }

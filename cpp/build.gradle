@@ -1,9 +1,9 @@
 plugins {
-    id "cpp"
-    id "google-test-test-suite"
+    id 'cpp'
+    id 'google-test-test-suite'
 }
 
-def hasGTest = file("/usr/local/Cellar/gtest/include").directory
+def hasGTest = file('/usr/local/Cellar/gtest/include').directory
 
 model {
     repositories {
@@ -11,10 +11,10 @@ model {
             // TODO dynamically download, brew install cunit, then use gradlew check
             if (hasGTest) {
                 gtest {
-                    headers.srcDir "/usr/local/Cellar/gtest/include"
+                    headers.srcDir '/usr/local/Cellar/gtest/include'
 
                     binaries.withType(StaticLibraryBinary) {
-                        staticLibraryFile = file("/usr/local/Cellar/gtest/libgtest.a")
+                        staticLibraryFile = file('/usr/local/Cellar/gtest/libgtest.a')
                     }
                 }
             }
@@ -26,12 +26,12 @@ model {
             sources {
                 cpp {
                     source {
-                        srcDir "src/main/cpp"
-                        include "**/*.cpp"
+                        srcDir 'src/main/cpp'
+                        include '**/*.cpp'
                     }
 
                     exportedHeaders {
-                        srcDir "src/main/cpp/include"
+                        srcDir 'src/main/cpp/include'
                     }
                 }
             }
@@ -44,12 +44,12 @@ model {
                 sources {
                     cpp {
                         source {
-                            srcDir "src/test/cpp"
-                            include "**/*.cpp"
+                            srcDir 'src/test/cpp'
+                            include '**/*.cpp'
                         }
 
                         exportedHeaders {
-                            srcDir "src/test/cpp/include"
+                            srcDir 'src/test/cpp/include'
                         }
                     }
                 }
@@ -62,18 +62,18 @@ model {
     binaries {
         all {
             if (toolChain in Gcc || toolChain in Clang) {
-//                cppCompiler.args "-std=c++11", "-Wall", "-Wextra", "-Werror", "-O3", "-pedantic"
-                cppCompiler.args "-std=c++11", "-Wall", "-Wextra", "-O3", "-pedantic"
+//                cppCompiler.args '-std=c++11', '-Wall', '-Wextra', '-Werror', '-O3', '-pedantic'
+                cppCompiler.args '-std=c++11', '-Wall', '-Wextra', '-O3', '-pedantic'
             }
 
             if (toolChain in VisualCpp) {
-                cppCompiler.args "/Wall", "/Wx", "/O1", "/O2", "/Ox"
+                cppCompiler.args '/Wall', '/Wx', '/O1', '/O2', '/Ox'
             }
         }
 
         if (hasGTest) {
             withType(GoogleTestTestSuiteBinarySpec) {
-                lib library: "gtest", linkage: "static"
+                lib library: 'gtest', linkage: 'static'
             }
         }
     }

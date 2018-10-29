@@ -1,9 +1,9 @@
 plugins {
-    id "c"
-    id "cunit-test-suite"
+    id 'c'
+    id 'cunit-test-suite'
 }
 
-def hasCUnit = file("/usr/local/Cellar/cunit/2.1-3/include").directory
+def hasCUnit = file('/usr/local/Cellar/cunit/2.1-3/include').directory
 
 model {
     repositories {
@@ -11,10 +11,10 @@ model {
             // TODO dynamically download, brew install cunit, then use gradlew check
             if (hasCUnit) {
                 cunit {
-                    headers.srcDir "/usr/local/Cellar/cunit/2.1-3/include"
+                    headers.srcDir '/usr/local/Cellar/cunit/2.1-3/include'
 
                     binaries.withType(StaticLibraryBinary) {
-                        staticLibraryFile = file("/usr/local/Cellar/cunit/2.1-3/lib/libcunit.a")
+                        staticLibraryFile = file('/usr/local/Cellar/cunit/2.1-3/lib/libcunit.a')
                     }
                 }
             }
@@ -26,12 +26,12 @@ model {
             sources {
                 c {
                     source {
-                        srcDir "src/main/c"
-                        include "**/*.c"
+                        srcDir 'src/main/c'
+                        include '**/*.c'
                     }
 
                     exportedHeaders {
-                        srcDir "src/main/c/include"
+                        srcDir 'src/main/c/include'
                     }
                 }
             }
@@ -44,12 +44,12 @@ model {
                 sources {
                     c {
                         source {
-                            srcDir "src/test/c"
-                            include "**/*.c"
+                            srcDir 'src/test/c'
+                            include '**/*.c'
                         }
 
                         exportedHeaders {
-                            srcDir "src/test/c/include"
+                            srcDir 'src/test/c/include'
                         }
                     }
                 }
@@ -62,18 +62,18 @@ model {
     binaries {
         all {
             if (toolChain in Gcc || toolChain in Clang) {
-//                cCompiler.args "-std=c11", "-Wall", "-Wextra", "-Werror", "-O3", "-pedantic"
-                cCompiler.args "-std=c11", "-Wall", "-Wextra", "-O3", "-pedantic"
+//                cCompiler.args '-std=c11', '-Wall', '-Wextra', '-Werror', '-O3', '-pedantic'
+                cCompiler.args '-std=c11', '-Wall', '-Wextra', '-O3', '-pedantic'
             }
 
             if (toolChain in VisualCpp) {
-                cCompiler.args "/Wall", "/Wx", "/O1", "/O2", "/Ox"
+                cCompiler.args '/Wall', '/Wx', '/O1', '/O2', '/Ox'
             }
         }
 
         if (hasCUnit) {
             withType(CUnitTestSuiteBinarySpec) {
-                lib library: "cunit", linkage: "static"
+                lib library: 'cunit', linkage: 'static'
             }
         }
     }

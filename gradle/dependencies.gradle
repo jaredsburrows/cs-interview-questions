@@ -1,28 +1,28 @@
 ext {
     javaVersion = "8"
-    kotlinVersion = "1.2.70"
-    spekVersion = "1.2.1"
 }
 
+ext.versions = [
+    'kotlin': '1.2.71',
+    'spek'  : '1.2.1'
+]
+
 ext.deps = [
-    // implementation
-    "kotlinStdlib"           : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
-    "kotlinReflect"          : "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}",
-
-    // compileOnly
-    "annotations"            : "com.google.code.findbugs:annotations:3.0.1",
-
-    // errorprone
-    "errorprone"             : "com.google.errorprone:error_prone_core:2.3.1",
-
-    // errorproneJavac
-    "errorproneJavac"        : "com.google.errorprone:javac:9+181-r4173-1",
-
-    // testImplementation
-    "spekApi"                : "org.jetbrains.spek:spek-api:${spekVersion}",
-    "spekJunitPlatformEngine": "org.jetbrains.spek:spek-junit-platform-engine:${spekVersion}",
-    "junitPlatformRunner"    : "org.junit.platform:junit-platform-runner:1.3.1",
-    "spockCore"              : "org.spockframework:spock-core:1.1-groovy-2.4",
-    "equalsverifier"         : "nl.jqno.equalsverifier:equalsverifier:2.5.2",
-    "truth"                  : "com.google.truth:truth:0.42"
+    'kotlin'        : [
+        'stdlib' : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin",
+        'reflect': "org.jetbrains.kotlin:kotlin-reflect:$versions.kotlin",
+    ],
+    'findbugs'      : 'com.google.code.findbugs:annotations:3.0.1',
+    'errorprone'    : [
+        'core' : 'com.google.errorprone:error_prone_core:2.3.2',
+        'javac': 'com.google.errorprone:javac:9+181-r4173-1'
+    ],
+    'spek'          : [
+        'api'   : "org.jetbrains.spek:spek-api:$versions.spek",
+        'engine': "org.jetbrains.spek:spek-junit-platform-engine:$versions.spek"
+    ],
+    'runner'        : 'org.junit.platform:junit-platform-runner:1.3.1',
+    'truth'         : 'com.google.truth:truth:0.42',
+    'equalsverifier': 'nl.jqno.equalsverifier:equalsverifier:3.0',
+    'spok'          : 'org.spockframework:spock-core:1.1-groovy-2.4'
 ]
