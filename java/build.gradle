@@ -15,6 +15,6 @@ dependencies {
     errorproneJavac deps.errorprone.javac
 
     testImplementation localGroovy()
-    testImplementation deps.spok, { exclude module: 'groovy-all' } // Use localGroovy()
+    testImplementation deps.spock, { exclude module: 'groovy-all' } // Use localGroovy()
     testImplementation deps.equalsverifier
 }
