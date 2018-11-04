@@ -1,7 +1,7 @@
 plugins {
     id 'com.gradle.build-scan' version '1.16'
     id 'com.github.ben-manes.versions' version '0.20.0'
-    id 'org.asciidoctor.convert' version '1.5.8.1'
+    id 'org.asciidoctor.convert' version '1.5.9.2'
 }
 
 apply from: 'gradle/scan.gradle'
