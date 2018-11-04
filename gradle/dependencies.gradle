@@ -1,10 +1,7 @@
-ext {
-    javaVersion = "8"
-}
-
 ext.versions = [
     'kotlin': '1.2.71',
-    'spek'  : '1.2.1'
+    'spek'  : '1.2.1',
+    'java'  : '1.8'
 ]
 
 ext.deps = [

@@ -1,6 +1,6 @@
 tasks.withType(JavaCompile) {
-    sourceCompatibility = rootProject.ext.javaVersion
-    targetCompatibility = rootProject.ext.javaVersion
+    sourceCompatibility = rootProject.versions.java
+    targetCompatibility = rootProject.versions.java
 
     configure(options) {
         compilerArgs << '-Xlint:all'            // Turn on all warnings
@@ -11,8 +11,8 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(GroovyCompile) {
-    sourceCompatibility = rootProject.ext.javaVersion
-    targetCompatibility = rootProject.ext.javaVersion
+    sourceCompatibility = rootProject.versions.java
+    targetCompatibility = rootProject.versions.java
 
     configure(options) {
         compilerArgs << '-Xlint:all'            // Turn on all warnings
