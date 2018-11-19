@@ -3,6 +3,7 @@ package leetcode;
 /**
  * https://leetcode.com/problems/product-of-array-except-self
  */
+@SuppressWarnings("unused")
 public final class Problem238ProductOfArrayExceptSelf {
     // Time - O(1), Space - (1)
     public int[] productExceptSelf(int[] nums) {

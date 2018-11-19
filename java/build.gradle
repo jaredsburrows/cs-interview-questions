@@ -8,6 +8,9 @@ repositories {
     gradlePluginPortal()
 }
 
+sourceCompatibility = rootProject.versions.java
+targetCompatibility = rootProject.versions.java
+
 dependencies {
     compileOnly deps.findbugs
 
@@ -17,4 +20,21 @@ dependencies {
     testImplementation localGroovy()
     testImplementation deps.spock, { exclude module: 'groovy-all' } // Use localGroovy()
     testImplementation deps.equalsverifier
+}
+
+tasks.withType(JavaCompile) {
+    configure(options) {
+        errorprone {
+            disableWarningsInGeneratedCode = true
+            // errorproneArgs << '-XepAllDisabledChecksAsWarnings'
+            errorproneArgs << '-Xep:Var:OFF'
+            errorproneArgs << '-Xep:MethodCanBeStatic:OFF'
+            errorproneArgs << '-Xep:UngroupedOverloads:OFF'
+            errorproneArgs << '-Xep:Java7ApiChecker:OFF'
+            errorproneArgs << '-Xep:AndroidJdkLibsChecker:OFF'
+            errorproneArgs << '-Xep:InconsistentOverloads:OFF'
+            errorproneArgs << '-Xep:PrivateConstructorForUtilityClass:OFF'
+            errorproneArgs << '-Xep:ReturnMissingNullable:OFF'
+        }
+    }
 }

@@ -49,14 +49,13 @@ public final class Problem23MergeKLists {
             return toReturn;
         }
 
-        final Queue<Node> queue =
-            new PriorityQueue<>((o1, o2) -> {
-                if (o1.hasData() && o2.hasData()) {
-                    return Integer.compare(o1.array[o1.pos], o2.array[o2.pos]);
-                }
+        final Queue<Node> queue = new PriorityQueue<>((o1, o2) -> {
+            if (o1.hasData() && o2.hasData()) {
+                return Integer.compare(o1.array[o1.pos], o2.array[o2.pos]);
+            }
 
-                return o1.hasData() ? o1.array[o1.pos] : o2.array[o2.pos];
-            });
+            return o1.hasData() ? o1.array[o1.pos] : o2.array[o2.pos];
+        });
 
         for (int[] array : arrays) {
             final Node node = new Node(array);

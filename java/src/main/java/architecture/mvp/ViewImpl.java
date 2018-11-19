@@ -1,5 +1,6 @@
 package architecture.mvp;
 
+@SuppressWarnings("unused")
 public class ViewImpl implements Contract.View {
     private Contract.Presenter presenter;
     private String title;

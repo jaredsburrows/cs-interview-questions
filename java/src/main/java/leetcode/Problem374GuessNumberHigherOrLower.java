@@ -3,6 +3,7 @@ package leetcode;
 /**
  * https://leetcode.com/problems/guess-number-higher-or-lower
  */
+@SuppressWarnings("unused")
 public final class Problem374GuessNumberHigherOrLower {
     public int guessNumber(int n) {
         int low = 1;

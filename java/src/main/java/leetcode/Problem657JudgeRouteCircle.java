@@ -14,13 +14,8 @@ public final class Problem657JudgeRouteCircle {
         int x = 0;
         int y = 0;
 
-        for (char anArray : array) {
-            switch (anArray) {
-                default:
-                case 'R':
-                    x++;
-                    break;
-
+        for (char c : array) {
+            switch (c) {
                 case 'L':
                     x--;
                     break;
@@ -31,6 +26,11 @@ public final class Problem657JudgeRouteCircle {
 
                 case 'D':
                     y--;
+                    break;
+
+                case 'R':
+                default:
+                    x++;
                     break;
             }
         }

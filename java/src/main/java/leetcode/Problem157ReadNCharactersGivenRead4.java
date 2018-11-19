@@ -3,6 +3,7 @@ package leetcode;
 /**
  * https://leetcode.com/problems/read-n-characters-given-read4
  */
+@SuppressWarnings("unused")
 public final class Problem157ReadNCharactersGivenRead4 {
     public int read(char[] buf, int n) {
         if (buf == null || buf.length == 0 || n <= 0 || buf.length < n) {

@@ -71,8 +71,7 @@ public final class Chapter8Recursion {
             final List<ArrayList<Integer>> newSetList = new ArrayList<>();
             for (List<Integer> set : finalList) {
                 // new set is being created
-                final ArrayList<Integer> temp = new ArrayList<>();
-                temp.addAll(set);
+                final ArrayList<Integer> temp = new ArrayList<>(set);
                 temp.add(initial.get(size));
                 newSetList.add(temp);
             }

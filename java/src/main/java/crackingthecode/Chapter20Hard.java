@@ -170,7 +170,7 @@ public final class Chapter20Hard {
         }
 
         final List<Integer> integerList = new ArrayList<>(billion);
-        integerList.sort((o1, o2) -> o1 > o2 ? 1 : -1);
+        integerList.sort((left, right) -> left > right ? 1 : -1);
         return integerList.subList(5, 10);
     }
 
