@@ -1,5 +1,7 @@
 package leetcode.api;
 
+import java.util.Objects;
+
 public final class Interval {
     public final int start;
     public final int end;
@@ -20,16 +22,13 @@ public final class Interval {
         }
 
         final Interval interval = (Interval) o;
-
-        if (start != interval.start) return false;
-        return end == interval.end;
+        return start == interval.start
+            && end == interval.end;
     }
 
     @Override
     public int hashCode() {
-        int result = start;
-        result = 31 * result + end;
-        return result;
+        return Objects.hash(start, end);
     }
 
     @Override

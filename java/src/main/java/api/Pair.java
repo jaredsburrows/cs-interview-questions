@@ -1,5 +1,7 @@
 package api;
 
+import java.util.Objects;
+
 public final class Pair<L, R> {
     private final L left;
     private final R right;
@@ -18,29 +20,23 @@ public final class Pair<L, R> {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        final Pair<?, ?> pair = (Pair<?, ?>) object;
-
-        if (left != null ? !left.equals(pair.left) : pair.left != null) {
-            return false;
-        }
-
-        return right != null ? right.equals(pair.right) : pair.right == null;
+        final Pair<?, ?> pair = (Pair<?, ?>) o;
+        return Objects.equals(left, pair.left) &&
+            Objects.equals(right, pair.right);
     }
 
     @Override
     public int hashCode() {
-        int result = left != null ? left.hashCode() : 0;
-        result = 31 * result + (right != null ? right.hashCode() : 0);
-        return result;
+        return Objects.hash(left, right);
     }
 
     @Override

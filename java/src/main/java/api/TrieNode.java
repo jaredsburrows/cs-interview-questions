@@ -2,6 +2,7 @@ package api;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Objects;
 
 public final class TrieNode<T> {
     private static final int ALPHABET_COUNT = 26;
@@ -18,29 +19,24 @@ public final class TrieNode<T> {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        final TrieNode<?> node = (TrieNode<?>) object;
-
-        if (isEnd != node.isEnd) {
-            return false;
-        }
-
-        // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        return Arrays.equals(children, node.children);
+        final TrieNode<?> trieNode = (TrieNode<?>) o;
+        return isEnd == trieNode.isEnd &&
+            Arrays.equals(children, trieNode.children);
     }
 
     @Override
     public int hashCode() {
-        int result = Arrays.hashCode(children);
-        result = 31 * result + (isEnd ? 1 : 0);
+        int result = Objects.hash(isEnd);
+        result = 31 * result + Arrays.hashCode(children);
         return result;
     }
 

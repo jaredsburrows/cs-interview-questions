@@ -7,6 +7,7 @@ import java.util.Map;
  * https://leetcode.com/problems/k-diff-pairs-in-an-array
  */
 public final class Problem532KDiffPairsInAnArray {
+    // Time - O(N), Space - O(N)
     public int findPairs(int[] nums, int k) {
         if (nums == null || nums.length == 0 || k < 0) {
             return 0;

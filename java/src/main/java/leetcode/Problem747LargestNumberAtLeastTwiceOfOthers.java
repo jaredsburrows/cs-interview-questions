@@ -4,6 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/largest-number-at-least-twice-of-others
  */
 public final class Problem747LargestNumberAtLeastTwiceOfOthers {
+    // Time - O(N), Space - O(1)
     public int dominantIndex(int[] nums) {
         if (nums == null || nums.length == 0) {
             return -1;

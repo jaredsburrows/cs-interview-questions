@@ -7,6 +7,7 @@ import java.util.List;
  * https://leetcode.com/problems/combinations
  */
 public final class Problem77Combinations {
+    // Space - O(N)
     public List<List<Integer>> combine(int n, int k) {
         final List<List<Integer>> combinations = new ArrayList<>();
 

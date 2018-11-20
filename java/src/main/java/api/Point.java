@@ -1,5 +1,7 @@
 package api;
 
+import java.util.Objects;
+
 public final class Point {
     private final int x;
     private final int y;
@@ -18,29 +20,23 @@ public final class Point {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        final Point point = (Point) object;
-
-        if (x != point.x) {
-            return false;
-        }
-
-        return y == point.y;
+        final Point point = (Point) o;
+        return x == point.x &&
+            y == point.y;
     }
 
     @Override
     public int hashCode() {
-        int result = x;
-        result = 31 * result + y;
-        return result;
+        return Objects.hash(x, y);
     }
 
     @Override

@@ -4,6 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/implement-strstr
  */
 public final class Problem28ImplementStrStr {
+    // Space - O(1)
     public int strStr(String haystack, String needle) {
         if (haystack == null || needle == null) {
             return -1;

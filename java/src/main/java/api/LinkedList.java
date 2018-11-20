@@ -1,5 +1,7 @@
 package api;
 
+import java.util.Objects;
+
 public final class LinkedList<T> {
     private Node<T> head;
 
@@ -46,23 +48,22 @@ public final class LinkedList<T> {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        final LinkedList<?> linkedList = (LinkedList<?>) object;
-
-        return head != null ? head.equals(linkedList.head) : linkedList.head == null;
+        final LinkedList<?> that = (LinkedList<?>) o;
+        return Objects.equals(head, that.head);
     }
 
     @Override
     public int hashCode() {
-        return head != null ? head.hashCode() : 0;
+        return Objects.hash(head);
     }
 
     @Override

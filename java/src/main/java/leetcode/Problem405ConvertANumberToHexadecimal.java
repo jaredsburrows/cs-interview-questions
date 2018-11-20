@@ -25,6 +25,7 @@ public final class Problem405ConvertANumberToHexadecimal {
         return stringBuilder.toString();
     }
 
+    // Time - O(1), Space - O(1)
     private char getChar(long num) {
         if (num >= 0 && num <= 9) {
             return (char) (num + '0');

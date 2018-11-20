@@ -4,6 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/maximum-subarray
  */
 public final class Problem53MaximumSubarray {
+    // Time - O(N), Space - O(1)
     public int maxSubArray(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;

@@ -1,5 +1,7 @@
 package leetcode.api;
 
+import java.util.Objects;
+
 public final class RandomListNode {
     public int label;
     public RandomListNode next;
@@ -20,18 +22,14 @@ public final class RandomListNode {
         }
 
         final RandomListNode that = (RandomListNode) o;
-
-        if (label != that.label) return false;
-        if (next != null ? !next.equals(that.next) : that.next != null) return false;
-        return random != null ? random.equals(that.random) : that.random == null;
+        return label == that.label &&
+            Objects.equals(next, that.next) &&
+            Objects.equals(random, that.random);
     }
 
     @Override
     public int hashCode() {
-        int result = label;
-        result = 31 * result + (next != null ? next.hashCode() : 0);
-        result = 31 * result + (random != null ? random.hashCode() : 0);
-        return result;
+        return Objects.hash(label, next, random);
     }
 
     @Override

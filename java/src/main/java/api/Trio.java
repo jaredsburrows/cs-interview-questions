@@ -1,5 +1,7 @@
 package api;
 
+import java.util.Objects;
+
 public final class Trio<F, S, T> {
     private final F first;
     private final S second;
@@ -24,34 +26,24 @@ public final class Trio<F, S, T> {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        final Trio<?, ?, ?> trio = (Trio<?, ?, ?>) object;
-
-        if (first != null ? !first.equals(trio.first) : trio.first != null) {
-            return false;
-        }
-
-        if (second != null ? !second.equals(trio.second) : trio.second != null) {
-            return false;
-        }
-
-        return third != null ? third.equals(trio.third) : trio.third == null;
+        final Trio<?, ?, ?> trio = (Trio<?, ?, ?>) o;
+        return Objects.equals(first, trio.first) &&
+            Objects.equals(second, trio.second) &&
+            Objects.equals(third, trio.third);
     }
 
     @Override
     public int hashCode() {
-        int result = first != null ? first.hashCode() : 0;
-        result = 31 * result + (second != null ? second.hashCode() : 0);
-        result = 31 * result + (third != null ? third.hashCode() : 0);
-        return result;
+        return Objects.hash(first, second, third);
     }
 
     @Override

@@ -10,6 +10,7 @@ import leetcode.api.TreeNode;
  * https://leetcode.com/problems/binary-tree-level-order-traversal
  */
 public final class Problem102BinaryTreeLevelOrderTraversal {
+    // Space - O(N)
     public List<List<Integer>> levelOrder(TreeNode root) {
         if (root == null) {
             return new ArrayList<>();
@@ -45,6 +46,7 @@ public final class Problem102BinaryTreeLevelOrderTraversal {
         return data;
     }
 
+    // Space - O(N)
     // print
     public void levelOrder2(TreeNode root) {
         if (root == null) {

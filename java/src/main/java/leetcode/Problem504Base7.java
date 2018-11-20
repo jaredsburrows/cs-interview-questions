@@ -26,6 +26,7 @@ public final class Problem504Base7 {
         return stringBuilder.toString();
     }
 
+    // Time - O(1), Space - O(1)
     private char getChar(long num) {
         if (num >= 0 && num <= 9) {
             return (char) (num + '0');

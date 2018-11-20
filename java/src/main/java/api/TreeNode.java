@@ -1,5 +1,7 @@
 package api;
 
+import java.util.Objects;
+
 public final class TreeNode<T> {
     public T value;
     public TreeNode<T> left;
@@ -13,34 +15,24 @@ public final class TreeNode<T> {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        final TreeNode<?> node = (TreeNode<?>) object;
-
-        if (value != null ? !value.equals(node.value) : node.value != null) {
-            return false;
-        }
-
-        if (left != null ? !left.equals(node.left) : node.left != null) {
-            return false;
-        }
-
-        return right != null ? right.equals(node.right) : node.right == null;
+        final TreeNode<?> treeNode = (TreeNode<?>) o;
+        return Objects.equals(value, treeNode.value) &&
+            Objects.equals(left, treeNode.left) &&
+            Objects.equals(right, treeNode.right);
     }
 
     @Override
     public int hashCode() {
-        int result = value != null ? value.hashCode() : 0;
-        result = 31 * result + (left != null ? left.hashCode() : 0);
-        result = 31 * result + (right != null ? right.hashCode() : 0);
-        return result;
+        return Objects.hash(value, left, right);
     }
 
     @Override

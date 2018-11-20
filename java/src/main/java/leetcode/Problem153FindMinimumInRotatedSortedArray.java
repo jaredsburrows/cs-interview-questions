@@ -4,6 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/find-minimum-in-rotated-sorted-array
  */
 public final class Problem153FindMinimumInRotatedSortedArray {
+    // Time - O(LOG(N)), Space - O(1)
     public int findMin(int[] nums) {
         if (nums == null || nums.length == 0) {
             return -1;

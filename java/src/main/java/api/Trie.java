@@ -73,23 +73,22 @@ public final class Trie<T> {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        final Trie<?> trie = (Trie<?>) object;
-
-        return root != null ? root.equals(trie.root) : trie.root == null;
+        final Trie<?> trie = (Trie<?>) o;
+        return Objects.equals(root, trie.root);
     }
 
     @Override
     public int hashCode() {
-        return root != null ? root.hashCode() : 0;
+        return Objects.hash(root);
     }
 
     @Override

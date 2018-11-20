@@ -74,6 +74,7 @@ public final class Problem23MergeKLists {
         return toReturn;
     }
 
+    // TODO move to api package
     private class Node {
         final int[] array;
         int pos;

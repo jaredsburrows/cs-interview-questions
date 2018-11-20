@@ -4,6 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/max-chunks-to-make-sorted
  */
 public final class Problem769MaxChunksToMakeSorted {
+    // Time - O(N), Space - O(1)
     public int maxChunksToSorted(int[] arr) {
         if (arr == null || arr.length == 0) {
             return 0;

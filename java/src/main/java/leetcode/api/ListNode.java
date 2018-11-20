@@ -1,5 +1,7 @@
 package leetcode.api;
 
+import java.util.Objects;
+
 public final class ListNode {
     public int val;
     public ListNode next;
@@ -19,16 +21,13 @@ public final class ListNode {
         }
 
         final ListNode listNode = (ListNode) o;
-
-        if (val != listNode.val) return false;
-        return next != null ? next.equals(listNode.next) : listNode.next == null;
+        return val == listNode.val &&
+            Objects.equals(next, listNode.next);
     }
 
     @Override
     public int hashCode() {
-        int result = val;
-        result = 31 * result + (next != null ? next.hashCode() : 0);
-        return result;
+        return Objects.hash(val, next);
     }
 
     @Override

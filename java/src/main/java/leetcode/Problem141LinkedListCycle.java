@@ -7,6 +7,7 @@ import leetcode.api.ListNode;
  * https://leetcode.com/problems/linked-list-cycle
  */
 public final class Problem141LinkedListCycle {
+    // Time - O(N), Space - O(1)
     public boolean hasCycle(ListNode head) {
         if (head == null) {
             return false;

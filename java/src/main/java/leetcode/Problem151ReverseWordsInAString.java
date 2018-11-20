@@ -4,6 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/reverse-words-in-a-string
  */
 public final class Problem151ReverseWordsInAString {
+    // Time - O(N), Space - O(N)
     public String reverseWords(String s) {
         if (s == null) {
             return "";
@@ -29,6 +30,7 @@ public final class Problem151ReverseWordsInAString {
         return stringBuilder.toString().trim();
     }
 
+    // Time - O(1), Space - O(1)
     private void swap(String[] array, int left, int right) {
         final String temp = array[left];
         array[left] = array[right];

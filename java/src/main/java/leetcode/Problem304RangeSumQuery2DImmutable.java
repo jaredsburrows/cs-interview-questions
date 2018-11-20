@@ -27,6 +27,7 @@ public final class Problem304RangeSumQuery2DImmutable {
             }
         }
 
+        // Time - O(1), Space - O(1)
         public int sumRegion(int row1, int col1, int row2, int col2) {
             if (array == null || array.length == 0 || array[0].length == 0) {
                 return 0;

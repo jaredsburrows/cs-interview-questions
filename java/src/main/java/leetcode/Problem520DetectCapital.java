@@ -4,10 +4,16 @@ package leetcode;
  * https://leetcode.com/problems/detect-capital
  */
 public final class Problem520DetectCapital {
+    // Time - O(N), Space - O(1)
     public boolean detectCapitalUse(String word) {
-        return word.length() < 2 || isAllCaps(word) || isNotCaps(word) || hasOnlyFirstCap(word);
+        return word != null
+            && (word.length() < 2
+            || isAllCaps(word)
+            || isNotCaps(word)
+            || hasOnlyFirstCap(word));
     }
 
+    // Time - O(N), Space - O(1)
     private boolean isAllCaps(String word) {
         for (int i = 0; i < word.length(); i++) {
             if (!Character.isUpperCase(word.charAt(i))) {
@@ -17,6 +23,7 @@ public final class Problem520DetectCapital {
         return true;
     }
 
+    // Time - O(N), Space - O(1)
     private boolean isNotCaps(String word) {
         for (int i = 0; i < word.length(); i++) {
             if (Character.isUpperCase(word.charAt(i))) {
@@ -26,6 +33,7 @@ public final class Problem520DetectCapital {
         return true;
     }
 
+    // Time - O(N), Space - O(1)
     private boolean hasOnlyFirstCap(String word) {
         final boolean firstCap = Character.isUpperCase(word.charAt(0));
         if (!firstCap) {

@@ -7,6 +7,7 @@ import leetcode.api.ListNode;
  * https://leetcode.com/problems/linked-list-cycle-ii
  */
 public final class Problem142LinkedListCycleII {
+    // Time - O(N), Space - O(1)
     public ListNode detectCycle(ListNode head) {
         if (head == null) {
             return null;

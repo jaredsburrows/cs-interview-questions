@@ -7,6 +7,7 @@ import java.util.Map;
  * https://leetcode.com/problems/first-unique-character-in-a-string
  */
 public final class Problem387FirstUniqueCharacterInAString {
+    // Time - O(N), Space - O(N)
     public int firstUniqChar(String s) {
         final Map<Character, Integer> map = new HashMap<>();
         for (char c : s.toCharArray()) {

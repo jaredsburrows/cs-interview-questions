@@ -4,6 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/find-pivot-index
  */
 public final class Problem724FindPivotIndex {
+    // Time - O(N), Space - O(1)
     public int pivotIndex(int[] nums) {
         if (nums == null || nums.length == 0) {
             return -1;

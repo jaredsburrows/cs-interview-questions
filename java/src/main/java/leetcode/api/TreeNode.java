@@ -1,5 +1,7 @@
 package leetcode.api;
 
+import java.util.Objects;
+
 public final class TreeNode {
     public int val;
     public TreeNode left;
@@ -20,18 +22,14 @@ public final class TreeNode {
         }
 
         final TreeNode treeNode = (TreeNode) o;
-
-        if (val != treeNode.val) return false;
-        if (left != null ? !left.equals(treeNode.left) : treeNode.left != null) return false;
-        return right != null ? right.equals(treeNode.right) : treeNode.right == null;
+        return val == treeNode.val &&
+            Objects.equals(left, treeNode.left) &&
+            Objects.equals(right, treeNode.right);
     }
 
     @Override
     public int hashCode() {
-        int result = val;
-        result = 31 * result + (left != null ? left.hashCode() : 0);
-        result = 31 * result + (right != null ? right.hashCode() : 0);
-        return result;
+        return Objects.hash(val, left, right);
     }
 
     @Override

@@ -23,6 +23,7 @@ public final class Problem9PalindromeNumber {
         return x == reverseNumber || x == reverseNumber / 10;
     }
 
+    // Time - O(N), Space - O(1)
     public boolean isPalindrome2(long number) {
         if (number < 0) {
             return false;

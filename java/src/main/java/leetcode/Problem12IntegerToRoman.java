@@ -23,6 +23,7 @@ public final class Problem12IntegerToRoman {
             + I[num % 10];              // eg 3999 -> 9
     }
 
+    // Time - O(1), Space - O(1)
     // Time limit exceeded
     public String intToRoman2(int num) {
         if (num <= 0) {

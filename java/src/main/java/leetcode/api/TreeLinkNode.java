@@ -1,5 +1,7 @@
 package leetcode.api;
 
+import java.util.Objects;
+
 public final class TreeLinkNode {
     public int val;
     public TreeLinkNode left;
@@ -21,20 +23,15 @@ public final class TreeLinkNode {
         }
 
         final TreeLinkNode that = (TreeLinkNode) o;
-
-        if (val != that.val) return false;
-        if (left != null ? !left.equals(that.left) : that.left != null) return false;
-        if (right != null ? !right.equals(that.right) : that.right != null) return false;
-        return next != null ? next.equals(that.next) : that.next == null;
+        return val == that.val &&
+            Objects.equals(left, that.left) &&
+            Objects.equals(right, that.right) &&
+            Objects.equals(next, that.next);
     }
 
     @Override
     public int hashCode() {
-        int result = val;
-        result = 31 * result + (left != null ? left.hashCode() : 0);
-        result = 31 * result + (right != null ? right.hashCode() : 0);
-        result = 31 * result + (next != null ? next.hashCode() : 0);
-        return result;
+        return Objects.hash(val, left, right, next);
     }
 
     @Override

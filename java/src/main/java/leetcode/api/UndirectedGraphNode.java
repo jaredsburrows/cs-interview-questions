@@ -2,6 +2,7 @@ package leetcode.api;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public final class UndirectedGraphNode {
     public int label;
@@ -23,16 +24,13 @@ public final class UndirectedGraphNode {
         }
 
         final UndirectedGraphNode that = (UndirectedGraphNode) o;
-
-        if (label != that.label) return false;
-        return neighbors != null ? neighbors.equals(that.neighbors) : that.neighbors == null;
+        return label == that.label &&
+            Objects.equals(neighbors, that.neighbors);
     }
 
     @Override
     public int hashCode() {
-        int result = label;
-        result = 31 * result + (neighbors != null ? neighbors.hashCode() : 0);
-        return result;
+        return Objects.hash(label, neighbors);
     }
 
     @Override

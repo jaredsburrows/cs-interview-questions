@@ -46,7 +46,7 @@ public final class Chapter9SortingAndSearching {
      */
     // [anagram, anagram, notanagram, notanagram]?
     // [Aanagram, anagramA, Banagram, anagramB]?
-    // Time - O(N^2 LOG N), Space - O(n)
+    // Time - O(N^2*LOG(N)), Space - O(n)
     public List<String> sortAnagrams(List<String> anagrams) {
         for (int i = 0; i < anagrams.size(); i++) {
             char[] tempArray = anagrams.get(i).toCharArray();
@@ -61,13 +61,13 @@ public final class Chapter9SortingAndSearching {
 
     /**
      * 9.3 - Given a sorted array of n integers that has been rotated an unknown number of times, give
-     * an O(log n) algorithm that finds an element in the array. You may assume that the array was
+     * an O(LOG(N)) algorithm that finds an element in the array. You may assume that the array was
      * originally sorted in increasing order. EXAMPLE: Input: find 5 in array (15 16 19 20 25 1 3 4 5
      * 7 10 14) Output: 8 (the index of 5 in the array)
      */
     // 15 16 19 20 25 1  3  4  5  7 10 14
     // 0  1  2  3  4  5  6  7  8  9 10 11
-    // Time - Best - O(LOG N), Space - O(1) - does not work with duplicates
+    // Time - Best - O(LOG(N)), Space - O(1) - does not work with duplicates
     public int getRotatedIndexOf(int[] array, int target) {
         if (array == null) {
             return -1;
@@ -106,7 +106,7 @@ public final class Chapter9SortingAndSearching {
      * to sort the file and why?
      */
     // Since there are 2 GBs of strings we need to sort, I would use Merge Sort because it's average
-    // and worst Time complexity is O(N LG N) and it's Space complexity is O(N).
+    // and worst Time complexity is O(N*LOG(N)) and it's Space complexity is O(N).
 
     // If the interview says that we are limited on memory, then we need to split the 2GB file into
     // smaller chucks such that memory used * number of chunk = 2GBs.
@@ -117,7 +117,7 @@ public final class Chapter9SortingAndSearching {
      * 9.5 - Given a sorted array of strings which is interspersed with empty strings, write a method
      * to find the location of a given string.
      */
-    // Time - O(LOGN)?, Space - O(1) - Binary Search
+    // Time - O(LOG(N))?, Space - O(1) - Binary Search
     public int findString(String[] strings, String target) {
         int min = 0;
         int max = strings.length - 1;
@@ -141,7 +141,7 @@ public final class Chapter9SortingAndSearching {
             }
         }
 
-        // O(LOGN) - binary search
+        // O(LOG(N)) - binary search
         while (min <= max) {
             int mid = (min + max) / 2;
             if (strings[mid].equals(target)) { // O(N)
@@ -260,7 +260,7 @@ public final class Chapter9SortingAndSearching {
     // use map
     // sort by height, sort by weight
     // return new map
-    // Time - O(N*LOGN), Space -
+    // Time - O(N*LOG(N)), Space -
     public List<Pair<Integer, Integer>> getCircusOrder(List<Pair<Integer, Integer>> original) {
         original.sort((left, right) ->
             left.getRight() < right.getRight() && left.getLeft() < right.getLeft()

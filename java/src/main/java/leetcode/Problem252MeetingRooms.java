@@ -8,7 +8,7 @@ import leetcode.api.Interval;
  * https://leetcode.com/problems/meeting-rooms
  */
 public final class Problem252MeetingRooms {
-    // Time - O(N LGN)
+    // Time - O(N*LOG(N)), Space - O(1)?
     public boolean canAttendMeetings(Interval[] intervals) {
         if (intervals == null || intervals.length == 0) {
             return true;

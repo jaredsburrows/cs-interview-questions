@@ -7,6 +7,7 @@ import java.util.Map;
  * https://leetcode.com/problems/find-anagram-mappings
  */
 public final class Problem760FindAnagramMappings {
+    // Time - O(N), Space - O(1)
     public int[] anagramMappings(int[] A, int[] B) {
         if (A == null || B == null || A.length == 0 || B.length == 0) {
             return new int[0];

@@ -1,6 +1,7 @@
 package api;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public final class GraphNode<T> {
     public T value;
@@ -21,39 +22,26 @@ public final class GraphNode<T> {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        final GraphNode<?> graphNode = (GraphNode<?>) object;
-
-        if (visited != graphNode.visited) {
-            return false;
-        }
-
-        if (value != null ? !value.equals(graphNode.value) : graphNode.value != null) {
-            return false;
-        }
-
-        if (next != null ? !next.equals(graphNode.next) : graphNode.next != null) {
-            return false;
-        }
-
-        // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        return Arrays.equals(neighbors, graphNode.neighbors);
+        final GraphNode<?> graphNode = (GraphNode<?>) o;
+        return visited == graphNode.visited &&
+            Objects.equals(value, graphNode.value) &&
+            Objects.equals(next, graphNode.next) &&
+            Arrays.equals(neighbors, graphNode.neighbors);
     }
 
     @Override
     public int hashCode() {
-        int result = value != null ? value.hashCode() : 0;
-        result = 31 * result + (next != null ? next.hashCode() : 0);
+        int result = Objects.hash(value, next, visited);
         result = 31 * result + Arrays.hashCode(neighbors);
-        result = 31 * result + (visited ? 1 : 0);
         return result;
     }
 

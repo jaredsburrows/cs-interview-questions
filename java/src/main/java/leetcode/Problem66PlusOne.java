@@ -4,6 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/plus-one
  */
 public final class Problem66PlusOne {
+    // Time - O(N), Space - O(N)
     public int[] plusOne(int[] digits) {
         if (digits == null || digits.length == 0) {
             return new int[0];

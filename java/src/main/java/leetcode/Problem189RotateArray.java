@@ -4,6 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/rotate-array
  */
 public final class Problem189RotateArray {
+    // Time - O(N), Space - O(1)?
     public void rotate(int[] nums, int k) {
         if (nums == null || k < 0) {
             return;

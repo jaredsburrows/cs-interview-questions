@@ -1,5 +1,7 @@
 package api;
 
+import java.util.Objects;
+
 // LIFO - Last in first out
 public final class Stack<T> {
     public Node<T> top;
@@ -29,23 +31,22 @@ public final class Stack<T> {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        final Stack<?> stack = (Stack<?>) object;
-
-        return top != null ? top.equals(stack.top) : stack.top == null;
+        final Stack<?> stack = (Stack<?>) o;
+        return Objects.equals(top, stack.top);
     }
 
     @Override
     public int hashCode() {
-        return top != null ? top.hashCode() : 0;
+        return Objects.hash(top);
     }
 
     @Override

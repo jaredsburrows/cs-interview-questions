@@ -8,6 +8,7 @@ import java.util.Objects;
  * https://leetcode.com/problems/word-pattern
  */
 public final class Problem290WordPattern {
+    // Time - O(N), Space - O(N)
     public boolean wordPattern(String pattern, String str) {
         if (pattern == null || str == null || pattern.isEmpty() || str.isEmpty()) {
             return false;

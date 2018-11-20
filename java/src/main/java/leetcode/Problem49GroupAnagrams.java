@@ -10,6 +10,7 @@ import java.util.Map;
  * https://leetcode.com/problems/group-anagrams
  */
 public final class Problem49GroupAnagrams {
+    // Time - O(N*LOG(K)), Space - O(N)
     public List<List<String>> groupAnagrams(String[] strs) {
         final List<List<String>> strings = new ArrayList<>();
         if (strs == null || strs.length == 0) {

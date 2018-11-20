@@ -4,7 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/find-smallest-letter-greater-than-target
  */
 public final class Problem744FindSmallestLetterGreaterThanTarget {
-    // Time - O(LG(N), Space - O(1)
+    // Time - O(LOG(N), Space - O(1)
     public char nextGreatestLetter(char[] letters, char target) {
         if (letters == null || letters.length == 0) {
             return target;

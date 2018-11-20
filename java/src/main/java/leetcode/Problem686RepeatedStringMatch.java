@@ -4,6 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/repeated-string-match
  */
 public final class Problem686RepeatedStringMatch {
+    // Time - O(N), Space - O(N)
     public int repeatedStringMatch(String A, String B) {
         if (A == null || B == null) {
             return -1;

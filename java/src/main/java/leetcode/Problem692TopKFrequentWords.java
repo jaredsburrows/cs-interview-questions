@@ -22,11 +22,10 @@ public final class Problem692TopKFrequentWords {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
-        final Queue<Map.Entry<String, Integer>> queue = new PriorityQueue<>(
-            (left, right) -> {
-                final int value = Integer.compare(right.getValue(), left.getValue());
-                return value == 0 ? left.getKey().compareTo(right.getKey()) : value;
-            });
+        final Queue<Map.Entry<String, Integer>> queue = new PriorityQueue<>((left, right) -> {
+            final int value = Integer.compare(right.getValue(), left.getValue());
+            return value == 0 ? left.getKey().compareTo(right.getKey()) : value;
+        });
         queue.addAll(map.entrySet());
 
         int count = 0;

@@ -7,6 +7,7 @@ import java.util.Map;
  * https://leetcode.com/problems/jewels-and-stones
  */
 public final class Problem771JewelsAndStones {
+    // Time - O(N), Space - O(N)
     public int numJewelsInStones(String J, String S) {
         if (J == null || S == null || J.isEmpty()) {
             return -1;

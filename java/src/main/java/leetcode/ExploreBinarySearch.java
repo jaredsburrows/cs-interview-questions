@@ -4,7 +4,7 @@ package leetcode;
  * https://leetcode.com/explore/learn/card/binary-search/138/background/1038/
  */
 public final class ExploreBinarySearch {
-    // Time - O(LG N), Space - O(1)
+    // Time - O(LOG(N)), Space - O(1)
     public int search(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return -1;

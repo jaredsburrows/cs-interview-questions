@@ -6,6 +6,7 @@ import leetcode.api.ListNode;
  * https://leetcode.com/problems/remove-nth-node-from-end-of-list
  */
 public final class Problem19RemoveNthNodeFromEndOfList {
+    // Time - O(N), Space - O(1)
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if (head == null || n < 0) {
             return null;

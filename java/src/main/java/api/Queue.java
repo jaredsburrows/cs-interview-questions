@@ -1,5 +1,7 @@
 package api;
 
+import java.util.Objects;
+
 // FIFO - First in first out
 public final class Queue<T> {
     public Node<T> first;
@@ -37,29 +39,23 @@ public final class Queue<T> {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
 
-        if (object == null || getClass() != object.getClass()) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        final Queue<?> queue = (Queue<?>) object;
-
-        if (first != null ? !first.equals(queue.first) : queue.first != null) {
-            return false;
-        }
-
-        return last != null ? last.equals(queue.last) : queue.last == null;
+        final Queue<?> queue = (Queue<?>) o;
+        return Objects.equals(first, queue.first) &&
+            Objects.equals(last, queue.last);
     }
 
     @Override
     public int hashCode() {
-        int result = first != null ? first.hashCode() : 0;
-        result = 31 * result + (last != null ? last.hashCode() : 0);
-        return result;
+        return Objects.hash(first, last);
     }
 
     @Override
