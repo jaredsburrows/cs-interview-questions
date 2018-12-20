@@ -8,6 +8,8 @@ repositories {
     gradlePluginPortal()
 }
 
+apply from: rootProject.file('gradle/compile.gradle')
+
 sourceCompatibility = rootProject.versions.java
 targetCompatibility = rootProject.versions.java
 

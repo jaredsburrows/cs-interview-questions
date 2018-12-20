@@ -7,7 +7,3 @@ plugins {
 apply from: 'gradle/scan.gradle'
 apply from: 'gradle/dependencies.gradle'
 apply from: 'gradle/asciidoc.gradle'
-
-subprojects {
-    apply from: rootProject.file('gradle/compile.gradle')
-}

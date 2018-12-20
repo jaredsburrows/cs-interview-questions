@@ -6,6 +6,8 @@ repositories {
     gradlePluginPortal()
 }
 
+apply from: rootProject.file('gradle/compile.gradle')
+
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
     kotlinOptions {
         jvmTarget = rootProject.versions.java
