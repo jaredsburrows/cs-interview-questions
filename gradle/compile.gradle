@@ -39,10 +39,3 @@ tasks.withType(Test) {
     failFast = true
     maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
 }
-
-tasks.withType(JavaForkOptions) {
-    // Prevent forked processes from stealing focus (on MacOS at least)
-    jvmArgs << '-XX:+UseCompressedOops'
-    jvmArgs << '-Djava.awt.headless=true'
-    jvmArgs << '-Dapple.awt.UIElement=true'
-}
