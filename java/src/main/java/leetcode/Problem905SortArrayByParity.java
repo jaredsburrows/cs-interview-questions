@@ -36,7 +36,7 @@ public final class Problem905SortArrayByParity {
 
     // Time - O(1), Space - O(1)
     private void swap(int[] A, int left, int right) {
-        final int temp = A[left];
+        int temp = A[left];
         A[left] = A[right];
         A[right] = temp;
     }

@@ -8,7 +8,7 @@ public final class Problem371SumOfTwoIntegers {
     public int getSum(int a, int b) {
         while (b != 0) {
             // carry contains common bits of a and b
-            final int carry = a & b;
+            int carry = a & b;
 
             // sum of a and b bits where at least one of the bits is not set
             a ^= b;

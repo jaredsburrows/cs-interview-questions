@@ -16,8 +16,7 @@ public final class Chapter2LinkedLists {
             return;
         }
 
-        final Set<Integer> integers = new HashSet<>();
-
+        Set<Integer> integers = new HashSet<>();
         Node<Integer> current = node;
         Node<Integer> previous = null;
 
@@ -159,7 +158,7 @@ public final class Chapter2LinkedLists {
             return;
         }
 
-        final Node<Character> temp = node.next;
+        Node<Character> temp = node.next;
         node.value = temp.value; // the trick
         node.next = temp.next;
     }
@@ -179,7 +178,7 @@ public final class Chapter2LinkedLists {
         }
 
         int carry = 0;
-        final Node<Integer> sum = new Node<>(0);
+        Node<Integer> sum = new Node<>(0);
         Node<Integer> head = sum;
 
         while (node != null || node2 != null) {

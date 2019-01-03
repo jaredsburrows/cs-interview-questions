@@ -9,10 +9,10 @@ public final class Problem557ReverseWordsInAStringIII {
             return "";
         }
 
-        final String[] sentence = s.split("\\s+", -1);
-        final StringBuilder stringBuilder = new StringBuilder(sentence.length);
+        String[] sentence = s.split("\\s+", -1);
+        StringBuilder stringBuilder = new StringBuilder(sentence.length);
         for (String string : sentence) {
-            final char[] array = string.toCharArray();
+            char[] array = string.toCharArray();
 
             for (int i = 0, j = array.length - 1; i < j; i++, j--) {
                 swap(array, i, j);
@@ -26,7 +26,7 @@ public final class Problem557ReverseWordsInAStringIII {
     }
 
     private void swap(char[] array, int left, int right) {
-        final char temp = array[left];
+        char temp = array[left];
         array[left] = array[right];
         array[right] = temp;
     }

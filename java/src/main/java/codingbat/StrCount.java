@@ -14,9 +14,9 @@ public final class StrCount {
         }
 
         if (str.substring(0, sub.length()).equals(sub)) {
-            return strCount(str.substring(sub.length(), str.length()), sub) + 1;
+            return strCount(str.substring(sub.length()), sub) + 1;
         } else {
-            return strCount(str.substring(1, str.length()), sub);
+            return strCount(str.substring(1), sub);
         }
     }
 }

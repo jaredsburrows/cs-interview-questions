@@ -28,9 +28,9 @@ public final class Problem961NRepeatedElementInSize2NArray {
             return -1;
         }
 
-        final Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int num : A) {
-            final int currentCount = map.getOrDefault(num, 0) + 1;
+            int currentCount = map.getOrDefault(num, 0) + 1;
             if (currentCount == A.length / 2) {
                 return num;
             }

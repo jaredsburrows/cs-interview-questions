@@ -9,7 +9,7 @@ import java.util.List;
 public final class Problem22GenerateParentheses {
     // Space - O(N)
     public List<String> generateParenthesis(int n) {
-        final List<String> parenthesis = new ArrayList<>();
+        List<String> parenthesis = new ArrayList<>();
         if (n < 0) {
             return parenthesis;
         }

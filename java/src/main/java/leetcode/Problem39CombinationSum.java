@@ -9,7 +9,7 @@ import java.util.List;
  */
 public final class Problem39CombinationSum {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        final List<List<Integer>> combinations = new ArrayList<>();
+        List<List<Integer>> combinations = new ArrayList<>();
         if (candidates == null || candidates.length == 0 || target < 0) {
             return combinations;
         }

@@ -12,7 +12,7 @@ public final class Problem560SubarraySumEqualsK {
             return 0;
         }
 
-        final Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);
 
         int count = 0;

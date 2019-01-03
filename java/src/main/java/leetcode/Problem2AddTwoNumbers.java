@@ -12,7 +12,7 @@ public final class Problem2AddTwoNumbers {
             return null;
         }
 
-        final ListNode answer = new ListNode(0);
+        ListNode answer = new ListNode(0);
         ListNode runner = answer;
         int carry = 0;
 

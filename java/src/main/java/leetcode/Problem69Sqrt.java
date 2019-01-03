@@ -13,8 +13,7 @@ public final class Problem69Sqrt {
         long high = x / 2L + 1L;
 
         while (low <= high) {
-            final long mid = low + (high - low) / 2;
-
+            long mid = low + (high - low) / 2;
             if (mid * mid == x) {
                 return (int) mid;
             } else if (mid * mid < x) {

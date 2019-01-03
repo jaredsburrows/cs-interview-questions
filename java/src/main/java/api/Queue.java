@@ -48,7 +48,7 @@ public final class Queue<T> {
             return false;
         }
 
-        final Queue<?> queue = (Queue<?>) o;
+        Queue<?> queue = (Queue<?>) o;
         return Objects.equals(first, queue.first)
             && Objects.equals(last, queue.last);
     }

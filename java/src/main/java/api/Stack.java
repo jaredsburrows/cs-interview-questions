@@ -40,7 +40,7 @@ public final class Stack<T> {
             return false;
         }
 
-        final Stack<?> stack = (Stack<?>) o;
+        Stack<?> stack = (Stack<?>) o;
         return Objects.equals(top, stack.top);
     }
 

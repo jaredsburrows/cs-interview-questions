@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public final class Main {
     public static void main(String[] args) throws Exception {
-        final Scanner scanner = new Scanner(new File(args[0]), Charset.defaultCharset().name());
-        final Map<String, Character> morseCode = new HashMap<>();
+        Scanner scanner = new Scanner(new File(args[0]), Charset.defaultCharset().name());
+        Map<String, Character> morseCode = new HashMap<>();
         morseCode.put(".-", 'A');
         morseCode.put("-...", 'B');
         morseCode.put("-.-.", 'C');
@@ -48,14 +48,14 @@ public final class Main {
         morseCode.put("----.", '9');
 
         while (scanner.hasNextLine()) {
-            final String[] sequence = scanner.nextLine().split(" ", -1);
+            String[] sequence = scanner.nextLine().split(" ", -1);
             for (String string : sequence) {
-                final Character c = morseCode.get(string);
+                Character c = morseCode.get(string);
                 System.out.print(c != null ? c : " ");
             }
 
             if (scanner.hasNextLine()) {
-                System.out.println("");
+                System.out.println();
             }
         }
         scanner.close();

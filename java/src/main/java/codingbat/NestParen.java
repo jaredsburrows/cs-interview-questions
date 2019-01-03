@@ -15,7 +15,7 @@ public final class NestParen {
 
         if (str.length() >= 2
             && "(".equals(str.substring(0, 1))
-            && ")".equals(str.substring(str.length() - 1, str.length()))) {
+            && ")".equals(str.substring(str.length() - 1))) {
             return nestParen(str.substring(1, str.length() - 1));
         } else {
             return false;

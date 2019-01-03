@@ -15,19 +15,19 @@ public final class Problem133CloneGraph {
             return null;
         }
 
-        final UndirectedGraphNode headNode = new UndirectedGraphNode(node.label);
+        UndirectedGraphNode headNode = new UndirectedGraphNode(node.label);
         if (node.neighbors == null || node.neighbors.isEmpty()) {
             return headNode;
         }
 
-        final Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<>();
+        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<>();
         map.put(node, headNode);
 
-        final Deque<UndirectedGraphNode> queue = new ArrayDeque<>();
+        Deque<UndirectedGraphNode> queue = new ArrayDeque<>();
         queue.offer(node);
 
         while (!queue.isEmpty()) {
-            final UndirectedGraphNode currentNode = queue.poll();
+            UndirectedGraphNode currentNode = queue.poll();
 
             for (UndirectedGraphNode neighborNode : currentNode.neighbors) {
                 if (!map.containsKey(neighborNode)) {

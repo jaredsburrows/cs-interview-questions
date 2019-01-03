@@ -10,7 +10,7 @@ public final class Problem686RepeatedStringMatch {
             return -1;
         }
 
-        final StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         int count = 0;
 
         while (stringBuilder.length() < B.length()) {

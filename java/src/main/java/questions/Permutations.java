@@ -9,20 +9,20 @@ public final class Permutations {
             return new ArrayList<>();
         }
 
-        final List<String> finalList = new ArrayList<>();
-        final int length = string.length();
+        List<String> permutations = new ArrayList<>();
+        int length = string.length();
         if (length == 0) {
             // empty string
-            finalList.add(prefix);
+            permutations.add(prefix);
         } else {
             for (int i = 0; i < length; i++) {
-                // add to final list
-                finalList.addAll(
+                // add to list
+                permutations.addAll(
                     getStringPermutations(prefix + string.charAt(i),
                         string.substring(i + 1, length) + string.substring(0, i)));
             }
         }
 
-        return finalList;
+        return permutations;
     }
 }

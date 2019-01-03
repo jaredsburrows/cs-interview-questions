@@ -16,7 +16,7 @@ public final class Problem206ReverseLinkedList {
         ListNode previous = null;
 
         while (current != null) {
-            final ListNode temp = current.next;
+            ListNode temp = current.next;
             current.next = previous;
             previous = current;
             current = temp;

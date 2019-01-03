@@ -13,6 +13,6 @@ public final class AllStar {
             return str.substring(0, 1);
         }
 
-        return str.substring(0, 1) + "*" + allStar(str.substring(1, str.length()));
+        return str.substring(0, 1) + "*" + allStar(str.substring(1));
     }
 }

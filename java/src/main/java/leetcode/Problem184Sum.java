@@ -9,7 +9,7 @@ import java.util.List;
  */
 public final class Problem184Sum {
     public List<List<Integer>> fourSum(int[] nums, int target) {
-        final List<List<Integer>> sums = new ArrayList<>();
+        List<List<Integer>> sums = new ArrayList<>();
         if (nums == null || nums.length < 4) {
             return sums;
         }
@@ -35,7 +35,7 @@ public final class Problem184Sum {
                     } else if (nums[i] + nums[j] + nums[k] + nums[l] > target) {
                         l--;
                     } else {
-                        final List<Integer> sum = new ArrayList<>();
+                        List<Integer> sum = new ArrayList<>();
                         sum.add(nums[i]);
                         sum.add(nums[j]);
                         sum.add(nums[k]);

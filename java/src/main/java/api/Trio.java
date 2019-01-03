@@ -35,7 +35,7 @@ public final class Trio<F, S, T> {
             return false;
         }
 
-        final Trio<?, ?, ?> trio = (Trio<?, ?, ?>) o;
+        Trio<?, ?, ?> trio = (Trio<?, ?, ?>) o;
         return Objects.equals(first, trio.first)
             && Objects.equals(second, trio.second)
             && Objects.equals(third, trio.third);

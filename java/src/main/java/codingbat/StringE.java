@@ -9,7 +9,7 @@ public final class StringE {
             return false;
         }
 
-        final char[] array = str.toCharArray();
+        char[] array = str.toCharArray();
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
             if (array[i] == 'e') {

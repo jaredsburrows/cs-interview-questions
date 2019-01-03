@@ -19,7 +19,7 @@ public final class Problem66PlusOne {
             digits[i] = 0;
         }
 
-        final int[] toReturn = new int[digits.length + 1];
+        int[] toReturn = new int[digits.length + 1];
         toReturn[0] = 1;
         return toReturn;
     }

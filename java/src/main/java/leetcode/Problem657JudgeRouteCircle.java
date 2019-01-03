@@ -10,7 +10,7 @@ public final class Problem657JudgeRouteCircle {
             return false;
         }
 
-        final char[] array = moves.toCharArray();
+        char[] array = moves.toCharArray();
         int x = 0;
         int y = 0;
 

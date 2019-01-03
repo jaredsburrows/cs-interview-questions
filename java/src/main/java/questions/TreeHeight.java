@@ -8,8 +8,8 @@ public final class TreeHeight {
             return 0;
         }
 
-        final int left = getHeight(treeNode.left);
-        final int right = getHeight(treeNode.right);
+        int left = getHeight(treeNode.left);
+        int right = getHeight(treeNode.right);
 
         // no node never differ by more than 1
         if (left == -1 || right == -1 || Math.abs(left - right) > 1) {

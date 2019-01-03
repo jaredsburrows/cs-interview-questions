@@ -14,7 +14,7 @@ public final class Problem189RotateArray {
             k %= nums.length;
         }
 
-        final int[] result = new int[nums.length];
+        int[] result = new int[nums.length];
         int j = 0;
         for (int i = k; i < nums.length; i++) {
             result[i] = nums[j++];

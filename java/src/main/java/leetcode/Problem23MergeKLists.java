@@ -18,7 +18,7 @@ public final class Problem23MergeKLists {
             return null;
         }
 
-        final Queue<ListNode> queue =
+        Queue<ListNode> queue =
             new PriorityQueue<>(Comparator.comparingInt(left -> left.val));
 
         for (ListNode listNode : lists) {
@@ -27,7 +27,7 @@ public final class Problem23MergeKLists {
             }
         }
 
-        final ListNode head = new ListNode(0);
+        ListNode head = new ListNode(0);
         ListNode tail = head;
 
         while (!queue.isEmpty()) {
@@ -44,12 +44,12 @@ public final class Problem23MergeKLists {
 
     // Time - O(N*LOG(K))
     public List<Integer> mergeKLists(int[][] arrays) {
-        final List<Integer> toReturn = new ArrayList<>();
+        List<Integer> toReturn = new ArrayList<>();
         if (arrays == null || arrays.length == 0 || arrays[0].length == 0) {
             return toReturn;
         }
 
-        final Queue<Node> queue = new PriorityQueue<>((left, right) -> {
+        Queue<Node> queue = new PriorityQueue<>((left, right) -> {
             if (left.hasData() && right.hasData()) {
                 return Integer.compare(left.array[left.pos], right.array[right.pos]);
             }
@@ -58,12 +58,12 @@ public final class Problem23MergeKLists {
         });
 
         for (int[] array : arrays) {
-            final Node node = new Node(array);
+            Node node = new Node(array);
             queue.add(node);
         }
 
         while (!queue.isEmpty()) {
-            final Node node = queue.poll();
+            Node node = queue.poll();
             if (node.hasData()) {
                 toReturn.add(node.array[node.pos]);
                 node.pos++;

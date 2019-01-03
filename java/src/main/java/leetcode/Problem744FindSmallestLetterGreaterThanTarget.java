@@ -16,7 +16,7 @@ public final class Problem744FindSmallestLetterGreaterThanTarget {
 
         // binary search
         while (low < high) {
-            final int middle = low + (high - low) / 2;
+            int middle = low + (high - low) / 2;
 
             if (letters[middle] > target) {
                 high = middle;

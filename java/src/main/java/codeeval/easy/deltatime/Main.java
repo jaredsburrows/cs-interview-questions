@@ -11,16 +11,16 @@ import java.util.Calendar;
 
 public final class Main {
     public static void main(String[] args) throws Exception {
-        final File inputFile = new File(args[0]);
-        final InputStream fileStream = new FileInputStream(inputFile);
-        final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
-        final BufferedReader buffer = new BufferedReader(inputReader);
+        File inputFile = new File(args[0]);
+        InputStream fileStream = new FileInputStream(inputFile);
+        Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
+        BufferedReader buffer = new BufferedReader(inputReader);
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] words = line.trim().split(" ", -1);
-            final String[] time1 = words[0].split(":", -1);
-            final String[] time2 = words[1].split(":", -1);
+            String[] words = line.trim().split(" ", -1);
+            String[] time1 = words[0].split(":", -1);
+            String[] time2 = words[1].split(":", -1);
 
             /* Java has a problem with Calendar subtracting of hours */
             Calendar calendar1 = Calendar.getInstance();

@@ -40,7 +40,7 @@ public final class Chapter5BitManipulation {
      * 10001010100
      */
     public int setBitPosition(int left, int right, int positionA,
-        final int positionB) {
+        int positionB) {
         int max = ~0;
         int shiftMax = (max - 1) << (positionB - 1);
         int shift = 1 << (positionA - 1);
@@ -92,15 +92,15 @@ public final class Chapter5BitManipulation {
     // assuming 32 bit integers
     // Time - O(32) == O(1), Space - O(1)
     public int getDiffBits(int left, int right) {
-        final int zeroDiff;
-        final int oneDiff;
+        int zeroDiff;
+        int oneDiff;
         int zeroA = 0;
         int zeroB = 0;
         int oneA = 0;
         int oneB = 0;
 
         for (int i = 0; i < 32; i++) {
-            final int temp = left >> (32 - i - 1) & 1;
+            int temp = left >> (32 - i - 1) & 1;
             if (temp == 0) {
                 zeroA++;
             } else {
@@ -109,7 +109,7 @@ public final class Chapter5BitManipulation {
         }
 
         for (int i = 0; i < 32; i++) {
-            final int temp = right >> (32 - i - 1) & 1;
+            int temp = right >> (32 - i - 1) & 1;
             if (temp == 0) {
                 zeroB++;
             } else {

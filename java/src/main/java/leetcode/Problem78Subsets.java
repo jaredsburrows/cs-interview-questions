@@ -11,7 +11,7 @@ import java.util.List;
 public final class Problem78Subsets {
     // recursion
     public List<List<Integer>> subsets(int[] nums) {
-        final List<List<Integer>> subsets = new ArrayList<>();
+        List<List<Integer>> subsets = new ArrayList<>();
 
         if (nums == null || nums.length == 0) {
             return subsets;
@@ -37,7 +37,7 @@ public final class Problem78Subsets {
 
     // iteration
     public <T extends Comparable<? super T>> List<List<T>> subsets2(List<T> data) {
-        final List<List<T>> subsets = new ArrayList<>();
+        List<List<T>> subsets = new ArrayList<>();
 
         if (data == null || data.isEmpty()) {
             return subsets;
@@ -50,11 +50,11 @@ public final class Problem78Subsets {
         Collections.sort(data); // not needed
 
         for (T obj : data) {
-            final int subsetSize = subsets.size();
+            int subsetSize = subsets.size();
 
             for (int j = 0; j < subsetSize; j++) {
                 // Save off original size before we add to 'subsets'
-                final List<T> subset = new ArrayList<>(subsets.get(j));
+                List<T> subset = new ArrayList<>(subsets.get(j));
 
                 subset.add(obj);
 
@@ -67,7 +67,7 @@ public final class Problem78Subsets {
 
     // iteration
     public <T> List<List<T>> subsets3(T[] data) {
-        final List<List<T>> subsets = new ArrayList<>();
+        List<List<T>> subsets = new ArrayList<>();
 
         if (data == null || data.length == 0) {
             return subsets;
@@ -81,10 +81,10 @@ public final class Problem78Subsets {
 
         for (T obj : data) {
             // Save off original size before we add to 'subsets'
-            final int subsetSize = subsets.size();
+            int subsetSize = subsets.size();
 
             for (int j = 0; j < subsetSize; j++) {
-                final List<T> subset = new ArrayList<>(subsets.get(j));
+                List<T> subset = new ArrayList<>(subsets.get(j));
                 subset.add(obj);
 
                 subsets.add(subset);

@@ -21,12 +21,12 @@ public final class Trie<T> {
         TrieNode<T> current = root;
 
         for (int i = 0; i < word.length(); i++) {
-            final char character = word.charAt(i);
-            final int index = character - 'a';
+            char character = word.charAt(i);
+            int index = character - 'a';
 
-            final TrieNode<T> child = current.children[index];
+            TrieNode<T> child = current.children[index];
             if (child == null) {
-                final TrieNode<T> node = new TrieNode<>();
+                TrieNode<T> node = new TrieNode<>();
                 current.children[index] = node;
                 current = node;
             } else {
@@ -42,7 +42,7 @@ public final class Trie<T> {
             return false;
         }
 
-        final TrieNode<T> current = get(word);
+        TrieNode<T> current = get(word);
         return current != null && current.isEnd;
     }
 
@@ -58,10 +58,10 @@ public final class Trie<T> {
         TrieNode<T> current = root;
 
         for (int i = 0; i < word.length(); i++) {
-            final char character = word.charAt(i);
-            final int index = character - 'a';
+            char character = word.charAt(i);
+            int index = character - 'a';
 
-            final TrieNode<T> child = current.children[index];
+            TrieNode<T> child = current.children[index];
             if (child == null) {
                 return null;
             } else {
@@ -82,7 +82,7 @@ public final class Trie<T> {
             return false;
         }
 
-        final Trie<?> trie = (Trie<?>) o;
+        Trie<?> trie = (Trie<?>) o;
         return Objects.equals(root, trie.root);
     }
 

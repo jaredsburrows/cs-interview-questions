@@ -14,11 +14,11 @@ public final class Problem226InvertBinaryTree {
             return null;
         }
 
-        final Deque<TreeNode> queue = new ArrayDeque<>();
+        Deque<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
 
         while (!queue.isEmpty()) {
-            final TreeNode node = queue.poll();
+            TreeNode node = queue.poll();
 
             if (node.left != null) {
                 queue.offer(node.left);
@@ -28,7 +28,7 @@ public final class Problem226InvertBinaryTree {
                 queue.offer(node.right);
             }
 
-            final TreeNode temp = node.left;
+            TreeNode temp = node.left;
             node.left = node.right;
             node.right = temp;
         }
@@ -52,7 +52,7 @@ public final class Problem226InvertBinaryTree {
             return;
         }
 
-        final TreeNode temp = root.right;
+        TreeNode temp = root.right;
         root.right = root.left;
         root.left = temp;
 

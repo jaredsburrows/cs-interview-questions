@@ -9,7 +9,7 @@ public final class Problem157ReadNCharactersGivenRead4 {
             return 0;
         }
 
-        final char[] buffer = new char[4];
+        char[] buffer = new char[4];
         boolean eof = false;
         int total = 0;
 

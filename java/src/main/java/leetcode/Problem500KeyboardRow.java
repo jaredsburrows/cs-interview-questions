@@ -14,10 +14,10 @@ public final class Problem500KeyboardRow {
             return new String[0];
         }
 
-        final List<String> wordList = new ArrayList<>();
-        final Pattern rowOnePattern = Pattern.compile("^[QWERTYUIOPqwertyuiop]+$");
-        final Pattern rowTwoPattern = Pattern.compile("^[ASDFGHJKLasdfghjkl]+$");
-        final Pattern rowThreePattern = Pattern.compile("^[ZXCVBNMzxcvbnm]+$");
+        List<String> wordList = new ArrayList<>();
+        Pattern rowOnePattern = Pattern.compile("^[QWERTYUIOPqwertyuiop]+$");
+        Pattern rowTwoPattern = Pattern.compile("^[ASDFGHJKLasdfghjkl]+$");
+        Pattern rowThreePattern = Pattern.compile("^[ZXCVBNMzxcvbnm]+$");
 
         for (String word : words) {
             if (rowOnePattern.matcher(word).matches()

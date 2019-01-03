@@ -10,15 +10,15 @@ import java.nio.charset.Charset;
 
 public final class Main {
     public static void main(String[] args) throws Exception {
-        final File inputFile = new File(args[0]);
-        final InputStream fileStream = new FileInputStream(inputFile);
-        final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
-        final BufferedReader buffer = new BufferedReader(inputReader);
+        File inputFile = new File(args[0]);
+        InputStream fileStream = new FileInputStream(inputFile);
+        Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
+        BufferedReader buffer = new BufferedReader(inputReader);
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final int[] ints = new int[100];
-            final String[] intStrings = line.trim().split(",", -1);
+            int[] ints = new int[100];
+            String[] intStrings = line.trim().split(",", -1);
             int occurrence = -1;
             int number = -1;
 

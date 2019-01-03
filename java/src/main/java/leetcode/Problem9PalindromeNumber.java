@@ -12,8 +12,8 @@ public final class Problem9PalindromeNumber {
 
         int reverseNumber = 0;
         while (x > reverseNumber) {
-            final int moveDigit = reverseNumber * 10;
-            final int lastDigit = x % 10;
+            int moveDigit = reverseNumber * 10;
+            int lastDigit = x % 10;
 
             reverseNumber = moveDigit + lastDigit;
 
@@ -29,12 +29,12 @@ public final class Problem9PalindromeNumber {
             return false;
         }
 
-        final long originalNumber = number;
+        long originalNumber = number;
         long reverseNumber = 0;
 
         while (number != 0) {
-            final long moveDigit = reverseNumber * 10;
-            final long lastDigit = number % 10;
+            long moveDigit = reverseNumber * 10;
+            long lastDigit = number % 10;
 
             reverseNumber = moveDigit + lastDigit;
 

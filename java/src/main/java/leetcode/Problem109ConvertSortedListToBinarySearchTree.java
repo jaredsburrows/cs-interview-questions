@@ -29,7 +29,7 @@ public final class Problem109ConvertSortedListToBinarySearchTree {
             fast = fast.next.next;
         }
 
-        final TreeNode node = new TreeNode(slow.val);
+        TreeNode node = new TreeNode(slow.val);
         node.left = sortedListToBST(head, slow);
         node.right = sortedListToBST(slow.next, tail);
         return node;

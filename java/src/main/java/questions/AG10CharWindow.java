@@ -11,24 +11,24 @@ public final class AG10CharWindow {
             return "";
         }
 
-        final Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
         int max = 0;
         int number = 0;
 
         for (int i = 10; i < input.length(); i++) {
-            final int pos = i - 10;
-            final int key = Character.getNumericValue(input.charAt(pos)) + (pos * 10);
+            int pos = i - 10;
+            int key = Character.getNumericValue(input.charAt(pos)) + (pos * 10);
 
-            //Double.valueOf("").intValue()
+            // Double.valueOf("").intValue()
 
             String.valueOf("ab").hashCode();
         }
 
         return null;
-        //return String.valueOf()
-        //int b = s.charAt(0); // 65
-        //char c = (char) b  // 'A'
+        // return String.valueOf()
+        // int b = s.charAt(0); // 65
+        // char c = (char) b  // 'A'
 
 
         // "abcdabcdab" -
@@ -57,7 +57,7 @@ public final class AG10CharWindow {
     }
 
     private String decode(int input) {
-        final StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
 
         //input / 1000000000
 

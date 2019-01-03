@@ -13,15 +13,15 @@ import java.util.List;
 
 public final class Main {
     public static void main(String[] args) throws Exception {
-        final File inputFile = new File(args[0]);
-        final InputStream fileStream = new FileInputStream(inputFile);
-        final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
-        final BufferedReader buffer = new BufferedReader(inputReader);
+        File inputFile = new File(args[0]);
+        InputStream fileStream = new FileInputStream(inputFile);
+        Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
+        BufferedReader buffer = new BufferedReader(inputReader);
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final List<Integer> integerList = new ArrayList<>();
-            final String[] intStrings = line.trim().split(";", -1);
+            List<Integer> integerList = new ArrayList<>();
+            String[] intStrings = line.trim().split(";", -1);
             for (String string : intStrings) {
                 integerList.add(Integer.valueOf(string.split(",", -1)[1]));
             }
@@ -37,7 +37,7 @@ public final class Main {
                 System.out.print(i + 2 < integerList.size() ? "," : "");
             }
 
-            System.out.println("");
+            System.out.println();
         }
     }
 }

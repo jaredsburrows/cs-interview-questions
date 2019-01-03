@@ -13,7 +13,7 @@ public final class Problem20ValidParentheses {
             return false;
         }
 
-        final Deque<Character> stack = new ArrayDeque<>();
+        Deque<Character> stack = new ArrayDeque<>();
         for (char c : s.toCharArray()) {
             switch (c) {
                 case '(':

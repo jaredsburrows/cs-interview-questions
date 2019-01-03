@@ -16,7 +16,7 @@ public final class Problem125ValidPalindrome {
 
         s = s.toLowerCase();
 
-        final char[] array = s.toCharArray();
+        char[] array = s.toCharArray();
         int i = 0;
         int j = array.length - 1;
 

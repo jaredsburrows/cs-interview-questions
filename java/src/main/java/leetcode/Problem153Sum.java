@@ -9,7 +9,7 @@ import java.util.List;
  */
 public final class Problem153Sum {
     public List<List<Integer>> threeSum(int[] nums) {
-        final List<List<Integer>> sums = new ArrayList<>();
+        List<List<Integer>> sums = new ArrayList<>();
         if (nums == null || nums.length < 3) {
             return sums;
         }
@@ -26,7 +26,7 @@ public final class Problem153Sum {
 
             while (j < k) {
                 if (nums[i] + nums[j] + nums[k] == 0) {
-                    final List<Integer> sum = new ArrayList<>();
+                    List<Integer> sum = new ArrayList<>();
                     sum.add(nums[i]);
                     sum.add(nums[j]);
                     sum.add(nums[k]);

@@ -12,16 +12,16 @@ import leetcode.api.TreeNode;
 public final class Problem144BinaryTreePreorderTraversal {
     // iterative
     public List<Integer> preorderTraversal(TreeNode root) {
-        final List<Integer> values = new ArrayList<>();
+        List<Integer> values = new ArrayList<>();
         if (root == null) {
             return values;
         }
 
-        final Deque<TreeNode> stack = new ArrayDeque<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
         stack.push(root);
 
         while (!stack.isEmpty()) {
-            final TreeNode node = stack.pop();
+            TreeNode node = stack.pop();
             values.add(node.val);
 
             if (node.right != null) {
@@ -38,7 +38,7 @@ public final class Problem144BinaryTreePreorderTraversal {
 
     // recursion
     public List<Integer> preorderTraversal2(TreeNode root) {
-        final List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
 
         preOrderRecursion(root, list);
 

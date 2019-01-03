@@ -35,7 +35,7 @@ public final class Problem520DetectCapital {
 
     // Time - O(N), Space - O(1)
     private static boolean hasOnlyFirstCap(String word) {
-        final boolean firstCap = Character.isUpperCase(word.charAt(0));
+        boolean firstCap = Character.isUpperCase(word.charAt(0));
         if (!firstCap) {
             return false;
         }

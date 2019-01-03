@@ -28,8 +28,8 @@ public final class Chapter4TreesAndGraphs {
             return 0;
         }
 
-        final int left = getHeight(treeNode.left);
-        final int right = getHeight(treeNode.right);
+        int left = getHeight(treeNode.left);
+        int right = getHeight(treeNode.right);
 
         // no node never differ by more than 1
         if (left == -1 || right == -1 || Math.abs(left - right) > 1) {
@@ -45,13 +45,13 @@ public final class Chapter4TreesAndGraphs {
      */
     // BFS
     public <T> boolean hasGraphNodeBfs(GraphNode<T> start, GraphNode<T> end) {
-        final Deque<GraphNode<T>> queue = new ArrayDeque<>();
+        Deque<GraphNode<T>> queue = new ArrayDeque<>();
 
         start.visited = true;
         queue.add(start);
 
         while (!queue.isEmpty()) {
-            final GraphNode<T> currentNode = queue.poll();
+            GraphNode<T> currentNode = queue.poll();
             for (GraphNode<T> node : currentNode.neighbors) {
                 if (!node.visited) {
                     node.visited = true;
@@ -82,8 +82,8 @@ public final class Chapter4TreesAndGraphs {
             return null;
         }
 
-        final int mid = (start + end) / 2;
-        final TreeNode<Integer> treeNode = new TreeNode<>(array[mid]);
+        int mid = (start + end) / 2;
+        TreeNode<Integer> treeNode = new TreeNode<>(array[mid]);
         treeNode.left =
             getMinimumTree(array, start, mid - 1);   // 1 2 3 4 5 6 // remove one from left
         treeNode.right =
@@ -103,7 +103,7 @@ public final class Chapter4TreesAndGraphs {
             return new ArrayList<>();
         }
 
-        final List<LinkedList<TreeNode<T>>> queues = new ArrayList<>();
+        List<LinkedList<TreeNode<T>>> queues = new ArrayList<>();
         LinkedList<TreeNode<T>> queue = new LinkedList<>();
 
         // keep track of levels
@@ -118,7 +118,7 @@ public final class Chapter4TreesAndGraphs {
             // loop through nodes at current level
             for (int i = 0; i < queues.get(level).size(); i++) {
                 // get the current node
-                final TreeNode<T> treeNode = queues.get(level).get(i); // get() from LinkedList
+                TreeNode<T> treeNode = queues.get(level).get(i); // get() from LinkedList
                 // add it's children
                 if (treeNode != null) {
                     if (treeNode.left != null) {
@@ -166,8 +166,8 @@ public final class Chapter4TreesAndGraphs {
             return root;
         }
 
-        final TreeNode<T> left = commonAncestor(root.left, node1, node2);
-        final TreeNode<T> right = commonAncestor(root.right, node1, node2);
+        TreeNode<T> left = commonAncestor(root.left, node1, node2);
+        TreeNode<T> right = commonAncestor(root.right, node1, node2);
 
         if (left != null && right != null) {
             return root;
@@ -187,8 +187,8 @@ public final class Chapter4TreesAndGraphs {
             return root;
         }
 
-        final TreeNode<T> left = commonAncestor2(root.left, node1, node2);
-        final TreeNode<T> right = commonAncestor2(root.right, node1, node2);
+        TreeNode<T> left = commonAncestor2(root.left, node1, node2);
+        TreeNode<T> right = commonAncestor2(root.right, node1, node2);
 
         if (Objects.equals(left, node1) && Objects.equals(right, node2)) {
             return root;

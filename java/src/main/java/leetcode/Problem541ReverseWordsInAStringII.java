@@ -32,7 +32,7 @@ public final class Problem541ReverseWordsInAStringII {
     }
 
     private void swap(char[] str, int left, int right) {
-        final char temp = str[left];
+        char temp = str[left];
         str[left] = str[right];
         str[right] = temp;
     }

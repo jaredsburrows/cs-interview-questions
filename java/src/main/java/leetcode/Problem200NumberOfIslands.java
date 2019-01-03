@@ -9,8 +9,8 @@ public final class Problem200NumberOfIslands {
             return 0;
         }
 
-        final int rowLength = grid.length;
-        final int colLength = grid[0].length;
+        int rowLength = grid.length;
+        int colLength = grid[0].length;
         int count = 0;
 
         for (int i = 0; i < rowLength; i++) {

@@ -13,7 +13,7 @@ public final class Problem405ConvertANumberToHexadecimal {
     }
 
     private static String fromDecimal(long num, int base) {
-        final StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
 
         num &= 0x00000000ffffffffL;
 

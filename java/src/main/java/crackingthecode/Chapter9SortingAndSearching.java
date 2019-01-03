@@ -22,7 +22,7 @@ public final class Chapter9SortingAndSearching {
 
         int indexA = sizeA - 1;
         int indexB = arrayB.length - 1;
-        final int totalLength = sizeA + indexB; // total elements
+        int totalLength = sizeA + indexB; // total elements
 
         // read in elements backwards
         for (int i = totalLength; i > 0; i--) {
@@ -187,7 +187,7 @@ public final class Chapter9SortingAndSearching {
                 midIndex++;
             }
 
-            final int emptyIndex = strings[midIndex].compareTo(target);
+            int emptyIndex = strings[midIndex].compareTo(target);
             if (emptyIndex == 0) {
                 return midIndex;
             } else if (emptyIndex < 0) {
@@ -228,7 +228,7 @@ public final class Chapter9SortingAndSearching {
             return false;
         }
 
-        final int length = matrix.length - 1;
+        int length = matrix.length - 1;
         int row = 0;
         int col = length;
 

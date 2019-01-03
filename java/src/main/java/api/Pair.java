@@ -29,7 +29,7 @@ public final class Pair<L, R> {
             return false;
         }
 
-        final Pair<?, ?> pair = (Pair<?, ?>) o;
+        Pair<?, ?> pair = (Pair<?, ?>) o;
         return Objects.equals(left, pair.left)
             && Objects.equals(right, pair.right);
     }

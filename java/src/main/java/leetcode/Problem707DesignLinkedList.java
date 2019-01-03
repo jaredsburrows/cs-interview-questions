@@ -31,7 +31,7 @@ public final class Problem707DesignLinkedList {
         }
 
         public void addAtHead(int val) {
-            final ListNode newHead = new ListNode(val);
+            ListNode newHead = new ListNode(val);
             newHead.next = head;
             head = newHead;
 
@@ -39,7 +39,7 @@ public final class Problem707DesignLinkedList {
         }
 
         public void addAtTail(int val) {
-            final ListNode newTail = new ListNode(val);
+            ListNode newTail = new ListNode(val);
             if (head == null) {
                 head = newTail;
             }
@@ -76,7 +76,7 @@ public final class Problem707DesignLinkedList {
                 index--;
             }
 
-            final ListNode newNode = new ListNode(val);
+            ListNode newNode = new ListNode(val);
             newNode.next = temp.next;
             temp.next = newNode;
 

@@ -94,25 +94,25 @@ public final class Chapter19Moderate {
     // >> 31 - for only 32 bit numbers
     // Time - O(1), Space - O(1)
     public long getMax(long left, long right) {
-        final long diff = (left - right) >> 31;    // >> 31 accounts for negatives
-        final long diffFirst = diff & right;
-        final long diffSecond = ~diff & left;
+        long diff = (left - right) >> 31;    // >> 31 accounts for negatives
+        long diffFirst = diff & right;
+        long diffSecond = ~diff & left;
 
         return diffFirst + diffSecond;
     }
 
     // Time - O(1), Space - O(1)
     public long getMax2(long left, long right) {
-        final long[] temp = {left, right};
+        long[] temp = {left, right};
         return temp[(int) ((left - right) >> 31) & 1];
     }
 
     // If you have the max, you can find getMinNode, vice-versa
     // Time - O(1), Space - O(1)
     public long getMin(long left, long right) {
-        final long diff = (left - right) >> 31;    // >> 31 accounts for negatives
-        final long diffFirst = diff & left;
-        final long diffSecond = ~diff & right;
+        long diff = (left - right) >> 31;    // >> 31 accounts for negatives
+        long diffFirst = diff & left;
+        long diffSecond = ~diff & right;
 
         return diffFirst + diffSecond;
     }
@@ -198,17 +198,17 @@ public final class Chapter19Moderate {
             return -1;
         }
 
-        final Map<String, Integer> occurrences = new HashMap<>();
+        Map<String, Integer> occurrences = new HashMap<>();
 
         for (String string : array) {
             if (string != null) {
                 string = string.toLowerCase().trim();
 
-                final boolean isEmpty = string.isEmpty();
+                boolean isEmpty = string.isEmpty();
                 if (!isEmpty) {
-                    final boolean hasWord = occurrences.containsKey(string);
+                    boolean hasWord = occurrences.containsKey(string);
                     if (hasWord) {
-                        final int increment = occurrences.get(string) + 1;
+                        int increment = occurrences.get(string) + 1;
                         occurrences.put(string, increment);
                     } else {
                         occurrences.put(string, 1);
@@ -219,7 +219,7 @@ public final class Chapter19Moderate {
 
         word = word.toLowerCase().trim();
 
-        final boolean hasWord = occurrences.containsKey(word);
+        boolean hasWord = occurrences.containsKey(word);
         if (hasWord) {
             return occurrences.get(word);
         } else {
@@ -249,7 +249,7 @@ public final class Chapter19Moderate {
     // book solution
     public int rand7() {
         while (true) {
-            final int number = 5 * rand5() - 1 + rand5() - 1;
+            int number = 5 * rand5() - 1 + rand5() - 1;
             if (number < 21) {
                 return number % 7 + 1;
             }
@@ -272,8 +272,8 @@ public final class Chapter19Moderate {
      */
     // Time - O(N)
     public Map<Integer, Integer> getPairSum(int[] array, int target) {
-        final Map<Integer, Integer> pairs = new HashMap<>();
-        final Map<Integer, Integer> uniquePairs = new HashMap<>();
+        Map<Integer, Integer> pairs = new HashMap<>();
+        Map<Integer, Integer> uniquePairs = new HashMap<>();
 
         for (int anArray : array) {
             if (!pairs.containsKey(anArray)) {

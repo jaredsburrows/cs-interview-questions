@@ -14,7 +14,7 @@ public final class Problem796RotateString {
             return false;
         }
 
-        final String rotated = A + A;
+        String rotated = A + A;
         return rotated.contains(B);
     }
 }

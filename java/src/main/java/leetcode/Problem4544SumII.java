@@ -15,12 +15,12 @@ public final class Problem4544SumII {
             return 0;
         }
 
-        final Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         int count = 0;
 
         for (int i : A) {
             for (int j : B) {
-                final int key = i + j;
+                int key = i + j;
                 map.put(key, map.getOrDefault(key, 0) + 1);
             }
         }

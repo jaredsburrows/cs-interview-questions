@@ -8,12 +8,12 @@ import java.util.Map;
  */
 public final class WordMultiple {
     public Map<String, Boolean> wordMultiple(String[] strings) {
-        final Map<String, Boolean> map = new HashMap<>();
+        Map<String, Boolean> map = new HashMap<>();
         if (strings == null || strings.length == 0) {
             return map;
         }
 
-        final Map<String, Integer> counts = new HashMap<>();
+        Map<String, Integer> counts = new HashMap<>();
         for (String string : strings) {
             counts.put(string, counts.getOrDefault(string, 0) + 1);
         }

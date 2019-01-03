@@ -19,14 +19,14 @@ public final class Problem165CompareVersionNumbers {
             return 0;
         }
 
-        final String[] left = version1.split("\\.", -1);
-        final String[] right = version2.split("\\.", -1);
-        final int length = Math.max(left.length, right.length);
+        String[] left = version1.split("\\.", -1);
+        String[] right = version2.split("\\.", -1);
+        int length = Math.max(left.length, right.length);
 
         for (int i = 0; i < length; i++) {
-            final Integer v1 = i < left.length ? Integer.valueOf(left[i]) : 0;
-            final Integer v2 = i < right.length ? Integer.valueOf(right[i]) : 0;
-            final int compare = v1.compareTo(v2);
+            Integer v1 = i < left.length ? Integer.valueOf(left[i]) : 0;
+            Integer v2 = i < right.length ? Integer.valueOf(right[i]) : 0;
+            int compare = v1.compareTo(v2);
             if (compare != 0) {
                 return compare;
             }

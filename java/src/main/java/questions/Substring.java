@@ -24,7 +24,7 @@ public final class Substring {
             return "";
         }
 
-        final StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         for (int i = start; i < end; i++) {
             stringBuilder.append(input.charAt(i));
         }

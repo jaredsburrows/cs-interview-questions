@@ -17,7 +17,7 @@ public final class Problem771JewelsAndStones {
             return 0;
         }
 
-        final Map<Character, Integer> jewels = new HashMap<>();
+        Map<Character, Integer> jewels = new HashMap<>();
         for (int i = 0; i < J.length(); i++) {
             jewels.put(J.charAt(i), jewels.getOrDefault(J.charAt(i), 0) + 1);
         }

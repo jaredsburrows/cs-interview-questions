@@ -14,8 +14,8 @@ public final class Problem350IntersectionOfTwoArraysII {
             return new int[0];
         }
 
-        final List<Integer> result = new ArrayList<>();
-        final Map<Integer, Integer> map = new HashMap<>();
+        List<Integer> result = new ArrayList<>();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums1) {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }

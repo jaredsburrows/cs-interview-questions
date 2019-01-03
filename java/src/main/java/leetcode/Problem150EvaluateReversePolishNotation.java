@@ -15,7 +15,7 @@ public final class Problem150EvaluateReversePolishNotation {
 
         int first;
         int second;
-        final Deque<Integer> stack = new ArrayDeque<>();
+        Deque<Integer> stack = new ArrayDeque<>();
 
         for (String token : tokens) {
             switch (token) {

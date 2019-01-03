@@ -9,8 +9,7 @@ public final class Problem278FirstBadVersion {
         int end = n;
 
         while (start < end) {
-            final int mid = start + (end - start) / 2;
-
+            int mid = start + (end - start) / 2;
             if (isBadVersion(mid)) {
                 end = mid;
             } else {

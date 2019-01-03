@@ -14,7 +14,7 @@ public final class Problem215KthLargestElementInAnArray {
             return -1;
         }
 
-        final Queue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
+        Queue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
         for (int num : nums) {
             queue.add(num);
         }

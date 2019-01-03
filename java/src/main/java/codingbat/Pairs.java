@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public final class Pairs {
     public Map<String, String> pairs(String[] strings) {
-        final Map<String, String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         if (strings == null || strings.length == 0) {
             return map;
         }

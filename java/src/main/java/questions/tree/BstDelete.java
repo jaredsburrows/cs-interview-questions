@@ -36,7 +36,7 @@ public final class BstDelete {
             } else if (root.right == null) {
                 return root.left;
             } else {
-                final TreeNode<Integer> temp = root;
+                TreeNode<Integer> temp = root;
                 root = getMinNode(temp.right);
                 root.right = deleteMin(temp.right);
                 root.left = temp.left;

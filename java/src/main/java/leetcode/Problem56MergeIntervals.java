@@ -10,7 +10,7 @@ import leetcode.api.Interval;
  */
 public final class Problem56MergeIntervals {
     public List<Interval> merge(List<Interval> intervals) {
-        final List<Interval> result = new ArrayList<>();
+        List<Interval> result = new ArrayList<>();
         if (intervals == null || intervals.isEmpty()) {
             return result;
         }

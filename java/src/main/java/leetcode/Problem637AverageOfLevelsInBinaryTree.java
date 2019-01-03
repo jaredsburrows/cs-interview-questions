@@ -11,21 +11,21 @@ import leetcode.api.TreeNode;
  */
 public final class Problem637AverageOfLevelsInBinaryTree {
     public List<Double> averageOfLevels(TreeNode root) {
-        final List<Double> averages = new ArrayList<>();
+        List<Double> averages = new ArrayList<>();
         if (root == null) {
             return averages;
         }
 
-        final Deque<TreeNode> queue = new ArrayDeque<>();
+        Deque<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
 
         while (!queue.isEmpty()) {
             int size = queue.size();
-            final int currentLevel = size;
+            int currentLevel = size;
             double currentTotal = 0.0d;
 
             while (size > 0) {
-                final TreeNode node = queue.poll();
+                TreeNode node = queue.poll();
                 currentTotal += node.val;
 
                 if (node.left != null) {
@@ -39,7 +39,7 @@ public final class Problem637AverageOfLevelsInBinaryTree {
                 size--;
             }
 
-            final double currentAverage = currentTotal / currentLevel;
+            double currentAverage = currentTotal / currentLevel;
             averages.add(currentAverage);
         }
 

@@ -21,7 +21,7 @@ public final class Interval {
             return false;
         }
 
-        final Interval interval = (Interval) o;
+        Interval interval = (Interval) o;
         return start == interval.start
             && end == interval.end;
     }

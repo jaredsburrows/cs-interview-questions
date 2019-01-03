@@ -12,14 +12,18 @@ public final class ReverseArray {
         }
 
         while (start < end) {
-            final int tmp = array[start];
-            array[start] = array[end];
-            array[end] = tmp;
+            swap(array, start, end);
 
             start++;
             end--;
         }
 
         return array;
+    }
+
+    private static void swap(int[] array, int left, int right) {
+        int temp = array[left];
+        array[left] = array[right];
+        array[right] = temp;
     }
 }

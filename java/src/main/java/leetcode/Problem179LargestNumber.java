@@ -12,7 +12,7 @@ public final class Problem179LargestNumber {
             return "";
         }
 
-        final Queue<String> queue = new PriorityQueue<>(nums.length,
+        Queue<String> queue = new PriorityQueue<>(nums.length,
             (left, right) -> Long.valueOf(right + left).compareTo(Long.valueOf(left + right))
         );
 
@@ -20,12 +20,12 @@ public final class Problem179LargestNumber {
             queue.offer(String.valueOf(num));
         }
 
-        final StringBuilder stringBuilder = new StringBuilder(nums.length);
+        StringBuilder stringBuilder = new StringBuilder(nums.length);
         while (!queue.isEmpty()) {
             stringBuilder.append(queue.poll());
         }
 
-        final String result = stringBuilder.toString();
+        String result = stringBuilder.toString();
         return result.startsWith("0") ? "0" : result;
     }
 }

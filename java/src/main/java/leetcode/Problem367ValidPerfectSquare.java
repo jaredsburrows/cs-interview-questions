@@ -9,7 +9,7 @@ public final class Problem367ValidPerfectSquare {
         int high = num;
 
         while (low <= high) {
-            final long mid = (long) (low + high) >>> 1;
+            long mid = (long) (low + high) >>> 1;
             if (mid * mid == num) {
                 return true;
             } else if (mid * mid < num) {

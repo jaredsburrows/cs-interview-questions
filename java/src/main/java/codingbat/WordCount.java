@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public final class WordCount {
     public Map<String, Integer> wordCount(String[] strings) {
-        final Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> map = new HashMap<>();
         if (strings == null || strings.length == 0) {
             return map;
         }

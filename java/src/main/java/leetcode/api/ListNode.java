@@ -20,7 +20,7 @@ public final class ListNode {
             return false;
         }
 
-        final ListNode listNode = (ListNode) o;
+        ListNode listNode = (ListNode) o;
         return val == listNode.val
             && Objects.equals(next, listNode.next);
     }

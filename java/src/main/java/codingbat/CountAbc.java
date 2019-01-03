@@ -10,9 +10,9 @@ public final class CountAbc {
         }
 
         if ("abc".equals(str.substring(0, 3)) || "aba".equals(str.substring(0, 3))) {
-            return countAbc(str.substring(1, str.length())) + 1;
+            return countAbc(str.substring(1)) + 1;
         } else {
-            return countAbc(str.substring(1, str.length()));
+            return countAbc(str.substring(1));
         }
     }
 }

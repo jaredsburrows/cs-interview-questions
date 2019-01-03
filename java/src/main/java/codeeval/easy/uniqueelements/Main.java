@@ -13,24 +13,25 @@ import java.util.Set;
 
 public final class Main {
     public static void main(String[] args) throws Exception {
-        final File inputFile = new File(args[0]);
-        final InputStream fileStream = new FileInputStream(inputFile);
-        final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
-        final BufferedReader buffer = new BufferedReader(inputReader);
+        File inputFile = new File(args[0]);
+        InputStream fileStream = new FileInputStream(inputFile);
+        Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
+        BufferedReader buffer = new BufferedReader(inputReader);
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] strings = line.trim().split(",", -1);
-            final Set<String> set = new LinkedHashSet<>();
+            String[] strings = line.trim().split(",", -1);
+            Set<String> set = new LinkedHashSet<>();
             Collections.addAll(set, strings);
-            final Object[] objects = set.toArray();
-            final StringBuilder temp = new StringBuilder();
+            Object[] objects = set.toArray();
+            StringBuilder temp = new StringBuilder();
             for (Object string : objects) {
                 temp.append(string).append(",");
             }
 
-            System.out.println(
-                (temp.lastIndexOf(",") != -1) ? temp.substring(0, temp.lastIndexOf(",")) : temp.toString());
+            System.out.println(temp.lastIndexOf(",") != -1
+                ? temp.substring(0, temp.lastIndexOf(","))
+                : temp.toString());
         }
     }
 }

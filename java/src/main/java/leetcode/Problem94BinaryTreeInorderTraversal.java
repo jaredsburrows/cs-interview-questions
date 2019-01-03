@@ -12,12 +12,12 @@ import leetcode.api.TreeNode;
 public final class Problem94BinaryTreeInorderTraversal {
     // iterative
     public List<Integer> inorderTraversal(TreeNode root) {
-        final List<Integer> values = new ArrayList<>();
+        List<Integer> values = new ArrayList<>();
         if (root == null) {
             return values;
         }
 
-        final Deque<TreeNode> stack = new ArrayDeque<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
         TreeNode current = root;
 
         while (current != null || !stack.isEmpty()) {
@@ -36,7 +36,7 @@ public final class Problem94BinaryTreeInorderTraversal {
 
     // recursion
     public List<Integer> inorderTraversal2(TreeNode root) {
-        final List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
 
         inorderTraversal2(root, list);
 

@@ -12,7 +12,7 @@ public final class EndUp {
         if (str.length() <= 3) {
             return str.toUpperCase();
         } else {
-            final char[] array = str.toCharArray();
+            char[] array = str.toCharArray();
             array[str.length() - 3] = str.toUpperCase().toCharArray()[str.length() - 3];
             array[str.length() - 2] = str.toUpperCase().toCharArray()[str.length() - 2];
             array[str.length() - 1] = str.toUpperCase().toCharArray()[str.length() - 1];

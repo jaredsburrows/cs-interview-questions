@@ -10,9 +10,9 @@ public final class Count11 {
         }
 
         if (str.length() >= 2 && "11".equals(str.substring(0, 2))) {
-            return count11(str.substring(2, str.length())) + 1;
+            return count11(str.substring(2)) + 1;
         } else {
-            return count11(str.substring(1, str.length()));
+            return count11(str.substring(1));
         }
     }
 }

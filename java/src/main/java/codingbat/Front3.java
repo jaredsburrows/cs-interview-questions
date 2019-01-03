@@ -5,7 +5,7 @@ package codingbat;
  */
 public final class Front3 {
     public String front3(String str) {
-        final StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         if (str == null || str.isEmpty()) {
             return stringBuilder.toString();
         }

@@ -28,7 +28,7 @@ public final class TrieNode<T> {
             return false;
         }
 
-        final TrieNode<?> trieNode = (TrieNode<?>) o;
+        TrieNode<?> trieNode = (TrieNode<?>) o;
         return isEnd == trieNode.isEnd
             && Arrays.equals(children, trieNode.children);
     }

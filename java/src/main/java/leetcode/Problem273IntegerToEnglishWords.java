@@ -17,7 +17,7 @@ public final class Problem273IntegerToEnglishWords {
             return "Zero";
         }
 
-        final StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         int i = 0;
 
         while (num > 0) {

@@ -45,7 +45,7 @@ public final class Problem88MergeSortedArray {
             return left;
         }
 
-        final int[] merge = new int[left.length + right.length];
+        int[] merge = new int[left.length + right.length];
 
         int leftIndex = 0;
         int rightIndex = 0;
@@ -73,10 +73,10 @@ public final class Problem88MergeSortedArray {
             return new ArrayList<>();
         }
 
-        final List<Integer> sortedList = new ArrayList<>();
+        List<Integer> sortedList = new ArrayList<>();
 
         for (List<Integer> number : numbers) {
-            final List<Integer> mergedList = merge(number, sortedList);
+            List<Integer> mergedList = merge(number, sortedList);
 
             sortedList.clear();
 
@@ -100,7 +100,7 @@ public final class Problem88MergeSortedArray {
             right = new ArrayList<>();
         }
 
-        final List<Integer> sortedList = new ArrayList<>();
+        List<Integer> sortedList = new ArrayList<>();
 
         int lengthLeft = left.size();
         int lengthRight = right.size();

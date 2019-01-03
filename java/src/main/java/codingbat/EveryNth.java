@@ -5,7 +5,7 @@ package codingbat;
  */
 public final class EveryNth {
     public String everyNth(String str, int n) {
-        final StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         if (str == null || str.isEmpty()) {
             return stringBuilder.toString();
         }

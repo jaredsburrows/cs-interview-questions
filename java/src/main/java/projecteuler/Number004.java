@@ -2,7 +2,7 @@ package projecteuler;
 
 public final class Number004 {
     public static boolean isPalindrome(int number) {
-        final String temp = Integer.toString(number);
+        String temp = Integer.toString(number);
         return temp.equals(new StringBuilder(temp).reverse().toString());
     }
 
@@ -11,7 +11,7 @@ public final class Number004 {
 
         for (int i = 999; i > 99; i--) {
             for (int j = 999; j > 99; j--) {
-                final int tmp = i * j;
+                int tmp = i * j;
                 if (isPalindrome(tmp) && tmp > max) {
                     max = tmp;
                     break;

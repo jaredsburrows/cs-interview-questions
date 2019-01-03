@@ -21,7 +21,7 @@ public final class TreeNode {
             return false;
         }
 
-        final TreeNode treeNode = (TreeNode) o;
+        TreeNode treeNode = (TreeNode) o;
         return val == treeNode.val
             && Objects.equals(left, treeNode.left)
             && Objects.equals(right, treeNode.right);

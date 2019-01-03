@@ -23,7 +23,7 @@ public final class UndirectedGraphNode {
             return false;
         }
 
-        final UndirectedGraphNode that = (UndirectedGraphNode) o;
+        UndirectedGraphNode that = (UndirectedGraphNode) o;
         return label == that.label
             && Objects.equals(neighbors, that.neighbors);
     }

@@ -13,7 +13,7 @@ public final class Problem760FindAnagramMappings {
             return new int[0];
         }
 
-        final Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < B.length; i++) {
             map.put(B[i], i);
         }

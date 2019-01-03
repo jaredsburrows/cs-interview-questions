@@ -9,13 +9,13 @@ import java.util.List;
 public final class Problem77Combinations {
     // Space - O(N)
     public List<List<Integer>> combine(int n, int k) {
-        final List<List<Integer>> combinations = new ArrayList<>();
+        List<List<Integer>> combinations = new ArrayList<>();
 
         if (n <= 0 || k <= 0 || n < k) {
             return combinations;
         }
 
-        final List<Integer> current = new ArrayList<>();
+        List<Integer> current = new ArrayList<>();
 
         combine(combinations, current, n, k, 1, 0);
 

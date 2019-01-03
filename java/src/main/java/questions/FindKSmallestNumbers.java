@@ -9,9 +9,9 @@ public final class FindKSmallestNumbers {
      */
     // Time - O(N*M)
     public static List<Integer> getSmallestNumbers(List<List<Integer>> numbers, int target) {
-        final List<Integer> toReturn = new ArrayList<>(target);
-        final int length = numbers.size() - 1;
-        final int[] indexes = new int[length];
+        List<Integer> toReturn = new ArrayList<>(target);
+        int length = numbers.size() - 1;
+        int[] indexes = new int[length];
         int min = numbers.get(0).get(0);
 
         // O(N)
@@ -19,9 +19,9 @@ public final class FindKSmallestNumbers {
             // O(M)
             for (int j = 0; j < length; j++) {
                 // O(1)
-                final List<Integer> currentList = numbers.get(j);
-                final int currentIndex = indexes[j];
-                final int currentInteger = currentList.get(currentIndex);
+                List<Integer> currentList = numbers.get(j);
+                int currentIndex = indexes[j];
+                int currentInteger = currentList.get(currentIndex);
                 if (currentInteger < min) {
                     min = currentInteger;
                     indexes[j] = indexes[j] + 1;

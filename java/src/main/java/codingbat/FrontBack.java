@@ -10,7 +10,7 @@ public final class FrontBack {
         }
 
         if (str.length() > 1) {
-            final char[] array = str.toCharArray();
+            char[] array = str.toCharArray();
 
             swap(array, 0, str.length() - 1);
 
@@ -21,7 +21,7 @@ public final class FrontBack {
     }
 
     private void swap(char[] array, int left, int right) {
-        final char temp = array[left];
+        char temp = array[left];
         array[left] = array[right];
         array[right] = temp;
     }

@@ -16,7 +16,7 @@ public final class Problem268MissingNumber {
 
     // Time - O(1), Space - O(1)
     private int getSumNaturalNumbers(int[] numbers) {
-        final int length = numbers.length;
+        int length = numbers.length;
         return (length * (length + 1)) / 2;
     }
 }

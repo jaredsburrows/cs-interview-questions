@@ -10,17 +10,17 @@ import java.nio.charset.Charset;
 
 public final class Main {
     public static void main(String[] args) throws Exception {
-        final File inputFile = new File(args[0]);
-        final InputStream fileStream = new FileInputStream(inputFile);
-        final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
-        final BufferedReader buffer = new BufferedReader(inputReader);
+        File inputFile = new File(args[0]);
+        InputStream fileStream = new FileInputStream(inputFile);
+        Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
+        BufferedReader buffer = new BufferedReader(inputReader);
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] strings = line.trim().split(" ", -1);
-            final int length = strings.length / 2;
-            final char[][] originalMatrix = new char[length][length];
-            final char[][] rotatedMatrix = new char[length][length];
+            String[] strings = line.trim().split(" ", -1);
+            int length = strings.length / 2;
+            char[][] originalMatrix = new char[length][length];
+            char[][] rotatedMatrix = new char[length][length];
 
             for (int i = 0; i < length; i++) {
                 for (int j = 0; j < length; j++) {
@@ -36,7 +36,7 @@ public final class Main {
                 }
             }
 
-            System.out.println("");
+            System.out.println();
         }
     }
 }

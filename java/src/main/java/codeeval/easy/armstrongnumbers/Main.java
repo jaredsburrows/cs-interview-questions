@@ -10,20 +10,20 @@ import java.nio.charset.Charset;
 
 public final class Main {
     public static void main(String[] args) throws Exception {
-        final File inputFile = new File(args[0]);
-        final InputStream fileStream = new FileInputStream(inputFile);
-        final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
-        final BufferedReader buffer = new BufferedReader(inputReader);
+        File inputFile = new File(args[0]);
+        InputStream fileStream = new FileInputStream(inputFile);
+        Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
+        BufferedReader buffer = new BufferedReader(inputReader);
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String string = line.trim();
-            final int length = string.length();
+            String string = line.trim();
+            int length = string.length();
             int value = Integer.parseInt(string);
-            final double originalValue = value;
+            double originalValue = value;
             double eval = 0;
             while (value != 0) {
-                final int temp = value % 10;
+                int temp = value % 10;
                 value /= 10;
                 eval += Math.pow(temp, length);
             }

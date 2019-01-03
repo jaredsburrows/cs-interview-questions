@@ -12,17 +12,17 @@ import java.util.Queue;
  */
 public final class Problem347TopKFrequentElements {
     public List<Integer> topKFrequent(int[] nums, int k) {
-        final List<Integer> numbers = new ArrayList<>();
+        List<Integer> numbers = new ArrayList<>();
         if (nums == null || nums.length == 0 || k < 0) {
             return numbers;
         }
 
-        final Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
 
-        final Queue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<>(
+        Queue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<>(
             (left, right) -> Integer.compare(right.getValue(), left.getValue()));
         queue.addAll(map.entrySet());
 

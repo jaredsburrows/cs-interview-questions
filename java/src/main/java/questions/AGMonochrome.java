@@ -7,8 +7,8 @@ public final class AGMonochrome {
             return;
         }
 
-        final int rows = array.length;
-        final int cols = array[0].length;
+        int rows = array.length;
+        int cols = array[0].length;
 
         for (int i = 1; i < rows; i++) {
             array[i][0] = array[i - 1][0] + array[i][0];

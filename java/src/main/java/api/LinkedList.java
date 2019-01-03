@@ -18,7 +18,7 @@ public final class LinkedList<T> {
     }
 
     public void addToFront(T value) {
-        final Node<T> node = new Node<>(value);
+        Node<T> node = new Node<>(value);
         node.next = head;
         head = node;
     }
@@ -57,7 +57,7 @@ public final class LinkedList<T> {
             return false;
         }
 
-        final LinkedList<?> that = (LinkedList<?>) o;
+        LinkedList<?> that = (LinkedList<?>) o;
         return Objects.equals(head, that.head);
     }
 

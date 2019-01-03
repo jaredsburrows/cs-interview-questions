@@ -12,16 +12,16 @@ import java.util.Map;
 public final class Problem49GroupAnagrams {
     // Time - O(N*LOG(K)), Space - O(N)
     public List<List<String>> groupAnagrams(String[] strs) {
-        final List<List<String>> strings = new ArrayList<>();
+        List<List<String>> strings = new ArrayList<>();
         if (strs == null || strs.length == 0) {
             return strings;
         }
 
-        final Map<String, List<String>> map = new HashMap<>();
+        Map<String, List<String>> map = new HashMap<>();
         for (String s : strs) {
-            final char[] unSorted = s.toCharArray();
+            char[] unSorted = s.toCharArray();
             Arrays.sort(unSorted);
-            final String sorted = new String(unSorted);
+            String sorted = new String(unSorted);
             if (!map.containsKey(sorted)) {
                 map.put(sorted, new ArrayList<>());
             }

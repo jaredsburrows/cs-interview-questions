@@ -16,15 +16,15 @@ public final class Problem339NestedListWeightSum {
             return 0;
         }
 
-        final Deque<NestedInteger> queue = new ArrayDeque<>(nestedList);
+        Deque<NestedInteger> queue = new ArrayDeque<>(nestedList);
         int sum = 0;
         int level = 1;
 
         while (!queue.isEmpty()) {
-            final int size = queue.size();
+            int size = queue.size();
 
             for (int i = 0; i < size; i++) {
-                final NestedInteger current = queue.poll();
+                NestedInteger current = queue.poll();
 
                 if (current.isInteger()) {
                     sum += current.getInteger() * level;
@@ -49,7 +49,7 @@ public final class Problem339NestedListWeightSum {
         int sum = 0;
 
         while (!nestedList.isEmpty()) {
-            final List<NestedInteger> temp = new ArrayList<>();
+            List<NestedInteger> temp = new ArrayList<>();
             for (NestedInteger nestedInteger : nestedList) {
                 if (nestedInteger.isInteger()) {
                     sum += nestedInteger.getInteger() * level;

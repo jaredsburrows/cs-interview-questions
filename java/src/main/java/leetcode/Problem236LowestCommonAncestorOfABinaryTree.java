@@ -16,8 +16,8 @@ public final class Problem236LowestCommonAncestorOfABinaryTree {
             return root;
         }
 
-        final TreeNode left = lowestCommonAncestor(root.left, p, q);
-        final TreeNode right = lowestCommonAncestor(root.right, p, q);
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
 
         if (left != null && right != null) {
             return root;
@@ -36,8 +36,8 @@ public final class Problem236LowestCommonAncestorOfABinaryTree {
             return root;
         }
 
-        final TreeNode left = lowestCommonAncestor2(root.left, v1, v2);
-        final TreeNode right = lowestCommonAncestor2(root.right, v1, v2);
+        TreeNode left = lowestCommonAncestor2(root.left, v1, v2);
+        TreeNode right = lowestCommonAncestor2(root.right, v1, v2);
 
         if (left != null && right != null) {
             return root;

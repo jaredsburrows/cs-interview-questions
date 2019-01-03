@@ -8,12 +8,12 @@ import java.util.Map;
  */
 public final class WordAppend {
     public String wordAppend(String[] strings) {
-        final StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         if (strings == null || strings.length == 0) {
             return stringBuilder.toString();
         }
 
-        final Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> map = new HashMap<>();
         for (String string : strings) {
             map.put(string, map.getOrDefault(string, 0) + 1);
 

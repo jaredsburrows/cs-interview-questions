@@ -9,14 +9,14 @@ import java.util.List;
 public final class Problem442FindAllDuplicatesInAnArray {
     // Time - O(N), Space - O(N)
     public List<Integer> findDuplicates(int[] nums) {
-        final List<Integer> duplicates = new ArrayList<>();
+        List<Integer> duplicates = new ArrayList<>();
         if (nums == null || nums.length == 0) {
             return duplicates;
         }
 
         for (int i = 0; i < nums.length; i++) {
-            final int number = nums[i];
-            final int index = Math.abs(number) - 1;
+            int number = nums[i];
+            int index = Math.abs(number) - 1;
 
             // Mark all integers as negative
             nums[index] = -nums[index];

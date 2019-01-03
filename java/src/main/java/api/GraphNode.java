@@ -31,7 +31,7 @@ public final class GraphNode<T> {
             return false;
         }
 
-        final GraphNode<?> graphNode = (GraphNode<?>) o;
+        GraphNode<?> graphNode = (GraphNode<?>) o;
         return visited == graphNode.visited
             && Objects.equals(value, graphNode.value)
             && Objects.equals(next, graphNode.next)

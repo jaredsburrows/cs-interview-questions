@@ -61,25 +61,25 @@ public final class Chapter8Recursion {
             return new ArrayList<>();
         }
 
-        final List<List<Integer>> finalList;
+        List<List<Integer>> subsets;
         if (initial.size() == size) {
             // empty set
-            finalList = new ArrayList<>();
-            finalList.add(new ArrayList<>());
+            subsets = new ArrayList<>();
+            subsets.add(new ArrayList<>());
         } else {
-            finalList = getSubsets(initial, size + 1);
-            final List<ArrayList<Integer>> newSetList = new ArrayList<>();
-            for (List<Integer> set : finalList) {
+            subsets = getSubsets(initial, size + 1);
+            List<ArrayList<Integer>> newSetList = new ArrayList<>();
+            for (List<Integer> set : subsets) {
                 // new set is being created
-                final ArrayList<Integer> temp = new ArrayList<>(set);
+                ArrayList<Integer> temp = new ArrayList<>(set);
                 temp.add(initial.get(size));
                 newSetList.add(temp);
             }
 
-            // add to final list
-            finalList.addAll(newSetList);
+            // add to list
+            subsets.addAll(newSetList);
         }
-        return finalList;
+        return subsets;
     }
 
     /**
@@ -90,21 +90,21 @@ public final class Chapter8Recursion {
             return new ArrayList<>();
         }
 
-        final List<String> finalList = new ArrayList<>();
-        final int length = string.length();
+        List<String> permutations = new ArrayList<>();
+        int length = string.length();
         if (length == 0) {
             // empty string
-            finalList.add(prefix);
+            permutations.add(prefix);
         } else {
             for (int i = 0; i < length; i++) {
-                // add to final list
-                finalList.addAll(
+                // add to list
+                permutations.addAll(
                     getStringPermutations(prefix + string.charAt(i), string.substring(i + 1, length)
                         + string.substring(0, i)));
             }
         }
 
-        return finalList;
+        return permutations;
     }
 
     /**
@@ -118,7 +118,7 @@ public final class Chapter8Recursion {
             return new ArrayList<>();
         }
 
-        final List<String> generatedList = new ArrayList<>();
+        List<String> generatedList = new ArrayList<>();
 
         if (right == pairs) {
             generatedList.add(pairString);
@@ -126,7 +126,7 @@ public final class Chapter8Recursion {
 
         // make sure left is not greater than number of pairs
         if (left < pairs) {
-            final List<String> next = getValidParentheses(pairs, left + 1, right, pairString + "(");
+            List<String> next = getValidParentheses(pairs, left + 1, right, pairString + "(");
             if (!next.isEmpty()) {
                 generatedList.addAll(next);
             }
@@ -135,7 +135,7 @@ public final class Chapter8Recursion {
         // make sure right is not greater than number of pairs
         // make sure right is left than left, (()
         if (right < pairs && right < left) {
-            final List<String> next = getValidParentheses(pairs, left, right + 1, pairString + ")");
+            List<String> next = getValidParentheses(pairs, left, right + 1, pairString + ")");
             if (!next.isEmpty()) {
                 generatedList.addAll(next);
             }
@@ -173,7 +173,7 @@ public final class Chapter8Recursion {
     }
 
     public void paintFill(Color[][] pixels, int positionX, int positionY, Color newColor) {
-        final Color oldColor = pixels[positionX][positionY];
+        Color oldColor = pixels[positionX][positionY];
 
         paintFill(pixels, positionX, positionY, oldColor, newColor);
     }
@@ -204,8 +204,8 @@ public final class Chapter8Recursion {
     }
 
     public void floodFill(int[][] screen, int positionX, int positionY,
-                          final int newColor) {
-        final int oldColor = screen[positionX][positionY];
+                          int newColor) {
+        int oldColor = screen[positionX][positionY];
 
         floodFillUtil(screen, positionX, positionY, oldColor, newColor);
     }

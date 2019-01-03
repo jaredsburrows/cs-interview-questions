@@ -169,7 +169,7 @@ public final class Chapter20Hard {
             return new ArrayList<>();
         }
 
-        final List<Integer> integerList = new ArrayList<>(billion);
+        List<Integer> integerList = new ArrayList<>(billion);
         integerList.sort((left, right) -> left > right ? 1 : -1);
         return integerList.subList(5, 10);
     }
@@ -205,7 +205,7 @@ public final class Chapter20Hard {
      */
     // what is the data structure of the dictionary? Map<Integer, String>
     public List<String> getTransformedList(Map<String, String> dictionary, String from,
-        final String to) {
+        String to) {
         if (dictionary == null || from == null || to == null) {
             return new ArrayList<>();
         }
@@ -214,10 +214,10 @@ public final class Chapter20Hard {
             return new ArrayList<>();
         }
 
-        final List<String> stringList = new ArrayList<>();
+        List<String> stringList = new ArrayList<>();
         stringList.add(from);
 
-        final char[] temp = from.toCharArray();
+        char[] temp = from.toCharArray();
         int count = 0;
 
         while (count <= temp.length) {

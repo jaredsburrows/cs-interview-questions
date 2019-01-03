@@ -26,10 +26,10 @@ public final class Chapter3StacksAndQueues {
      */
     // Time - O(N^2), Space - O(N)
     public Deque<Integer> getSortedStack(Deque<Integer> stack) {
-        final Deque<Integer> sortedStack = new ArrayDeque<>();
+        Deque<Integer> sortedStack = new ArrayDeque<>();
 
         while (!stack.isEmpty()) {
-            final int popped = stack.pop();
+            int popped = stack.pop();
             while (!sortedStack.isEmpty() && sortedStack.peek() > popped) {
                 stack.push(sortedStack.pop());
             }
@@ -60,7 +60,7 @@ public final class Chapter3StacksAndQueues {
 
         @Override
         public synchronized Integer pop() {
-            final int value = super.pop();
+            int value = super.pop();
             if (value == getMinimum()) {
                 stack.pop();
             }
@@ -109,7 +109,7 @@ public final class Chapter3StacksAndQueues {
 
         public void push(T item) {
             if (stacks.get(currentStack).size() == capacity) {
-                final Deque<T> stack = new ArrayDeque<>();
+                Deque<T> stack = new ArrayDeque<>();
                 stack.push(item);
                 stacks.add(stack);
                 currentStack++;

@@ -10,9 +10,9 @@ public final class StringClean {
         }
 
         if (str.length() >= 2 && str.substring(0, 1).equals(str.substring(1, 2))) {
-            return stringClean(str.substring(1, str.length()));
+            return stringClean(str.substring(1));
         } else {
-            return str.substring(0, 1) + stringClean(str.substring(1, str.length()));
+            return str.substring(0, 1) + stringClean(str.substring(1));
         }
     }
 }

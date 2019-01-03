@@ -12,11 +12,11 @@ public final class FirstSwap {
             return new String[0];
         }
 
-        final Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < strings.length; i++) {
-            final char key = strings[i].charAt(0);
+            char key = strings[i].charAt(0);
             if (map.containsKey(key)) {
-                final int value = map.get(key);
+                int value = map.get(key);
                 if (value == -1) {
                     continue;
                 }
@@ -32,7 +32,7 @@ public final class FirstSwap {
     }
 
     private void swap(String[] array, int left, int right) {
-        final String temp = array[left];
+        String temp = array[left];
         array[left] = array[right];
         array[right] = temp;
     }

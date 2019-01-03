@@ -15,8 +15,8 @@ public final class Problem110BalancedBinaryTree {
             return 0;
         }
 
-        final int left = getHeight(root.left);
-        final int right = getHeight(root.right);
+        int left = getHeight(root.left);
+        int right = getHeight(root.right);
 
         if (left == -1 || right == -1 || Math.abs(left - right) > 1) {
             return -1;

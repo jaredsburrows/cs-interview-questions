@@ -24,9 +24,7 @@ public final class QuickSort {
             }
 
             if (left <= right) {
-                final int temp = array[left];
-                array[left] = array[right];
-                array[right] = temp;
+                swap(array, left, right);
 
                 left++;
                 right--;
@@ -47,8 +45,8 @@ public final class QuickSort {
         return array;
     }
 
-    public static void swap(int[] array, int left, int right) {
-        final int temp = array[left];
+    private static void swap(int[] array, int left, int right) {
+        int temp = array[left];
         array[left] = array[right];
         array[right] = temp;
     }
@@ -80,7 +78,7 @@ public final class QuickSort {
             return;
         }
 
-        final int pivot = partition(array, low, high);
+        int pivot = partition(array, low, high);
         sortHelper2(array, low, pivot);
         sortHelper2(array, pivot + 1, high);
     }

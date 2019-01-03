@@ -9,7 +9,7 @@ public final class Problem374GuessNumberHigherOrLower {
         int high = n;
 
         while (low < high) {
-            final int mid = low + (high - low) / 2;
+            int mid = low + (high - low) / 2;
 
             if (guess(mid) == 1) {
                 low = mid + 1;

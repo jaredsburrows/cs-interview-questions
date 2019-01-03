@@ -24,7 +24,7 @@ public final class Node<T> {
             return false;
         }
 
-        final Node<?> node = (Node<?>) o;
+        Node<?> node = (Node<?>) o;
         return Objects.equals(value, node.value)
             && Objects.equals(next, node.next)
             && Objects.equals(previous, node.previous);

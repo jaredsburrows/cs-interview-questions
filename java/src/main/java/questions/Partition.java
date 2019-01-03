@@ -1,11 +1,6 @@
 package questions;
 
 public final class Partition {
-    public static void swap(int[] array, int left, int right) {
-        final int temp = array[left];
-        array[left] = array[right];
-        array[right] = temp;
-    }
 
     public static void part(int[] array, int pivotIndex) {
         if (array == null || array.length == 0) {
@@ -45,5 +40,11 @@ public final class Partition {
     public static int[] partition(int[] array) {
         partition(array, 0);
         return array;
+    }
+
+    private static void swap(int[] array, int left, int right) {
+        int temp = array[left];
+        array[left] = array[right];
+        array[right] = temp;
     }
 }

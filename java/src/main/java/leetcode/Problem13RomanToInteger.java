@@ -13,7 +13,7 @@ public final class Problem13RomanToInteger {
             return -1;
         }
 
-        final Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map = new HashMap<>();
         map.put('M', 1000);
         map.put('D', 500);
         map.put('C', 100);
@@ -26,7 +26,7 @@ public final class Problem13RomanToInteger {
         int result = 0;
 
         for (int i = s.length() - 1; i >= 0; i--) {
-            final int current = map.get(s.charAt(i));
+            int current = map.get(s.charAt(i));
             if (current < previous) {
                 result -= current;
             } else {

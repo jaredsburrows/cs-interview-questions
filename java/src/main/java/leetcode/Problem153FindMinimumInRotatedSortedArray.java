@@ -14,7 +14,7 @@ public final class Problem153FindMinimumInRotatedSortedArray {
         int high = nums.length - 1;
 
         while (low < high) {
-            final int mid = low + (high - low) / 2;
+            int mid = low + (high - low) / 2;
             if (nums[mid] > nums[high]) {
                 low = mid + 1;
             } else {
@@ -28,8 +28,8 @@ public final class Problem153FindMinimumInRotatedSortedArray {
         high = nums.length - 1;
 
         while (low <= high) {
-            final int mid = low + (high - low) / 2;
-            final int realMid = (mid + rot) % nums.length;
+            int mid = low + (high - low) / 2;
+            int realMid = (mid + rot) % nums.length;
             if (nums[realMid] < min) {
                 min = Math.min(min, nums[realMid]);
                 low = mid + 1;

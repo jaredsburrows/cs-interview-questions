@@ -10,21 +10,21 @@ import java.nio.charset.Charset;
 
 public final class Main {
     public static void main(String[] args) throws Exception {
-        final File inputFile = new File(args[0]);
-        final InputStream fileStream = new FileInputStream(inputFile);
-        final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
-        final BufferedReader buffer = new BufferedReader(inputReader);
+        File inputFile = new File(args[0]);
+        InputStream fileStream = new FileInputStream(inputFile);
+        Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
+        BufferedReader buffer = new BufferedReader(inputReader);
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String replaceLine =
+            String replaceLine =
                 line.trim().replaceAll("\\(", "").replaceAll("\\)", "").replaceAll(",", "");
-            final String[] strings = replaceLine.split(" ", -1);
+            String[] strings = replaceLine.split(" ", -1);
 
-            final int x1 = Integer.parseInt(strings[0]);
-            final int y1 = Integer.parseInt(strings[1]);
-            final int x2 = Integer.parseInt(strings[2]);
-            final int y2 = Integer.parseInt(strings[3]);
+            int x1 = Integer.parseInt(strings[0]);
+            int y1 = Integer.parseInt(strings[1]);
+            int x2 = Integer.parseInt(strings[2]);
+            int y2 = Integer.parseInt(strings[3]);
 
             System.out.println((int) Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2)));
         }

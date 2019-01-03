@@ -14,8 +14,8 @@ public final class ExploreBinarySearch {
         int high = nums.length - 1;
 
         while (low <= high) {
-            final int mid = low + (high - low) / 2;
-            final int current = nums[mid];
+            int mid = low + (high - low) / 2;
+            int current = nums[mid];
 
             if (current == target) {
                 return mid;

@@ -18,7 +18,7 @@ public final class NaturalNumbersSum {
 
     // Time - O(1), Space - O(1)
     public static int getSumNaturalNumbers(int[] numbers) {
-        final int length = numbers.length;
+        int length = numbers.length;
         return (length * (length + 1)) / 2;
     }
 }

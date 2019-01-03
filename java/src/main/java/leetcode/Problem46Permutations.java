@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  */
 public final class Problem46Permutations {
     public List<List<Integer>> permute(int[] nums) {
-        final List<List<Integer>> permutations = new ArrayList<>();
+        List<List<Integer>> permutations = new ArrayList<>();
 
         if (nums == null || nums.length == 0) {
             return permutations;
@@ -38,7 +38,7 @@ public final class Problem46Permutations {
 
     // recursion + swap
     public List<List<Integer>> permute2(int[] nums) {
-        final List<List<Integer>> permutations = new ArrayList<>();
+        List<List<Integer>> permutations = new ArrayList<>();
 
         if (nums == null || nums.length == 0) {
             return permutations;
@@ -61,7 +61,7 @@ public final class Problem46Permutations {
     }
 
     private void swap(int[] array, int left, int right) {
-        final int temp = array[left];
+        int temp = array[left];
         array[left] = array[right];
         array[right] = temp;
     }

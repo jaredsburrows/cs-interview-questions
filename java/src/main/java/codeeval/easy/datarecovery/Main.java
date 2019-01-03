@@ -10,17 +10,17 @@ import java.nio.charset.Charset;
 
 public final class Main {
     public static void main(String[] args) throws Exception {
-        final File inputFile = new File(args[0]);
-        final InputStream fileStream = new FileInputStream(inputFile);
-        final Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
-        final BufferedReader buffer = new BufferedReader(inputReader);
+        File inputFile = new File(args[0]);
+        InputStream fileStream = new FileInputStream(inputFile);
+        Reader inputReader = new InputStreamReader(fileStream, Charset.defaultCharset());
+        BufferedReader buffer = new BufferedReader(inputReader);
 
         String line;
         while ((line = buffer.readLine()) != null) {
-            final String[] words = line.trim().split(";", -1);
-            final String[] sentence = words[0].split(" ", -1);
-            final String[] numbers = words[1].split(" ", -1);
-            final String[] fixedWords = new String[sentence.length];
+            String[] words = line.trim().split(";", -1);
+            String[] sentence = words[0].split(" ", -1);
+            String[] numbers = words[1].split(" ", -1);
+            String[] fixedWords = new String[sentence.length];
 
             // However, it was not implemented until 1998 and 2000
             // 2000 and was not However, implemented 1998 it until;9 8 3 4 1 5 7 2
@@ -61,7 +61,7 @@ public final class Main {
                 System.out.print(fixedWords[i] + " ");
             }
 
-            System.out.println("");
+            System.out.println();
         }
     }
 }

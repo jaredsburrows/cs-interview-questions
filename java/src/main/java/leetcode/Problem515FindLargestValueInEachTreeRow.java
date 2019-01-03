@@ -11,12 +11,12 @@ import leetcode.api.TreeNode;
  */
 public final class Problem515FindLargestValueInEachTreeRow {
     public List<Integer> largestValues(TreeNode root) {
-        final List<Integer> largest = new ArrayList<>();
+        List<Integer> largest = new ArrayList<>();
         if (root == null) {
             return largest;
         }
 
-        final Deque<TreeNode> queue = new ArrayDeque<>();
+        Deque<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
 
         while (!queue.isEmpty()) {
@@ -24,7 +24,7 @@ public final class Problem515FindLargestValueInEachTreeRow {
             int max = Integer.MIN_VALUE;
 
             while (size > 0) {
-                final TreeNode node = queue.poll();
+                TreeNode node = queue.poll();
                 max = Math.max(max, node.val);
 
                 if (node.left != null) {

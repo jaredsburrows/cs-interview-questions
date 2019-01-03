@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 public final class Main {
     public static void main(String[] args) throws Exception {
-        final Scanner scanner = new Scanner(new File(args[0]), Charset.defaultCharset().name());
+        Scanner scanner = new Scanner(new File(args[0]), Charset.defaultCharset().name());
 
         while (scanner.hasNext()) {
-            final String token = scanner.next();
+            String token = scanner.next();
             int number = Integer.parseInt(token);
             while (number >= 1000) {
                 number -= 1000;
@@ -73,7 +73,7 @@ public final class Main {
                 System.out.print("I");
             }
 
-            System.out.println("");
+            System.out.println();
         }
     }
 }

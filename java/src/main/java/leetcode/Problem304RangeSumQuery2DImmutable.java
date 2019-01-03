@@ -12,8 +12,8 @@ public final class Problem304RangeSumQuery2DImmutable {
                 return;
             }
 
-            final int rows = matrix.length;
-            final int cols = matrix[0].length;
+            int rows = matrix.length;
+            int cols = matrix[0].length;
 
             array = new int[rows + 1][cols + 1];
 

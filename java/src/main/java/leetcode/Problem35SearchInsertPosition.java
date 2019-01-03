@@ -14,8 +14,7 @@ public final class Problem35SearchInsertPosition {
         int high = nums.length - 1;
 
         while (low <= high) {
-            final int mid = low + (high - low) / 2;
-
+            int mid = low + (high - low) / 2;
             if (nums[mid] == target) {
                 return mid;
             } else if (nums[mid] < target) {

@@ -18,13 +18,13 @@ public final class Problem67AddBinary {
             return a;
         }
 
-        final StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
 
         int carry = 0;
         for (int i = a.length() - 1, j = b.length() - 1; i >= 0 || j >= 0 || carry == 1; i--, j--) {
-            final int digit1 = i < 0 ? 0 : a.charAt(i) - '0';
-            final int digit2 = j < 0 ? 0 : b.charAt(j) - '0';
-            final int sum = digit1 + digit2 + carry;
+            int digit1 = i < 0 ? 0 : a.charAt(i) - '0';
+            int digit2 = j < 0 ? 0 : b.charAt(j) - '0';
+            int sum = digit1 + digit2 + carry;
 
             stringBuilder.insert(0, sum % 2);
             carry = sum / 2;
@@ -84,7 +84,7 @@ public final class Problem67AddBinary {
             return binary1;
         }
 
-        final StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         int binLength1 = binary1.length() - 1;
         int binLength2 = binary2.length() - 1;
         int carry = 0;
@@ -136,7 +136,7 @@ public final class Problem67AddBinary {
             return binary1;
         }
 
-        final StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         int binLength1 = binary1.length() - 1;
         int binLength2 = binary2.length() - 1;
         int carry = 0;

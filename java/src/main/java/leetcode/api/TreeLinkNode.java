@@ -22,7 +22,7 @@ public final class TreeLinkNode {
             return false;
         }
 
-        final TreeLinkNode that = (TreeLinkNode) o;
+        TreeLinkNode that = (TreeLinkNode) o;
         return val == that.val
             && Objects.equals(left, that.left)
             && Objects.equals(right, that.right)

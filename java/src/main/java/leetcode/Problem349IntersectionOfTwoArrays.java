@@ -14,8 +14,8 @@ public final class Problem349IntersectionOfTwoArrays {
             return new int[0];
         }
 
-        final List<Integer> result = new ArrayList<>();
-        final Set<Integer> set = new HashSet<>();
+        List<Integer> result = new ArrayList<>();
+        Set<Integer> set = new HashSet<>();
         for (int num : nums1) {
             set.add(num);
         }

@@ -10,7 +10,7 @@ public final class Problem709ToLowerCase {
             return "";
         }
 
-        final char[] word = str.toCharArray();
+        char[] word = str.toCharArray();
         for (int i = 0; i < word.length; i++) {
             word[i] = Character.toLowerCase(word[i]);
         }

@@ -13,7 +13,7 @@ public final class Problem532KDiffPairsInAnArray {
             return 0;
         }
 
-        final Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         int count = 0;
         for (int num : nums) {
             map.put(num, map.getOrDefault(num, 0) + 1);

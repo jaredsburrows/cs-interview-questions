@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public final class Word0 {
     public Map<String, Integer> word0(String[] strings) {
-        final Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> map = new HashMap<>();
         if (strings == null || strings.length == 0) {
             return map;
         }

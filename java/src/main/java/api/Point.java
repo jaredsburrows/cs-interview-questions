@@ -29,7 +29,7 @@ public final class Point {
             return false;
         }
 
-        final Point point = (Point) o;
+        Point point = (Point) o;
         return x == point.x && y == point.y;
     }
 

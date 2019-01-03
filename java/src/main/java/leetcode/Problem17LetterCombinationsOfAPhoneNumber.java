@@ -8,12 +8,12 @@ import java.util.List;
  */
 public final class Problem17LetterCombinationsOfAPhoneNumber {
     public List<String> letterCombinations(String digits) {
-        final List<String> combos = new ArrayList<>();
+        List<String> combos = new ArrayList<>();
         if (digits == null || digits.isEmpty()) {
             return combos;
         }
 
-        final String[] keys = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        String[] keys = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
         letterCombinations(keys, combos, digits, "", 0);
 
@@ -26,7 +26,7 @@ public final class Problem17LetterCombinationsOfAPhoneNumber {
             return;
         }
 
-        final String letters = keys[digits.charAt(offset) - '0'];
+        String letters = keys[digits.charAt(offset) - '0'];
         for (int i = 0; i < letters.length(); i++) {
             letterCombinations(keys, combos, digits, prefix + letters.charAt(i), offset + 1);
         }

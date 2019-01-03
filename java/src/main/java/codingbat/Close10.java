@@ -5,8 +5,8 @@ package codingbat;
  */
 public final class Close10 {
     public int close10(int a, int b) {
-        final int left = Math.abs(a - 10);
-        final int right = Math.abs(b - 10);
+        int left = Math.abs(a - 10);
+        int right = Math.abs(b - 10);
 
         if (left == right) {
             return 0;

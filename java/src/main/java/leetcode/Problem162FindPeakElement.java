@@ -13,7 +13,7 @@ public final class Problem162FindPeakElement {
         int high = nums.length - 1;
 
         while (low < high) {
-            final int mid = low + (high - low) / 2;
+            int mid = low + (high - low) / 2;
             if (nums[mid] > nums[mid + 1]) {
                 high = mid;
             } else {

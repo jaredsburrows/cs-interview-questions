@@ -13,7 +13,7 @@ public final class Problem145BinaryTreePostorderTraversal {
 
     // recursion
     public List<Integer> postorderTraversal2(TreeNode root) {
-        final List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
 
         postorderTraversal2(root, list);
 

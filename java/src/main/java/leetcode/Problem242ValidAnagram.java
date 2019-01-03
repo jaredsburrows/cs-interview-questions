@@ -14,7 +14,7 @@ public final class Problem242ValidAnagram {
             return false;
         }
 
-        final int[] checker = new int[26];
+        int[] checker = new int[26];
 
         for (int i = 0; i < s.length(); i++) {
             checker[s.charAt(i) - 'a']--;

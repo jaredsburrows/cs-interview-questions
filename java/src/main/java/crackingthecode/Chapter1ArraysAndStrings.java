@@ -23,10 +23,10 @@ public final class Chapter1ArraysAndStrings {
         int check = 0;
 
         for (int i = 0; i < input.length(); i++) {
-            final int value = 1 << (input.charAt(i) - 'a');
+            int value = 1 << (input.charAt(i) - 'a');
 
             // Check the bit, bit = (number >> x) & 1;
-            final boolean hasValue = (check & value) > 0;
+            boolean hasValue = (check & value) > 0;
             if (hasValue) {
                 return false;
             }
@@ -45,10 +45,10 @@ public final class Chapter1ArraysAndStrings {
         }
 
         // Need to increase if charset is greater than 256
-        final boolean[] charset = new boolean[256];
+        boolean[] charset = new boolean[256];
 
         for (int i = 0; i < input.length(); i++) {
-            final int value = input.charAt(i);
+            int value = input.charAt(i);
             if (charset[value]) {
                 return false;
             }
@@ -74,7 +74,7 @@ public final class Chapter1ArraysAndStrings {
         }
 
         for (int i = 0, j = input.length - 1; i < j; i++, j--) {
-            final char temp = input[i];
+            char temp = input[i];
             input[i] = input[j];
             input[j] = temp;
         }
@@ -98,11 +98,11 @@ public final class Chapter1ArraysAndStrings {
             return input;
         }
 
-        final Set<Character> characterSet = new HashSet<>();
-        final StringBuilder stringBuilder = new StringBuilder();
+        Set<Character> characterSet = new HashSet<>();
+        StringBuilder stringBuilder = new StringBuilder();
 
         for (int i = 0; i < input.length(); i++) {
-            final char value = input.charAt(i);
+            char value = input.charAt(i);
             if (!characterSet.contains(value)) {
                 characterSet.add(value);
                 stringBuilder.append(value);
@@ -121,14 +121,13 @@ public final class Chapter1ArraysAndStrings {
             return false;
         }
 
-        final int length = input.length();
-
+        int length = input.length();
         if (length != input2.length() || length < 2) {
             return false;
         }
 
-        final char[] chars = input.toCharArray();
-        final char[] chars2 = input2.toCharArray();
+        char[] chars = input.toCharArray();
+        char[] chars2 = input2.toCharArray();
 
         Arrays.sort(chars);
         Arrays.sort(chars2);
@@ -143,15 +142,15 @@ public final class Chapter1ArraysAndStrings {
         }
 
         // Need to increase if charset is greater than 256
-        final int total = 256;
-        final int length = input.length();
+        int total = 256;
+        int length = input.length();
 
         if (length != input2.length() || length < 2) {
             return false;
         }
 
         // All chars
-        final int[] counts = new int[total];
+        int[] counts = new int[total];
 
         for (int i = 0; i < length; i++) {
             counts[input.charAt(i)]++;
@@ -176,8 +175,8 @@ public final class Chapter1ArraysAndStrings {
             return "";
         }
 
-        final StringBuilder stringBuilder = new StringBuilder();
-        final char[] chars = input.toCharArray();
+        StringBuilder stringBuilder = new StringBuilder();
+        char[] chars = input.toCharArray();
 
         for (char c : chars) {
             stringBuilder.append(c == ' ' ? "%20" : c);
@@ -205,13 +204,13 @@ public final class Chapter1ArraysAndStrings {
             return new int[0][0];
         }
 
-        final int length = image.length;
+        int length = image.length;
         for (int i = 0; i < length / 2; i++) {
-            final int last = length - 1 - i;
+            int last = length - 1 - i;
             for (int j = i; j < last; j++) {
-                final int offset = j - i;
-                final int tmp = last - offset;
-                final int temp = image[i][j];       // save top
+                int offset = j - i;
+                int tmp = last - offset;
+                int temp = image[i][j];       // save top
                 image[i][j] = image[tmp][i];        // left -> top
                 image[tmp][i] = image[last][tmp];   // bottom -> left
                 image[last][tmp] = image[j][last];  // right -> bottom
@@ -228,8 +227,8 @@ public final class Chapter1ArraysAndStrings {
             return new int[0][0];
         }
 
-        final int length = image.length;
-        final int[][] newImage = new int[length][length];
+        int length = image.length;
+        int[][] newImage = new int[length][length];
 
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
@@ -250,12 +249,12 @@ public final class Chapter1ArraysAndStrings {
             return new int[0][0];
         }
 
-        final int rows = matrix.length;
-        final int cols = matrix[0].length;
+        int rows = matrix.length;
+        int cols = matrix[0].length;
 
         // keep positions of "0"s
-        final int[] row = new int[rows];
-        final int[] col = new int[cols];
+        int[] row = new int[rows];
+        int[] col = new int[cols];
 
         // mark the positions of the "0"s
         for (int i = 0; i < rows; i++) {
@@ -295,7 +294,7 @@ public final class Chapter1ArraysAndStrings {
         }
 
         // waterbottle -> wat|erbottlewat|erbottle
-        final String rotationString = input2 + input2;
+        String rotationString = input2 + input2;
         return rotationString.contains(input);
     }
 }

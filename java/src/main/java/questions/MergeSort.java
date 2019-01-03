@@ -12,7 +12,7 @@ public final class MergeSort {
         }
 
         if (right > left) {
-            final int middle = (left + right) / 2;
+            int middle = (left + right) / 2;
             mergeSortIndex(numbers, left, middle);
             mergeSortIndex(numbers, middle + 1, right);
             mergeSortIndex(numbers, left, middle + 1, right);
@@ -20,9 +20,9 @@ public final class MergeSort {
     }
 
     private static void mergeSortIndex(int[] numbers, int left, int mid, int right) {
-        final int[] array = new int[right + left + 1];
-        final int leftEnd = mid - 1;
-        final int numElements = right - left + 1;
+        int[] array = new int[right + left + 1];
+        int leftEnd = mid - 1;
+        int numElements = right - left + 1;
         int index = left;
 
         while (left <= leftEnd && mid <= right) {
@@ -57,15 +57,15 @@ public final class MergeSort {
             return;
         }
 
-        final int length = numbers.length;
+        int length = numbers.length;
 
         if (length < 2) {
             return;
         }
 
-        final int mid = length / 2;
-        final int[] left = new int[mid];
-        final int[] right = new int[length - mid];
+        int mid = length / 2;
+        int[] left = new int[mid];
+        int[] right = new int[length - mid];
 
         System.arraycopy(numbers, 0, left, 0, mid);
         System.arraycopy(numbers, mid, right, 0, length - mid);
@@ -76,8 +76,8 @@ public final class MergeSort {
     }
 
     private static void mergeSortArray(int[] numbers, int[] low, int[] high) {
-        final int leftLength = low.length;
-        final int rightLength = high.length;
+        int leftLength = low.length;
+        int rightLength = high.length;
         int indexLeft = 0;
         int indexRight = 0;
         int index = 0;

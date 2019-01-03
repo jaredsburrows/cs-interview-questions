@@ -99,14 +99,13 @@ public final class Chapter6BrainTeasers {
 
         // "After his one hundredth pass in the hallway", he repeated 100 times?
 
-        final int numLockers = 100;
-        final boolean[] lockers = new boolean[numLockers];
+        int numLockers = 100;
+        boolean[] lockers = new boolean[numLockers];
         int toggleCount = 1; // you can't divide 0 /0 - (0 % 0), must be greater than 1
         int openLockers = 0;
 
         // Toggle lockers
         while (toggleCount < numLockers) {
-
             for (int i = 0; i < numLockers; i++) {
                 if (i % toggleCount == 0) {
                     lockers[i] = !lockers[i];

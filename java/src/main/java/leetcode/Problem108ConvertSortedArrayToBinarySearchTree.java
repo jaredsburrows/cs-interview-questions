@@ -19,8 +19,8 @@ public final class Problem108ConvertSortedArrayToBinarySearchTree {
             return null;
         }
 
-        final int mid = (start + end) / 2;
-        final TreeNode node = new TreeNode(nums[mid]);
+        int mid = (start + end) / 2;
+        TreeNode node = new TreeNode(nums[mid]);
         node.left = getTreeNode(nums, start, mid - 1);
         node.right = getTreeNode(nums, mid + 1, end);
         return node;

@@ -10,10 +10,10 @@ public final class Problem7ReverseInteger {
 
         while (x != 0) {
             // Move digit, 0 -> 30 + 2 -> 300 + 20
-            final long moveDigit = reverseNumber * 10;
+            long moveDigit = reverseNumber * 10;
 
             // Get last digit, 3 -> 2 -> 1
-            final long lastDigit = x % 10;
+            long lastDigit = x % 10;
 
             // Keep track of reversed number, 3 -> 32 -> 321
             reverseNumber = moveDigit + lastDigit;

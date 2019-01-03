@@ -21,7 +21,7 @@ public final class RandomListNode {
             return false;
         }
 
-        final RandomListNode that = (RandomListNode) o;
+        RandomListNode that = (RandomListNode) o;
         return label == that.label
             && Objects.equals(next, that.next)
             && Objects.equals(random, that.random);

@@ -16,17 +16,17 @@ public final class Problem102BinaryTreeLevelOrderTraversal {
             return new ArrayList<>();
         }
 
-        final Deque<TreeNode> queue = new ArrayDeque<>();
+        Deque<TreeNode> queue = new ArrayDeque<>();
         queue.add(root);
 
-        final List<List<Integer>> data = new ArrayList<>();
+        List<List<Integer>> data = new ArrayList<>();
 
         while (!queue.isEmpty()) {
-            final List<Integer> integers = new ArrayList<>();
+            List<Integer> integers = new ArrayList<>();
             int levelNodes = queue.size();
 
             while (levelNodes > 0) {
-                final TreeNode node = queue.poll();
+                TreeNode node = queue.poll();
                 integers.add(node.val);
 
                 if (node.left != null) {
@@ -53,14 +53,14 @@ public final class Problem102BinaryTreeLevelOrderTraversal {
             return;
         }
 
-        final Deque<TreeNode> queue = new ArrayDeque<>();
+        Deque<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
 
         while (!queue.isEmpty()) {
             int levelNodes = queue.size();
 
             while (levelNodes > 0) {
-                final TreeNode node = queue.poll();
+                TreeNode node = queue.poll();
                 System.out.print(node.val + " ");
 
                 if (node.left != null) {

@@ -8,8 +8,8 @@ public final class BstHeight {
             return -1;
         }
 
-        final int left = getHeight(node.left);
-        final int right = getHeight(node.right);
+        int left = getHeight(node.left);
+        int right = getHeight(node.right);
 
         return Math.max(left, right) + 1;
     }

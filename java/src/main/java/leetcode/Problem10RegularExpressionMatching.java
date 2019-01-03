@@ -17,7 +17,7 @@ public final class Problem10RegularExpressionMatching {
             return s.isEmpty();
         }
 
-        final boolean firstMatch = !s.isEmpty() && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.');
+        boolean firstMatch = !s.isEmpty() && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.');
 
         if (p.length() >= 2 && p.charAt(1) == '*') {
             return isMatch(s, p.substring(2)) || (firstMatch && isMatch(s.substring(1), p));

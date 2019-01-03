@@ -9,12 +9,12 @@ public final class Problem504Base7 {
             return "0";
         }
 
-        final String result = fromDecimal(Math.abs(num), 7);
+        String result = fromDecimal(Math.abs(num), 7);
         return num < 0 ? "-" + result : result;
     }
 
     private String fromDecimal(long num, int base) {
-        final StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
 
         num &= 0x00000000ffffffffL;
 
