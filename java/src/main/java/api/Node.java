@@ -25,9 +25,9 @@ public final class Node<T> {
         }
 
         final Node<?> node = (Node<?>) o;
-        return Objects.equals(value, node.value) &&
-            Objects.equals(next, node.next) &&
-            Objects.equals(previous, node.previous);
+        return Objects.equals(value, node.value)
+            && Objects.equals(next, node.next)
+            && Objects.equals(previous, node.previous);
     }
 
     @Override

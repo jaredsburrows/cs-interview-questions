@@ -3,7 +3,6 @@ package architecture.mvp;
 import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings({"unused", "ConstructorLeaksThis"})
 public class PresenterImpl implements Contract.Presenter {
     private final List<String> tasks = new ArrayList<>();
     private final Contract.View view;

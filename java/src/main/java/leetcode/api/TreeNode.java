@@ -22,9 +22,9 @@ public final class TreeNode {
         }
 
         final TreeNode treeNode = (TreeNode) o;
-        return val == treeNode.val &&
-            Objects.equals(left, treeNode.left) &&
-            Objects.equals(right, treeNode.right);
+        return val == treeNode.val
+            && Objects.equals(left, treeNode.left)
+            && Objects.equals(right, treeNode.right);
     }
 
     @Override

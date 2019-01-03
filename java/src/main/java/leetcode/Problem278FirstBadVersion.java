@@ -3,7 +3,6 @@ package leetcode;
 /**
  * https://leetcode.com/problems/first-bad-version
  */
-@SuppressWarnings("unused")
 public final class Problem278FirstBadVersion {
     public int firstBadVersion(int n) {
         int start = 1;

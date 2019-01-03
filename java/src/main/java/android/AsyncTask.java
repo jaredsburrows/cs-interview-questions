@@ -6,7 +6,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 
-@SuppressWarnings({"unused", "unchecked", "FieldCanBeLocal", "TypeParameterNaming", "ConstructorInvokesOverridable"})
 public abstract class AsyncTask<Params, Progress, Result> {
     private final ExecutorService service = Executors.newFixedThreadPool(5);
     private final WorkerRunnable<Params, Result> workerRunnable;
@@ -51,6 +50,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
     protected void onPreExecute() {
     }
 
+    @SuppressWarnings("unchecked")
     protected abstract Result doInBackground(Params... params);
 
     protected void onPostExecute(Result result) {

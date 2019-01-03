@@ -14,7 +14,7 @@ public final class Problem520DetectCapital {
     }
 
     // Time - O(N), Space - O(1)
-    private boolean isAllCaps(String word) {
+    private static boolean isAllCaps(String word) {
         for (int i = 0; i < word.length(); i++) {
             if (!Character.isUpperCase(word.charAt(i))) {
                 return false;
@@ -24,7 +24,7 @@ public final class Problem520DetectCapital {
     }
 
     // Time - O(N), Space - O(1)
-    private boolean isNotCaps(String word) {
+    private static boolean isNotCaps(String word) {
         for (int i = 0; i < word.length(); i++) {
             if (Character.isUpperCase(word.charAt(i))) {
                 return false;
@@ -34,7 +34,7 @@ public final class Problem520DetectCapital {
     }
 
     // Time - O(N), Space - O(1)
-    private boolean hasOnlyFirstCap(String word) {
+    private static boolean hasOnlyFirstCap(String word) {
         final boolean firstCap = Character.isUpperCase(word.charAt(0));
         if (!firstCap) {
             return false;

@@ -16,7 +16,7 @@ public final class Problem109ConvertSortedListToBinarySearchTree {
         return sortedListToBST(head, null);
     }
 
-    private TreeNode sortedListToBST(ListNode head, ListNode tail) {
+    private static TreeNode sortedListToBST(ListNode head, ListNode tail) {
         ListNode slow = head;
         ListNode fast = head;
 

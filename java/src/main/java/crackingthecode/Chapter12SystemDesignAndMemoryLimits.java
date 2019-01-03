@@ -1,6 +1,5 @@
 package crackingthecode;
 
-@SuppressWarnings("unused")
 public final class Chapter12SystemDesignAndMemoryLimits {
     /*
      * 12.1 - If you were integrating a feed of end of day stock price information (open, high, low,

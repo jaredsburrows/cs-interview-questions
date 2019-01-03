@@ -1,6 +1,5 @@
 package crackingthecode;
 
-@SuppressWarnings("unused")
 public final class Chapter15Databases {
     /*
      * 15.1 - Write a method to find the number of employees in each department.

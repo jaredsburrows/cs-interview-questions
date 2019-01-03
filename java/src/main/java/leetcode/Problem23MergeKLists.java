@@ -10,7 +10,7 @@ import leetcode.api.ListNode;
 /**
  * https://leetcode.com/problems/merge-k-sorted-lists
  */
-@SuppressWarnings("ClassCanBeStatic")
+@SuppressWarnings("ClassCanBeStatic") // TODO move to api package
 public final class Problem23MergeKLists {
     // Time - O(N*LOG(K))
     public ListNode mergeKLists(ListNode[] lists) {
@@ -49,12 +49,12 @@ public final class Problem23MergeKLists {
             return toReturn;
         }
 
-        final Queue<Node> queue = new PriorityQueue<>((o1, o2) -> {
-            if (o1.hasData() && o2.hasData()) {
-                return Integer.compare(o1.array[o1.pos], o2.array[o2.pos]);
+        final Queue<Node> queue = new PriorityQueue<>((left, right) -> {
+            if (left.hasData() && right.hasData()) {
+                return Integer.compare(left.array[left.pos], right.array[right.pos]);
             }
 
-            return o1.hasData() ? o1.array[o1.pos] : o2.array[o2.pos];
+            return left.hasData() ? left.array[left.pos] : right.array[right.pos];
         });
 
         for (int[] array : arrays) {
@@ -74,7 +74,6 @@ public final class Problem23MergeKLists {
         return toReturn;
     }
 
-    // TODO move to api package
     private class Node {
         final int[] array;
         int pos;

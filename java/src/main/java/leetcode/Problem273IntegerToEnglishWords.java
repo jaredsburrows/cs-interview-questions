@@ -32,7 +32,7 @@ public final class Problem273IntegerToEnglishWords {
         return sb.toString().trim();
     }
 
-    private String helper(int num) {
+    private static String helper(int num) {
         if (num == 0) {
             return "";
         } else if (num < 20) {

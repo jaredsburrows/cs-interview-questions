@@ -32,10 +32,10 @@ public final class GraphNode<T> {
         }
 
         final GraphNode<?> graphNode = (GraphNode<?>) o;
-        return visited == graphNode.visited &&
-            Objects.equals(value, graphNode.value) &&
-            Objects.equals(next, graphNode.next) &&
-            Arrays.equals(neighbors, graphNode.neighbors);
+        return visited == graphNode.visited
+            && Objects.equals(value, graphNode.value)
+            && Objects.equals(next, graphNode.next)
+            && Arrays.equals(neighbors, graphNode.neighbors);
     }
 
     @Override

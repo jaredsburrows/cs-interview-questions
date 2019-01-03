@@ -18,14 +18,14 @@ public final class Problem344ReverseString {
     }
 
     // Time - O(N), Space - O(1)
-    private void reverse(char[] str) {
+    private static void reverse(char[] str) {
         for (int i = 0; i < str.length / 2; i ++) {
             swap(str, i, str.length - i - 1);
         }
     }
 
     // Time - O(1), Space - O(1)
-    private void swap(char[] array, int left, int right) {
+    private static void swap(char[] array, int left, int right) {
         final char temp = array[left];
         array[left] = array[right];
         array[right] = temp;

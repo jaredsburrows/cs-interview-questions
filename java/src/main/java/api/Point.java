@@ -30,8 +30,7 @@ public final class Point {
         }
 
         final Point point = (Point) o;
-        return x == point.x &&
-            y == point.y;
+        return x == point.x && y == point.y;
     }
 
     @Override

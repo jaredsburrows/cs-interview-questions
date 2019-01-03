@@ -2,20 +2,19 @@ package crackingthecode;
 
 import api.GraphNode;
 import api.TreeNode;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Queue;
 
-@SuppressWarnings("JdkObsolete")
 public final class Chapter4TreesAndGraphs {
     /**
      * 4.1 - Implement a function to check if a tree is balanced. For the purposes of this question, a
      * balanced tree is defined to be a tree such that no two leaf nodes differ in distance from the
      * root by more than one.
      */
-    @SuppressWarnings("SimplifiableIfStatement")
     public <T> boolean isBalanced(TreeNode<T> node) {
         if (node == null) {
             return true;
@@ -46,7 +45,7 @@ public final class Chapter4TreesAndGraphs {
      */
     // BFS
     public <T> boolean hasGraphNodeBfs(GraphNode<T> start, GraphNode<T> end) {
-        final Queue<GraphNode<T>> queue = new LinkedList<>();
+        final Deque<GraphNode<T>> queue = new ArrayDeque<>();
 
         start.visited = true;
         queue.add(start);
@@ -98,34 +97,35 @@ public final class Chapter4TreesAndGraphs {
      * nodes at each depth (i.e., if you have a tree with depth D, you’ll have D linked lists).
      */
     // simply traversing from top to bottom, do not over think this
+    @SuppressWarnings("JdkObsolete") // TODO LinkedList -> ArrayDeque
     public <T> List<LinkedList<TreeNode<T>>> getLinkedListLevels(TreeNode<T> node) {
         if (node == null) {
             return new ArrayList<>();
         }
 
-        final List<LinkedList<TreeNode<T>>> listLinkedList = new ArrayList<>();
-        LinkedList<TreeNode<T>> linkedList = new LinkedList<>();
+        final List<LinkedList<TreeNode<T>>> queues = new ArrayList<>();
+        LinkedList<TreeNode<T>> queue = new LinkedList<>();
 
         // keep track of levels
         int level = 0;
 
         // add the first
-        linkedList.add(node);
-        listLinkedList.add(level, linkedList);
+        queue.add(node);
+        queues.add(level, queue);
 
         while (true) {
-            linkedList = new LinkedList<>();
+            queue = new LinkedList<>();
             // loop through nodes at current level
-            for (int i = 0; i < listLinkedList.get(level).size(); i++) {
+            for (int i = 0; i < queues.get(level).size(); i++) {
                 // get the current node
-                final TreeNode<T> treeNode = listLinkedList.get(level).get(i);
+                final TreeNode<T> treeNode = queues.get(level).get(i); // get() from LinkedList
                 // add it's children
                 if (treeNode != null) {
                     if (treeNode.left != null) {
-                        linkedList.add(treeNode.left);
+                        queue.add(treeNode.left);
                     }
                     if (treeNode.right != null) {
-                        linkedList.add(treeNode.right);
+                        queue.add(treeNode.right);
                     }
                 }
             }
@@ -133,14 +133,14 @@ public final class Chapter4TreesAndGraphs {
             level++;
 
             // if there are no children at this level, stop
-            if (linkedList.size() > 0) {
-                listLinkedList.add(level, linkedList);
+            if (queue.size() > 0) {
+                queues.add(level, queue);
             } else {
                 break;
             }
         }
 
-        return listLinkedList;
+        return queues;
     }
 
     /*

@@ -23,10 +23,10 @@ public final class TreeLinkNode {
         }
 
         final TreeLinkNode that = (TreeLinkNode) o;
-        return val == that.val &&
-            Objects.equals(left, that.left) &&
-            Objects.equals(right, that.right) &&
-            Objects.equals(next, that.next);
+        return val == that.val
+            && Objects.equals(left, that.left)
+            && Objects.equals(right, that.right)
+            && Objects.equals(next, that.next);
     }
 
     @Override

@@ -22,9 +22,9 @@ public final class RandomListNode {
         }
 
         final RandomListNode that = (RandomListNode) o;
-        return label == that.label &&
-            Objects.equals(next, that.next) &&
-            Objects.equals(random, that.random);
+        return label == that.label
+            && Objects.equals(next, that.next)
+            && Objects.equals(random, that.random);
     }
 
     @Override

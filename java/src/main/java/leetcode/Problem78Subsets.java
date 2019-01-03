@@ -19,18 +19,18 @@ public final class Problem78Subsets {
 
         Arrays.sort(nums);
 
-        subsets(subsets, new ArrayList<>(), nums, 0);
+        subsetRecursion(subsets, new ArrayList<>(), nums, 0);
 
         return subsets;
     }
 
     // backtrack
-    private void subsets(List<List<Integer>> subsets, List<Integer> subset, int[] nums, int start) {
+    private static void subsetRecursion(List<List<Integer>> subsets, List<Integer> subset, int[] nums, int start) {
         subsets.add(new ArrayList<>(subset));
 
         for (int i = start; i < nums.length; i++) {
             subset.add(nums[i]);
-            subsets(subsets, subset, nums, i + 1);
+            subsetRecursion(subsets, subset, nums, i + 1);
             subset.remove(subset.size() - 1);
         }
     }
@@ -65,6 +65,7 @@ public final class Problem78Subsets {
         return subsets;
     }
 
+    // iteration
     public <T> List<List<T>> subsets3(T[] data) {
         final List<List<T>> subsets = new ArrayList<>();
 

@@ -43,7 +43,7 @@ public final class Problem94BinaryTreeInorderTraversal {
         return list;
     }
 
-    private void inorderTraversal2(TreeNode root, List<Integer> list) {
+    private static void inorderTraversal2(TreeNode root, List<Integer> list) {
         if (root == null) {
             return;
         }

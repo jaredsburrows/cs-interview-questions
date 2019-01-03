@@ -109,7 +109,7 @@ final class Chapter3StacksAndQueuesSpec extends BaseSpec {
 
     def "getSortedStack"() {
         given:
-        def unsorted = new Stack<Integer>()
+        def unsorted = new ArrayDeque<Integer>()
         unsorted.push(1)
         unsorted.push(5)
         unsorted.push(7)
@@ -117,7 +117,7 @@ final class Chapter3StacksAndQueuesSpec extends BaseSpec {
         unsorted.push(5)
         unsorted.push(6)
 
-        def sorted = new Stack<Integer>()
+        def sorted = new ArrayDeque<Integer>()
         sorted.push(0)
         sorted.push(1)
         sorted.push(5)
@@ -129,6 +129,6 @@ final class Chapter3StacksAndQueuesSpec extends BaseSpec {
         def result = sut.getSortedStack(unsorted)
 
         then:
-        result == sorted
+        result.toList() == sorted.toList()
     }
 }

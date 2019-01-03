@@ -21,8 +21,8 @@ public final class ListNode {
         }
 
         final ListNode listNode = (ListNode) o;
-        return val == listNode.val &&
-            Objects.equals(next, listNode.next);
+        return val == listNode.val
+            && Objects.equals(next, listNode.next);
     }
 
     @Override

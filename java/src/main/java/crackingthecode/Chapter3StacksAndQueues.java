@@ -1,10 +1,10 @@
 package crackingthecode;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
-import java.util.Stack;
 
-@SuppressWarnings("JdkObsolete")
 public final class Chapter3StacksAndQueues {
     /*
      * 3.1 - Describe how you could use a single array to implement three stacks.
@@ -25,8 +25,8 @@ public final class Chapter3StacksAndQueues {
      * write this program: push | pop | peek | isEmpty.
      */
     // Time - O(N^2), Space - O(N)
-    public Stack<Integer> getSortedStack(Stack<Integer> stack) {
-        final Stack<Integer> sortedStack = new Stack<>();
+    public Deque<Integer> getSortedStack(Deque<Integer> stack) {
+        final Deque<Integer> sortedStack = new ArrayDeque<>();
 
         while (!stack.isEmpty()) {
             final int popped = stack.pop();
@@ -45,17 +45,17 @@ public final class Chapter3StacksAndQueues {
      * O(1) time.
      */
     // book suggest not to store getMinNode in each stack, too much memory from duplicates
-    public static class MinStack extends Stack<Integer> {
+    public static class MinStack extends ArrayDeque<Integer> {
         private static final long serialVersionUID = 587482623921067655L;
-        private final Stack<Integer> stack = new Stack<>();
+        private final Deque<Integer> stack = new ArrayDeque<>();
 
         @Override
-        public Integer push(Integer value) {
+        public void push(Integer value) {
             if (value <= getMinimum()) {
                 stack.push(value);
             }
 
-            return super.push(value);
+            super.push(value);
         }
 
         @Override
@@ -96,7 +96,7 @@ public final class Chapter3StacksAndQueues {
     // stack is too high, it might topple
     // create a new one when the previous exceeds capacity
     public static class SetOfStacks<T> {
-        private final List<Stack<T>> stacks = new ArrayList<>();
+        private final List<Deque<T>> stacks = new ArrayList<>();
         private int currentStack;
         private int capacity;
 
@@ -104,12 +104,12 @@ public final class Chapter3StacksAndQueues {
             this.capacity = capacity;
 
             currentStack = 0;
-            stacks.add(new Stack<>());
+            stacks.add(new ArrayDeque<>());
         }
 
         public void push(T item) {
             if (stacks.get(currentStack).size() == capacity) {
-                final Stack<T> stack = new Stack<>();
+                final Deque<T> stack = new ArrayDeque<>();
                 stack.push(item);
                 stacks.add(stack);
                 currentStack++;
@@ -142,8 +142,8 @@ public final class Chapter3StacksAndQueues {
     // [2]  -> [2]
     // [1]     [3]
     public static class MyQueue<T> {
-        private final Stack<T> stack1 = new Stack<>();
-        private final Stack<T> stack2 = new Stack<>();
+        private final Deque<T> stack1 = new ArrayDeque<>();
+        private final Deque<T> stack2 = new ArrayDeque<>();
 
         // Time - O(1)
         public int size() {

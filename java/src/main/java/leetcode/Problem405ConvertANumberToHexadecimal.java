@@ -12,7 +12,7 @@ public final class Problem405ConvertANumberToHexadecimal {
         return fromDecimal(num, 16);
     }
 
-    private String fromDecimal(long num, int base) {
+    private static String fromDecimal(long num, int base) {
         final StringBuilder stringBuilder = new StringBuilder();
 
         num &= 0x00000000ffffffffL;
@@ -26,7 +26,7 @@ public final class Problem405ConvertANumberToHexadecimal {
     }
 
     // Time - O(1), Space - O(1)
-    private char getChar(long num) {
+    private static char getChar(long num) {
         if (num >= 0 && num <= 9) {
             return (char) (num + '0');
         } else {

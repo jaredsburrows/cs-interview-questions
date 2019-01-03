@@ -27,16 +27,11 @@ dependencies {
 tasks.withType(JavaCompile) {
     configure(options) {
         errorprone {
-            disableWarningsInGeneratedCode = true
-            // errorproneArgs << '-XepAllDisabledChecksAsWarnings'
-            errorproneArgs << '-Xep:Var:OFF'
-            errorproneArgs << '-Xep:MethodCanBeStatic:OFF'
-            errorproneArgs << '-Xep:UngroupedOverloads:OFF'
-            errorproneArgs << '-Xep:Java7ApiChecker:OFF'
-            errorproneArgs << '-Xep:AndroidJdkLibsChecker:OFF'
-            errorproneArgs << '-Xep:InconsistentOverloads:OFF'
-            errorproneArgs << '-Xep:PrivateConstructorForUtilityClass:OFF'
-            errorproneArgs << '-Xep:ReturnMissingNullable:OFF'
+//            errorproneArgs << '-XepAllDisabledChecksAsWarnings'
+            errorproneArgs << '-Xep:Var:OFF' // Remove finals? No point of putting @Var
+            errorproneArgs << '-Xep:Java7ApiChecker:OFF' // Using Java 8+
+            errorproneArgs << '-Xep:AndroidJdkLibsChecker:OFF' // Using JDK 8+
+            errorproneArgs << '-Xep:ReturnMissingNullable:OFF'  // Return default value (For CS problems, trees, etc.)
         }
     }
 }

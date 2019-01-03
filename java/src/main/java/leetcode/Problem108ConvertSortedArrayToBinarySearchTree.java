@@ -14,7 +14,7 @@ public final class Problem108ConvertSortedArrayToBinarySearchTree {
         return getTreeNode(nums, 0, nums.length - 1);
     }
 
-    private TreeNode getTreeNode(int[] nums, int start, int end) {
+    private static TreeNode getTreeNode(int[] nums, int start, int end) {
         if (start > end) {
             return null;
         }

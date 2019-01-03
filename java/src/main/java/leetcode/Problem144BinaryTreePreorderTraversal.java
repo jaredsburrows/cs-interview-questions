@@ -40,22 +40,22 @@ public final class Problem144BinaryTreePreorderTraversal {
     public List<Integer> preorderTraversal2(TreeNode root) {
         final List<Integer> list = new ArrayList<>();
 
-        preorderTraversal(root, list);
+        preOrderRecursion(root, list);
 
         return list;
     }
 
-    private void preorderTraversal(TreeNode root, List<Integer> list) {
+    private static void preOrderRecursion(TreeNode root, List<Integer> list) {
         if (root == null) {
             return;
         }
 
         list.add(root.val);
-        preorderTraversal(root.left, list);
-        preorderTraversal(root.right, list);
+        preOrderRecursion(root.left, list);
+        preOrderRecursion(root.right, list);
     }
 
-    // print
+    // print via recursion
     public void preorderTraversal3(TreeNode node) {
         if (node == null) {
             return;

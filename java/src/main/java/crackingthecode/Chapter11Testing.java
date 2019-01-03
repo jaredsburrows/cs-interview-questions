@@ -1,6 +1,5 @@
 package crackingthecode;
 
-@SuppressWarnings("unused")
 public final class Chapter11Testing {
     /*
      * 11.1 - Find the mistake(s) in the following code:

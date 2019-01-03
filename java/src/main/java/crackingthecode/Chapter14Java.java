@@ -1,6 +1,5 @@
 package crackingthecode;
 
-@SuppressWarnings("unused")
 public final class Chapter14Java {
     /**
      * 14.2 - In Java, does the finally block gets executed if we insert a return statement inside the

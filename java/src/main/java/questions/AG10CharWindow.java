@@ -3,7 +3,7 @@ package questions;
 import java.util.HashMap;
 import java.util.Map;
 
-@SuppressWarnings({"all", "ModifiedButNotUsed"})
+@SuppressWarnings({"all", "ModifiedButNotUsed"}) // TODO Remove or fix
 public final class AG10CharWindow {
     // alphabet - a b c d
     public String getFrequent(String input) {

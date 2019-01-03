@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Queue;
 import java.util.UUID;
 
-@SuppressWarnings("unused")
 public final class Chapter7ObjectOrientedDesign {
     /**
      * 7.5 - Design the data structures for an online book reader system.
@@ -49,7 +48,6 @@ public final class Chapter7ObjectOrientedDesign {
      * 7.9 - Explain the data structures and algorithms that you would use to design an in-memory file
      * system. Illustrate with an example in code where possible
      */
-    @SuppressWarnings("EmptyMethod")
     public interface BaseFileSystem {
         void mount();
         void unmount();

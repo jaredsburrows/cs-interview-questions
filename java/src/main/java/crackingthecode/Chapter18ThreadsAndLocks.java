@@ -2,7 +2,6 @@ package crackingthecode;
 
 import java.util.concurrent.Semaphore;
 
-@SuppressWarnings("unused")
 public final class Chapter18ThreadsAndLocks {
     /*
      * 18.1 - What’s the difference between a thread and a process?
@@ -185,7 +184,6 @@ public final class Chapter18ThreadsAndLocks {
      * threads in one instance of a program, can they call A at the same time? Can they call A and C
      * at the same time?
      */
-    @SuppressWarnings("EmptyMethod")
     public static class SomeSyncMethods {
         public synchronized void methodA() {
         }

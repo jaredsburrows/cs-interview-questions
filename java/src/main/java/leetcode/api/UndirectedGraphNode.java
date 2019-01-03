@@ -24,8 +24,8 @@ public final class UndirectedGraphNode {
         }
 
         final UndirectedGraphNode that = (UndirectedGraphNode) o;
-        return label == that.label &&
-            Objects.equals(neighbors, that.neighbors);
+        return label == that.label
+            && Objects.equals(neighbors, that.neighbors);
     }
 
     @Override

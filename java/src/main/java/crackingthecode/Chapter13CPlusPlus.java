@@ -1,6 +1,5 @@
 package crackingthecode;
 
-@SuppressWarnings("unused")
 public final class Chapter13CPlusPlus {
     /*
      * 13.1 - Write a method to print the last K lines of an input file using C++.

@@ -28,11 +28,11 @@ public final class LinkedList<T> {
     }
 
     public void addToEnd(T value) {
-        Node<T> temp = head;
-        while (temp.next != null) {
-            temp = temp.next;
+        Node<T> node = head;
+        while (node.next != null) {
+            node = node.next;
         }
-        temp.next = new Node<>(value);
+        node.next = new Node<>(value);
     }
 
     public void removeFront() {
