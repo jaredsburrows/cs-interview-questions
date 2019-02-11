@@ -2,10 +2,10 @@ package questions.linkedlist
 
 import api.Node
 import questions.RemoveEveryOther
-import test.BaseSpec
+import spock.lang.Specification
 
-final class RemoveEveryOtherSpec extends BaseSpec {
-    def "RemoveEveryOther"() {
+final class RemoveEveryOtherSpec extends Specification {
+    def 'RemoveEveryOther'() {
         given:
         def node = new Node<>(1)
         node.next = new Node<>(1)

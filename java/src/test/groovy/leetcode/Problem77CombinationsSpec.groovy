@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem77CombinationsSpec extends Specification {
-    @Unroll def "combine(#n, #k) = #answer"() {
+    @Unroll def 'combine(#n, #k) = #answer'() {
         given:
         def sut = new Problem77Combinations()
 

@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem153FindMinimumInRotatedSortedArraySpec extends Specification {
-    @Unroll def "longestCommonPrefix(#nums) = #answer"() {
+    @Unroll def 'longestCommonPrefix(#nums) = #answer'() {
         given:
         def sut = new Problem153FindMinimumInRotatedSortedArray()
 

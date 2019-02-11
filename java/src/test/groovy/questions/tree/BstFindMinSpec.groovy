@@ -2,9 +2,9 @@ package questions.tree
 
 import api.TreeNode
 import questions.BstFindMin
-import test.BaseSpec
+import spock.lang.Specification
 
-final class BstFindMinSpec extends BaseSpec {
+final class BstFindMinSpec extends Specification {
     def tree = new TreeNode<>(8)
 
     //                (8)
@@ -14,7 +14,7 @@ final class BstFindMinSpec extends BaseSpec {
     //         (1)   (5) (13)
     //               /
     //             (3)
-    def "setup"() {
+    def 'setup'() {
         tree.right = new TreeNode<>(21)
         tree.right.left = new TreeNode<>(13)
 
@@ -24,7 +24,7 @@ final class BstFindMinSpec extends BaseSpec {
         tree.left.right.left = new TreeNode<>(3)
     }
 
-    def "findMinValue"() {
+    def 'findMinValue'() {
         expect:
         BstFindMin.findMinValue(tree) == 1
     }

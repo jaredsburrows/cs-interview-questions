@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem520DetectCapitalSpec extends Specification {
-    @Unroll def "detectCapitalUse(#word) = #answer"() {
+    @Unroll def 'detectCapitalUse(#word) = #answer'() {
         given:
         def sut = new Problem520DetectCapital()
 
@@ -13,7 +13,7 @@ final class Problem520DetectCapitalSpec extends Specification {
 
         where:
         word   || answer
-        "USA"  || true
-        "FlaG" || false
+        'USA'  || true
+        'FlaG' || false
     }
 }

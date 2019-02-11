@@ -3,17 +3,17 @@ package questions.tree
 import api.TreeNode
 import questions.TreeHeight
 import spock.lang.Shared
+import spock.lang.Specification
 import spock.lang.Unroll
-import test.BaseSpec
 
-final class TreeHeightSpec extends BaseSpec {
+final class TreeHeightSpec extends Specification {
     @Shared def tree = new TreeNode<>(26)
     @Shared def subTree = new TreeNode<>(10)
     @Shared def balancedTreeNodes = new TreeNode<>(0)
     @Shared def balancedTreeNodes2 = new TreeNode<>(0)
     @Shared def unbalancedTree = new TreeNode<>(5)
 
-    def "setup"() {
+    def 'setup'() {
         balancedTreeNodes.right = new TreeNode<Integer>(10)
         balancedTreeNodes.right.left = new TreeNode<Integer>(10)
         balancedTreeNodes.right.right = new TreeNode<Integer>(10)
@@ -43,7 +43,7 @@ final class TreeHeightSpec extends BaseSpec {
         tree.left.right = new TreeNode<Integer>(6)
     }
 
-    @Unroll def "getHeight(#a) == '#b'"() {
+    @Unroll def 'getHeight(#a) == #b'() {
         expect:
         TreeHeight.getHeight(a) == b
 
@@ -55,7 +55,7 @@ final class TreeHeightSpec extends BaseSpec {
         unbalancedTree     || -1
     }
 
-    @Unroll def "getMinHeight(#a) == '#b'"() {
+    @Unroll def 'getMinHeight(#a) == #b'() {
         expect:
         TreeHeight.getMinHeight(a) == b
 
@@ -67,7 +67,7 @@ final class TreeHeightSpec extends BaseSpec {
         unbalancedTree     || 2
     }
 
-    @Unroll def "getMaxHeight(#a) == '#b'"() {
+    @Unroll def 'getMaxHeight(#a) == #b'() {
         expect:
         TreeHeight.getMaxHeight(a) == b
 

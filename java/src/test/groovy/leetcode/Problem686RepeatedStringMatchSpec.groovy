@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem686RepeatedStringMatchSpec extends Specification {
-    @Unroll def "repeatedStringMatch(#A, #B) = #answer"() {
+    @Unroll def 'repeatedStringMatch(#A, #B) = #answer'() {
         given:
         def sut = new Problem686RepeatedStringMatch()
 
@@ -13,6 +13,6 @@ final class Problem686RepeatedStringMatchSpec extends Specification {
 
         where:
         A      | B          || answer
-        "abcd" | "cdabcdab" || 3
+        'abcd' | 'cdabcdab' || 3
     }
 }

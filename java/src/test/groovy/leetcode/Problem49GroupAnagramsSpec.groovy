@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem49GroupAnagramsSpec extends Specification {
-    @Unroll def "groupAnagrams(#strs) = #answer"() {
+    @Unroll def 'groupAnagrams(#strs) = #answer'() {
         given:
         def sut = new Problem49GroupAnagrams()
 
@@ -13,8 +13,8 @@ final class Problem49GroupAnagramsSpec extends Specification {
 
         where:
         strs                                       || answer
-        ["eat", "tea", "tan", "ate", "nat", "bat"] || [["eat", "tea", "ate"],
-                                                       ["bat"],
-                                                       ["tan", "nat"]]
+        ['eat', 'tea', 'tan', 'ate', 'nat', 'bat'] || [['eat', 'tea', 'ate'],
+                                                       ['bat'],
+                                                       ['tan', 'nat']]
     }
 }

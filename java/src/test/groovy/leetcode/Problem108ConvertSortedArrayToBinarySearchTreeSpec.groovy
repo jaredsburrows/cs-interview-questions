@@ -20,7 +20,7 @@ final class Problem108ConvertSortedArrayToBinarySearchTreeSpec extends Specifica
     //     \   \
     //     -3   9
 
-    @Unroll def "sortedArrayToBST(#nums) = #expected"() {
+    @Unroll def 'sortedArrayToBST(#nums) = #expected'() {
         given:
         def sut = new Problem108ConvertSortedArrayToBinarySearchTree()
         def nums = [-10, -3, 0, 5, 9]

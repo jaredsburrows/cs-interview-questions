@@ -1,10 +1,10 @@
 package questions.stringarraymatrix
 
 import questions.ReorderBooleanArray
-import test.BaseSpec
+import spock.lang.Specification
 
-final class ReorderBooleanArraySpec extends BaseSpec {
-    def "reorder boolean - primitive"() {
+final class ReorderBooleanArraySpec extends Specification {
+    def 'reorder boolean - primitive'() {
         given:
         def actual = [false, true, true, true, false, true] as boolean[]
         def expected = [false, false, true, true, true, true] as boolean[]
@@ -16,7 +16,7 @@ final class ReorderBooleanArraySpec extends BaseSpec {
         actual == expected
     }
 
-    def "reorder boolean - object"() {
+    def 'reorder boolean - object'() {
         given:
         def actual = [false, true, true, true, false, true] as Boolean[]
         def expected = [false, false, true, true, true, true] as Boolean[]

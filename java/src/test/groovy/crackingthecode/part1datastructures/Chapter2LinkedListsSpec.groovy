@@ -2,12 +2,12 @@ package crackingthecode.part1datastructures
 
 import api.Node
 import crackingthecode.Chapter2LinkedLists
-import test.BaseSpec
+import spock.lang.Specification
 
-final class Chapter2LinkedListsSpec extends BaseSpec {
+final class Chapter2LinkedListsSpec extends Specification {
     def sut = new Chapter2LinkedLists()
 
-    def "removeDuplicates"() {
+    def 'removeDuplicates'() {
         given:
         def node = new Node<>(1)
         node.next = new Node<>(0)
@@ -27,7 +27,7 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         node.next.next.next.value == 5
     }
 
-    def "removeDuplicates2"() {
+    def 'removeDuplicates2'() {
         given:
         def node = new Node<>(1)
         node.next = new Node<>(0)
@@ -47,7 +47,7 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         node.next.next.next.value == 5
     }
 
-    def "removeDuplicates2 - no buffer - online"() {
+    def 'removeDuplicates2 - no buffer - online'() {
         given:
         def node = new Node<>(1)
         node.next = new Node<>(0)
@@ -67,7 +67,7 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         node.next.next.next.value == 5
     }
 
-    def "deleteDupsC - book"() {
+    def 'deleteDupsC - book'() {
         given:
         def node = new Node<>(1)
         node.next = new Node<>(0)
@@ -87,7 +87,7 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         node.next.next.next.value == 5
     }
 
-    def "findNthLastElement"() {
+    def 'findNthLastElement'() {
         def node = new Node<>(0)
         node.next = new Node<>(1)
         node.next.next = new Node<>(2)
@@ -106,26 +106,26 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         sut.findNthLastElement(node, 1).value == 5
     }
 
-    def "deleteMiddleNode"() {
+    def 'deleteMiddleNode'() {
         given:
-        def node1 = new Node<>("a" as Character)
-        node1.next = new Node<>("b" as Character)
-        node1.next.next = new Node<>("c" as Character)
-        node1.next.next.next = new Node<>("d" as Character)
-        node1.next.next.next.next = new Node<>("e" as Character)
+        def node1 = new Node<>('a' as Character)
+        node1.next = new Node<>('b' as Character)
+        node1.next.next = new Node<>('c' as Character)
+        node1.next.next.next = new Node<>('d' as Character)
+        node1.next.next.next.next = new Node<>('e' as Character)
 
         when:
         sut.deleteMiddleNode(null)
         sut.deleteMiddleNode(node1.next.next)
 
         then:
-        node1.value == "a"
-        node1.next.value == "b"
-        node1.next.next.value == "d"
-        node1.next.next.next.value == "e"
+        node1.value == 'a'
+        node1.next.value == 'b'
+        node1.next.next.value == 'd'
+        node1.next.next.next.value == 'e'
     }
 
-    def "addTwoLists"() {
+    def 'addTwoLists'() {
         given:
         // book
         // 315 + 592 = 808
@@ -179,7 +179,7 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
     //           |    |
     // A -> B -> C  <-
     // input: A -> B -> C -> D -> E -> C [the same C as earlier]
-    def "getCircular - true"() {
+    def 'getCircular - true'() {
         given:
         def nodeA = new Node<>(0)
         def nodeB = new Node<>(1)
@@ -202,7 +202,7 @@ final class Chapter2LinkedListsSpec extends BaseSpec {
         result.value == 3
     }
 
-    def "getCircular - false"() {
+    def 'getCircular - false'() {
         given:
         //       n4 <- n3
         //        |     |

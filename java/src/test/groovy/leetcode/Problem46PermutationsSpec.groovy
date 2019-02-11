@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem46PermutationsSpec extends Specification {
-    @Unroll def "permute(#nums) = #answer"() {
+    @Unroll def 'permute(#nums) = #answer'() {
         given:
         def sut = new Problem46Permutations()
 

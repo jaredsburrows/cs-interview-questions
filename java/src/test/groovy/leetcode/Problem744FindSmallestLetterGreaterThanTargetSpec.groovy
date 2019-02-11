@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem744FindSmallestLetterGreaterThanTargetSpec extends Specification {
-    @Unroll def "nextGreatestLetter(#letters, #target) = #answer"() {
+    @Unroll def 'nextGreatestLetter(#letters, #target) = #answer'() {
         given:
         def sut = new Problem744FindSmallestLetterGreaterThanTarget()
 

@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem268MissingNumberSpec extends Specification {
-    @Unroll def "missingNumber(#nums) = #answer"() {
+    @Unroll def 'missingNumber(#nums) = #answer'() {
         given:
         def sut = new Problem268MissingNumber()
 

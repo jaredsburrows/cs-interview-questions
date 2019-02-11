@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem125ValidPalindromeSpec extends Specification {
-    @Unroll def "isPalindrome(#a) = #answer"() {
+    @Unroll def 'isPalindrome(#a) = #answer'() {
         given:
         def sut = new Problem125ValidPalindrome()
 
@@ -14,7 +14,7 @@ final class Problem125ValidPalindromeSpec extends Specification {
         where:
         a                                || answer
         null                             || false
-        "A man, a plan, a canal: Panama" || true
-        "race a car"                     || false
+        'A man, a plan, a canal: Panama' || true
+        'race a car'                     || false
     }
 }

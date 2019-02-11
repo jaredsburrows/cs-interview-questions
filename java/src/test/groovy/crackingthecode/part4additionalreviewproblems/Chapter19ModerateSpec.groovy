@@ -2,13 +2,13 @@ package crackingthecode.part4additionalreviewproblems
 
 import api.Pair
 import crackingthecode.Chapter19Moderate
+import spock.lang.Specification
 import spock.lang.Unroll
-import test.BaseSpec
 
-final class Chapter19ModerateSpec extends BaseSpec {
+final class Chapter19ModerateSpec extends Specification {
     def sut = new Chapter19Moderate()
 
-    def "swapVar"() {
+    def 'swapVar'() {
         given:
         def a = 1
         def b = 2
@@ -25,7 +25,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         b == 1
     }
 
-    @Unroll def "19.2 - checkTicTacToe(#a) == '#b'"() {
+    @Unroll def '19.2 - checkTicTacToe(#a) == #b'() {
         expect:
         sut.checkTicTacToe(a as int[][]) == b
 
@@ -49,7 +49,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
          [0, 0, 2]] || 2
     }
 
-    @Unroll def "19.3 - numZeros(#a) == '#b'"() {
+    @Unroll def '19.3 - numZeros(#a) == #b'() {
         expect:
         sut.numZeros(a) == b
 
@@ -61,7 +61,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         26 || 6
     }
 
-    @Unroll def "19.4 - getMax(#a, #b) == '#c'"() {
+    @Unroll def '19.4 - getMax(#a, #b) == #c'() {
         expect:
         sut.getMax(a as long, b as long) == c
         sut.getMax2(a as long, b as long) == c
@@ -74,7 +74,7 @@ final class Chapter19ModerateSpec extends BaseSpec {
         213 | 321 || 321
     }
 
-    @Unroll def "getMin(#a, #b) == '#c'"() {
+    @Unroll def 'getMin(#a, #b) == #c'() {
         expect:
         sut.getMin(a as long, b as long) == c
 
@@ -86,21 +86,21 @@ final class Chapter19ModerateSpec extends BaseSpec {
         213 | 321 || 213
     }
 
-    @Unroll def "19.5 - getPseudoHits(#a, #b) == '#c'"() {
+    @Unroll def '19.5 - getPseudoHits(#a, #b) == #c'() {
         expect:
         sut.getPseudoHits(a, b) == c
 
         where:
         a      | b      || c
         null   | null   || null
-        "RGGB" | null   || null
-        null   | "RGGB" || null
-        "123"  | "1324" || null
-        "RGGB" | "RGGB" || new Pair<>(4, 0)
-        "RGGB" | "YRGB" || new Pair<>(2, 1)
+        'RGGB' | null   || null
+        null   | 'RGGB' || null
+        '123'  | '1324' || null
+        'RGGB' | 'RGGB' || new Pair<>(4, 0)
+        'RGGB' | 'YRGB' || new Pair<>(2, 1)
     }
 
-    @Unroll def "19.7 - getMaxSum(#a) == '#b'"() {
+    @Unroll def '19.7 - getMaxSum(#a) == #b'() {
         expect:
         sut.getMaxSum(a as int[]) == b
 
@@ -111,30 +111,30 @@ final class Chapter19ModerateSpec extends BaseSpec {
         [-2, 1, -3, 4, -1, 2, 1, -5, 4] || 6
     }
 
-    @Unroll def "19.8 - getWordOccurrence(#a, #b) == '#c'"() {
+    @Unroll def '19.8 - getWordOccurrence(#a, #b) == #c'() {
         expect:
         sut.getWordOccurrence(a as String[], b) == c
 
         where:
         a                     | b      || c
         null                  | null   || -1
-        null                  | "test" || -1
-        ["test"]              | null   || -1
-        ["the", "the", "the"] | "the"  || 3
-        ["the", null, "the"]  | "the"  || 2
-        ["the", null, "the"]  | "hat"  || 0
-        ["the", null, "the"]  | "hat"  || 0
-        ["the", "", "the"]    | "hat"  || 0
+        null                  | 'test' || -1
+        ['test']              | null   || -1
+        ['the', 'the', 'the'] | 'the'  || 3
+        ['the', null, 'the']  | 'the'  || 2
+        ['the', null, 'the']  | 'hat'  || 0
+        ['the', null, 'the']  | 'hat'  || 0
+        ['the', '', 'the']    | 'hat'  || 0
     }
 
-    def "19.10 - rand7"() {
+    def '19.10 - rand7'() {
         expect:
         sut.rand5() in 1..5
         sut.rand7() in 1..7
         sut.rand72() in 1..7
     }
 
-    @Unroll def "19.11 - getPairSum(#a, #b) == '#c'"() {
+    @Unroll def '19.11 - getPairSum(#a, #b) == #c'() {
         expect:
         sut.getPairSum(a as int[], b) == c as Map<Integer, Integer>
 

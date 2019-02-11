@@ -1,18 +1,13 @@
 package crackingthecode.part1datastructures
 
 import crackingthecode.Chapter1ArraysAndStrings
-import spock.lang.Shared
+import spock.lang.Specification
 import spock.lang.Unroll
-import test.BaseSpec
 
-final class Chapter1ArraysAndStringsSpec extends BaseSpec {
-    @Shared def sut
+final class Chapter1ArraysAndStringsSpec extends Specification {
+    def sut = new Chapter1ArraysAndStrings()
 
-    def "setup"() {
-        sut = new Chapter1ArraysAndStrings()
-    }
-
-    @Unroll def "isUniqueCharacters(#a) == '#b'"() {
+    @Unroll def 'isUniqueCharacters(#a) == #b'() {
         expect:
         sut.isUniqueCharacters(a) == b
         sut.isUniqueCharacters2(a) == b
@@ -20,72 +15,72 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
         where:
         a                             || b
         null                          || false
-        ""                            || false
-        "abc"                         || true
-        "aab"                         || false
-        "qazwsxedcrfvtgbyhnujmikolp"  || true
-        "qwertyuiopplkjhgfdsazxcvbnm" || false
+        ''                            || false
+        'abc'                         || true
+        'aab'                         || false
+        'qazwsxedcrfvtgbyhnujmikolp'  || true
+        'qwertyuiopplkjhgfdsazxcvbnm' || false
     }
 
-    @Unroll def "reverseString(#a) == '#b'"() {
+    @Unroll def 'reverseString(#a) == #b'() {
         expect:
         sut.reverseString(a as char[]) == b as char[]
 
         where:
         a            || b
-        null         || ""
-        ""           || ""
-        "bad"        || "dab"
-        "1234567890" || "0987654321"
-        "test"       || "tset"
+        null         || ''
+        ''           || ''
+        'bad'        || 'dab'
+        '1234567890' || '0987654321'
+        'test'       || 'tset'
     }
 
-    @Unroll def "removeDuplicates(#a) == '#b'"() {
+    @Unroll def 'removeDuplicates(#a) == #b'() {
         expect:
         sut.removeDuplicates(a) == b
 
         where:
         a              || b
-        null           || ""
-        ""             || ""
-        "baaaaaaaaaad" || "bad"
-        "1123"         || "123"
-        "abcc"         || "abc"
+        null           || ''
+        ''             || ''
+        'baaaaaaaaaad' || 'bad'
+        '1123'         || '123'
+        'abcc'         || 'abc'
     }
 
-    @Unroll def "isAnagram(#a) == '#b'"() {
+    @Unroll def 'isAnagram(#a) == #b'() {
         expect:
         sut.isAnagram(a, b) == c
         sut.isAnagram2(a, b) == c
 
         where:
         a            | b            || c
-        null         | "abc"        || false
-        "abx"        | null         || false
-        "a"          | "a"          || false
-        "abc"        | "ababc"      || false
-        "abc"        | "abc"        || true
-        "has"        | "ash"        || true
-        "gas"        | "sag"        || true
-        "Deductions" | "Discounted" || true
-        "fall"       | "foul"       || false
+        null         | 'abc'        || false
+        'abx'        | null         || false
+        'a'          | 'a'          || false
+        'abc'        | 'ababc'      || false
+        'abc'        | 'abc'        || true
+        'has'        | 'ash'        || true
+        'gas'        | 'sag'        || true
+        'Deductions' | 'Discounted' || true
+        'fall'       | 'foul'       || false
     }
 
-    @Unroll def "replaceSpace(#a) == '#b'"() {
+    @Unroll def 'replaceSpace(#a) == #b'() {
         expect:
         sut.replaceSpaces(a) == b
         sut.replaceSpaces2(a) == b
 
         where:
         a      || b
-        null   || ""
-        " "    || "%20"
-        "abc"  || "abc"
-        "a bc" || "a%20bc"
-        "  "   || "%20%20"
+        null   || ''
+        ' '    || '%20'
+        'abc'  || 'abc'
+        'a bc' || 'a%20bc'
+        '  '   || '%20%20'
     }
 
-    @Unroll def "rotateImage(#a) == '#b'"() {
+    @Unroll def 'rotateImage(#a) == #b'() {
         expect:
         sut.rotateImage(a as int[][]) == b as int[][]
         sut.rotateImage2(a as int[][]) == b as int[][]
@@ -107,7 +102,7 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
                            [6, 2, 8, 4]]
     }
 
-    @Unroll def "markRows(#a) == '#b'"() {
+    @Unroll def 'markRows(#a) == #b'() {
         expect:
         sut.markRows(a as int[][]) == b as int[][]
 
@@ -126,18 +121,18 @@ final class Chapter1ArraysAndStringsSpec extends BaseSpec {
                         [5, 0, 5]]
     }
 
-    @Unroll def "isSubstring(#a, #b) == '#c'"() {
+    @Unroll def 'isSubstring(#a, #b) == #c'() {
         expect:
         sut.isSubstring(a, b) == c
 
         where:
         a             | b             || c
         null          | null          || false
-        null          | "asdf"        || false
-        "asdfs"       | null          || false
-        "abc"         | "abdefd"      || false
-        "waterbottle" | "erbottlewat" || true
-        "apple"       | "pleap"       || true
-        "apple"       | "ppale"       || false
+        null          | 'asdf'        || false
+        'asdfs'       | null          || false
+        'abc'         | 'abdefd'      || false
+        'waterbottle' | 'erbottlewat' || true
+        'apple'       | 'pleap'       || true
+        'apple'       | 'ppale'       || false
     }
 }

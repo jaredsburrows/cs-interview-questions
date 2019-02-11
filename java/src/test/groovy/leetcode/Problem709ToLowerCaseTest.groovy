@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem709ToLowerCaseTest extends Specification {
-    @Unroll def "toLowerCase(#str) = #answer"() {
+    @Unroll def 'toLowerCase(#str) = #answer'() {
         given:
         def sut = new Problem709ToLowerCase()
 
@@ -13,8 +13,8 @@ final class Problem709ToLowerCaseTest extends Specification {
 
         where:
         str      || answer
-        "Hello"  || "hello"
-        "here"   || "here"
-        "LOVELY" || "lovely"
+        'Hello'  || 'hello'
+        'here'   || 'here'
+        'LOVELY' || 'lovely'
     }
 }

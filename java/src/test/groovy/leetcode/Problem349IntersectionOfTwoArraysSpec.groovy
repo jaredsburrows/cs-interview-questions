@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem349IntersectionOfTwoArraysSpec extends Specification {
-    @Unroll def "intersection(#nums1, #nums2) = #answer"() {
+    @Unroll def 'intersection(#nums1, #nums2) = #answer'() {
         given:
         def sut = new Problem349IntersectionOfTwoArrays()
 

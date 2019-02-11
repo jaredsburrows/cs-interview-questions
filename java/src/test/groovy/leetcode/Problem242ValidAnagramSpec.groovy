@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem242ValidAnagramSpec extends Specification {
-    @Unroll def "isAnagram(#s, #t) = #answer"() {
+    @Unroll def 'isAnagram(#s, #t) = #answer'() {
         given:
         def sut = new Problem242ValidAnagram()
 
@@ -13,7 +13,7 @@ final class Problem242ValidAnagramSpec extends Specification {
 
         where:
         s         | t         || answer
-        "anagram" | "nagaram" || true
-        "rat"     | "cat"     || false
+        'anagram' | 'nagaram' || true
+        'rat'     | 'cat'     || false
     }
 }

@@ -5,7 +5,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem252MeetingRoomsSpec extends Specification {
-    @Unroll def "canAttendMeetings(#intervals) = #answer"() {
+    @Unroll def 'canAttendMeetings(#intervals) = #answer'() {
         given:
         def sut = new Problem252MeetingRooms()
 

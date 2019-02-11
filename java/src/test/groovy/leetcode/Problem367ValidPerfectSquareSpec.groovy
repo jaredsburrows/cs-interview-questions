@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem367ValidPerfectSquareSpec extends Specification {
-    @Unroll def "isPerfectSquare(#num) = #answer"() {
+    @Unroll def 'isPerfectSquare(#num) = #answer'() {
         given:
         def sut = new Problem367ValidPerfectSquare()
 

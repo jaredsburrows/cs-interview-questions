@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem485MaxConsecutiveOnesSpec extends Specification {
-    @Unroll def "findMaxConsecutiveOnes(#nums) = #answer"() {
+    @Unroll def 'findMaxConsecutiveOnes(#nums) = #answer'() {
         given:
         def sut = new Problem485MaxConsecutiveOnes()
 

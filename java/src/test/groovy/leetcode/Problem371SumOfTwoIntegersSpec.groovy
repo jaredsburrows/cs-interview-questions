@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem371SumOfTwoIntegersSpec extends Specification {
-    @Unroll def "getSum(#a, #b) = #answer"() {
+    @Unroll def 'getSum(#a, #b) = #answer'() {
         given:
         def sut = new Problem371SumOfTwoIntegers()
 

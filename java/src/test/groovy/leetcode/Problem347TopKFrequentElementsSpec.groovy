@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem347TopKFrequentElementsSpec extends Specification {
-    @Unroll def "topKFrequent(#nums, #k) = #answer"() {
+    @Unroll def 'topKFrequent(#nums, #k) = #answer'() {
         given:
         def sut = new Problem347TopKFrequentElements()
 

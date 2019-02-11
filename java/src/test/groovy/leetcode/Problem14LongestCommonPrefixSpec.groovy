@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem14LongestCommonPrefixSpec extends Specification {
-    @Unroll def "longestCommonPrefix(#strs) = #answer"() {
+    @Unroll def 'longestCommonPrefix(#strs) = #answer'() {
         given:
         def sut = new Problem14LongestCommonPrefix()
 
@@ -13,7 +13,7 @@ final class Problem14LongestCommonPrefixSpec extends Specification {
 
         where:
         strs                         || answer
-        ["flower", "flow", "flight"] || "fl"
-        ["dog", "racecar", "car"]    || ""
+        ['flower', 'flow', 'flight'] || 'fl'
+        ['dog', 'racecar', 'car']    || ''
     }
 }

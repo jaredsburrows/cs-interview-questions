@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem724FindPivotIndexSpec extends Specification {
-    @Unroll def "pivotIndex(#nums) = #answer"() {
+    @Unroll def 'pivotIndex(#nums) = #answer'() {
         given:
         def sut = new Problem724FindPivotIndex()
 

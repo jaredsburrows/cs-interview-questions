@@ -2,13 +2,13 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import test.BaseSpec
+import spock.lang.Specification
 
-final class NodeSpec extends BaseSpec {
+final class NodeSpec extends Specification {
     def sut = new Node<>()
     def nextNode = new Node<>(123)
 
-    def "default values"() {
+    def 'default values'() {
         when:
         sut.value = 123
 
@@ -18,7 +18,7 @@ final class NodeSpec extends BaseSpec {
         sut.previous == null
     }
 
-    def "getters/setters"() {
+    def 'getters/setters'() {
         when:
         sut.value = 123
         sut.next = nextNode
@@ -30,7 +30,7 @@ final class NodeSpec extends BaseSpec {
         sut.previous.value == 123
     }
 
-    def "equals/hashCode"() {
+    def 'equals/hashCode'() {
         when:
         EqualsVerifier.forClass(Node.class)
             .withPrefabValues(Node.class, new Node<>(), new Node<>(1))

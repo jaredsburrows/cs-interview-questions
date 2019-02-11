@@ -1,9 +1,9 @@
 package projecteuler
 
-import test.BaseSpec
+import spock.lang.Specification
 
-final class Number004Spec extends BaseSpec {
-    def "getLargestPalindromeProduct"() {
+final class Number004Spec extends Specification {
+    def 'getLargestPalindromeProduct'() {
         expect:
         Number004.getLargestPalindromeProduct() == 906609
     }

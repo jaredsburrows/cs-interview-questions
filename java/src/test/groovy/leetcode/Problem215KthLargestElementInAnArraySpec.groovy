@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem215KthLargestElementInAnArraySpec extends Specification {
-    @Unroll def "findKthLargest(#nums, #k) = #answer"() {
+    @Unroll def 'findKthLargest(#nums, #k) = #answer'() {
         given:
         def sut = new Problem215KthLargestElementInAnArray()
 

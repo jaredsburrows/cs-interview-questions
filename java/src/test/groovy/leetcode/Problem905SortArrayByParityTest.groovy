@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem905SortArrayByParityTest extends Specification {
-    @Unroll def "sortArrayByParity(#A) = #answer"() {
+    @Unroll def 'sortArrayByParity(#A) = #answer'() {
         given:
         def sut = new Problem905SortArrayByParity()
 

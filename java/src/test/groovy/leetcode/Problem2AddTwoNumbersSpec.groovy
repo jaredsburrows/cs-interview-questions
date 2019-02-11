@@ -1,10 +1,10 @@
 package leetcode
 
 import leetcode.api.ListNode
-import test.BaseSpec
+import spock.lang.Specification
 
-final class Problem2AddTwoNumbersSpec extends BaseSpec {
-    def "addTwoNumbers"() {
+final class Problem2AddTwoNumbersSpec extends Specification {
+    def 'addTwoNumbers'() {
         given:
         def sut = new Problem2AddTwoNumbers()
 

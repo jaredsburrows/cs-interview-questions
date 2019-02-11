@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem20ValidParenthesesSpec extends Specification {
-    @Unroll def "isValid(#s) = #answer"() {
+    @Unroll def 'isValid(#s) = #answer'() {
         given:
         def sut = new Problem20ValidParentheses()
 
@@ -13,10 +13,10 @@ final class Problem20ValidParenthesesSpec extends Specification {
 
         where:
         s        || answer
-        "()"     || true
-        "()[]{}" || true
-        "(]"     || false
-        "([)]"   || false
-        "{[]}"   || true
+        '()'     || true
+        '()[]{}' || true
+        '(]'     || false
+        '([)]'   || false
+        '{[]}'   || true
     }
 }

@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem4544SumIISpec extends Specification {
-    @Unroll def "fourSumCount(#A, #B, #C, #D) = #answer"() {
+    @Unroll def 'fourSumCount(#A, #B, #C, #D) = #answer'() {
         given:
         def sut = new Problem4544SumII()
 

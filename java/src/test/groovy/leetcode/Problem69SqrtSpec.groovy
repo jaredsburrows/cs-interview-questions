@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem69SqrtSpec extends Specification {
-    @Unroll def "mySqrt(#x) = #answer"() {
+    @Unroll def 'mySqrt(#x) = #answer'() {
         given:
         def sut = new Problem69Sqrt()
 

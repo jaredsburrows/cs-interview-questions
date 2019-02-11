@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem80RemoveDuplicatesFromSortedArrayIISpec extends Specification {
-    @Unroll def "removeDuplicates(#nums) = #answer"() {
+    @Unroll def 'removeDuplicates(#nums) = #answer'() {
         given:
         def sut = new Problem80RemoveDuplicatesFromSortedArrayII()
 

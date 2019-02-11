@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem26RemoveDuplicatesFromSortedArraySpec extends Specification {
-    @Unroll def "removeDuplicates(#nums) = #answer"() {
+    @Unroll def 'removeDuplicates(#nums) = #answer'() {
         given:
         def sut = new Problem26RemoveDuplicatesFromSortedArray()
 
@@ -18,7 +18,7 @@ final class Problem26RemoveDuplicatesFromSortedArraySpec extends Specification {
         [0, 0, 1, 1, 1, 2, 2, 3, 3, 4] || 5
     }
 
-    @Unroll def "removeDuplicates2(#nums) = #answer"() {
+    @Unroll def 'removeDuplicates2(#nums) = #answer'() {
         given:
         def sut = new Problem26RemoveDuplicatesFromSortedArray()
 

@@ -1,11 +1,11 @@
 package questions.stringarraymatrix
 
 import questions.LongestSequenceMatrix
+import spock.lang.Specification
 import spock.lang.Unroll
-import test.BaseSpec
 
-final class LongestSequenceMatrixSpec extends BaseSpec {
-    @Unroll def "getLongestSequence(#a) == '#b'"() {
+final class LongestSequenceMatrixSpec extends Specification {
+    @Unroll def 'getLongestSequence(#a) == #b'() {
         expect:
         LongestSequenceMatrix.getLongestSequence(a as int[][]) == b
 

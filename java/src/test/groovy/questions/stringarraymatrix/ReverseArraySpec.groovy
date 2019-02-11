@@ -1,11 +1,11 @@
 package questions.stringarraymatrix
 
 import questions.ReverseArray
+import spock.lang.Specification
 import spock.lang.Unroll
-import test.BaseSpec
 
-final class ReverseArraySpec extends BaseSpec {
-    @Unroll def "reverse - multiple arg(#a, #b, #c) == '#d'"() {
+final class ReverseArraySpec extends Specification {
+    @Unroll def 'reverse - multiple arg(#a, #b, #c) == #d'() {
         expect:
         ReverseArray.reverse(a as int[], b, c) == d as int[]
 

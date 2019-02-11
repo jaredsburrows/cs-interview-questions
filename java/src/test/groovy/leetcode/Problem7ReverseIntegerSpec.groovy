@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem7ReverseIntegerSpec extends Specification {
-    @Unroll def "reverse(#x) == #answer"() {
+    @Unroll def 'reverse(#x) == #answer'() {
         given:
         def sut = new Problem7ReverseInteger()
 

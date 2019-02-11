@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem442FindAllDuplicatesInAnArraySpec extends Specification {
-    @Unroll def "findDuplicates(#nums) = #answer"() {
+    @Unroll def 'findDuplicates(#nums) = #answer'() {
         given:
         def sut = new Problem442FindAllDuplicatesInAnArray()
 

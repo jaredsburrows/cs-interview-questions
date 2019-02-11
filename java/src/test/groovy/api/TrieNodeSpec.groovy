@@ -2,13 +2,13 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import test.BaseSpec
+import spock.lang.Specification
 
-final class TrieNodeSpec extends BaseSpec {
+final class TrieNodeSpec extends Specification {
     def sut = new TrieNode<>()
     def nextNode = new TrieNode<>(123)
 
-    def "default values"() {
+    def 'default values'() {
         expect:
         sut.children.length == 26
         nextNode.children.length == 123
@@ -16,7 +16,7 @@ final class TrieNodeSpec extends BaseSpec {
         !nextNode.isEnd
     }
 
-    def "getters/setters"() {
+    def 'getters/setters'() {
         given:
         def list = [new TrieNode<>(1)]
 
@@ -29,7 +29,7 @@ final class TrieNodeSpec extends BaseSpec {
         sut.isEnd
     }
 
-    def "equals/hashCode"() {
+    def 'equals/hashCode'() {
         when:
         EqualsVerifier.forClass(TrieNode.class)
             .withPrefabValues(TrieNode.class, new TrieNode<>(), new TrieNode<>(1))

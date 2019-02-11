@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem769MaxChunksToMakeSortedSpec extends Specification {
-    @Unroll def "maxChunksToSorted(#arr) = #answer"() {
+    @Unroll def 'maxChunksToSorted(#arr) = #answer'() {
         given:
         def sut = new Problem769MaxChunksToMakeSorted()
 

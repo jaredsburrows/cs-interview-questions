@@ -1,11 +1,10 @@
-package codingbat
+package codingbat.recursion1
 
-import codingbat.recursion1.AllStar
 import spock.lang.Specification
 import spock.lang.Unroll
 
 final class AllStarTest extends Specification {
-    @Unroll def "allStar(#str) = #answer"() {
+    @Unroll def 'allStar(#str) = #answer'() {
         given:
         def sut = new AllStar()
 

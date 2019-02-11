@@ -1,11 +1,11 @@
 package questions.searching
 
 import questions.SearchAdjacentElements
+import spock.lang.Specification
 import spock.lang.Unroll
-import test.BaseSpec
 
-final class SearchAdjacentElementsSpec extends BaseSpec {
-    @Unroll def "search(#a, #b) == '#c'"() {
+final class SearchAdjacentElementsSpec extends Specification {
+    @Unroll def 'search(#a, #b) == #c'() {
         expect:
         SearchAdjacentElements.search(a as int[], b) == c
         SearchAdjacentElements.search2(a as int[], b) == c

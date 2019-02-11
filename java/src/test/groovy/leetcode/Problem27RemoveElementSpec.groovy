@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem27RemoveElementSpec extends Specification {
-    @Unroll def "removeElement(#nums, #val) = #answer"() {
+    @Unroll def 'removeElement(#nums, #val) = #answer'() {
         given:
         def sut = new Problem27RemoveElement()
 

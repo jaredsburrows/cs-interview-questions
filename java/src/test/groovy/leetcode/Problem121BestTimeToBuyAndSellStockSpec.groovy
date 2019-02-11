@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem121BestTimeToBuyAndSellStockSpec extends Specification {
-    @Unroll def "maxProfit(#prices) = #answer"() {
+    @Unroll def 'maxProfit(#prices) = #answer'() {
         given:
         def sut = new Problem121BestTimeToBuyAndSellStock()
 

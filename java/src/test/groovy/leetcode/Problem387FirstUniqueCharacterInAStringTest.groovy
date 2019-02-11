@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem387FirstUniqueCharacterInAStringTest extends Specification {
-    @Unroll def "firstUniqChar(#s) = #answer"() {
+    @Unroll def 'firstUniqChar(#s) = #answer'() {
         given:
         def sut = new Problem387FirstUniqueCharacterInAString()
 
@@ -13,7 +13,7 @@ final class Problem387FirstUniqueCharacterInAStringTest extends Specification {
 
         where:
         s              || answer
-        "leetcode"     || 0
-        "loveleetcode" || 2
+        'leetcode'     || 0
+        'loveleetcode' || 2
     }
 }

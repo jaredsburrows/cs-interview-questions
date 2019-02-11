@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem55JumpGameSpec extends Specification {
-    @Unroll def "canJump(#nums) = #answer"() {
+    @Unroll def 'canJump(#nums) = #answer'() {
         given:
         def sut = new Problem55JumpGame()
 

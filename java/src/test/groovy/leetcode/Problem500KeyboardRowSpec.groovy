@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem500KeyboardRowSpec extends Specification {
-    @Unroll def "findWords(#words) = #answer"() {
+    @Unroll def 'findWords(#words) = #answer'() {
         given:
         def sut = new Problem500KeyboardRow()
 
@@ -14,6 +14,6 @@ final class Problem500KeyboardRowSpec extends Specification {
         where:
         words                               || answer
         null                                || []
-        ["Hello", "Alaska", "Dad", "Peace"] || ["Alaska", "Dad"]
+        ['Hello', 'Alaska', 'Dad', 'Peace'] || ['Alaska', 'Dad']
     }
 }

@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem532KDiffPairsInAnArraySpec extends Specification {
-    @Unroll def "findPairs(#nums, #k) = #answer"() {
+    @Unroll def 'findPairs(#nums, #k) = #answer'() {
         given:
         def sut = new Problem532KDiffPairsInAnArray()
 

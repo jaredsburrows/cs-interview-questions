@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem35SearchInsertPositionSpec extends Specification {
-    @Unroll def "searchInsert(#nums, #target) = #answer"() {
+    @Unroll def 'searchInsert(#nums, #target) = #answer'() {
         given:
         def sut = new Problem35SearchInsertPosition()
 

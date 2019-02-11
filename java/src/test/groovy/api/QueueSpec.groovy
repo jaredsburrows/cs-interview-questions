@@ -2,9 +2,9 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import test.BaseSpec
+import spock.lang.Specification
 
-final class QueueSpec extends BaseSpec {
+final class QueueSpec extends Specification {
     def sut = new Queue<>()
     def valueNode = new Node<>(1)
     def valueNode2 = new Node<>(2)
@@ -12,7 +12,7 @@ final class QueueSpec extends BaseSpec {
     def blankNode = new Node<>(0)
     def blankNode2 = new Node<>(0)
 
-    def "enqueue with constructor"() {
+    def 'enqueue with constructor'() {
         given:
         def queue = new Queue<>(1)
 
@@ -21,14 +21,14 @@ final class QueueSpec extends BaseSpec {
         queue.add(valueNode2)
     }
 
-    def "getFirst"() {
+    def 'getFirst'() {
         expect:
         !sut.getFirst()
         sut.add(blankNode)
         sut.getFirst() == blankNode
     }
 
-    def "getFirst - multiple"() {
+    def 'getFirst - multiple'() {
         expect:
         !sut.getFirst()
         sut.add(blankNode)
@@ -37,14 +37,14 @@ final class QueueSpec extends BaseSpec {
         sut.getFirst() == blankNode
     }
 
-    def "getLast"() {
+    def 'getLast'() {
         expect:
         !sut.getLast()
         sut.add(blankNode)
         sut.getLast() == blankNode
     }
 
-    def "getLast - multiple"() {
+    def 'getLast - multiple'() {
         expect:
         !sut.getLast()
         sut.add(blankNode)
@@ -53,7 +53,7 @@ final class QueueSpec extends BaseSpec {
         sut.getLast() == blankNode2
     }
 
-    def "enqueue - single"() {
+    def 'enqueue - single'() {
         expect:
         !sut.getFirst()
         sut.add(null)
@@ -62,7 +62,7 @@ final class QueueSpec extends BaseSpec {
         sut.getFirst() == blankNode
     }
 
-    def "enqueue - multiple"() {
+    def 'enqueue - multiple'() {
         expect:
         !sut.getFirst()
         sut.add(null)
@@ -79,7 +79,7 @@ final class QueueSpec extends BaseSpec {
         sut.getLast() == valueNode3
     }
 
-    def "dequeue"() {
+    def 'dequeue'() {
         expect:
         !sut.getFirst()
         sut.add(null)
@@ -92,7 +92,7 @@ final class QueueSpec extends BaseSpec {
         !sut.getFirst()
     }
 
-    def "dequeue - multiple"() {
+    def 'dequeue - multiple'() {
         expect:
         !sut.getFirst()
         sut.add(null)
@@ -117,7 +117,7 @@ final class QueueSpec extends BaseSpec {
         !sut.getFirst()
     }
 
-    def "equals/hashCode"() {
+    def 'equals/hashCode'() {
         when:
         EqualsVerifier.forClass(Queue.class)
             .withPrefabValues(Queue.class, new Queue<>(), new Queue<>(1))

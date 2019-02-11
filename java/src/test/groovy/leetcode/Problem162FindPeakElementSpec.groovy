@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem162FindPeakElementSpec extends Specification {
-    @Unroll def "findPeakElement(#nums) = #answer"() {
+    @Unroll def 'findPeakElement(#nums) = #answer'() {
         given:
         def sut = new Problem162FindPeakElement()
 

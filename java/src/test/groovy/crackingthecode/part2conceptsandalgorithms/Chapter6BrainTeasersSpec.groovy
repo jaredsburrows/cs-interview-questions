@@ -1,27 +1,27 @@
 package crackingthecode.part2conceptsandalgorithms
 
 import crackingthecode.Chapter6BrainTeasers
-import test.BaseSpec
+import spock.lang.Specification
 
-final class Chapter6BrainTeasersSpec extends BaseSpec {
+final class Chapter6BrainTeasersSpec extends Specification {
     def sut = new Chapter6BrainTeasers()
 
-    def "arithmeticOperators"() {
+    def 'arithmeticOperators'() {
         expect:
         sut.arithmeticOperators() == 8
     }
 
-    def "chessPieces"() {
+    def 'chessPieces'() {
         expect:
         sut.chessPieces() == 64
     }
 
-    def "exactJugs"() {
+    def 'exactJugs'() {
         expect:
         sut.exactJugs() == 4
     }
 
-    def "lockersOpen"() {
+    def 'lockersOpen'() {
         expect:
         sut.lockersOpen() == 10
     }

@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem560SubarraySumEqualsKSpec extends Specification {
-    @Unroll def "subarraySum(#nums, #k) = #answer"() {
+    @Unroll def 'subarraySum(#nums, #k) = #answer'() {
         given:
         def sut = new Problem560SubarraySumEqualsK()
 

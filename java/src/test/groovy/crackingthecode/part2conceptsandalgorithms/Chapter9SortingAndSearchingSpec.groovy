@@ -2,13 +2,13 @@ package crackingthecode.part2conceptsandalgorithms
 
 import api.Pair
 import crackingthecode.Chapter9SortingAndSearching
+import spock.lang.Specification
 import spock.lang.Unroll
-import test.BaseSpec
 
-final class Chapter9SortingAndSearchingSpec extends BaseSpec {
+final class Chapter9SortingAndSearchingSpec extends Specification {
     def sut = new Chapter9SortingAndSearching()
 
-    @Unroll def "mergeAInB(#a, #b, #c) == '#d'"() {
+    @Unroll def 'mergeAInB(#a, #b, #c) == #d'() {
         expect:
         sut.mergeBInA(a as int[], b as int[], c as int) == d as int[]
 
@@ -22,19 +22,19 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
     }
 
     // http://www2.vo.lu/homepages/phahn/anagrams/oneword.htm
-    @Unroll def "sortAnagrams(#a) == '#b'"() {
+    @Unroll def 'sortAnagrams(#a) == #b'() {
         expect:
         sut.sortAnagrams(a) == b
 
         where:
         a                                                                             || b
-        ["catalogue", "coagulate", "decimate", "medicate", "exitation", "intoxicate"] ||
-            ["aaceglotu", "aaceglotu", "acdeeimt", "acdeeimt", "aceiinottx", "aeiinottx"]
-        ["canoe", "englander", "sweat", "paint", "ocean", "greenland", "inapt"]       ||
-            ["aceno", "aceno", "adeeglnnr", "adeeglnnr", "aestw", "ainpt", "ainpt"]
+        ['catalogue', 'coagulate', 'decimate', 'medicate', 'exitation', 'intoxicate'] ||
+            ['aaceglotu', 'aaceglotu', 'acdeeimt', 'acdeeimt', 'aceiinottx', 'aeiinottx']
+        ['canoe', 'englander', 'sweat', 'paint', 'ocean', 'greenland', 'inapt']       ||
+            ['aceno', 'aceno', 'adeeglnnr', 'adeeglnnr', 'aestw', 'ainpt', 'ainpt']
     }
 
-    @Unroll def "getRotatedIndexOf(#a, #b) == '#c'"() {
+    @Unroll def 'getRotatedIndexOf(#a, #b) == #c'() {
         expect:
         sut.getRotatedIndexOf(a as int[], b) == c
 
@@ -48,7 +48,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
             -1 // cant handle duplicates
     }
 
-    @Unroll def "findString(#a, #b) == '#c'"() {
+    @Unroll def 'findString(#a, #b) == #c'() {
         expect:
         sut.findString(a as String[], b as String) == c
         sut.findString2(a as String[], b as String) == c
@@ -56,15 +56,15 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
 
         where:
         a                                                                | b         || c
-        ["a", "b", "c", "d", "e"]                                        | "b"       ||
+        ['a', 'b', 'c', 'd', 'e']                                        | 'b'       ||
             1 // normal - no spaces
-        ["a", "b", "", "c", "d", "e"]                                    | "b"       || 1
-        ["a", "", "b", "", "c", "", "", "", "d", "", "e"]                | "b"       || 2
-        ["at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""] | "ball"    || 4
-        ["at", "", "", "", "", "ball", "car", "", "", "dad", "", ""]     | "ballcar" || -1
+        ['a', 'b', '', 'c', 'd', 'e']                                    | 'b'       || 1
+        ['a', '', 'b', '', 'c', '', '', '', 'd', '', 'e']                | 'b'       || 2
+        ['at', '', '', '', 'ball', '', '', 'car', '', '', 'dad', '', ''] | 'ball'    || 4
+        ['at', '', '', '', '', 'ball', 'car', '', '', 'dad', '', '']     | 'ballcar' || -1
     }
 
-    @Unroll def "findValue(#a, #b) == '#c'"() {
+    @Unroll def 'findValue(#a, #b) == #c'() {
         expect:
         sut.findValue(a as int[][], b) == c
 
@@ -113,7 +113,7 @@ final class Chapter9SortingAndSearchingSpec extends BaseSpec {
          [32, 33, 39, 50]]  | 29 || true
     }
 
-    def "getCircusOrder"() {
+    def 'getCircusOrder'() {
         given:
         // (65, 100) (70, 150) (56, 90) (75, 190) (60, 95) (68, 110)
         def actual = [new Pair<Integer, Integer>(65, 100),

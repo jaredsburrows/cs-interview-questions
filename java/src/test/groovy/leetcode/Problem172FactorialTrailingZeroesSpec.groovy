@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem172FactorialTrailingZeroesSpec extends Specification {
-    @Unroll def "trailingZeroes(#a) = #answer"() {
+    @Unroll def 'trailingZeroes(#a) = #answer'() {
         given:
         def sut = new Problem172FactorialTrailingZeroes()
 

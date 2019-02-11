@@ -2,9 +2,9 @@ package questions.tree
 
 import api.TreeNode
 import questions.BstFindMax
-import test.BaseSpec
+import spock.lang.Specification
 
-final class BstFindMaxSpec extends BaseSpec {
+final class BstFindMaxSpec extends Specification {
     def tree = new TreeNode<>(8)
 
     //                (8)
@@ -14,7 +14,7 @@ final class BstFindMaxSpec extends BaseSpec {
     //         (1)   (5) (13)
     //               /
     //             (3)
-    def "setup"() {
+    def 'setup'() {
         tree.right = new TreeNode<>(21)
         tree.right.left = new TreeNode<>(13)
 
@@ -24,7 +24,7 @@ final class BstFindMaxSpec extends BaseSpec {
         tree.left.right.left = new TreeNode<>(3)
     }
 
-    def "findMaxValue"() {
+    def 'findMaxValue'() {
         expect:
         BstFindMax.findMaxValue(tree) == 21
     }

@@ -2,30 +2,30 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import test.BaseSpec
+import spock.lang.Specification
 
-final class TrioSpec extends BaseSpec {
-    def sut = new Trio<>("a", 1, 'a')
+final class TrioSpec extends Specification {
+    def sut = new Trio<>('a', 1, 'a')
 
-    def "getFirst"() {
+    def 'getFirst'() {
         expect:
-        sut.getFirst() == "a"
+        sut.getFirst() == 'a'
     }
 
-    def "getSecond"() {
+    def 'getSecond'() {
         expect:
         sut.getSecond() == 1
     }
 
-    def "getThird"() {
+    def 'getThird'() {
         expect:
         sut.getThird() == 'a'
     }
 
-    def "equals/hashCode"() {
+    def 'equals/hashCode'() {
         when:
         EqualsVerifier.forClass(Trio.class)
-            .withPrefabValues(Trio.class, new Trio<>("a", 1, 'a'), new Trio<>("b", 2, 'b'))
+            .withPrefabValues(Trio.class, new Trio<>('a', 1, 'a'), new Trio<>('b', 2, 'b'))
             .suppress(Warning.NONFINAL_FIELDS)
             .verify()
 

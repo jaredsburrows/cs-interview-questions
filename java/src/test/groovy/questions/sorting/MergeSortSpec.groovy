@@ -1,10 +1,10 @@
 package questions.sorting
 
 import questions.MergeSort
-import test.BaseSpec
+import spock.lang.Specification
 
-final class MergeSortSpec extends BaseSpec {
-    def "mergeSort"() {
+final class MergeSortSpec extends Specification {
+    def 'mergeSort'() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -16,7 +16,7 @@ final class MergeSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "mergeSort2"() {
+    def 'mergeSort2'() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -28,7 +28,7 @@ final class MergeSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "sort"() {
+    def 'sort'() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -40,7 +40,7 @@ final class MergeSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "sort2"() {
+    def 'sort2'() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]

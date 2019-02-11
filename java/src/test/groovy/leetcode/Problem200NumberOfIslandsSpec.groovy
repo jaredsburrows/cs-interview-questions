@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem200NumberOfIslandsSpec extends Specification {
-    @Unroll def "numIslands(#grid) = #answer"() {
+    @Unroll def 'numIslands(#grid) = #answer'() {
         given:
         def sut = new Problem200NumberOfIslands()
 

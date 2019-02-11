@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem42TrappingRainWaterSpec extends Specification {
-    @Unroll def "trap(#height) = #answer"() {
+    @Unroll def 'trap(#height) = #answer'() {
         given:
         def sut = new Problem42TrappingRainWater()
 

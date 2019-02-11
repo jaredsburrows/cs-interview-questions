@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class ExploreBinarySearchSpec extends Specification {
-    @Unroll def "search(#nums, #target) = #answer"() {
+    @Unroll def 'search(#nums, #target) = #answer'() {
         given:
         def sut = new ExploreBinarySearch()
 

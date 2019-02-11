@@ -6,7 +6,7 @@ import spock.lang.Unroll
 
 final class Problem88MergeSortedArraySpec extends Specification {
     @Ignore
-    @Unroll def "merge(#nums1, #m, #nums2, #n)"() {
+    @Unroll def 'merge(#nums1, #m, #nums2, #n)'() {
         given:
         def nums1 = [1, 2, 3, 0, 0, 0]
         def m = 3

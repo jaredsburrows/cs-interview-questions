@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem292NimGameSpec extends Specification {
-    @Unroll def "canWinNim(#n) = #answer"() {
+    @Unroll def 'canWinNim(#n) = #answer'() {
         given:
         def sut = new Problem292NimGame()
 

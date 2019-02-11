@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem9PalindromeNumberSpec extends Specification {
-    @Unroll def "isPalindrome(#x) = #answer"() {
+    @Unroll def 'isPalindrome(#x) = #answer'() {
         given:
         def sut = new Problem9PalindromeNumber()
 
@@ -18,7 +18,7 @@ final class Problem9PalindromeNumberSpec extends Specification {
         10   || false
     }
 
-    @Unroll def "isPalindrome2(#x) = #answer"() {
+    @Unroll def 'isPalindrome2(#x) = #answer'() {
         given:
         def sut = new Problem9PalindromeNumber()
 

@@ -2,9 +2,9 @@ package api
 
 import nl.jqno.equalsverifier.EqualsVerifier
 import nl.jqno.equalsverifier.Warning
-import test.BaseSpec
+import spock.lang.Specification
 
-final class StackSpec extends BaseSpec {
+final class StackSpec extends Specification {
     def sut = new Stack<>()
     def valueNode = new Node<>(1)
     def valueNode2 = new Node<>(2)
@@ -12,14 +12,14 @@ final class StackSpec extends BaseSpec {
     def blankNode = new Node<>(0)
     def blankNode2 = new Node<>(0)
 
-    def "peek"() {
+    def 'peek'() {
         expect:
         !sut.peek()
         sut.push(blankNode)
         sut.peek() == blankNode
     }
 
-    def "peek - multiple"() {
+    def 'peek - multiple'() {
         expect:
         !sut.peek()
         sut.push(blankNode)
@@ -28,7 +28,7 @@ final class StackSpec extends BaseSpec {
         sut.peek() == blankNode2
     }
 
-    def "push - single"() {
+    def 'push - single'() {
         def blankNode = new Node<>(0)
 
         expect:
@@ -39,7 +39,7 @@ final class StackSpec extends BaseSpec {
         sut.peek() == blankNode
     }
 
-    def "push - multiple"() {
+    def 'push - multiple'() {
         expect:
         !sut.peek()
         sut.push(null)
@@ -52,7 +52,7 @@ final class StackSpec extends BaseSpec {
         sut.peek() == valueNode3
     }
 
-    def "pop"() {
+    def 'pop'() {
         expect:
         !sut.peek()
         sut.push(null)
@@ -63,7 +63,7 @@ final class StackSpec extends BaseSpec {
         !sut.peek()
     }
 
-    def "pop - multiple"() {
+    def 'pop - multiple'() {
         expect:
         !sut.peek()
         sut.push(null)
@@ -84,7 +84,7 @@ final class StackSpec extends BaseSpec {
         !sut.peek()
     }
 
-    def "equals/hashCode"() {
+    def 'equals/hashCode'() {
         when:
         EqualsVerifier.forClass(Stack.class)
             .withPrefabValues(Stack.class, new Stack<>(), new Stack<>(1))

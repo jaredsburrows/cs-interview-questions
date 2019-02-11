@@ -1,11 +1,11 @@
 package questions.stringarraymatrix
 
 import questions.FindKSmallestNumbers
+import spock.lang.Specification
 import spock.lang.Unroll
-import test.BaseSpec
 
-final class FindKSmallestNumbersSpec extends BaseSpec {
-    @Unroll def "getSmallestNumbers(#a, #b) == '#c'"() {
+final class FindKSmallestNumbersSpec extends Specification {
+    @Unroll def 'getSmallestNumbers(#a, #b) == #c'() {
         expect:
         FindKSmallestNumbers.getSmallestNumbers(a, b) == c
 

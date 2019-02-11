@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem53MaximumSubarraySpec extends Specification {
-    @Unroll def "maxSubArray(#nums) = #answer"() {
+    @Unroll def 'maxSubArray(#nums) = #answer'() {
         given:
         def sut = new Problem53MaximumSubarray()
 

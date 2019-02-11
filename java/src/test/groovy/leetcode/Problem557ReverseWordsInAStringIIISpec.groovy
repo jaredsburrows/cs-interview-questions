@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem557ReverseWordsInAStringIIISpec extends Specification {
-    @Unroll def "reverseWords(#s) = #answer"() {
+    @Unroll def 'reverseWords(#s) = #answer'() {
         given:
         def sut = new Problem557ReverseWordsInAStringIII()
 
@@ -13,6 +13,6 @@ final class Problem557ReverseWordsInAStringIIISpec extends Specification {
 
         where:
         s                             || answer
-        "Let's take LeetCode contest" || "s'teL ekat edoCteeL tsetnoc"
+        'Let\'s take LeetCode contest' || 's\'teL ekat edoCteeL tsetnoc'
     }
 }

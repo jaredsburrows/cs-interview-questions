@@ -1,11 +1,11 @@
 package questions.math
 
 import questions.NaturalNumbersSum
+import spock.lang.Specification
 import spock.lang.Unroll
-import test.BaseSpec
 
-final class NaturalNumbersSumSpec extends BaseSpec {
-    @Unroll def "getSumNaturalNumbers(#a) == '#b'"() {
+final class NaturalNumbersSumSpec extends Specification {
+    @Unroll def 'getSumNaturalNumbers(#a) == #b'() {
         expect:
         NaturalNumbersSum.getSumNaturalNumbers(a) == b
         NaturalNumbersSum.getSumNaturalNumbers2(a) == b
@@ -21,7 +21,7 @@ final class NaturalNumbersSumSpec extends BaseSpec {
         1000 || 500500
     }
 
-    @Unroll def "getSumNaturalNumbersArray(#a) == '#b'"() {
+    @Unroll def 'getSumNaturalNumbersArray(#a) == #b'() {
         expect:
         NaturalNumbersSum.getSumNaturalNumbers(a as int[]) == b
 

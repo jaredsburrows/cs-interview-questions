@@ -4,7 +4,7 @@ import leetcode.api.ListNode
 import spock.lang.Specification
 
 final class Problem237DeleteNodeInALinkedListSpec extends Specification {
-    def "deleteNode"() {
+    def 'deleteNode'() {
         given:
         def sut = new Problem237DeleteNodeInALinkedList()
         def list = new ListNode(1)

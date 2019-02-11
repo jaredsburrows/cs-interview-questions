@@ -6,7 +6,7 @@ import spock.lang.Unroll
 
 final class Problem189RotateArraySpec extends Specification {
     @Ignore
-    @Unroll def "rotate(#nums, #k) = #answer"() {
+    @Unroll def 'rotate(#nums, #k) = #answer'() {
         given:
         def sut = new Problem189RotateArray()
 

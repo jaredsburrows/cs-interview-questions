@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem150EvaluateReversePolishNotationSpec extends Specification {
-    @Unroll def "evalRPN(#tokens) = #answer"() {
+    @Unroll def 'evalRPN(#tokens) = #answer'() {
         given:
         def sut = new Problem150EvaluateReversePolishNotation()
 
@@ -13,6 +13,6 @@ final class Problem150EvaluateReversePolishNotationSpec extends Specification {
 
         where:
         tokens                    || answer
-        ["2", "1", "+", "3", "*"] || 9
+        ['2', '1', '+', '3', '*'] || 9
     }
 }

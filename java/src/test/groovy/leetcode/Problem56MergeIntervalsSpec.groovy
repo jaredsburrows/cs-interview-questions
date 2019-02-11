@@ -5,7 +5,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem56MergeIntervalsSpec extends Specification {
-    @Unroll def "merge(#intervals) = #answer"() {
+    @Unroll def 'merge(#intervals) = #answer'() {
         given:
         def sut = new Problem56MergeIntervals()
 

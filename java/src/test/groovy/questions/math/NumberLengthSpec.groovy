@@ -1,11 +1,11 @@
 package questions.math
 
 import questions.NumberLength
+import spock.lang.Specification
 import spock.lang.Unroll
-import test.BaseSpec
 
-final class NumberLengthSpec extends BaseSpec {
-    @Unroll def "getIntegerLength(#a) == '#b'"() {
+final class NumberLengthSpec extends Specification {
+    @Unroll def 'getIntegerLength(#a) == #b'() {
         expect:
         NumberLength.getIntegerLength(a) == b
         NumberLength.lenHelper(a) == b

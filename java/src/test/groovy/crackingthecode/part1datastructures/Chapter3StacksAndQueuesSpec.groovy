@@ -1,12 +1,12 @@
 package crackingthecode.part1datastructures
 
 import crackingthecode.Chapter3StacksAndQueues
-import test.BaseSpec
+import spock.lang.Specification
 
-final class Chapter3StacksAndQueuesSpec extends BaseSpec {
+final class Chapter3StacksAndQueuesSpec extends Specification {
     def sut = new Chapter3StacksAndQueues()
 
-    def "MinStack"() {
+    def 'MinStack'() {
         given:
         def minStack = new Chapter3StacksAndQueues.MinStack()
 
@@ -33,7 +33,7 @@ final class Chapter3StacksAndQueuesSpec extends BaseSpec {
         minStack.getMinimum() == 4
     }
 
-    def "SetOfStacks"() {
+    def 'SetOfStacks'() {
         given:
         def setOfStacks = new Chapter3StacksAndQueues.SetOfStacks<Integer>(3)
 
@@ -72,7 +72,7 @@ final class Chapter3StacksAndQueuesSpec extends BaseSpec {
         setOfStacks.popAt(0) == 3
     }
 
-    def "MyQueue<T>"() {
+    def 'MyQueue<T>'() {
         given:
         def myQueue = new Chapter3StacksAndQueues.MyQueue<Integer>()
 
@@ -107,7 +107,7 @@ final class Chapter3StacksAndQueuesSpec extends BaseSpec {
         myQueue.remove() == 9
     }
 
-    def "getSortedStack"() {
+    def 'getSortedStack'() {
         given:
         def unsorted = new ArrayDeque<Integer>()
         unsorted.push(1)

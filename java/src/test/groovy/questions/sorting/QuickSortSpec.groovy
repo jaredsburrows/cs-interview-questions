@@ -1,10 +1,10 @@
 package questions.sorting
 
 import questions.QuickSort
-import test.BaseSpec
+import spock.lang.Specification
 
-final class QuickSortSpec extends BaseSpec {
-    def "sortHelper"() {
+final class QuickSortSpec extends Specification {
+    def 'sortHelper'() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -16,7 +16,7 @@ final class QuickSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "sort"() {
+    def 'sort'() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -28,7 +28,7 @@ final class QuickSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "sortHelper2"() {
+    def 'sortHelper2'() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -40,7 +40,7 @@ final class QuickSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "sort2"() {
+    def 'sort2'() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]

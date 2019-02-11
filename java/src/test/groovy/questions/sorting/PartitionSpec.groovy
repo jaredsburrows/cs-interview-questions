@@ -1,10 +1,10 @@
 package questions.sorting
 
 import questions.Partition
-import test.BaseSpec
+import spock.lang.Specification
 
-final class PartitionSpec extends BaseSpec {
-    def "part"() {
+final class PartitionSpec extends Specification {
+    def 'part'() {
         given:
         def actual = [4, 5, 3, 7, 2] as int[]
         def expected = [2, 3, 4, 7, 5] as int[]
@@ -16,7 +16,7 @@ final class PartitionSpec extends BaseSpec {
         actual == expected
     }
 
-    def "part2"() {
+    def 'part2'() {
         given:
         def actual = [4, 5, 3, 7, 2] as int[]
         def expected = [2, 3, 4, 7, 5] as int[]

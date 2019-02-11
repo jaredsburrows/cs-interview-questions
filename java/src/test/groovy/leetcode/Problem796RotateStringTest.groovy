@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem796RotateStringTest extends Specification {
-    @Unroll def "rotateString(#A, #B) = #answer"() {
+    @Unroll def 'rotateString(#A, #B) = #answer'() {
         given:
         def sut = new Problem796RotateString()
 
@@ -13,6 +13,6 @@ final class Problem796RotateStringTest extends Specification {
 
         where:
         A       | B       || answer
-        "abcde" | "cdeab" || true
+        'abcde' | 'cdeab' || true
     }
 }

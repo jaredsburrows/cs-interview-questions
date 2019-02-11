@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem771JewelsAndStonesSpec extends Specification {
-    @Unroll def "isValid(#J, #S) = #answer"() {
+    @Unroll def 'isValid(#J, #S) = #answer'() {
         given:
         def sut = new Problem771JewelsAndStones()
 
@@ -13,7 +13,7 @@ final class Problem771JewelsAndStonesSpec extends Specification {
 
         where:
         J    | S         || answer
-        "aA" | "aAAbbbb" || 3
-        "z"  | "ZZ"      || 0
+        'aA' | 'aAAbbbb' || 3
+        'z'  | 'ZZ'      || 0
     }
 }

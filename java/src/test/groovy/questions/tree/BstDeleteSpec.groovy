@@ -1,10 +1,10 @@
 package questions.tree
 
 import api.TreeNode
-import test.BaseSpec
+import spock.lang.Specification
 
-final class BstDeleteSpec extends BaseSpec {
-    def "delete leaf node"() {
+final class BstDeleteSpec extends Specification {
+    def 'delete leaf node'() {
         given:
         //       8
         //     /   \
@@ -40,7 +40,7 @@ final class BstDeleteSpec extends BaseSpec {
         actual == expected
     }
 
-    def "delete middle node"() {
+    def 'delete middle node'() {
         given:
         //       8
         //     /   \

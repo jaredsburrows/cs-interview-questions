@@ -1,9 +1,9 @@
 package api.util
 
-import test.BaseSpec
+import spock.lang.Specification
 
-final class SwapSpec extends BaseSpec {
-    def "swap"() {
+final class SwapSpec extends Specification {
+    def 'swap'() {
         given:
         def actual = [1, 2] as Integer[]
         def expected = [2, 1] as Integer[]

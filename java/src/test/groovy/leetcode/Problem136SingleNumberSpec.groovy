@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem136SingleNumberSpec extends Specification {
-    @Unroll def "singleNumber(#nums) = #answer"() {
+    @Unroll def 'singleNumber(#nums) = #answer'() {
         given:
         def sut = new Problem136SingleNumber()
 

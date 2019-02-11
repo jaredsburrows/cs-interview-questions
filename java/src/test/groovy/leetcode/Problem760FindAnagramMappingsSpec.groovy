@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem760FindAnagramMappingsSpec extends Specification {
-    @Unroll def "anagramMappings(#A, #B) = #answer"() {
+    @Unroll def 'anagramMappings(#A, #B) = #answer'() {
         given:
         def sut = new Problem760FindAnagramMappings()
 

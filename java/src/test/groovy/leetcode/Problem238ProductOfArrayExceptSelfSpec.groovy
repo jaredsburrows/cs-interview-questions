@@ -6,7 +6,7 @@ import spock.lang.Unroll
 
 final class Problem238ProductOfArrayExceptSelfSpec extends Specification {
     @Ignore
-    @Unroll def "productExceptSelf(#nums) = #answer"() {
+    @Unroll def 'productExceptSelf(#nums) = #answer'() {
         given:
         def sut = new Problem238ProductOfArrayExceptSelf()
 

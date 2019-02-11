@@ -4,12 +4,18 @@ import api.GraphNode
 import api.TreeNode
 import crackingthecode.Chapter4TreesAndGraphs
 import spock.lang.Shared
+import spock.lang.Specification
 import spock.lang.Unroll
-import test.BaseSpec
 
-final class Chapter4TreesAndGraphsSpec extends BaseSpec {
+final class Chapter4TreesAndGraphsSpec extends Specification {
     @Shared def tree = new TreeNode(26)
     @Shared def subTree = new TreeNode(10)
+    //     0
+    //    / \
+    //   1   1
+    //  / \ / \
+    // 2  3 3  2
+    @Shared def balancedTree = new TreeNode<>()
     @Shared def balancedTree2 = new TreeNode(0)
     @Shared def unbalancedTree = new TreeNode(5)
     @Shared def treeNode4 = new TreeNode<>(4)
@@ -21,7 +27,14 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
     @Shared def treeNode7 = new TreeNode<>(7)
     def sut = new Chapter4TreesAndGraphs()
 
-    def "setup"() {
+    def 'setup'() {
+        balancedTree.right = new TreeNode<>(1)
+        balancedTree.right.left = new TreeNode<>(3)
+        balancedTree.right.right = new TreeNode<>(2)
+        balancedTree.left = new TreeNode<>(1)
+        balancedTree.left.left = new TreeNode<>(2)
+        balancedTree.left.right = new TreeNode<>(3)
+
         balancedTree2.right = new TreeNode(10)
         balancedTree2.right.left = new TreeNode(10)
         balancedTree2.left = new TreeNode(1)
@@ -44,7 +57,7 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         tree.left.right = new TreeNode(6)
     }
 
-    def "isBalanced"() {
+    def 'isBalanced'() {
         expect:
         sut.isBalanced(null)
         !sut.isBalanced(unbalancedTree)
@@ -52,7 +65,7 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         sut.isBalanced(balancedTree2)
     }
 
-    def "hasGraphNodeBFS"() {
+    def 'hasGraphNodeBFS'() {
         given:
         def n1 = new GraphNode<>(1)
         def n2 = new GraphNode<>(2)
@@ -71,7 +84,7 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         !sut.hasGraphNodeBfs(n1, new GraphNode<Integer>(9))
     }
 
-    def "getBinaryTree"() {
+    def 'getBinaryTree'() {
         given:
         def sortedArray = [1, 2, 3, 4, 5, 6, 7] as int[]
         def empty = [] as int[]
@@ -107,7 +120,7 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         tree.right.right.value == 7
     }
 
-    def "getLinkedListDepth"() {
+    def 'getLinkedListDepth'() {
         given:
         treeNode4.left = treeNode2
         treeNode4.left.left = treeNode1
@@ -124,7 +137,7 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
              [treeNode1, treeNode3, treeNode6, treeNode7]]
     }
 
-    @Unroll def "commonAncestor(#a, #b, #c) == '#d'"() {
+    @Unroll def 'commonAncestor(#a, #b, #c) == #d'() {
         given:
         treeNode4.left = treeNode2
         treeNode4.left.left = treeNode1
@@ -145,7 +158,7 @@ final class Chapter4TreesAndGraphsSpec extends BaseSpec {
         treeNode4 | treeNode2 | treeNode5 || treeNode4
     }
 
-    @Unroll def "isSubtree(#a, #b) == '#c'"() {
+    @Unroll def 'isSubtree(#a, #b) == #c'() {
         expect:
         sut.isSubtree(a, b) == c
 

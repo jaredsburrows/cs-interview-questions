@@ -1,10 +1,10 @@
 package questions.sorting
 
 import questions.BubbleSort
-import test.BaseSpec
+import spock.lang.Specification
 
-final class BubbleSortSpec extends BaseSpec {
-    def "sortDescending"() {
+final class BubbleSortSpec extends Specification {
+    def 'sortDescending'() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [6, 4, 3, 2, 1] as int[]
@@ -16,7 +16,7 @@ final class BubbleSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "sortDescending2"() {
+    def 'sortDescending2'() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [6, 4, 3, 2, 1] as int[]
@@ -28,7 +28,7 @@ final class BubbleSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "sort"() {
+    def 'sort'() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]
@@ -40,7 +40,7 @@ final class BubbleSortSpec extends BaseSpec {
         actual == expected
     }
 
-    def "sort2"() {
+    def 'sort2'() {
         given:
         def actual = [2, 4, 6, 3, 1] as int[]
         def expected = [1, 2, 3, 4, 6] as int[]

@@ -1,9 +1,9 @@
 package api
 
-import test.BaseSpec
+import spock.lang.Specification
 
-final class ColorSpec extends BaseSpec {
-    def "values"() {
+final class ColorSpec extends Specification {
+    def 'values'() {
         expect:
         Color.valueOf(Color.BLUE.toString())
         Color.values().length == 3

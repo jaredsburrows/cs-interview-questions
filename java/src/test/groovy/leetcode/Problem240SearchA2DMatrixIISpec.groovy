@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem240SearchA2DMatrixIISpec extends Specification {
-    @Unroll def "searchMatrix(#a, #b) = #answer"() {
+    @Unroll def 'searchMatrix(#a, #b) = #answer'() {
         given:
         def sut = new Problem240SearchA2DMatrixII()
 
