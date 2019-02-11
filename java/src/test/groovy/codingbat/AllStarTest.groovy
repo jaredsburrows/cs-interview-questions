@@ -1,5 +1,6 @@
 package codingbat
 
+import codingbat.recursion1.AllStar
 import spock.lang.Specification
 import spock.lang.Unroll
 
