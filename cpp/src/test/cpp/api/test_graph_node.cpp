@@ -6,8 +6,8 @@ TEST(graphnode, test_default_values) {
     GraphNode<int> sut;
     sut.value = 123;
 
-    const int expected = 123;
-    const int actual = sut.value;
+    int expected = 123;
+    int actual = sut.value;
 
     ASSERT_EQ(expected, actual);
 }
@@ -19,8 +19,8 @@ TEST(graphnode, test_getters_settings) {
     GraphNode<int> sut;
     sut.next = &next;
 
-    const int expected = 123;
-    const int actual = sut.next->value;
+    int expected = 123;
+    int actual = sut.next->value;
 
     ASSERT_EQ(expected, actual);
 }

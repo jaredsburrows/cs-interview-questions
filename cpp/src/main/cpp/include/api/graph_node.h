@@ -11,7 +11,7 @@ class GraphNode {
     GraphNode<T>* previous;
     GraphNode<T>() = default;
     GraphNode<T>(T& value) : value(value) { }
-//        GraphNode(GraphNode<T>* next, T const& copy);   // copy
+//        GraphNode(GraphNode<T>* next, T& copy);   // copy
 //        GraphNode(GraphNode<T>* next, T&& move);        // move
 //        template<typename... Args>
 //        GraphNode(GraphNode<T>* next, Args... args);    // emplace data

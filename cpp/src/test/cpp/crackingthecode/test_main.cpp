@@ -2,7 +2,6 @@
 #include "test/configurable_event_listener.h"
 
 int main(int argc, char **argv) {
-
     // Init Gtest
     testing::InitGoogleTest(&argc, argv);
 

@@ -12,7 +12,7 @@ bool GraphNode<T>::operator==(GraphNode<T>& object) {
         return false;
     }
 
-    const GraphNode<T>* node = (GraphNode<T>*) object;
+    GraphNode<T>* node = (GraphNode<T>*) object;
 
     if (value != nullptr ? !value == node->value : node->value != nullptr) {
         return false;
