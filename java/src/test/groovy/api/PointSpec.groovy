@@ -4,7 +4,7 @@ import nl.jqno.equalsverifier.EqualsVerifier
 import spock.lang.Specification
 
 final class PointSpec extends Specification {
-    def sut = new Point(321, 123)
+    private def sut = new Point(321, 123)
 
     def 'getX'() {
         expect:

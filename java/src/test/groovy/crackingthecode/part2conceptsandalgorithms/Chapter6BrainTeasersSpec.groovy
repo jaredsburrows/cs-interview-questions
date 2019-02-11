@@ -4,7 +4,7 @@ import crackingthecode.Chapter6BrainTeasers
 import spock.lang.Specification
 
 final class Chapter6BrainTeasersSpec extends Specification {
-    def sut = new Chapter6BrainTeasers()
+    private def sut = new Chapter6BrainTeasers()
 
     def 'arithmeticOperators'() {
         expect:

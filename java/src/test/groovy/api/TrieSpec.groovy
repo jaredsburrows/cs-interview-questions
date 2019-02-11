@@ -5,7 +5,7 @@ import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 final class TrieSpec extends Specification {
-    def sut = new Trie<>()
+    private def sut = new Trie<>()
 
     def 'setup'() {
         sut.insert('jar')

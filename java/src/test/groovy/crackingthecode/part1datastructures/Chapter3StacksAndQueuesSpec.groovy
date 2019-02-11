@@ -4,7 +4,7 @@ import crackingthecode.Chapter3StacksAndQueues
 import spock.lang.Specification
 
 final class Chapter3StacksAndQueuesSpec extends Specification {
-    def sut = new Chapter3StacksAndQueues()
+    private def sut = new Chapter3StacksAndQueues()
 
     def 'MinStack'() {
         given:

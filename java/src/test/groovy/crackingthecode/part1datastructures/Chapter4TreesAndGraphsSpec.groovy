@@ -8,23 +8,23 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Chapter4TreesAndGraphsSpec extends Specification {
-    @Shared def tree = new TreeNode(26)
-    @Shared def subTree = new TreeNode(10)
+    @Shared private def tree = new TreeNode(26)
+    @Shared private def subTree = new TreeNode(10)
     //     0
     //    / \
     //   1   1
     //  / \ / \
     // 2  3 3  2
-    @Shared def balancedTree = new TreeNode<>()
-    @Shared def balancedTree2 = new TreeNode(0)
-    @Shared def unbalancedTree = new TreeNode(5)
-    @Shared def treeNode4 = new TreeNode<>(4)
-    @Shared def treeNode2 = new TreeNode<>(2)
-    @Shared def treeNode1 = new TreeNode<>(1)
-    @Shared def treeNode3 = new TreeNode<>(3)
-    @Shared def treeNode5 = new TreeNode<>(5)
-    @Shared def treeNode6 = new TreeNode<>(6)
-    @Shared def treeNode7 = new TreeNode<>(7)
+    @Shared private def balancedTree = new TreeNode<>()
+    @Shared private def balancedTree2 = new TreeNode(0)
+    @Shared private def unbalancedTree = new TreeNode(5)
+    @Shared private def treeNode4 = new TreeNode<>(4)
+    @Shared private def treeNode2 = new TreeNode<>(2)
+    @Shared private def treeNode1 = new TreeNode<>(1)
+    @Shared private def treeNode3 = new TreeNode<>(3)
+    @Shared private def treeNode5 = new TreeNode<>(5)
+    @Shared private def treeNode6 = new TreeNode<>(6)
+    @Shared private def treeNode7 = new TreeNode<>(7)
     def sut = new Chapter4TreesAndGraphs()
 
     def 'setup'() {

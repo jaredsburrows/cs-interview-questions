@@ -5,7 +5,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Chapter1ArraysAndStringsSpec extends Specification {
-    def sut = new Chapter1ArraysAndStrings()
+    private def sut = new Chapter1ArraysAndStrings()
 
     @Unroll def 'isUniqueCharacters(#a) == #b'() {
         expect:

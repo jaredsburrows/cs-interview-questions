@@ -5,7 +5,7 @@ import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 final class PairSpec extends Specification {
-    def sut = new Pair<>('test', 123)
+    private def sut = new Pair<>('test', 123)
 
     def 'getLeft'() {
         expect:

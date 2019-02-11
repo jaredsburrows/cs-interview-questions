@@ -10,7 +10,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Chapter8RecursionSpec extends Specification {
-    def sut = new Chapter8Recursion()
+    private def sut = new Chapter8Recursion()
 
     @Unroll def 'getFibNumberRecursive(#a) -> #b'() {
         expect:

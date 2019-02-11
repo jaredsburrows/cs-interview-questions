@@ -5,12 +5,12 @@ import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 final class StackSpec extends Specification {
-    def sut = new Stack<>()
-    def valueNode = new Node<>(1)
-    def valueNode2 = new Node<>(2)
-    def valueNode3 = new Node<>(3)
-    def blankNode = new Node<>(0)
-    def blankNode2 = new Node<>(0)
+    private def sut = new Stack<>()
+    private def valueNode = new Node<>(1)
+    private def valueNode2 = new Node<>(2)
+    private def valueNode3 = new Node<>(3)
+    private def blankNode = new Node<>(0)
+    private def blankNode2 = new Node<>(0)
 
     def 'peek'() {
         expect:

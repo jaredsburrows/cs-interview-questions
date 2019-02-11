@@ -5,7 +5,7 @@ import questions.BstFindMin
 import spock.lang.Specification
 
 final class BstFindMinSpec extends Specification {
-    def tree = new TreeNode<>(8)
+    private def tree = new TreeNode<>(8)
 
     //                (8)
     //               /   \

@@ -5,7 +5,7 @@ import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 final class LinkedListSpec extends Specification {
-    def sut = new LinkedList<>(0)
+    private def sut = new LinkedList<>(0)
 
     def 'addtoFront'() {
         when:

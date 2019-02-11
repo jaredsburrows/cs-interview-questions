@@ -5,7 +5,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Chapter5BitManipulationSpec extends Specification {
-    def sut = new Chapter5BitManipulation()
+    private def sut = new Chapter5BitManipulation()
 
     @Unroll def 'getDiffBits(#a, #b) == #c'() {
         expect:

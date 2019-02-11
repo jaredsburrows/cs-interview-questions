@@ -7,11 +7,11 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class TreeHeightSpec extends Specification {
-    @Shared def tree = new TreeNode<>(26)
-    @Shared def subTree = new TreeNode<>(10)
-    @Shared def balancedTreeNodes = new TreeNode<>(0)
-    @Shared def balancedTreeNodes2 = new TreeNode<>(0)
-    @Shared def unbalancedTree = new TreeNode<>(5)
+    @Shared private def tree = new TreeNode<>(26)
+    @Shared private def subTree = new TreeNode<>(10)
+    @Shared private def balancedTreeNodes = new TreeNode<>(0)
+    @Shared private def balancedTreeNodes2 = new TreeNode<>(0)
+    @Shared private def unbalancedTree = new TreeNode<>(5)
 
     def 'setup'() {
         balancedTreeNodes.right = new TreeNode<Integer>(10)

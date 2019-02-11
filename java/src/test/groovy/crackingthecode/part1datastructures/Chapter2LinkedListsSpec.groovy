@@ -5,7 +5,7 @@ import crackingthecode.Chapter2LinkedLists
 import spock.lang.Specification
 
 final class Chapter2LinkedListsSpec extends Specification {
-    def sut = new Chapter2LinkedLists()
+    private def sut = new Chapter2LinkedLists()
 
     def 'removeDuplicates'() {
         given:

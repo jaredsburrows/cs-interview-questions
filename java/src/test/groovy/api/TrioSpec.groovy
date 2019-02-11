@@ -5,7 +5,7 @@ import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 final class TrioSpec extends Specification {
-    def sut = new Trio<>('a', 1, 'a')
+    private def sut = new Trio<>('a', 1, 'a')
 
     def 'getFirst'() {
         expect:

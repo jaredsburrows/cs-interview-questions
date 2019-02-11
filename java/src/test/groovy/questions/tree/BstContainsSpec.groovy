@@ -14,7 +14,7 @@ final class BstContainsSpec extends Specification {
     // 1   5  13
     //       /
     //      3
-    @Shared def notBalancedBstTree = new TreeNode<>(8)
+    @Shared private def notBalancedBstTree = new TreeNode<>(8)
 
     def 'setup'() {
         notBalancedBstTree.right = new TreeNode<>(21)

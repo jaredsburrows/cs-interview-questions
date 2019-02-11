@@ -6,7 +6,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Chapter19ModerateSpec extends Specification {
-    def sut = new Chapter19Moderate()
+    private def sut = new Chapter19Moderate()
 
     def 'swapVar'() {
         given:

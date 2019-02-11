@@ -5,8 +5,8 @@ import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 final class NodeSpec extends Specification {
-    def sut = new Node<>()
-    def nextNode = new Node<>(123)
+    private def sut = new Node<>()
+    private def nextNode = new Node<>(123)
 
     def 'default values'() {
         when:

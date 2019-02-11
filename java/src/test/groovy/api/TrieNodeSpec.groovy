@@ -5,8 +5,8 @@ import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 final class TrieNodeSpec extends Specification {
-    def sut = new TrieNode<>()
-    def nextNode = new TrieNode<>(123)
+    private def sut = new TrieNode<>()
+    private def nextNode = new TrieNode<>(123)
 
     def 'default values'() {
         expect:

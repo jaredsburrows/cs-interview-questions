@@ -5,7 +5,7 @@ import nl.jqno.equalsverifier.Warning
 import spock.lang.Specification
 
 final class TreeNodeSpec extends Specification {
-    def sut = new TreeNode<>()
+    private def sut = new TreeNode<>()
 
     def 'values'() {
         def valueNode = new TreeNode<>(5)

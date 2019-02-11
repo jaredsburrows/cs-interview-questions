@@ -6,7 +6,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Chapter9SortingAndSearchingSpec extends Specification {
-    def sut = new Chapter9SortingAndSearching()
+    private def sut = new Chapter9SortingAndSearching()
 
     @Unroll def 'mergeAInB(#a, #b, #c) == #d'() {
         expect:

@@ -5,7 +5,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Chapter20HardSpec extends Specification {
-    def sut = new Chapter20Hard()
+    private def sut = new Chapter20Hard()
 
     @Unroll def '20.1 - addTwoNumbers(#a, #b) == #c'() {
         expect:
