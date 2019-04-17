@@ -1,5 +1,5 @@
 plugins {
-    id 'com.gradle.build-scan' version '2.1'
+    id 'com.gradle.build-scan' version '2.2.1'
     id 'com.github.ben-manes.versions' version '0.21.0'
     id 'org.asciidoctor.convert' version '1.5.9.2'
 }
