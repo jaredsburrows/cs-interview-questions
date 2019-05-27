@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'groovy'
-    id 'net.ltgt.errorprone' version '0.7'
+    id 'net.ltgt.errorprone' version '0.8'
 }
 
 repositories {
@@ -24,14 +24,9 @@ dependencies {
     testImplementation deps.equalsverifier
 }
 
-tasks.withType(JavaCompile) {
-    configure(options) {
-        errorprone {
-//            errorproneArgs << '-XepAllDisabledChecksAsWarnings'
-            errorproneArgs << '-Xep:Var:OFF' // Remove finals? No point of putting @Var
-            errorproneArgs << '-Xep:Java7ApiChecker:OFF' // Using Java 8+
-            errorproneArgs << '-Xep:AndroidJdkLibsChecker:OFF' // Using JDK 8+
-            errorproneArgs << '-Xep:ReturnMissingNullable:OFF'  // Return default value (For CS problems, trees, etc.)
-        }
+tasks.withType(JavaCompile).configureEach {
+    options.errorprone {
+        disableWarningsInGeneratedCode = true
+        disable("UnusedVariable", "UnusedMethod")
     }
 }

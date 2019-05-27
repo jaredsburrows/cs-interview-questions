@@ -1,26 +1,22 @@
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     sourceCompatibility = rootProject.versions.java
     targetCompatibility = rootProject.versions.java
 
-    configure(options) {
-        compilerArgs << '-Xlint:all'            // Turn on all warnings
-        compilerArgs << '-Werror'               // Turn warnings into errors
-        encoding = 'utf-8'
-    }
+    options.compilerArgs << '-Xlint:all'
+    options.compilerArgs << '-Werror'
+    options.encoding = 'utf-8'
 }
 
-tasks.withType(GroovyCompile) {
+tasks.withType(GroovyCompile).configureEach {
     sourceCompatibility = rootProject.versions.java
     targetCompatibility = rootProject.versions.java
 
-    configure(options) {
-        compilerArgs << '-Xlint:all'            // Turn on all warnings
-        compilerArgs << '-Werror'               // Turn warnings into errors
-        encoding = 'utf-8'
-    }
+    options.compilerArgs << '-Xlint:all'
+    options.compilerArgs << '-Werror'
+    options.encoding = 'utf-8'
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     testLogging {
         exceptionFormat 'full'
         showCauses true

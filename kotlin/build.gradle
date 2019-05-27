@@ -8,7 +8,7 @@ repositories {
 
 apply from: rootProject.file('gradle/compile.gradle')
 
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
     kotlinOptions {
         jvmTarget = rootProject.versions.java
         allWarningsAsErrors = true
