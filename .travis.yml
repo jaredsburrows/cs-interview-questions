@@ -1,13 +1,11 @@
 language: java
 
-jdk:
-  - oraclejdk8
-  - openjdk11
-  - openjdk-ea
-
 matrix:
-  allow_failures:
-    - jdk: openjdk-ea
+  include:
+    - dist: trusty
+      jdk: oraclejdk8
+    - dist: xenial
+      jdk: openjdk11
 
 install: true
 
