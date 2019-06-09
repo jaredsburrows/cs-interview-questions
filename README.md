@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Build Status](https://travis-ci.org/jaredsburrows/cs-interview-questions.svg?branch=master)](https://travis-ci.org/jaredsburrows/cs-interview-questions)
 [![Twitter Follow](https://img.shields.io/twitter/follow/jaredsburrows.svg?style=social)](https://twitter.com/jaredsburrows)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjaredsburrows%2Fcs-interview-questions.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjaredsburrows%2Fcs-interview-questions?ref=badge_shield)
 
 This is a collection of my personal solutions to practice interview questions. The repository is built using Gradle for continuous integration and delivery.
 
@@ -106,3 +107,6 @@ This is a collection of my personal solutions to practice interview questions. T
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjaredsburrows%2Fcs-interview-questions.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjaredsburrows%2Fcs-interview-questions?ref=badge_large)
