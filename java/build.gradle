@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'groovy'
-    id 'net.ltgt.errorprone' version '0.8'
+    id 'net.ltgt.errorprone' version '0.8.1'
 }
 
 repositories {
