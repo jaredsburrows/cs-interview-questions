@@ -4,8 +4,10 @@ plugins {
     id 'org.asciidoctor.convert' version '1.6.0'
 }
 
-repositories {
-    gradlePluginPortal()
+allprojects {
+    repositories {
+        gradlePluginPortal()
+    }
 }
 
 apply from: 'gradle/scan.gradle'

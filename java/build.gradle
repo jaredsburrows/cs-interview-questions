@@ -4,10 +4,6 @@ plugins {
     id 'net.ltgt.errorprone' version '0.8.1'
 }
 
-repositories {
-    gradlePluginPortal()
-}
-
 apply from: rootProject.file('gradle/compile.gradle')
 
 sourceCompatibility = rootProject.versions.java
