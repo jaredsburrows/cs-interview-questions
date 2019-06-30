@@ -1,7 +1,23 @@
 asciidoctor {
-    description = project.description
+    attributes = [
+        'author'            : 'Jared Burrows',
+        'source-highlighter': 'coderay',
+        'title'             : 'CS Interview Practice',
+        'toc'               : 'left',
+        'toclevels'         : 5,
+        'revnumber'         : "\"${getCommitCount()}\"",
+    ]
+}
 
-    attributes = ['source-highlighter': 'coderay',
-                  'linkcss'           : true,
-                  'title'             : project.name]
+def getCommitCount() {
+    def f = new File(buildDir, 'commit-count.txt')
+    if (!f.exists()) {
+        def p = 'git rev-list --count HEAD'.execute([], rootDir)
+        if (p.waitFor() != 0) {
+            throw new RuntimeException(p.errorStream.text)
+        }
+        f.parentFile.mkdirs()
+        f.text = p.text.trim()
+    }
+    return f.text.trim()
 }

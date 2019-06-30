@@ -1,7 +1,4 @@
 = {title}
-:toc: left
-:toclevels: 3
-:author: Jared Burrows
 
 include::api.adoc[leveloffset=+1]
 include::codeeveal.adoc[leveloffset=+1]

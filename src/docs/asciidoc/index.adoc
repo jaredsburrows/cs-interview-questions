@@ -1,5 +1,4 @@
 = {title}
-Jared Burrows
 
 . <<api.adoc#,              Api>>
 . <<codeeveal.adoc#,        CodeEval>>
