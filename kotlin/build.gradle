@@ -17,19 +17,19 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
 
 test {
     useJUnitPlatform {
-        includeEngines 'spek'
+        includeEngines 'spek2'
     }
 }
 
 dependencies {
     implementation deps.kotlin.stdlib
-    implementation deps.kotlin.reflect
 
-    testImplementation deps.spek.api
-    testImplementation deps.spek.engine
-    testImplementation deps.runner
-    testImplementation deps.truth
-    testImplementation deps.equalsverifier
+    testRuntimeOnly deps.spek.junit
+    testRuntimeOnly deps.junit.engine
+    testRuntimeOnly deps.kotlin.reflect
+
+    testImplementation deps.junit.api
+    testImplementation deps.spek.jvm
     testImplementation deps.kotlin.test
     testImplementation deps.kotlin.junit
 }

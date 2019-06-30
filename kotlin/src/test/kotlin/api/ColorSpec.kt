@@ -1,22 +1,20 @@
 package api
 
-import com.google.common.truth.Truth.assertThat
-import org.jetbrains.spek.api.Spek
-import org.jetbrains.spek.api.dsl.context
-import org.jetbrains.spek.api.dsl.describe
-import org.jetbrains.spek.api.dsl.it
+import org.spekframework.spek2.Spek
+import org.spekframework.spek2.style.specification.describe
+import kotlin.test.assertEquals
 
 object ColorSpec : Spek({
     describe("Color Enum") {
         context("'valueOf' String") {
             it("should 'valueOf' should handle colors") {
-                assertThat(Color.valueOf("BLUE")).isEqualTo(Color.BLUE)
+                assertEquals(Color.valueOf("BLUE"), Color.BLUE)
             }
         }
 
         context("'values' size") {
             it("should only have 3 colors") {
-                assertThat(Color.values().size).isEqualTo(3)
+                assertEquals(Color.values().size, 3)
             }
         }
     }
