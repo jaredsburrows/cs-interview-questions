@@ -2,6 +2,7 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/remove-element
+ * https://leetcode.com/explore/learn/card/array-and-string/205/array-two-pointer-technique/1151/
  */
 public final class Problem27RemoveElement {
     // Time - O(N), Space - O(1)

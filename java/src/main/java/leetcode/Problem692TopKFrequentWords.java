@@ -31,7 +31,9 @@ public final class Problem692TopKFrequentWords {
         int count = 0;
         while (count < k) {
             Map.Entry<String, Integer> entry = queue.poll();
-            strings.add(entry.getKey());
+            if (entry != null) {
+                strings.add(entry.getKey());
+            }
             count++;
         }
 

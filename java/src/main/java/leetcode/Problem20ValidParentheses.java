@@ -5,12 +5,13 @@ import java.util.Deque;
 
 /**
  * https://leetcode.com/problems/valid-parentheses
+ * https://leetcode.com/explore/featured/card/top-interview-questions-easy/99/others/721/
  */
 public final class Problem20ValidParentheses {
     // Time - O(N), Space - O(N)
     public boolean isValid(String s) {
         if (s == null || s.isEmpty()) {
-            return false;
+            return true;
         }
 
         Deque<Character> stack = new ArrayDeque<>();

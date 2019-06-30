@@ -20,12 +20,12 @@ public final class Problem215KthLargestElementInAnArray {
         }
 
         int count = 0;
-        int number = 0;
+        Integer number = 0;
         while (count < k) {
             number = queue.poll();
             count++;
         }
 
-        return number;
+        return number == null ? 0 : number;
     }
 }

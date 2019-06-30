@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Objects;
 
 public final class UndirectedGraphNode {
-    public int label;
-    public List<UndirectedGraphNode> neighbors;
+    public final int label;
+    public final List<UndirectedGraphNode> neighbors;
 
     public UndirectedGraphNode(int x) {
         label = x;

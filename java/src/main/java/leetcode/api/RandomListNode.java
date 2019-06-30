@@ -3,7 +3,7 @@ package leetcode.api;
 import java.util.Objects;
 
 public final class RandomListNode {
-    public int label;
+    public final int label;
     public RandomListNode next;
     public RandomListNode random;
 

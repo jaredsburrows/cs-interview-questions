@@ -13,6 +13,7 @@ final class Problem20ValidParenthesesSpec extends Specification {
 
         where:
         s        || answer
+        ''       || true
         '()'     || true
         '()[]{}' || true
         '(]'     || false

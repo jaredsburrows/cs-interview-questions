@@ -26,10 +26,12 @@ public final class Problem339NestedListWeightSum {
             for (int i = 0; i < size; i++) {
                 NestedInteger current = queue.poll();
 
-                if (current.isInteger()) {
-                    sum += current.getInteger() * level;
-                } else {
-                    queue.addAll(current.getList()); // no offerAll in interface
+                if (current != null) {
+                    if (current.isInteger()) {
+                        sum += current.getInteger() * level;
+                    } else {
+                        queue.addAll(current.getList()); // no offerAll in interface
+                    }
                 }
             }
 

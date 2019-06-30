@@ -19,7 +19,6 @@ public final class Problem114FlattenBinaryTreeToLinkedList {
         prev = flatten(root.left, prev);
         root.right = prev;
         root.left = null;
-        prev = root;
 
         return root;
     }

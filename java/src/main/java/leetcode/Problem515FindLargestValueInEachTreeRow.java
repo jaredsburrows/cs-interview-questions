@@ -25,14 +25,16 @@ public final class Problem515FindLargestValueInEachTreeRow {
 
             while (size > 0) {
                 TreeNode node = queue.poll();
-                max = Math.max(max, node.val);
+                if (node != null) {
+                    max = Math.max(max, node.val);
 
-                if (node.left != null) {
-                    queue.offer(node.left);
-                }
+                    if (node.left != null) {
+                        queue.offer(node.left);
+                    }
 
-                if (node.right != null) {
-                    queue.offer(node.right);
+                    if (node.right != null) {
+                        queue.offer(node.right);
+                    }
                 }
 
                 size--;

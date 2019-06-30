@@ -27,14 +27,16 @@ public final class Problem102BinaryTreeLevelOrderTraversal {
 
             while (levelNodes > 0) {
                 TreeNode node = queue.poll();
-                integers.add(node.val);
+                if (node != null) {
+                    integers.add(node.val);
 
-                if (node.left != null) {
-                    queue.add(node.left);
-                }
+                    if (node.left != null) {
+                        queue.add(node.left);
+                    }
 
-                if (node.right != null) {
-                    queue.add(node.right);
+                    if (node.right != null) {
+                        queue.add(node.right);
+                    }
                 }
 
                 levelNodes--;
@@ -61,14 +63,16 @@ public final class Problem102BinaryTreeLevelOrderTraversal {
 
             while (levelNodes > 0) {
                 TreeNode node = queue.poll();
-                System.out.print(node.val + " ");
+                if (node != null) {
+                    System.out.print(node.val + " ");
 
-                if (node.left != null) {
-                    queue.offer(node.left);
-                }
+                    if (node.left != null) {
+                        queue.offer(node.left);
+                    }
 
-                if (node.right != null) {
-                    queue.offer(node.right);
+                    if (node.right != null) {
+                        queue.offer(node.right);
+                    }
                 }
 
                 levelNodes--;

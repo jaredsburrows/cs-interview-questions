@@ -26,14 +26,16 @@ public final class Problem637AverageOfLevelsInBinaryTree {
 
             while (size > 0) {
                 TreeNode node = queue.poll();
-                currentTotal += node.val;
+                if (node != null) {
+                    currentTotal += node.val;
 
-                if (node.left != null) {
-                    queue.offer(node.left);
-                }
+                    if (node.left != null) {
+                        queue.offer(node.left);
+                    }
 
-                if (node.right != null) {
-                    queue.offer(node.right);
+                    if (node.right != null) {
+                        queue.offer(node.right);
+                    }
                 }
 
                 size--;

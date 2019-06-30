@@ -2,6 +2,7 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/implement-strstr
+ * https://leetcode.com/explore/learn/card/array-and-string/203/introduction-to-string/1161/
  */
 public final class Problem28ImplementStrStr {
     // Space - O(1)

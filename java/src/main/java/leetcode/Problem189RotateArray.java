@@ -20,10 +20,7 @@ public final class Problem189RotateArray {
             result[i] = nums[j++];
         }
 
-        for (int i = 0; i < k; i++) {
-            result[i] = nums[nums.length - k + i];
-        }
-
+        System.arraycopy(nums, nums.length - k, result, 0, k);
         System.arraycopy(result, 0, nums, 0, nums.length);
     }
 }

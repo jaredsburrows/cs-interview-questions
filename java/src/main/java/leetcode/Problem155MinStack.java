@@ -30,9 +30,9 @@ public final class Problem155MinStack {
         }
 
         private class Node {
-            int value;
-            int minimum;
-            Node previous;
+            final int value;
+            final int minimum;
+            final Node previous;
 
             public Node(int value, int minimum) {
                 this(value, minimum, null);

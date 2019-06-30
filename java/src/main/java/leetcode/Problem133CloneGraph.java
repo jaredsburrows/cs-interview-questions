@@ -10,13 +10,13 @@ import leetcode.api.UndirectedGraphNode;
  * https://leetcode.com/problems/clone-graph
  */
 public final class Problem133CloneGraph {
-    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+    public UndirectedGraphNode loneGraph(UndirectedGraphNode node) {
         if (node == null) {
             return null;
         }
 
         UndirectedGraphNode headNode = new UndirectedGraphNode(node.label);
-        if (node.neighbors == null || node.neighbors.isEmpty()) {
+        if (node.neighbors.isEmpty()) {
             return headNode;
         }
 

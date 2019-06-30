@@ -2,6 +2,7 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/longest-common-prefix
+ * https://leetcode.com/explore/learn/card/array-and-string/203/introduction-to-string/1162/
  */
 public final class Problem14LongestCommonPrefix {
     public String longestCommonPrefix(String[] strs) {

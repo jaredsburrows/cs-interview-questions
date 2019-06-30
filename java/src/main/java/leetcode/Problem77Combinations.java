@@ -11,7 +11,7 @@ public final class Problem77Combinations {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> combinations = new ArrayList<>();
 
-        if (n <= 0 || k <= 0 || n < k) {
+        if (k <= 0 || n < k) {
             return combinations;
         }
 

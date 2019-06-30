@@ -18,7 +18,7 @@ public final class Problem112PathSum {
             }
 
             if (root.left != null) {
-                answer = answer || hasPathSum(root.left, diff);
+                answer = hasPathSum(root.left, diff);
             }
 
             if (root.right != null) {

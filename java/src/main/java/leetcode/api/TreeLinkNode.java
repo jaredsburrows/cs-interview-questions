@@ -3,7 +3,7 @@ package leetcode.api;
 import java.util.Objects;
 
 public final class TreeLinkNode {
-    public int val;
+    public final int val;
     public TreeLinkNode left;
     public TreeLinkNode right;
     public TreeLinkNode next;

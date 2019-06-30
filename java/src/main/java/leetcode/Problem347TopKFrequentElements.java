@@ -27,7 +27,10 @@ public final class Problem347TopKFrequentElements {
         queue.addAll(map.entrySet());
 
         while (numbers.size() < k) {
-            numbers.add(queue.poll().getKey());
+            Map.Entry<Integer, Integer> value = queue.poll();
+            if (value != null) {
+                numbers.add(value.getKey());
+            }
         }
 
         return numbers;
