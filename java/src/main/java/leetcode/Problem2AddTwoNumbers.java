@@ -8,8 +8,16 @@ import leetcode.api.ListNode;
 public final class Problem2AddTwoNumbers {
     // Time - O(MAX(M, N)), Space - O(MAX(M, N))
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        if (l1 == null || l2 == null) {
+        if (l1 == null && l2 == null) {
             return null;
+        }
+
+        if (l1 == null) {
+            return l2;
+        }
+
+        if (l2 == null) {
+            return l1;
         }
 
         ListNode answer = new ListNode(0);

@@ -4,6 +4,7 @@ import api.Pair;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import javax.annotation.Nullable;
 
 public final class Chapter19Moderate {
     /**
@@ -129,6 +130,7 @@ public final class Chapter19Moderate {
     // length should be 4
     // will the slots allow for different lengths, more/less guesses?
     // Time - O(N^2), however we know it is only 4 length, O(4^2) -> O(16) -> O(1), Space - O(1)
+    @Nullable
     public Pair<Integer, Integer> getPseudoHits(String solution, String guess) {
         if (solution == null || guess == null || solution.length() != guess.length()) {
             return null;

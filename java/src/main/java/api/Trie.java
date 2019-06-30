@@ -1,6 +1,7 @@
 package api;
 
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 // Current implementation is for strings, modify to make it generic
 public final class Trie<T> {
@@ -50,6 +51,7 @@ public final class Trie<T> {
         return prefix != null && !prefix.isEmpty() && get(prefix) != null;
     }
 
+    @Nullable
     public TrieNode<T> get(String word) {
         if (word == null || word.isEmpty()) {
             return null;

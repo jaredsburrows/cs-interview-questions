@@ -66,19 +66,20 @@ public final class Chapter7ObjectOrientedDesign {
      * to implement particular card games.
      */
     public static class Card {
-        private Suite mSuite;
-        private int mCardNumber;
-        public Card(Suite suite,  int cardNumber) {
-            mSuite = suite;
-            mCardNumber = cardNumber;
+        private final Suite suite;
+        private final int cardNumber;
+
+        public Card(Suite suite, int cardNumber) {
+            this.suite = suite;
+            this.cardNumber = cardNumber;
         }
 
         public int getNumber() {
-            return mCardNumber;
+            return cardNumber;
         }
 
         public Suite getSuite() {
-            return mSuite;
+            return suite;
         }
 
         public enum Suite {
@@ -99,15 +100,15 @@ public final class Chapter7ObjectOrientedDesign {
     // MP3 Player?(more modern)
     // Song, Controls on Jukebox(previous, right), Playlist(contains songs)
     public static class Song {
-        private UUID mUuid;
-        private String mSong;
-        private String mArtist;
-        private String mAlbum;
+        private UUID uuid;
+        private String song;
+        private String artist;
+        private String album;
     }
 
     public abstract static class Playlist {
-        private Song mSong;
-        private Queue<Song> mList;
+        private Song song;
+        private Queue<Song> list;
 
         abstract void enqueueSong(Song song);
 
@@ -117,8 +118,7 @@ public final class Chapter7ObjectOrientedDesign {
     }
 
     public abstract static class Selector {
-
-        private Song mCurrentSong;
+        private Song murrentSong;
 
         abstract void setTrack(Song song);
 
@@ -126,11 +126,11 @@ public final class Chapter7ObjectOrientedDesign {
     }
 
     public static class JukeBox {
-        private List<Song> mSongList;
-        private Selector mSelector;
+        private final List<Song> songList;
+        private Selector selector;
 
         public JukeBox(List<Song> songList) {
-            mSongList = songList;
+            this.songList = songList;
         }
     }
 

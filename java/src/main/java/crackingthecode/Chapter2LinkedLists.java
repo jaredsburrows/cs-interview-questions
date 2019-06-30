@@ -4,6 +4,7 @@ import api.Node;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import javax.annotation.Nullable;
 
 public final class Chapter2LinkedLists {
     /**
@@ -120,6 +121,7 @@ public final class Chapter2LinkedLists {
      * 2.2 - Implement an algorithm to find the nth to last element of a singly linked list.
      */
     // Time - O(N), Space - O(1)
+    @Nullable
     public Node<Integer> findNthLastElement(Node<Integer> head, int position) {
         if (head == null || position < 1) {
             return null;
@@ -172,6 +174,7 @@ public final class Chapter2LinkedLists {
     // Linked list  - 3-1-5 (513)
     // Linked list2 - 5-9-2 (295)
     // sum          - 8-0-8
+    @Nullable
     public Node<Integer> addTwoLists(Node<Integer> node, Node<Integer> node2) {
         if (node == null || node2 == null) {
             return null;
@@ -212,6 +215,7 @@ public final class Chapter2LinkedLists {
      */
     // Book has a longer solution but seems very unnecessary
     // Time - O(N), Space - O(1)
+    @Nullable
     public Node<Integer> getCircular(Node<Integer> head) {
         if (head == null) {
             return null;

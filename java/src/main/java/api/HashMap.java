@@ -1,5 +1,7 @@
 package api;
 
+import javax.annotation.Nullable;
+
 public final class HashMap<K, V> {
     private int capacity = 10;
     private int size = 0;
@@ -16,6 +18,7 @@ public final class HashMap<K, V> {
 
     }
 
+    @Nullable
     public V get(K key) {
         return null;
     }

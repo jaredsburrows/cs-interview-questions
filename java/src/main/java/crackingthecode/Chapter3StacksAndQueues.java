@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
+import javax.annotation.Nullable;
 
 public final class Chapter3StacksAndQueues {
     /*
@@ -97,8 +98,8 @@ public final class Chapter3StacksAndQueues {
     // create a new one when the previous exceeds capacity
     public static class SetOfStacks<T> {
         private final List<Deque<T>> stacks = new ArrayList<>();
+        private final int capacity;
         private int currentStack;
-        private int capacity;
 
         public SetOfStacks(int capacity) {
             this.capacity = capacity;
@@ -118,6 +119,7 @@ public final class Chapter3StacksAndQueues {
             }
         }
 
+        @Nullable
         public T pop() {
             if (!stacks.get(currentStack).isEmpty()) {
                 return stacks.get(currentStack).pop();

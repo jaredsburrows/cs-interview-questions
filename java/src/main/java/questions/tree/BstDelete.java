@@ -1,6 +1,7 @@
 package questions.tree;
 
 import api.TreeNode;
+import javax.annotation.Nullable;
 
 public final class BstDelete {
     public static TreeNode<Integer> getMinNode(TreeNode<Integer> node) {
@@ -19,6 +20,7 @@ public final class BstDelete {
         return node;
     }
 
+    @Nullable
     public static TreeNode<Integer> deleteNode(TreeNode<Integer> root, int value) {
         if (root == null) {
             return null;

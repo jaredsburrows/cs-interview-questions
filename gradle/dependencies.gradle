@@ -12,7 +12,7 @@ ext.deps = [
         'test'   : "org.jetbrains.kotlin:kotlin-test:$versions.kotlin",
         'junit'  : "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin",
     ],
-    'findbugs'      : 'com.google.code.findbugs:annotations:3.0.1',
+    'findbugs'      : 'com.google.code.findbugs:jsr305:3.0.2',
     'errorprone'    : [
         'core' : 'com.google.errorprone:error_prone_core:2.3.3',
         'javac': 'com.google.errorprone:javac:9+181-r4173-1'

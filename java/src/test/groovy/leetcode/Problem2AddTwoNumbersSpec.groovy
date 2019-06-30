@@ -42,8 +42,8 @@ final class Problem2AddTwoNumbersSpec extends Specification {
         shorterNumber.next.next = new ListNode(1)
 
         expect:
-        sut.addTwoNumbers(null, nine) == null
-        sut.addTwoNumbers(nine, null) == null
+        sut.addTwoNumbers(null, nine) == nine
+        sut.addTwoNumbers(nine, null) == nine
         sut.addTwoNumbers(null, null) == null
 
         def result = sut.addTwoNumbers(book1, book2)

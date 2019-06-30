@@ -8,6 +8,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 public final class Chapter4TreesAndGraphs {
     /**
@@ -77,6 +78,7 @@ public final class Chapter4TreesAndGraphs {
     //   /\   /\
     //  1  3  5 7
     // (length - 0) / 2
+    @Nullable
     public TreeNode<Integer> getMinimumTree(int[] array, int start, int end) {
         if (array == null || array.length == 0 || start < 0 || start > end) {
             return null;
@@ -155,9 +157,8 @@ public final class Chapter4TreesAndGraphs {
      * a binary search tree.
      */
     // Time - O(LOG(N)) in Balanced binary tree, O(N) in skewed tree.
-    public <T> TreeNode<T> commonAncestor(TreeNode<T> root,
-                                          TreeNode<T> node1,
-                                          TreeNode<T> node2) {
+    @Nullable
+    public <T> TreeNode<T> commonAncestor(TreeNode<T> root, TreeNode<T> node1, TreeNode<T> node2) {
         if (root == null) {
             return null;
         }
@@ -176,9 +177,8 @@ public final class Chapter4TreesAndGraphs {
         return left != null ? left : right;
     }
 
-    public <T> TreeNode<T> commonAncestor2(TreeNode<T> root,
-                                           TreeNode<T> node1,
-                                           TreeNode<T> node2) {
+    @Nullable
+    public <T> TreeNode<T> commonAncestor2(TreeNode<T> root, TreeNode<T> node1, TreeNode<T> node2) {
         if (root == null) {
             return null;
         }

@@ -134,48 +134,48 @@ public final class Chapter18ThreadsAndLocks {
 
     // i)
     public static class MethCallSemaphore implements MethodsToCall {
-        private Semaphore mSemaphoreA = new Semaphore(0);
-        private Semaphore mSemaphoreB = new Semaphore(0);
+        private final Semaphore semaphoreA = new Semaphore(0);
+        private final Semaphore semaphoreB = new Semaphore(0);
 
         @Override
         public void methodA() throws Exception {
-            mSemaphoreA.release(1); // release, free up permit
+            semaphoreA.release(1); // release, free up permit
         }
 
         @Override
         public void methodB() throws Exception {
-            mSemaphoreA.acquire(1); // acquire permit
-            mSemaphoreB.release(1); // release again
+            semaphoreA.acquire(1); // acquire permit
+            semaphoreB.release(1); // release again
         }
 
         @Override
         public void methodC() throws Exception {
-            mSemaphoreB.acquire(1); // acquire again
+            semaphoreB.acquire(1); // acquire again
         }
     }
 
     // ii)
     public static class MethCallThreadSafeSemaphore implements MethodsToCall {
-        private Semaphore mSemaphoreA = new Semaphore(0);
-        private Semaphore mSemaphoreB = new Semaphore(0);
-        private Semaphore mSemaphoreC = new Semaphore(1);
+        private final Semaphore semaphoreA = new Semaphore(0);
+        private final Semaphore semaphoreB = new Semaphore(0);
+        private final Semaphore semaphoreC = new Semaphore(1);
 
         @Override
         public void methodA() throws Exception {
-            mSemaphoreC.acquire(1); // acquire permit
-            mSemaphoreA.release(1); // release, free up permit
+            semaphoreC.acquire(1); // acquire permit
+            semaphoreA.release(1); // release, free up permit
         }
 
         @Override
         public void methodB() throws Exception {
-            mSemaphoreA.acquire(1); // acquire permit
-            mSemaphoreB.release(1); // release again
+            semaphoreA.acquire(1); // acquire permit
+            semaphoreB.release(1); // release again
         }
 
         @Override
         public void methodC() throws Exception {
-            mSemaphoreB.acquire(1); // acquire again
-            mSemaphoreC.release(1); // release, make sure called in order
+            semaphoreB.acquire(1); // acquire again
+            semaphoreC.release(1); // release, make sure called in order
         }
     }
 

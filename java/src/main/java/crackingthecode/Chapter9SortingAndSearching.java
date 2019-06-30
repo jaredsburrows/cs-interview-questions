@@ -3,6 +3,7 @@ package crackingthecode;
 import api.Pair;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public final class Chapter9SortingAndSearching {
@@ -262,10 +263,8 @@ public final class Chapter9SortingAndSearching {
     // return new map
     // Time - O(N*LOG(N)), Space -
     public List<Pair<Integer, Integer>> getCircusOrder(List<Pair<Integer, Integer>> original) {
-        original.sort((left, right) ->
-            left.getRight() < right.getRight() && left.getLeft() < right.getLeft()
-                ? -1
-                : 1);
+        original.sort(Comparator.<Pair<Integer, Integer>>comparingInt(Pair::getLeft)
+            .thenComparingInt(Pair::getRight));
 
         return original;
     }

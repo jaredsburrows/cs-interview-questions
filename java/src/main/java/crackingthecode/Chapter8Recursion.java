@@ -272,8 +272,8 @@ public final class Chapter8Recursion {
             case 5:
                 nextDenom = 1;
                 break;
-            default:
             case 1:
+            default:
                 return 1;
         }
 

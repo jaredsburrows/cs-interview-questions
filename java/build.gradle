@@ -22,7 +22,28 @@ dependencies {
 
 tasks.withType(JavaCompile).configureEach {
     options.errorprone {
+        // allDisabledChecksAsWarnings = true
         disableWarningsInGeneratedCode = true
-        disable("UnusedVariable", "UnusedMethod")
+        // normal
+        disable(
+            "UnusedMethod",
+            "UnusedVariable",
+        )
+        // disabled checks
+        disable(
+            "AndroidJdkLibsChecker",
+            "ConstructorInvokesOverridable",
+            "ConstructorLeaksThis",
+            "FieldCanBeFinal",
+            "InconsistentOverloads",
+            "InterfaceWithOnlyStatics",
+            "Java7ApiChecker",
+            "MethodCanBeStatic",
+            "PrivateConstructorForUtilityClass",
+            "ReturnMissingNullable",
+            "TypeParameterNaming",
+            "UngroupedOverloads",
+            "Var",
+        )
     }
 }

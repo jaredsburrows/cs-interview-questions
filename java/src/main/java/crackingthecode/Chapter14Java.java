@@ -1,5 +1,7 @@
 package crackingthecode;
 
+import javax.annotation.Nullable;
+
 public final class Chapter14Java {
     /**
      * 14.2 - In Java, does the finally block gets executed if we insert a return statement inside the
@@ -29,7 +31,8 @@ public final class Chapter14Java {
     // Singleton
     public class PrivateConstructor {
 
-        private PrivateConstructor mInstance = null;
+        @Nullable
+        private PrivateConstructor mInstance;
 
         private PrivateConstructor() {
             // Exists only to defeat instantiation.
@@ -55,8 +58,8 @@ public final class Chapter14Java {
             mStr = str;
         }
 
+        @Nullable
         public BusinessClass createObject(String myProperty) {
-
             if (myProperty != null) {
                 return new BusinessClass(myProperty);
             }

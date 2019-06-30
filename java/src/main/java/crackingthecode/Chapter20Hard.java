@@ -1,6 +1,7 @@
 package crackingthecode;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -170,7 +171,7 @@ public final class Chapter20Hard {
         }
 
         List<Integer> integerList = new ArrayList<>(billion);
-        integerList.sort((left, right) -> left > right ? 1 : -1);
+        integerList.sort(Comparator.comparingInt(d -> d));
         return integerList.subList(5, 10);
     }
 

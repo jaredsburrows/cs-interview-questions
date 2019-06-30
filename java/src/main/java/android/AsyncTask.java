@@ -39,7 +39,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
                     System.out.println("Error");
                 } catch (ExecutionException e) {
                     throw new RuntimeException("An error occurred while executing doInBackground()",
-                        e.getCause());
+                        e);
                 } finally {
                     onPostExecute(null);
                 }

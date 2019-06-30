@@ -12,11 +12,6 @@ public final class Problem707DesignLinkedList {
         private ListNode head;
         private int size;
 
-        public MyLinkedList() {
-            head = null;
-            size = 0;
-        }
-
         public int get(int index) {
             if (index >= size || index < 0) {
                 return -1;
@@ -88,20 +83,31 @@ public final class Problem707DesignLinkedList {
                 return;
             }
 
+            if (head == null) {
+                return;
+            }
+
             if (index == 0) {
                 head = head.next;
+            }
+
+            if (head == null) {
+                return;
             }
 
             ListNode previous = head;
             ListNode current = head.next;
             index--;
 
-            while (index > 0) {
+            while (index > 0 && current != null) {
                 previous = current;
                 current = current.next;
                 index--;
             }
-            previous.next = current.next;
+
+            if (current != null) {
+                previous.next = current.next;
+            }
 
             size--;
         }
