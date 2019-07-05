@@ -1,5 +1,5 @@
 = StackOverflow
 
-*My Profile:*
+*My Profile:* https://stackoverflow.com/users/950427/jared-burrows
 
 image::http://stackexchange.com/users/flair/918082.png[Profile]

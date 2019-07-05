@@ -45,7 +45,7 @@ This is a collection of my personal solutions to practice interview questions. T
 
 ## Others resources used
  - http://www.bigocheatsheet.com/
- - http://leetcode.com/
+ - http://www.leetcode.com/
  - http://www.programcreek.com/
    - http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
  - http://www.geeksforgeeks.org/
@@ -58,6 +58,7 @@ This is a collection of my personal solutions to practice interview questions. T
  - **C** - [c/src/main/c](c/src/main/c)
  - **C++** - [cpp/src/main/cpp](cpp/src/main/cpp)
  - **Java** - [java/src/main/java](java/src/main/java)
+ - **Kotlin** - [java/src/main/kotlin](java/src/main/kotlin)
  - **Python** - [python/src/main/python](python/src/main/python)
  - **Groovy** - [java/src/test/groovy](java/src/test/groovy)
 

@@ -13,7 +13,7 @@ public final class Problem535EncodeAndDecodeTinyURL {
 
         // Encodes a URL to a shortened URL.
         public String encode(String longUrl) {
-            final String hashCode = String.valueOf(longUrl.hashCode());
+            String hashCode = String.valueOf(longUrl.hashCode());
 
             map.put(hashCode, longUrl);
 
