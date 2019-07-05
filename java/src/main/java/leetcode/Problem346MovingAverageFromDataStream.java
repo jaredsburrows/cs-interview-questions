@@ -3,7 +3,7 @@ package leetcode;
 /**
  * https://leetcode.com/problems/moving-average-from-data-stream
  */
-@SuppressWarnings("ClassCanBeStatic") // class MovingAverage submitted to Leetcode is not static
+@SuppressWarnings("ClassCanBeStatic") // Leetcode is not static
 public final class Problem346MovingAverageFromDataStream {
     public final class MovingAverage {
         private final int[] window;

@@ -17,7 +17,7 @@ public final class TreeNode {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof TreeNode)) {
             return false;
         }
 
@@ -30,14 +30,5 @@ public final class TreeNode {
     @Override
     public int hashCode() {
         return Objects.hash(val, left, right);
-    }
-
-    @Override
-    public String toString() {
-        return "TreeNode{" +
-            "val=" + val +
-            ", left=" + left +
-            ", right=" + right +
-            '}';
     }
 }

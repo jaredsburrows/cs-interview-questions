@@ -5,6 +5,9 @@ import java.util.Objects;
 
 public final class Node {
     public int val;
+    public Node left;
+    public Node right;
+    public Node next;
     public List<Node> neighbors;
 
     public Node() {
@@ -13,6 +16,13 @@ public final class Node {
     public Node(int _val, List<Node> _neighbors) {
         val = _val;
         neighbors = _neighbors;
+    }
+
+    public Node(int _val, Node _left, Node _right, Node _next) {
+        val = _val;
+        left = _left;
+        right = _right;
+        next = _next;
     }
 
     @Override
@@ -26,20 +36,15 @@ public final class Node {
         }
 
         Node node = (Node) o;
-        return val == node.val &&
-            Objects.equals(neighbors, node.neighbors);
+        return val == node.val
+            && Objects.equals(left, node.left)
+            && Objects.equals(right, node.right)
+            && Objects.equals(next, node.next)
+            && Objects.equals(neighbors, node.neighbors);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(val, neighbors);
-    }
-
-    @Override
-    public String toString() {
-        return "Node{" +
-            "val=" + val +
-            ", neighbors=" + neighbors +
-            '}';
+        return Objects.hash(val, left, right, next, neighbors);
     }
 }

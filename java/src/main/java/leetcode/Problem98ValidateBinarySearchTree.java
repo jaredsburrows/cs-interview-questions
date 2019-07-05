@@ -4,6 +4,7 @@ import leetcode.api.TreeNode;
 
 /**
  * https://leetcode.com/problems/validate-binary-search-tree
+ * https://leetcode.com/explore/learn/card/recursion-ii/470/divide-and-conquer/2874/
  */
 public final class Problem98ValidateBinarySearchTree {
     public boolean isValidBST(TreeNode root) {

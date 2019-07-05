@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * https://leetcode.com/problems/intersection-of-two-arrays-ii
+ * https://leetcode.com/explore/learn/card/hash-table/184/comparison-with-other-data-structures/1178/
  */
 public final class Problem350IntersectionOfTwoArraysII {
     public int[] intersect(int[] nums1, int[] nums2) {

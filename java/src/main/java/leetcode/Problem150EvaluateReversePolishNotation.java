@@ -5,6 +5,7 @@ import java.util.Deque;
 
 /**
  * https://leetcode.com/problems/evaluate-reverse-polish-notation
+ * https://leetcode.com/explore/learn/card/queue-stack/230/usage-stack/1394/
  */
 public final class Problem150EvaluateReversePolishNotation {
     // Time - O(N), Space - O(N)

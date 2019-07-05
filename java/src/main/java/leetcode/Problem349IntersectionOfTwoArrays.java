@@ -7,6 +7,7 @@ import java.util.Set;
 
 /**
  * https://leetcode.com/problems/intersection-of-two-arrays
+ * https://leetcode.com/explore/learn/card/hash-table/183/combination-with-other-algorithms/1105/
  */
 public final class Problem349IntersectionOfTwoArrays {
     public int[] intersection(int[] nums1, int[] nums2) {

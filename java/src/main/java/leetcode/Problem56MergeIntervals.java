@@ -8,6 +8,7 @@ import leetcode.api.Interval;
 /**
  * https://leetcode.com/problems/merge-intervals
  */
+// TODO fix leetcode? interval class is now a 2d array
 public final class Problem56MergeIntervals {
     public List<Interval> merge(List<Interval> intervals) {
         List<Interval> result = new ArrayList<>();

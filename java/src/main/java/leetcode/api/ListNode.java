@@ -16,25 +16,16 @@ public final class ListNode {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof ListNode)) {
             return false;
         }
 
         ListNode listNode = (ListNode) o;
-        return val == listNode.val
-            && Objects.equals(next, listNode.next);
+        return val == listNode.val && Objects.equals(next, listNode.next);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(val, next);
-    }
-
-    @Override
-    public String toString() {
-        return "ListNode{" +
-            "val=" + val +
-            ", next=" + next +
-            '}';
     }
 }

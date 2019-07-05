@@ -5,6 +5,7 @@ import java.util.Map;
 
 /**
  * https://leetcode.com/problems/two-sum
+ * https://leetcode.com/explore/learn/card/hash-table/184/comparison-with-other-data-structures/1115/
  */
 public final class Problem1TwoSum {
     // Time - O(N), Space - O(N)

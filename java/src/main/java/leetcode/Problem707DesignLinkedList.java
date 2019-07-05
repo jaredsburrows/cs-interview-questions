@@ -4,8 +4,9 @@ import leetcode.api.ListNode;
 
 /**
  * https://leetcode.com/problems/design-linked-list/
+ * https://leetcode.com/explore/learn/card/linked-list/209/singly-linked-list/1290/
  */
-@SuppressWarnings("ClassCanBeStatic") // class MyLinkedList submitted to Leetcode is not static
+@SuppressWarnings("ClassCanBeStatic") // Leetcode is not static
 public final class Problem707DesignLinkedList {
     public class MyLinkedList {
 

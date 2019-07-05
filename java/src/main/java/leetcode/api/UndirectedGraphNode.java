@@ -19,7 +19,7 @@ public final class UndirectedGraphNode {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof UndirectedGraphNode)) {
             return false;
         }
 
@@ -31,13 +31,5 @@ public final class UndirectedGraphNode {
     @Override
     public int hashCode() {
         return Objects.hash(label, neighbors);
-    }
-
-    @Override
-    public String toString() {
-        return "UndirectedGraphNode{" +
-            "label=" + label +
-            ", neighbors=" + neighbors +
-            '}';
     }
 }

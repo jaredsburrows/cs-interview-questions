@@ -7,11 +7,7 @@ import leetcode.api.TreeNode;
  */
 public final class Problem572SubtreeOfAnotherTree {
     public boolean isSubtree(TreeNode s, TreeNode t) {
-        if (s == null) {
-            return false;
-        }
-
-        if (t == null) {
+        if (s == null || t == null) {
             return false;
         }
 
@@ -20,7 +16,7 @@ public final class Problem572SubtreeOfAnotherTree {
             || isSubtree(s.right, t);
     }
 
-    private boolean isSameTree(TreeNode p, TreeNode q) {
+    private static boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null && q == null) {
             return true;
         }

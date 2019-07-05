@@ -2,6 +2,7 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/move-zeroes
+ * https://leetcode.com/explore/learn/card/array-and-string/204/conclusion/1174/
  */
 public final class Problem283MoveZeroes {
     // Time - O(N), Space - O(1)

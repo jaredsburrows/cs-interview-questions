@@ -2,6 +2,7 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/powx-n
+ * https://leetcode.com/explore/learn/card/recursion-i/256/complexity-analysis/2380/
  */
 public final class Problem50Pow {
     // recursion

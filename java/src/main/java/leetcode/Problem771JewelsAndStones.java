@@ -9,11 +9,7 @@ import java.util.Map;
 public final class Problem771JewelsAndStones {
     // Time - O(N), Space - O(N)
     public int numJewelsInStones(String J, String S) {
-        if (J == null || S == null || J.isEmpty()) {
-            return -1;
-        }
-
-        if (S.isEmpty()) {
+        if (J == null || S == null || J.isEmpty() || S.isEmpty()) {
             return 0;
         }
 

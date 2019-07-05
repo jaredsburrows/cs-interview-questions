@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * https://leetcode.com/problems/fizz-buzz
+ * https://leetcode.com/explore/interview/card/top-interview-questions-easy/102/math/743/
  */
 public final class Problem412FizzBuzz {
     // Time - O(N), Space - O(N)

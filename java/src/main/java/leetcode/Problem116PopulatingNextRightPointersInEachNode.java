@@ -1,19 +1,19 @@
 package leetcode;
 
-import leetcode.api.TreeLinkNode;
+import leetcode.api.Node;
 
 /**
  * https://leetcode.com/problems/populating-next-right-pointers-in-each-node
  */
 public final class Problem116PopulatingNextRightPointersInEachNode {
-    public void connect(TreeLinkNode root) {
+    public Node connect(Node root) {
         if (root == null) {
-            return;
+            return null;
         }
 
-        TreeLinkNode levelNode = root;
+        Node levelNode = root;
         while (levelNode != null) {
-            TreeLinkNode currentNode = levelNode;
+            Node currentNode = levelNode;
 
             while (currentNode != null) {
                 if (currentNode.left != null) {
@@ -29,5 +29,7 @@ public final class Problem116PopulatingNextRightPointersInEachNode {
 
             levelNode = levelNode.left;
         }
+
+        return root;
     }
 }

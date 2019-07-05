@@ -2,6 +2,8 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/number-of-islands/description/
+ * https://leetcode.com/explore/learn/card/queue-stack/231/practical-application-queue/1374/
+ * https://leetcode.com/explore/learn/card/queue-stack/232/practical-application-stack/1380/
  */
 public final class Problem200NumberOfIslands {
     public int numIslands(char[][] grid) {

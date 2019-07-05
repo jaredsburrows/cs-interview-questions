@@ -10,6 +10,7 @@ final class Problem509FibonacciNumberTest extends Specification {
 
         expect:
         sut.fib(a) == b
+        sut.fib2(a) == b
 
         where:
         a  || b

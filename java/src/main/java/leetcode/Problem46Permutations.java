@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 /**
  * https://leetcode.com/problems/permutations
+ * https://leetcode.com/explore/learn/card/recursion-ii/507/beyond-recursion/2903/
  */
 public final class Problem46Permutations {
     public List<List<Integer>> permute(int[] nums) {

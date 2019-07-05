@@ -8,7 +8,7 @@ import leetcode.api.ListNode;
 /**
  * https://leetcode.com/problems/merge-k-sorted-lists
  */
-@SuppressWarnings("ClassCanBeStatic") // TODO move to api package
+@SuppressWarnings("ClassCanBeStatic") // Leetcode is not static
 public final class Problem23MergeKLists {
     // Time - O(N*LOG(K))
     public ListNode mergeKLists(ListNode[] lists) {

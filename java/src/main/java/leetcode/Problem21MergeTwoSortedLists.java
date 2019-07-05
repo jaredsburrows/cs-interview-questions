@@ -4,10 +4,15 @@ import leetcode.api.ListNode;
 
 /**
  * https://leetcode.com/problems/merge-two-sorted-lists
+ * https://leetcode.com/explore/learn/card/recursion-i/253/conclusion/2382/
  */
 public final class Problem21MergeTwoSortedLists {
     // Time - O(N), Space - O(1)
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        if (l1 == null && l2 == null) {
+            return null;
+        }
+
         if (l1 == null) {
             return l2;
         }

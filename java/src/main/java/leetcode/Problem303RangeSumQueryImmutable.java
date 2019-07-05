@@ -3,7 +3,7 @@ package leetcode;
 /**
  * https://leetcode.com/problems/range-sum-query-immutable
  */
-@SuppressWarnings("ClassCanBeStatic") // class NumArray is submited to Leetcode is not static
+@SuppressWarnings("ClassCanBeStatic") // Leetcode is not static
 public final class Problem303RangeSumQueryImmutable {
     public final class NumArray {
         private final int[] nums;

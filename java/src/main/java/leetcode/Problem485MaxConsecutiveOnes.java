@@ -2,11 +2,12 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/max-consecutive-ones
+ * https://leetcode.com/explore/learn/card/array-and-string/205/array-two-pointer-technique/1301/
  */
 public final class Problem485MaxConsecutiveOnes {
     // Time - O(N), Space - O(1)
     public int findMaxConsecutiveOnes(int[] nums) {
-        if (nums == null) {
+        if (nums == null || nums.length == 0) {
             return 0;
         }
 

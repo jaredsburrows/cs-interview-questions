@@ -5,7 +5,7 @@ import leetcode.api.TreeNode;
 /**
  * https://leetcode.com/problems/sum-root-to-leaf-numbers
  */
-@SuppressWarnings("MethodCanBeStatic") // TODO write tests for sumNumbers
+@SuppressWarnings("MethodCanBeStatic") // Leetcode is not static
 public final class Problem129SumRootToLeafNumbers {
     public int sumNumbers(TreeNode root) {
         if (root == null) {

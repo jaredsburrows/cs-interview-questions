@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * https://leetcode.com/problems/generate-parentheses
+ * https://leetcode.com/explore/learn/card/recursion-ii/503/recursion-to-iteration/2772/
  */
 public final class Problem22GenerateParentheses {
     // Space - O(N)

@@ -17,25 +17,16 @@ public final class Interval {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof Interval)) {
             return false;
         }
 
         Interval interval = (Interval) o;
-        return start == interval.start
-            && end == interval.end;
+        return start == interval.start && end == interval.end;
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(start, end);
-    }
-
-    @Override
-    public String toString() {
-        return "Interval{" +
-            "start=" + start +
-            ", end=" + end +
-            '}';
     }
 }
