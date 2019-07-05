@@ -21,7 +21,7 @@ public final class Problem4544SumII {
         for (int i : A) {
             for (int j : B) {
                 int key = i + j;
-                map.put(key, map.getOrDefault(key, 0) + 1);
+                map.put(key, map.getOrDefault(i + j, 0) + 1);
             }
         }
 

@@ -12,15 +12,9 @@ public final class Problem169MajorityElement {
         Map<Integer, Integer> map = new HashMap<>();
 
         for (int number : nums) {
-            Integer count = map.get(number);
-            if (count != null) {
-                map.put(number, count + 1);
-            } else {
-                map.put(number, 1);
-            }
+            map.put(number, map.getOrDefault(number, 0) + 1);
 
-            count = map.get(number);
-            if (count != null && count > majority) {
+            if (map.getOrDefault(number, 0) > majority) {
                 return number;
             }
         }

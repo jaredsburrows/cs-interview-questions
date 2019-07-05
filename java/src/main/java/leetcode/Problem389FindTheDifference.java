@@ -13,21 +13,11 @@ public final class Problem389FindTheDifference {
         Map<Character, Integer> tMap = new HashMap<>();
 
         for (char c : s.toCharArray()) {
-            if (sMap.containsKey(c)) {
-                final Integer count = sMap.get(c);
-                sMap.put(c, count + 1);
-            } else {
-                sMap.put(c, 1);
-            }
+            sMap.put(c, sMap.getOrDefault(c, 0) + 1);
         }
 
         for (char c : t.toCharArray()) {
-            if (tMap.containsKey(c)) {
-                Integer count = tMap.get(c);
-                tMap.put(c, count + 1);
-            } else {
-                tMap.put(c, 1);
-            }
+            tMap.put(c, tMap.getOrDefault(c, 0) + 1);
         }
 
         for (char c = 'a'; c <= 'z'; c++) {

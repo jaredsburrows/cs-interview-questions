@@ -22,9 +22,10 @@ public final class Problem350IntersectionOfTwoArraysII {
         }
 
         for (int num : nums2) {
-            if (map.getOrDefault(num, 0) > 0) {
+            int value = map.getOrDefault(num, 0);
+            if (value > 0) {
                 result.add(num);
-                map.put(num, map.getOrDefault(num, 0) - 1);
+                map.put(num, value - 1);
             }
         }
 

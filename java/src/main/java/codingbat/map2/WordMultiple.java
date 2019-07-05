@@ -19,11 +19,7 @@ public final class WordMultiple {
         }
 
         for (Map.Entry<String, Integer> entry : counts.entrySet()) {
-            if (entry.getValue() > 1) {
-                map.put(entry.getKey(), true);
-            } else {
-                map.put(entry.getKey(), false);
-            }
+            map.put(entry.getKey(), entry.getValue() > 1);
         }
 
         return map;
