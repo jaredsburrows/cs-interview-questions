@@ -20,7 +20,7 @@ public final class Problem451SortCharactersByFrequency {
         }
 
         Queue<Map.Entry<Character, Integer>> queue = new PriorityQueue<>(
-            (o1, o2) -> Integer.compare(o2.getValue(), o1.getValue()));
+            (left, right) -> Integer.compare(right.getValue(), left.getValue()));
         queue.addAll(map.entrySet());
 
         StringBuilder stringBuilder = new StringBuilder(s.length());

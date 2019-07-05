@@ -1,37 +1,34 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import leetcode.api.Interval;
 
 /**
  * https://leetcode.com/problems/merge-intervals
  */
-// TODO fix leetcode? interval class is now a 2d array
 public final class Problem56MergeIntervals {
-    public List<Interval> merge(List<Interval> intervals) {
-        List<Interval> result = new ArrayList<>();
-        if (intervals == null || intervals.isEmpty()) {
-            return result;
+    public int[][] merge(int[][] intervals) {
+        if (intervals == null || intervals.length == 0) {
+            return new int[0][0];
         }
 
-        intervals.sort(Comparator.comparingInt(left -> left.start));
+        Arrays.sort(intervals, Comparator.comparingInt(i -> i[0]));
 
-        int start = intervals.get(0).start;
-        int end = intervals.get(0).end;
+        List<int[]> result = new ArrayList<>();
+        int[] newInterval = intervals[0];
+        result.add(newInterval);
 
-        for (Interval interval : intervals) {
-            if (interval.start <= end) {
-                end = Math.max(end, interval.end);
+        for (int[] interval : intervals) {
+            if (interval[0] <= newInterval[1]) {
+                newInterval[1] = Math.max(newInterval[1], interval[1]);
             } else {
-                result.add(new Interval(start, end));
-                start = interval.start;
-                end = interval.end;
+                newInterval = interval;
+                result.add(newInterval);
             }
         }
 
-        result.add(new Interval(start, end));
-        return result;
+        return result.toArray(new int[result.size()][]);
     }
 }

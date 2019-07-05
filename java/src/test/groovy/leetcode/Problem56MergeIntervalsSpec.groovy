@@ -1,6 +1,5 @@
 package leetcode
 
-import leetcode.api.Interval
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -10,17 +9,11 @@ final class Problem56MergeIntervalsSpec extends Specification {
         def sut = new Problem56MergeIntervals()
 
         expect:
-        sut.merge(intervals as List<Interval>) == answer
+        sut.merge(intervals as int[][]) == answer as int[][]
 
         where:
-        intervals              || answer
-        [new Interval(1, 3),
-         new Interval(2, 6),
-         new Interval(8, 10),
-         new Interval(15, 18)] || [new Interval(1, 6),
-                                   new Interval(8, 10),
-                                   new Interval(15, 18)]
-        [new Interval(1, 4),
-         new Interval(4, 5)]   || [new Interval(1, 5)]
+        intervals                           || answer
+        [[1, 3], [2, 6], [8, 10], [15, 18]] || [[1, 6], [8, 10], [15, 18]]
+        [[1, 4], [4, 5]]                    || [[1, 5]]
     }
 }

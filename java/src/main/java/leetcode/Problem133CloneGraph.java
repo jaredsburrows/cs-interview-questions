@@ -1,38 +1,38 @@
 package leetcode;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.Map;
-import leetcode.api.UndirectedGraphNode;
+import leetcode.api.Node;
 
 /**
  * https://leetcode.com/problems/clone-graph
  */
-// TODO fix on leetcode? UndirectedGraphNode is now a Node with neighbors
 public final class Problem133CloneGraph {
-    public UndirectedGraphNode loneGraph(UndirectedGraphNode node) {
+    public Node cloneGraph(Node node) {
         if (node == null) {
             return null;
         }
 
-        UndirectedGraphNode headNode = new UndirectedGraphNode(node.label);
+        Node headNode = new Node(node.val, new ArrayList<>());
         if (node.neighbors.isEmpty()) {
             return headNode;
         }
 
-        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<>();
+        Map<Node, Node> map = new HashMap<>();
         map.put(node, headNode);
 
-        Deque<UndirectedGraphNode> queue = new ArrayDeque<>();
+        Deque<Node> queue = new ArrayDeque<>();
         queue.offer(node);
 
         while (!queue.isEmpty()) {
-            UndirectedGraphNode currentNode = queue.poll();
+            Node currentNode = queue.poll();
 
-            for (UndirectedGraphNode neighborNode : currentNode.neighbors) {
+            for (Node neighborNode : currentNode.neighbors) {
                 if (!map.containsKey(neighborNode)) {
-                    map.put(neighborNode, new UndirectedGraphNode(neighborNode.label));
+                    map.put(neighborNode, new Node(neighborNode.val, new ArrayList<>()));
                     queue.offer(neighborNode);
                 }
 
