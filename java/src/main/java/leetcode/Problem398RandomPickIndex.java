@@ -4,17 +4,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * https://leetcode.com/problems/random-pick-index/
  */
 @SuppressWarnings("ClassCanBeStatic") // Leetcode is not static
 public final class Problem398RandomPickIndex {
-    class Solution {
+    final class Solution {
         private final int[] nums;
         private final Map<Integer, List<Integer>> map = new HashMap<>();
-        private Random random = new Random();
 
         public Solution(int[] nums) {
             this.nums = nums;
@@ -34,7 +33,7 @@ public final class Problem398RandomPickIndex {
 
         public int pick(int target) {
             List<Integer> list = map.get(target);
-            return list.get(random.nextInt(list.size()));
+            return list.get(ThreadLocalRandom.current().nextInt(list.size()));
         }
     }
 }

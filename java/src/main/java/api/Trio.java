@@ -31,7 +31,7 @@ public final class Trio<F, S, T> {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof Trio<?, ?, ?>)) {
             return false;
         }
 

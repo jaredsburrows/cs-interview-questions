@@ -3,7 +3,7 @@ package crackingthecode;
 import api.Pair;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import javax.annotation.Nullable;
 
 public final class Chapter19Moderate {
@@ -259,12 +259,12 @@ public final class Chapter19Moderate {
 
     // can we use Math.random?
     public int rand72() {
-        return new Random().nextInt(rand5()) + 2;
+        return ThreadLocalRandom.current().nextInt(rand5()) + 2;
     }
 
     // Here is our "rand5" - 1..5
     public int rand5() {
-        return new Random().nextInt(4) + 1;
+        return ThreadLocalRandom.current().nextInt(4) + 1;
     }
 
     /**

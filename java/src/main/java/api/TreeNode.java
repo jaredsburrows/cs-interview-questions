@@ -20,7 +20,7 @@ public final class TreeNode<T> {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof TreeNode<?>)) {
             return false;
         }
 

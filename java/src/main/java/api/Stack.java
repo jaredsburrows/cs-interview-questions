@@ -36,7 +36,7 @@ public final class Stack<T> {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof Stack<?>)) {
             return false;
         }
 

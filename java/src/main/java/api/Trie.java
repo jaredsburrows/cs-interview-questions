@@ -80,7 +80,7 @@ public final class Trie<T> {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof Trie<?>)) {
             return false;
         }
 

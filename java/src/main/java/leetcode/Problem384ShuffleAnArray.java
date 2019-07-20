@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * https://leetcode.com/problems/shuffle-an-array/
@@ -8,7 +9,7 @@ import java.util.Random;
  */
 @SuppressWarnings("ClassCanBeStatic") // Leetcode is not static
 public final class Problem384ShuffleAnArray {
-    public final class Solution {
+    final class Solution {
         private final Random random = new Random();
         private final int[] nums;
 
@@ -26,7 +27,7 @@ public final class Problem384ShuffleAnArray {
             int[] copy = new int[nums.length];
             System.arraycopy(nums, 0, copy, 0, copy.length);
             for (int i = 0; i < copy.length; i++) {
-                swap(copy, i, random.nextInt(copy.length - i) + i);
+                swap(copy, i, ThreadLocalRandom.current().nextInt(copy.length - i) + i);
             }
             return copy;
         }

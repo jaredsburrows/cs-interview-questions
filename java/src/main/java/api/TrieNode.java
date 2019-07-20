@@ -1,6 +1,5 @@
 package api;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -13,9 +12,9 @@ public final class TrieNode<T> {
         this(ALPHABET_COUNT);
     }
 
-    @SuppressWarnings("unchecked")
-    public TrieNode(int length) {
-        children = (TrieNode<T>[]) Array.newInstance(TrieNode.class, length);
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public TrieNode(int capacity) {
+        children = (TrieNode<T>[]) new TrieNode[capacity];
     }
 
     @Override
@@ -24,7 +23,7 @@ public final class TrieNode<T> {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof TrieNode<?>)) {
             return false;
         }
 

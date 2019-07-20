@@ -34,11 +34,11 @@ public final class Problem155MinStack {
             final int minimum;
             final Node previous;
 
-            public Node(int value, int minimum) {
+            Node(int value, int minimum) {
                 this(value, minimum, null);
             }
 
-            public Node(int value, int minimum, Node previous) {
+            Node(int value, int minimum, Node previous) {
                 this.value = value;
                 this.minimum = minimum;
                 this.previous = previous;

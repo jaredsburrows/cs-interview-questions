@@ -53,7 +53,7 @@ public final class LinkedList<T> {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof LinkedList<?>)) {
             return false;
         }
 

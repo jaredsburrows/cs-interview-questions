@@ -6,6 +6,10 @@ package leetcode;
 public final class Problem26RemoveDuplicatesFromSortedArray {
     // Time - O(N), Space - O(1)
     public int removeDuplicates(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
         int count = 0;
         for (int num : nums) {
             if (count < 1 || num > nums[count - 1]) {

@@ -44,7 +44,7 @@ public final class Queue<T> {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof Queue<?>)) {
             return false;
         }
 

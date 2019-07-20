@@ -25,7 +25,7 @@ public final class Point {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof Point)) {
             return false;
         }
 
