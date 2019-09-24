@@ -1,5 +1,8 @@
 language: java
 
+git:
+  depth: false
+
 matrix:
   include:
     - dist: trusty
@@ -11,7 +14,7 @@ install: true
 
 script: ./gradlew clean check -s --scan
 
-after_success: .buildscript/publishDocs.sh
+after_success: .buildscript/publish-docs.sh
 
 branches:
   except:

@@ -10,14 +10,14 @@ asciidoctor {
 }
 
 def getCommitCount() {
-    def f = new File(buildDir, 'commit-count.txt')
-    if (!f.exists()) {
-        def p = 'git rev-list --count HEAD'.execute([], rootDir)
-        if (p.waitFor() != 0) {
-            throw new RuntimeException(p.errorStream.text)
+    def file = new File(buildDir, 'commit-count.txt')
+    if (!file.exists()) {
+        def process = 'git rev-list --count HEAD'.execute([], rootDir)
+        if (process.waitFor() != 0) {
+            throw new RuntimeException(process.errorStream.text)
         }
-        f.parentFile.mkdirs()
-        f.text = p.text.trim()
+        file.parentFile.mkdirs()
+        file.text = process.text.trim()
     }
-    return f.text.trim()
+    return file.text.trim()
 }
