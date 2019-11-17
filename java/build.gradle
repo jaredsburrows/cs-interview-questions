@@ -6,14 +6,14 @@ plugins {
 
 apply from: rootProject.file('gradle/compile.gradle')
 
-sourceCompatibility = rootProject.versions.java
-targetCompatibility = rootProject.versions.java
-
 dependencies {
     compileOnly deps.findbugs
 
-    errorprone deps.errorprone.core
-    errorproneJavac deps.errorprone.javac
+    def compatible = JavaVersion.current()
+    if (compatible.isJava8() || compatible.isJava9() || compatible.isJava11()) {
+        errorprone deps.errorprone.core
+        errorproneJavac deps.errorprone.javac
+    }
 
     testImplementation localGroovy()
     testImplementation deps.spock, { exclude module: 'groovy-all' } // Use localGroovy()

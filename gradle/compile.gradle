@@ -1,16 +1,10 @@
 tasks.withType(JavaCompile).configureEach {
-    sourceCompatibility = rootProject.versions.java
-    targetCompatibility = rootProject.versions.java
-
     options.compilerArgs << '-Xlint:all'
     options.compilerArgs << '-Werror'
     options.encoding = 'utf-8'
 }
 
 tasks.withType(GroovyCompile).configureEach {
-    sourceCompatibility = rootProject.versions.java
-    targetCompatibility = rootProject.versions.java
-
     options.compilerArgs << '-Xlint:all'
     options.compilerArgs << '-Werror'
     options.encoding = 'utf-8'
