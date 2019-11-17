@@ -25,6 +25,6 @@ ext.deps = [
         'junit': "org.spekframework.spek2:spek-runner-junit5:$versions.spek",
         'jvm'  : "org.spekframework.spek2:spek-dsl-jvm:$versions.spek"
     ],
-    'equalsverifier': 'nl.jqno.equalsverifier:equalsverifier:3.1.9',
+    'equalsverifier': 'nl.jqno.equalsverifier:equalsverifier:3.1.10',
     'spock'         : 'org.spockframework:spock-core:1.2-groovy-2.4'
 ]
