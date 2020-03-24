@@ -32,7 +32,7 @@ public final class Problem206ReverseLinkedList {
             return head;
         }
 
-        ListNode listNode = reverseList(head.next);
+        ListNode listNode = reverseList2(head.next);
         head.next.next = head;
         head.next = null;
         return listNode;
