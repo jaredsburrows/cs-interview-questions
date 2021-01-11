@@ -1,9 +1,10 @@
 package leetcode;
 
 /**
+ * https://leetcode.com/problems/binary-search/
  * https://leetcode.com/explore/learn/card/binary-search/138/background/1038/
  */
-public final class ExploreBinarySearch {
+public final class Problem704BinarySearch {
     // Time - O(LOG(N)), Space - O(1)
     public int search(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
