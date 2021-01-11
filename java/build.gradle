@@ -1,29 +1,12 @@
 plugins {
     id 'java-library'
     id 'groovy'
-    id 'net.ltgt.errorprone' version '1.2.1'
 }
-
-apply from: rootProject.file('gradle/compile.gradle')
 
 dependencies {
     compileOnly deps.findbugs
 
-    def compatible = JavaVersion.current()
-    if (compatible.isJava8() || compatible.isJava9() || compatible.isJava11()) {
-        errorprone deps.errorprone.core
-        errorproneJavac deps.errorprone.javac
-    }
-
     testImplementation localGroovy()
     testImplementation deps.spock, { exclude module: 'groovy-all' } // Use localGroovy()
     testImplementation deps.equalsverifier
-}
-
-tasks.withType(JavaCompile).configureEach {
-    options.errorprone {
-        disableWarningsInGeneratedCode = true
-        // normal
-        disable("UnusedMethod", "UnusedVariable")
-    }
 }

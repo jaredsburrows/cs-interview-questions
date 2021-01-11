@@ -13,10 +13,6 @@ ext.deps = [
         'junit'  : "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin",
     ],
     'findbugs'      : 'com.google.code.findbugs:jsr305:3.0.2',
-    'errorprone'    : [
-        'core' : 'com.google.errorprone:error_prone_core:2.3.4',
-        'javac': 'com.google.errorprone:javac:9+181-r4173-1'
-    ],
     'junit'         : [
         'api'   : "org.junit.jupiter:junit-jupiter-api:$versions.junit",
         'engine': "org.junit.jupiter:junit-jupiter-engine:$versions.junit"
