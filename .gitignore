@@ -18,7 +18,6 @@ gradle-app.setting
 *.iml
 .idea/
 
-/buildSrc
 /src/main/cpp/extra
 
 ### VSCode ###
