@@ -1,7 +1,7 @@
 # CS Interview Practice
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![Build Status](https://travis-ci.org/jaredsburrows/cs-interview-questions.svg?branch=master)](https://travis-ci.org/jaredsburrows/cs-interview-questions)
+[![Build](https://github.com/jaredsburrows/cs-interview-questions/workflows/build/badge.svg)](https://github.com/jaredsburrows/cs-interview-questions/actions)
 [![Twitter Follow](https://img.shields.io/twitter/follow/jaredsburrows.svg?style=social)](https://twitter.com/jaredsburrows)
 
 This is a collection of my personal solutions to practice interview questions. The repository is built using Gradle for continuous integration and delivery.
