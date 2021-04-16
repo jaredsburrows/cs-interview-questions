@@ -10,13 +10,16 @@ final class Problem7ReverseIntegerSpec extends Specification {
 
         expect:
         sut.reverse(x) == answer
+        sut.reverse2(x) == answer
 
         where:
-        x          || answer
-        0          || 0
-        123        || 321
-        -123       || -321
-        120        || 21
-        1534236469 || 0
+        x                 || answer
+        0                 || 0
+        123               || 321
+        -123              || -321
+        120               || 21
+        1534236469        || 0
+        Integer.MIN_VALUE || 0
+        Integer.MAX_VALUE || 0
     }
 }

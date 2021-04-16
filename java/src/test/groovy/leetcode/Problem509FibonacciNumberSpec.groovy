@@ -3,7 +3,7 @@ package leetcode
 import spock.lang.Specification
 import spock.lang.Unroll
 
-final class Problem509FibonacciNumberTest extends Specification {
+final class Problem509FibonacciNumberSpec extends Specification {
     @Unroll def 'fibonacci(#a) == #b'() {
         given:
         def sut = new Problem509FibonacciNumber()
