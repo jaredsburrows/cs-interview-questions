@@ -3,7 +3,7 @@ package leetcode
 import spock.lang.Specification
 import spock.lang.Unroll
 
-final class Problem905SortArrayByParityTest extends Specification {
+final class Problem905SortArrayByParitySpec extends Specification {
     @Unroll def 'sortArrayByParity(#A) = #answer'() {
         given:
         def sut = new Problem905SortArrayByParity()

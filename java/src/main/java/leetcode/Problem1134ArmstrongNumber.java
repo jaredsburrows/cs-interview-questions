@@ -5,7 +5,7 @@ package leetcode;
  */
 public final class Problem1134ArmstrongNumber {
     public boolean isArmstrong(int N) {
-        int length = (int) (Math.log10((double) N) + 1);
+        int length = (int) (Math.log10(N) + 1);
         int copy = N;
         int sum = 0;
 

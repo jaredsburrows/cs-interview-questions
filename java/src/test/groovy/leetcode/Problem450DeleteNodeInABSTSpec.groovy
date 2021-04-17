@@ -3,7 +3,7 @@ package leetcode
 import leetcode.api.TreeNode
 import spock.lang.Specification
 
-final class Problem450DeleteNodeInABSTTest extends Specification {
+final class Problem450DeleteNodeInABSTSpec extends Specification {
     def 'delete leaf node'() {
         given:
         def sut = new Problem450DeleteNodeInABST()

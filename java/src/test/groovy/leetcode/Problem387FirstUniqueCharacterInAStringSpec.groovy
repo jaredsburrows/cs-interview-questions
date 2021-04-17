@@ -3,7 +3,7 @@ package leetcode
 import spock.lang.Specification
 import spock.lang.Unroll
 
-final class Problem387FirstUniqueCharacterInAStringTest extends Specification {
+final class Problem387FirstUniqueCharacterInAStringSpec extends Specification {
     @Unroll def 'firstUniqChar(#s) = #answer'() {
         given:
         def sut = new Problem387FirstUniqueCharacterInAString()

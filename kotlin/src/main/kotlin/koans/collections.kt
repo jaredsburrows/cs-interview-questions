@@ -46,9 +46,9 @@ val Shop.allOrderedProducts: Set<Product>
 
 // Max min
 // https://play.kotlinlang.org/koans/Collections/Max%20min/Task.kt
-fun Shop.getCustomerWithMaximumNumberOfOrders(): Customer? = customers.maxBy { it.orders.size }
+fun Shop.getCustomerWithMaximumNumberOfOrders(): Customer? = customers.maxByOrNull { it.orders.size }
 
-fun Customer.getMostExpensiveOrderedProduct(): Product? = orders.flatMap { it.products }.maxBy {
+fun Customer.getMostExpensiveOrderedProduct(): Product? = orders.flatMap { it.products }.maxByOrNull {
     it.price
 }
 
@@ -60,7 +60,7 @@ fun Shop.getCustomersSortedByNumberOfOrders(): List<Customer> = customers.sorted
 
 // Sum
 // https://play.kotlinlang.org/koans/Collections/Sum/Task.kt
-fun Customer.getTotalOrderPrice(): Double = orders.flatMap { it.products }.sumByDouble { it.price }
+fun Customer.getTotalOrderPrice(): Double = orders.flatMap { it.products }.sumOf { it.price }
 
 // GroupBy
 // https://play.kotlinlang.org/koans/Collections/GroupBy/Task.kt
@@ -78,9 +78,9 @@ fun Shop.getCustomersWithMoreUndeliveredOrdersThanDelivered(): Set<Customer> =
 // https://play.kotlinlang.org/koans/Collections/Fold/Task.kt
 fun Shop.getSetOfProductsOrderedByEveryCustomer(): Set<Product> {
     val productSet = customers.flatMap { it.orders.flatMap { order -> order.products } }.toSet()
-    return customers.fold(productSet, { order, customer ->
+    return customers.fold(productSet) { order, customer ->
         order.intersect(customer.orders.flatMap { it.products }.toSet())
-    })
+    }
 }
 
 // Compound Tasks
@@ -88,7 +88,7 @@ fun Shop.getSetOfProductsOrderedByEveryCustomer(): Set<Product> {
 fun Customer.getMostExpensiveDeliveredProduct(): Product? = orders
     .filter { it.isDelivered }
     .flatMap { it.products }
-    .maxBy { it.price }
+    .maxByOrNull { it.price }
 
 fun Shop.getNumberOfTimesProductWasOrdered(product: Product): Int = customers
     .flatMap { it.orders }.flatMap { it.products }.count { it == product }
@@ -97,7 +97,7 @@ fun Shop.getNumberOfTimesProductWasOrdered(product: Product): Int = customers
 // https://play.kotlinlang.org/koans/Collections/Get%20used%20to%20new%20style/Task.kt
 fun doSomethingStrangeWithCollection(collection: Collection<String>): Collection<String>? {
     val groupsByLength = collection.groupBy { s -> s.length }
-    val maximumSizeOfGroup = groupsByLength.values.map { group -> group.size }.max()
+    val maximumSizeOfGroup = groupsByLength.values.map { group -> group.size }.maxOrNull()
     return groupsByLength.values.firstOrNull { group -> group.size == maximumSizeOfGroup }
 }
 
