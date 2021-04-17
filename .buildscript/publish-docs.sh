@@ -11,7 +11,7 @@ rm -rf asciidoc-latest
 
 # Generate docs
 ./gradlew clean asciidoc
-cp -R build/asciidoc/html5/ asciidoc-latest/
+cp -R build/docs/asciidoc/ asciidoc-latest/
 
 # Clone the current repo into temp folder
 git config --global user.email "action@github.com"

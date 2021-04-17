@@ -44,6 +44,9 @@ jobs:
       - name: Run Build
         run: ./gradlew clean check -s --scan
 
+      - name: Build website but do not publish
+        run: ./gradlew asciidoc -s --scan
+
       - name: Upload Artifacts to Github
         uses: actions/upload-artifact@v2
         if: always()
