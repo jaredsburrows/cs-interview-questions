@@ -7,16 +7,16 @@ import java.util.Set;
  * https://leetcode.com/problems/distribute-candies/submissions/
  */
 public final class Problem575DistributeCandies {
-    public int distributeCandies(int[] candies) {
-        if (candies == null || candies.length == 0) {
+    public int distributeCandies(int[] candyType) {
+        if (candyType == null || candyType.length == 0) {
             return 0;
         }
 
         Set<Integer> kinds = new HashSet<>();
-        for (int candy : candies) {
+        for (int candy : candyType) {
             kinds.add(candy);
         }
 
-        return kinds.size() >= candies.length / 2 ? candies.length / 2 : kinds.size();
+        return Math.min(kinds.size(), candyType.length / 2);
     }
 }

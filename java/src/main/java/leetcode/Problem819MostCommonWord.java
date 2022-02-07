@@ -41,7 +41,8 @@ public final class Problem819MostCommonWord {
 
         Map.Entry<String, Integer> entry = queue.poll();
         if (entry != null) {
-            return entry.getKey() != null ? entry.getKey() : "";
+            String key = entry.getKey();
+            return key != null ? key : "";
         } else {
             return "";
         }

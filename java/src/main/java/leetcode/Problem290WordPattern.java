@@ -9,18 +9,18 @@ import java.util.Objects;
  */
 public final class Problem290WordPattern {
     // Time - O(N), Space - O(N)
-    public boolean wordPattern(String pattern, String str) {
-        if (pattern == null || str == null || pattern.isEmpty() || str.isEmpty()) {
+    public boolean wordPattern(String pattern, String s) {
+        if (pattern == null || s == null || pattern.isEmpty() || s.isEmpty()) {
             return false;
         }
 
-        String[] words = str.split("\\s+", -1);
+        String[] words = s.split("\\s+", -1);
         if (words.length != pattern.length()) {
             return false;
         }
 
         Map<Object, Integer> map = new HashMap<>();
-        for (Integer i = 0; i < words.length; i++) {
+        for (int i = 0; i < words.length; i++) {
             if (!Objects.equals(map.put(pattern.charAt(i), i), map.put(words[i], i))) {
                 return false;
             }
