@@ -90,4 +90,3 @@ jobs:
         run: .buildscript/publish-docs.sh
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-

@@ -8,7 +8,7 @@ def hasGTest = file('/usr/local/Cellar/gtest/include').directory
 model {
     repositories {
         libs(PrebuiltLibraries) {
-            // TODO dynamically download, brew install cunit, then use gradlew check
+            // TODO dynamically download
             if (hasGTest) {
                 gtest {
                     headers.srcDir '/usr/local/Cellar/gtest/include'
@@ -22,7 +22,7 @@ model {
     }
 
     components {
-        crackingTheCodeCpp(NativeLibrarySpec) {
+        main(NativeLibrarySpec) {
             sources {
                 cpp {
                     source {
@@ -31,7 +31,8 @@ model {
                     }
 
                     exportedHeaders {
-                        srcDir 'src/main/cpp/include'
+                        srcDir 'src/main/include'
+                        include '**/*.h'
                     }
                 }
             }
@@ -40,7 +41,7 @@ model {
 
     testSuites {
         if (hasGTest) {
-            crackingTheCodeCppTest(GoogleTestTestSuiteSpec) {
+            mainTest(GoogleTestTestSuiteSpec) {
                 sources {
                     cpp {
                         source {
@@ -49,12 +50,13 @@ model {
                         }
 
                         exportedHeaders {
-                            srcDir 'src/test/cpp/include'
+                            srcDir 'src/test/include'
+                            include '**/*.h'
                         }
                     }
                 }
 
-                testing $.components.crackingTheCodeCpp
+                testing $.components.main
             }
         }
     }
