@@ -8,7 +8,7 @@ def hasCUnit = file('/usr/local/Cellar/cunit/2.1-3/include').directory
 model {
     repositories {
         libs(PrebuiltLibraries) {
-            // TODO dynamically download, brew install cunit, then use gradlew check
+            // TODO dynamically download
             if (hasCUnit) {
                 cunit {
                     headers.srcDir '/usr/local/Cellar/cunit/2.1-3/include'
@@ -22,7 +22,7 @@ model {
     }
 
     components {
-        crackingTheCodeC(NativeLibrarySpec) {
+        main(NativeLibrarySpec) {
             sources {
                 c {
                     source {
@@ -31,7 +31,8 @@ model {
                     }
 
                     exportedHeaders {
-                        srcDir 'src/main/c/include'
+                        srcDir 'src/main/include'
+                        include '**/*.h'
                     }
                 }
             }
@@ -40,7 +41,7 @@ model {
 
     testSuites {
         if (hasCUnit) {
-            crackingTheCodeCTest(CUnitTestSuiteSpec) {
+            mainTest(CUnitTestSuiteSpec) {
                 sources {
                     c {
                         source {
@@ -49,12 +50,13 @@ model {
                         }
 
                         exportedHeaders {
-                            srcDir 'src/test/c/include'
+                            srcDir 'src/test/include'
+                            include '**/*.h'
                         }
                     }
                 }
 
-                testing $.components.crackingTheCodeC
+                testing $.components.main
             }
         }
     }
