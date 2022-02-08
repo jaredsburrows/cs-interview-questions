@@ -1,12 +1,21 @@
 plugins {
-    id 'com.github.ben-manes.versions' version '0.38.0'
+    id 'com.github.ben-manes.versions' version '0.42.0'
     id 'org.asciidoctor.jvm.convert' version '3.3.2'
 }
 
 allprojects {
-    repositories {
-        mavenCentral()
-        gradlePluginPortal()
+    configurations.all {
+        resolutionStrategy {
+            preferProjectModules()
+
+            enableDependencyVerification()
+
+            eachDependency { details ->
+                if (details.requested.group == 'org.jetbrains.kotlin') {
+                    details.useVersion rootProject.ext.versions.kotlin
+                }
+            }
+        }
     }
 }
 

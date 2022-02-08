@@ -4,7 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem961NRepeatedElementInSize2NArraySpec extends Specification {
-    @Unroll def 'repeatedNTimes(#A) = #answer'() {
+    @Unroll def 'repeatedNTimes(#nums) = #answer'() {
         given:
         def sut = new Problem961NRepeatedElementInSize2NArray()
 

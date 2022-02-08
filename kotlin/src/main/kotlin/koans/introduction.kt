@@ -2,6 +2,7 @@ package koans
 
 import java.util.Collections
 import java.util.Comparator
+import java.util.Locale
 
 // Hello, world!
 // https://play.kotlinlang.org/koans/Introduction/Hello,%20world!/Task.kt
@@ -19,7 +20,7 @@ fun joinOptions(options: Collection<String>) = options.joinToString(
 // Default arguments
 // https://play.kotlinlang.org/koans/Introduction/Default%20arguments/Task.kt
 fun foo(name: String, number: Int = 42, toUpperCase: Boolean = false) =
-    (if (toUpperCase) name.toUpperCase() else name) + number
+    (if (toUpperCase) name.uppercase(Locale.getDefault()) else name) + number
 
 fun useFoo() = listOf(
     foo("a"),

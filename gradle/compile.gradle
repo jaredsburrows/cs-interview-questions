@@ -1,13 +1,21 @@
 tasks.withType(JavaCompile).configureEach {
+    sourceCompatibility = JavaVersion.VERSION_1_8.toString()
+    targetCompatibility = JavaVersion.VERSION_1_8.toString()
+
     options.compilerArgs << '-Xlint:all'
     options.compilerArgs << '-Werror'
     options.encoding = 'utf-8'
+    options.fork = true
 }
 
 tasks.withType(GroovyCompile).configureEach {
+    sourceCompatibility = JavaVersion.VERSION_1_8.toString()
+    targetCompatibility = JavaVersion.VERSION_1_8.toString()
+
     options.compilerArgs << '-Xlint:all'
     options.compilerArgs << '-Werror'
     options.encoding = 'utf-8'
+    options.fork = true
 }
 
 tasks.withType(Test).configureEach {
@@ -18,4 +26,8 @@ tasks.withType(Test).configureEach {
         showStackTraces true
         events = ['failed', 'skipped']
     }
+
+    failFast = true
+    def maxWorkerCount = gradle.startParameter.maxWorkerCount
+    maxParallelForks = (maxWorkerCount < 2) ? 1 : maxWorkerCount / 2
 }
