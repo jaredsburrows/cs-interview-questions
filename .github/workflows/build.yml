@@ -1,6 +1,11 @@
 name: build
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [ opened, labeled, unlabeled, synchronize ]
 
 jobs:
   jvm:
@@ -21,8 +26,8 @@ jobs:
             ~/.gradle/caches
             ~/.gradle/wrapper/
             ~/.cache/pip
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-          restore-keys: ${{ runner.os }}-gradle
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: ${{ runner.os }}-gradle-
 
       - name: Checkout Project
         uses: actions/checkout@v2
@@ -36,7 +41,7 @@ jobs:
           java-version: ${{ matrix.java-version }}
 
       - name: Run Build
-        run: ./gradlew clean check -s --scan
+        run: ./gradlew clean assemble test build check -s --scan
 
       - name: Build website but do not publish
         run: ./gradlew asciidoc -s --scan
@@ -47,9 +52,20 @@ jobs:
         with:
           name: cs-interview-questions-${{ github.workflow }}-${{ github.run_id }}
           path: |
-            build/outputs
-            build/reports
-            build/test-results
+            c/build/exe
+            c/build/install
+            c/build/libs
+            c/build/test-results
+            cpp/build/exe
+            cpp/build/install
+            cpp/build/libs
+            cpp/build/test-results
+            java/build/libs
+            java/build/reports
+            java/build/test-results
+            kotlin/build/libs
+            kotlin/build/reports
+            kotlin/build/test-results
           if-no-files-found: warn
 
   publish:

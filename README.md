@@ -1,7 +1,7 @@
 # CS Interview Practice
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![Build](https://github.com/jaredsburrows/cs-interview-questions/workflows/build/badge.svg)](https://github.com/jaredsburrows/cs-interview-questions/actions)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![build](https://github.com/jaredsburrows/cs-interview-questions/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/jaredsburrows/cs-interview-questions/actions/workflows/build.yml)
 [![Twitter Follow](https://img.shields.io/twitter/follow/jaredsburrows.svg?style=social)](https://twitter.com/jaredsburrows)
 
 This is a collection of my personal solutions to practice interview questions. The repository is built using Gradle for continuous integration and delivery.
@@ -13,12 +13,12 @@ This is a collection of my personal solutions to practice interview questions. T
 
 
 ## Codingbat
- - **Site:** http://codingbat.com
+ - **Site:** https://codingbat.com
  - **My Solutions:** [java/src/main/java/codingbat](java/src/main/java/codingbat)
 
 
 ## Cracking The Code Interview
- - **Site:** http://www.careercup.com/book
+ - **Site:** https://www.careercup.com/book
  - **Github:** https://github.com/gaylemcd/ctci
  - **My Solutions:** [java/src/main/java/crackingthecode](java/src/main/java/crackingthecode)
 
@@ -29,7 +29,7 @@ This is a collection of my personal solutions to practice interview questions. T
 
 
 ## Project Euler
- - **Site:** http://projecteuler.net/
+ - **Site:** https://projecteuler.net/
  - **My Solutions:** [java/src/main/java/projecteuler](java/src/main/java/projecteuler)
  - **My Profile:**<img src="https://projecteuler.net/profile/jaredsburrows.png">
 
@@ -39,19 +39,19 @@ This is a collection of my personal solutions to practice interview questions. T
 
 
 ## StackOverflow
- - **Site:** http://www.stackoverflow.com/
- - **My Profile:** <a href="http://stackexchange.com/users/918082"><img src="http://stackexchange.com/users/flair/918082.png"></a>
+ - **Site:** https://www.stackoverflow.com/
+ - **My Profile:** <a href="https://stackexchange.com/users/918082"><img src="https://stackexchange.com/users/flair/918082.png"></a>
 
 
 ## Others resources used
- - http://www.bigocheatsheet.com/
- - http://www.leetcode.com/
- - http://www.programcreek.com/
-   - http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
- - http://www.geeksforgeeks.org/
- - http://www.glassdoor.com/
- - http://www.hackerrank.com/
- - http://www.topcoder.com/
+ - https://www.bigocheatsheet.com/
+ - https://www.leetcode.com/
+ - https://www.programcreek.com/
+   - https://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
+ - https://www.geeksforgeeks.org/
+ - https://www.glassdoor.com/
+ - https://www.hackerrank.com/
+ - https://www.topcoder.com/
 
 
 ## Languages used
@@ -64,7 +64,7 @@ This is a collection of my personal solutions to practice interview questions. T
 
 
 ## Testing frameworks used
- - **CUnit** - (http://cunit.sourceforge.net/) for C
+ - **CUnit** - (https://cunit.sourceforge.net/) for C
  - **GTest** - (https://github.com/google/googletest) for C++
  - **Spock** - (https://github.com/spockframework/spock) for Java
  - **Spek**  - (https://github.com/spekframework/spek) for Kotlin
@@ -78,7 +78,7 @@ This is a collection of my personal solutions to practice interview questions. T
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
