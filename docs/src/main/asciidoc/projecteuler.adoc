@@ -1,6 +1,6 @@
 = ProjectEuler
 
-*Site:* http://projecteuler.net/
+*Site:* https://projecteuler.net/
 
 *My Solutions:* link:java/rc/main/java/projecteuler[https://github.com/jaredsburrows/cs-interview-questions/tree/master/java/src/main/java/projecteuler]
 

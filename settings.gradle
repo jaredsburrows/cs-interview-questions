@@ -31,6 +31,7 @@ rootProject.name = 'cs-interview-questions'
 
 include 'c'
 include 'cpp'
+include 'docs'
 include 'java'
 include 'kotlin'
 //include 'python' // com.linkedin.python is having problems

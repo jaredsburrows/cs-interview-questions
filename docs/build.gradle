@@ -1,0 +1,21 @@
+plugins {
+    id 'org.asciidoctor.jvm.convert' version '3.3.2'
+}
+
+tasks.named("asciidoctor").configure {
+    def process = 'git rev-list --count HEAD origin/master'.execute([], rootDir)
+    if (process.waitFor() != 0) {
+        throw new RuntimeException(process.errorStream.text)
+    }
+
+    baseDirFollowsSourceDir()
+    sourceDir 'src/main/asciidoc'
+    attributes = [
+        'title'    : 'CS Interview Practice',
+        'author'   : 'Jared Burrows',
+        'email'    : 'jaredsburrows@gmail.com',
+        'toc'      : 'left',
+        'toclevels': 2,
+        'revnumber': "\"${process.text.trim()}\""
+    ]
+}

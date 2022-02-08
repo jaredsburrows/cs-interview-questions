@@ -3,7 +3,6 @@
 set -e
 
 SLUG="jaredsburrows/cs-interview-questions"
-BRANCH="master"
 
 # Delete any existing temporary website clone
 rm -rf temp-clone
@@ -11,7 +10,7 @@ rm -rf asciidoc-latest
 
 # Generate docs
 ./gradlew clean asciidoc
-cp -R build/docs/asciidoc/ asciidoc-latest/
+cp -R docs/build/docs/asciidoc/ asciidoc-latest/
 
 # Clone the current repo into temp folder
 git config --global user.email "action@github.com"

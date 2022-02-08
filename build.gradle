@@ -20,4 +20,3 @@ allprojects {
 }
 
 apply from: 'gradle/dependencies.gradle'
-apply from: 'gradle/asciidoc.gradle'
