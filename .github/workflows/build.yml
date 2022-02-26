@@ -89,7 +89,13 @@ jobs:
           distribution: temurin
           java-version: 8
 
-      - name: Publish
-        run: .buildscript/publish-docs.sh
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Build Website
+        run: ./gradlew clean asciidoc -s --scan
+
+      - name: Publish Website
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/build/docs/asciidoc
+          user_name: "Github Actions"
+          user_email: "action@github.com"
