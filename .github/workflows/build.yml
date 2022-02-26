@@ -46,7 +46,7 @@ jobs:
         run: ./gradlew clean assemble test build check -s --scan
 
       - name: Build website but do not publish
-        run: ./gradlew asciidoc -s --scan
+        run: ./gradlew asciidoctor -s --scan
 
       - name: Upload Artifacts to Github
         uses: actions/upload-artifact@v2
@@ -90,7 +90,7 @@ jobs:
           java-version: 8
 
       - name: Build Website
-        run: ./gradlew clean asciidoc -s --scan
+        run: ./gradlew clean asciidoctor -s --scan
 
       - name: Publish Website
         uses: peaceiris/actions-gh-pages@v3
