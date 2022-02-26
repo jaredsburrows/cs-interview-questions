@@ -1,6 +1,5 @@
 ext.versions = [
     'kotlin': '1.6.10',
-    'java'  : '1.8',
     'junit' : '5.8.2',
     'spek'  : '2.0.17'
 ]
