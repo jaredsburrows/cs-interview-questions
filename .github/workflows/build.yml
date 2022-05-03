@@ -43,10 +43,10 @@ jobs:
           java-version: ${{ matrix.java-version }}
 
       - name: Run Build
-        run: ./gradlew clean assemble test build check -s --scan
+        run: ./gradlew clean assemble test build check -s
 
       - name: Build website but do not publish
-        run: ./gradlew asciidoctor -s --scan
+        run: ./gradlew asciidoctor -s
 
       - name: Upload Artifacts to Github
         uses: actions/upload-artifact@v2
@@ -90,7 +90,7 @@ jobs:
           java-version: 8
 
       - name: Build Website
-        run: ./gradlew clean asciidoctor -s --scan
+        run: ./gradlew clean asciidoctor -s
 
       - name: Publish Website
         uses: peaceiris/actions-gh-pages@v3
