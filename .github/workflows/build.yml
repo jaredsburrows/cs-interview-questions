@@ -49,7 +49,7 @@ jobs:
         run: ./gradlew asciidoctor -s
 
       - name: Upload Artifacts to Github
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: cs-interview-questions-${{ github.workflow }}-${{ github.run_id }}
