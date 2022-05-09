@@ -25,5 +25,5 @@ ext.deps = [
         'jvm'  : "org.spekframework.spek2:spek-dsl-jvm:$versions.spek"
     ],
     'equalsverifier': 'nl.jqno.equalsverifier:equalsverifier:3.10',
-    'spockcore'     : 'org.spockframework:spock-core:2.1-M2-groovy-3.0', // error on upgrading 2.2-M1-groovy-4.0
+    'spockcore'     : 'org.spockframework:spock-core:2.2-M1-groovy-3.0',
 ]
