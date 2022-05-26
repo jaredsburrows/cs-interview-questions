@@ -37,7 +37,7 @@ jobs:
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v1.0.4
 
-      - name: Configure JDK
+      - name: Configure JDK ${{ matrix.java-version }}
         uses: actions/setup-java@v3.3.0
         with:
           distribution: temurin
@@ -45,9 +45,6 @@ jobs:
 
       - name: Run Build
         run: ./gradlew clean assemble test build check -s
-
-      - name: Build website but do not publish
-        run: ./gradlew asciidoctor -s
 
       - name: Upload Artifacts to Github
         uses: actions/upload-artifact@v3
@@ -84,7 +81,7 @@ jobs:
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v1.0.4
 
-      - name: Configure JDK
+      - name: Configure JDK ${{ matrix.java-version }}
         uses: actions/setup-java@v3.3.0
         with:
           distribution: temurin
