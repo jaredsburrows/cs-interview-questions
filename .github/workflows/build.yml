@@ -9,6 +9,7 @@ on:
 
 jobs:
   jvm:
+    name: JDK ${{ matrix.java-version }}
     runs-on: ubuntu-latest
 
     strategy:
