@@ -1,5 +1,5 @@
 ext.versions = [
-    'kotlin': '1.6.20',
+    'kotlin': '1.7.10',
     'junit' : '5.8.2',
     'spek'  : '2.0.18'
 ]
@@ -25,5 +25,5 @@ ext.deps = [
         'jvm'  : "org.spekframework.spek2:spek-dsl-jvm:$versions.spek"
     ],
     'equalsverifier': 'nl.jqno.equalsverifier:equalsverifier:3.10',
-    'spockcore'     : 'org.spockframework:spock-core:2.2-M1-groovy-3.0',
+    'spockcore'     : 'org.spockframework:spock-core:2.2-M1-groovy-3.0', // 2.2-M3-groovy-4.0
 ]
