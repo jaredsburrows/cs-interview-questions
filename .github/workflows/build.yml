@@ -72,7 +72,8 @@ jobs:
         uses: dorny/test-reporter@v1.5.0
         if: success() || failure()
         with:
-          path: reports/-*.xml
+          name: Test Report
+          path: test-results/test/TEST-.*xml
           reporter: java-junit
 
   publish:
