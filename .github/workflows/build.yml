@@ -73,7 +73,7 @@ jobs:
         if: success() || failure()
         with:
           name: Test Report
-          path: test-results/test/TEST-.*xml
+          path: java/.*test/TEST-.*xml,kotlin/.*test/TEST-.*xml
           reporter: java-junit
 
   publish:
