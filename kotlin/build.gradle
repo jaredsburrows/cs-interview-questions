@@ -13,6 +13,10 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
 
 test {
     useJUnitPlatform()
+    reports {
+        junitXml.enabled = true
+        html.enabled = true
+    }
 }
 
 dependencies {
