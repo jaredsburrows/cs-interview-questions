@@ -1,6 +1,5 @@
 plugins {
-    id 'com.github.ben-manes.versions' version '0.43.0'
-    id 'org.asciidoctor.jvm.convert' version '3.3.2' apply false
+    alias(libs.plugins.versions)
 }
 
 allprojects {
@@ -12,11 +11,9 @@ allprojects {
 
             eachDependency { details ->
                 if (details.requested.group == 'org.jetbrains.kotlin') {
-                    details.useVersion rootProject.ext.versions.kotlin
+                    details.useVersion libs.versions.kotlin.get()
                 }
             }
         }
     }
 }
-
-apply from: 'gradle/dependencies.gradle'
