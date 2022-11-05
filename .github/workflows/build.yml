@@ -18,7 +18,7 @@ jobs:
         java-version:
           - 8
           - 11
-          - 17
+          - 19
 
     steps:
       - name: Cache Gradle dependencies
@@ -85,7 +85,7 @@ jobs:
         uses: actions/setup-java@v3.6.0
         with:
           distribution: temurin
-          java-version: 8
+          java-version: 11
 
       - name: Build Website
         run: ./gradlew clean asciidoctor -s
