@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Cache Gradle dependencies
-        uses: actions/cache@v3.2.3
+        uses: actions/cache@v3.2.4
         with:
           path: |
             ~/.gradle/caches
