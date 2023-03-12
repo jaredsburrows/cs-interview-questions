@@ -42,9 +42,12 @@ jobs:
         with:
           distribution: temurin
           java-version: ${{ matrix.java-version }}
+          cache: gradle
 
       - name: Run Build
-        run: ./gradlew clean assemble test build check -s
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: clean assemble test build check -s
 
       - name: Upload Artifacts to Github
         uses: actions/upload-artifact@v3
@@ -70,7 +73,7 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: github.repository == 'jaredsburrows/cs-interview-questions' && github.ref == 'refs/heads/master'
     needs:
       - jvm
 
@@ -86,9 +89,12 @@ jobs:
         with:
           distribution: temurin
           java-version: 11
+          cache: gradle
 
-      - name: Build Website
-        run: ./gradlew clean asciidoctor -s
+      - name: Run Build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: clean asciidoctor -s
 
       - name: Publish Website
         uses: peaceiris/actions-gh-pages@v3
