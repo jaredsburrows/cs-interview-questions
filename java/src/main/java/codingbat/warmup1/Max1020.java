@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p177372
+ * https://codingbat.com/prob/p177372
  */
 public final class Max1020 {
     public int max1020(int a, int b) {

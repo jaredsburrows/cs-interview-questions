@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p108997
+ * https://codingbat.com/prob/p108997
  */
 public final class Array6 {
     public boolean array6(int[] nums, int index) {

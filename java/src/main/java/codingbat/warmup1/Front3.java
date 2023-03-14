@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p136351
+ * https://codingbat.com/prob/p136351
  */
 public final class Front3 {
     public String front3(String str) {

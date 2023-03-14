@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p158175
+ * https://codingbat.com/prob/p158175
  */
 public final class PairStar {
     public String pairStar(String str) {

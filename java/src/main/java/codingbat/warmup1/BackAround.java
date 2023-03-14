@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p161642
+ * https://codingbat.com/prob/p161642
  */
 public final class BackAround {
     public String backAround(String str) {

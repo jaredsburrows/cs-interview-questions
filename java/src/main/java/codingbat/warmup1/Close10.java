@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p172021
+ * https://codingbat.com/prob/p172021
  */
 public final class Close10 {
     public int close10(int a, int b) {

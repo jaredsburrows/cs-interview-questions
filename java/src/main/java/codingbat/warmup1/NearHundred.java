@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p184004
+ * https://codingbat.com/prob/p184004
  */
 public final class NearHundred {
     public boolean nearHundred(int n) {

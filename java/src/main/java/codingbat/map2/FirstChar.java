@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * http://codingbat.com/prob/p168493
+ * https://codingbat.com/prob/p168493
  */
 public final class FirstChar {
     public Map<String, String> firstChar(String[] strings) {

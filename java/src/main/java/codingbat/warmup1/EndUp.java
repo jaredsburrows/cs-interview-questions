@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p125268
+ * https://codingbat.com/prob/p125268
  */
 public final class EndUp {
     public String endUp(String str) {

@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p163932
+ * https://codingbat.com/prob/p163932
  */
 public final class SumDigits {
     public int sumDigits(int n) {

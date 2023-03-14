@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p190570
+ * https://codingbat.com/prob/p190570
  */
 public final class MissingChar {
     public String missingChar(String str, int n) {

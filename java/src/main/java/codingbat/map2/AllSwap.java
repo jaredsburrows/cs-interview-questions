@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * http://codingbat.com/prob/p134133
+ * https://codingbat.com/prob/p134133
  */
 public final class AllSwap {
     public String[] allSwap(String[] strings) {

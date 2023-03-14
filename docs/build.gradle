@@ -1,5 +1,5 @@
 plugins {
-    id 'org.asciidoctor.jvm.convert'
+    alias(libs.plugins.asciidoctor)
 }
 
 tasks.named("asciidoctor").configure {

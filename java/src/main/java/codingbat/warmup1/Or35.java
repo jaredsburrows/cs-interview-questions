@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p112564
+ * https://codingbat.com/prob/p112564
  */
 public final class Or35 {
     public boolean or35(int n) {

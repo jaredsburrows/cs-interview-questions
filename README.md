@@ -7,8 +7,8 @@
 This is a collection of my personal solutions to practice interview questions. The repository is built using Gradle for continuous integration and delivery.
 
 ## CodeEval
- - **Site:** https://www.codeeval.com/
- - **My Profile:** https://www.codeeval.com/profile/jaredsburrows/
+ - **Site:** https://codeeval.com/
+ - **My Profile:** https://codeeval.com/profile/jaredsburrows/
  - **My Solutions:** [java/src/main/java/codeeval](java/src/main/java/codeeval)
 
 
@@ -18,7 +18,7 @@ This is a collection of my personal solutions to practice interview questions. T
 
 
 ## Cracking The Code Interview
- - **Site:** https://www.careercup.com/book
+ - **Site:** https://careercup.com/book
  - **Github:** https://github.com/gaylemcd/ctci
  - **My Solutions:** [java/src/main/java/crackingthecode](java/src/main/java/crackingthecode)
 
@@ -39,19 +39,19 @@ This is a collection of my personal solutions to practice interview questions. T
 
 
 ## StackOverflow
- - **Site:** https://www.stackoverflow.com/
+ - **Site:** https://stackoverflow.com/
  - **My Profile:** <a href="https://stackexchange.com/users/918082"><img src="https://stackexchange.com/users/flair/918082.png"></a>
 
 
 ## Others resources used
- - https://www.bigocheatsheet.com/
- - https://www.leetcode.com/
- - https://www.programcreek.com/
-   - https://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
- - https://www.geeksforgeeks.org/
- - https://www.glassdoor.com/
- - https://www.hackerrank.com/
- - https://www.topcoder.com/
+ - https://bigocheatsheet.com/
+ - https://leetcode.com/
+ - https://programcreek.com/
+   - https://programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
+ - https://geeksforgeeks.org/
+ - https://glassdoor.com/
+ - https://hackerrank.com/
+ - https://topcoder.com/
 
 
 ## Languages used
@@ -72,16 +72,18 @@ This is a collection of my personal solutions to practice interview questions. T
 
 ## License
 
-    Copyright (C) 2015 Jared Burrows
+```
+Copyright (C) 2015 Jared Burrows
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-       https://www.apache.org/licenses/LICENSE-2.0
+   https://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```

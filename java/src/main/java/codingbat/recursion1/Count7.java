@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p101409
+ * https://codingbat.com/prob/p101409
  */
 public final class Count7 {
     public int count7(int n) {

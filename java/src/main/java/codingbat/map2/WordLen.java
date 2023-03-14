@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * http://codingbat.com/prob/p125327
+ * https://codingbat.com/prob/p125327
  */
 public final class WordLen {
     public Map<String, Integer> wordLen(String[] strings) {

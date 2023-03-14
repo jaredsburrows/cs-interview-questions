@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * http://codingbat.com/prob/p117630
+ * https://codingbat.com/prob/p117630
  */
 public final class WordCount {
     public Map<String, Integer> wordCount(String[] strings) {

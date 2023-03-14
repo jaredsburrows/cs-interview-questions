@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p173784
+ * https://codingbat.com/prob/p173784
  */
 public final class StringE {
     public boolean stringE(String str) {

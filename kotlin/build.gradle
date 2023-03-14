@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.7.10'
+    alias(libs.plugins.kotlin.jvm)
 }
 
 apply from: rootProject.file('gradle/compile.gradle')
@@ -20,18 +20,18 @@ test {
 }
 
 dependencies {
-    implementation platform(deps.kotlin.bom)
-    implementation deps.kotlin.stdlib
-    implementation deps.kotlin.stdlib7
-    implementation deps.kotlin.stdlib8
+    implementation platform(libs.kotlin.bom)
+    implementation libs.kotlin.stdlib
+    implementation libs.kotlin.stdlib7
+    implementation libs.kotlin.stdlib8
 
-    testRuntimeOnly deps.spek.junit
-    testRuntimeOnly deps.junit.engine
-    testRuntimeOnly deps.kotlin.reflect
+    testRuntimeOnly libs.spek.junit
+    testRuntimeOnly libs.junit.engine
+    testRuntimeOnly libs.kotlin.reflect
 
-    testImplementation deps.junit.api
-    testImplementation deps.spek.jvm
-    testImplementation deps.kotlin.test
-//    testImplementation deps.kotlin.junit // Cannot select module with conflict on capability
-    testImplementation deps.kotlin.junit5
+    testImplementation libs.junit.api
+    testImplementation libs.spek.jvm
+    testImplementation libs.kotlin.test
+//    testImplementation libs.kotlin.junit // Cannot select module with conflict on capability
+    testImplementation libs.kotlin.junit5
 }

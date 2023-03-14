@@ -17,11 +17,11 @@ test {
 }
 
 dependencies {
-    compileOnly deps.findbugs
+    compileOnly libs.findbugs
 
-    testRuntimeOnly deps.junit.engine
+    testRuntimeOnly libs.junit.engine
 
     testImplementation localGroovy()
-    testImplementation deps.spockcore, { exclude module: 'groovy-all' } // Use localGroovy()
-    testImplementation deps.equalsverifier
+    testImplementation libs.spockcore, { exclude module: 'groovy-all' } // Use localGroovy()
+    testImplementation libs.equalsverifier
 }

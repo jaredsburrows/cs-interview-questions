@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p101887
+ * https://codingbat.com/prob/p101887
  */
 public final class IntMax {
     public int intMax(int a, int b, int c) {

@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p120015
+ * https://codingbat.com/prob/p120015
  */
 public final class Fibonacci {
     public int fibonacci(int n) {

@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p159227
+ * https://codingbat.com/prob/p159227
  */
 public final class PosNeg {
     public boolean posNeg(int a, int b, boolean negative) {

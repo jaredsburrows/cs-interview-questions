@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p186177
+ * https://codingbat.com/prob/p186177
  */
 public final class StrCount {
     public int strCount(String str, String sub) {
