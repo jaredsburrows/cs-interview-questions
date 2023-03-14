@@ -51,7 +51,7 @@ jobs:
 
       - name: Upload Artifacts to Github
         uses: actions/upload-artifact@v3
-        if: always()
+        if: github.repository == 'jaredsburrows/cs-interview-questions' && github.ref == 'refs/heads/master'
         with:
           name: cs-interview-questions-${{ github.workflow }}-${{ github.run_id }}
           path: |
@@ -69,7 +69,6 @@ jobs:
             kotlin/build/libs
             kotlin/build/reports
             kotlin/build/test-results
-          if-no-files-found: warn
 
   publish:
     runs-on: ubuntu-latest
