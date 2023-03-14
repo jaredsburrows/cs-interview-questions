@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p144535
+ * https://codingbat.com/prob/p144535
  */
 public final class In1020 {
     public boolean in1020(int a, int b) {

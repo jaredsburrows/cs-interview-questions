@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p154669
+ * https://codingbat.com/prob/p154669
  */
 public final class Factorial {
     public int factorial(int n) {

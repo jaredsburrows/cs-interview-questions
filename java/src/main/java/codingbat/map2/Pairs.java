@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * http://codingbat.com/prob/p126332
+ * https://codingbat.com/prob/p126332
  */
 public final class Pairs {
     public Map<String, String> pairs(String[] strings) {

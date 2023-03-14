@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * http://codingbat.com/prob/p148813
+ * https://codingbat.com/prob/p148813
  */
 public final class MapShare {
     public Map<String, String> mapShare(Map<String, String> map) {

@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p104029
+ * https://codingbat.com/prob/p104029
  */
 public final class StringClean {
     public String stringClean(String str) {

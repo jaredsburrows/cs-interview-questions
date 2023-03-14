@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p183649
+ * https://codingbat.com/prob/p183649
  */
 public final class BunnyEars {
     public int bunnyEars(int bunnies) {

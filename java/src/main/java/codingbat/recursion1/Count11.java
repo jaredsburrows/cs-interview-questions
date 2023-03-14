@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p167015
+ * https://codingbat.com/prob/p167015
  */
 public final class Count11 {
     public int count11(String str) {

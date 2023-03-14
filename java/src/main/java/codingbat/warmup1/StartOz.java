@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p199720
+ * https://codingbat.com/prob/p199720
  */
 public final class StartOz {
     public String startOz(String str) {

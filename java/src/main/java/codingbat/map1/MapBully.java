@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * http://codingbat.com/prob/p197888
+ * https://codingbat.com/prob/p197888
  */
 public final class MapBully {
     public Map<String, String> mapBully(Map<String, String> map) {

@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p196441
+ * https://codingbat.com/prob/p196441
  */
 public final class EveryNth {
     public String everyNth(String str, int n) {

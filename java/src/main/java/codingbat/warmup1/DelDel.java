@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p100905
+ * https://codingbat.com/prob/p100905
  */
 public final class DelDel {
     public String delDel(String str) {

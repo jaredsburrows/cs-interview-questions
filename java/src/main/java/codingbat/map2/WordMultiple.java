@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * http://codingbat.com/prob/p190862
+ * https://codingbat.com/prob/p190862
  */
 public final class WordMultiple {
     public Map<String, Boolean> wordMultiple(String[] strings) {

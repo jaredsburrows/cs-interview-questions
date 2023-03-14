@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p140449
+ * https://codingbat.com/prob/p140449
  */
 public final class ParrotTrouble {
     public boolean parrotTrouble(boolean talking, int hour) {

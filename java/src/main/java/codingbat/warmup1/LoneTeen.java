@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p165701
+ * https://codingbat.com/prob/p165701
  */
 public final class LoneTeen {
     public boolean loneTeen(int a, int b) {

@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p101372
+ * https://codingbat.com/prob/p101372
  */
 public final class ChangeXY {
     public String changeXY(String str) {

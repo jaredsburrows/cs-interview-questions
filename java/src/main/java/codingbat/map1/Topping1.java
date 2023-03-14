@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * http://codingbat.com/prob/p182712
+ * https://codingbat.com/prob/p182712
  */
 public final class Topping1 {
     public Map<String, String> topping1(Map<String, String> map) {

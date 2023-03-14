@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p118230
+ * https://codingbat.com/prob/p118230
  */
 public final class NoX {
     public String noX(String str) {

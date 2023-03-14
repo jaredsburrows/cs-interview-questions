@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p135988
+ * https://codingbat.com/prob/p135988
  */
 public final class Array11 {
     public int array11(int[] nums, int index) {

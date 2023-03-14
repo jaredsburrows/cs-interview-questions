@@ -1,7 +1,7 @@
 = CodeEval
 
-*Site:* https://www.codeeval.com/
+*Site:* https://codeeval.com/
 
 *My Solutions:* link:java/src/main/java/codeeval[https://github.com/jaredsburrows/cs-interview-questions/tree/master/java/src/main/java/codeeval]
 
-*My Profile:* https://www.codeeval.com/profile/jaredsburrows/
+*My Profile:* https://codeeval.com/profile/jaredsburrows/

@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p183394
+ * https://codingbat.com/prob/p183394
  */
 public final class AllStar {
     public String allStar(String str) {

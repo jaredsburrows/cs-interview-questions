@@ -1,7 +1,7 @@
 package codingbat.recursion1;
 
 /**
- * http://codingbat.com/prob/p158888
+ * https://codingbat.com/prob/p158888
  */
 public final class PowerN {
     public int powerN(int base, int n) {

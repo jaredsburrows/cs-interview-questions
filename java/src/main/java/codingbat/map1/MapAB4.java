@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * http://codingbat.com/prob/p136950
+ * https://codingbat.com/prob/p136950
  */
 public final class MapAB4 {
     public Map<String, String> mapAB4(Map<String, String> map) {

@@ -1,7 +1,7 @@
 package codingbat.warmup1;
 
 /**
- * http://codingbat.com/prob/p191914
+ * https://codingbat.com/prob/p191914
  */
 public final class NotString {
     public String notString(String str) {

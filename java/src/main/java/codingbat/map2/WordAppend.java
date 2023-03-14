@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * http://codingbat.com/prob/p103593
+ * https://codingbat.com/prob/p103593
  */
 public final class WordAppend {
     public String wordAppend(String[] strings) {

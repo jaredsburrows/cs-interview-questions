@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * http://codingbat.com/prob/p152303
+ * https://codingbat.com/prob/p152303
  */
 public final class Word0 {
     public Map<String, Integer> word0(String[] strings) {
