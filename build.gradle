@@ -4,7 +4,7 @@ plugins {
 }
 
 allprojects {
-    configurations.all {
+    configurations.configureEach {
         resolutionStrategy {
             preferProjectModules()
 

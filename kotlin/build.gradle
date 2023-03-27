@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.license)
@@ -5,10 +8,16 @@ plugins {
 
 apply from: rootProject.file('gradle/compile.gradle')
 
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
-    kotlinOptions {
+tasks.named('compileKotlin', KotlinCompilationTask.class) {
+    compilerOptions {
         allWarningsAsErrors = true
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JvmTarget.JVM_11
+    }
+}
+
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(JavaVersion.VERSION_11.toString()))
     }
 }
 
