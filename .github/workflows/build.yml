@@ -48,12 +48,6 @@ jobs:
           arguments: assemble test build check -s
 
       - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v3.7.5
-        if: success() || failure()
-        with:
-          report_paths: '**/build/test-results/test/TEST-*.xml'
-
-      - name: Publish Test Report
         uses: EnricoMi/publish-unit-test-result-action/composite@v2.6.1
         if: success() || failure()
         with:
