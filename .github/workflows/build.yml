@@ -43,18 +43,24 @@ jobs:
           cache: gradle
 
       - name: Run Build
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v2.4.0
         with:
           arguments: assemble test build check -s
 
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v3.7.5
-        if: success() || failure() # always run even if the previous step fails
+        if: success() || failure()
         with:
           report_paths: '**/build/test-results/test/TEST-*.xml'
 
+      - name: Publish Test Report
+        uses: EnricoMi/publish-unit-test-result-action/composite@v2.6.1
+        if: success() || failure()
+        with:
+          files: '**/build/test-results/test/TEST-*.xml'
+
       - name: Upload Artifacts to Github
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.2
         if: github.repository == 'jaredsburrows/cs-interview-questions' && github.ref == 'refs/heads/master'
         with:
           name: cs-interview-questions-${{ github.workflow }}-${{ github.run_id }}
@@ -95,12 +101,12 @@ jobs:
           cache: gradle
 
       - name: Run Build
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v2.4.0
         with:
           arguments: asciidoctor -s
 
       - name: Publish Website
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3.9.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/build/docs/asciidoc
