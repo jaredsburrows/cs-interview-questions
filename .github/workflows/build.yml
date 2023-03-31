@@ -19,6 +19,12 @@ jobs:
           - 19
 
     steps:
+      - name: Checkout Project
+        uses: actions/checkout@v3.5.0
+
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1.0.6
+
       - name: Cache Gradle dependencies
         uses: actions/cache@v3.3.1
         with:
@@ -29,12 +35,6 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: ${{ runner.os }}-gradle-
 
-      - name: Checkout Project
-        uses: actions/checkout@v3.5.0
-
-      - name: Validate Gradle Wrapper
-        uses: gradle/wrapper-validation-action@v1.0.6
-
       - name: Configure JDK ${{ matrix.java-version }}
         uses: actions/setup-java@v3.11.0
         with:
@@ -42,13 +42,14 @@ jobs:
           java-version: ${{ matrix.java-version }}
           cache: gradle
 
-      - name: Run Build
+      - name: Setup Gradle
         uses: gradle/gradle-build-action@v2.4.0
-        with:
-          arguments: assemble test build check -s
+
+      - name: Run Build
+        run: ./gradlew assemble test build check -s
 
       - name: Publish Test Report
-        uses: EnricoMi/publish-unit-test-result-action/composite@v2.6.1
+        uses: EnricoMi/publish-unit-test-result-action@v2.6.1
         if: success() || failure()
         with:
           files: '**/build/test-results/test/TEST-*.xml'
@@ -87,17 +88,18 @@ jobs:
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v1.0.6
 
-      - name: Configure JDK ${{ matrix.java-version }}
+      - name: Configure JDK 11
         uses: actions/setup-java@v3.11.0
         with:
           distribution: temurin
           java-version: 11
           cache: gradle
 
-      - name: Run Build
+      - name: Setup Gradle
         uses: gradle/gradle-build-action@v2.4.0
-        with:
-          arguments: asciidoctor -s
+
+      - name: Run Asciidoctor
+        run: ./gradlew asciidoctor -s
 
       - name: Publish Website
         uses: peaceiris/actions-gh-pages@v3.9.2
