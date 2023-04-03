@@ -8,7 +8,7 @@ plugins {
 
 apply from: rootProject.file('gradle/compile.gradle')
 
-tasks.named('compileKotlin', KotlinCompilationTask.class) {
+tasks.withType(KotlinCompilationTask.class).configureEach {
     compilerOptions {
         allWarningsAsErrors = true
         jvmTarget = JvmTarget.JVM_11
