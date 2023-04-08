@@ -18,7 +18,7 @@ public final class Chapter11Testing {
      * single threaded, and uses only the C standard library. What programming errors could be
      * causing this crash? How would you test each one?
      */
-    // http://stackoverflow.com/questions/4531742/debugging-a-program-that-crashes-10-times-in-different-places
+    // https://stackoverflow.com/questions/4531742/debugging-a-program-that-crashes-10-times-in-different-places
     // debugger, MSVS debugger, gdb, lldb?
     // single threaded (if multi-threaded, issues between improper thread use)
     // never crashes in same place

@@ -4,9 +4,11 @@
 . <<codeeveal.adoc#,        CodeEval>>
 . <<codingbat.adoc#,        CodingBat>>
 . <<crackingthecode.adoc#,  Cracking the Code Interview>>
+. <<github.adoc#,           Github>>
 . <<leetcode.adoc#,         LeetCode>>
 . <<projecteuler.adoc#,     ProjectEuler>>
 . <<questions.adoc#,        Other Questions>>
 . <<stackoverflow.adoc#,    StackOverflow>>
+. <<tests.adoc#,            Tests>>
 
 <<all.adoc#,                Single Page>>

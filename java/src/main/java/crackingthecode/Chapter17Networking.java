@@ -22,13 +22,13 @@ public final class Chapter17Networking {
     // BGP - Border Gateway Protocol - Download and update routing tables. BGP routers send and
     // receive update messages to indicate a change in the preferred path to reach a computer with
     // a given IP address.
-    // http://www.livinginternet.com/i/iw_route_egp_bgp.htm
+    // https://www.livinginternet.com/i/iw_route_egp_bgp.htm
 
     // RIP - Routing Information Protocol - RIP provides the standard IGP protocol for local area
     // networks, and provides great network stability, guaranteeing that if one network connection
     // goes down the network can quickly adapt to send packets through another connection.
     // RIP only keeps track of the closest router for each destination address.
-    // http://www.livinginternet.com/i/iw_route_igp_rip.htm
+    // https://www.livinginternet.com/i/iw_route_igp_rip.htm
 
     // OSPF - Open Shortest Path First - Open Shortest Path First (OSPF) is a particularly efficient
     // IGP routing protocol that is faster than RIP, but also more complex.
@@ -38,12 +38,12 @@ public final class Chapter17Networking {
     // Update - At regular intervals the router sends out messages to other routers about it's table.
     // Shortest Path Tree - Each router generates the shortest path to each destination address and
     // identifies the closest router for communication.
-    // http://www.livinginternet.com/i/iw_route_igp_ospf.htm
+    // https://www.livinginternet.com/i/iw_route_igp_ospf.htm
 
     /*
      * 17.3 - Compare and contrast the IPv4 and IPv6 protocols.
      */
-    // http://www.networkworld.com/article/2692482/ipv6/infographic-ipv4-vs-ipv6.html
+    // https://www.networkworld.com/article/2692482/ipv6/infographic-ipv4-vs-ipv6.html
     // IPv4 - 4,294,967,296 addresses,  IPv6 - 340 trillion trillion trillion addresses
     // IPv4 - Not enough devices,       IPv6 - 340,000,000,000,000,000,000,000,000,000,000,000,000
     // IPv4 - 32bit,                    IPv6 - 128bit
@@ -65,7 +65,7 @@ public final class Chapter17Networking {
      * B when: (a) both are on same network and (b) both are on different networks. Explain which
      * layer makes the routing decision and how.
      */
-    // http://www.aelius.com/njh/subnet_sheet.html
+    // https://www.aelius.com/njh/subnet_sheet.html
     // Network/Subnet mask - A mask is a bit pattern used to identify the network/subnet address.
     // Example: Consider IP address 152.210.011.002. This address belongs to Class B, so:
     //      Network Mask: 11111111.11111111.00000000.00000000

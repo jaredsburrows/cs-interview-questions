@@ -23,6 +23,24 @@ This is a collection of my personal solutions to practice interview questions. T
  - **My Solutions:** [java/src/main/java/crackingthecode](java/src/main/java/crackingthecode)
 
 
+## Github
+ - **My Profile:** https://github.com/jaredsburrows
+
+<p>
+<picture>
+<source
+  srcset="https://github-readme-stats.vercel.app/api?username=jaredsburrows&show_icons=true&theme=dark"
+  media="(prefers-color-scheme: dark)"
+/>
+<source
+  srcset="https://github-readme-stats.vercel.app/api?username=jaredsburrows&show_icons=true"
+  media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+/>
+<img src="https://github-readme-stats.vercel.app/api?username=jaredsburrows&show_icons=true" />
+</picture>
+</p>
+
+
 ## LeetCode
  - **Site:** https://leetcode.com/
  - **My Solutions:** [java/src/main/java/leetcode](java/src/main/java/leetcode)
@@ -31,7 +49,9 @@ This is a collection of my personal solutions to practice interview questions. T
 ## Project Euler
  - **Site:** https://projecteuler.net/
  - **My Solutions:** [java/src/main/java/projecteuler](java/src/main/java/projecteuler)
- - **My Profile:**<img src="https://projecteuler.net/profile/jaredsburrows.png">
+<p>
+<img src="https://projecteuler.net/profile/jaredsburrows.png">
+</p>
 
 
 ## Common Questions
@@ -40,7 +60,9 @@ This is a collection of my personal solutions to practice interview questions. T
 
 ## StackOverflow
  - **Site:** https://stackoverflow.com/
- - **My Profile:** <a href="https://stackexchange.com/users/918082"><img src="https://stackexchange.com/users/flair/918082.png"></a>
+<p>
+<a href="https://stackexchange.com/users/918082"><img src="https://stackexchange.com/users/flair/918082.png"></a>
+</p>
 
 
 ## Others resources used

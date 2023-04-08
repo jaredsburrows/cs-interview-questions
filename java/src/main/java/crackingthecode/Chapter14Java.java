@@ -85,7 +85,7 @@ public final class Chapter14Java {
     /*
      * 14.4 - Explain the difference between templates in C++ and generics in Java.
      */
-    // http://en.wikipedia.org/wiki/Comparison_of_Java_and_C%2B%2B#Templates_vs._Generics
+    // https://en.wikipedia.org/wiki/Comparison_of_Java_and_C%2B%2B#Templates_vs._Generics
 
     /*
      * 14.5 - Explain what object reflection is in Java and why it is useful.
