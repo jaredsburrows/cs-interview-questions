@@ -26,7 +26,7 @@ public final class Chapter15Databases {
      * 15.2 - What are the different types of joins? Please explain how they differ and why certain
      * types are better in certain situations.
      */
-    // http://en.wikipedia.org/wiki/Join_%28SQL%29
+    // https://en.wikipedia.org/wiki/Join_%28SQL%29
     // Cross Join:
     //  - Explicit:
     //  - - SELECT *
@@ -67,7 +67,7 @@ public final class Chapter15Databases {
      * 15.3 - What is denormalization? Explain the pros and cons.
      */
     // https://msdn.microsoft.com/en-us/library/cc505841.aspx
-    // http://en.wikipedia.org/wiki/Denormalization
+    // https://en.wikipedia.org/wiki/Denormalization
     // Improve database performance
     // Pros
     // - Improved performance
@@ -114,7 +114,7 @@ public final class Chapter15Databases {
      * database might look like, and provide a SQL query to return a list of the honor roll
      * students (top 10%), sorted by their grade point average.
      */
-    // http://sqlfiddle.com/
+    // https://sqlfiddle.com/
     // If students contain their own GPA
     // ____________
     // | Student  |

@@ -49,7 +49,7 @@ public final class Chapter8Recursion {
      * Imagine certain squares are “off limits”, such that the robot can not step on them. Design an
      * algorithm to get all possible paths for the robot.
      */
-    // http://artofproblemsolving.com/community/c21002t54378f21002h1058853_lattice_paths
+    // https://artofproblemsolving.com/community/c21002t54378f21002h1058853_lattice_paths
     // - n!/(r! * (n - r)!), N = 20, (40 20) - 40!/(20! * (40 - 20)!) - (20 * 2!/20!)/20! - > (21 -> 40)/20!
     // 2N! / (N! * (2N * N)!) -> (2N! / N!) / N!
 

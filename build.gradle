@@ -1,4 +1,5 @@
 plugins {
+    id 'test-report-aggregation'
     alias(libs.plugins.versions)
     alias(libs.plugins.license) apply false
 }
@@ -17,4 +18,18 @@ allprojects {
             }
         }
     }
+}
+
+tasks.register('testReport', TestReport) {
+    dependsOn project(':docs').tasks.named('asciidoctor')
+    destinationDirectory = project(':docs').file('build/docs/asciidoc/tests')
+    subprojects.each {
+        it.tasks.withType(Test).each { testTask ->
+            testResults.from(testTask)
+        }
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
 }

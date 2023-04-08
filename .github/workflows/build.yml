@@ -51,7 +51,7 @@ jobs:
         uses: gradle/gradle-build-action@v2.4.0
 
       - name: Run Build
-        run: ./gradlew assemble test build check -s
+        run: ./gradlew build -s
 
       - name: Publish Test Report
         uses: EnricoMi/publish-unit-test-result-action@v2.6.1
@@ -67,6 +67,7 @@ jobs:
         with:
           name: cs-interview-questions-${{ github.workflow }}-${{ github.run_id }}
           path: |
+            build/reports
             c/build/exe
             c/build/install
             c/build/libs
@@ -75,6 +76,7 @@ jobs:
             cpp/build/install
             cpp/build/libs
             cpp/build/test-results
+            docs/build/docs/asciidoc
             java/build/libs
             java/build/reports
             java/build/test-results
@@ -106,7 +108,7 @@ jobs:
         uses: gradle/gradle-build-action@v2.4.0
 
       - name: Run Asciidoctor
-        run: ./gradlew asciidoctor -s
+        run: ./gradlew asciidoctor testReport -s
 
       - name: Publish Website
         uses: peaceiris/actions-gh-pages@v3.9.3

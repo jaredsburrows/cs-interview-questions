@@ -16,7 +16,7 @@ public final class Chapter18ThreadsAndLocks {
     /*
      * 18.2 - How can you measure the time spent in a context switch?
      */
-    // Context Switch - http://stackoverflow.com/a/7443719/950427
+    // Context Switch - https://stackoverflow.com/a/7443719/950427
 
     // The book says that context switches happen between processes
 

@@ -13,7 +13,7 @@ public final class NumberLength {
     }
 
     // Time - O(1), Space - O(1)
-    // http://stackoverflow.com/a/3069580/950427
+    // https://stackoverflow.com/a/3069580/950427
     public static int lenHelper(int number) {
         if (number >= 1000000000) {
             return 10;
