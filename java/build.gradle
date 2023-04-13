@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'groovy'
+    id 'jacoco'
     alias(libs.plugins.license)
 }
 
@@ -17,6 +18,15 @@ java {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+//        xml.enabled = true
+//        html.enabled = true
+    }
 }
 
 dependencies {

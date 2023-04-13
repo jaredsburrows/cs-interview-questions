@@ -1,5 +1,7 @@
 plugins {
     id 'test-report-aggregation'
+    id 'jacoco-report-aggregation'
+    id 'jacoco'
     alias(libs.plugins.versions)
     alias(libs.plugins.license) apply false
 }
@@ -28,6 +30,68 @@ tasks.register('testReport', TestReport) {
             testResults.from(testTask)
         }
     }
+}
+
+//tasks.register('testCoverage', JacocoReport) {
+////    dependsOn subprojects.test
+////    dependsOn subprojects.tasks.named('test')
+//    dependsOn tasks.withType(Test)
+//
+////    sourceDirectories.setFrom files(subprojects.sourceSets.main.allSource.srcDirs)
+//    classDirectories.setFrom files(subprojects.sourceSets.main.output)
+//    executionData.setFrom fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+//
+//    reports {
+//        xml.required = true
+//        html.required = true
+//    }
+//
+//    onlyIf = { true } // Ensure this task always runs
+//}
+
+//tasks.register('testCoverage', org.gradle.testing.jacoco.tasks.JacocoReport) {
+//    dependsOn { subprojects*.tasks*.matching { it.name == 'test' } }
+//
+//    afterEvaluate {
+//        sourceDirectories.setFrom files(subprojects.collect { project ->
+//            project.sourceSets.main.allSource.srcDirs
+//        }.flatten())
+//        classDirectories.setFrom files(subprojects.collect { project ->
+//            project.sourceSets.main.output.classesDirs
+//        }.flatten())
+//        executionData.setFrom fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+//    }
+//
+//    reports {
+//        xml.required = true
+//        html.required = true
+//        csv.required = false
+//    }
+//
+//    onlyIf = { true } // Ensure this task always runs
+//}
+
+tasks.register('jacocoRootReport', JacocoReport) {
+    description = 'Generates an aggregate report from all subprojects'
+    dependsOn(subprojects.test)
+
+    additionalSourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs)
+    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
+    classDirectories = files(subprojects.sourceSets.main.output)
+    executionData = files(subprojects.jacocoTestReport.executionData)
+
+    reports {
+        html.enabled = true
+        xml.enabled = true
+    }
+
+    doFirst {
+        executionData = files(executionData.findAll { it.exists() })
+    }
+}
+
+tasks.named('check') {
+    dependsOn tasks.named('testCodeCoverageReport', JacocoReport)
 }
 
 tasks.register('clean', Delete) {

@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
+    id 'jacoco'
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.license)
 }
@@ -23,6 +24,15 @@ kotlin {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+//        xml.enabled = true
+//        html.enabled = true
+    }
 }
 
 dependencies {
