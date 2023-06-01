@@ -24,7 +24,7 @@ kotlin-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.re
 spek-junit = { module = "org.spekframework.spek2:spek-runner-junit5", version.ref = "spek" }
 spek-jvm = { module = "org.spekframework.spek2:spek-dsl-jvm", version.ref = "spek" }
 findbugs = { module = "com.google.code.findbugs:jsr305", version = "3.0.2" }
-equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version = "3.14.1" }
+equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version = "3.14.2" }
 spockcore = { module = "org.spockframework:spock-core", version = "2.2-M1-groovy-3.0" } # 2.2-M3-groovy-4.0
 junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
