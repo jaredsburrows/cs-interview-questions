@@ -1,4 +1,4 @@
-name: build
+name: Build
 
 on:
   push:
@@ -17,7 +17,6 @@ env:
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
 
     permissions:
@@ -30,9 +29,6 @@ jobs:
     steps:
       - name: Checkout Project
         uses: actions/checkout@v3.5.3
-
-      - name: Validate Gradle Wrapper
-        uses: gradle/wrapper-validation-action@v1.0.6
 
       - name: Cache Gradle dependencies
         uses: actions/cache@v3.3.1
@@ -53,6 +49,8 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2.4.2
+        with:
+          gradle-home-cache-cleanup: true
 
       - name: Run Build
         run: ./gradlew build -s
@@ -88,37 +86,3 @@ jobs:
             kotlin/build/libs
             kotlin/build/reports
             kotlin/build/test-results
-
-  publish:
-    runs-on: ubuntu-latest
-    if: github.repository == 'jaredsburrows/cs-interview-questions' && github.ref == 'refs/heads/master'
-    needs:
-      - build
-
-    steps:
-      - name: Checkout Project
-        uses: actions/checkout@v3.5.3
-
-      - name: Validate Gradle Wrapper
-        uses: gradle/wrapper-validation-action@v1.0.6
-
-      - name: Configure JDK ${{ env.JAVA_VERSION }}
-        uses: actions/setup-java@v3.11.0
-        with:
-          distribution: temurin
-          java-version: ${{ env.JAVA_VERSION }}
-          cache: gradle
-
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2.4.2
-
-      - name: Run Asciidoctor
-        run: ./gradlew asciidoctor testReport -s
-
-      - name: Publish Website
-        uses: peaceiris/actions-gh-pages@v3.9.3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/build/docs/asciidoc
-          user_name: "Github Actions"
-          user_email: "action@github.com"
