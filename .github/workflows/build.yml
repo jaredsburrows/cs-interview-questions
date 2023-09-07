@@ -65,7 +65,7 @@ jobs:
             **/build/test-results/**/TEST-*.xml
 
       - name: Upload Artifacts to Github
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v3.1.3
         if: github.repository == 'jaredsburrows/cs-interview-questions' && github.ref == 'refs/heads/master'
         with:
           name: cs-interview-questions-${{ github.workflow }}-${{ github.run_id }}
