@@ -48,7 +48,7 @@ jobs:
           cache: gradle
 
       - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2.7.0
+        uses: gradle/gradle-build-action@v2.9.0
         with:
           gradle-home-cache-cleanup: true
 
@@ -56,7 +56,7 @@ jobs:
         run: ./gradlew build -s
 
       - name: Publish Test Report
-        uses: EnricoMi/publish-unit-test-result-action@v2.8.0
+        uses: EnricoMi/publish-unit-test-result-action@v2.10.0
         if: always()
         with:
           check_name: "Unit Test Results"
