@@ -6,13 +6,13 @@
 
 This is a collection of my personal solutions to practice interview questions. The repository is built using Gradle for continuous integration and delivery.
 
-## CodeEval
- - **Site:** https://codeeval.com/
+## Code Eval
+ - **Site:** https://codeeval.com
  - **My Profile:** https://codeeval.com/profile/jaredsburrows/
  - **My Solutions:** [java/src/main/java/codeeval](java/src/main/java/codeeval)
 
 
-## Codingbat
+## Coding Bat
  - **Site:** https://codingbat.com
  - **My Solutions:** [java/src/main/java/codingbat](java/src/main/java/codingbat)
 
@@ -41,55 +41,55 @@ This is a collection of my personal solutions to practice interview questions. T
 </p>
 
 
-## LeetCode
- - **Site:** https://leetcode.com/
+## Leet Code
+ - **Site:** https://leetcode.com
  - **My Solutions:** [java/src/main/java/leetcode](java/src/main/java/leetcode)
 
 
 ## Project Euler
- - **Site:** https://projecteuler.net/
+ - **Site:** https://projecteuler.net
  - **My Solutions:** [java/src/main/java/projecteuler](java/src/main/java/projecteuler)
 <p>
-<img src="https://projecteuler.net/profile/jaredsburrows.png">
+<img src="https://projecteuler.net/profile/jaredsburrows.png" alt="Project Euler">
 </p>
 
 
-## Common Questions
+## Common questions
  - **My Solutions:** [java/src/main/java/questions](java/src/main/java/questions)
 
 
-## StackOverflow
- - **Site:** https://stackoverflow.com/
+## Stack Overflow
+ - **Site:** https://stackoverflow.com
 <p>
-<a href="https://stackexchange.com/users/918082"><img src="https://stackexchange.com/users/flair/918082.png"></a>
+<a href="https://stackexchange.com/users/918082"><img src="https://stackexchange.com/users/flair/918082.png" alt="Stack Overflow"></a>
 </p>
 
 
 ## Others resources used
- - https://bigocheatsheet.com/
- - https://leetcode.com/
- - https://programcreek.com/
-   - https://programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
- - https://geeksforgeeks.org/
- - https://glassdoor.com/
- - https://hackerrank.com/
- - https://topcoder.com/
+ - https://bigocheatsheet.com
+ - https://geeksforgeeks.org
+ - https://glassdoor.com
+ - https://hackerrank.com
+ - https://leetcode.com
+ - https://programcreek.com
+   - https://programcreek.com/2012/11/top-10-algorithms-for-coding-interview
+ - https://topcoder.com
 
 
 ## Languages used
  - **C** - [c/src/main/c](c/src/main/c)
  - **C++** - [cpp/src/main/cpp](cpp/src/main/cpp)
+ - **Groovy** - [java/src/test/groovy](java/src/test/groovy)
  - **Java** - [java/src/main/java](java/src/main/java)
  - **Kotlin** - [java/src/main/kotlin](java/src/main/kotlin)
  - **Python** - [python/src/main/python](python/src/main/python)
- - **Groovy** - [java/src/test/groovy](java/src/test/groovy)
 
 
 ## Testing frameworks used
- - **CUnit** - (https://cunit.sourceforge.net/) for C
+ - **CUnit** - (https://cunit.sourceforge.net) for C
  - **GTest** - (https://github.com/google/googletest) for C++
- - **Spock** - (https://github.com/spockframework/spock) for Java
  - **Spek**  - (https://github.com/spekframework/spek) for Kotlin
+ - **Spock** - (https://github.com/spockframework/spock) for Java
 
 
 ## License
