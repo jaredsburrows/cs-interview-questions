@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v4.1.0
+        uses: actions/checkout@v4.1.1
 
       - name: Cache Gradle dependencies
         uses: actions/cache@v3.3.2
