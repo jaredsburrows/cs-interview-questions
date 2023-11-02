@@ -1,82 +1,101 @@
 plugins {
-    id 'cpp'
-    id 'google-test-test-suite'
+    id 'cpp-library'
+    id 'xcode'
+    id 'visual-studio'
+    id 'cpp-unit-test'
 }
 
-def hasGTest = file('/usr/local/Cellar/gtest/include').directory
-
-model {
-    repositories {
-        libs(PrebuiltLibraries) {
-            // TODO dynamically download
-            if (hasGTest) {
-                gtest {
-                    headers.srcDir '/usr/local/Cellar/gtest/include'
-
-                    binaries.withType(StaticLibraryBinary) {
-                        staticLibraryFile = file('/usr/local/Cellar/gtest/libgtest.a')
-                    }
-                }
-            }
-        }
+unitTest {
+    dependencies {
+        implementation 'com.google:gtest:1.8.1'
     }
 
-    components {
-        main(NativeLibrarySpec) {
-            sources {
-                cpp {
-                    source {
-                        srcDir 'src/main/cpp'
-                        include '**/*.cpp'
-                    }
-
-                    exportedHeaders {
-                        srcDir 'src/main/include'
-                        include '**/*.h'
-                    }
-                }
-            }
-        }
-    }
-
-    testSuites {
-        if (hasGTest) {
-            mainTest(GoogleTestTestSuiteSpec) {
-                sources {
-                    cpp {
-                        source {
-                            srcDir 'src/test/cpp'
-                            include '**/*.cpp'
-                        }
-
-                        exportedHeaders {
-                            srcDir 'src/test/include'
-                            include '**/*.h'
-                        }
-                    }
-                }
-
-                testing $.components.main
-            }
-        }
-    }
-
-    binaries {
-        all {
-            if (toolChain in Gcc || toolChain in Clang) {
-//                cppCompiler.args '-std=c++11', '-Wall', '-Wextra', '-Werror', '-O3', '-pedantic'
-                cppCompiler.args '-std=c++11', '-Wall', '-Wextra', '-O3', '-pedantic'
-            }
-
-            if (toolChain in VisualCpp) {
-                cppCompiler.args '/Wall', '/Wx', '/O1', '/O2', '/Ox'
-            }
-        }
-
-        if (hasGTest) {
-            withType(GoogleTestTestSuiteBinarySpec) {
-                lib library: 'gtest', linkage: 'static'
-            }
+    binaries.configureEach {
+        if (targetMachine.operatingSystemFamily.linux && toolChain instanceof Gcc) {
+            linkTask.get().linkerArgs.add('-lpthread')
         }
     }
 }
+
+//plugins {
+//    id 'cpp'
+//    id 'google-test-test-suite'
+//}
+//
+//def hasGTest = file('/usr/local/Cellar/gtest/include').directory
+//
+//model {
+//    repositories {
+//        libs(PrebuiltLibraries) {
+//            // TODO dynamically download
+//            if (hasGTest) {
+//                gtest {
+//                    headers.srcDir '/usr/local/Cellar/gtest/include'
+//
+//                    binaries.withType(StaticLibraryBinary) {
+//                        staticLibraryFile = file('/usr/local/Cellar/gtest/libgtest.a')
+//                    }
+//                }
+//            }
+//        }
+//    }
+//
+//    components {
+//        main(NativeLibrarySpec) {
+//            sources {
+//                cpp {
+//                    source {
+//                        srcDir 'src/main/cpp'
+//                        include '**/*.cpp'
+//                    }
+//
+//                    exportedHeaders {
+//                        srcDir 'src/main/include'
+//                        include '**/*.h'
+//                    }
+//                }
+//            }
+//        }
+//    }
+//
+//    testSuites {
+//        if (hasGTest) {
+//            mainTest(GoogleTestTestSuiteSpec) {
+//                sources {
+//                    cpp {
+//                        source {
+//                            srcDir 'src/test/cpp'
+//                            include '**/*.cpp'
+//                        }
+//
+//                        exportedHeaders {
+//                            srcDir 'src/test/include'
+//                            include '**/*.h'
+//                        }
+//                    }
+//                }
+//
+//                testing $.components.main
+//            }
+//        }
+//    }
+//
+//    binaries {
+//        all {
+//            if (toolChain in Gcc || toolChain in Clang) {
+////                cppCompiler.args '-std=c++11', '-Wall', '-Wextra', '-Werror', '-O3', '-pedantic'
+//                cppCompiler.args '-std=c++11', '-Wall', '-Wextra', '-O3', '-pedantic'
+//            }
+//
+//            if (toolChain in VisualCpp) {
+//                cppCompiler.args '/Wall', '/Wx', '/O1', '/O2', '/Ox'
+//            }
+//        }
+//
+//        if (hasGTest) {
+//            withType(GoogleTestTestSuiteBinarySpec) {
+//                lib library: 'gtest', linkage: 'static'
+//            }
+//        }
+//    }
+//}
