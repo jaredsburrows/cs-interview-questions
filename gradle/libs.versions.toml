@@ -7,7 +7,7 @@ java = "11"
 kotlin = "1.9.22"
 
 [plugins]
-asciidoctor = { id = "org.asciidoctor.jvm.convert", version = "3.3.2" }
+asciidoctor = { id = "org.asciidoctor.jvm.convert", version = "4.0.0" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 versions = { id = "com.github.ben-manes.versions", version = "0.50.0" }
 license = { id = "com.jaredsburrows.license", version = "0.9.3" }
