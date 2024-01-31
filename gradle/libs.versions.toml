@@ -10,7 +10,7 @@ kotlin = "1.9.22"
 asciidoctor = { id = "org.asciidoctor.jvm.convert", version = "4.0.2" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
-license = { id = "com.jaredsburrows.license", version = "0.9.4" }
+license = { id = "com.jaredsburrows.license", version = "0.9.7" }
 
 [libraries]
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
