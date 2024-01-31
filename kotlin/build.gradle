@@ -1,18 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.license)
-}
-
-apply from: rootProject.file('gradle/compile.gradle')
-
-tasks.withType(KotlinCompilationTask.class).configureEach {
-    compilerOptions {
-        allWarningsAsErrors = true
-        jvmTarget = JvmTarget.JVM_11
-    }
 }
 
 kotlin {
@@ -21,8 +14,43 @@ kotlin {
     }
 }
 
+tasks.withType(KotlinCompilationTask.class).configureEach {
+    compilerOptions {
+        allWarningsAsErrors = true
+        jvmTarget = JvmTarget.JVM_11
+    }
+}
+
+tasks.withType(KotlinJvmCompile).configureEach {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_11)
+        languageVersion.set(KotlinVersion.KOTLIN_1_9)
+        apiVersion.set(KotlinVersion.KOTLIN_1_9)
+        freeCompilerArgs.add("-progressive")
+        freeCompilerArgs.add("-Xjsr305=strict")
+        freeCompilerArgs.add("-Xemit-jvm-type-annotations")
+        freeCompilerArgs.add("-Xassertions=jvm")
+        freeCompilerArgs.add("-Xproper-ieee754-comparisons")
+        freeCompilerArgs.add("-Xjvm-default=all")
+    }
+}
+
 test {
     useJUnitPlatform()
+}
+
+tasks.withType(Test).configureEach {
+    testLogging {
+        exceptionFormat 'full'
+        showCauses true
+        showExceptions true
+        showStackTraces true
+        events = ['failed', 'skipped']
+    }
+
+    failFast = true
+    def maxWorkerCount = gradle.startParameter.maxWorkerCount
+    maxParallelForks = (maxWorkerCount < 2) ? 1 : maxWorkerCount / 2
 }
 
 dependencies {
