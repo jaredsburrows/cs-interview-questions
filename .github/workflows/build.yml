@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v4.1.1
 
       - name: Validate Gradle Wrapper
-        uses: gradle/wrapper-validation-action@v2.1.1
+        uses: gradle/actions/setup-gradle@v3.0.0
 
       - name: Cache Gradle dependencies
         uses: actions/cache@v4.0.0
