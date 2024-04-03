@@ -4,12 +4,14 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 final class Problem12IntegerToRomanSpec extends Specification {
-    @Unroll def 'intToRoman(#num) = #answer'() {
+    @Unroll
+    def 'intToRoman(#num) = #answer'() {
         given:
         def sut = new Problem12IntegerToRoman()
 
         expect:
         sut.intToRoman(num) == answer
+        sut.intToRoman2(num) == answer
 
         where:
         num  || answer
