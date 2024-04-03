@@ -9,11 +9,11 @@ final class Problem344ReverseStringSpec extends Specification {
         def sut = new Problem344ReverseString()
 
         expect:
-        sut.reverseString(s) == answer
+        sut.reverseStringAnswer(s as char[]) == answer
+        sut.reverseStringAnswer2(s as char[]) == answer
 
         where:
         s                                    || answer
-        null                                 || ''
         'hello'                              || 'olleh'
         'the lazy fox jumped over the fence' || 'ecnef eht revo depmuj xof yzal eht'
     }

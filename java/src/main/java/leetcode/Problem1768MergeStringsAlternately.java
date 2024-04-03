@@ -4,23 +4,37 @@ package leetcode;
  * https://leetcode.com/problems/merge-strings-alternately/
  */
 public final class Problem1768MergeStringsAlternately {
+    // Performance - 0ms runtime - 100%
     public String mergeAlternately(String word1, String word2) {
-        if (word1 == null && word2 == null) {
-            return "";
+        int index1 = 0;
+        int index2 = 0;
+        int length1 = word1.length();
+        int length2 = word2.length();
+        StringBuilder sb = new StringBuilder(length1 + length2);
+
+        while (index1 < length1 && index2 < length2) {
+            sb.append(word1.charAt(index1++));
+            sb.append(word2.charAt(index2++));
         }
 
-        if (word1 == null) {
+        sb.append(word1.substring(index1)).append(word2.substring(index2));
+
+        return sb.toString();
+    }
+
+    // StringBuilder
+    public String mergeAlternately2(String word1, String word2) {
+        if (word1 == null || word1.isEmpty()) {
             return word2;
         }
-
-        if (word2 == null) {
+        if (word2 == null || word2.isEmpty()) {
             return word1;
         }
 
-        int length1 = word1.length();
-        int length2 = word2.length();
         int index1 = 0;
         int index2 = 0;
+        int length1 = word1.length();
+        int length2 = word2.length();
         int count = 0;
         StringBuilder sb = new StringBuilder(length1 + length2);
 
@@ -44,7 +58,8 @@ public final class Problem1768MergeStringsAlternately {
         return sb.toString();
     }
 
-    public String mergeAlternately2(String word1, String word2) {
+    // char[]
+    public String mergeAlternately3(String word1, String word2) {
         if (word1 == null && word2 == null) {
             return "";
         }

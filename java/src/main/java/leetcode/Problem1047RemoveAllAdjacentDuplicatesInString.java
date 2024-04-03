@@ -9,7 +9,22 @@ import java.util.stream.Collectors;
  * https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
  */
 public final class Problem1047RemoveAllAdjacentDuplicatesInString {
-    public String removeDuplicates(String S) {
+    public String removeDuplicates(String s) {
+        int i = -1;
+        char[] characters = s.toCharArray();
+
+        for (char character : characters) {
+            if (i >= 0 && characters[i] == character) {
+                i--;
+            } else {
+                characters[++i] = character;
+            }
+        }
+
+        return new String(characters, 0, i + 1);
+    }
+
+    public String removeDuplicates2(String S) {
         if (S == null || S.isEmpty()) {
             return "";
         }
@@ -30,7 +45,7 @@ public final class Problem1047RemoveAllAdjacentDuplicatesInString {
         return new String(characters, 0, i + 1);
     }
 
-    public String removeDuplicates2(String S) {
+    public String removeDuplicates3(String S) {
         if (S == null || S.isEmpty()) {
             return "";
         }
