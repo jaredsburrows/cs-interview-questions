@@ -27,7 +27,7 @@ jobs:
         uses: gradle/wrapper-validation-action@v2.1.2
 
       - name: Cache Gradle dependencies
-        uses: actions/cache@v4.0.1
+        uses: actions/cache@v4.0.2
         with:
           path: |
             ~/.gradle/caches
