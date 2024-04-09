@@ -11,8 +11,8 @@ plugins {
 
 develocity {
     buildScan {
-        termsOfServiceUrl = 'https://gradle.com/terms-of-service'
-        termsOfServiceAgree = 'yes'
+        termsOfUseUrl = 'https://gradle.com/terms-of-service'
+        termsOfUseAgree = 'yes'
         // TODO: workaround for https://github.com/gradle/gradle/issues/22879
         def isCI = providers.environmentVariable("CI").isPresent()
         publishing.onlyIf { isCI }
