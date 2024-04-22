@@ -21,16 +21,16 @@ jobs:
 
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v4.1.2
+        uses: actions/checkout@v4.1.3
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3.3.0
+        uses: gradle/actions/setup-gradle@v3.3.1
         with:
           gradle-home-cache-cleanup: true
       - run: ./gradlew --version
 
       - name: Validate Gradle Wrapper
-        uses: gradle/actions/wrapper-validation@v3.3.0
+        uses: gradle/actions/wrapper-validation@v3.3.1
 
       - name: Cache Gradle dependencies
         uses: actions/cache@v4.0.2
@@ -50,7 +50,7 @@ jobs:
           cache: gradle
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3.3.0
+        uses: gradle/actions/setup-gradle@v3.3.1
         with:
           gradle-home-cache-cleanup: true
       - run: ./gradlew --version
@@ -68,7 +68,7 @@ jobs:
             **/build/test-results/**/TEST-*.xml
 
       - name: Upload Artifacts to Github
-        uses: actions/upload-artifact@v4.3.1
+        uses: actions/upload-artifact@v4.3.2
         if: github.repository == 'jaredsburrows/cs-interview-questions' && github.ref == 'refs/heads/master'
         with:
           name: cs-interview-questions-${{ github.workflow }}-${{ github.run_id }}
@@ -99,16 +99,16 @@ jobs:
 
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v4.1.2
+        uses: actions/checkout@v4.1.3
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3.3.0
+        uses: gradle/actions/setup-gradle@v3.3.1
         with:
           gradle-home-cache-cleanup: true
       - run: ./gradlew --version
 
       - name: Validate Gradle Wrapper
-        uses: gradle/actions/wrapper-validation@v3.3.0
+        uses: gradle/actions/wrapper-validation@v3.3.1
 
       - name: Configure JDK ${{ env.JAVA_VERSION }}
         uses: actions/setup-java@v4.2.1
@@ -118,7 +118,7 @@ jobs:
           cache: gradle
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3.3.0
+        uses: gradle/actions/setup-gradle@v3.3.1
         with:
           gradle-home-cache-cleanup: true
 
