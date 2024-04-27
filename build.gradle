@@ -1,7 +1,7 @@
 plugins {
-    id 'test-report-aggregation'
     alias(libs.plugins.versions)
     alias(libs.plugins.license) apply false
+    id 'test-report-aggregation'
 }
 
 allprojects {
@@ -31,5 +31,5 @@ tasks.register('testReport', TestReport) {
 }
 
 tasks.register('clean', Delete) {
-    delete rootProject.buildDir
+    delete layout.buildDirectory
 }

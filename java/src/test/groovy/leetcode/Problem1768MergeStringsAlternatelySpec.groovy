@@ -11,6 +11,7 @@ final class Problem1768MergeStringsAlternatelySpec extends Specification {
         expect:
         sut.mergeAlternately(word1, word2) == answer
         sut.mergeAlternately2(word1, word2) == answer
+        sut.mergeAlternately3(word1, word2) == answer
 
         where:
         word1  | word2  || answer

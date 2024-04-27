@@ -4,8 +4,6 @@ plugins {
     alias(libs.plugins.license)
 }
 
-apply from: rootProject.file('gradle/compile.gradle')
-
 java {
     sourceCompatibility = JavaVersion.VERSION_11.toString()
     targetCompatibility = JavaVersion.VERSION_11.toString()
@@ -15,8 +13,46 @@ java {
     }
 }
 
+tasks.withType(JavaCompile).configureEach {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+
+    configure(options) {
+        compilerArgs << '-Xlint:all'
+        compilerArgs << '-Xlint:-options'
+        encoding = 'utf-8'
+        fork = true
+    }
+}
+
+tasks.withType(GroovyCompile).configureEach {
+    sourceCompatibility = JavaVersion.VERSION_11.toString()
+    targetCompatibility = JavaVersion.VERSION_11.toString()
+
+    configure(options) {
+        compilerArgs << '-Xlint:all'
+        compilerArgs << '-Xlint:-options'
+        encoding = 'utf-8'
+        fork = true
+    }
+}
+
 test {
     useJUnitPlatform()
+}
+
+tasks.withType(Test).configureEach {
+    testLogging {
+        exceptionFormat 'full'
+        showCauses true
+        showExceptions true
+        showStackTraces true
+        events = ['failed', 'skipped']
+    }
+
+    failFast = true
+    def maxWorkerCount = gradle.startParameter.maxWorkerCount
+    maxParallelForks = (maxWorkerCount < 2) ? 1 : maxWorkerCount / 2
 }
 
 dependencies {

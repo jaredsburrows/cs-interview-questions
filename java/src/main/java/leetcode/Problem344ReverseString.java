@@ -6,17 +6,39 @@ package leetcode;
  * https://leetcode.com/explore/learn/card/array-and-string/205/array-two-pointer-technique/1183/
  */
 public final class Problem344ReverseString {
-    // Time - O(N), Space - O(N)
-    public String reverseString(String s) {
-        if (s == null) {
-            return "";
+    // RuneTime - 0ms - 100%
+    // Time - O(1), Space - O(1)
+    public void reverseString(char[] s) {
+        int left = 0;
+        int right = s.length - 1;
+
+        while (left < right) {
+            swap(s, left, right);
+
+            left++;
+            right--;
         }
+    }
 
-        char[] array = s.toCharArray();
+    private static void swap(char[] array, int i, int j) {
+        final char temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 
-        reverse(array);
+    // For testing
+    public String reverseStringAnswer(char[] s) {
+        reverseString(s);
 
-        return String.valueOf(array);
+        return String.valueOf(s);
+    }
+
+
+    // Time - O(N), Space - O(N)
+    public String reverseStringAnswer2(char[] s) {
+        reverse(s);
+
+        return String.valueOf(s);
     }
 
     // Time - O(N), Space - O(1) - iteration
@@ -27,7 +49,7 @@ public final class Problem344ReverseString {
     }
 
     // recursion
-    public void reverseString2(char[] s) {
+    public void reverseString3(char[] s) {
         if (s == null || s.length == 0) {
             return;
         }
@@ -43,12 +65,5 @@ public final class Problem344ReverseString {
         swap(array, left, right);
 
         reverse2(array, left + 1, right - 1);
-    }
-
-    // Time - O(1), Space - O(1)
-    private static void swap(char[] array, int left, int right) {
-        char temp = array[left];
-        array[left] = array[right];
-        array[right] = temp;
     }
 }

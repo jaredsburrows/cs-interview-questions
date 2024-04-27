@@ -1,16 +1,16 @@
 [versions]
 # libraries
-junit = "5.9.2"
+junit = "5.10.2"
 spek = "2.0.19"
 # language
 java = "11"
-kotlin = "1.8.20"
+kotlin = "1.9.23"
 
 [plugins]
-asciidoctor = { id = "org.asciidoctor.jvm.convert", version = "3.3.2" }
+asciidoctor = { id = "org.asciidoctor.jvm.convert", version = "4.0.2" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-versions = { id = "com.github.ben-manes.versions", version = "0.46.0" }
-license = { id = "com.jaredsburrows.license", version = "0.9.2" }
+versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
+license = { id = "com.jaredsburrows.license", version = "0.9.7" }
 
 [libraries]
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
@@ -24,7 +24,7 @@ kotlin-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.re
 spek-junit = { module = "org.spekframework.spek2:spek-runner-junit5", version.ref = "spek" }
 spek-jvm = { module = "org.spekframework.spek2:spek-dsl-jvm", version.ref = "spek" }
 findbugs = { module = "com.google.code.findbugs:jsr305", version = "3.0.2" }
-equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version = "3.14.1" }
+equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version = "3.16.1" }
 spockcore = { module = "org.spockframework:spock-core", version = "2.2-M1-groovy-3.0" } # 2.2-M3-groovy-4.0
 junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
