@@ -38,6 +38,9 @@ jobs:
           gradle-home-cache-cleanup: true
       - run: ./gradlew --version
 
+      - name: Generate and submit dependency graph
+        uses: gradle/actions/dependency-submission@v3.3.2
+
       - name: Cache Gradle dependencies
         uses: actions/cache@v4.0.2
         with:
@@ -107,6 +110,9 @@ jobs:
         uses: gradle/actions/setup-gradle@v3.3.2
         with:
           gradle-home-cache-cleanup: true
+
+      - name: Generate and submit dependency graph
+        uses: gradle/actions/dependency-submission@v3.3.2
 
       - name: Run Asciidoctor
         run: ./gradlew asciidoctor testReport -s
