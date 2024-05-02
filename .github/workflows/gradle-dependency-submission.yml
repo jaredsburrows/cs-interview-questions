@@ -1,0 +1,30 @@
+name: Dependency Submission
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
+  JAVA_VERSION: 21
+
+permissions:
+  contents: write
+
+jobs:
+  dependency-submission:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v4.1.4
+
+      - name: Configure JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4.2.1
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - name: Generate and submit dependency graph
+        uses: gradle/actions/dependency-submission@v3.3.2

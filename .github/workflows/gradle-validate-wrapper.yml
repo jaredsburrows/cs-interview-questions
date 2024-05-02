@@ -1,11 +1,11 @@
-name: "Validate Gradle Wrapper"
+name: Validate Gradle Wrapper
 
 on:
   pull_request:
     paths:
-      - 'gradlew'
-      - 'gradlew.bat'
-      - 'gradle/wrapper/**'
+      - gradlew
+      - gradlew.bat
+      - gradle/wrapper/**
 
 jobs:
   validate:
