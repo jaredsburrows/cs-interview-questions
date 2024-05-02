@@ -11,6 +11,9 @@ env:
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
   JAVA_VERSION: 21
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
