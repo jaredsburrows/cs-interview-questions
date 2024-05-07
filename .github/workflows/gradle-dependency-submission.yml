@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v4.1.4
+        uses: actions/checkout@v4.1.5
 
       - name: Configure JDK ${{ env.JAVA_VERSION }}
         uses: actions/setup-java@v4.2.1
