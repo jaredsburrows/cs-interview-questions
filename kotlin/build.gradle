@@ -24,8 +24,8 @@ tasks.withType(KotlinCompilationTask.class).configureEach {
 tasks.withType(KotlinJvmCompile).configureEach {
     compilerOptions {
         jvmTarget.set(JvmTarget.JVM_11)
-        languageVersion.set(KotlinVersion.KOTLIN_1_9)
-        apiVersion.set(KotlinVersion.KOTLIN_1_9)
+        languageVersion.set(KotlinVersion.KOTLIN_2_0)
+        apiVersion.set(KotlinVersion.KOTLIN_2_0)
         freeCompilerArgs.add("-progressive")
         freeCompilerArgs.add("-Xjsr305=strict")
         freeCompilerArgs.add("-Xemit-jvm-type-annotations")
@@ -56,7 +56,6 @@ tasks.withType(Test).configureEach {
 dependencies {
     implementation platform(libs.kotlin.bom)
     implementation libs.kotlin.stdlib
-    implementation libs.kotlin.stdlib7
     implementation libs.kotlin.stdlib8
 
     testRuntimeOnly libs.spek.junit
