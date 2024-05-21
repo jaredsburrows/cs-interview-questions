@@ -30,6 +30,10 @@ tasks.register('testReport', TestReport) {
     }
 }
 
+tasks.withType(Wrapper).configureEach {
+    distributionType = Wrapper.DistributionType.ALL
+}
+
 tasks.register('clean', Delete) {
     delete layout.buildDirectory
 }

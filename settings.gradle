@@ -9,15 +9,6 @@ plugins {
     id 'com.gradle.develocity' version '3.17.2'
 }
 
-develocity {
-    buildScan {
-        termsOfUseUrl = 'https://gradle.com/terms-of-service'
-        termsOfUseAgree = 'yes'
-        def isCI = System.getenv('CI') != null
-        publishing.onlyIf { isCI }
-    }
-}
-
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 
@@ -25,6 +16,15 @@ dependencyResolutionManagement {
         google()
         gradlePluginPortal()
         mavenCentral()
+    }
+}
+
+develocity {
+    buildScan {
+        termsOfUseUrl = 'https://gradle.com/terms-of-service'
+        termsOfUseAgree = 'yes'
+        def isCI = System.getenv('CI') != null
+        publishing.onlyIf { isCI }
     }
 }
 
