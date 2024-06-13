@@ -2,6 +2,9 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         mavenCentral()
+        maven {
+            url = 'https://gtest-gradle.sourceforge.io/maven'
+        }
     }
 }
 
@@ -13,9 +16,11 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 
     repositories {
-        google()
         gradlePluginPortal()
         mavenCentral()
+        maven {
+            url = 'https://gtest-gradle.sourceforge.io/maven'
+        }
     }
 }
 
