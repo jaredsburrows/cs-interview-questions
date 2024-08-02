@@ -1,7 +1,37 @@
+import com.pswidersk.gradle.python.VenvTask
+
 plugins {
-    id 'com.linkedin.python-sdist' version '0.9.11'
+    id 'com.pswidersk.python-plugin' version '2.7.2'
 }
 
-repositories {
-    pyGradlePyPi()
+//pythonPlugin {
+//    pythonVersion = "3.12.4"
+////    condaVersion = "py38_23.11.0-2"
+////    installDir = file(rootProject.file(".gradle/python/${project.name}"))
+//    installDir = file(".gradle/python/${project.name}")
+//}
+
+tasks.register("runQuickSort", VenvTask) {
+    workingDir = new File(projectDir, "src/main")
+    args = ["quicksort.py"]
+}
+
+def pipInstall = tasks.register("pipInstall", VenvTask) {
+    venvExec = "pip"
+//    args = ["install", "--isolated", "-r", "requirements.txt"]
+    args = ["install", "numpy==1.22.0"]
+}
+
+tasks.register("runNumpy", VenvTask) {
+    workingDir = new File(projectDir, "src/main")
+    args = ["quicksort.py"]
+//    dependsOn pipInstall
+}
+
+tasks.register("runPyTests", VenvTask) {
+    venvExec = "pytest"
+    workingDir = new File(projectDir, "src/test")
+    environment = ["PYTHONPATH": new File(projectDir, "src/main").canonicalPath]
+    args = ["test_quicksort.py"]
+//    dependsOn pipInstall
 }
