@@ -1,7 +1,5 @@
-import static org.gradle.api.JavaVersion.VERSION_11
-import static org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
-import static org.gradle.api.tasks.testing.logging.TestLogEvent.FAILED
-import static org.gradle.api.tasks.testing.logging.TestLogEvent.SKIPPED
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     id 'java-library'
@@ -10,17 +8,17 @@ plugins {
 }
 
 java {
-    sourceCompatibility = VERSION_11.toString()
-    targetCompatibility = VERSION_11.toString()
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(VERSION_11.toString()))
+        languageVersion.set(JavaLanguageVersion.of(JavaVersion.VERSION_11.toString()))
     }
 }
 
 tasks.withType(JavaCompile).configureEach {
-    sourceCompatibility = VERSION_11
-    targetCompatibility = VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 
     configure(options) {
         compilerArgs << '-Xlint:all'
@@ -31,8 +29,8 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 tasks.withType(GroovyCompile).configureEach {
-    sourceCompatibility = VERSION_11.toString()
-    targetCompatibility = VERSION_11.toString()
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 
     configure(options) {
         compilerArgs << '-Xlint:all'
@@ -47,12 +45,14 @@ test {
 }
 
 tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+
     testLogging {
-        exceptionFormat = FULL
+        exceptionFormat = TestExceptionFormat.FULL
         showCauses = true
         showExceptions = true
         showStackTraces = true
-        events = [FAILED, SKIPPED]
+        events = [TestLogEvent.FAILED, TestLogEvent.SKIPPED]
     }
 
     def maxWorkerCount = gradle.startParameter.maxWorkerCount
