@@ -50,7 +50,6 @@ tasks.withType(Test).configureEach {
         events = ['failed', 'skipped']
     }
 
-    failFast = true
     def maxWorkerCount = gradle.startParameter.maxWorkerCount
     maxParallelForks = (maxWorkerCount < 2) ? 1 : maxWorkerCount / 2
 }

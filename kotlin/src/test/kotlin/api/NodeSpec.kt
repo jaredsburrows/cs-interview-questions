@@ -16,7 +16,7 @@ object NodeSpec : Spek({
 
         context("basic usage with initial value") {
             it("should be 123") {
-                assertEquals(Color.values().size, 3)
+                assertEquals(Color.entries.size, 3)
             }
         }
     }
