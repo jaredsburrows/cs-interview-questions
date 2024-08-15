@@ -1,11 +1,9 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
-
-import static org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
-import static org.gradle.api.tasks.testing.logging.TestLogEvent.FAILED
-import static org.gradle.api.tasks.testing.logging.TestLogEvent.SKIPPED
-import static org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
-import static org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_0
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
@@ -21,15 +19,15 @@ kotlin {
 tasks.withType(KotlinCompilationTask.class).configureEach {
     compilerOptions {
         allWarningsAsErrors = true
-        jvmTarget = JVM_11
+        jvmTarget = JvmTarget.JVM_11
     }
 }
 
 tasks.withType(KotlinJvmCompile).configureEach {
     compilerOptions {
-        jvmTarget.set(JVM_11)
-        languageVersion.set(KOTLIN_2_0)
-        apiVersion.set(KOTLIN_2_0)
+        jvmTarget.set(JvmTarget.JVM_11)
+        languageVersion.set(KotlinVersion.KOTLIN_2_0)
+        apiVersion.set(KotlinVersion.KOTLIN_2_0)
         freeCompilerArgs.add("-progressive")
         freeCompilerArgs.add("-Xjsr305=strict")
         freeCompilerArgs.add("-Xemit-jvm-type-annotations")
@@ -44,11 +42,11 @@ test {
 
 tasks.withType(Test).configureEach {
     testLogging {
-        exceptionFormat = FULL
+        exceptionFormat = TestExceptionFormat.FULL
         showCauses = true
         showExceptions = true
         showStackTraces = true
-        events = [FAILED, SKIPPED]
+        events = [TestLogEvent.FAILED, TestLogEvent.SKIPPED]
     }
 
     def maxWorkerCount = gradle.startParameter.maxWorkerCount
