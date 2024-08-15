@@ -6,7 +6,7 @@ public final class Number003 {
             return false;
         }
 
-        for (int i = 3; (i * i) <= number; i += 2) {
+        for (int i = 3; ((long) i * i) <= number; i += 2) {
             if (number % i == 0) {
                 return false;
             }

@@ -9,7 +9,7 @@ import java.util.Map;
 public final class FirstChar {
     public Map<String, String> firstChar(String[] strings) {
         Map<String, String> map = new HashMap<>();
-        if (strings == null || strings.length == 0) {
+        if (strings == null) {
             return map;
         }
 

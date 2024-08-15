@@ -17,11 +17,10 @@ public final class Interval {
             return true;
         }
 
-        if (!(o instanceof Interval)) {
+        if (!(o instanceof Interval interval)) {
             return false;
         }
 
-        Interval interval = (Interval) o;
         return start == interval.start && end == interval.end;
     }
 

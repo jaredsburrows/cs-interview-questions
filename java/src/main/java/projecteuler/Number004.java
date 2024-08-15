@@ -3,7 +3,7 @@ package projecteuler;
 public final class Number004 {
     public static boolean isPalindrome(int number) {
         String temp = Integer.toString(number);
-        return temp.equals(new StringBuilder(temp).reverse().toString());
+        return temp.contentEquals(new StringBuilder(temp).reverse());
     }
 
     public static long getLargestPalindromeProduct() {

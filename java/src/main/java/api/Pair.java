@@ -25,11 +25,10 @@ public final class Pair<L, R> {
             return true;
         }
 
-        if (!(o instanceof Pair<?, ?>)) {
+        if (!(o instanceof Pair<?, ?> pair)) {
             return false;
         }
 
-        Pair<?, ?> pair = (Pair<?, ?>) o;
         return Objects.equals(left, pair.left)
             && Objects.equals(right, pair.right);
     }

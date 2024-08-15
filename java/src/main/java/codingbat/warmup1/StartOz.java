@@ -11,9 +11,9 @@ public final class StartOz {
 
         if (str.length() >= 2 && str.startsWith("oz")) {
             return "oz";
-        } else if (str.length() >= 1 && str.substring(0, 1).equals("o")) {
+        } else if (str.length() >= 1 && str.charAt(0) == 'o') {
             return "o";
-        } else if (str.length() >= 1 && str.substring(1, 2).equals("z")) {
+        } else if (str.length() >= 1 && str.charAt(1) == 'z') {
             return "z";
         } else {
             return "";

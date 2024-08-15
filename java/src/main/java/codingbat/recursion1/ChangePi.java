@@ -12,7 +12,7 @@ public final class ChangePi {
         if (str.length() >= 2 && "pi".equals(str.substring(0, 2))) {
             return "3.14" + changePi(str.substring(2));
         } else {
-            return str.substring(0, 1) + changePi(str.substring(1));
+            return str.charAt(0) + changePi(str.substring(1));
         }
     }
 }

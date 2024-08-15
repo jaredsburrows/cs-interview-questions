@@ -53,11 +53,10 @@ public final class LinkedList<T> {
             return true;
         }
 
-        if (!(o instanceof LinkedList<?>)) {
+        if (!(o instanceof LinkedList<?> that)) {
             return false;
         }
 
-        LinkedList<?> that = (LinkedList<?>) o;
         return Objects.equals(head, that.head);
     }
 

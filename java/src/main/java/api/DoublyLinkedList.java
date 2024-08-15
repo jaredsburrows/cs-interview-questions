@@ -6,7 +6,6 @@ public final class DoublyLinkedList<T> {
 
     public void setHead(Node<T> node) {
         if (node == null) {
-            return;
         }
 
 

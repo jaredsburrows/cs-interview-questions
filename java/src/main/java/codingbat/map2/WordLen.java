@@ -9,7 +9,7 @@ import java.util.Map;
 public final class WordLen {
     public Map<String, Integer> wordLen(String[] strings) {
         Map<String, Integer> map = new HashMap<>();
-        if (strings == null || strings.length == 0) {
+        if (strings == null) {
             return map;
         }
 

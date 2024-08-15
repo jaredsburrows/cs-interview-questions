@@ -36,11 +36,10 @@ public final class Stack<T> {
             return true;
         }
 
-        if (!(o instanceof Stack<?>)) {
+        if (!(o instanceof Stack<?> stack)) {
             return false;
         }
 
-        Stack<?> stack = (Stack<?>) o;
         return Objects.equals(top, stack.top);
     }
 

@@ -13,7 +13,7 @@ public final class StrCount {
             return 0;
         }
 
-        if (str.substring(0, sub.length()).equals(sub)) {
+        if (str.startsWith(sub)) {
             return strCount(str.substring(sub.length()), sub) + 1;
         } else {
             return strCount(str.substring(1), sub);

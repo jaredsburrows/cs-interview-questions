@@ -44,11 +44,10 @@ public final class Queue<T> {
             return true;
         }
 
-        if (!(o instanceof Queue<?>)) {
+        if (!(o instanceof Queue<?> queue)) {
             return false;
         }
 
-        Queue<?> queue = (Queue<?>) o;
         return Objects.equals(first, queue.first)
             && Objects.equals(last, queue.last);
     }
