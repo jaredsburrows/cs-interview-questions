@@ -23,11 +23,10 @@ public final class TrieNode<T> {
             return true;
         }
 
-        if (!(o instanceof TrieNode<?>)) {
+        if (!(o instanceof TrieNode<?> trieNode)) {
             return false;
         }
 
-        TrieNode<?> trieNode = (TrieNode<?>) o;
         return isEnd == trieNode.isEnd
             && Arrays.equals(children, trieNode.children);
     }

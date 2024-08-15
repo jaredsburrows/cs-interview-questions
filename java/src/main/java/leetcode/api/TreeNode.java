@@ -26,11 +26,10 @@ public final class TreeNode {
             return true;
         }
 
-        if (!(o instanceof TreeNode)) {
+        if (!(o instanceof TreeNode treeNode)) {
             return false;
         }
 
-        TreeNode treeNode = (TreeNode) o;
         return val == treeNode.val
             && Objects.equals(left, treeNode.left)
             && Objects.equals(right, treeNode.right);

@@ -20,11 +20,10 @@ public final class TreeNode<T> {
             return true;
         }
 
-        if (!(o instanceof TreeNode<?>)) {
+        if (!(o instanceof TreeNode<?> treeNode)) {
             return false;
         }
 
-        TreeNode<?> treeNode = (TreeNode<?>) o;
         return Objects.equals(value, treeNode.value)
             && Objects.equals(left, treeNode.left)
             && Objects.equals(right, treeNode.right);

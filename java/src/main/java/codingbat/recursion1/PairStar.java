@@ -10,9 +10,9 @@ public final class PairStar {
         }
 
         if (str.length() >= 2 && str.substring(0, 1).equals(str.substring(1, 2))) {
-            return str.substring(0, 1) + "*" + pairStar(str.substring(1));
+            return str.charAt(0) + "*" + pairStar(str.substring(1));
         } else {
-            return str.substring(0, 1) + pairStar(str.substring(1));
+            return str.charAt(0) + pairStar(str.substring(1));
         }
     }
 }

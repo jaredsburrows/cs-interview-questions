@@ -31,11 +31,10 @@ public final class Node {
             return true;
         }
 
-        if (!(o instanceof Node)) {
+        if (!(o instanceof Node node)) {
             return false;
         }
 
-        Node node = (Node) o;
         return val == node.val
             && Objects.equals(left, node.left)
             && Objects.equals(right, node.right)

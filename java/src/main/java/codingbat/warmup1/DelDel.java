@@ -9,7 +9,7 @@ public final class DelDel {
             return "";
         }
 
-        if (str.length() >= 4 && str.substring(1, 4).equals("del")) {
+        if (str.length() >= 4 && str.startsWith("del", 1)) {
             return str.charAt(0) + str.substring(4);
         } else {
             return str;

@@ -12,7 +12,7 @@ public final class NoX {
         if ("x".equals(str.substring(0, 1))) {
             return noX(str.substring(1));
         } else {
-            return str.substring(0, 1) + noX(str.substring(1));
+            return str.charAt(0) + noX(str.substring(1));
         }
     }
 }

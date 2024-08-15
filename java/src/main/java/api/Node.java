@@ -20,11 +20,10 @@ public final class Node<T> {
             return true;
         }
 
-        if (!(o instanceof Node<?>)) {
+        if (!(o instanceof Node<?> node)) {
             return false;
         }
 
-        Node<?> node = (Node<?>) o;
         return Objects.equals(value, node.value)
             && Objects.equals(next, node.next)
             && Objects.equals(previous, node.previous);

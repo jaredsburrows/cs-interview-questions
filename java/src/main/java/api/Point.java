@@ -25,11 +25,10 @@ public final class Point {
             return true;
         }
 
-        if (!(o instanceof Point)) {
+        if (!(o instanceof Point point)) {
             return false;
         }
 
-        Point point = (Point) o;
         return x == point.x && y == point.y;
     }
 

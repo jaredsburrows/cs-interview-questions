@@ -24,11 +24,10 @@ public final class ListNode {
             return true;
         }
 
-        if (!(o instanceof ListNode)) {
+        if (!(o instanceof ListNode listNode)) {
             return false;
         }
 
-        ListNode listNode = (ListNode) o;
         return val == listNode.val && Objects.equals(next, listNode.next);
     }
 

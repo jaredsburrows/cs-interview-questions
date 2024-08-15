@@ -31,11 +31,10 @@ public final class Trio<F, S, T> {
             return true;
         }
 
-        if (!(o instanceof Trio<?, ?, ?>)) {
+        if (!(o instanceof Trio<?, ?, ?> trio)) {
             return false;
         }
 
-        Trio<?, ?, ?> trio = (Trio<?, ?, ?>) o;
         return Objects.equals(first, trio.first)
             && Objects.equals(second, trio.second)
             && Objects.equals(third, trio.third);

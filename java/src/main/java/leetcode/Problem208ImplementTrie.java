@@ -6,7 +6,7 @@ package leetcode;
 @SuppressWarnings("ClassCanBeStatic") // Leetcode is not static
 public final class Problem208ImplementTrie {
     public class Trie {
-        private TrieNode root = new TrieNode();
+        private final TrieNode root = new TrieNode();
 
         public void insert(String word) {
             if (word == null) {

@@ -9,7 +9,7 @@ import java.util.Map;
 public final class WordCount {
     public Map<String, Integer> wordCount(String[] strings) {
         Map<String, Integer> map = new HashMap<>();
-        if (strings == null || strings.length == 0) {
+        if (strings == null) {
             return map;
         }
 

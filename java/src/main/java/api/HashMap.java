@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 // TODO add support to increase size of array
 public final class HashMap<K, V> {
     private static final int INITIAL_CAPACITY = 1 << 4;
-    private transient Entry<K, V>[] table;
+    private final transient Entry<K, V>[] table;
 
     public HashMap() {
         this(INITIAL_CAPACITY);
@@ -103,11 +103,10 @@ public final class HashMap<K, V> {
                 return true;
             }
 
-            if (!(o instanceof Entry)) {
+            if (!(o instanceof Entry<?, ?> entry)) {
                 return false;
             }
 
-            Entry<?, ?> entry = (Entry<?, ?>) o;
             return Objects.equals(key, entry.key)
                 && Objects.equals(value, entry.value);
         }

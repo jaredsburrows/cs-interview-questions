@@ -16,7 +16,7 @@ public final class Problem509FibonacciNumber {
         return fib(N - 1) + fib(N - 2);
     }
 
-    private Map<Integer, Integer> cache = new HashMap<>();
+    private final Map<Integer, Integer> cache = new HashMap<>();
 
     // memoization
     public int fib2(int N) {

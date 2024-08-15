@@ -18,11 +18,10 @@ public final class Employee {
             return true;
         }
 
-        if (!(o instanceof Employee)) {
+        if (!(o instanceof Employee employee)) {
             return false;
         }
 
-        Employee employee = (Employee) o;
         return id == employee.id
             && importance == employee.importance
             && Objects.equals(subordinates, employee.subordinates);

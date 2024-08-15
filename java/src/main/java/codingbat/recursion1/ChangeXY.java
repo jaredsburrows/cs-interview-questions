@@ -12,7 +12,7 @@ public final class ChangeXY {
         if ("x".equals(str.substring(0, 1))) {
             return "y" + changeXY(str.substring(1));
         } else {
-            return str.substring(0, 1) + changeXY(str.substring(1));
+            return str.charAt(0) + changeXY(str.substring(1));
         }
     }
 }

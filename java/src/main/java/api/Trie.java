@@ -80,11 +80,10 @@ public final class Trie<T> {
             return true;
         }
 
-        if (!(o instanceof Trie<?>)) {
+        if (!(o instanceof Trie<?> trie)) {
             return false;
         }
 
-        Trie<?> trie = (Trie<?>) o;
         return Objects.equals(root, trie.root);
     }
 

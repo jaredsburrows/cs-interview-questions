@@ -10,7 +10,7 @@ public final class Problem1115PrintFooBarAlternately {
     public final class FooBar {
         private final Semaphore fooSemaphore = new Semaphore(0);
         private final Semaphore barSemaphore = new Semaphore(1);
-        private int n;
+        private final int n;
 
         public FooBar(int n) {
             this.n = n;

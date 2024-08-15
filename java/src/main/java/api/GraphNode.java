@@ -27,11 +27,10 @@ public final class GraphNode<T> {
             return true;
         }
 
-        if (!(o instanceof GraphNode<?>)) {
+        if (!(o instanceof GraphNode<?> graphNode)) {
             return false;
         }
 
-        GraphNode<?> graphNode = (GraphNode<?>) o;
         return visited == graphNode.visited
             && Objects.equals(value, graphNode.value)
             && Objects.equals(next, graphNode.next)

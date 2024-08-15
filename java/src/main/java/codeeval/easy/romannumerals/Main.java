@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public final class Main {
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(new File(args[0]), Charset.defaultCharset().name());
+        Scanner scanner = new Scanner(new File(args[0]), Charset.defaultCharset());
 
         while (scanner.hasNext()) {
             String token = scanner.next();
