@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.versions)
     alias(libs.plugins.license) apply false
     id 'test-report-aggregation'
+    id 'idea'
 }
 
 allprojects {
@@ -18,6 +19,17 @@ allprojects {
             }
         }
     }
+
+    tasks.withType(Wrapper).configureEach {
+        distributionType = Wrapper.DistributionType.ALL
+    }
+
+    idea {
+        module {
+            downloadSources = true
+            downloadJavadoc = true
+        }
+    }
 }
 
 tasks.register('testReport', TestReport) {
@@ -28,10 +40,6 @@ tasks.register('testReport', TestReport) {
             testResults.from(testTask)
         }
     }
-}
-
-tasks.withType(Wrapper).configureEach {
-    distributionType = Wrapper.DistributionType.ALL
 }
 
 tasks.register('clean', Delete) {
