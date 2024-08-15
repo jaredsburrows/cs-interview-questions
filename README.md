@@ -6,25 +6,21 @@
 
 This is a collection of my personal solutions to practice interview questions. The repository is built using Gradle for continuous integration and delivery.
 
-## Code Eval
- - **Site:** https://codeeval.com
+## [Code Eval](https://codeeval.com) (Now defunct)
  - **My Profile:** https://codeeval.com/profile/jaredsburrows/
  - **My Solutions:** [java/src/main/java/codeeval](java/src/main/java/codeeval)
 
 
-## Coding Bat
- - **Site:** https://codingbat.com
+## [Coding Bat](https://codingbat.com)
  - **My Solutions:** [java/src/main/java/codingbat](java/src/main/java/codingbat)
 
 
-## Cracking The Code Interview
- - **Site:** https://careercup.com/book
+## [Cracking The Code Interview](https://careercup.com/book)
  - **Github:** https://github.com/gaylemcd/ctci
  - **My Solutions:** [java/src/main/java/crackingthecode](java/src/main/java/crackingthecode)
 
 
-## Github
- - **My Profile:** https://github.com/jaredsburrows
+## My [Github](https://github.com/jaredsburrows)
 
 <p>
 <picture>
@@ -41,13 +37,11 @@ This is a collection of my personal solutions to practice interview questions. T
 </p>
 
 
-## Leet Code
- - **Site:** https://leetcode.com
+## [Leet Code](https://leetcode.com)
  - **My Solutions:** [java/src/main/java/leetcode](java/src/main/java/leetcode)
 
 
-## Project Euler
- - **Site:** https://projecteuler.net
+## [Project Euler](https://projecteuler.net)
  - **My Solutions:** [java/src/main/java/projecteuler](java/src/main/java/projecteuler)
 <p>
 <img src="https://projecteuler.net/profile/jaredsburrows.png" alt="Project Euler">
@@ -58,22 +52,21 @@ This is a collection of my personal solutions to practice interview questions. T
  - **My Solutions:** [java/src/main/java/questions](java/src/main/java/questions)
 
 
-## Stack Overflow
- - **Site:** https://stackoverflow.com
+## [Stack Overflow](https://stackoverflow.com)
 <p>
 <a href="https://stackexchange.com/users/918082"><img src="https://stackexchange.com/users/flair/918082.png" alt="Stack Overflow"></a>
 </p>
 
 
 ## Others resources used
- - https://bigocheatsheet.com
- - https://geeksforgeeks.org
- - https://glassdoor.com
- - https://hackerrank.com
- - https://leetcode.com
- - https://programcreek.com
+ - [Big O Cheat Sheet](https://www.bigocheatsheet.com/)
+ - [Geeks For Geeks](https://www.geeksforgeeks.org/)
+ - [Glassdoor](https://www.glassdoor.com/index.htm)
+ - [Hacker Rank](https://www.hackerrank.com/)
+ - [Leetcode](https://leetcode.com/)
+ - [Program Creek](https://www.programcreek.com/)
    - https://programcreek.com/2012/11/top-10-algorithms-for-coding-interview
- - https://topcoder.com
+ - [Top Coder](https://www.topcoder.com/)
 
 
 ## Languages used
@@ -86,10 +79,10 @@ This is a collection of my personal solutions to practice interview questions. T
 
 
 ## Testing frameworks used
- - **CUnit** - (https://cunit.sourceforge.net) for C
- - **GTest** - (https://github.com/google/googletest) for C++
- - **Spek**  - (https://github.com/spekframework/spek) for Kotlin
- - **Spock** - (https://github.com/spockframework/spock) for Java
+ - **[CUnit](https://cunit.sourceforge.net)** - for C
+ - **[GTest](https://github.com/google/googletest)** - for C++
+ - **[Spek](https://github.com/spekframework/spek)**  - for Kotlin
+ - **[Spock](https://github.com/spockframework/spock)** - for Java and Groovy
 
 
 ## License
