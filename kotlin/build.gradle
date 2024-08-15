@@ -30,7 +30,6 @@ tasks.withType(KotlinJvmCompile).configureEach {
         freeCompilerArgs.add("-Xjsr305=strict")
         freeCompilerArgs.add("-Xemit-jvm-type-annotations")
         freeCompilerArgs.add("-Xassertions=jvm")
-        freeCompilerArgs.add("-Xproper-ieee754-comparisons")
         freeCompilerArgs.add("-Xjvm-default=all")
     }
 }
@@ -48,7 +47,6 @@ tasks.withType(Test).configureEach {
         events = ['failed', 'skipped']
     }
 
-    failFast = true
     def maxWorkerCount = gradle.startParameter.maxWorkerCount
     maxParallelForks = (maxWorkerCount < 2) ? 1 : maxWorkerCount / 2
 }
@@ -56,15 +54,12 @@ tasks.withType(Test).configureEach {
 dependencies {
     implementation platform(libs.kotlin.bom)
     implementation libs.kotlin.stdlib
-    implementation libs.kotlin.stdlib8
 
     testRuntimeOnly libs.spek.junit
     testRuntimeOnly libs.junit.engine
-    testRuntimeOnly libs.kotlin.reflect
 
     testImplementation libs.junit.api
     testImplementation libs.spek.jvm
     testImplementation libs.kotlin.test
-//    testImplementation libs.kotlin.junit // Cannot select module with conflict on capability
     testImplementation libs.kotlin.junit5
 }

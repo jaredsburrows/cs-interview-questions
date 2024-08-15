@@ -14,7 +14,7 @@ object ColorSpec : Spek({
 
         context("'values' size") {
             it("should only have 3 colors") {
-                assertEquals(Color.values().size, 3)
+                assertEquals(Color.entries.size, 3)
             }
         }
     }
