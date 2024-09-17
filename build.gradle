@@ -20,16 +20,16 @@ allprojects {
         }
     }
 
-    tasks.withType(Wrapper).configureEach {
-        distributionType = Wrapper.DistributionType.ALL
-    }
-
     idea {
         module {
             downloadSources = true
             downloadJavadoc = true
         }
     }
+}
+
+tasks.withType(Wrapper).configureEach {
+    distributionType = Wrapper.DistributionType.ALL
 }
 
 tasks.register('testReport', TestReport) {
