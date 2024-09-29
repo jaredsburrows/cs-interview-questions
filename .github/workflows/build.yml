@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v4.1.7
+        uses: actions/checkout@v4.2.0
 
       - name: Configure JDK ${{ env.JAVA_VERSION }}
         uses: actions/setup-java@v4.3.0
@@ -89,7 +89,7 @@ jobs:
 
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v4.1.7
+        uses: actions/checkout@v4.2.0
         with:
           fetch-depth: 0  # Fetch all history for all branches and tags
 
