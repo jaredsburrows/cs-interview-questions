@@ -1,6 +1,6 @@
 [versions]
 # libraries
-junit = "5.11.0"
+junit = "5.11.1"
 spek = "2.0.19"
 # language
 java = "11"
