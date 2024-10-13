@@ -14,7 +14,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
     public AsyncTask() {
         onPreExecute();
 
-        workerRunnable = new WorkerRunnable<Params, Result>() {
+        workerRunnable = new WorkerRunnable<>() {
             @Override
             public Result call() throws Exception {
                 Result result = null;
@@ -30,7 +30,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
             }
         };
 
-        futureTask = new FutureTask<Result>(workerRunnable) {
+        futureTask = new FutureTask<>(workerRunnable) {
             @Override
             protected void done() {
                 try {

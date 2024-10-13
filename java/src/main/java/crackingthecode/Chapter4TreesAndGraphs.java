@@ -135,7 +135,7 @@ public final class Chapter4TreesAndGraphs {
             level++;
 
             // if there are no children at this level, stop
-            if (queue.size() > 0) {
+            if (!queue.isEmpty()) {
                 queues.add(level, queue);
             } else {
                 break;

@@ -10,7 +10,7 @@ public final class Problem125ValidPalindrome {
             return false;
         }
 
-        if (s.isEmpty() || s.length() < 2) {
+        if (s.length() < 2) {
             return true;
         }
 
