@@ -10,10 +10,6 @@ import java.util.Queue;
  */
 public final class Problem451SortCharactersByFrequency {
     public String frequencySort(String s) {
-        if (s == null || s.isEmpty()) {
-            return "";
-        }
-
         Map<Character, Integer> map = new HashMap<>();
         for (char c : s.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
@@ -29,9 +25,7 @@ public final class Problem451SortCharactersByFrequency {
             char c = entry.getKey();
             int count = entry.getValue();
 
-            for (int i = 0; i < count; i++) {
-                stringBuilder.append(c);
-            }
+            stringBuilder.append(String.valueOf(c).repeat(Math.max(0, count)));
         }
 
         return stringBuilder.toString();

@@ -5,7 +5,7 @@ package codingbat.recursion1;
  */
 public final class CountAbc {
     public int countAbc(String str) {
-        if (str == null || str.isEmpty() || str.length() < 3) {
+        if (str == null || str.length() < 3) {
             return 0;
         }
 

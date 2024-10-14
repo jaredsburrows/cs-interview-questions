@@ -24,8 +24,8 @@ public final class Problem165CompareVersionNumbers {
         int length = Math.max(left.length, right.length);
 
         for (int i = 0; i < length; i++) {
-            Integer v1 = i < left.length ? Integer.valueOf(left[i]) : 0;
-            Integer v2 = i < right.length ? Integer.valueOf(right[i]) : 0;
+            Integer v1 = i < left.length ? Integer.parseInt(left[i]) : 0;
+            Integer v2 = i < right.length ? Integer.parseInt(right[i]) : 0;
             int compare = v1.compareTo(v2);
             if (compare != 0) {
                 return compare;

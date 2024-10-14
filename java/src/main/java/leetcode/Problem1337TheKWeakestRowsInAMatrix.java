@@ -22,7 +22,7 @@ public final class Problem1337TheKWeakestRowsInAMatrix {
         int[] array = new int[k];
 
         for (int i = 0; i < mat.length; i++) {
-            queue.offer(new AbstractMap.SimpleEntry<Integer, Integer>(i, countOnes(mat[i])));
+            queue.offer(new AbstractMap.SimpleEntry<>(i, countOnes(mat[i])));
         }
 
         for (int i = 0; i < k; i++) {

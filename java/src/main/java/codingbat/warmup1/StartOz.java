@@ -9,11 +9,11 @@ public final class StartOz {
             return "";
         }
 
-        if (str.length() >= 2 && str.startsWith("oz")) {
+        if (str.startsWith("oz")) {
             return "oz";
-        } else if (str.length() >= 1 && str.charAt(0) == 'o') {
+        } else if (!str.isEmpty() && str.charAt(0) == 'o') {
             return "o";
-        } else if (str.length() >= 1 && str.charAt(1) == 'z') {
+        } else if (!str.isEmpty() && str.charAt(1) == 'z') {
             return "z";
         } else {
             return "";
