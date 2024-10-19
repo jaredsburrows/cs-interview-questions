@@ -53,7 +53,8 @@ jobs:
         if: always()
         with:
           check_name: "Unit Test Results"
-          comment_mode: off
+          comment_mode: failures
+          action_fail_on_inconclusive: true
           files: |
             **/build/test-results/**/TEST-*.xml
 
@@ -81,7 +82,7 @@ jobs:
             kotlin/build/test-results
 
   publish:
-    name: Publish Snapshot
+    name: Publish
     runs-on: ubuntu-latest
     if: github.repository == 'jaredsburrows/gradle-license-plugin' && github.ref == 'refs/heads/master'
     needs:

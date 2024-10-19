@@ -36,11 +36,9 @@ tasks.withType(KotlinJvmCompile).configureEach {
     }
 }
 
-test {
-    useJUnitPlatform()
-}
-
 tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+
     testLogging {
         exceptionFormat = TestExceptionFormat.FULL
         showCauses = true

@@ -5,26 +5,10 @@ plugins {
     id 'idea'
 }
 
-allprojects {
-    configurations.configureEach {
-        resolutionStrategy {
-            preferProjectModules()
-
-            enableDependencyVerification()
-
-            eachDependency { details ->
-                if (details.requested.group == 'org.jetbrains.kotlin') {
-                    details.useVersion libs.versions.kotlin.get()
-                }
-            }
-        }
-    }
-
-    idea {
-        module {
-            downloadSources = true
-            downloadJavadoc = true
-        }
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
     }
 }
 
