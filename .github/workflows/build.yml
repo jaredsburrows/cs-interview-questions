@@ -37,7 +37,7 @@ jobs:
       - run: ./gradlew --version
 
       - name: Cache Gradle dependencies
-        uses: actions/cache@v4.1.1
+        uses: actions/cache@v4.1.2
         with:
           path: |
             ~/.gradle/caches
