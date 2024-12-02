@@ -26,13 +26,15 @@ tasks.withType(KotlinCompilationTask.class).configureEach {
 tasks.withType(KotlinJvmCompile).configureEach {
     compilerOptions {
         jvmTarget.set(JvmTarget.JVM_17)
-        languageVersion.set(KotlinVersion.KOTLIN_2_0)
-        apiVersion.set(KotlinVersion.KOTLIN_2_0)
-        freeCompilerArgs.add("-progressive")
-        freeCompilerArgs.add("-Xjsr305=strict")
-        freeCompilerArgs.add("-Xemit-jvm-type-annotations")
-        freeCompilerArgs.add("-Xassertions=jvm")
-        freeCompilerArgs.add("-Xjvm-default=all")
+        languageVersion.set(KotlinVersion.KOTLIN_2_1)
+        apiVersion.set(KotlinVersion.KOTLIN_2_1)
+        freeCompilerArgs.addAll([
+            "-progressive",
+            "-Xjsr305=strict",
+            "-Xemit-jvm-type-annotations",
+            "-Xassertions=jvm",
+            "-Xjvm-default=all"
+        ])
     }
 }
 

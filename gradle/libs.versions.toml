@@ -4,7 +4,7 @@ junit = "5.11.3"
 spek = "2.0.19"
 # language
 java = "11"
-kotlin = "2.0.21"
+kotlin = "2.1.0"
 
 [plugins]
 asciidoctor = { id = "org.asciidoctor.jvm.convert", version = "4.0.3" }
@@ -22,6 +22,6 @@ spek-junit = { module = "org.spekframework.spek2:spek-runner-junit5", version.re
 spek-jvm = { module = "org.spekframework.spek2:spek-dsl-jvm", version.ref = "spek" }
 findbugs = { module = "com.google.code.findbugs:jsr305", version = "3.0.2" }
 equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version = "3.17.4" }
-spockcore = { module = "org.spockframework:spock-core", version = "2.2-M1-groovy-3.0" } # 2.2-M3-groovy-4.0
+spockcore = { module = "org.spockframework:spock-core", version = "2.2-M3-groovy-3.0" } # 2.2-M3-groovy-4.0
 junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
