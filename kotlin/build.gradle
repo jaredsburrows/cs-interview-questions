@@ -12,7 +12,7 @@ plugins {
 
 kotlin {
     jvmToolchain {
-        languageVersion.set(JavaLanguageVersion.of(JavaVersion.VERSION_17.toString()))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
@@ -43,10 +43,10 @@ tasks.withType(Test).configureEach {
 
     testLogging {
         exceptionFormat = TestExceptionFormat.FULL
+        events = [TestLogEvent.FAILED, TestLogEvent.SKIPPED]
         showCauses = true
         showExceptions = true
         showStackTraces = true
-        events = [TestLogEvent.FAILED, TestLogEvent.SKIPPED]
     }
 
     def maxWorkerCount = gradle.startParameter.maxWorkerCount

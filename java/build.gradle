@@ -8,36 +8,21 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(JavaVersion.VERSION_17.toString()))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
 tasks.withType(JavaCompile).configureEach {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-
-    configure(options) {
-        compilerArgs << '-Xlint:all'
-        compilerArgs << '-Xlint:-options'
-        encoding = 'utf-8'
-        fork = true
-    }
+    options.compilerArgs.addAll(['-Xlint:all', '-Xlint:-options'])
+    options.encoding = 'UTF-8'
+    options.fork = true
 }
 
 tasks.withType(GroovyCompile).configureEach {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-
-    configure(options) {
-        compilerArgs << '-Xlint:all'
-        compilerArgs << '-Xlint:-options'
-        encoding = 'utf-8'
-        fork = true
-    }
+    options.compilerArgs.addAll(['-Xlint:all', '-Xlint:-options'])
+    options.encoding = 'UTF-8'
+    options.fork = true
 }
 
 tasks.withType(Test).configureEach {
@@ -45,10 +30,10 @@ tasks.withType(Test).configureEach {
 
     testLogging {
         exceptionFormat = TestExceptionFormat.FULL
+        events = [TestLogEvent.FAILED, TestLogEvent.SKIPPED]
         showCauses = true
         showExceptions = true
         showStackTraces = true
-        events = [TestLogEvent.FAILED, TestLogEvent.SKIPPED]
     }
 
     def maxWorkerCount = gradle.startParameter.maxWorkerCount
