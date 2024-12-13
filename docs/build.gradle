@@ -3,19 +3,21 @@ plugins {
 }
 
 tasks.named("asciidoctor").configure {
-    def process = 'git rev-list --count HEAD origin/master'.execute([], rootDir)
+    def gitCommitCountCommand = 'git rev-list --count HEAD origin/master'
+    def process = gitCommitCountCommand.execute(null, rootDir)
     if (process.waitFor() != 0) {
-        throw new RuntimeException(process.errorStream.text)
+        throw new GradleException("Error executing Git command: ${process.errorStream.text.trim()}")
     }
 
     baseDirFollowsSourceDir()
     sourceDir 'src/main/asciidoc'
+
     attributes = [
         'title'    : 'CS Interview Practice',
         'author'   : 'Jared Burrows',
         'email'    : 'jaredsburrows@gmail.com',
         'toc'      : 'left',
         'toclevels': 2,
-        'revnumber': "\"${process.text.trim()}\""
+        'revnumber': process.text.trim()
     ]
 }
