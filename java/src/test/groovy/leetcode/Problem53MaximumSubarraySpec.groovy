@@ -10,6 +10,7 @@ final class Problem53MaximumSubarraySpec extends Specification {
 
         expect:
         sut.maxSubArray(nums as int[]) == answer
+        sut.maxSubArray2(nums as int[]) == answer
 
         where:
         nums                            || answer
