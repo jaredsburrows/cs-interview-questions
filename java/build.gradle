@@ -48,9 +48,9 @@ dependencies {
     compileOnly libs.findbugs
 
     testImplementation platform(libs.junit.bom)
-    testRuntimeOnly(libs.junit.platform.launcher)
-    testRuntimeOnly(libs.junit.jupiter.engine)
-    testRuntimeOnly(libs.junit.vintage.engine)
+    testRuntimeOnly libs.junit.platform.launcher
+    testRuntimeOnly libs.junit.jupiter.engine
+    testRuntimeOnly libs.junit.vintage.engine
 
     testImplementation localGroovy()
     testImplementation libs.spockcore, { exclude module: 'groovy-all' } // Use localGroovy()

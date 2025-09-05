@@ -33,7 +33,6 @@ tasks.withType(KotlinJvmCompile).configureEach {
         languageVersion.set(KotlinVersion.KOTLIN_2_1)
         apiVersion.set(KotlinVersion.KOTLIN_2_1)
         freeCompilerArgs.addAll([
-            "-progressive",
             "-Xjsr305=strict",
             "-Xemit-jvm-type-annotations",
             "-Xassertions=jvm",
@@ -63,9 +62,9 @@ dependencies {
 
     testRuntimeOnly libs.spek.junit
     testImplementation platform(libs.junit.bom)
-    testRuntimeOnly(libs.junit.platform.launcher)
-    testRuntimeOnly(libs.junit.jupiter.engine)
-    testRuntimeOnly(libs.junit.vintage.engine)
+    testRuntimeOnly libs.junit.platform.launcher
+    testRuntimeOnly libs.junit.jupiter.engine
+    testRuntimeOnly libs.junit.vintage.engine
 
     testImplementation libs.junit.api
     testImplementation libs.spek.jvm
