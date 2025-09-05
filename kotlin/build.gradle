@@ -16,6 +16,10 @@ kotlin {
     }
 }
 
+test {
+    useJUnitPlatform()
+}
+
 tasks.withType(KotlinCompilationTask.class).configureEach {
     compilerOptions {
         allWarningsAsErrors = true
@@ -58,7 +62,10 @@ dependencies {
     implementation libs.kotlin.stdlib
 
     testRuntimeOnly libs.spek.junit
-    testRuntimeOnly libs.junit.engine
+    testImplementation platform(libs.junit.bom)
+    testRuntimeOnly(libs.junit.platform.launcher)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testRuntimeOnly(libs.junit.vintage.engine)
 
     testImplementation libs.junit.api
     testImplementation libs.spek.jvm

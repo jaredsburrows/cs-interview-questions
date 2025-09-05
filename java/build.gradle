@@ -13,6 +13,10 @@ java {
     }
 }
 
+test {
+    useJUnitPlatform()
+}
+
 tasks.withType(JavaCompile).configureEach {
     options.compilerArgs.addAll(['-Xlint:all', '-Xlint:-options'])
     options.encoding = 'UTF-8'
@@ -43,7 +47,10 @@ tasks.withType(Test).configureEach {
 dependencies {
     compileOnly libs.findbugs
 
-    testRuntimeOnly libs.junit.engine
+    testImplementation platform(libs.junit.bom)
+    testRuntimeOnly(libs.junit.platform.launcher)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testRuntimeOnly(libs.junit.vintage.engine)
 
     testImplementation localGroovy()
     testImplementation libs.spockcore, { exclude module: 'groovy-all' } // Use localGroovy()

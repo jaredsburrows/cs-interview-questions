@@ -1,6 +1,6 @@
 [versions]
 # libraries
-junit = "5.11.4"
+junit = "5.13.4"
 spek = "2.0.19"
 # language
 java = "11"
@@ -9,19 +9,22 @@ kotlin = "2.1.21"
 [plugins]
 asciidoctor = { id = "org.asciidoctor.jvm.convert", version = "4.0.5" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-versions = { id = "com.github.ben-manes.versions", version = "0.52.0" }
 license = { id = "com.jaredsburrows.license", version = "0.9.8" }
+versions = { id = "com.github.ben-manes.versions", version = "0.52.0" }
 
 [libraries]
+equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version = "4.1" }
+findbugs = { module = "com.google.code.findbugs:jsr305", version = "3.0.2" }
+junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version = "1.13.4" }
+junit-vintage-engine = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit" }
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
-kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
-kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 kotlin-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 spek-junit = { module = "org.spekframework.spek2:spek-runner-junit5", version.ref = "spek" }
 spek-jvm = { module = "org.spekframework.spek2:spek-dsl-jvm", version.ref = "spek" }
-findbugs = { module = "com.google.code.findbugs:jsr305", version = "3.0.2" }
-equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version = "4.1" }
-spockcore = { module = "org.spockframework:spock-core", version = "2.2-M3-groovy-3.0" } # 2.2-M3-groovy-4.0
-junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
-junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
+spockcore = { module = "org.spockframework:spock-core", version = "2.2-M3-groovy-4.0" }
