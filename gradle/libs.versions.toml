@@ -7,7 +7,7 @@ spek = "2.0.19"
 asciidoctor = { id = "org.asciidoctor.jvm.convert", version = "4.0.5" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 license = { id = "com.jaredsburrows.license", version = "0.9.8" }
-versions = { id = "com.github.ben-manes.versions", version = "0.52.0" }
+versions = { id = "com.github.ben-manes.versions", version = "0.53.0" }
 
 [libraries]
 equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version = "4.1.1" }
