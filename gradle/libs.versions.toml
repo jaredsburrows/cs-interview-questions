@@ -10,7 +10,7 @@ license = { id = "com.jaredsburrows.license", version = "0.9.8" }
 versions = { id = "com.github.ben-manes.versions", version = "0.53.0" }
 
 [libraries]
-equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version = "4.2.3" }
+equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version = "4.2.4" }
 findbugs = { module = "com.google.code.findbugs:jsr305", version = "3.0.2" }
 junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
