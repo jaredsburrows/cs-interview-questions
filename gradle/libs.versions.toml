@@ -1,6 +1,6 @@
 [versions]
 junit = "6.0.1"
-kotlin = "2.2.21"
+kotlin = "2.3.0"
 spek = "2.0.19"
 
 [plugins]
