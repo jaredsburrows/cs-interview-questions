@@ -19,22 +19,11 @@ test {
     useJUnitPlatform()
 }
 
-tasks.withType(KotlinCompilationTask.class).configureEach {
-    compilerOptions {
-        allWarningsAsErrors = true
-        jvmTarget = JvmTarget.JVM_17
-    }
-}
-
 tasks.withType(KotlinJvmCompile).configureEach {
     compilerOptions {
         jvmTarget.set(JvmTarget.JVM_17)
-        freeCompilerArgs.addAll([
-            "-Xjsr305=strict",
-            "-Xemit-jvm-type-annotations",
-            "-Xassertions=jvm",
-            "-Xjvm-default=all"
-        ])
+        extraWarnings.set(true)
+        allWarningsAsErrors.set(true)
     }
 }
 
