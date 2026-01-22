@@ -24,4 +24,4 @@ kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 spek-junit = { module = "org.spekframework.spek2:spek-runner-junit5", version.ref = "spek" }
 spek-jvm = { module = "org.spekframework.spek2:spek-dsl-jvm", version.ref = "spek" }
-spockcore = { module = "org.spockframework:spock-core", version = "2.4-M6-groovy-4.0" }
+spockcore = { module = "org.spockframework:spock-core", version = "2.4-groovy-4.0" }
