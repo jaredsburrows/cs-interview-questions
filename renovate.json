@@ -3,5 +3,17 @@
   "extends": [
     "config:recommended"
   ],
-  "semanticCommits": "disabled"
+  "semanticCommits": "disabled",
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": true
+    }
+  ]
 }
