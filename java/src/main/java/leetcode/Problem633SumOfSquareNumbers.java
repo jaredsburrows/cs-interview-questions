@@ -5,7 +5,8 @@ package leetcode;
  */
 public final class Problem633SumOfSquareNumbers {
     public boolean judgeSquareSum(int c) {
-        for (int i = 0; i <= Math.sqrt(c); i++) {
+        int limit = (int) Math.sqrt(c);
+        for (int i = 0; i <= limit; i++) {
             double sqrt = Math.sqrt(c - i * i);
             if (Math.floor(sqrt) == sqrt) {
                 return true;
