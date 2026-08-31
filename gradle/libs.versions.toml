@@ -1,21 +1,21 @@
 [versions]
-junit = "6.1.0"
-kotlin = "2.4.0"
+junit = "6.1.3"
+kotlin = "2.4.10"
 spek = "2.0.19"
 
 [plugins]
 asciidoctor = { id = "org.asciidoctor.jvm.convert", version = "4.0.5" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 license = { id = "com.jaredsburrows.license", version = "0.9.9" }
-versions = { id = "com.github.ben-manes.versions", version = "0.54.0" }
+versions = { id = "com.github.ben-manes.versions", version = "0.61.0" }
 
 [libraries]
-equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version = "4.5" }
+equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version = "4.5.2" }
 findbugs = { module = "com.google.code.findbugs:jsr305", version = "3.0.2" }
 junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
-junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version = "6.1.0" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version = "6.1.3" }
 junit-vintage-engine = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit" }
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
 kotlin-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
