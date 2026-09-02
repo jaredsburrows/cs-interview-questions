@@ -17,7 +17,7 @@ public final class Problem204CountPrimes {
 
         Arrays.fill(primes, 1, n, true);
 
-        for (int i = 2; i <= Math.sqrt(n - 1); i++) {
+        for (int i = 2; i <= (n - 1) / i; i++) {
             if (primes[i]) {
                 for (int j = i * 2; j < n; j += i) {
                     primes[j] = false;
