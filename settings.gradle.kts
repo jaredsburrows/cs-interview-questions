@@ -42,7 +42,6 @@ rootProject.name = "cs-interview-questions"
 
 include("c")
 include("cpp")
-include("docs")
 include("googletest")
 include("java")
 include("kotlin")

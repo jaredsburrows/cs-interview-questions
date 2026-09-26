@@ -18,8 +18,7 @@ tasks.withType<Wrapper>().configureEach {
 
 tasks.register<TestReport>("testReport") {
     description = "Runs the test report."
-    dependsOn(project(":docs").tasks.named("asciidoctor"))
-    destinationDirectory.set(project(":docs").file("build/docs/asciidoc/tests"))
+    destinationDirectory.set(layout.buildDirectory.dir("reports/tests/aggregate"))
     subprojects.forEach { sub ->
         sub.tasks.withType<Test>().forEach { testTask ->
             testResults.from(testTask)
