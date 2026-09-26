@@ -20,7 +20,6 @@ fun compilerArgsFor(toolChain: NativeToolChain): List<String> =
 library {
     baseName.set("main")
     linkage.set(listOf(Linkage.STATIC, Linkage.SHARED))
-    publicHeaders.from("src/main/include")
 
     binaries.configureEach {
         compileTask.get().compilerArgs.addAll(compilerArgsFor(toolChain))
@@ -33,7 +32,6 @@ tasks.named("assemble") {
 
 unitTest {
     baseName.set("mainTest")
-    privateHeaders.from("src/test/include")
     dependencies {
         implementation(project(":googletest"))
     }

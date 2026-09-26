@@ -20,7 +20,6 @@ fun compilerArgsFor(toolChain: NativeToolChain): List<String> =
 library {
     baseName.set("main")
     linkage.set(listOf(Linkage.STATIC, Linkage.SHARED))
-    publicHeaders.from("src/main/include")
 
     binaries.configureEach {
         compileTask.get().source.from(fileTree("src/main/c") { include("**/*.c") })
