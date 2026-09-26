@@ -2,7 +2,6 @@ import org.gradle.nativeplatform.Linkage
 import org.gradle.nativeplatform.toolchain.Clang
 import org.gradle.nativeplatform.toolchain.Gcc
 import org.gradle.nativeplatform.toolchain.VisualCpp
-import java.io.File
 import java.security.MessageDigest
 
 plugins {
