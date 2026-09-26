@@ -8,7 +8,7 @@ plugins {
 }
 
 // Pinned here rather than in the version catalog: the artifact comes from GitHub releases, not a Maven repository.
-val googleTestVersion = "1.15.2"
+val googleTestVersion = "1.18.0"
 
 val googleTestArchive = configurations.create("googleTestArchive") {
     isCanBeConsumed = false
@@ -27,6 +27,7 @@ interface ArchiveOperationsProvider {
 val archiveOperations = objects.newInstance<ArchiveOperationsProvider>().archiveOperations
 
 val unpackGoogleTest = tasks.register<Sync>("unpackGoogleTest") {
+    description = "Unpacks the Google Test archive"
     val archives = archiveOperations
     from(googleTestArchive.elements.map { elements -> archives.tarTree(archives.gzip(elements.single().asFile)) })
     into(layout.buildDirectory.dir("unpacked"))
@@ -43,9 +44,9 @@ library {
     binaries.configureEach {
         val tc = toolChain
         compileTask.get().compilerArgs.addAll(
-            when {
-                tc is Gcc || tc is Clang -> listOf("-std=c++20")
-                tc is VisualCpp -> listOf("/std:c++20")
+            when (tc) {
+                is Gcc, is Clang -> listOf("-std=c++17")
+                is VisualCpp -> listOf("/std:c++17")
                 else -> emptyList()
             }
         )
