@@ -12,7 +12,7 @@ plugins {
 
 fun compilerArgsFor(toolChain: NativeToolChain): List<String> =
     when (toolChain) {
-        is Gcc, is Clang -> listOf("-x", "c", "-std=c11", "-Wall", "-Wextra", "-O3", "-pedantic")
+        is Gcc, is Clang -> listOf("-x", "c", "-std=c17", "-Wall", "-Wextra", "-O3", "-pedantic")
         is VisualCpp -> listOf("/TC", "/Wall", "/Wx", "/O1", "/O2", "/Ox")
         else -> emptyList()
     }
@@ -20,7 +20,6 @@ fun compilerArgsFor(toolChain: NativeToolChain): List<String> =
 library {
     baseName.set("main")
     linkage.set(listOf(Linkage.STATIC, Linkage.SHARED))
-    publicHeaders.from("src/main/include")
 
     binaries.configureEach {
         compileTask.get().source.from(fileTree("src/main/c") { include("**/*.c") })
@@ -39,7 +38,7 @@ unitTest {
     }
     binaries.configureEach(CppTestExecutable::class.java) {
         val tc = toolChain
-        // The tests are C++ (GoogleTest); only the library is compiled as C11.
+        // The tests are C++ (GoogleTest); only the library is compiled as C17.
         compileTask.get().compilerArgs.addAll(
             when (tc) {
                 is Gcc, is Clang -> listOf("-std=c++17", "-Wall", "-Wextra", "-O3", "-pedantic")
