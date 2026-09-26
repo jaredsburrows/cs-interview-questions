@@ -121,7 +121,7 @@ jobs:
           python-version: 3.14.7
 
       - name: Install MkDocs Material
-        run: pip install mkdocs-material
+        run: pip install -r .github/requirements-docs.txt
 
       - name: Copy docs
         run: |
