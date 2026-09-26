@@ -12,8 +12,7 @@ plugins {
 
 fun compilerArgsFor(toolChain: NativeToolChain): List<String> =
     when (toolChain) {
-//        is Gcc, is Clang -> listOf("-std=c++20", "-Wall", "-Wextra", "-Werror", "-O3", "-pedantic")
-        is Gcc, is Clang -> listOf("-std=c++20", "-Wall", "-Wextra", "-O3", "-pedantic")
+        is Gcc, is Clang -> listOf("-std=c++17", "-Wall", "-Wextra", "-O3", "-pedantic")
         is VisualCpp -> listOf("/Wall", "/Wx", "/O1", "/O2", "/Ox")
         else -> emptyList()
     }
@@ -39,15 +38,7 @@ unitTest {
         implementation(project(":googletest"))
     }
     binaries.configureEach(CppTestExecutable::class.java) {
-        val tc = toolChain
-        // The project compiles C++ as C++20, so the test binary uses the same standard as the library.
-        compileTask.get().compilerArgs.addAll(
-            when {
-                tc is Gcc || tc is Clang -> listOf("-std=c++20", "-Wall", "-Wextra", "-O3", "-pedantic")
-                tc is VisualCpp -> listOf("/std:c++20", "/Wall", "/Wx", "/O1", "/O2", "/Ox")
-                else -> emptyList()
-            }
-        )
+        compileTask.get().compilerArgs.addAll(compilerArgsFor(toolChain))
         if (targetMachine.operatingSystemFamily.isLinux) {
             linkTask.get().linkerArgs.add("-pthread")
         }

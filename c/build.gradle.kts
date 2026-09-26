@@ -10,10 +10,8 @@ plugins {
     `cpp-unit-test`
 }
 
-// cpp-library compiles with the C++ driver; "-x c" (Gcc/Clang) and "/TC" (VisualCpp) switch it to C.
 fun compilerArgsFor(toolChain: NativeToolChain): List<String> =
     when (toolChain) {
-//        is Gcc, is Clang -> listOf("-x", "c", "-std=c11", "-Wall", "-Wextra", "-Werror", "-O3", "-pedantic")
         is Gcc, is Clang -> listOf("-x", "c", "-std=c11", "-Wall", "-Wextra", "-O3", "-pedantic")
         is VisualCpp -> listOf("/TC", "/Wall", "/Wx", "/O1", "/O2", "/Ox")
         else -> emptyList()
@@ -41,11 +39,11 @@ unitTest {
     }
     binaries.configureEach(CppTestExecutable::class.java) {
         val tc = toolChain
-        // The project compiles C++ as C++20, so the test binary uses the same standard as the library.
+        // The tests are C++ (GoogleTest); only the library is compiled as C11.
         compileTask.get().compilerArgs.addAll(
-            when {
-                tc is Gcc || tc is Clang -> listOf("-std=c++20", "-Wall", "-Wextra", "-O3", "-pedantic")
-                tc is VisualCpp -> listOf("/std:c++20", "/Wall", "/Wx", "/O1", "/O2", "/Ox")
+            when (tc) {
+                is Gcc, is Clang -> listOf("-std=c++17", "-Wall", "-Wextra", "-O3", "-pedantic")
+                is VisualCpp -> listOf("/std:c++17", "/Wall", "/Wx", "/O1", "/O2", "/Ox")
                 else -> emptyList()
             }
         )
