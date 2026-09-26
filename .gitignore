@@ -353,3 +353,7 @@ obj/
 .copilot/
 .codex/
 .team/
+
+# MkDocs (generated in CI)
+docs/
+site/

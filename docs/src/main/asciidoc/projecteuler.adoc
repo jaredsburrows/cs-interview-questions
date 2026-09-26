@@ -1,9 +1,0 @@
-= ProjectEuler
-
-*Site:* https://projecteuler.net/
-
-*My Solutions:* link:java/rc/main/java/projecteuler[https://github.com/jaredsburrows/cs-interview-questions/tree/master/java/src/main/java/projecteuler]
-
-*My Profile:*
-
-image::https://projecteuler.net/profile/jaredsburrows.png[Profile]

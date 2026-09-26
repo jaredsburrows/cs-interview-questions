@@ -1,7 +1,0 @@
-= LeetCode
-
-*Site:* https://leetcode.com/
-
-*My Solutions:* link:java/src/main/java/leetcode[https://github.com/jaredsburrows/cs-interview-questions/tree/master/java/src/main/java/leetcode]
-
-*My Profile:* https://leetcode.com/jaredsburrows/

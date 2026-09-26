@@ -1,7 +1,0 @@
-= CodeEval
-
-*Site:* https://codeeval.com/
-
-*My Solutions:* link:java/src/main/java/codeeval[https://github.com/jaredsburrows/cs-interview-questions/tree/master/java/src/main/java/codeeval]
-
-*My Profile:* https://codeeval.com/profile/jaredsburrows/

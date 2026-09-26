@@ -1,3 +1,0 @@
-= Api
-
-Common classes used across solutions.

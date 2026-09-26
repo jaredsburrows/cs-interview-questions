@@ -74,7 +74,6 @@ jobs:
             cpp/build/install
             cpp/build/libs
             cpp/build/test-results
-            docs/build/docs/asciidoc
             java/build/libs
             java/build/reports
             java/build/test-results
@@ -88,14 +87,19 @@ jobs:
     if: github.repository == 'jaredsburrows/cs-interview-questions' && github.ref == 'refs/heads/master'
     needs:
       - build
+
     permissions:
-      contents: write
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout Project
         uses: actions/checkout@v7.0.1
-        with:
-          fetch-depth: 0  # Fetch all history for all branches and tags
 
       - name: Configure JDK ${{ env.JAVA_VERSION }}
         uses: actions/setup-java@v6.0.1
@@ -106,15 +110,33 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
         with:
-          gradle-home-cache-cleanup: true
+          cache-cleanup: on-success
 
-      - name: Run Asciidoctor
-        run: ./gradlew asciidoctor testReport -s
+      - name: Generate Test Report
+        run: ./gradlew testReport -s
 
-      - name: Publish Website
-        uses: peaceiris/actions-gh-pages@v4.1.0
+      - name: Install Python
+        uses: actions/setup-python@v7.0.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/build/docs/asciidoc
-          user_name: "Github Actions"
-          user_email: "action@github.com"
+          python-version: 3.14.7
+
+      - name: Install MkDocs Material
+        run: pip install -r .github/requirements-docs.txt
+
+      - name: Copy docs
+        run: |
+          mkdir -p docs
+          sed -E 's#\]\(((c|cpp|java|kotlin|python)/[^)]*)\)#](https://github.com/jaredsburrows/cs-interview-questions/tree/master/\1)#g' README.md > docs/index.md
+          cp -R build/reports/tests/aggregate docs/tests
+
+      - name: Build MkDocs
+        run: mkdocs build --strict
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v5.0.0
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5.0.1

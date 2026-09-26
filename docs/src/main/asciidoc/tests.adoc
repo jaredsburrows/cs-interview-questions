@@ -1,3 +1,0 @@
-= Tests
-
-Here is the output of the tests: link:[https://jaredsburrows.github.io/cs-interview-questions/tests/]
