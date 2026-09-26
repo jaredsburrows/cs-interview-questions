@@ -88,6 +88,8 @@ jobs:
     if: github.repository == 'jaredsburrows/cs-interview-questions' && github.ref == 'refs/heads/master'
     needs:
       - build
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Project
