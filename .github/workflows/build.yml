@@ -126,7 +126,7 @@ jobs:
       - name: Copy docs
         run: |
           mkdir -p docs
-          cp README.md docs/index.md
+          sed -E 's#\]\(((c|cpp|java|kotlin|python)/[^)]*)\)#](https://github.com/jaredsburrows/cs-interview-questions/tree/master/\1)#g' README.md > docs/index.md
           cp -R build/reports/tests/aggregate docs/tests
 
       - name: Build MkDocs
