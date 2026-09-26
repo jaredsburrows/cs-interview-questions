@@ -23,9 +23,7 @@ public final class Chapter2LinkedLists {
 
         while (current != null) {
             if (integers.contains(current.value)) {
-                if (previous != null) {
-                    previous.next = current.next;
-                }
+                previous.next = current.next;
             } else {
                 integers.add(current.value);
                 previous = current;

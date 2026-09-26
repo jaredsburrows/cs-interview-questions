@@ -12,9 +12,9 @@ public final class TrieNode<T> {
         this(ALPHABET_COUNT);
     }
 
-    @SuppressWarnings({"rawtypes", "unchecked"})
+    @SuppressWarnings("unchecked")
     public TrieNode(int capacity) {
-        children = (TrieNode<T>[]) new TrieNode[capacity];
+        children = (TrieNode<T>[]) new TrieNode<?>[capacity];
     }
 
     @Override

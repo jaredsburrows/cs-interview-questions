@@ -9,8 +9,6 @@ public class PresenterImpl implements Contract.Presenter {
 
     public PresenterImpl(Contract.View view) {
         this.view = view;
-
-        view.setPresenter(this);
     }
 
     @Override

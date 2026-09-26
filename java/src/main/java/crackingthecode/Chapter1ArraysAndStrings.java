@@ -191,7 +191,7 @@ public final class Chapter1ArraysAndStrings {
             return "";
         }
 
-        return input.replaceAll(" ", "%20");
+        return input.replace(" ", "%20");
     }
 
     /**

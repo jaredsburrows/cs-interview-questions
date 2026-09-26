@@ -12,8 +12,6 @@ public abstract class AsyncTask<Params, Progress, Result> {
     private final FutureTask<Result> futureTask;
 
     public AsyncTask() {
-        onPreExecute();
-
         workerRunnable = new WorkerRunnable<>() {
             @Override
             public Result call() throws Exception {
@@ -45,6 +43,14 @@ public abstract class AsyncTask<Params, Progress, Result> {
                 }
             }
         };
+    }
+
+    @SuppressWarnings("unchecked")
+    public AsyncTask<Params, Progress, Result> execute(Params... params) {
+        onPreExecute();
+        workerRunnable.params = params;
+        service.execute(futureTask);
+        return this;
     }
 
     protected void onPreExecute() {

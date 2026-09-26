@@ -14,7 +14,7 @@ public final class Problem90SubsetsII {
         List<List<Integer>> subsets = new ArrayList<>();
         subsets.add(new ArrayList<>());
 
-        int startIndex = 0, endIndex = 0;
+        int startIndex, endIndex = 0;
 
         for (int i = 0; i < nums.length; i++) {
             startIndex = 0;

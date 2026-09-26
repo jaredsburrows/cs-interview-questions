@@ -69,8 +69,8 @@ public final class Problem208ImplementTrie {
         }
     }
 
-    private static class TrieNode {
-        TrieNode[] children = new TrieNode[26];
+    public static class TrieNode {
+        final TrieNode[] children = new TrieNode[26];
         boolean isEnd;
     }
 }

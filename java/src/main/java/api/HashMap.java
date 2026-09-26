@@ -12,9 +12,9 @@ public final class HashMap<K, V> {
         this(INITIAL_CAPACITY);
     }
 
-    @SuppressWarnings({"rawtypes", "unchecked"})
+    @SuppressWarnings("unchecked")
     public HashMap(int capacity) {
-        this.table = (Entry<K, V>[]) new Entry[capacity];
+        this.table = (Entry<K, V>[]) new Entry<?, ?>[capacity];
     }
 
     public V put(@Nullable K key, @Nullable V value) {

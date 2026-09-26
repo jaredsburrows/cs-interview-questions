@@ -20,7 +20,7 @@ public final class Substring {
             return "";
         }
 
-        if (end < 0 || end > input.length() || end < start) {
+        if (end > input.length()) {
             return "";
         }
 
