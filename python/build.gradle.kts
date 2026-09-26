@@ -1,0 +1,9 @@
+plugins {
+    id("com.linkedin.python-sdist") version "0.9.11"
+}
+
+repositories {
+    withGroovyBuilder {
+        "pyGradlePyPi"()
+    }
+}

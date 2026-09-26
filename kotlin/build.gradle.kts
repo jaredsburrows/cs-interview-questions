@@ -1,0 +1,60 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
+
+plugins {
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.license)
+}
+
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+tasks.withType<KotlinJvmCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_17)
+        extraWarnings.set(true)
+        allWarningsAsErrors.set(true)
+    }
+}
+
+tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
+
+    testLogging {
+        exceptionFormat = TestExceptionFormat.FULL
+        events = setOf(TestLogEvent.FAILED, TestLogEvent.SKIPPED)
+        showCauses = true
+        showExceptions = true
+        showStackTraces = true
+    }
+
+    val maxWorkerCount = gradle.startParameter.maxWorkerCount
+    maxParallelForks = if (maxWorkerCount < 2) 1 else maxWorkerCount / 2
+}
+
+dependencies {
+    implementation(platform(libs.kotlin.bom))
+
+    testRuntimeOnly(libs.spek.junit)
+    testImplementation(platform(libs.junit.bom))
+    testRuntimeOnly(libs.junit.platform.launcher)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testRuntimeOnly(libs.junit.vintage.engine)
+
+    testImplementation(libs.junit.api)
+    testImplementation(libs.spek.jvm)
+    testImplementation("io.github.classgraph:classgraph:4.8.196") {
+        because("https://cwe.mitre.org/data/definitions/611.html")
+    }
+    testImplementation(libs.kotlin.test)
+    testImplementation(libs.kotlin.junit5)
+}
