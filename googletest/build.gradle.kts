@@ -25,8 +25,7 @@ plugins {
 // Pinned here rather than in the version catalog: the artifact comes from GitHub releases, not a Maven repository.
 val googleTestVersion = "1.18.0"
 // SHA-256 for com.google.googletest:googletest:1.18.0@tar.gz
-// Replace with the canonical value used by your release process.
-val googleTestSha256 = "REPLACE_WITH_OFFICIAL_SHA256"
+val googleTestSha256 = "ad7fdba11ea7f808517a0f90fa7ad2e6e5ba6bc28d5f8b50d7d2b0f95f5a7652"
 
 val googleTestArchive = configurations.create("googleTestArchive") {
     isCanBeConsumed = false
