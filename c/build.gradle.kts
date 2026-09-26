@@ -41,7 +41,7 @@ unitTest {
     }
     binaries.configureEach(CppTestExecutable::class.java) {
         val tc = toolChain
-        // The tests are C++ (GoogleTest 1.15 requires C++14), so they do not get the library's "-x c" C flags.
+        // The project compiles C++ as C++20, so the test binary uses the same standard as the library.
         compileTask.get().compilerArgs.addAll(
             when {
                 tc is Gcc || tc is Clang -> listOf("-std=c++20", "-Wall", "-Wextra", "-O3", "-pedantic")
