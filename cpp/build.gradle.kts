@@ -27,6 +27,7 @@ fun compilerArgsFor(toolChain: NativeToolChain): List<String> =
     }
 
 library {
+    baseName.set("main")
     linkage.set(listOf(Linkage.STATIC, Linkage.SHARED))
     publicHeaders.from("src/main/include")
 
@@ -41,6 +42,7 @@ tasks.named("assemble") {
 
 if (hasGTest) {
     configure<CppTestSuite> {
+        baseName.set("mainTest")
         privateHeaders.from("src/test/include")
 
         binaries.configureEach(CppTestExecutable::class.java) {
