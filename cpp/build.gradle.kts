@@ -1,5 +1,6 @@
 import org.gradle.nativeplatform.Linkage
 import org.gradle.nativeplatform.test.cpp.CppTestExecutable
+import org.gradle.nativeplatform.test.tasks.RunTestExecutable
 import org.gradle.nativeplatform.toolchain.Clang
 import org.gradle.nativeplatform.toolchain.Gcc
 import org.gradle.nativeplatform.toolchain.NativeToolChain
@@ -41,4 +42,9 @@ unitTest {
             linkTask.get().linkerArgs.add("-pthread")
         }
     }
+}
+
+// Print only failures and the summary; see --gtest_brief in the GoogleTest docs.
+tasks.withType<RunTestExecutable>().configureEach {
+    args("--gtest_brief=1")
 }
