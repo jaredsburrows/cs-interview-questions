@@ -1,7 +1,6 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 plugins {
@@ -44,7 +43,6 @@ tasks.withType<Test>().configureEach {
 
 dependencies {
     implementation(platform(libs.kotlin.bom))
-    implementation(libs.kotlin.stdlib)
 
     testRuntimeOnly(libs.spek.junit)
     testImplementation(platform(libs.junit.bom))

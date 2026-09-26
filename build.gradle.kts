@@ -17,6 +17,7 @@ tasks.withType<Wrapper>().configureEach {
 }
 
 tasks.register<TestReport>("testReport") {
+    description = "Runs the test report."
     dependsOn(project(":docs").tasks.named("asciidoctor"))
     destinationDirectory.set(project(":docs").file("build/docs/asciidoc/tests"))
     subprojects.forEach { sub ->
@@ -27,5 +28,6 @@ tasks.register<TestReport>("testReport") {
 }
 
 tasks.register<Delete>("clean") {
+    description = "Cleans the project."
     delete(layout.buildDirectory)
 }

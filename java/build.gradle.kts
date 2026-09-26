@@ -18,15 +18,19 @@ tasks.test {
 }
 
 tasks.withType<JavaCompile>().configureEach {
-    options.compilerArgs.addAll(listOf("-Xlint:all", "-Xlint:-options"))
-    options.encoding = "UTF-8"
-    options.isFork = true
+    options.apply {
+        compilerArgs.addAll(listOf("-Xlint:all", "-Xlint:-options"))
+        encoding = "UTF-8"
+        isFork = true
+    }
 }
 
 tasks.withType<GroovyCompile>().configureEach {
-    options.compilerArgs.addAll(listOf("-Xlint:all", "-Xlint:-options"))
-    options.encoding = "UTF-8"
-    options.isFork = true
+    options.apply {
+        compilerArgs.addAll(listOf("-Xlint:all", "-Xlint:-options"))
+        encoding = "UTF-8"
+        isFork = true
+    }
 }
 
 tasks.withType<Test>().configureEach {
