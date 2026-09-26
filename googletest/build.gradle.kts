@@ -5,19 +5,6 @@ import org.gradle.nativeplatform.toolchain.VisualCpp
 import java.io.File
 import java.security.MessageDigest
 
-fun File.sha256(): String {
-    val digest = MessageDigest.getInstance("SHA-256")
-    inputStream().use { input ->
-        val buffer = ByteArray(DEFAULT_BUFFER_SIZE)
-        while (true) {
-            val read = input.read(buffer)
-            if (read <= 0) break
-            digest.update(buffer, 0, read)
-        }
-    }
-    return digest.digest().joinToString("") { "%02x".format(it) }
-}
-
 plugins {
     `cpp-library`
 }
@@ -45,12 +32,23 @@ val archiveOperations = objects.newInstance<ArchiveOperationsProvider>().archive
 
 val verifyGoogleTestArchive = tasks.register("verifyGoogleTestArchive") {
     description = "Verifies SHA-256 of the downloaded Google Test archive"
+    val archive = googleTestArchive.elements.map { it.single().asFile }
+    val expected = googleTestSha256
     inputs.files(googleTestArchive)
     doLast {
-        val archiveFile = googleTestArchive.resolve().single()
-        val actual = archiveFile.sha256()
-        check(actual.equals(googleTestSha256, ignoreCase = true)) {
-            "Checksum verification failed for ${archiveFile.name}. Expected $googleTestSha256, got $actual"
+        val file = archive.get()
+        val digest = MessageDigest.getInstance("SHA-256")
+        file.inputStream().use { input ->
+            val buffer = ByteArray(8192)
+            var read = input.read(buffer)
+            while (read > 0) {
+                digest.update(buffer, 0, read)
+                read = input.read(buffer)
+            }
+        }
+        val actual = digest.digest().joinToString("") { "%02x".format(it) }
+        check(actual.equals(expected, ignoreCase = true)) {
+            "Checksum verification failed for ${file.name}. Expected $expected, got $actual"
         }
     }
 }
