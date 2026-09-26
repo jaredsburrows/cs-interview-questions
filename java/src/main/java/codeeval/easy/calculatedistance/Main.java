@@ -18,7 +18,7 @@ public final class Main {
         String line;
         while ((line = buffer.readLine()) != null) {
             String replaceLine =
-                line.trim().replaceAll("\\(", "").replaceAll("\\)", "").replaceAll(",", "");
+                line.trim().replaceAll("\\(", "").replaceAll("\\)", "").replace(",", "");
             String[] strings = replaceLine.split(" ", -1);
 
             int x1 = Integer.parseInt(strings[0]);

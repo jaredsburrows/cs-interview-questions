@@ -16,10 +16,6 @@ public final class BstContains {
             return contains(root.right, value);
         }
 
-        if (value < root.value) {
-            return contains(root.left, value);
-        }
-
-        return false;
+        return contains(root.left, value);
     }
 }

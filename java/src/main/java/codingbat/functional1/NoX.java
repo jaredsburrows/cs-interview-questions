@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public final class NoX {
     public List<String> noX(List<String> strings) {
         return strings.stream()
-            .map(n -> n.replaceAll("x", ""))
+            .map(n -> n.replace("x", ""))
             .collect(Collectors.toCollection(ArrayList::new));
     }
 }

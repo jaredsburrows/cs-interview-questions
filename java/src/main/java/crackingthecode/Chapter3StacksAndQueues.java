@@ -1,9 +1,11 @@
 package crackingthecode;
 
+import java.io.Serial;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public final class Chapter3StacksAndQueues {
@@ -47,11 +49,12 @@ public final class Chapter3StacksAndQueues {
      */
     // book suggest not to store getMinNode in each stack, too much memory from duplicates
     public static class MinStack extends ArrayDeque<Integer> {
+        @Serial
         private static final long serialVersionUID = 587482623921067655L;
-        private final Deque<Integer> stack = new ArrayDeque<>();
+        private final transient Deque<Integer> stack = new ArrayDeque<>();
 
         @Override
-        public void push(Integer value) {
+        public void push(@Nonnull Integer value) {
             if (value <= getMinimum()) {
                 stack.push(value);
             }
@@ -60,7 +63,7 @@ public final class Chapter3StacksAndQueues {
         }
 
         @Override
-        public synchronized Integer pop() {
+        public synchronized @Nonnull Integer pop() {
             int value = super.pop();
             if (value == getMinimum()) {
                 stack.pop();
@@ -69,7 +72,7 @@ public final class Chapter3StacksAndQueues {
             return value;
         }
 
-        public Integer getMinimum() {
+        public @Nonnull Integer getMinimum() {
             return stack.isEmpty() ? Integer.MAX_VALUE : stack.peek();
         }
     }
