@@ -15,6 +15,17 @@ dependencyResolutionManagement {
     repositories {
         mavenCentral()
         gradlePluginPortal()
+        exclusiveContent {
+            forRepository {
+                ivy {
+                    name = "googletest-releases"
+                    url = uri("https://github.com/google/googletest/releases/download/")
+                    patternLayout { artifact("v[revision]/[artifact]-[revision].[ext]") }
+                    metadataSources { artifact() }
+                }
+            }
+            filter { includeGroup("com.google.googletest") }
+        }
     }
 }
 
@@ -32,6 +43,7 @@ rootProject.name = "cs-interview-questions"
 include("c")
 include("cpp")
 include("docs")
+include("googletest")
 include("java")
 include("kotlin")
 //include("python") // com.linkedin.python is having problems
