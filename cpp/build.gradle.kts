@@ -1,6 +1,5 @@
 import org.gradle.nativeplatform.Linkage
 import org.gradle.nativeplatform.test.cpp.CppTestExecutable
-import org.gradle.nativeplatform.test.cpp.CppTestSuite
 import org.gradle.nativeplatform.toolchain.Clang
 import org.gradle.nativeplatform.toolchain.Gcc
 import org.gradle.nativeplatform.toolchain.NativeToolChain
@@ -8,14 +7,7 @@ import org.gradle.nativeplatform.toolchain.VisualCpp
 
 plugins {
     `cpp-library`
-}
-
-val gTestInclude = file("/usr/local/Cellar/gtest/include")
-val gTestLibrary = file("/usr/local/Cellar/gtest/libgtest.a")
-val hasGTest = gTestInclude.isDirectory
-
-if (hasGTest) {
-    apply(plugin = "cpp-unit-test")
+    `cpp-unit-test`
 }
 
 fun compilerArgsFor(toolChain: NativeToolChain): List<String> =
@@ -40,15 +32,24 @@ tasks.named("assemble") {
     dependsOn("assembleDebugStatic", "assembleDebugShared")
 }
 
-if (hasGTest) {
-    configure<CppTestSuite> {
-        baseName.set("mainTest")
-        privateHeaders.from("src/test/include")
-
-        binaries.configureEach(CppTestExecutable::class.java) {
-            compileTask.get().compilerArgs.addAll(compilerArgsFor(toolChain))
-            compileTask.get().includes.from(gTestInclude)
-            linkTask.get().libs.from(gTestLibrary)
+unitTest {
+    baseName.set("mainTest")
+    privateHeaders.from("src/test/include")
+    dependencies {
+        implementation(project(":googletest"))
+    }
+    binaries.configureEach(CppTestExecutable::class.java) {
+        val tc = toolChain
+        // GoogleTest 1.15 requires C++14, so the test binary cannot use the library's C++11 flags.
+        compileTask.get().compilerArgs.addAll(
+            when {
+                tc is Gcc || tc is Clang -> listOf("-std=c++14", "-Wall", "-Wextra", "-O3", "-pedantic")
+                tc is VisualCpp -> listOf("/std:c++14", "/Wall", "/Wx", "/O1", "/O2", "/Ox")
+                else -> emptyList()
+            }
+        )
+        if (targetMachine.operatingSystemFamily.isLinux) {
+            linkTask.get().linkerArgs.add("-pthread")
         }
     }
 }
