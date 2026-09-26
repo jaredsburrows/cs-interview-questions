@@ -44,8 +44,8 @@ unitTest {
         // The tests are C++ (GoogleTest 1.15 requires C++14), so they do not get the library's "-x c" C flags.
         compileTask.get().compilerArgs.addAll(
             when {
-                tc is Gcc || tc is Clang -> listOf("-std=c++14", "-Wall", "-Wextra", "-O3", "-pedantic")
-                tc is VisualCpp -> listOf("/std:c++14", "/Wall", "/Wx", "/O1", "/O2", "/Ox")
+                tc is Gcc || tc is Clang -> listOf("-std=c++20", "-Wall", "-Wextra", "-O3", "-pedantic")
+                tc is VisualCpp -> listOf("/std:c++20", "/Wall", "/Wx", "/O1", "/O2", "/Ox")
                 else -> emptyList()
             }
         )

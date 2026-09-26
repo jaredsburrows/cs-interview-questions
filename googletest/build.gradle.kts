@@ -44,8 +44,8 @@ library {
         val tc = toolChain
         compileTask.get().compilerArgs.addAll(
             when {
-                tc is Gcc || tc is Clang -> listOf("-std=c++14")
-                tc is VisualCpp -> listOf("/std:c++14")
+                tc is Gcc || tc is Clang -> listOf("-std=c++20")
+                tc is VisualCpp -> listOf("/std:c++20")
                 else -> emptyList()
             }
         )

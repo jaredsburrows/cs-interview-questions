@@ -12,8 +12,8 @@ plugins {
 
 fun compilerArgsFor(toolChain: NativeToolChain): List<String> =
     when (toolChain) {
-//        is Gcc, is Clang -> listOf("-std=c++11", "-Wall", "-Wextra", "-Werror", "-O3", "-pedantic")
-        is Gcc, is Clang -> listOf("-std=c++11", "-Wall", "-Wextra", "-O3", "-pedantic")
+//        is Gcc, is Clang -> listOf("-std=c++20", "-Wall", "-Wextra", "-Werror", "-O3", "-pedantic")
+        is Gcc, is Clang -> listOf("-std=c++20", "-Wall", "-Wextra", "-O3", "-pedantic")
         is VisualCpp -> listOf("/Wall", "/Wx", "/O1", "/O2", "/Ox")
         else -> emptyList()
     }
@@ -40,11 +40,11 @@ unitTest {
     }
     binaries.configureEach(CppTestExecutable::class.java) {
         val tc = toolChain
-        // GoogleTest 1.15 requires C++14, so the test binary cannot use the library's C++11 flags.
+        // The project compiles C++ as C++20, so the test binary uses the same standard as the library.
         compileTask.get().compilerArgs.addAll(
             when {
-                tc is Gcc || tc is Clang -> listOf("-std=c++14", "-Wall", "-Wextra", "-O3", "-pedantic")
-                tc is VisualCpp -> listOf("/std:c++14", "/Wall", "/Wx", "/O1", "/O2", "/Ox")
+                tc is Gcc || tc is Clang -> listOf("-std=c++20", "-Wall", "-Wextra", "-O3", "-pedantic")
+                tc is VisualCpp -> listOf("/std:c++20", "/Wall", "/Wx", "/O1", "/O2", "/Ox")
                 else -> emptyList()
             }
         )
