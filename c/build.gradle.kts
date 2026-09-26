@@ -1,3 +1,4 @@
+import java.io.ByteArrayOutputStream
 import org.gradle.nativeplatform.Linkage
 import org.gradle.nativeplatform.test.cpp.CppTestExecutable
 import org.gradle.nativeplatform.test.tasks.RunTestExecutable
@@ -53,7 +54,20 @@ unitTest {
     }
 }
 
-// Print only failures and the summary; see --gtest_brief in the GoogleTest docs.
+// Print nothing when the tests pass; print GoogleTest's failure output and fail the task otherwise.
 tasks.withType<RunTestExecutable>().configureEach {
     args("--gtest_brief=1")
+    isIgnoreExitValue = true
+    doFirst {
+        val captured = ByteArrayOutputStream()
+        standardOutput = captured
+        errorOutput = captured
+    }
+    doLast {
+        val exitValue = executionResult.get().exitValue
+        if (exitValue != 0) {
+            logger.error(standardOutput.toString())
+            throw GradleException("$path failed with exit code $exitValue")
+        }
+    }
 }
