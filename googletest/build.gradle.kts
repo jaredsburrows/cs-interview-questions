@@ -2,6 +2,21 @@ import org.gradle.nativeplatform.Linkage
 import org.gradle.nativeplatform.toolchain.Clang
 import org.gradle.nativeplatform.toolchain.Gcc
 import org.gradle.nativeplatform.toolchain.VisualCpp
+import java.io.File
+import java.security.MessageDigest
+
+fun File.sha256(): String {
+    val digest = MessageDigest.getInstance("SHA-256")
+    inputStream().use { input ->
+        val buffer = ByteArray(DEFAULT_BUFFER_SIZE)
+        while (true) {
+            val read = input.read(buffer)
+            if (read <= 0) break
+            digest.update(buffer, 0, read)
+        }
+    }
+    return digest.digest().joinToString("") { "%02x".format(it) }
+}
 
 plugins {
     `cpp-library`
@@ -9,6 +24,9 @@ plugins {
 
 // Pinned here rather than in the version catalog: the artifact comes from GitHub releases, not a Maven repository.
 val googleTestVersion = "1.18.0"
+// SHA-256 for com.google.googletest:googletest:1.18.0@tar.gz
+// Replace with the canonical value used by your release process.
+val googleTestSha256 = "REPLACE_WITH_OFFICIAL_SHA256"
 
 val googleTestArchive = configurations.create("googleTestArchive") {
     isCanBeConsumed = false
@@ -26,8 +44,21 @@ interface ArchiveOperationsProvider {
 
 val archiveOperations = objects.newInstance<ArchiveOperationsProvider>().archiveOperations
 
+val verifyGoogleTestArchive = tasks.register("verifyGoogleTestArchive") {
+    description = "Verifies SHA-256 of the downloaded Google Test archive"
+    inputs.files(googleTestArchive)
+    doLast {
+        val archiveFile = googleTestArchive.resolve().single()
+        val actual = archiveFile.sha256()
+        check(actual.equals(googleTestSha256, ignoreCase = true)) {
+            "Checksum verification failed for ${archiveFile.name}. Expected $googleTestSha256, got $actual"
+        }
+    }
+}
+
 val unpackGoogleTest = tasks.register<Sync>("unpackGoogleTest") {
     description = "Unpacks the Google Test archive"
+    dependsOn(verifyGoogleTestArchive)
     val archives = archiveOperations
     from(googleTestArchive.elements.map { elements -> archives.tarTree(archives.gzip(elements.single().asFile)) })
     into(layout.buildDirectory.dir("unpacked"))
