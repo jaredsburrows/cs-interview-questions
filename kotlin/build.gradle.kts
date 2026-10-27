@@ -52,7 +52,7 @@ dependencies {
 
     testImplementation(libs.junit.api)
     testImplementation(libs.spek.jvm)
-    testImplementation("io.github.classgraph:classgraph:4.8.199") {
+    testImplementation("io.github.classgraph:classgraph:6.0.0") {
         because("https://cwe.mitre.org/data/definitions/611.html")
     }
     testImplementation(libs.kotlin.test)
